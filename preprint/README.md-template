@@ -1,0 +1,29 @@
+# [Paper Title]
+
+**Author:** James Beck  
+**Published:** [Month Day, Year]  
+**DOI:** [DOI if available]  
+**Zenodo Record:** [URL]
+
+## Abstract
+
+[Paper abstract]
+
+## Citation
+```bibtex
+@article{rock[year][keyword],
+  author = {Beck, James},
+  title = {[Full Title]},
+  year = {[Year]},
+  doi = {[DOI]},
+  url = {[Zenodo URL]}
+}
+```
+
+## Related Papers
+
+- [List other papers in the series]
+
+## Keywords
+
+[List of keywords from paper]

@@ -1,0 +1,11 @@
+title: "[Full Title]"
+author: "James Beck"
+date: "[YYYY-MM-DD]"
+doi: "[DOI]"
+zenodo_url: "[URL]"
+keywords:
+  - [keyword1]
+  - [keyword2]
+status: "published"
+series: "delta-t-framework"  # or whatever grouping
+version: "1.0"
