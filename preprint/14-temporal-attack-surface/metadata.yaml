@@ -1,0 +1,26 @@
+title: "The Temporal Attack Surface: A Δt Framework for Asynchronous Security Systems"
+author: "James Beck"
+date: "2026-01-13"
+doi: "10.5281/zenodo.18236164"
+zenodo_url: "https://zenodo.org/records/18236165"
+keywords:
+  - temporal dynamics
+  - race conditions
+  - asynchronous systems
+  - security architecture
+  - computer security
+  - SIEM
+  - CI/CD security
+  - rate limiting
+  - authentication 
+  - zero trust 
+  - control theory
+  - Δt framework
+status: "preprint"
+series: "delta-t-framework"
+version: "1.0"
+license: "CC-BY-4.0"
+abstract: |
+  This paper introduces the concept of the Temporal Attack Surface: a class of vulnerabilities arising from temporal decoupling between detection, decision, and response in asynchronous security systems. Extending prior work on Deep Packet Inspection (DPI) circumvention and the Δt framework for hierarchical temporal dynamics, the paper demonstrates that SIEM alerting, CI/CD security gates, authentication flows, rate limiting, and human-in-the-loop approvals share a common control-theoretic failure structure.
+
+  The work formalizes race windows between attacker commitment and defender response, derives defender-side instrumentation for measuring temporal vulnerabilities, and outlines mitigation strategies based on temporal coupling rather than configuration hardening. The analysis is intended for security architects, defenders, and systems researchers.

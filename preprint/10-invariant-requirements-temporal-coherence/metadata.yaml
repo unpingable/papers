@@ -1,0 +1,25 @@
+title: "You Need More Than Just Attention: Invariant Requirements for Temporal Coherence in AI Systems"
+author: "James Beck"
+date: "2025-12-23"
+doi: "10.5281/zenodo.18039926"
+zenodo_url: "https://zenodo.org/records/18039927"
+keywords:
+  - temporal coherence 
+  - architectural invariants
+  - transformer limitations
+  - epistemic grounding 
+  - semantic stability 
+  - AI systems analysis 
+  - Δt framework
+  - language models
+  - hallucination detection 
+status: "preprint"
+series: "delta-t-framework"
+version: "1.0"
+license: "CC-BY-4.0"
+abstract: |
+  Current transformer-based AI systems exhibit systematic failures of temporal coherence—the ability to maintain stable meanings, beliefs, and references across inference steps. We argue these failures are best explained by structural constraints of architectures that lack invariant-preserving primitives. Drawing on the Δt framework for temporal dynamics in hierarchical systems, we identify four essential invariants that any coherent inference system must preserve: (1) Temporal Coherence - past claims constrain present outputs, (2) Semantic Conservation - meaning remains stable under transformation, (3) Epistemic Grounding - sources actually constrain claims, and (4) Irreversibility - errors leave learning residue.
+
+We present empirical tests demonstrating that major production language models violate these invariants despite vastly different implementations. Critically, we show these violations are consistent with architectural limitations: they persist across all tested transformer-based systems because transformers lack the necessary primitives (persistent endogenous state, endogenous state evolution operators, temporal coupling controls).
+
+This work establishes invariant requirements as diagnostic infrastructure for evaluating whether systems can maintain coherence, and demonstrates why current approaches cannot satisfy these requirements without fundamental architectural changes.

@@ -6,6 +6,9 @@ zenodo_url: "[URL]"
 keywords:
   - [keyword1]
   - [keyword2]
-status: "published"
+status: "preprint"
 series: "delta-t-framework"  # or whatever grouping
 version: "1.0"
+license: "CC-BY-4.0"
+abstract: |
+  This paper lorem ipsum etc and so forth und so weiter

@@ -1,0 +1,23 @@
+title: "Eigenstructure Collapse in Social Media Platforms: An Application of Scalar Reward Dynamics Theory"
+author: "James Beck"
+date: "2025-12-03"
+doi: "10.5281/zenodo.17803843"
+zenodo_url: "https://zenodo.org/records/17803844"
+keywords:
+  - social media platforms
+  - algorithmic curation
+  - eigenstructure collapse
+  - scalar reward dynamics
+  - engagement optimization
+  - content homogenization 
+  - multiplicative reweighting
+  - recommendation systems 
+  - platform governance 
+  - institutional collapse 
+status: "preprint"
+series: "delta-t-framework"
+version: "1.0"
+license: "CC-BY-4.0"
+abstract: |
+  Contemporary social media platforms implement scalar reward optimization in closed loops: engagement metrics drive algorithmic curation, which determines content visibility, which generates the engagement metrics that update the algorithm. We demonstrate that platforms are instances of the multiplicative reweighting dynamics proven in Beck (2025) to produce inevitable eigenstructure collapse. Under standard platform design choices—tight metric-algorithm coupling, real-time analytics, continuous deployment—the theorems of scalar reward collapse apply directly: (1) all non-engagement-maximal content modes decay exponentially (Eigenstructure Evaporation), (2) the system converges to fixed points concentrated on metric-maximizing content with reduced entropy (Fixed-Point Convergence), and (3) recovery interventions fail without structural modification (Irreversibility). We show this is not a correctable design flaw but a mathematical necessity of engagement-maximization business models. Platform architectures systematically violate the stability conditions required to prevent collapse. This analysis establishes that observed pathologies—content homogenization, algorithmic amplification of engagement bait, elimination of slow-mode information integration—are structural consequences of the optimization architecture itself.
+

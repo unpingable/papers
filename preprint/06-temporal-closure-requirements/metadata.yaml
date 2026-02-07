@@ -1,0 +1,23 @@
+title: "Temporal Closure Requirements for Synthetic Coherence: Architectural Foundations and the Simulator Gap"
+author: "James Beck"
+date: "2025-12-07"
+doi: "10.5281/zenodo.17849277"
+zenodo_url: "https://zenodo.org/records/17849278"
+keywords:
+  - temporal coherence
+  - dynamical systems
+  - metastability 
+  - large language models 
+  - artificial intelligence
+  - attractor dynamics 
+  - spectral stability
+  - Simulator Gap 
+  - temporal closure 
+  - architectural invariants 
+status: "preprint"
+series: "delta-t-framework"
+version: "1.0"
+license: "CC-BY-4.0"
+abstract: |
+  This paper synthesizes the Δt framework developed across Papers 1-5, providing a unified account of temporal coherence requirements for synthetic systems. We demonstrate that three architectural operators (timescale separation, endogenous state, adaptive control) are necessary and sufficient for maintaining coherent identity across perturbations. The framework explains the Simulator Gap: why large language models can simulate temporal reasoning without implementing temporal closure. We provide testable predictions for both biological and artificial systems, falsification protocols, and correspondence with neuroscience. Five supplementary documents provide: (1) reference Python implementation, (2) neuroscience correspondence and clinical predictions, (3) comparison with existing consciousness theories, (4) RFC-style architectural invariants, and (5) comprehensive falsification test suite.
+

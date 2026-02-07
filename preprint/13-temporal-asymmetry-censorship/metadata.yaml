@@ -1,0 +1,22 @@
+title: "Temporal Asymmetry in Censorship Systems"
+author: "James Beck"
+date: "2026-01-13"
+doi: "10.5281/zenodo.18235696"
+zenodo_url: "https://zenodo.org/records/18235697"
+keywords:
+  - cybernetics
+  - network security
+  - deep packet inspection 
+  - censorship circumvention
+  - control theory 
+  - timing attacks 
+  - asynchronous systems 
+  - Δt framework 
+status: "preprint"
+series: "delta-t-framework"
+version: "1.0"
+license: "CC-BY-4.0"
+abstract: |
+  This paper presents a control-theoretic analysis of Deep Packet Inspection (DPI) circumvention mechanisms, formalizing bypass techniques as exploitation of temporal asymmetry between evidence accumulation and enforcement. Building on the Δt framework for hierarchical systems, the work derives the Universal Bypass Inequality (UBI) and demonstrates how timing, computational cost, and evidence denial enable systematic evasion of censorship and inspection systems.
+
+The analysis is presented from a defender and systems-design perspective, emphasizing structural properties rather than operational exploitation. The framework is intended for researchers and practitioners studying censorship resistance, network security, and control-theoretic failure modes in asynchronous systems.

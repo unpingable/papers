@@ -1,0 +1,29 @@
+title: "Control Laws for Hierarchical Kinetics: Design Principles and Intervention Strategies for Multi-Timescale Systems"
+author: "James Beck"
+date: "2025-12-07"
+doi: "10.5281/zenodo.17727144"
+zenodo_url: "https://zenodo.org/records/17849241"
+keywords:
+  - control theory
+  - hierarchical systems 
+  - temporal coherence 
+  - intervention strategies
+  - system design 
+  - spectral radius
+  - coupling topology
+  - multi-timescale systems 
+  - coherence restoration
+  - organizational design 
+  - falsifiable predictions 
+status: "preprint"
+series: "delta-t-framework"
+version: "1.0"
+license: "CC-BY-4.0"
+abstract: |
+  Hierarchical systems with mismatched timescales fail in predictable ways. Paper 1 established the spectral stability condition ρ(M) < 1; Paper 2 derived the kinetic phase boundaries that produce metastability when temporal mismatch Δt exceeds critical thresholds. This paper completes the trilogy by answering: What can we actually do about it?
+
+We prove that only a specific class of interventions—those acting on temporal mismatch Δt, spectral radius ρ(M), or coupling topology G—can restore coherence once a system crosses phase boundaries. We call these Tier-1 moves. Interventions on derived quantities (coupling strength α, barrier shape Φ, hysteresis amplitude A_hyst) cannot move systems between regions; we call these Tier-2 moves and prove them insufficient for coherence restoration.
+
+The central result is the Δt Management Criterion: A hierarchical system maintains persistent identity if and only if ρ(M) < 1, Δt < Δt_c(α,G), and αΦ(Δt) ≫ 1. We derive piecewise control laws for each kinetic region, provide measurement algorithms for all primitives, demonstrate architecture-specific strategies across six canonical topologies, and illustrate application through worked examples spanning AI systems, institutions, markets, and platforms.
+
+The framework is falsifiable: we specify observable signatures for each region, predict intervention responses, and identify invariants that must hold across all domains. Violation of any prediction would refute the theory.

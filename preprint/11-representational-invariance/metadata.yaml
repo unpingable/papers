@@ -1,0 +1,19 @@
+title: "Representational Invariance and the Observer Problem in Language Model Alignment"
+author: "James Beck"
+date: "2025-12-27"
+doi: "10.5281/zenodo.18071264"
+zenodo_url: "https://zenodo.org/records/18071265"
+keywords:
+  - language models
+  - alignment 
+  - temporal coherence
+  - representational coherence
+  - invariant preservation 
+  - category theory 
+  - LLM evaluation 
+status: "preprint"
+series: "delta-t-framework"
+version: "1.0"
+license: "CC-BY-4.0"
+abstract: |
+  Temporal coherence—the ability of a system to maintain consistency across time evolution—is a necessary but insufficient condition for alignment in large language models. We introduce representational coherence (ΔR) as an orthogonal axis measuring commitment preservation under representational transformation. Through analysis of a technical specification transformed via compression, translation, and formalization, we demonstrate systematic commitment shear: the selective loss of enforcement constraints, edge cases, and observability hooks even when temporal coherence is preserved. Compression induces 55% shear; formalization induces 45% shear through ontology forcing; translation preserves commitments with near-zero shear. We formalize commitment transport as an invariant-preservation problem and argue that alignment without observer-level binding of equivalence classes across representations is fundamentally incomplete. Our cache policy artifact and shear metrics provide a foundation for instrumenting representational coherence in language model evaluation.

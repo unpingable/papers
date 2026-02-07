@@ -1,0 +1,21 @@
+title: "The Second Law of Organizations: How Temporal Lag Drives Irreversible Institutional Decay"
+author: "James Beck"
+date: "2025-11-26"
+doi: "10.5281/zenodo.17726889"
+zenodo_url: "https://zenodo.org/records/17726890"
+keywords:
+  - metastability
+  - dynamical systems 
+  - escape rates
+  - temporal coherence
+  - multi-scale systems 
+  - control theory 
+  - Δt framework 
+status: "preprint"
+series: "delta-t-framework"
+version: "1.0"
+license: "CC-BY-4.0"
+abstract: |
+  We show that temporal lag between control layers acts as effective noise, driving hierarchical systems from narrow high-fidelity basins toward broad degraded attractors via an entropic ratchet. When fast operational layers outpace slow strategic layers (large Δt), control errors accumulate as stochastic forcing with D_eff ∝ Δt². Because high-quality states occupy small phase-space volumes while degraded states occupy large volumes, random exploration preferentially transitions systems downward—not through moral failure, but through statistical mechanics.
+
+We formalize this via three results: (1) noise-lag equivalence relating temporal divergence to effective diffusion, (2) entropic directional bias from asymmetric basin geometry, and (3) exponential escape-time scaling from Kramers theory. Case studies of platform enshittification (Δt ~ 1-3 years) and university bureaucratization (Δt ~ 10-20 years) demonstrate explanatory power. Computational validation confirms lag alone drives irreversible decay. We identify five phenomenological signatures (Long Quiet, Flicker, Snap, Slide, Hysteresis Lock) for early detection and explain why institutional reform typically fails via hysteresis. Unlike qualitative theories, our framework makes falsifiable predictions with implications for platform governance, organizational design, and intervention strategies.

@@ -1,4 +1,13 @@
+---
+title: AGI Structural Requirements
+author: James Beck
+date: 2026-01
+status: working paper
+---
+
 # AGI Structural Requirements: A Diagnostic Framework
+
+---
 
 **Purpose:** This document identifies hard requirements for systems claiming "Artificial General Intelligence" - not as aspirational goals, but as structural prerequisites without which the term is category error.
 

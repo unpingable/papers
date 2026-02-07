@@ -1,0 +1,24 @@
+title: "Capacity-Constrained Stability: A Control-Theoretic Framework for Institutional Resilience"
+author: "James Beck"
+date: "2025-12-22"
+doi: "10.5281/zenodo.18019050"
+zenodo_url: "https://zenodo.org/records/18019051"
+keywords:
+  - institutional failure
+  - system stability 
+  - capacity constraints
+  - response latency 
+  - buffering capacity
+  - queueing theory
+  - resilience engineering 
+  - control theory 
+  - metastability
+  - infrastructure collapse 
+  - organizational dynamics 
+  - shock response 
+status: "preprint"
+series: "delta-t-framework"
+version: "1.0"
+license: "CC-BY-4.0"
+abstract: |
+  This paper introduces a control-theoretic stability constraint governing institutional failure under exogenous shock. Formalizing the relationship between shock arrival rate, processing capacity, buffer reserves, and response latency, it demonstrates why institutional collapse often appears sudden despite being structurally predictable. The framework integrates queueing theory, resilience engineering, and multi-timescale control to identify measurable failure boundaries and metastable operating regimes across healthcare, finance, and infrastructure systems.

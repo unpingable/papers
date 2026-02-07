@@ -1,0 +1,18 @@
+title: "The Coherence Criterion: A Unified Framework for Stability in Hierarchical Systems"
+author: "James Beck"
+date: "2025-11-26"
+doi: "10.5281/zenodo.17726789"
+zenodo_url: "https://zenodo.org/records/17726790"
+keywords:
+  - dynamical systems
+  - temporal coherence
+  - spectral radius
+  - hierarchical systems
+  - stability analysis
+  - control theory
+status: "preprint"
+series: "delta-t-framework"
+version: "1.0"
+license: "CC-BY-4.0"
+abstract: |
+  The Coherence Criterion proposes a unified mathematical framework for system stability in hierarchical systems operating across multiple temporal scales (Δt). System viability depends on maintaining bounded temporal divergence between coupled layers, formalized via spectral analysis of coupled Markov processes. The stability condition is ρ(M) < 1, where ρ is the spectral radius of the coupling matrix M. Violation of this criterion leads to Rigidity Runaway (λ → +1) and Acceleration Runaway (λ → −1), representing cross-domain failure modes. The formulation applies across autonomous systems, learning architectures, institutions, and financial markets, demonstrating structural correspondence with shared bifurcation geometry.

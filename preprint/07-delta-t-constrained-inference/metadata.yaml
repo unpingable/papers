@@ -1,0 +1,23 @@
+title: "Δt-Constrained Inference: A General Model of Temporal Coherence in Hierarchical Systems"
+author: "James Beck"
+date: "2025-12-08"
+doi: "10.5281/zenodo.17857541"
+zenodo_url: "https://zenodo.org/records/17857542"
+keywords:
+  - temporal coherence
+  - hierarchical systems 
+  - epistemic dynamics
+  - metastability 
+  - confidence calibration
+  - inferential models
+  - temporal debt
+  - multiscale dynamics 
+  - uncertainty quantification 
+  - systems theory 
+status: "preprint"
+series: "delta-t-framework"
+version: "1.0"
+license: "CC-BY-4.0"
+abstract: |
+  We present a general framework for temporal coherence in hierarchical inference systems. When upper layers generate outputs at rates exceeding what lower layers can support, systems exhibit characteristic pathologies: confidence inflation, metastable states that appear functional but are structurally fragile, and eventual collapse under perturbation. The core constraint—that confidence growth rate must not exceed evidence accumulation rate—yields a differential inequality dC/dt ≤ k·dE/dt governing system behavior. Violations accumulate as temporal debt D(t), a measure of structural fragility invisible in local observations. The framework reveals three distinct regimes: coherent inference, metastable inference, and collapse. We demonstrate that meta-plausibility constitutes one instantiation of this general principle and establish connections to existing theories of metastability in stochastic systems and multiscale dynamics. Domain-specific applications are developed in companion publications.
+

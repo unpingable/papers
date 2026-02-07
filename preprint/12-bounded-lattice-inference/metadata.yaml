@@ -1,0 +1,33 @@
+title: "Bounded Lattice Inference: A Governed Reasoning Substrate with Persistent State and Non-Linguistic Authority"
+author: "James Beck"
+date: "2026-01-04"
+doi: "10.5281/zenodo.18145346"
+zenodo_url: "https://zenodo.org/records/18145347"
+keywords:
+  - control theory 
+  - epistemic governance
+  - language models 
+  - supervisory control 
+  - queueing theory 
+  - state machines
+  - temporal coherence
+  - non-linguistic authority 
+status: "preprint"
+series: "delta-t-framework"  # or whatever grouping
+version: "1.0"
+license: "CC-BY-4.0"
+abstract: |
+  This work describes a governed reasoning substrate that introduces persistent 
+state to language-model systems without granting agency, goals, or 
+self-modification. The contribution is architectural: separating linguistic 
+proposal from non-linguistic authority, and measuring the resulting system 
+using standard tools from queueing theory and supervisory control.
+
+Key results:
+- Interiority confirmed via hysteresis testing (16.7% divergence rate)
+- Two distinct phase boundaries identified (budget starvation, glass ossification)
+- Safety invariants maintained across all experimental conditions
+- No agency, consciousness, or alignment claims
+
+The system enforces epistemic constraints by construction and is evaluated 
+via falsifiable experiments. 76 test suites confirm architectural properties.
