@@ -1,5 +1,5 @@
 ---
-title: Tier 0: Formation Requirements
+title: "Tier 0: Formation Requirements"
 author: James Beck
 date: 2026-02
 status: working paper

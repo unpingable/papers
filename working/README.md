@@ -9,3 +9,5 @@ Exploratory and in-progress writing that has not been published as a preprint. T
 - **agi-requirements-framework.md** — *AGI Requirements Framework*: A three-tier diagnostic framework (Tier 1: temporal coherence, Tier 2: representational invariance, Tier 3: recursive self-modeling) for evaluating AGI capability claims.
 
 - **tier0.md** — *Tier 0: Formation Requirements*: An extension to the AGI Requirements Framework covering pre-architectural conditions (substrate requirements, boundary formation, coherence nucleation).
+
+- **governor-not-mind.md** — *Why a Governor is Not a Mind*: Governors as stability controllers: preventing false state injection through admissibility gates and coherence budgets. The pragmatic AI safety intervention that doesn't require solving consciousness.
