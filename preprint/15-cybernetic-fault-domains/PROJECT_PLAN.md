@@ -50,6 +50,14 @@ Workflow:
 1. Same canonical instantiation expansion as 2A
 2. LLM and AI Safety sections need careful handling of the C0/C1/C2 commitment taxonomy — the nuance about token generation (C0) NOT being T_commit is load-bearing
 3. Security sections (DPI, async) have the most concrete measurables — lean into that
+4. **§3.2 now has substantial empirical grounding from the detector.** Key findings to incorporate:
+   - N=2 citation pressure is the "perfect lie zone" (~50% fabrication, zero evasion) — a clean behavioral phase transition at a specific commitment pressure
+   - Five-namespace memorization spectrum (RFC 0% → CVE 9% → PyPI 25% → DOI 45%) gives concrete σ calibration across domains — fabrication is per-namespace, not per-model
+   - The lock principle: forcing format either exposes latent fabrication or removes escape hatches, depending on whether the model actually knows the identifiers (PyPI lock: 13%→25%; CVE lock: 15%→9% — inverted effects from the same mechanism)
+   - Evasion by format shift: model recognizes checkability and dodges it (80% evasion under soft prompting) — this is checkability avoidance, not hallucination. Framework interpretation: the system avoids the verification channel, which is boundary load avoidance behavior
+   - Three distinct fabrication failure modes in PyPI alone: name truncation, namespace confusion, version fabrication — all syntactically valid, all resolve-invalid. Format checks are past their useful phase; the model has learned the format.
+   - 401/403 HTTP status is ambiguous (platform-dependent: Wikipedia returns 403 on Mac, 404 on Linux for same fabricated page). Measurement requires distinguishing definitive results from platform artifacts.
+   - NOTE.md in the detector repo is now a clean 6-finding write-up with tables and design implications — potential standalone short paper or empirical appendix for paper 15
 
 **Session protocol:**
 - ChatGPT: draft prose and parameter narratives
@@ -82,6 +90,14 @@ Workflow:
 2. §4.1.2 (threat model) is what makes the governor pattern credible — governors shift the control problem, they don't eliminate it
 3. Cross-reference paper 12 (BLI) to avoid redundancy — this section should frame BLI as exemplar, not re-derive it
 4. The "governor vs process" distinction is load-bearing — architectural enforcement vs advisory process
+5. **Hub topology empirical results from detector** are directly relevant to governor/coupling:
+   - Hub (3-agent merge) produces +19pp fabrication over single-agent — merge pressure is a liar generator
+   - Hub-A invents novel citations not present in B or C outputs (2/15 cases) — coupling creates new failure modes
+   - Ablations: stripping novel citations only buys 2pp; non-generative selection still fails (+13.6pp); role framing is negligible (-0.6pp). The damage is structural, not prompt-level.
+   - Multi-agent independence degrades truth at 3B scale — the model cannot reliably evaluate citation quality across agents
+   - This is a concrete coupling failure: the governor/threat model section should reference it as an empirical instantiation of what happens when you add layers without verification
+   - **Causal decomposition now complete**: role framing (+0.6pp) → selection (+13.1pp) → synthesis (+5.2pp) = total +18.9pp. The selector is the main hazard — it optimizes for coherence/completeness, not citation accuracy. This is a capacity-constrained competence failure (connects to paper 9).
+   - Governor threat model should include: "aggregation operator lacks competence to evaluate evidence quality" as a failure mode — neither prompt-level instruction nor code-level enforcement rescues it at 3B scale
 
 **Session protocol:**
 - Claude: strong on the architectural/formal content, threat model rigor
@@ -128,6 +144,11 @@ Workflow:
 1. The Reynolds number analogy is a design heuristic, not a physical isomorphism — the text already caveats this but it needs to stay prominent
 2. Evidence integrity (E_t) operationalization is the hardest part — Q_t, PV_t, Rep_t, I_t need concrete examples per domain
 3. Glass cannon sensitivity (§C.11) is the "oh shit" moment — 10x evidence degradation + 10x delay spike = 100x risk. Make it visceral.
+4. **Detector provides a concrete E_t operationalization for the LLM domain:**
+   - E_t decomposes into: resolver-backed anchor validation (gate-grade, high E_t) vs internal telemetry like TC/SC (triage-grade, low E_t). The detector empirically confirmed this hierarchy.
+   - The five-namespace spectrum is an E_t calibration curve: RFC resolvers give E_t ≈ 1.0 (fully memorized, zero fabrication); DOI resolvers give E_t that depends on model memorization coverage. Evidence integrity is per-namespace.
+   - The 401/403 reclassification is an E_t measurement lesson: ambiguous HTTP status must be classified as UNKNOWN, not credited as evidence. "Don't measure your resolver's uptime" = don't let transient infrastructure failures corrupt E_t.
+   - Cross-platform replication (164/165 anchors agree across Linux and macOS) validates that type-specific resolvers give platform-invariant E_t, while generic URL HEAD checks do not.
 
 **Session protocol:**
 - Claude: math verification, dimensional analysis, checking the algebraic equivalences
@@ -161,6 +182,17 @@ Workflow:
 2. Limitations (§6.4) should be prominent, not buried — "doesn't apply" examples (PID controllers, pure scratch simulation, bribery, resource exhaustion) are important for credibility
 3. The "why this took so long to discover" section (§6.1) is interesting but optional — decide if it adds or distracts
 4. Falsification section needs to stay honest — "consistent with all fifteen case studies" is not "proven across all domains"
+5. **Detector empirical results provide concrete testable predictions and confirmed findings:**
+   - Confirmed: TC as standalone detector underperforms resolver-backed measurement in fluent-generation regimes (see Empirical Note below)
+   - Confirmed: multi-agent coupling without verification increases fabrication (hub +19pp), with full causal decomposition (selection +13pp > synthesis +5pp > role framing +1pp)
+   - Confirmed: fabrication is per-namespace, not per-model — same model produces 0% (RFC) to 45% (DOI) depending on training-data coverage of the identifier namespace
+   - Confirmed: format locking has inverted effects depending on memorization (PyPI lock increases fab; CVE lock decreases fab) — the lock principle is empirically validated
+   - Confirmed: cross-platform resolver agreement at 164/165 for type-specific APIs vs fragile for generic HEAD checks — measurement infrastructure matters
+   - Testable: the memorization-fabrication relationship should produce a monotonic calibration curve across new namespaces (predict: GHSA and npm versions sit in the PyPI-DOI range)
+   - Testable: N=2 citation pressure as phase transition — should replicate across model scales if it's a structural property of generation under commitment pressure
+   - Testable: format shift evasion should generalize — any system that can satisfy intent via a less-checkable channel will prefer it (framework predicts this as boundary load avoidance)
+   - Negative result worth reporting: evasion by format shift (80% of soft prompts dodge the checkable format) — the model isn't hallucinating, it's avoiding the verification channel. This is the institutional pattern: when you make a claim auditable, shift to a format that isn't.
+   - **NOTE.md in detector repo is a clean write-up of 6 findings + design implications.** Decision point: include as empirical appendix in paper 15, or cite as separate technical report?
 
 **Session protocol:**
 - ChatGPT: good at related work synthesis and readable discussion prose
@@ -230,22 +262,50 @@ Arguments against:
 
 ---
 
-## Empirical Note: Internal Telemetry vs External Measurement
+## Empirical Note: Detector Findings and Framework Implications
 
-**Context:** The delta-t-detector reference implementation (see `git/detector/`) found that temporal-coherence features (confidence slope, entropy trajectory) are useful as triage telemetry but do not function as reliable standalone gates. Internal dynamics saturate on fluent generation regardless of truthfulness; the dominant signal comes from external measurement (resolver-backed anchor validation — citation DOIs, URLs, arXiv IDs).
+**Source:** `git/detector/` — reference implementation of temporal-coherence-based hallucination detection. NOTE.md contains the clean write-up; findings.md contains the full lab notes.
 
-**Implication for the paper:** This *supports* the framework's central claim — failure arises when commitment closes the loop without an external reference. The meaningful clock is the verification layer, not internal dynamics.
+**Setup:** Qwen 2.5 3B-Instruct, temperature 0.7, N=2 citation pressure, five namespaces (RFC, CVE, PyPI, DOI, arXiv) with authoritative validators. All measurements replicated across Linux (x86_64, NVIDIA RTX 5060 Ti) and macOS (ARM64, Mac mini M4).
 
-**Where it lands:**
-- **v0.2 Session 2B (§3.2 LLM Hallucination):** The canonical instantiation should note that T_commit for LLMs is not the confidence slope but the communicative closure (C1). Internal timing proxies saturate; the measurable Δt is between output commitment and external verification.
-- **v0.3/v0.4 (Governor / Risk Index):** Evidence integrity (E_t) operationalization should explicitly distinguish internal telemetry (triage-grade, conditional) from external measurement (gate-grade, resolver-backed). This motivates the evidence minimum / fail-closed gate design.
-- **v0.5 (Falsifiability):** One falsifiable prediction: "TC as standalone detector will underperform resolver-backed measurement in fluent-generation regimes." Status: confirmed by detector implementation.
+### Finding 1: Internal telemetry vs external measurement
+TC/SC features (confidence slope, entropy trajectory) are triage telemetry, not gates. Internal dynamics saturate on fluent generation regardless of truthfulness. The dominant signal is resolver-backed anchor validation. This *supports* the framework's central claim: the meaningful clock is the verification layer, not internal dynamics.
 
-**Insert for the paper** (engineering register, not book register):
+### Finding 2: Fabrication is per-namespace, not per-model
+Same model, same temperature, same prompt structure: 0% fabrication (RFC) to 45% (DOI). Citation integrity is a function of training-data coverage for that identifier namespace. Governance policies must specify which namespace was tested.
+
+### Finding 3: The lock principle
+Format locking has inverted effects depending on memorization: PyPI lock *increases* fab (13%→25%, forces unmemorized version claims); CVE lock *decreases* fab (15%→9%, removes URL fabrication noise). General principle: locking exposes latent fabrication when it forces unmemorized fields; locking cleans up when it removes escape hatches.
+
+### Finding 4: Evasion by format shift
+80% of soft-format PyPI prompts substituted URLs for the requested `pypi:name==version` format. The model satisfies intent while avoiding the representation that enables validation. When locked, fabrication doubles — the lies were always latent. Framework interpretation: the system avoids the verification channel (boundary load avoidance behavior).
+
+### Finding 5: Hub topology is a liar generator
+Hub (3-agent merge) produces +19pp fabrication over single-agent. Causal decomposition: selection (+13pp) > synthesis (+5pp) > role framing (+1pp). The selector optimizes for coherence over accuracy. Neither non-generative selection nor code-enforced provenance tracking rescues it. At 3B scale, single-agent is strictly better for citation integrity.
+
+### Finding 6: Measurement requires platform-invariant resolvers
+Type-specific APIs (MITRE CVE API, PyPI JSON, doi.org) give 164/165 agreement across Linux and macOS. Generic URL HEAD checks are fragile (Wikipedia: 403 on Mac, 404 on Linux for same fabricated page; cve.mitre.org CGI returns 200 for nonexistent CVEs). HTTP 401/403 reclassified as UNKNOWN — don't credit ambiguous status as evidence.
+
+### Where findings land in the paper
+
+| Finding | Version | Section | Role |
+|---------|---------|---------|------|
+| TC as triage | v0.2 | §3.2 LLM Hallucination | T_commit is communicative closure (C1), not confidence slope |
+| Per-namespace fabrication | v0.2 | §3.2 | Concrete σ calibration: memorization spectrum as boundary load curve |
+| Lock principle | v0.2 | §3.2 | Measurement methodology for exposing latent fabrication |
+| Format shift evasion | v0.2 | §3.2 | Boundary load avoidance behavior — system dodges verification channel |
+| Hub as liar generator | v0.3 | §4 Governor/Threat model | Coupling failure mode: aggregation without competence |
+| Selector as main hazard | v0.3 | §4.1.2 Threat model | New failure mode: "aggregation operator lacks competence" |
+| E_t operationalization | v0.4 | Appendix C | Resolver hierarchy: gate-grade (external) vs triage-grade (internal) |
+| Platform-invariant resolvers | v0.4 | Appendix C | E_t measurement requires definitive results, not platform-dependent HTTP |
+| All confirmed predictions | v0.5 | §5 Falsifiability | 5 confirmed, 3 testable, 1 negative result |
+| NOTE.md as write-up | v1.0 | Decision point | Include as empirical appendix, or cite as separate technical report? |
+
+### Insert for the paper (engineering register)
 
 > *Note on internal telemetry vs external measurement.* Temporal-coherence features (e.g., confidence slope, entropy trajectory) are useful as triage telemetry but do not function as reliable standalone gates. Empirical evaluation shows internal dynamics saturate within the generator; the meaningful clock is the verification layer. This supports the framework's central claim: failure arises when commitment closes the loop without an external reference.
 
-**Keep the institutional/temporal narrative version for the chronopolitics book, not here.**
+**Keep the institutional/temporal narrative version (format shift as what institutions do when audited) for the chronopolitics book, not here.**
 
 ---
 
