@@ -105,6 +105,8 @@ Workflow:
 - ChatGPT: strong on making the developmental tradeoff readable and the domain generalizations concrete
 - Driver: merge, check that the BLI references don't duplicate paper 12
 
+**Downstream operationalization:** The Governor Insertion Method (GIM, `working/gim.md`) is a seven-step SRE-facing design methodology that operationalizes v0.3's governor architecture as a placement algorithm. GIM's G0–G4 enforcement taxonomy maps onto the governor pattern here; its bypass test suite (Step 6) is the fork test from *The Jar Brain* turned into a test harness. v0.3 should reference GIM as the "how to install this on Monday morning" companion, without duplicating it. Provenance: DeepSeek → ChatGPT → Claude cross-model session.
+
 **Done when:** The governor pattern is architecturally specified (not just described), the developmental tradeoff makes clear when decoupling is acceptable, and the threat model enumerates at least 4 concrete governor failure modes with mitigations. BLI is referenced as exemplar, not re-derived.
 
 **Output:** Updated paper with full §4
