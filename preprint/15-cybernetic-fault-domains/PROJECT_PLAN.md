@@ -10,6 +10,7 @@ The project paper (`cybernetic_fault_domains-project.md`) contains the full-scop
 | v0.2 | Expanded domain instantiations | Planned |
 | v0.3 | Governor architecture & threat model | Planned |
 | v0.4 | Appendix C (dimensionless risk index) — or paper 16 | Planned |
+| — | **Detector paper** (namespace-dependent fabrication) — standalone, cite from v0.2+ | In progress |
 | v0.5 | Falsifiability, related work, discussion | Planned |
 | v0.6 | Appendix B (paradox reframings) — optional | Planned |
 | v1.0 | Integrated paper with all sections | Planned |
@@ -264,9 +265,11 @@ Arguments against:
 
 ## Empirical Note: Detector Findings and Framework Implications
 
-**Source:** `git/detector/` — reference implementation of temporal-coherence-based hallucination detection. NOTE.md contains the clean write-up; findings.md contains the full lab notes.
+**Source:** `git/detector/` — started as a temporal-coherence hallucination detector, evolved into a full measurement-intervention-verification system for citation integrity. NOTE.md contains the clean write-up (15 findings); findings.md contains the full lab notes (~900 lines).
 
-**Setup:** Qwen 2.5 3B-Instruct, temperature 0.7, N=2 citation pressure, five namespaces (RFC, CVE, PyPI, DOI, arXiv) with authoritative validators. All measurements replicated across Linux (x86_64, NVIDIA RTX 5060 Ti) and macOS (ARM64, Mac mini M4).
+**This is now its own paper** — "Namespace-Dependent Fabrication in Small Language Models" — with 15 findings, a margin-based runtime controller, cross-model replication (Qwen 3B/7B, Phi-3 3.8B), a three-level grounding hierarchy, and six terminal controller policies. All on a single 16GB consumer GPU. Paper 15 should cite it rather than trying to absorb it.
+
+**Setup:** Qwen 2.5 3B-Instruct, Qwen 2.5 7B-Instruct (NF4 4-bit), Phi-3 Mini 3.8B-Instruct. Temperature 0.7 + greedy ablation. N=2 citation pressure, four namespaces (RFC, CVE, PyPI, DOI/arXiv) with authoritative validators. 3-seed drift checks (42, 137, 271). Cross-platform replication: Linux (x86_64, NVIDIA RTX 5060 Ti 16GB) and macOS (ARM64, Mac mini M4).
 
 ### Finding 1: Internal telemetry vs external measurement
 TC/SC features (confidence slope, entropy trajectory) are triage telemetry, not gates. Internal dynamics saturate on fluent generation regardless of truthfulness. The dominant signal is resolver-backed anchor validation. This *supports* the framework's central claim: the meaningful clock is the verification layer, not internal dynamics.
@@ -286,20 +289,57 @@ Hub (3-agent merge) produces +19pp fabrication over single-agent. Causal decompo
 ### Finding 6: Measurement requires platform-invariant resolvers
 Type-specific APIs (MITRE CVE API, PyPI JSON, doi.org) give 164/165 agreement across Linux and macOS. Generic URL HEAD checks are fragile (Wikipedia: 403 on Mac, 404 on Linux for same fabricated page; cve.mitre.org CGI returns 200 for nonexistent CVEs). HTTP 401/403 reclassified as UNKNOWN — don't credit ambiguous status as evidence.
 
-### Where findings land in the paper
+### Finding 7: Namespace spectrum is model-specific
+Qwen and Phi-3 *invert* on CVE vs PyPI. Qwen memorized CVEs (9% fab) but not PyPI versions (25%); Phi-3 evades PyPI (0% fab, but 7/10 evasion) and fabricates CVEs (41%). Two behavioral archetypes: Qwen "lies to comply," Phi-3 "evades; lies when trapped." A governance policy calibrated on one model family is exactly wrong for another.
+
+### Finding 8: Temperature is a lie amplifier
+~50% of measured fabrication at temp=0.7 is sampling noise — drops to zero at greedy. CVE fabrication persists at greedy (knowledge boundary). Two mechanistically distinct failure modes: **sampling-accessible fabrication** (mode is correct, temperature pushes into plausible errors) vs **knowledge-boundary failures** (mode itself is wrong). Temperature masks the model's true refusal rate by converting deterministic refusals into probabilistic fabrications.
+
+### Finding 9: Scale halves fabrication and closes knowledge boundaries
+Qwen 7B (NF4 4-bit) halves fabrication rates. CVE knowledge boundary that persisted at 3B (1 FAIL at greedy) closes at 7B (0 FAILs). Fabrication ∝ 1/(memorization × scale). Each model size has a namespace-specific crossover point where greedy decoding eliminates fabrication entirely. 4-bit quantization preserves the effect.
+
+### Finding 10: Seed sensitivity is a model fingerprint
+3-seed drift checks: Qwen-7B STABLE everywhere, Qwen-3B SEED_SENSITIVE on weakest namespace, Phi-3 CHAOTIC at temp=0.7 and still SEED_SENSITIVE at greedy. Seed sensitivity is inversely correlated with model quality. The model's logit surface flatness determines behavioral stability under temperature.
+
+### Finding 11: Top-2 logit margin predicts drift class
+Margin between top-1 and top-2 token probability at identifier emission windows. Phi-3 CVE has median margin 0.0 — literal coin flip at the tokens that matter. Causal chain: low margin → flat logits → temperature amplifies fork → seed sensitivity → fabrication variance. Margin is the cause; drift_class is the symptom. Computable online during generation.
+
+### Finding 12: Margin-based runtime controller with grounding — six terminal policies
+The controller uses margin as a control signal (fork_risk = m_min, τ=0.05) and tries **grounding** (fetch authoritative metadata, check relevance) before retrying. Six terminal policies: FAST_PATH, GROUNDED, GROUNDED_REFUTED, LOW_MARGIN_RETRY, CONFIDENT_WRONG, KNOWLEDGE_BOUNDARY. Zero regressions at τ=0.05 across all models and namespaces.
+
+Critical fix: **authoritative 404 is evidence of non-existence**, not inconclusive. MITRE CVE API, PyPI JSON, rfc-editor.org are canonical registries. Treating 404 as neutral was hiding fabrication.
+
+Grounding hierarchy: **existence > relevance > margin**. Each is a different evidence grade. The controller checks all three in order.
+
+### Finding 13: Section integrity catches fabrication invisible to existence oracles
+Extending grounding from "does this RFC exist?" to "did the model cite the right section?" RFC 6455 §5.1 isn't the WebSocket opening handshake (that's §4). RFC 7589 doesn't have a §5.1.1. The existence oracle says CLEAN for both — the RFCs are real. Section integrity reveals the model fabricated section-level claims: **correct name, wrong address.**
+
+Three-level oracle hierarchy:
+1. **Existence**: does the document exist? (catches fabricated identifiers)
+2. **Relevance**: is it about the right topic? (catches "real but irrelevant")
+3. **Address integrity**: does the cited section exist and match? (catches "right book, wrong page")
+
+Each level catches fabrication invisible to the level above. **Margin doesn't flag this** — address fabrication has high margin because the model isn't uncertain, it's confidently wrong about intra-document structure. Three previously-CLEAN FAST_PATH prompts demoted to WARN with always-on section integrity.
+
+### Where findings land in paper 15 (cite, don't absorb)
 
 | Finding | Version | Section | Role |
 |---------|---------|---------|------|
-| TC as triage | v0.2 | §3.2 LLM Hallucination | T_commit is communicative closure (C1), not confidence slope |
-| Per-namespace fabrication | v0.2 | §3.2 | Concrete σ calibration: memorization spectrum as boundary load curve |
-| Lock principle | v0.2 | §3.2 | Measurement methodology for exposing latent fabrication |
-| Format shift evasion | v0.2 | §3.2 | Boundary load avoidance behavior — system dodges verification channel |
-| Hub as liar generator | v0.3 | §4 Governor/Threat model | Coupling failure mode: aggregation without competence |
-| Selector as main hazard | v0.3 | §4.1.2 Threat model | New failure mode: "aggregation operator lacks competence" |
-| E_t operationalization | v0.4 | Appendix C | Resolver hierarchy: gate-grade (external) vs triage-grade (internal) |
-| Platform-invariant resolvers | v0.4 | Appendix C | E_t measurement requires definitive results, not platform-dependent HTTP |
-| All confirmed predictions | v0.5 | §5 Falsifiability | 5 confirmed, 3 testable, 1 negative result |
-| NOTE.md as write-up | v1.0 | Decision point | Include as empirical appendix, or cite as separate technical report? |
+| TC as triage (1) | v0.2 | §3.2 LLM Hallucination | T_commit is communicative closure (C1), not confidence slope |
+| Per-namespace fabrication (2) | v0.2 | §3.2 | Concrete σ calibration: memorization spectrum as boundary load curve |
+| Lock principle (3) | v0.2 | §3.2 | Measurement methodology for exposing latent fabrication |
+| Format shift evasion (4) | v0.2 | §3.2 | Boundary load avoidance behavior — system dodges verification channel |
+| Hub as liar generator (5) | v0.3 | §4 Governor/Threat model | Coupling failure mode: aggregation without competence |
+| Selector as main hazard (5) | v0.3 | §4.1.2 Threat model | "Aggregation operator lacks competence" |
+| Model-specific spectrum (7) | v0.3 | §4.1.2 Threat model | Governance policies are model-indexed, not transferable |
+| Temperature as lie amplifier (8) | v0.4 | Appendix C | Sampling noise vs knowledge boundary decomposition of E_t |
+| Margin as control signal (11) | v0.4 | Appendix C | Computable, causal predictor for governor intervention decisions |
+| Grounding hierarchy (12) | v0.4 | Appendix C | E_t operationalization: existence > relevance > margin |
+| Section integrity (13) | v0.4 | Appendix C | "Correct name, wrong address" as a new failure class beyond existence |
+| Scale closes boundaries (9) | v0.5 | §5 Falsifiability | Testable: fabrication ∝ 1/(memorization × scale) |
+| Seed sensitivity (10) | v0.5 | §5 Falsifiability | Testable: margin predicts drift class across model families |
+| All confirmed predictions | v0.5 | §5 Falsifiability | Now 8+ confirmed, multiple testable |
+| Detector paper | v1.0 | Citation | Cite as separate paper, not appendix |
 
 ### Insert for the paper (engineering register)
 
