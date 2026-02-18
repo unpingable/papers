@@ -1,0 +1,17 @@
+flowchart LR
+  A["Agent / Proposer<br/>(untrusted)"] --> P["Proposal<br/>Typed claims<br/>DRAFT → PROPOSED"]
+
+  subgraph CK["Commitment Boundary (C_k Gate)"]
+    direction TB
+    G["Evaluate + Enforce<br/>Evidence · Scope · Budget · Ledger"] -->|ALLOW| V[VERIFIED]
+    G -->|BLOCKED| R["REJECTED<br/>(FSM terminal)"]
+    V --> AP[APPLIED]
+    G --> RCPT["Receipt<br/>(hash-chained)"]
+  end
+
+  P --> G
+
+  T["Evidence Channels<br/>Tools · FileSnapshot · Network<br/>(untrusted)"] --> G
+
+  RCPT --> L[("Ledger<br/>WAL durability")]
+  L --> G

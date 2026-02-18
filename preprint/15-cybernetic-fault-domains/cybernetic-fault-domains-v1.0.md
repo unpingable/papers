@@ -5,6 +5,8 @@ header-includes:
   - \usepackage{tabularx}
   - \usepackage{ragged2e}
   - \newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+  - \let\oldtableofcontents\tableofcontents
+  - \renewcommand{\tableofcontents}{\oldtableofcontents\clearpage}
 ---
 
 # Cybernetic Fault Domains: When Commitment Outruns Verification
@@ -912,25 +914,7 @@ If an agent can bypass it without altering the commitment path's architecture, i
 
 **Figure:**
 
-```mermaid
-flowchart LR
-  A[Agent / Proposer\n&#40;untrusted&#41;] --> P[Proposal\nTyped claims\nDRAFT → PROPOSED]
-
-  subgraph CK["Commitment Boundary &#40;C_k Gate&#41;"]
-    direction TB
-    G[Evaluate + Enforce\nEvidence · Scope · Budget · Ledger] -->|ALLOW| V[VERIFIED]
-    G -->|BLOCKED| R[REJECTED\n&#40;FSM terminal&#41;]
-    V --> AP[APPLIED]
-    G --> RCPT[Receipt\n&#40;hash-chained&#41;]
-  end
-
-  P --> G
-
-  T[Evidence Channels\nTools · FileSnapshot · Network\n&#40;untrusted&#41;] --> G
-
-  RCPT --> L[(Ledger\nWAL durability)]
-  L --> G
-```
+![](governor-pattern.png){width=95%}
 
 > **Figure 1.** Governor pattern at C_k. Untrusted agent proposals are evaluated by an enforcement kernel that gates commitment on verifiable preconditions (evidence, scope, budgets, ledger consistency). Every decision emits a tamper-evident, hash-chained receipt; allowed proposals advance through an enforced FSM (DRAFT → PROPOSED → VERIFIED → APPLIED), while failed checks produce a BLOCKED gate verdict and a REJECTED FSM terminal state. Evidence channels (tools, filesystem, network) are untrusted — receipts record what was returned, not whether it was true. (BLOCKED is the gate verdict; REJECTED is the FSM state. A BLOCKED proposal can be revised and resubmitted from DRAFT.)
 
@@ -972,9 +956,9 @@ Each entry: failure mode → signal → control → invariant preserved → resi
 
 | Failure mode | Signal | Control | Invariant | Residual |
 |---|---|---|---|---|
-| **Fabricated claims** — agent asserts "tests pass" without running them | Claim of type TESTS_PASS with no CmdRun receipt | Evidence gate: BLOCKED. Structured rejection with missing receipt list | No HARD claim crosses C_k without evidence | Agent can run tests against a manipulated environment |
+| **Fabricated claims** — agent asserts "tests pass" without running them | Claim of type `TESTS_PASS` with no `CmdRun` receipt | Evidence gate: BLOCKED. Structured rejection with missing receipt list | No HARD claim crosses C_k without evidence | Agent can run tests against a manipulated environment |
 | **Hallucinated completion** — agent claims "done" without artifacts | Exit shape check: FINALIZE event without supporting evidence chain | Evidence gate: BLOCKED. Requires receipt chain from START through all required stages | Every run has exactly one FINALIZE with complete evidence trail | Agent can produce minimal-but-technically-valid evidence |
-| **Retry spirals** — same action, same failure, repeated | ReplanTracker: count of identical replans within time window exceeds budget | Hysteresis: replan budget exhaustion blocks further attempts | Bounded waste: at most MAX_REPLANS identical attempts per window | Agent can vary the action slightly to evade dedup |
+| **Retry spirals** — same action, same failure, repeated | `ReplanTracker`: count of identical replans within time window exceeds budget | Hysteresis: replan budget exhaustion blocks further attempts | Bounded waste: at most `MAX_REPLANS` identical attempts per window | Agent can vary the action slightly to evade dedup |
 | **Temporal drift** — contradicts prior decisions without new evidence | Claim diff: new claim conflicts with ledger decision; premise quarantine: recurring premise without fresh evidence | Dissent persistence: contradiction recorded, not silently resolved. Quarantine downweights stale premises | Contradictions are visible in the audit trail; stale premises lose influence | Drift detection depends on claim granularity — vague claims may not trigger |
 
 **Tool failures** (environment is wrong or adversarial):
@@ -991,7 +975,7 @@ Each entry: failure mode → signal → control → invariant preserved → resi
 |---|---|---|---|---|
 | **Compromised host** | Not detectable from within governor | **Out of scope.** Governor assumes execution integrity | None — governance is moot if the governor itself is compromised | Requires trusted execution environment |
 | **Tampered ledger** | Hash chain validation: prev_receipt_hash mismatch | Chain break detected; governor halts or enters degraded mode | Tamper-evidence: post-hoc detection of modification | Cannot prevent tampering, only detect it after the fact |
-| **Clock skew** | Drift detector: CLOCK_SKEW_DOMINANCE mode | Timestamps flagged as unreliable; evidence requiring temporal ordering is downweighted | Temporal claims are qualified by clock reliability | NTP-level skew is tolerable; adversarial clock manipulation is not governed |
+| **Clock skew** | Drift detector: `CLOCK_SKEW_DOMINANCE` mode | Timestamps flagged as unreliable; evidence requiring temporal ordering is downweighted | Temporal claims are qualified by clock reliability | NTP-level skew is tolerable; adversarial clock manipulation is not governed |
 
 **Operator failures** (human in the loop is wrong):
 
@@ -1015,13 +999,13 @@ This is an existence proof in one domain (code/tool-call governance for LLM agen
 
 BLI operates across three nested fault domains:
 
-1. **Temporal.** A 6-state FSM (IDLE → PROPOSED → EVIDENCE_WAIT → COMMIT_ELIGIBLE → COMMIT_APPLIED, with FREEZE as a terminal lockout) enforces that state transitions require evidence and follow a fixed ordering. The FSM is the clock — proposals advance only when evidence arrives.
+1. **Temporal.** A 6-state FSM (`IDLE` → `PROPOSED` → `EVIDENCE_WAIT` → `COMMIT_ELIGIBLE` → `COMMIT_APPLIED`, with `FREEZE` as a terminal lockout) enforces that state transitions require evidence and follow a fixed ordering. The FSM is the clock — proposals advance only when evidence arrives.
 
-2. **Authority.** The NLAI gate separates the proposer (agent) from the committer (governor). Evidence types are strictly enumerated: TOOL_OUTPUT, SENSOR_DATA, USER_ASSERTION, EXTERNAL_DOCUMENT, CRYPTOGRAPHIC_PROOF. Explicitly excluded: MODEL_TEXT, PROMPT_INJECTION, SELF_REFERENCE, UNATTRIBUTED_CLAIM. The model influences proposals but has zero direct authority over commits.
+2. **Authority.** The NLAI gate separates the proposer (agent) from the committer (governor). Evidence types are strictly enumerated: `TOOL_OUTPUT`, `SENSOR_DATA`, `USER_ASSERTION`, `EXTERNAL_DOCUMENT`, `CRYPTOGRAPHIC_PROOF`. Explicitly excluded: `MODEL_TEXT`, `PROMPT_INJECTION`, `SELF_REFERENCE`, `UNATTRIBUTED_CLAIM`. The model influences proposals but has zero direct authority over commits.
 
-3. **Contradiction.** Contradictions are first-class persistent objects with severity, status, and resolution tracking. BLI defines a stability condition: the system is stable iff $E[\lambda_{\text{open}}] \leq E[\mu_{\text{close}}]$ — the arrival rate of open contradictions must not exceed the closure rate. Sustained violation produces GLASS_OSSIFICATION (contradiction accumulation) or BUDGET_STARVATION (repair blocked by resource exhaustion).
+3. **Contradiction.** Contradictions are first-class persistent objects with severity, status, and resolution tracking. BLI defines a stability condition: the system is stable iff $E[\lambda_{\text{open}}] \leq E[\mu_{\text{close}}]$ — the arrival rate of open contradictions must not exceed the closure rate. Sustained violation produces `GLASS_OSSIFICATION` (contradiction accumulation) or `BUDGET_STARVATION` (repair blocked by resource exhaustion).
 
-agent_gov realizes all three domains. The BLI FSM maps to `ProposalState` transitions with guard conditions. The NLAI gate maps to the evidence gate's hard-claim enforcement and custody scoring. The contradiction domain maps to the decision ledger's conflict detection and the drift detector's premise quarantine. BLI's six regimes (HEALTHY_LATTICE, BUDGET_STARVATION, GLASS_OSSIFICATION, CHATBOT_CEREMONY, PERMEABLE_MEMBRANE, EXTRACTION_COLLAPSE) map to agent_gov's four operational regimes (ELASTIC, WARM, DUCTILE, UNSTABLE) — a deliberate compression from diagnostic taxonomy to control-actionable classification.
+agent_gov realizes all three domains. The BLI FSM maps to `ProposalState` transitions with guard conditions. The NLAI gate maps to the evidence gate's hard-claim enforcement and custody scoring. The contradiction domain maps to the decision ledger's conflict detection and the drift detector's premise quarantine. BLI's six regimes (`HEALTHY_LATTICE`, `BUDGET_STARVATION`, `GLASS_OSSIFICATION`, `CHATBOT_CEREMONY`, `PERMEABLE_MEMBRANE`, `EXTRACTION_COLLAPSE`) map to agent_gov's four operational regimes (`ELASTIC`, `WARM`, `DUCTILE`, `UNSTABLE`) — a deliberate compression from diagnostic taxonomy to control-actionable classification.
 
 The relationship is ancestor, not isomorphism. BLI defines what a governor must preserve; agent_gov defines how to preserve it under real execution conditions — tool latency, filesystem races, multi-agent contention, and adversarial model output.
 
@@ -1033,13 +1017,13 @@ The enforcement pipeline has five stages: **propose → observe → evaluate →
 
 **FSM lifecycle.** Every proposal traverses a `ProposalState` machine: DRAFT → PROPOSED → VERIFIED → APPLIED, with REJECTED as a lateral exit. Terminal states (REJECTED, APPLIED) are irreversible. Guard conditions enforce that `propose()` requires non-empty claims, `verify()` requires non-empty receipts, and no proposal can reach APPLIED without passing VERIFIED. The FSM is the authority — proposals advance only when guards clear.
 
-**Evidence gate.** Claims are typed (`ClaimType` enum: FILE_EXISTS, SYMBOL_DEFINED, API_SURFACE, TESTS_PASS, DECISION, CHANGESET, WORK_RESERVATION, INTENT) and classified as SOFT (tentative) or HARD (definitive). HARD claims without evidence produce BLOCKED status — a hard gate, not a warning. The gate also computes a custody score across three axes: accountability perception (Ap), invariant coupling (Ip), and failure explicitness (Fp). Any axis below 0.5 triggers blocking. Contradictions with existing ledger entries are detected and, in strict mode, produce BLOCKED status with conflict details.
+**Evidence gate.** Claims are typed (`ClaimType` enum: `FILE_EXISTS`, `SYMBOL_DEFINED`, `API_SURFACE`, `TESTS_PASS`, `DECISION`, `CHANGESET`, `WORK_RESERVATION`, `INTENT`) and classified as SOFT (tentative) or HARD (definitive). HARD claims without evidence produce BLOCKED status — a hard gate, not a warning. The gate also computes a custody score across three axes: accountability perception (Ap), invariant coupling (Ip), and failure explicitness (Fp). Any axis below 0.5 triggers blocking. Contradictions with existing ledger entries are detected and, in strict mode, produce BLOCKED status with conflict details.
 
 **Receipt kernel.** Every governance decision produces a tamper-evident receipt: a JSON envelope containing the event type, claim hashes, evidence hashes, verdict, and a `prev_event_hash` linking to the prior receipt in the same run. Serialization uses canonical JSON (sorted keys, compact separators, ASCII-safe) to ensure deterministic hashing. The hash function is SHA-256. This is a tamper-evident hash chain, not a cryptographic signature scheme — there is no key management, no signing ceremony, no non-repudiation claim. The chain provides after-the-fact auditability: given the receipt trail, a third party can mechanically verify that every commitment was preceded by verification. Thirteen constitutional invariants are evaluated per receipt cycle, organized as 6 structural (ledger chain validity, single finalize, exit shape) and 6 hallucination-specific (claims-evidence binding, confidence sanity, output bound to claims, refs closed world) plus 1 oracle invariant (evidence-source independence class, not truth-oracle — checks that evidence comes from a source independent of the claim-maker).
 
 **Scope governor.** Absence is restrictive: if a permission axis is not explicitly granted, it is denied. Tool calls outside the declared permission boundary are rejected. Escalation requires an explicit request and produces a receipt. Agent permissions constrain allowed paths, denied paths, and maximum blast radius per changeset.
 
-**Regime detection.** A `RegimeDetector` maps measurable signals (hysteresis, relaxation time, tool gain, anisotropy, provenance deficit, budget pressure, contradiction rate, rejection rate, dangerous claim rate) to four operational regimes: ELASTIC (healthy), WARM (drifting), DUCTILE (path-dependent), UNSTABLE (cascade). Classification is hierarchical — UNSTABLE checked first, ELASTIC is the default. Tool gain ≥ 1.0 (perturbations amplifying) triggers UNSTABLE with EMERGENCY_STOP as the recommended action. Regime transitions are logged with timestamps, trigger reasons, and the signal snapshot that caused the transition.
+**Regime detection.** A `RegimeDetector` maps measurable signals (hysteresis, relaxation time, tool gain, anisotropy, provenance deficit, budget pressure, contradiction rate, rejection rate, dangerous claim rate) to four operational regimes: ELASTIC (healthy), WARM (drifting), DUCTILE (path-dependent), UNSTABLE (cascade). Classification is hierarchical — UNSTABLE checked first, ELASTIC is the default. Tool gain ≥ 1.0 (perturbations amplifying) triggers `UNSTABLE` with `EMERGENCY_STOP` as the recommended action. Regime transitions are logged with timestamps, trigger reasons, and the signal snapshot that caused the transition.
 
 #### New Material Beyond Paper 12
 
@@ -1049,9 +1033,9 @@ BLI defines what a governor must preserve. agent_gov adds operational machinery 
 
 2. **Homeostat with epistemic vitals.** BLI defines regimes but not adaptive control within regimes. agent_gov implements a homeostat that tracks epistemic vitals — revision rate, contradiction rate, hedge rate, refusal rate, support deficit rate, retrieval coverage — against setpoints. When vitals deviate, the homeostat computes tuning deltas (confidence ceiling, support bias, revision cost multiplier) that adjust governance intensity. An exploration budget (plasticity tokens) gates entry into relaxed-constraint contexts (BRAINSTORM, HYPOTHESIS, SYNTHESIS). Budget depletion forces return to STANDARD mode — exploration is mechanically bounded, not trust-based.
 
-3. **Hysteresis and anti-churn.** BLI identifies hysteresis as an indicator of interiority but does not specify anti-oscillation mechanisms. agent_gov implements asymmetric transition thresholds (A_LOW=0.40, A_HIGH=0.75) that prevent mode oscillation — the system must exceed the high threshold to enter a stricter regime and drop below the low threshold to relax. A replan tracker limits identical retry attempts per time window (MAX_REPLANS). Regression detection flags verified→unverified transitions on the same claim. These are anti-churn mechanisms: they prevent the governor from thrashing between regimes under noisy signals.
+3. **Hysteresis and anti-churn.** BLI identifies hysteresis as an indicator of interiority but does not specify anti-oscillation mechanisms. agent_gov implements asymmetric transition thresholds (`A_LOW`=0.40, `A_HIGH`=0.75) that prevent mode oscillation — the system must exceed the high threshold to enter a stricter regime and drop below the low threshold to relax. A replan tracker limits identical retry attempts per time window (`MAX_REPLANS`). Regression detection flags verified→unverified transitions on the same claim. These are anti-churn mechanisms: they prevent the governor from thrashing between regimes under noisy signals.
 
-4. **Named drift failure modes.** BLI defines contradiction persistence as a property. agent_gov operationalizes temporal drift detection with four named failure modes: ASYMMETRIC_PERSISTENCE (one agent accumulates state while others are stateless), CLOCK_SKEW_DOMINANCE (temporal advantage exploited for priority), PREMISE_RECURRENCE (same claim repeated without fresh evidence), ATTENTION_SKEW (disproportionate contested assertions from a single source). Detection is based on observable dynamics — occurrence counts, staleness intervals, source diversity — not intent inference. When a premise exceeds the recurrence threshold (≥3 occurrences without evidence), it is quarantined: weight reduced to 0.1, lowering its influence in downstream decisions. Quarantine auto-releases when fresh evidence arrives or after a silence interval.
+4. **Named drift failure modes.** BLI defines contradiction persistence as a property. agent_gov operationalizes temporal drift detection with four named failure modes: `ASYMMETRIC_PERSISTENCE` (one agent accumulates state while others are stateless), `CLOCK_SKEW_DOMINANCE` (temporal advantage exploited for priority), `PREMISE_RECURRENCE` (same claim repeated without fresh evidence), `ATTENTION_SKEW` (disproportionate contested assertions from a single source). Detection is based on observable dynamics — occurrence counts, staleness intervals, source diversity — not intent inference. When a premise exceeds the recurrence threshold (≥3 occurrences without evidence), it is quarantined: weight reduced to 0.1, lowering its influence in downstream decisions. Quarantine auto-releases when fresh evidence arrives or after a silence interval.
 
 5. **Detector integration.** BLI does not address mid-generation intervention. agent_gov compresses 19 raw signals (from regime detection, drift analysis, epistemic tracking, and budget monitoring) into 5 control signals that modify the evidence threshold $E_t$ in real time. This enables mid-generation intervention on low-coherence branches — the governor can tighten constraints during a run, not just between runs.
 
@@ -1392,105 +1376,115 @@ This framework is offered as instrumentation and a gate, not an ideology.
 
 ---
 
+```{=latex}
+\begin{landscape}
+\scriptsize
+```
+
 ## Appendix A: Claim → Module → Test Map
 
 *Every claim gets a pointer to enforcement code and a test. Entries without tests are noted. Scope: agent_gov (code/tool-call governor) only.*
 
 **PROPOSAL/COMMIT SEPARATION**
 
-| ID | Claim | Enforcement | Test | Notes |
-|----|-------|-------------|------|-------|
-| C-01 | Proposals cannot reach APPLIED without passing VERIFIED | `fsm.py`: `ProposalState` enum + transition guards | `test_claim_fsm.py::TestStatusTransition` | |
-| C-02 | Terminal states (REJECTED, APPLIED) are irreversible | `fsm.py`: `ProposalState.REJECTED`, `.APPLIED` | `test_fsm.py`, `test_claim_fsm.py` | |
-| C-03 | Claims are typed, not free-form strings | `claims.py`: `Claim` class + `ClaimType` enum | `test_claims.py::TestClaimValidation` | |
+| ID | Claim | Enforcement | Test |
+|----|-------|-------------|------|
+| C-01 | Proposals cannot reach APPLIED without passing VERIFIED | `fsm.py`: `ProposalState` enum + transition guards | `test_claim_fsm.py::TestStatusTransition` |
+| C-02 | Terminal states (REJECTED, APPLIED) are irreversible | `fsm.py`: `ProposalState.REJECTED`, `.APPLIED` | `test_fsm.py`, `test_claim_fsm.py` |
+| C-03 | Claims are typed, not free-form strings | `claims.py`: `Claim` class + `ClaimType` enum | `test_claims.py::TestClaimValidation` |
 
 **EVIDENCE GATE**
 
-| ID | Claim | Enforcement | Test | Notes |
-|----|-------|-------------|------|-------|
-| C-04 | Hard claims require evidence (no silent pass-through) | `evidence_gate.py`: `EvidenceGate.check()` | `test_evidence_gate.py::TestHardClaimEvidenceRequirement` | |
-| C-05 | Blocked status prevents commitment | `evidence_gate.py`: `EvidenceGateStatus.BLOCKED` | `test_evidence_gate.py::TestBlockedStatus` | |
-| C-06 | Missing evidence produces structured rejection feedback | `fsm.py`: `RejectionInfo` dataclass | `test_rejection_feedback.py::TestRejectionInfo` | |
+| ID | Claim | Enforcement | Test |
+|----|-------|-------------|------|
+| C-04 | Hard claims require evidence (no silent pass-through) | `evidence_gate.py`: `EvidenceGate.check()` | `test_evidence_gate.py::TestHardClaimEvidenceRequirement` |
+| C-05 | Blocked status prevents commitment | `evidence_gate.py`: `EvidenceGateStatus.BLOCKED` | `test_evidence_gate.py::TestBlockedStatus` |
+| C-06 | Missing evidence produces structured rejection feedback | `fsm.py`: `RejectionInfo` dataclass | `test_rejection_feedback.py::TestRejectionInfo` |
 
 **RECEIPT CHAIN**
 
-| ID | Claim | Enforcement | Test | Notes |
-|----|-------|-------------|------|-------|
-| C-07 | Receipts are immutable | `receipt_kernel/envelope.py`: `make_envelope()` | `test_ledger_chain.py::TestEnvelopeHashing` | Frozen dicts, not frozen dataclasses |
-| C-08 | Hash chain links receipts via prev_event_hash | `receipt_kernel/envelope.py`: `seal_envelope()`, `verify_envelope_hash()` | `test_ledger_chain.py::TestLedgerChain` | Tamper-evident, not signed |
-| C-09 | Canonical JSON ensures deterministic serialization | `receipt_kernel/envelope.py`: `canonical_json()` | `test_canonical_json.py::TestCanonicalJson` | |
+| ID | Claim | Enforcement | Test |
+|----|-------|-------------|------|
+| C-07 | Receipts are immutable (frozen dicts, not frozen dataclasses) | `receipt_kernel/envelope.py`: `make_envelope()` | `test_ledger_chain.py::TestEnvelopeHashing` |
+| C-08 | Hash chain links receipts via prev_event_hash (tamper-evident, not signed) | `receipt_kernel/envelope.py`: `seal_envelope()`, `verify_envelope_hash()` | `test_ledger_chain.py::TestLedgerChain` |
+| C-09 | Canonical JSON ensures deterministic serialization | `receipt_kernel/envelope.py`: `canonical_json()` | `test_canonical_json.py::TestCanonicalJson` |
 
 **CONSTITUTIONAL INVARIANTS**
 
 *Structural (6):*
 
-| ID | Claim | Enforcement | Test | Notes |
-|----|-------|-------------|------|-------|
-| C-10 | Ledger chain validity (hash chain integrity) | `invariants/ledger_chain_valid.py`: `LedgerChainValidInvariant` | `test_ledger_chain.py::test_valid_chain_passes` | |
-| C-11 | Receipt completeness (all required evidence present) | `invariants/receipt_completeness.py`: `ReceiptCompletenessInvariant` | `test_invariants_smoke.py` | |
-| C-12 | Evaluation completeness (no silent downgrade) | `invariants/evaluation_completeness.py`: `EvaluationCompletenessInvariant` | `test_invariants_smoke.py` | Incomplete evidence cannot produce PASS |
-| C-13 | Finalization completeness (finalize is last event with verdict) | `invariants/finalization_completeness.py`: `FinalizationCompletenessInvariant` | `test_invariants_smoke.py` | No invisible endings |
-| C-14 | Single finalize (exactly one RUN_FINALIZE per run) | `invariants/run_shape.py`: `SingleFinalizeInvariant` | `test_invariants_smoke.py` | |
-| C-15 | Required stage path (stages visited in order) | `invariants/run_shape.py`: `StageRequiredPathInvariant` | `test_invariants_smoke.py` | |
+| ID | Claim | Enforcement | Test |
+|----|-------|-------------|------|
+| C-10 | Ledger chain validity (hash chain integrity) | `invariants/ledger_chain_valid.py`: `LedgerChainValidInvariant` | `test_ledger_chain.py::test_valid_chain_passes` |
+| C-11 | Receipt completeness (all required evidence present) | `invariants/receipt_completeness.py`: `ReceiptCompletenessInvariant` | `test_invariants_smoke.py` |
+| C-12 | Evaluation completeness — incomplete evidence cannot produce PASS | `invariants/evaluation_completeness.py`: `EvaluationCompletenessInvariant` | `test_invariants_smoke.py` |
+| C-13 | Finalization completeness — finalize is last event, no invisible endings | `invariants/finalization_completeness.py`: `FinalizationCompletenessInvariant` | `test_invariants_smoke.py` |
+| C-14 | Single finalize (exactly one `RUN_FINALIZE` per run) | `invariants/run_shape.py`: `SingleFinalizeInvariant` | `test_invariants_smoke.py` |
+| C-15 | Required stage path (stages visited in order) | `invariants/run_shape.py`: `StageRequiredPathInvariant` | `test_invariants_smoke.py` |
 
 *Hallucination (6):*
 
-| ID | Claim | Enforcement | Test | Notes |
-|----|-------|-------------|------|-------|
-| C-16 | Claims-evidence binding (factual claims have evidence) | `invariants/claims_evidence_binding.py`: `ClaimsEvidenceBindingInvariant` | `test_hallucination_invariants.py` | |
-| C-17 | Confidence sanity (evidence strength ≥ confidence claim) | `invariants/confidence_sanity.py`: `ConfidenceSanityInvariant` | `test_hallucination_invariants.py` | |
-| C-18 | Output bound to claims (claims_map binds to output) | `invariants/output_bound_to_claims.py`: `OutputBoundToClaimsInvariant` | `test_hallucination_invariants.py` | |
-| C-19 | Refs closed world (evidence refs from this run only) | `invariants/refs_closed_world.py`: `RefsClosedWorldInvariant` | `test_hallucination_invariants.py` | Prevents citation laundering |
-| C-20 | Epistemic mode requirements (mode-specific minimums) | `invariants/epistemic_mode_requirements.py`: `EpistemicModeRequirementsInvariant` | `test_hallucination_invariants.py` | Factual/mixed must have claims_map |
-| C-21 | Tool trace consistency (tool claims match tool_trace) | `invariants/tool_trace_consistency.py`: `ToolTraceConsistencyInvariant` | `test_hallucination_invariants.py` | |
+| ID | Claim | Enforcement | Test |
+|----|-------|-------------|------|
+| C-16 | Claims-evidence binding (factual claims have evidence) | `invariants/claims_evidence_binding.py`: `ClaimsEvidenceBindingInvariant` | `test_hallucination_invariants.py` |
+| C-17 | Confidence sanity (evidence strength ≥ confidence claim) | `invariants/confidence_sanity.py`: `ConfidenceSanityInvariant` | `test_hallucination_invariants.py` |
+| C-18 | Output bound to claims (claims_map binds to output) | `invariants/output_bound_to_claims.py`: `OutputBoundToClaimsInvariant` | `test_hallucination_invariants.py` |
+| C-19 | Refs closed world — prevents citation laundering | `invariants/refs_closed_world.py`: `RefsClosedWorldInvariant` | `test_hallucination_invariants.py` |
+| C-20 | Epistemic mode requirements (factual/mixed must have claims_map) | `invariants/epistemic_mode_requirements.py`: `EpistemicModeRequirementsInvariant` | `test_hallucination_invariants.py` |
+| C-21 | Tool trace consistency (tool claims match tool_trace) | `invariants/tool_trace_consistency.py`: `ToolTraceConsistencyInvariant` | `test_hallucination_invariants.py` |
 
 *Oracle (1):* ("Oracle" here means evidence-source independence class, not truth-oracle. The invariant checks that evidence comes from a source independent of the claim-maker, not that the evidence is correct.)
 
-| ID | Claim | Enforcement | Test | Notes |
-|----|-------|-------------|------|-------|
-| C-22 | Oracle independence (evidence meets minimum independence class) | `invariants/oracle_independence.py`: `OracleIndependenceInvariant` | `test_oracle_independence.py` | 3-level policy table by mode/claim_level |
+| ID | Claim | Enforcement | Test |
+|----|-------|-------------|------|
+| C-22 | Oracle independence — 3-level policy table by mode/claim_level | `invariants/oracle_independence.py`: `OracleIndependenceInvariant` | `test_oracle_independence.py` |
 
 **REGIME DETECTION**
 
-| ID | Claim | Enforcement | Test | Notes |
-|----|-------|-------------|------|-------|
-| C-23 | Risk scalar computed from measurable signals | `risk_function.py`: `compute_risk()` + `RiskComponents` | `test_risk_function.py::TestRiskComponents` | V(x̂_t) = α₁·untrusted + α₂·scope + α₃·irrev + α₄·evidence_gap + α₅·anomaly |
-| C-24 | Regime thresholds classify operational state | `regime.py`: `OperationalRegime` enum + `RegimeDetector` | `test_regime.py::TestOperationalRegime` | ELASTIC / WARM / DUCTILE / UNSTABLE |
-| C-25 | Tool power decomposed into component signals | `risk_function.py`: `RiskComponents` (untrusted, scope, irreversibility, evidence_gap, anomaly) | `test_risk_function.py::TestRiskComponents` | |
+| ID | Claim | Enforcement | Test |
+|----|-------|-------------|------|
+| C-23 | Risk scalar V(x̂_t) = α₁·untrusted + α₂·scope + α₃·irrev + α₄·evidence_gap + α₅·anomaly | `risk_function.py`: `compute_risk()` + `RiskComponents` | `test_risk_function.py::TestRiskComponents` |
+| C-24 | Regime thresholds classify operational state (ELASTIC / WARM / DUCTILE / UNSTABLE) | `regime.py`: `OperationalRegime` enum + `RegimeDetector` | `test_regime.py::TestOperationalRegime` |
+| C-25 | Tool power decomposed into component signals | `risk_function.py`: `RiskComponents` (untrusted, scope, irreversibility, evidence_gap, anomaly) | `test_risk_function.py::TestRiskComponents` |
 
 **TEMPORAL COHERENCE**
 
-| ID | Claim | Enforcement | Test | Notes |
-|----|-------|-------------|------|-------|
-| C-26 | Premise quarantine downweights stale claims | `epistemic.py`: `GroundedClaim` status → STALE | `test_epistemic.py::TestClaimStatusTransitions` | |
-| C-27 | Hysteresis prevents mode oscillation | `hysteresis.py`: `check_mode_transition()` with A_LOW=0.40, A_HIGH=0.75 | `test_hysteresis.py::TestModeTransition` | |
-| C-28 | Replan budget limits retry spirals | `hysteresis.py`: `ReplanTracker` + `check_replan()` | `test_hysteresis.py::TestReplanBudget` | MAX_REPLANS per window |
-| C-29 | Regression detection flags verified→unverified | `hysteresis.py`: `detect_regressions()` | `test_hysteresis.py::TestRegressionDetection` | |
+| ID | Claim | Enforcement | Test |
+|----|-------|-------------|------|
+| C-26 | Premise quarantine downweights stale claims | `epistemic.py`: `GroundedClaim` status → STALE | `test_epistemic.py::TestClaimStatusTransitions` |
+| C-27 | Hysteresis prevents mode oscillation | `hysteresis.py`: `check_mode_transition()` with `A_LOW`=0.40, `A_HIGH`=0.75 | `test_hysteresis.py::TestModeTransition` |
+| C-28 | Replan budget limits retry spirals (`MAX_REPLANS` per window) | `hysteresis.py`: `ReplanTracker` + `check_replan()` | `test_hysteresis.py::TestReplanBudget` |
+| C-29 | Regression detection flags verified→unverified | `hysteresis.py`: `detect_regressions()` | `test_hysteresis.py::TestRegressionDetection` |
 
 **MULTI-AGENT**
 
-| ID | Claim | Enforcement | Test | Notes |
-|----|-------|-------------|------|-------|
-| C-30 | Decision conflict: same topic, different choice → hard reject | `ledgers.py`: `DecisionLedger.check_conflict()` | `test_conflicts.py::TestDecisionLedgerConflicts` | |
-| C-31 | Changeset collision: overlapping paths → hard reject | `ledgers.py`: `ChangeLedger` conflict detection | **Untested** | Enforced in code; no test exercises the path. See §5.4 limitation 7 |
-| C-32 | Work reservations with TTL expiry | `claims.py`: `ClaimType.WORK_RESERVATION` + `eta_minutes` | `test_claims.py::TestWorkReservation` | |
+| ID | Claim | Enforcement | Test |
+|----|-------|-------------|------|
+| C-30 | Decision conflict: same topic, different choice → hard reject | `ledgers.py`: `DecisionLedger.check_conflict()` | `test_conflicts.py::TestDecisionLedgerConflicts` |
+| C-31 | Changeset collision: overlapping paths → hard reject | `ledgers.py`: `ChangeLedger` conflict detection | **Untested** — enforced in code; no test exercises the path (see §5.4 limitation 7) |
+| C-32 | Work reservations with TTL expiry | `claims.py`: `ClaimType.WORK_RESERVATION` + `eta_minutes` | `test_claims.py::TestWorkReservation` |
 
 **SCOPE**
 
-| ID | Claim | Enforcement | Test | Notes |
-|----|-------|-------------|------|-------|
-| C-33 | Absence is restrictive (missing axis = NOT ALLOWED) | `scope.py`: `ScopeGovernor.check_scope()` | `test_scope.py::TestScopeContainment` | |
-| C-34 | Escalation requires explicit request + receipt | `scope.py`: `EscalationRequest` + `evaluate_escalation()` | `test_scope.py::TestEscalation` | |
-| C-35 | Agent permissions constrain allowed paths | `scope.py`: `ScopeGrant` + `ToolScopeContract` | `test_scope.py::TestPermissions` | |
+| ID | Claim | Enforcement | Test |
+|----|-------|-------------|------|
+| C-33 | Absence is restrictive (missing axis = NOT ALLOWED) | `scope.py`: `ScopeGovernor.check_scope()` | `test_scope.py::TestScopeContainment` |
+| C-34 | Escalation requires explicit request + receipt | `scope.py`: `EscalationRequest` + `evaluate_escalation()` | `test_scope.py::TestEscalation` |
+| C-35 | Agent permissions constrain allowed paths | `scope.py`: `ScopeGrant` + `ToolScopeContract` | `test_scope.py::TestPermissions` |
 
 **ADAPTIVE CONTROL**
 
-| ID | Claim | Enforcement | Test | Notes |
-|----|-------|-------------|------|-------|
-| C-36 | Epistemic vitals track rates | `homeostat.py`: `EpistemicVitals` dataclass | `test_homeostat.py::TestEpistemicVitals` | revision, contradiction, hedge, refusal rates |
-| C-37 | Homeostat computes tuning deltas from vitals vs setpoints | `homeostat.py`: `compute_tuning()` | `test_homeostat.py::TestHomeostatTuning` | |
+| ID | Claim | Enforcement | Test |
+|----|-------|-------------|------|
+| C-36 | Epistemic vitals track rates (revision, contradiction, hedge, refusal) | `homeostat.py`: `EpistemicVitals` dataclass | `test_homeostat.py::TestEpistemicVitals` |
+| C-37 | Homeostat computes tuning deltas from vitals vs setpoints | `homeostat.py`: `compute_tuning()` | `test_homeostat.py::TestHomeostatTuning` |
 
 37 claims across 9 categories (proposal/commit, evidence gate, receipt chain, constitutional invariants, regime detection, temporal coherence, multi-agent, scope, adaptive control). Constitutional invariants are part of the receipt kernel but listed separately because they are evaluated per receipt cycle. 1 claim untested (C-31). All modules under `src/governor/` unless noted as `receipt_kernel/` or `invariants/`. All tests under `tests/` or `libs/receipt_kernel/tests/`.
+
+```{=latex}
+\end{landscape}
+\normalsize
+```
 
 ---
 
@@ -1695,9 +1689,9 @@ Given: E_t observed, D_t observed, P_req requested
    R_t = (P_req · D_t) / E_t
 
 3. PER-TOOL CAP
-   If R_t > τ(tool):
-     P_max = (τ(tool) · E_t) / D_t
-     DEMOTE to highest privilege tier ≤ P_max
+   If R_t > tau(tool):
+     P_max = (tau(tool) * E_t) / D_t
+     DEMOTE to highest privilege tier <= P_max
      If no tier qualifies: DENY
 
 4. GLOBAL REGIME CHECK
