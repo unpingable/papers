@@ -1,11 +1,20 @@
-# The Gain Geometry of Temporal Mismatch: Shear, Leverage, and Capture in Multi-Timescale Systems
+---
+header-includes:
+  - \usepackage{booktabs}
+  - \let\oldtableofcontents\tableofcontents
+  - \renewcommand{\tableofcontents}{\begingroup\raggedright\hyphenpenalty=10000\exhyphenpenalty=10000\oldtableofcontents\endgroup\clearpage}
+---
+
+# The Gain Geometry of Temporal Mismatch:\ Shear, Leverage, and Capture in Multi-Timescale Systems
 
 **James Beck**
 Independent Researcher
 
-**Date:** February 14, 2026
+**Date:** February 2026
+
 **Series:** Δt Framework, Paper 16
-**Status:** Preprint v0.1
+
+**Status:** Preprint v1.0
 
 ## Abstract
 
@@ -141,7 +150,7 @@ Conditions:
 
 **Lemma 2.5 (Capture is False Leverage).** A system in Regime III satisfies the throughput and authority conditions of Regime I while violating the fidelity condition. It is therefore indistinguishable from Regime I on throughput and authority metrics alone. Detection requires direct measurement of information preservation — mode count, eigenstructure diversity, entropy evolution, contradiction persistence — not self-reported or apparent fidelity, which can be inflated by the same mechanism that produces capture (Section 4.3).
 
-*Proof sketch.* By definition, Regime III shares T ≥ T_min and A ≥ A_min with Regime I. Any diagnostic that measures only throughput and authority will classify Regime III as Regime I. Only metrics sensitive to actual information preservation (mode count, eigenstructure rank, information-theoretic channel capacity measured against pre-reconciliation baselines) can distinguish them. ∎
+*Proof sketch.* By definition, Regime III shares T ≥ T_min and A ≥ A_min with Regime I. Any diagnostic that measures only throughput and authority will classify Regime III as Regime I. Only metrics sensitive to actual information preservation (mode count, eigenstructure rank, information-theoretic channel capacity measured against pre-reconciliation baselines) can distinguish them. QED
 
 This is why capture is dangerous: it passes the leverage test on every metric except the one that matters.
 
@@ -177,10 +186,10 @@ When this fails while throughput and authority hold: capture.
 
 | Coherence | Capacity | Integrity | Regime |
 |---|---|---|---|
-| ✓ | ✓ | ✓ | Leverage |
-| ✗ | — | — | Shear |
-| — | ✗ | — | Shear |
-| ✓ | ✓ | ✗ | Capture |
+| Yes | Yes | Yes | Leverage |
+| No | — | — | Shear |
+| — | No | — | Shear |
+| Yes | Yes | No | Capture |
 
 ---
 
@@ -223,7 +232,7 @@ Execution systems can afford to minimize Δt: the epistemic question has already
 
 This is Paper 9's self-deception problem [9] in new clothes: organizations systematically overestimate the completeness of their map. By eliminating temporal diversity in the name of "alignment" and "efficiency," they move from leverage into a system with no shear but also no ability to detect emerging threats — which then produce catastrophic shear when reality departs from the settled map.
 
-**Worked example.** A technology company shifts from five-year strategic planning to quarterly OKRs. The stated goal is "execution velocity." The immediate effect: cycle time drops, shipping cadence increases, and throughput metrics improve. The baseline between the strategic layer (multi-year market positioning) and the operational layer (quarterly delivery) collapses from ~20× to ~1×. Shear disappears — but so does the temporal aperture that would detect a market shift unfolding on a two-year timescale. When a platform transition arrives (mobile to AI, monolith to microservices, on-prem to cloud), the organization has no layer operating on the timescale where the threat is visible. The quarterly planning horizon cannot see a two-year disruption until it arrives as a quarterly crisis — at which point the response window has closed. The company did not fail to execute. It executed itself out of the ability to see what was coming. This is the execution fallacy: B → 0 eliminates shear and resolution simultaneously. The organization gained stability metrics while losing the discriminating power that stability was supposed to protect.
+**Worked example.** A technology company shifts from five-year strategic planning to quarterly OKRs. The stated goal is "execution velocity." The immediate effect: cycle time drops, shipping cadence increases, and throughput metrics improve. The baseline between the strategic layer (multi-year market positioning) and the operational layer (quarterly delivery) collapses from ~20× to ~1×. Shear disappears — but so does the temporal aperture that would detect a market shift unfolding on a two-year timescale. When a platform transition arrives, the organization has no layer operating on the timescale where the threat is visible. The quarterly planning horizon cannot see a two-year disruption until it arrives as a quarterly crisis — at which point the response window has closed. The company did not fail to execute. It executed itself out of the ability to see what was coming. This is the execution fallacy: B → 0 eliminates shear and resolution simultaneously. The organization gained stability metrics while losing the discriminating power that stability was supposed to protect.
 
 ### 3.3 Three Cognitive Orientations
 
@@ -483,7 +492,7 @@ Even if baseline (internal ideological diversity) were held constant, degrading 
 
 **Prediction 1 (Resolution Scaling).** In multi-model AI architectures, systems with greater perspective independence D and/or timescale separation B will produce higher cross-timescale epistemic resolution (measured by mode count, contradiction persistence, or eigenstructure rank of outputs) than systems with lower D and B, *if and only if* the reconciliation mechanism preserves disagreement information. Systems that reconcile by majority vote or simple averaging (low-fidelity correlators) will show no resolution improvement or negative scaling with D and/or B.
 
-**Prediction 2 (Capture Detection in RLHF — Strongest Target).** This is the most directly testable prediction in the paper. Models subjected to RLHF will show decreasing output mode diversity over training (eigenstructure evaporation), measurable as declining Shannon entropy of output distributions on fixed prompts. This decrease will correlate with increased performance on benchmark tasks (capture looks like improvement) and decreased performance on tasks requiring genuine epistemic diversity (novel reasoning, uncertainty quantification, minority-view representation). The test requires only access to training checkpoints and a fixed prompt set — any team with checkpoint access can run it. If RLHF-trained models show *increasing* output entropy on fixed prompts while benchmark performance also increases, the capture model is falsified for that training regime.
+**Prediction 2 (Capture Detection in RLHF — Strongest Target).** This is the most directly testable prediction in the paper. Models subjected to RLHF will show decreasing output mode diversity over training (eigenstructure evaporation), measurable as declining Shannon entropy of output distributions on fixed prompts. This decrease will correlate with increased performance on benchmark tasks (capture looks like improvement) and decreased performance on tasks requiring genuine epistemic diversity (novel reasoning, uncertainty quantification, minority-view representation). The test requires only access to training checkpoints and a fixed prompt set — any team with checkpoint access can run it. This makes it the strongest prediction *in principle*, though checkpoint access limits who can actually execute it; the most *accessible* test is Prediction 4 (contradiction rate), which requires only runtime observability. If RLHF-trained models show *increasing* output entropy on fixed prompts while benchmark performance also increases, the capture model is falsified for that training regime.
 
 **Prediction 3 (Institutional Baseline Destruction).** Organizations that eliminate temporal diversity (e.g., forcing all planning to quarterly cycles, eliminating long-term research in favor of product sprints) will show improved short-term execution metrics and degraded long-term adaptation, measurable as increased vulnerability to environmental shifts that unfold on timescales longer than the surviving planning horizon.
 
@@ -565,31 +574,31 @@ The governor is not merely a brake. It is a correlator. And the contradiction le
 
 [1] Beck, J. (2025). The Coherence Criterion: A Unified Framework for Stability in Hierarchical Systems. Preprint, Δt Framework Paper 1. doi:10.5281/zenodo.17726789
 
-[2] Beck, J. (2025). The Second Law of Organizations: How Temporal Lag Drives Irreversible Institutional Decay. Preprint, Δt Framework Paper 2. doi:10.5281/zenodo.14606702
+[2] Beck, J. (2025). The Second Law of Organizations: How Temporal Lag Drives Irreversible Institutional Decay. Preprint, Δt Framework Paper 2. doi:10.5281/zenodo.17726889
 
-[3] Beck, J. (2025). Scalar Reward Collapse: A General Theory of Eigenstructure Evaporation in Closed-Loop Systems. Preprint, Δt Framework Paper 3.
+[3] Beck, J. (2025). Scalar Reward Collapse: A General Theory of Eigenstructure Evaporation in Closed-Loop Systems. Preprint, Δt Framework Paper 3. doi:10.5281/zenodo.17791872
 
-[4] Beck, J. (2025). Eigenstructure Collapse in Social Media Platforms: An Application of Scalar Reward Dynamics Theory. Preprint, Δt Framework Paper 4.
+[4] Beck, J. (2025). Eigenstructure Collapse in Social Media Platforms: An Application of Scalar Reward Dynamics Theory. Preprint, Δt Framework Paper 4. doi:10.5281/zenodo.17803843
 
-[5] Beck, J. (2025). Control Laws for Hierarchical Kinetics: Design Principles and Intervention Strategies for Multi-Timescale Systems. Preprint, Δt Framework Paper 5.
+[5] Beck, J. (2025). Control Laws for Hierarchical Kinetics: Design Principles and Intervention Strategies for Multi-Timescale Systems. Preprint, Δt Framework Paper 5. doi:10.5281/zenodo.17727144
 
-[6] Beck, J. (2025). Temporal Closure Requirements for Synthetic Coherence: Architectural Foundations and the Simulator Gap. Preprint, Δt Framework Paper 6.
+[6] Beck, J. (2025). Temporal Closure Requirements for Synthetic Coherence: Architectural Foundations and the Simulator Gap. Preprint, Δt Framework Paper 6. doi:10.5281/zenodo.17849277
 
-[7] Beck, J. (2025). Δt-Constrained Inference: A General Model of Temporal Coherence in Hierarchical Systems. Preprint, Δt Framework Paper 7.
+[7] Beck, J. (2025). Δt-Constrained Inference: A General Model of Temporal Coherence in Hierarchical Systems. Preprint, Δt Framework Paper 7. doi:10.5281/zenodo.17857541
 
-[8] Beck, J. (2025). Detecting Temporal Debt in Language Models and Software Systems: Applications of Δt-Constrained Inference. Preprint, Δt Framework Paper 8.
+[8] Beck, J. (2025). Detecting Temporal Debt in Language Models and Software Systems: Applications of Δt-Constrained Inference. Preprint, Δt Framework Paper 8. doi:10.5281/zenodo.17859323
 
-[9] Beck, J. (2025). Capacity-Constrained Stability: A Control-Theoretic Framework for Institutional Resilience. Preprint, Δt Framework Paper 9.
+[9] Beck, J. (2025). Capacity-Constrained Stability: A Control-Theoretic Framework for Institutional Resilience. Preprint, Δt Framework Paper 9. doi:10.5281/zenodo.18019050
 
-[10] Beck, J. (2026). You Need More Than Just Attention: Invariant Requirements for Temporal Coherence in AI Systems. Preprint, Δt Framework Paper 10.
+[10] Beck, J. (2026). You Need More Than Just Attention: Invariant Requirements for Temporal Coherence in AI Systems. Preprint, Δt Framework Paper 10. doi:10.5281/zenodo.18039926
 
-[11] Beck, J. (2026). Representational Invariance and the Observer Problem in Language Model Alignment. Preprint, Δt Framework Paper 11.
+[11] Beck, J. (2026). Representational Invariance and the Observer Problem in Language Model Alignment. Preprint, Δt Framework Paper 11. doi:10.5281/zenodo.18071264
 
-[12] Beck, J. (2026). Bounded Lattice Inference: A Governed Reasoning Substrate with Persistent State and Non-Linguistic Authority. Preprint, Δt Framework Paper 12.
+[12] Beck, J. (2026). Bounded Lattice Inference: A Governed Reasoning Substrate with Persistent State and Non-Linguistic Authority. Preprint, Δt Framework Paper 12. doi:10.5281/zenodo.18145346
 
-[13] Beck, J. (2026). Temporal Asymmetry in Censorship Systems. Preprint, Δt Framework Paper 13.
+[13] Beck, J. (2026). Temporal Asymmetry in Censorship Systems. Preprint, Δt Framework Paper 13. doi:10.5281/zenodo.18235696
 
-[14] Beck, J. (2026). The Temporal Attack Surface: A Δt Framework for Asynchronous Security Systems. Preprint, Δt Framework Paper 14.
+[14] Beck, J. (2026). The Temporal Attack Surface: A Δt Framework for Asynchronous Security Systems. Preprint, Δt Framework Paper 14. doi:10.5281/zenodo.18236164
 
 [15] Beck, J. (2026). Cybernetic Fault Domains: When Commitment Outruns Verification. Preprint, Δt Framework Paper 15. doi:10.5281/zenodo.18686130
 
@@ -601,4 +610,4 @@ The governor is not merely a brake. It is a correlator. And the contradiction le
 
 [19] Mellers, B., Hertwig, R., and Kahneman, D. (2001). Do Frequency Representations Eliminate Conjunction Effects? An Exercise in Adversarial Collaboration. *Psychological Science* 12(4), pp. 269–275.
 
-[20] Mouffe, C. (2013). *Agonistics: Thinking the World Politically.* Verso.
+[20] Mouffe, C. (2013). *Agonistics: Thinking the World Politically.* Verso. (See also *The Return of the Political*, 1993, and *The Democratic Paradox*, 2000, for the original agonistic pluralism framework.)

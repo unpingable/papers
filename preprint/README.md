@@ -30,3 +30,4 @@ dependencies are summarized below.
 
 ### Synthesis
 - *Cybernetic Fault Domains: When Commitment Outruns Verification* (2026)
+- *The Gain Geometry of Temporal Mismatch: Signed Δt as Baseline Geometry* (2026)
