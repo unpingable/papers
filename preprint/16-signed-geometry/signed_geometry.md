@@ -47,7 +47,7 @@ This is not metaphorical. In radio interferometry, angular resolution scales as:
 
 where λ is wavelength and B is baseline — the physical separation between antennas. Longer baselines produce higher angular resolution. But *only if phase coherence is maintained* between the antennas. If the correlator cannot track the phase relationship, longer baselines produce noise, not resolution.
 
-The structural correspondence is exact:
+The structural correspondence is direct (qualitative, not quantitative — the phase-tracking theory of radio interferometry [16] does not transfer in closed form, but the *type* of the relationship does):
 
 | Interferometry | Δt Framework |
 |---|---|
@@ -223,6 +223,8 @@ Execution systems can afford to minimize Δt: the epistemic question has already
 
 This is Paper 9's self-deception problem [9] in new clothes: organizations systematically overestimate the completeness of their map. By eliminating temporal diversity in the name of "alignment" and "efficiency," they move from leverage into a system with no shear but also no ability to detect emerging threats — which then produce catastrophic shear when reality departs from the settled map.
 
+**Worked example.** A technology company shifts from five-year strategic planning to quarterly OKRs. The stated goal is "execution velocity." The immediate effect: cycle time drops, shipping cadence increases, and throughput metrics improve. The baseline between the strategic layer (multi-year market positioning) and the operational layer (quarterly delivery) collapses from ~20× to ~1×. Shear disappears — but so does the temporal aperture that would detect a market shift unfolding on a two-year timescale. When a platform transition arrives (mobile to AI, monolith to microservices, on-prem to cloud), the organization has no layer operating on the timescale where the threat is visible. The quarterly planning horizon cannot see a two-year disruption until it arrives as a quarterly crisis — at which point the response window has closed. The company did not fail to execute. It executed itself out of the ability to see what was coming. This is the execution fallacy: B → 0 eliminates shear and resolution simultaneously. The organization gained stability metrics while losing the discriminating power that stability was supposed to protect.
+
 ### 3.3 Three Cognitive Orientations
 
 The regimes map onto three practitioner orientations that rarely communicate:
@@ -277,7 +279,7 @@ The capture regime retroactively unifies several phenomena described across Pape
 
 **Platform enshittification (Paper 4 [4]).** The engagement algorithm is a capture-mode correlator between content diversity and user attention. It "reconciles" the tension between slow editorial quality and fast engagement metrics by killing slow modes. The platform appears responsive (high throughput), its decisions are binding (algorithmic curation determines visibility), but content diversity — the information-carrying component — is systematically erased.
 
-**RLHF mode collapse (Paper 6 [6]).** RLHF fine-tuning implements the T-operator on the model's output distribution. The "reconciliation" between helpfulness and accuracy is achieved by collapsing toward the reward-maximal mode (confident, fluent, agreeable). The characteristic "RLHF tone" is the capture signature: apparent coherence that passes throughput and authority checks while the model's epistemic diversity has been flattened.
+**RLHF mode collapse (Paper 6 [6]).** Paper 6 analyzes RLHF mode collapse through the lens of temporal closure requirements — whether the system has endogenous state and feedback loops sufficient for synthetic coherence. We reframe that analysis here in correlator terms: RLHF fine-tuning implements the T-operator on the model's output distribution. The "reconciliation" between helpfulness and accuracy is achieved by collapsing toward the reward-maximal mode (confident, fluent, agreeable). The characteristic "RLHF tone" is the capture signature: apparent coherence that passes throughput and authority checks while the model's epistemic diversity has been flattened. The two framings are complementary — Paper 6 identifies the architectural preconditions for coherence; the gain geometry identifies the regime the system occupies when those preconditions are violated by a lossy reconciliation mechanism.
 
 **Institutional rigidity (Papers 2, 9 [2, 9]).** An institution that "resolves" disagreement between its fast operational layer and slow strategic layer by forcing the strategic layer to match operational cadence is in capture. The reconciliation is high-throughput (everything runs on the fast clock) and binding (strategic decisions are made at operational speed), but the slow-mode information — long-term pattern recognition, institutional memory, strategic foresight — is destroyed.
 
@@ -481,7 +483,7 @@ Even if baseline (internal ideological diversity) were held constant, degrading 
 
 **Prediction 1 (Resolution Scaling).** In multi-model AI architectures, systems with greater perspective independence D and/or timescale separation B will produce higher cross-timescale epistemic resolution (measured by mode count, contradiction persistence, or eigenstructure rank of outputs) than systems with lower D and B, *if and only if* the reconciliation mechanism preserves disagreement information. Systems that reconcile by majority vote or simple averaging (low-fidelity correlators) will show no resolution improvement or negative scaling with D and/or B.
 
-**Prediction 2 (Capture Detection in RLHF).** Models subjected to RLHF will show decreasing output mode diversity over training (eigenstructure evaporation), measurable as declining Shannon entropy of output distributions on fixed prompts. This decrease will correlate with increased performance on benchmark tasks (capture looks like improvement) and decreased performance on tasks requiring genuine epistemic diversity (novel reasoning, uncertainty quantification, minority-view representation).
+**Prediction 2 (Capture Detection in RLHF — Strongest Target).** This is the most directly testable prediction in the paper. Models subjected to RLHF will show decreasing output mode diversity over training (eigenstructure evaporation), measurable as declining Shannon entropy of output distributions on fixed prompts. This decrease will correlate with increased performance on benchmark tasks (capture looks like improvement) and decreased performance on tasks requiring genuine epistemic diversity (novel reasoning, uncertainty quantification, minority-view representation). The test requires only access to training checkpoints and a fixed prompt set — any team with checkpoint access can run it. If RLHF-trained models show *increasing* output entropy on fixed prompts while benchmark performance also increases, the capture model is falsified for that training regime.
 
 **Prediction 3 (Institutional Baseline Destruction).** Organizations that eliminate temporal diversity (e.g., forcing all planning to quarterly cycles, eliminating long-term research in favor of product sprints) will show improved short-term execution metrics and degraded long-term adaptation, measurable as increased vulnerability to environmental shifts that unfold on timescales longer than the surviving planning horizon.
 
@@ -497,13 +499,19 @@ Even if baseline (internal ideological diversity) were held constant, degrading 
 
 The gain geometry is a reframing, not a new measurement apparatus. It does not introduce new instrumentation beyond what Papers 1–15 provide; the existing measurement tools (mode counting, entropy tracking, contradiction rates, commitment shear) carry over directly. However, the reframing does derive testable consequences (Section 8) — particularly the prediction that reconciliation fidelity, not reconciliation throughput, determines whether diversity produces resolution or noise. The primary value is completing the framework by adding the constructive case that the destructive case implicitly requires, which changes which interventions count as improvements.
 
-The interferometry correspondence is structural, not quantitative. Radio interferometry has precise phase-tracking theory (van Cittert-Zernike theorem, closure phase relations) that does not transfer directly to institutional or epistemic systems. The analogy identifies the *type* of the relationship (baseline × fidelity → resolution) without providing the quantitative transfer function. Deriving domain-specific resolution scaling laws is open work.
+The interferometry correspondence is structural, not quantitative. Radio interferometry has precise phase-tracking theory (van Cittert-Zernike theorem, closure phase relations [16]) that does not transfer directly to institutional or epistemic systems. The analogy identifies the *type* of the relationship (baseline × fidelity → resolution) without providing the quantitative transfer function. Deriving domain-specific resolution scaling laws is open work.
 
 The correlator quality vector **K** is defined but not yet empirically calibrated. Measuring throughput, fidelity, authority, and cost budget in institutional or AI systems requires domain-specific operationalization. Paper 8 [8] provides partial templates for the AI case; the institutional case remains to be developed.
 
 ### 9.2 Diversity as a Separate Axis
 
-The signed-baseline result concerns timescale separation (B) and correlator quality (**K**), but *resolution gain* also requires perspective independence (D > 0). Timescale separation without independence is merely delay: multiple nodes sampling the same hypothesis class at different rates does not create interferometric resolution. In practice, "add more models" fails when models share training data, priors, or institutional incentives — yielding large B but near-zero effective D. This paper treats D as an external condition (assumed nonzero in leverage examples) and leaves its formalization and measurement to future work.
+The signed-baseline result concerns timescale separation (B) and correlator quality (**K**), but *resolution gain* also requires perspective independence (D > 0). This condition is load-bearing: every leverage example in this paper implicitly assumes D > 0, and the entire positive case collapses without it.
+
+Timescale separation without independence is merely delay: multiple nodes sampling the same hypothesis class at different rates does not create interferometric resolution. In radio interferometry, two antennas with identical receivers pointed at the same patch of sky at different times produce redundant data, not higher resolution — the baseline is spatial, not temporal, and requires physically distinct vantage points. The analogue for multi-timescale systems: "run the same model five times at different speeds" yields large B but D = 0, producing no resolution gain. "Run five models with different training data, architectures, and priors at different speeds" yields large B and D > 0, enabling leverage.
+
+In practice, "add more models" fails when models share training data, priors, or institutional incentives — yielding large B but near-zero effective D. The same pathology appears in institutional contexts: a "diverse" committee whose members were selected by the same process, trained in the same programs, and subject to the same incentive structure has large nominal B (different roles, different reporting cadences) but near-zero effective D. The committee produces the appearance of reconciliation without the epistemic independence that makes reconciliation informative.
+
+This paper treats D as an external condition and leaves its formalization to future work. The gap is real: a full gain geometry would include D as a term in the resolution scaling law (R_Δ ~ B · D · F rather than R_Δ ~ B · F), with D measured as some form of mutual information deficit between the hypothesis spaces of the components. That formalization is open.
 
 In other words: baseline is necessary but not sufficient. Leverage requires both phase coherence and non-degenerate baselines — temporal *and* perspectival.
 
@@ -511,15 +519,15 @@ In other words: baseline is necessary but not sufficient. Leverage requires both
 
 The distinction between destructive and constructive diversity has precedents in several traditions:
 
-- **Requisite variety** (Ashby, 1956): A controller must have at least as much variety as the system it controls. The gain geometry adds that variety must be *reconciled*, not merely present.
+- **Requisite variety** [17]: Ashby's law of requisite variety establishes that a controller must have at least as much variety as the system it controls. The gain geometry adds that variety must be *reconciled*, not merely present — a system with high variety and no correlator is in shear, not leverage.
 
 - **Dialectical method** (Hegel): Thesis and antithesis produce synthesis through opposition. The gain geometry formalizes the conditions under which this works (leverage) versus when it produces false synthesis (capture).
 
-- **Ensemble methods** in machine learning: Model diversity improves ensemble performance, but only when errors are uncorrelated and combination preserves information. This is the leverage condition applied to prediction.
+- **Ensemble methods** [18]: Model diversity improves ensemble performance, but only when errors are uncorrelated and combination preserves information. Dietterich's analysis of ensemble conditions — that diversity improves prediction only when the combination rule preserves minority signals — is the leverage condition applied to prediction. Majority vote is a low-fidelity correlator; stacking with learned weights is higher-fidelity.
 
-- **Adversarial collaboration** (Kahneman): Structured disagreement between researchers with opposing hypotheses produces higher-quality evidence than either alone. This is leverage by design.
+- **Adversarial collaboration** [19]: Mellers, Hertwig, and Kahneman's formalization of adversarial collaboration — structured disagreement between researchers with opposing hypotheses — is leverage by design. The protocol specifies a shared dataset (baseline), binding pre-registration (authority), and joint publication regardless of outcome (fidelity). When any of these conditions fails, the collaboration degrades to either shear (parallel publication, no reconciliation) or capture (the dominant lab's framing absorbs the dissenting view).
 
-- **Agonistic pluralism** (Mouffe): Political theory distinguishing productive political contestation from destructive antagonism. The gain geometry provides formal conditions for when pluralism produces governance (leverage) versus paralysis (shear) versus false consensus (capture).
+- **Agonistic pluralism** [20]: Mouffe's distinction between productive political contestation (agonism) and destructive antagonism maps directly onto the leverage/shear boundary. The gain geometry adds the capture regime that Mouffe's framework implies but does not name: the condition where political "reconciliation" proceeds by suppressing the pluralism that makes contestation productive — manufactured consensus that passes democratic throughput checks while collapsing the representational diversity that democracy is meant to preserve.
 
 ### 9.4 The Recursive Trap
 
@@ -583,4 +591,14 @@ The governor is not merely a brake. It is a correlator. And the contradiction le
 
 [14] Beck, J. (2026). The Temporal Attack Surface: A Δt Framework for Asynchronous Security Systems. Preprint, Δt Framework Paper 14.
 
-[15] Beck, J. (2026). Cybernetic Fault Domains: When Commitment Outruns Verification. Preprint, Δt Framework Paper 15. doi:10.5281/zenodo.18518894
+[15] Beck, J. (2026). Cybernetic Fault Domains: When Commitment Outruns Verification. Preprint, Δt Framework Paper 15. doi:10.5281/zenodo.18686130
+
+[16] Thompson, A.R., Moran, J.M., and Swenson, G.W. (2017). *Interferometry and Synthesis in Radio Astronomy.* 3rd edition. Springer.
+
+[17] Ashby, W.R. (1956). *An Introduction to Cybernetics.* Chapman & Hall.
+
+[18] Dietterich, T.G. (2000). Ensemble Methods in Machine Learning. *Multiple Classifier Systems* (MCS 2000), Springer LNCS 1857, pp. 1–15.
+
+[19] Mellers, B., Hertwig, R., and Kahneman, D. (2001). Do Frequency Representations Eliminate Conjunction Effects? An Exercise in Adversarial Collaboration. *Psychological Science* 12(4), pp. 269–275.
+
+[20] Mouffe, C. (2013). *Agonistics: Thinking the World Politically.* Verso.
