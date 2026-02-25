@@ -31,3 +31,6 @@ dependencies are summarized below.
 ### Synthesis
 - *Cybernetic Fault Domains: When Commitment Outruns Verification* (2026)
 - *The Gain Geometry of Temporal Mismatch: Signed Δt as Baseline Geometry* (2026)
+
+### Epistemic Governance
+- *Receipt the Compiler: Propaganda as Hidden Epistemic Policy and the Architecture of Legible Memory* (2026)

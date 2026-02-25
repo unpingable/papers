@@ -82,7 +82,7 @@ We model public epistemic state as a factor graph [9] with the following typed n
 
 ### 3.2 Factor Types
 
-**Observation factors** `ϕ_obs(E_t, R_i)` link receipts to event claims with associated confidence values. **Provenance factors** `ϕ_prov(R_i, Source, Hash, Time)` link receipts to origin and integrity metadata. **Frame factors** `ϕ_frame(E_t, F_j)` link interpretive overlays to event nodes. **Policy factors** `ϕ_policy(P_k, R_i, F_j)` encode the rules governing weighting and admissibility. **Decision factors** `ϕ_dec(D_t, E_t, P_k, F_j)` link institutional actions to the interpretive and policy context that licensed them.
+**Observation factors** ϕ_obs(E_t, R_i) link receipts to event claims with associated confidence values. **Provenance factors** ϕ_prov(R_i, Source, Hash, Time) link receipts to origin and integrity metadata. **Frame factors** ϕ_frame(E_t, F_j) link interpretive overlays to event nodes. **Policy factors** ϕ_policy(P_k, R_i, F_j) encode the rules governing weighting and admissibility. **Decision factors** ϕ_dec(D_t, E_t, P_k, F_j) link institutional actions to the interpretive and policy context that licensed them.
 
 ### 3.3 Two Posteriors
 
@@ -91,13 +91,13 @@ A critical distinction motivates the design of the governor. We separate two pos
 **Epistemic posterior** — what the graph supports from receipts, frames, and policy alone:
 
 ```
-p(E_{1:t} | R_{≤t}, F_{≤t}, P_{≤t})
+p(E_{1:t} | R_{<=t}, F_{<=t}, P_{<=t})
 ```
 
 **Institutional/public posterior** — what people may infer once decisions are themselves visible as social facts:
 
 ```
-p_inst(E_{1:t} | R_{≤t}, F_{≤t}, P_{≤t}, D_{≤t})
+p_inst(E_{1:t} | R_{<=t}, F_{<=t}, P_{<=t}, D_{<=t})
 ```
 
 We include decisions in the institutional posterior because institutional actions often feed back into public interpretation—enforcement signals belief, and belief signals evidence. The governor's purpose is not to deny this feedback but to prevent it from being mistaken for evidence. Decisions must remain typed separately so the contamination path is legible and auditable rather than hidden.
@@ -107,24 +107,24 @@ We include decisions in the institutional posterior because institutional action
 The filtered epistemic estimate at time `t` conditions on available nodes:
 
 ```
-p(E_{1:t} | R_{≤t}, F_{≤t}, P_{≤t})
+p(E_{1:t} | R_{<=t}, F_{<=t}, P_{<=t})
 ```
 
 The smoothed estimate, available at later time `T`:
 
 ```
-p(E_{1:t} | R_{≤T}, F_{≤T}, P_{≤T})
+p(E_{1:t} | R_{<=T}, F_{<=T}, P_{<=T})
 ```
 
 Semantic retrocausality is the difference between these two posteriors. A useful drift metric:
 
 ```
-Δ_t = D_KL( p(E_t | R_{≤T}, F_{≤T}, P_{≤T}) || p(E_t | R_{≤t}, F_{≤t}, P_{≤t}) )
+Delta_t = D_KL( p(E_t | R_{<=T}, F_{<=T}, P_{<=T}) || p(E_t | R_{<=t}, F_{<=t}, P_{<=t}) )
 ```
 
-High `Δ_t` driven by new receipt nodes is normal smoothing. High `Δ_t` driven primarily by new frame or policy nodes without supporting new receipts is the signal of propaganda pressure. This is the temporal debt concept from Paper 7 [2] applied to public memory: confidence (institutional action) outrunning evidence (receipt accumulation), with the gap filled by frame and policy manipulation.
+High Δ_t driven by new receipt nodes is normal smoothing. High Δ_t driven primarily by new frame or policy nodes without supporting new receipts is the signal of propaganda pressure. This is the temporal debt concept from Paper 7 [2] applied to public memory: confidence (institutional action) outrunning evidence (receipt accumulation), with the gap filled by frame and policy manipulation.
 
-In practice, `Δ_t` can be decomposed by counterfactual replay over factor classes—receipts only, receipts plus frames, receipts plus frames plus policy—allowing attribution of posterior shift to specific update mechanisms rather than treating belief revision as a monolithic change. This decomposition formally grounds the posterior shift attribution metric introduced in Section 6.5.
+In practice, Δ_t can be decomposed by counterfactual replay over factor classes—receipts only, receipts plus frames, receipts plus frames plus policy—allowing attribution of posterior shift to specific update mechanisms rather than treating belief revision as a monolithic change. This decomposition formally grounds the posterior shift attribution metric introduced in Section 6.5.
 
 ---
 
