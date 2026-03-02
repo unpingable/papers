@@ -1,0 +1,25 @@
+title: "Receipt the Compiler: Propaganda as Hidden Epistemic Policy and the Architecture of Legible Memory"
+author: "James Beck"
+date: "2026-03-02"
+doi: "10.5281/zenodo.18841815"
+zenodo_url: "https://zenodo.org/records/18841815"
+keywords:
+  - propaganda
+  - epistemic governance
+  - factor graphs
+  - Bayesian smoothing
+  - belief revision
+  - receipt architecture
+  - policy transparency
+  - institutional memory
+  - classification
+  - content moderation
+  - information integrity
+  - cybernetics
+  - systems engineering
+status: "preprint"
+series: "delta-t-framework"
+version: "1.0"
+license: "CC-BY-4.0"
+abstract: |
+  Propaganda is conventionally understood as the injection of false content into public discourse. This framing is insufficiently precise. The primary attack surface of effective propaganda is not the data layer but the policy layer: the rules governing how evidence is integrated into public memory. More precisely, propaganda is distinguished not by false content alone, but by hidden control over the legitimacy criteria for belief revision — the policy-layer rules governing what counts as a valid reason to update public memory. We formalize this using a receipted semantic factor graph in which event nodes, receipt nodes, frame nodes, policy nodes, and decision nodes are explicitly typed and separately maintained. Retrospective reinterpretation — semantic retrocausality — is shown to be a normal and necessary feature of any belief-revision system operating over time. We define an epistemic governor as a set of typed constraints requiring that all updates to the semantic graph — including reclassification, reweighting, reindexing, and policy changes — produce auditable receipts. The counter-propaganda move is not better evidence; it is legible epistemic policy.

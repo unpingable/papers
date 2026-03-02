@@ -5,12 +5,12 @@ header-includes:
   - \renewcommand{\tableofcontents}{\begingroup\raggedright\hyphenpenalty=10000\exhyphenpenalty=10000\oldtableofcontents\endgroup\clearpage}
 ---
 
-# Receipt the Compiler:\ Propaganda as Hidden Epistemic Policy and the Architecture of Legible Memory
+# Receipt the Compiler:\ Propaganda as Hidden Epistemic Policy\ and the Architecture of Legible Memory
 
 **James Beck**
 Independent Researcher
 
-**Date:** February 2026
+**Date:** March 2, 2026
 
 **Series:** Δt Framework, Paper 17
 
@@ -79,6 +79,8 @@ We model public epistemic state as a factor graph [9] with the following typed n
 **Policy nodes** `P_k` represent the rules governing how receipts are weighted, indexed, and admitted—the layer almost universally absent from naive models of public discourse.
 
 **Decision nodes** `D_t` represent institutional actions: publication, removal, sanction, escalation. Decisions are typed separately from facts.
+
+In practice, this graph is a property of any institution's record-keeping infrastructure — moderation logs, editorial systems, regulatory filings — whether or not the institution models it explicitly. The governor does not require building new infrastructure; it requires that existing infrastructure make the node types and their relationships queryable rather than implicit. Section 7.1 provides illustrative receipt schemas. The choice of which node types exist in the schema is itself a power structure — a point formalized by Bowker and Star [13] and revisited in Section 8.
 
 ### 3.2 Factor Types
 
