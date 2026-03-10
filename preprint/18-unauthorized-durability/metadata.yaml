@@ -1,0 +1,36 @@
+title: "Unauthorized Durability: A Composable Governance Primitive for State Promotion in Adaptive Systems"
+author: "James Beck"
+affiliation: "Independent Researcher"
+date: 2026-03-10
+series: "delta-t-framework"
+paper_number: 18
+version: "0.3"
+doi: "10.5281/zenodo.18940008"
+zenodo_url: "https://zenodo.org/records/18940008"
+keywords:
+  - entrainment
+  - state promotion
+  - governance primitives
+  - write barriers
+  - authority tiers
+  - adaptive systems
+  - capture
+  - observer integrity
+  - AI safety
+  - cybernetics
+  - institutional dynamics
+abstract: >
+  Adaptive systems that accept inputs at multiple timescales face a structural
+  governance problem: transient signals can silently acquire durable governing
+  force. The failure mode is not influence per se but unauthorized durability --
+  the promotion of lower-tier state into higher-tier authority without legitimate
+  write paths. This paper formalizes the problem as a multiscale control model
+  with four state classes (attention, meaning, policy, observer integrity) mapped
+  to four authority tiers (runtime, context, durable policy, constitutional). We
+  derive six invariants, five write barriers, and a threat taxonomy covering seven
+  threat classes. We then introduce the promotion ceremony -- a five-phase protocol
+  (proposal, evaluation, attestation, application, audit) -- as a composable
+  governance primitive for controlling when lower-tier state may acquire higher-tier
+  legitimacy. The same structure that governs runtime-to-policy promotion also
+  governs policy-to-constitutional updates, yielding governed runtime, governed
+  doctrine, and no exempt layer where real authority hides unaudited.
