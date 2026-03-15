@@ -1,0 +1,36 @@
+title: "The System Beside the System: Shadow Governance and the Stabilization of Unauthorized Authority"
+author: "James Beck"
+affiliation: "Independent Researcher"
+date: "2026-03-15"
+version: "1.0"
+doi: "10.5281/zenodo.19038241"
+zenodo_url: "https://doi.org/10.5281/zenodo.19038241"
+series: "delta-t-framework"
+paper_number: 19
+keywords:
+  - shadow governance
+  - unauthorized durability
+  - normalization of deviance
+  - state promotion
+  - governance divergence
+  - institutional drift
+  - adaptive systems
+  - remediation
+  - AI safety
+  - cybernetics
+abstract: >
+  Paper 18 formalized unauthorized durability: the mechanism by which transient,
+  lower-tier state acquires higher-tier governing force without legitimate promotion.
+  The present paper addresses what happens afterward. When unauthorized promotions
+  accumulate, normalize, and become load-bearing, they undergo a phase transition
+  from isolated violations into a parallel governance structure — shadow governance —
+  that may exercise more influence over system behavior than the formal rules it was
+  never authorized to replace. We define shadow state formally, distinguishing
+  incipient shadow state from stabilized shadow governance. We identify a
+  three-component stabilization ratchet (utility debt, dependency entrenchment,
+  semantic erasure) that prevents shadow governance from reverting once established,
+  and describe the Potemkin layer: the phenomenon in which formal governance persists
+  as a legitimacy shell while shadow rules handle actual control. We propose detection
+  methods, a remediation pipeline that treats correction as a system migration, and
+  two worked examples. A central claim is that shadow governance is not inherently
+  pathological — it is ungoverned.
