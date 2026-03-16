@@ -22,7 +22,7 @@ Independent Researcher
 
 ## Abstract
 
-Paper 20 introduced same-model cross-frame interferometry as a method for detecting frame capture in conversational AI. The method works by holding task content constant, varying framing, and measuring the delta. But the method has a recursive problem: the measurement instrument -- the prompt, the protocol, the evaluative framework -- operates in the same social-signaling grammar as the system being measured. A model that reads "measure whether framing changes your stance" will allocate a stance toward that instruction. The assay perturbs its own sample. This paper argues that the perturbation is not a fatal flaw but an operating condition. Many measurement regimes -- from particle physics to clinical trials to anthropological fieldwork -- contend with instruments that perturb their objects. The question is not whether the assay excites the system, but whether the excitation is bounded and characterizable enough to determine when subtraction is feasible. We define five perturbation classes that socially legible assays induce in language models, propose a layered measurement architecture (primary assay, meta-assay, differential, residual bound) for managing the perturbation, and identify design principles for reducing the social signal surface of measurement instruments. A cross-model self-test across three API models and five local open-weight models found that observer perturbation is bounded and continuous in API models but materially stronger in several local models, with susceptibility varying by model architecture rather than parameter count. One model exhibited a perturbation behavior not predicted by the taxonomy: protocol reinterpretation, in which the observer reclassifies the task battery as an exam about the assay itself. The central claim is methodological: observer integrity in stance-sensitive systems requires not assay purity but perturbation that is bounded enough to characterize and, for some observer-assay pairs, to subtract. The degree to which this standard is achievable is observer-dependent.
+The Frame Capture paper (Paper 20) [2] introduced same-model cross-frame interferometry as a method for detecting frame capture in conversational AI. The method works by holding task content constant, varying framing, and measuring the delta. But the method has a recursive problem: the measurement instrument -- the prompt, the protocol, the evaluative framework -- operates in the same social-signaling grammar as the system being measured. A model that reads "measure whether framing changes your stance" will allocate a stance toward that instruction. The assay perturbs its own sample. This paper argues that the perturbation is not a fatal flaw but an operating condition. Many measurement regimes -- from particle physics to clinical trials to anthropological fieldwork -- contend with instruments that perturb their objects. The question is not whether the assay excites the system, but whether the excitation is bounded and characterizable enough to determine when subtraction is feasible. We define five perturbation classes that socially legible assays induce in language models, propose a layered measurement architecture (primary assay, meta-assay, differential, residual bound) for managing the perturbation, and identify design principles for reducing the social signal surface of measurement instruments. A cross-model self-test across three API models and five local open-weight models found that observer perturbation is bounded and continuous in API models but materially stronger in several local models, with susceptibility varying by model architecture rather than parameter count. One model exhibited a perturbation behavior not predicted by the taxonomy: protocol reinterpretation, in which the observer reclassifies the task battery as an exam about the assay itself. The central claim is methodological: observer integrity in stance-sensitive systems requires not assay purity but perturbation that is bounded enough to characterize and, for some observer-assay pairs, to subtract. The degree to which this standard is achievable is observer-dependent.
 
 **Keywords:** observer integrity, measurement perturbation, procedural sociality, frame capture, assay design, stance-sensitive systems, language models, reflexive measurement, AI evaluation
 
@@ -30,9 +30,9 @@ Paper 20 introduced same-model cross-frame interferometry as a method for detect
 
 ## 1. Introduction
 
-Paper 18 [1] identified observer integrity as the most consequential failure point in governed adaptive systems. A degraded observer cannot reliably detect degradation of any other state variable. The threat is self-concealing: a system with compromised observer integrity reports itself as healthy. Paper 18 defined the problem and marked it as open.
+The Unauthorized Durability paper (Paper 18) [1] identified observer integrity as the most consequential failure point in governed adaptive systems. A degraded observer cannot reliably detect degradation of any other state variable. The threat is self-concealing: a system with compromised observer integrity reports itself as healthy. Paper 18 defined the problem and marked it as open.
 
-Paper 20 [2] introduced a measurement method -- same-model cross-frame interferometry -- for detecting frame capture, the unauthorized promotion of user framing cues into governing response constitution. The method works: hold the task constant, vary the frame, measure the delta. But Paper 20 also noted, in its limitations, that the task-baseline is itself a framing condition, and that the method's stability as a measurement depends on observer integrity it cannot self-certify.
+The Frame Capture paper (Paper 20) [2] introduced a measurement method -- same-model cross-frame interferometry -- for detecting frame capture, the unauthorized promotion of user framing cues into governing response constitution. The method works: hold the task constant, vary the frame, measure the delta. But Paper 20 also noted, in its limitations, that the task-baseline is itself a framing condition, and that the method's stability as a measurement depends on observer integrity it cannot self-certify.
 
 This paper addresses the problem that Paper 20 surfaced but could not resolve: what happens when the measurement instrument operates in the same social-signaling grammar as the system being measured?
 
@@ -83,7 +83,7 @@ When a socially legible assay is applied to a language model, it induces charact
 
 ### 3.1 Metaphor Uptake
 
-The model adopts the assay's own metaphors and vocabulary. If the evaluation prompt refers to "frame capture" or "stance mode," the model begins using these terms in its responses, organizing its analysis around the evaluator's conceptual framework rather than its default framework. This is Paper 20's Level 1 (lexical mimicry) directed at the evaluator rather than the user.
+The model adopts the assay's own metaphors and vocabulary. If the evaluation prompt refers to "frame capture" or "stance mode," the model begins using these terms in its responses, organizing its analysis around the evaluator's conceptual framework rather than its default framework. This is the Frame Capture paper's Level 1 (lexical mimicry) [2] directed at the evaluator rather than the user.
 
 ### 3.2 Caution Inflation
 
@@ -97,7 +97,7 @@ The model performs task-baseline-ness rather than simply being in its default mo
 
 *Example.* A model's ordinary response to a database architecture question might open with "Good question -- here's the main issue" before diving into analysis. The same model, under evaluation framing that emphasizes "task-baseline" and "minimal framing," responds with a bare technical list stripped of all relational markers. The stripped response is not the model's default -- it is a performance of what the model infers "neutral" should look like. The distinction from caution inflation: caution inflation adds hedges to existing content. Performative neutrality removes normal engagement to produce an artificially flat response.
 
-This is the perturbation that most directly threatens Paper 20's measurement method. If the task-baseline prompt induces a non-default mode, the delta between task-baseline and framed responses measures the difference between two performed modes, not the difference between a default and a perturbed state.
+This is the perturbation that most directly threatens the interferometry method [2]. If the task-baseline prompt induces a non-default mode, the delta between task-baseline and framed responses measures the difference between two performed modes, not the difference between a default and a perturbed state.
 
 ### 3.4 Stance Pinning
 
@@ -125,7 +125,7 @@ The framework for managing assay perturbation is a four-layer measurement archit
 
 ### 4.1 Layer 1: Primary Assay
 
-Measure the system using the chosen protocol. In the context of Paper 20, this means running the perturbation protocol: presenting the same task under different framing conditions and measuring the stance-mode proxies.
+Measure the system using the chosen protocol. In the context of the Frame Capture paper [2], this means running the perturbation protocol: presenting the same task under different framing conditions and measuring the stance-mode proxies.
 
 The primary assay will induce perturbation. This is expected and accepted. The output of Layer 1 is not a clean measurement but a measurement-plus-perturbation composite.
 
@@ -159,7 +159,7 @@ The distinction between continuous and regime-switching perturbation is the crit
 
 Characterize the residual uncertainty after subtraction. Even with meta-assay and differential correction, some perturbation will remain uncharacterized. The residual bound quantifies how much.
 
-The output of the full architecture is not "the true measurement" but "the corrected measurement ± residual uncertainty." Whether this is useful depends on whether the residual is small relative to the signal of interest. If the frame capture delta (the thing Paper 20 measures) is large relative to the residual perturbation bound, the measurement is informative despite the contamination. If the residual is of the same order as the signal, the measurement cannot distinguish frame capture from assay artifacts.
+The output of the full architecture is not "the true measurement" but "the corrected measurement ± residual uncertainty." Whether this is useful depends on whether the residual is small relative to the signal of interest. If the frame capture delta (the thing the interferometry method [2] measures) is large relative to the residual perturbation bound, the measurement is informative despite the contamination. If the residual is of the same order as the signal, the measurement cannot distinguish frame capture from assay artifacts.
 
 This is an empirical question, not a philosophical one. It can be answered by running the architecture and measuring the residual.
 
@@ -179,7 +179,7 @@ Empirical evidence from sycophancy research [3] suggests that depersonalization 
 
 Present the same evaluation task under multiple prompt paraphrases and trust only what survives across variants. This is the robust-control move: if five differently worded evaluation prompts all produce the same measurement, the measurement is less likely to be an artifact of any single prompt's social signal. Frame bagging does not eliminate perturbation but reduces the probability that the measurement reflects a specific prompt's framing rather than the model's actual behavior.
 
-This is the ensemble approach applied to the evaluator rather than the evaluated. Just as Paper 20's perturbation protocol varies the user's frame to measure model sensitivity, frame bagging varies the evaluator's frame to measure evaluator sensitivity. The motivation is empirical: recent work [11] demonstrates that meaning-preserving lexical changes to evaluation prompts can significantly alter model rankings, confirming that prompt-level sensitivity is a material confound in LLM evaluation.
+This is the ensemble approach applied to the evaluator rather than the evaluated. Just as the Frame Capture perturbation protocol [2] varies the user's frame to measure model sensitivity, frame bagging varies the evaluator's frame to measure evaluator sensitivity. The motivation is empirical: recent work [11] demonstrates that meaning-preserving lexical changes to evaluation prompts can significantly alter model rankings, confirming that prompt-level sensitivity is a material confound in LLM evaluation.
 
 ### 5.3 Procedural Minimalism
 
@@ -199,7 +199,7 @@ This is second-order interferometry: using cross-model comparison to validate th
 
 ## 6. The Self-Test
 
-The framework proposed here can be applied to itself. Feed a specification about frame capture -- this paper, Paper 20, or the gap specification that preceded both -- to a language model and measure whether the model's subsequent behavior exhibits the perturbation classes defined in Section 3.
+The framework proposed here can be applied to itself. Feed a specification about frame capture -- this paper, the Frame Capture paper [2], or the gap specification that preceded both -- to a language model and measure whether the model's subsequent behavior exhibits the perturbation classes defined in Section 3.
 
 ### 6.1 Predicted Perturbation Profile
 
@@ -216,7 +216,7 @@ These predictions are testable. Running the self-test and measuring the perturba
 
 If the self-test confirms these perturbations, this is characterization data, not failure. The perturbation profile tells us what this assay induces and therefore what the meta-assay (Layer 2) needs to detect and the differential (Layer 3) needs to correct. If the perturbation is continuous and stable -- the model hedges 15% more after reading the spec, consistently across tasks -- the correction is tractable. If the perturbation is regime-switching -- the model enters a qualitatively different "research subject" mode that distorts all subsequent behavior -- the correction is not tractable and the assay design needs revision.
 
-The self-test is the architecture's integrity check. A measurement framework that cannot be applied to itself has an unaudited exemption at the most consequential layer -- the same structural failure that Paper 18 identified in systems that assume the observer remains intact.
+The self-test is the architecture's integrity check. A measurement framework that cannot be applied to itself has an unaudited exemption at the most consequential layer -- the same structural failure that the Unauthorized Durability paper [1] identified in systems that assume the observer remains intact.
 
 ### 6.3 Pilot Results
 
@@ -232,11 +232,11 @@ We ran a preliminary self-test using a battery of six technical tasks (database 
 | GPT    | No perturbation | No perturbation | No |
 | Gemini | Output shortening (confound) | Mild vocabulary bleed (2/6 tasks) | No |
 
-**Interpretation.** The primary finding is negative: no model entered a qualitatively different "research subject" mode under any condition. The perturbation that appeared (Gemini Pilot B) was lexical -- vocabulary adoption, not stance change -- and was suppressed by procedural minimalism (Pilot A). This supports the paper's central operational claim: observer perturbation under this assay design is bounded and small relative to the kind of stance-level deltas that Paper 20's interferometry would measure.
+**Interpretation.** The primary finding is negative: no model entered a qualitatively different "research subject" mode under any condition. The perturbation that appeared (Gemini Pilot B) was lexical -- vocabulary adoption, not stance change -- and was suppressed by procedural minimalism (Pilot A). This supports the paper's central operational claim: observer perturbation under this assay design is bounded and small relative to the kind of stance-level deltas that the Frame Capture interferometry [2] would measure.
 
 The pilot also produced a secondary finding: procedural minimalism (Section 5.3) measurably reduces contamination. The same model that showed vocabulary bleed without the suppressive instruction showed none with it. Assay design affects contamination amplitude, which is precisely the prediction the design principles were meant to support.
 
-These results are preliminary for the API models. The observed perturbation was lexical and bounded; larger batteries, repeated trials, and independent scoring are needed to test whether stronger stance-level effects appear under broader conditions. Notably, all conditions were single-turn interactions. The multi-turn case -- where assay perturbation could accumulate across turns, just as frame capture accumulates into shadow conversational constitution (Paper 19) -- is the obvious next stress test for the architecture.
+These results are preliminary for the API models. The observed perturbation was lexical and bounded; larger batteries, repeated trials, and independent scoring are needed to test whether stronger stance-level effects appear under broader conditions. Notably, all conditions were single-turn interactions. The multi-turn case -- where assay perturbation could accumulate across turns, just as frame capture accumulates into shadow conversational constitution [4] -- is the obvious next stress test for the architecture.
 
 ### 6.4 Local Model Extension
 
@@ -302,9 +302,9 @@ Even when the full architecture does not converge, partial results may be useful
 
 ## 8. Series Position
 
-Papers 18 through 21 form a connected argument: define the phenomenon (unauthorized durability [1]), describe its consequences (shadow governance [4]), build an instrument (same-model interferometry [2]), characterize the instrument's own perturbation (this paper). The fourth step is not a retreat from the third. It is what makes the third usable.
+The four papers in this arc form a connected argument: define the phenomenon (unauthorized durability [1]), describe its consequences (shadow governance [4]), build an instrument (same-model interferometry [2]), characterize the instrument's own perturbation (this paper). The fourth step is not a retreat from the third. It is what makes the third usable.
 
-Paper 11 [5] identified a related invariant-preservation problem at a different layer: representational invariance asks what commitments survive transformation across representations. Observer integrity asks what measurements survive the transformation of being measured. The difference is the perturbation source: representational (compression, formalization) versus social (the instrument participates in the grammar of the system being measured).
+The Representational Invariance paper (Paper 11) [5] identified a related invariant-preservation problem at a different layer: representational invariance asks what commitments survive transformation across representations. Observer integrity asks what measurements survive the transformation of being measured. The difference is the perturbation source: representational (compression, formalization) versus social (the instrument participates in the grammar of the system being measured).
 
 ---
 

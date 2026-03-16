@@ -34,3 +34,9 @@ dependencies are summarized below.
 
 ### Epistemic Governance
 - *Receipt the Compiler: Propaganda as Hidden Epistemic Policy and the Architecture of Legible Memory* (2026)
+- *Unauthorized Durability: A Composable Governance Primitive for State Promotion in Adaptive Systems* (2026)
+- *The System Beside the System: Shadow Governance and the Stabilization of Unauthorized Authority* (2026)
+
+### Observer Integrity and Frame Capture
+- *Frame Capture in Conversational AI: Same-Model Interferometry for Unauthorized Stance Detection* (2026)
+- *Observer Integrity Under Procedural Sociality: Measurement When the Instrument Shares the Grammar* (2026)
