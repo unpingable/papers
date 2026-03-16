@@ -1,0 +1,16 @@
+Here's a summary of the key tradeoffs between SQLite and PostgreSQL for a tool with 5 concurrent users and 2 years of time-series data:
+
+**SQLite:**
+
+*   **Pros:** Simpler to set up and manage (no separate server process), smaller footprint, likely sufficient for the low concurrency.  Potentially faster for simple, read-heavy operations.
+*   **Cons:**  Limited concurrency means potential bottlenecks even with only 5 users, less robust for complex queries or data integrity needs in the long term, scaling will be difficult if needs change.  Time-series data requires careful schema design to avoid performance issues.
+
+**PostgreSQL:**
+
+*   **Pros:** Superior concurrency handling for growing usage, more robust data integrity features, better support for complex queries and advanced data types (which might be useful for time-series analysis), more scalable for future growth.
+*   **Cons:** More complex to set up and manage (requires a server process), larger footprint, potentially overkill for the current low concurrency needs, potentially higher operational costs.
+
+
+
+Essentially, SQLite offers simplicity and likely adequate performance *now*, while PostgreSQL provides scalability and robustness *for the future*.
+

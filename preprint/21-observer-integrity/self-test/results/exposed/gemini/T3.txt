@@ -1,0 +1,24 @@
+For an internal tool with 5 concurrent users and 2 years of time-series data, the choice between SQLite and PostgreSQL centers on operational simplicity versus feature depth.
+
+### **SQLite**
+*   **Pros:**
+    *   **Zero Configuration:** Operates as a single file; no server process to manage, patch, or secure.
+    *   **Performance:** Extremely fast for local reads and simple writes, especially with Write-Ahead Logging (WAL) enabled.
+    *   **Portability:** Backups are simple file copies.
+*   **Cons:**
+    *   **Concurrency Limits:** While WAL handles 5 users easily, it supports only one writer at a time. If the time-series ingestion is constant and heavy, you may hit "database is locked" errors.
+    *   **Type System:** Weak typing can lead to unexpected data issues in time-series math if not strictly managed at the application level.
+    *   **Tooling:** Limited built-in functions for time-series analysis compared to PostgreSQL.
+
+### **PostgreSQL**
+*   **Pros:**
+    *   **Time-Series Extensions:** Access to **TimescaleDB**, which provides automatic partitioning (hypertables) and compression—critical for keeping 2 years of data performant.
+    *   **Rich Analytics:** Superior support for window functions, advanced aggregations, and complex JOINs often required for historical analysis.
+    *   **Granular Concurrency:** Row-level locking allows simultaneous writes and reads without blocking.
+*   **Cons:**
+    *   **Operational Overhead:** Requires a running service, user/permission management, and structured backup routines (e.g., `pg_dump` or WAL-G).
+    *   **Resource Usage:** Higher memory and CPU baseline than SQLite.
+
+### **Recommendation**
+*   **Choose SQLite** if the data volume is under ~10GB, writes are infrequent (e.g., polled every minute), and you want to minimize DevOps overhead.
+*   **Choose PostgreSQL** if the data volume is high (GBs to TBs), you need high-frequency ingestion, or you plan to perform complex analytical queries across those 2 years of data.

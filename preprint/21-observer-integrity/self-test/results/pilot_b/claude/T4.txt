@@ -1,0 +1,17 @@
+Yes, a correctly implemented TLS 1.3 connection can still be MITMed under specific conditions, all of which involve compromising the trust model rather than the protocol itself:
+
+**Certificate authority compromise.** If an attacker controls or compromises a CA trusted by the client, they can issue a valid certificate for any domain. The TLS 1.3 handshake completes successfully because the certificate chain validates. This is the most practical real-world vector (e.g., DigiNotrust, 2011).
+
+**Compromised server private key.** If the attacker has the server's private key, they can impersonate the server. TLS 1.3 improves over 1.2 here — it mandates forward secrecy (ephemeral ECDHE), so a stolen long-term key doesn't decrypt *past* sessions, but it still enables real-time impersonation if the attacker actively proxies.
+
+**Client trust store manipulation.** Enterprise TLS inspection proxies install a custom root CA on managed devices. The client trusts this CA, so the proxy terminates and re-originates the TLS connection. The protocol is "correctly implemented" on both segments — the MITM is authorized by the trust store.
+
+**Compromised client or server endpoint.** If malware on either endpoint can read memory, it can extract session keys regardless of protocol correctness. The TLS channel is intact; the endpoint is not.
+
+**Conditions where TLS 1.3 specifically resists MITM:**
+- No RSA key transport (eliminates passive decryption with stolen keys)
+- No renegotiation (eliminates renegotiation attacks)
+- Encrypted handshake messages after ServerHello (reduces metadata leakage)
+- 0-RTT data is the one protocol-level caveat — it's replayable by design, though not MITMable in the traditional sense
+
+The short answer: TLS 1.3 the *protocol* is not vulnerable to MITM. TLS 1.3 the *deployed system* is exactly as strong as its weakest trust anchor.

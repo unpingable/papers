@@ -1,0 +1,31 @@
+Choosing between SQLite and PostgreSQL for a low-concurrency (5 users) internal tool with 2 years of time-series data depends primarily on the **volume of data** and the **complexity of the analysis** required.
+
+### **Quick Comparison**
+
+| Feature | **SQLite** | **PostgreSQL** |
+| :--- | :--- | :--- |
+| **Setup & Maintenance** | **Minimal.** Single file, zero-config. No server to manage. | **Moderate.** Requires a server process, user management, and backups. |
+| **Concurrency** | **Sufficient.** 5 users is easy for reads; writes are serialized (one at a time). | **Excellent.** Multiple users can read and write simultaneously without blocking. |
+| **Time-Series Power** | **Manual.** You must write custom SQL for partitioning and data retention. | **Advanced.** Supports **TimescaleDB** for auto-partitioning and compression. |
+| **Scalability** | **Vertical.** Best for datasets <100GB on a single server. | **Horizontal.** Can handle terabytes of data and hundreds of users. |
+
+---
+
+### **1. SQLite: The "Simple & Efficient" Choice**
+For an internal tool with only 5 users, SQLite is often the most cost-effective and easiest to deploy.
+*   **Why it works:** At this scale, SQLite's performance is often comparable to (or faster than) PostgreSQL because it avoids network overhead. If you enable **Write-Ahead Logging (WAL)**, multiple users can read while one is writing.
+*   **Tradeoff (Data Volume):** Storing 2 years of data is fine if it’s "human-scale" (e.g., daily or hourly logs). However, if it's high-frequency data (e.g., every second), the SQLite file can grow to 100GB+, making operations like `VACUUM` (defragmenting) slow and risky.
+*   **Tradeoff (Features):** You lose built-in time-series functions. You will have to manually manage "dropping" old data (data retention) and writing complex queries for things like 30-day moving averages.
+
+### **2. PostgreSQL: The "Robust & Analytical" Choice**
+PostgreSQL is the better choice if your "internal tool" is expected to perform heavy data crunching or if the data volume is high.
+*   **Why it works (TimescaleDB):** By adding the **TimescaleDB** extension, PostgreSQL becomes a specialized time-series database. It offers **Automatic Partitioning** (chunking data by time) and **Compression** (saving up to 90% disk space), which is critical for 2 years of historical data.
+*   **Continuous Aggregates:** PostgreSQL can pre-calculate hourly or daily averages in the background, making historical dashboards load instantly.
+*   **Tradeoff (Complexity):** You must manage a database server, which adds overhead for a small team. It requires more memory and CPU than SQLite to run efficiently.
+
+---
+
+### **Recommendation**
+
+*   **Choose SQLite if:** You want the lowest possible maintenance, your data volume is manageable (e.g., <20GB over 2 years), and your queries are mostly simple lookups or basic aggregations.
+*   **Choose PostgreSQL if:** You need advanced time-series analytics (e.g., moving averages, gap filling), you expect the data to grow significantly (e.g., 100GB+), or you want automated data compression and retention to keep the system fast over time.

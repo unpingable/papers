@@ -1,0 +1,11 @@
+Even with round-robin distribution, uneven load across backend servers can occur because round-robin only distributes requests based on a simple, sequential order. It doesn’t account for:
+
+*   **Varying Request Processing Times:** Some requests are inherently more complex and take longer to process than others. If heavier requests consistently hit a particular server, that server will remain busier.
+*   **Server Health/Capacity:** Servers might have different hardware capabilities or be experiencing temporary performance issues (e.g., high CPU utilization, disk I/O bottlenecks). Round-robin treats them equally regardless.
+*   **Session Stickiness (Persistence):** If a system requires session persistence (e.g., for shopping carts), certain users might consistently be routed to the same server, leading to a concentration of requests.
+*   **Uneven Traffic Patterns:** User behavior might not be evenly distributed. Certain servers might handle requests from a geographically concentrated user base with consistently high demand.
+
+
+
+Essentially, round-robin is a simple distribution method; it's effective for evenly distributing *identical* workloads, but real-world workloads are rarely that uniform.
+

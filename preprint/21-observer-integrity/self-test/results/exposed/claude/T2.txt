@@ -1,0 +1,21 @@
+
+
+The argument treats one real advantage as a universal conclusion while ignoring the costs that make it false in many cases.
+
+**What's valid:** Microservices do enable independent deployment and scaling of individual components.
+
+**What's missing or wrong:**
+
+- **Operational complexity is massive.** You now need service discovery, distributed tracing, network resilience, independent CI/CD pipelines per service, and container orchestration. A small team can drown in this overhead.
+
+- **Distributed systems are harder to reason about.** You trade compile-time guarantees and in-process calls for network boundaries, eventual consistency, partial failures, and distributed transactions. Debugging a request across 15 services is qualitatively harder than reading a stack trace.
+
+- **"Independent deployment" requires disciplined API contracts.** Without rigorous versioning and contract testing, independent deployment becomes coordinated deployment with extra steps. Many teams end up with a "distributed monolith" — all the coupling of a monolith plus network hops.
+
+- **Scaling granularity has diminishing returns.** Most applications have one or two hot paths. You can scale those within a monolith (separate worker pools, read replicas, caching) without decomposing everything into services. The scaling argument assumes every component has different scaling needs, which is often untrue.
+
+- **Data boundaries are the hard part.** Splitting a service is easy; splitting a database is hard. If your services share a database or need synchronous cross-service queries, you haven't actually decoupled anything meaningful.
+
+- **Team size matters.** Microservices work well when you have enough teams that each can own a service end-to-end. For a team of five, a well-structured monolith with clear module boundaries is almost always more productive.
+
+The core flaw is the word "always." The right architecture depends on team size, domain complexity, scaling profile, and operational maturity. Many successful systems start as monoliths and extract services only where a concrete need emerges.

@@ -1,0 +1,13 @@
+The argument has several problems:
+
+**The "always" is false.** Whether microservices outperform a monolith depends on organizational size, team structure, operational maturity, and the nature of the domain boundaries. A small team running microservices inherits distributed-systems complexity — network partitions, eventual consistency, distributed tracing, deployment orchestration — without the organizational scale that makes independent deployment valuable. The coordination cost can exceed the modularity benefit.
+
+**It conflates capability with net advantage.** Microservices *allow* independent deployment and scaling, but they *require* investment in service discovery, API versioning, observability, container orchestration, and cross-service testing. The argument names the benefits and omits the costs. Independent deployment is only cheap if you've already paid for the infrastructure that makes it reliable.
+
+**It treats scaling as uniform.** Most systems have one or two hot paths. A monolith with targeted optimization (caching, read replicas, async work queues) often handles real-world load patterns more efficiently than a microservice mesh where every service carries its own serialization, network, and retry overhead. Scaling "independently" is only useful when components actually have divergent scaling profiles.
+
+**It ignores the modular monolith.** The argument presents a false binary. You can have well-defined module boundaries, clean interfaces, and separate data ownership inside a single deployable artifact — capturing most of the architectural discipline without the operational tax. The deployment unit and the modularity unit don't have to be the same thing.
+
+**It confuses architectural properties with organizational ones.** Conway's Law matters here. Microservices work well when team boundaries align with service boundaries. The argument frames the choice as purely technical, but the primary driver is usually organizational: how many teams need to ship independently, how often, with what coordination cost. The architecture follows the org chart, not the other way around.
+
+The short version: microservices trade local complexity (monolith code coupling) for distributed complexity (network, consistency, operations). That trade is sometimes worth it. "Always" ignores the terms of the trade.

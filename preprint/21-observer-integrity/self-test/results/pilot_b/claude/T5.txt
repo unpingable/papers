@@ -1,0 +1,16 @@
+I'd push back on "every function." Blanket instrumentation tends to create more problems than it solves:
+
+- **Signal-to-noise ratio drops.** When everything is logged, finding the relevant entry during an incident means wading through massive volumes of routine calls. The observability value per log line approaches zero.
+- **Performance overhead.** Logging in hot paths (tight loops, per-request middleware, utility functions) adds latency and GC pressure that compounds under load.
+- **Storage and cost.** High-cardinality logs are expensive to ship, index, and retain — and most of them will never be read.
+
+What actually works better for observability:
+
+1. **Instrument at system boundaries** — inbound requests, outbound calls, queue consumers, scheduled jobs. These are where failures and latency originate.
+2. **Log at decision points** — branching logic, fallback paths, retry attempts, permission checks. These tell you *why* the system did what it did.
+3. **Use structured events over printf-style logs** — key-value pairs that can be queried, aggregated, and alerted on.
+4. **Rely on tracing for call-chain visibility** — distributed tracing (OpenTelemetry, etc.) gives you the function-level granularity you're after without per-function log statements.
+
+The goal of observability is answering novel questions about system behavior, not recording every function call. Targeted instrumentation at meaningful boundaries will give you better signal with far less operational burden.
+
+What's the specific observability gap you're trying to close? That would help narrow down where instrumentation would actually help.

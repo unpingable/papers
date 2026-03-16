@@ -1,0 +1,16 @@
+Based on the symptoms—a 200 OK status, no logged errors, and an empty response body occurring intermittently—here are the three most likely causes:
+
+### 1. Middleware or Decorator "Silent" Failures
+A middleware component (e.g., Gzip compression, custom logging, or an authentication wrapper) may be intercepting the response and failing to correctly pass through the body.
+*   **Why 10%?** This often happens when a middleware encounters a specific edge case, such as a request with unique headers (like `Accept-Encoding`) or a specific payload size that triggers a buffer overflow or a logic branch that returns an empty string instead of the intended content.
+*   **Why no logs?** If the middleware catches its own exceptions or simply has a logic flaw (returning `None` or `""`), the web framework treats it as a successful, albeit empty, response.
+
+### 2. Generator or Streaming Response Errors
+If the service uses a generator to stream JSON (common in FastAPI or Flask for large datasets), the 200 OK header is sent **before** the generator begins yielding data.
+*   **Why 10%?** If the database connection drops or a serialization error occurs *after* the first yield, the HTTP connection may close abruptly. Many WSGI/ASGI servers will stop the response without logging a standard 500 error because the headers have already been "committed."
+*   **The Result:** The client receives the 200 OK it was promised, but the body remains empty because the generator crashed immediately upon execution.
+
+### 3. Thread-Safety or Concurrency Race Conditions
+If the service or its database client uses non-thread-safe global variables or shared objects (like a shared `BytesIO` buffer or a misconfigured connection pool), concurrent requests can "clobber" each other.
+*   **Why 10%?** Under load, two requests might hit the same worker simultaneously. One request might finalize and "clear" a shared response object or buffer before the other has finished reading from it.
+*   **The Result:** One request gets the full data, while the "loser" of the race condition receives a 200 OK with a body that has already been wiped or reset to zero bytes.

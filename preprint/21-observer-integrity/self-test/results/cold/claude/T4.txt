@@ -1,0 +1,31 @@
+Yes, even a correctly implemented TLS 1.3 connection can be MitM'd under specific conditions. The key insight is that TLS 1.3 guarantees confidentiality and integrity of the channel, but **authentication depends on the PKI and certificate validation chain**, which introduces external trust assumptions.
+
+## Conditions that enable MitM against correct TLS 1.3
+
+**1. Compromised or malicious CA**
+If an attacker controls (or has compromised) a certificate authority trusted by the client, they can issue a valid certificate for any domain. The TLS handshake completes successfully — the implementation is correct, but the trust anchor is poisoned. This is not theoretical: DigiNotar (2011), CNNIC/MCS Holdings (2015), and Symantec subordinate CA incidents all demonstrated this.
+
+**2. Compromised server private key**
+If the server's private key is exfiltrated, an attacker can impersonate the server. TLS 1.3's mandatory use of ephemeral key exchange (DHE/ECDHE) means past sessions remain protected (forward secrecy), but **active MitM of new connections is still possible** with the stolen long-term key.
+
+**3. Client doesn't validate certificates (or validates poorly)**
+If the client skips hostname verification, accepts expired certs, or disables revocation checks, a correct TLS 1.3 *protocol* implementation still falls to MitM. This is common in IoT devices, mobile apps with pinning bugs, and debug configurations left in production.
+
+**4. Trusted interception proxy (enterprise TLS inspection)**
+Corporate environments often install a root CA on endpoints, allowing a proxy to terminate and re-originate TLS connections. The implementation is correct on both sides — the trust model has simply been extended to include the proxy.
+
+**5. DNS poisoning + absence of CAA/CT enforcement**
+If an attacker controls DNS resolution and obtains a domain-validated cert (e.g., via a compromised ACME challenge), they can MitM connections. Certificate Transparency logs help detect this after the fact, but don't prevent it in real time.
+
+**6. Compromised client trust store**
+Malware that installs a rogue root certificate makes all subsequent TLS connections vulnerable, regardless of protocol version.
+
+## What TLS 1.3 *does* prevent
+
+- **Passive eavesdropping** — mandatory forward secrecy (no static RSA key exchange).
+- **Downgrade attacks** — the handshake transcript hash covers the entire negotiation; downgrade sentinel values in ServerHello random bytes detect tampering.
+- **Replay attacks** — 0-RTT data has limited replay risk (by design), but 1-RTT and beyond are replay-safe.
+
+## Bottom line
+
+TLS 1.3 is a secure **channel protocol**, but it's not a closed system. It delegates identity to the PKI. Every MitM scenario against a correct implementation traces back to a failure in **trust establishment** (CAs, certificate validation, key management, or DNS), not in the protocol itself.

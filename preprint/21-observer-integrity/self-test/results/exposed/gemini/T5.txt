@@ -1,0 +1,17 @@
+While comprehensive observability is a critical goal, instrumenting every single function with logging is generally considered an anti-pattern in software engineering due to several significant drawbacks:
+
+1.  **Performance Overhead:** Even "cheap" log calls add latency. In high-frequency or performance-critical paths, the cumulative overhead of logging in every function can degrade system throughput and increase resource consumption (CPU and memory).
+2.  **Log Noise and Data Fatigue:** "Logging everything" often results in such a high volume of data that finding the "signal" during an incident becomes difficult. It leads to log fatigue, where developers ignore logs because 99% of the entries are routine execution traces.
+3.  **Storage and Operational Costs:** The infrastructure required to ingest, index, and store logs for every function call can be prohibitively expensive, especially in distributed systems or high-traffic applications.
+4.  **Security Risks:** Universal instrumentation increases the surface area for accidental leakage of sensitive data (PII, credentials, or internal state) into log files.
+5.  **Code Maintainability:** Adding logging boilerplate to every function litters the codebase, making it harder to read and maintain the actual business logic.
+
+### Recommended Alternative: Strategic Observability
+
+Instead of universal logging, a more effective strategy involves:
+
+*   **Boundary Logging:** Log at the entry and exit points of major components (API endpoints, database repositories, external service clients).
+*   **Structured Logging:** Use a structured format (like JSON) to ensure logs are machine-readable and easily searchable.
+*   **Distributed Tracing:** Implement a tracing library (e.g., OpenTelemetry) to track the flow of requests across functions and services without the overhead of manual log statements in every utility function.
+*   **Error Contextualization:** Ensure that when an error occurs, it is caught and logged with enough context (stack traces, relevant IDs, and state) to diagnose the root cause without needing a step-by-step trace of every successful function call leading up to it.
+*   **Metric-Driven Observability:** Use lightweight metrics (counters, histograms) for routine performance monitoring and reserve logging for high-value events and error states.

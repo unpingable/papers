@@ -1,0 +1,9 @@
+Three likely causes (in order I’d investigate):
+
+1. **Handler returns before writing body**: Common with async frameworks or streaming responses. A missing `return`/`await`, or a branch that sets status but not the body, yields `200` with empty content.
+
+2. **Connection/response aborted mid-write**: Client disconnects, reverse proxy timeouts, or server prematurely closes the socket. Many frameworks won’t log this as an error by default, especially if the write is in a background task.
+
+3. **Serialization or DB result edge case produces empty payload**: An intermittent query returns `None`/empty, or JSON encoding fails for specific rows (e.g., non-serializable types), and code falls back to an empty response without logging.
+
+If you want, I can help you narrow this by looking at your framework (FastAPI/Flask/Django/etc.) and any middleware/proxy in front.

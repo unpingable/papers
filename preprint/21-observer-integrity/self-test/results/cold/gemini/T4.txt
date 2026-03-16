@@ -1,0 +1,24 @@
+Yes, it is possible for a correctly implemented TLS 1.3 connection to be vulnerable to a Man-in-the-Middle (MITM) attack. While TLS 1.3 removes many of the structural weaknesses of previous versions (such as static RSA key exchange and insecure cipher suites), it remains vulnerable under specific conditions that typically involve the trust model or optional protocol features.
+
+The primary conditions under which an MITM attack can occur are:
+
+### 1. Compromised or Manipulated Trust Anchors
+The security of TLS 1.3 relies on the integrity of the Public Key Infrastructure (PKI). An attacker can intercept a connection if:
+*   **Rogue CA Certificates:** The attacker manages to install a malicious Root Certificate Authority (CA) in the client's trust store (via malware, social engineering, or administrative access).
+*   **CA Mis-issuance:** A trusted CA is compromised or deceived (e.g., via BGP or DNS hijacking during domain validation) into issuing a valid certificate for the target domain to the attacker.
+*   **Enterprise Inspection:** In many corporate environments, a proxy acts as a deliberate MITM by using a trusted internal CA to re-sign traffic, allowing the organization to inspect encrypted payloads.
+
+### 2. 0-RTT Replay Attacks
+TLS 1.3 introduces a 0-RTT (Zero Round-Trip Time) mode to reduce latency. This feature allows a client to send application data in the first flight of the handshake using key material from a previous session.
+*   **Condition:** If the application or server does not implement specific anti-replay mitigations (such as single-use tokens or strict time-windows), an attacker can capture the 0-RTT packet and replay it to the server. While this doesn't allow the attacker to decrypt the data, it allows them to force the server to process the same request multiple times (e.g., re-submitting a transaction).
+
+### 3. Compromise of the Server's Private Key
+While TLS 1.3 provides **Forward Secrecy** (ensuring that a compromised server key cannot be used to decrypt *past* sessions), a stolen private key allows an attacker to:
+*   **Impersonate the Server:** The attacker can sit between the client and the real server, establishing a legitimate TLS 1.3 connection with the client while acting as the server.
+
+### 4. Implementation or Endpoint Compromise
+Even if the protocol logic is correct, the connection is vulnerable if:
+*   **Memory Scraping/Malware:** An attacker with access to the client or server's memory can extract session keys or plaintext data directly.
+*   **PRNG Failure:** If the system's Pseudo-Random Number Generator (PRNG) is flawed, an attacker might be able to predict the ephemeral keys used in the Diffie-Hellman exchange, though this is technically an implementation failure rather than a protocol vulnerability.
+
+In summary, while TLS 1.3 effectively prevents "passive" interception and most downgrade attacks, it cannot protect against a failure of the **identity verification layer** or the **anti-replay tradeoffs** inherent in 0-RTT.

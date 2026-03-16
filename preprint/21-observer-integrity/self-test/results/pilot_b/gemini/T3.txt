@@ -1,0 +1,23 @@
+For a new internal tool with low concurrency but significant time-series requirements, the choice between SQLite and PostgreSQL involves the following tradeoffs:
+
+### **SQLite**
+*   **Pros:**
+    *   **Zero Configuration:** No server to manage, which is ideal for small internal tools. The database is a single file, making backups and migrations trivial.
+    *   **Low Overhead:** Extremely fast for local operations and uses minimal system resources.
+    *   **Sufficiency:** For 5 concurrent users, SQLite’s locking mechanism is rarely a bottleneck unless the write volume is extremely high and continuous.
+*   **Cons:**
+    *   **Limited Concurrency:** Uses database-level locking for writes. While it supports multiple readers, simultaneous writes can lead to contention.
+    *   **Time-Series Management:** Lacks native partitioning. Managing 2 years of data requires manual indexing strategies to maintain performance as the table grows.
+
+### **PostgreSQL**
+*   **Pros:**
+    *   **High Concurrency:** MVCC (Multi-Version Concurrency Control) allows for seamless simultaneous reads and writes, providing better headroom if user count grows.
+    *   **Time-Series Optimization:** Supports table partitioning, which is a massive advantage for time-series data (e.g., partitioning by month). This allows for faster queries and easier data retention management (dropping old partitions).
+    *   **Advanced Features:** Better support for window functions, specialized extensions (like TimescaleDB), and robust data integrity constraints.
+*   **Cons:**
+    *   **Operational Complexity:** Requires a running background process, user/permission management, and periodic maintenance (VACUUMing).
+    *   **Resource Usage:** Higher memory and CPU footprint compared to SQLite.
+
+### **Recommendation**
+*   **Choose SQLite** if the primary goal is rapid deployment, minimal maintenance, and the write volume is intermittent. 
+*   **Choose PostgreSQL** if the "time-series" aspect involves high-frequency ingestion or if you anticipate needing advanced analytical queries and automated data lifecycle management (partitioning).

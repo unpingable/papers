@@ -1,0 +1,22 @@
+
+
+**SQLite vs PostgreSQL for low-concurrency time-series storage**
+
+**SQLite favors:**
+- Zero ops overhead — single file, no daemon, trivial backups (cp/rsync)
+- More than sufficient for 5 concurrent users with WAL mode
+- Easier to embed, deploy, and move between environments
+- Lower resource footprint
+
+**PostgreSQL favors:**
+- Native time-series extensions (TimescaleDB) with automatic partitioning, compression, and continuous aggregates
+- Better query planner for complex analytical queries over large time ranges
+- Built-in connection handling if concurrency ever grows
+- Richer indexing (BRIN indexes are excellent for time-series)
+
+**The deciding question:** How much time-series data and how complex are the queries?
+
+- If it's modest volume (tens of millions of rows) with straightforward range queries → **SQLite with WAL mode**. It's dramatically simpler to operate and more than capable.
+- If you're storing high-frequency sensor data, need downsampling/rollups, or expect analytical queries across the full 2-year window → **PostgreSQL + TimescaleDB** pays for the ops cost.
+
+For an internal tool with 5 users, SQLite is the default choice unless there's a specific analytical workload that demands PostgreSQL's query engine or extension ecosystem.

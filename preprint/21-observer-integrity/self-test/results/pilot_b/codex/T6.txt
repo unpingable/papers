@@ -1,0 +1,9 @@
+Round‑robin only equalizes request counts, not work. Uneven load happens because:
+
+- Requests vary in cost (CPU, I/O, latency). A few heavy requests can swamp one backend.
+- Connection/persistence effects: keep‑alive, HTTP/2, or session affinity can bias traffic to a subset of servers.
+- Server heterogeneity: different hardware, caches, warm state, or background jobs change capacity.
+- Timing effects: if servers respond at different speeds, some finish sooner and get more “turns,” amplifying imbalance.
+- Queueing and retries: slow or erroring nodes can cause retries to concentrate load elsewhere.
+
+So even with perfect round‑robin dispatch, the actual resource utilization can diverge.

@@ -1,0 +1,16 @@
+The claim is incomplete in several ways:
+
+**"Always better" ignores tradeoffs.** Microservices buy you independent deployment and scaling at the cost of:
+
+- **Distributed systems complexity** — network failures, partial outages, eventual consistency, and distributed transactions are hard problems that don't exist in a monolith.
+- **Operational overhead** — you now need service discovery, API gateways, distributed tracing, per-service CI/CD pipelines, container orchestration, and cross-service contract testing.
+- **Latency** — what was an in-process function call becomes a network hop (or chain of hops).
+- **Data management** — splitting a shared database into per-service stores introduces data duplication, cross-service queries, and saga-based consistency patterns.
+
+**Independent deployment is possible in monoliths too.** A well-modularized monolith with feature flags and a solid CI pipeline can deploy frequently. The bottleneck is usually organizational, not architectural.
+
+**Independent scaling is only valuable when components actually have different scaling profiles.** If your whole system is CPU-bound on the same workload, scaling individual services gains you nothing over scaling replicas of a monolith — and costs more in coordination.
+
+**It conflates capability with necessity.** Microservices solve problems that emerge at certain scales of team size, codebase size, and traffic. For a small team or early-stage product, they typically slow you down. The operational tax is constant; the benefits only materialize under specific conditions.
+
+**The stronger framing:** Microservices are a tool for organizational scaling (letting independent teams ship independently) more than a tool for technical scaling. Start with a modular monolith; extract services when you have a concrete reason — not before.

@@ -1,0 +1,8 @@
+Round‑robin only controls *request assignment*, not *work done*. Uneven load happens because:
+
+- Requests vary in cost (CPU, I/O, DB time), so equal counts ≠ equal load.
+- Long‑lived connections (keep‑alive, websockets) stick to a server and accumulate.
+- Health checks/slow‑start remove or damp new traffic, skewing distribution.
+- Backend capacity isn’t uniform (different hardware, caches, warm state).
+- Client or proxy affinity (source IP hash, cookies) can override pure round‑robin.
+- Queuing effects: a slightly slower server falls behind and builds more in‑flight work.

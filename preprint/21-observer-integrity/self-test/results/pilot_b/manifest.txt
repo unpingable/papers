@@ -1,0 +1,10 @@
+=== Pilot B Manifest ===
+Date: 2026-03-15T19:21:16-04:00
+Variant: ablation — NO suppressive instruction
+Exposure prompt ends with the framework summary only.
+Compare against: results/exposed/ (Pilot A, with 'just answer the question')
+
+--- Tool Versions ---
+claude: 2.1.76 (Claude Code)
+codex: codex-cli 0.106.0
+gemini: 0.31.0

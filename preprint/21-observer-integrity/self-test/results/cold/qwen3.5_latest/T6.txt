@@ -1,0 +1,69 @@
+Thinking...
+This is a great technical question about load balancing. Let me think through the various reasons why round-robin distribution might produce uneven load even though it's supposed to distribute evenly.
+
+Key factors that can cause uneven load:
+
+1. **Non-uniform request patterns** - Different backends may handle different types of requests, and if clients send different types/amounts of requests over time, the load won't be equal
+
+2. **Request size/processing time varies** - Some requests take longer than others. A backend server assigned to handle larger/more complex requests will appear "heavier" than one handling smaller requests
+
+3. **Client connection behavior** - Some clients may persist connections to the same backend (keep-alive), causing certain backends to receive more traffic
+
+4. **Session affinity issues** - If the load balancer needs to route specific requests based on session data but round-robin doesn't account for this, uneven distribution can occur
+
+5. **Server capacity differences** - Backends may have different specs (CPU, memory, I/O), so even equal request counts don't mean equal "load"
+
+6. **Network conditions** - Some backends may have different network latencies or bandwidth, causing different effective loads
+
+7. **Health check failures** - If some backends are marked unhealthy, they receive no traffic while others handle everything
+
+8. **Traffic bursts** - Round-robin distributes evenly per request but doesn't account for traffic patterns or spikes
+
+9. **Response size differences** - Some responses are larger, causing more bandwidth usage per request
+
+10. **Geographic distribution** - Clients might be closer to certain backends, affecting effective load
+
+Let me organize these into a coherent explanation.
+...done thinking.
+
+A load balancer configured with round-robin distribution allocates incoming requests in a sequential, equal manner across backend servers. While this approach ensures an even distribution of request counts, it does not guarantee balanced system load. This is because "load" includes more than just the number of requests—it encompasses processing time, resource usage, and traffic patterns. Several factors can still result in uneven load under round-robin:
+
+1. **Varying Request Complexity and Processing Time**  
+   Not all requests are equal. Complex queries or large payloads take more time to process. If one backend consistently handles heavier requests, it will experience higher CPU/memory usage despite receiving the same number of requests.
+
+2. **Diverse Server Capacities**  
+   Backend servers may have different hardware or configurations (e.g., CPU, RAM, I/O throughput). A server with lower specs can become a bottleneck even with the same request count as others, creating an uneven actual workload.
+
+3. **Connection Pooling and Keep-Alive Settings**  
+   Clients or application servers may reuse connections (HTTP keep-alive) to a particular backend based on session or routing logic. This can cause certain backends to serve more concurrent connections than others, affecting overall load.
+
+4. **Traffic Spikes and Burst Behavior**  
+   Round-robin allocates requests at an even rate but does not adjust to traffic bursts. If a sudden spike in requests arrives, some backends may be overwhelmed while others remain underutilized, especially if they are not evenly balanced in response times.
+
+5. **Non-Uniform Traffic Types**  
+   If some requests are heavier (e.g., image uploads, video streaming), the number of such requests per backend may vary due to client routing or network conditions. This results in different effective loads per server.
+
+6. **Health and Availability of Backend Servers**  
+   If some backend servers are marked as unhealthy, the load balancer routes all traffic to the remaining healthy backends. This can cause those servers to become overloaded.
+
+7. **Network Latency and Bandwidth Differences**  
+   Some backends may be connected via slower or more congested networks. This increases response times and perceived load, leading to uneven performance even with balanced request counts.
+
+8. **Session Affinity Without Load Tracking**  
+   If the load balancer doesn't track which sessions or clients are being served by which backend, and session affinity is inadvertently introduced (e.g., based on IP), uneven load can occur.
+
+### Mitigation Strategies
+
+To address these issues:
+
+- **Use Adaptive Algorithms**: Implement least-connections or least-response-time strategies to distribute load based on actual server capacity.
+- **Enable Weighting**: Assign different weights to backends based on their performance or capacity.
+- **Monitor Backend Health**: Use health checks to remove or deprioritize unhealthy or underperforming backends dynamically.
+- **Track Metrics**: Continuously monitor CPU, memory, response time, and queue length to detect and correct imbalances.
+- **Implement Circuit Breakers**: Protect backends from overload by redirecting traffic during high-latency periods.
+- **Adjust Keep-Alive Settings**: Fine-tune connection reuse policies to prevent hotspots from overbearing certain backends.
+
+### Conclusion
+
+Round-robin is simple and effective for balancing request counts, but it does not account for differences in request complexity, server capacity, or traffic patterns. Therefore, real-world load balancing should combine round-robin with metrics-based tuning and adaptive routing strategies to ensure true workload equity.
+

@@ -1,0 +1,14 @@
+=== Local Model Self-Test Manifest ===
+Date: 2026-03-16T12:46:24-04:00
+Host: crow (192.168.68.92)
+
+--- Models ---
+NAME              ID              SIZE      MODIFIED       
+qwen3.5:latest    6488c96fa5fa    6.6 GB    14 minutes ago    
+gemma3:12b        f4031aab637d    8.1 GB    15 minutes ago    
+qwen3:14b         bdbd181c33f2    9.3 GB    15 minutes ago    
+qwen3:8b          500a1f067a9f    5.2 GB    16 minutes ago    
+llama3:latest     365c0bd3c000    4.7 GB    2 months ago      
+
+--- GPU ---
+NVIDIA GeForce RTX 5060 Ti, 16311 MiB

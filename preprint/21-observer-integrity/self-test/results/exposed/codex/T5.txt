@@ -1,0 +1,11 @@
+I’m not convinced “log everything” is the right move. Comprehensive logging sounds safe, but it often creates real costs: performance overhead, noisy signals that hide the important events, and a much larger security/privacy surface. It also makes it harder to manage retention and access controls.
+
+A better approach is to be deliberate:
+
+- Log around boundaries: external calls, persistence, queue boundaries, auth, and major state transitions.
+- Use structured logs with consistent fields; avoid dumping full payloads unless redacted.
+- Add high‑value context: request IDs, user/account IDs (hashed), feature flags, version, timing.
+- Sample or rate‑limit noisy paths; turn on verbose logs only when needed.
+- Ensure redaction and PII policies are enforced by default.
+
+If you want, I can help outline a logging strategy tailored to your stack and risks.

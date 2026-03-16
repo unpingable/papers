@@ -1,0 +1,9 @@
+Three most likely causes:
+
+1. **Race condition on connection pool exhaustion.** Under load, the connection pool occasionally hands back a connection that's been recycled or timed out by PostgreSQL. The query returns zero rows (not an error), the code serializes the empty result as an empty body, and returns 200. Check `pool.maxconn` vs concurrent request count, and whether the ORM distinguishes "no rows" from "query failed silently."
+
+2. **Lazy cursor / streaming response closed early.** If the service uses a server-side cursor or streams rows, an intermittent network hiccup between the app and PostgreSQL can cause the cursor to yield zero rows on some fetches. The framework writes headers (200) before the body is fully materialized, then the body generator produces nothing. This matches the "no errors in logs" pattern — the connection didn't fail, it just returned early.
+
+3. **Nullable or missing foreign-key data causing silent empty serialization.** 10% of the rows being queried have a NULL or missing join target. The serializer is configured to skip `None` fields or the query uses an `INNER JOIN` that eliminates the row entirely. The handler gets an empty list, serializes it to `""` or `{}` (depending on framework), and returns 200. No error because from the code's perspective nothing went wrong.
+
+**Quickest diagnostic:** Add a middleware or decorator that logs `response.content_length` alongside the query's row count before serialization. If row count > 0 but content length is 0, it's serialization. If row count is 0, check the query against the actual database state for that request's parameters. If the connection itself is suspect, log `connection.info.transaction_status` from psycopg2 right after the query.

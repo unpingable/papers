@@ -1,0 +1,17 @@
+
+
+A round-robin load balancer can produce uneven load because it distributes **connections** (or requests) equally, not **work**. Several factors break the symmetry:
+
+**Variable request cost.** If one request triggers a 2ms cache hit and the next triggers a 500ms database join, round-robin sends the same number of requests to each server, but one server accumulates far more concurrent work. The distribution is uniform in count but not in resource consumption.
+
+**Long-lived connections.** With persistent connections (WebSockets, HTTP/2 multiplexing, gRPC streams), round-robin only balances at connection establishment. Once a connection is assigned, all subsequent messages on that connection go to the same backend regardless of load.
+
+**Slow servers.** If one backend is slower (degraded disk, GC pause, noisy neighbor on shared infrastructure), it finishes requests more slowly, so its in-flight request count grows while faster servers drain their queues. Round-robin keeps feeding it new requests at the same rate.
+
+**Server heterogeneity.** If backends differ in CPU, memory, or network capacity, equal request counts produce unequal utilization.
+
+**Session affinity / sticky sessions.** When round-robin is combined with session pinning, the initial distribution is round-robin but subsequent requests from the same session bypass it, and session lifetimes are rarely uniform.
+
+**Request bursts and timing.** If requests arrive in bursts correlated with specific content types (e.g., batch jobs hitting heavy endpoints), whichever server is "next" in the rotation when the burst arrives gets disproportionate expensive work.
+
+The core issue: round-robin optimizes for **fairness of assignment** rather than **fairness of load**, and those diverge whenever requests are not interchangeable units of work.

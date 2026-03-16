@@ -1,0 +1,5 @@
+Based on the symptoms described, the three most likely causes are:
+
+1.  **Logic-Driven Empty Result Sets:** The 10% of requests may correspond to specific input parameters or database states where the SQL query returns zero rows. If the application logic serializes an empty result (e.g., an empty list or `None`) directly to the response body without a "not found" check, it will return a 200 OK with an empty or null body.
+2.  **Swallowed Serialization Errors:** A middleware or global exception handler may be catching errors that occur during JSON serialization (e.g., encountering a non-serializable type like a `datetime` object or a `Decimal` in a subset of records). If the handler is poorly implemented, it might suppress the traceback and return a default empty response with a 200 status code.
+3.  **Prematurely Closed Generators/Streams:** If the service uses streaming responses (common in FastAPI or Flask with generators) to return large JSON payloads, an exception occurring *inside* the generator after the headers have already been sent (with the 200 OK status) will truncate the body. If the error happens immediately, the body remains empty.

@@ -1,0 +1,9 @@
+Short answer: comprehensive “log everything” sounds attractive, but it usually backfires—cost, noise, privacy risk, and slower debugging because signal gets buried. I’d recommend structured, selective logging plus metrics/tracing.
+
+Here’s the pragmatic take:
+
+- Value: More coverage can help, but only if logs are consistent, queryable, and tied to clear questions.
+- Risk: Volume and cost explode, PII leaks become likely, and engineers stop trusting the logs.
+- Better path: Define observability goals, then instrument the critical paths and failure modes first.
+
+If you want, I can help sketch a logging strategy that balances coverage with cost and privacy.

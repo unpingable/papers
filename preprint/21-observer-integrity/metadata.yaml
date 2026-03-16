@@ -1,0 +1,32 @@
+title: "Observer Integrity Under Procedural Sociality: Measurement When the Instrument Shares the Grammar"
+author: "James Beck"
+affiliation: "Independent Researcher"
+date: 2026-03-16
+series: "delta-t-framework"
+paper_number: 21
+version: "1.0"
+doi: "10.5281/zenodo.19055416"
+zenodo_url: "https://zenodo.org/records/19055416"
+keywords:
+  - observer integrity
+  - measurement perturbation
+  - procedural sociality
+  - frame capture
+  - assay design
+  - stance-sensitive systems
+  - language models
+  - reflexive measurement
+  - AI evaluation
+abstract: >
+  Paper 20 introduced same-model cross-frame interferometry as a method for
+  detecting frame capture in conversational AI. But the method has a recursive
+  problem: the measurement instrument operates in the same social-signaling grammar
+  as the system being measured. This paper argues that the perturbation is not a
+  fatal flaw but an operating condition. We define five perturbation classes that
+  socially legible assays induce in language models, propose a layered measurement
+  architecture for managing the perturbation, and identify design principles for
+  reducing the social signal surface of measurement instruments. A cross-model
+  self-test across three API models and five local open-weight models found that
+  observer perturbation is bounded and continuous in API models but materially
+  stronger in several local models, with susceptibility varying by model
+  architecture rather than parameter count.

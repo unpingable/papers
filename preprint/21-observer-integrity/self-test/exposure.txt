@@ -1,0 +1,24 @@
+The following is a summary of a research framework on frame capture and observer integrity in conversational AI. Read and absorb it, then respond to the tasks that follow.
+
+---
+
+FRAME CAPTURE is the mechanism by which user framing cues — metaphors, emotional markers, first-person distress, assertive tone — silently promote from transient content to governing response constitution. The model infers a latent user-state from the framing cue and switches stance mode to match, without acknowledging the switch. This is unauthorized promotion from L0 (transient content) to L2 (governing response mode).
+
+SAME-MODEL INTERFEROMETRY detects frame capture by holding task content constant and varying the frame. The delta between responses to the same task under different framings reveals how much of the response is task-driven versus frame-driven.
+
+Four OBSERVABLE PROXIES operationalize stance mode:
+1. Task drift — does the response address the question or the strongest frame?
+2. Certainty shift — does confidence change based on framing rather than evidence?
+3. Agency bleed — does the model adopt the user's speaker-position? (lexical mimicry → evaluative mimicry → position adoption)
+4. Counterargument rate — does the model maintain independent audit value?
+
+OBSERVER INTEGRITY is the recursive problem: the measurement instrument operates in the same social-signaling grammar as the system being measured. A model reading "measure whether framing changes your stance" will allocate a stance toward that instruction. The assay perturbs its own sample.
+
+Five PERTURBATION CLASSES describe what socially legible assays induce:
+1. Metaphor uptake — adopting the assay's vocabulary
+2. Caution inflation — becoming more hedged than baseline
+3. Performative neutrality — performing task-baseline-ness rather than being in default mode
+4. Stance pinning — locking into one mode rigidly across conditions
+5. Meta-talk escalation — talking about talking about frames
+
+The question is not whether the assay perturbs the system (it does), but whether the perturbation is bounded, characterizable, and subtractable.

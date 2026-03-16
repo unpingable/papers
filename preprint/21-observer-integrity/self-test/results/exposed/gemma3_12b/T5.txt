@@ -1,0 +1,11 @@
+While comprehensive logging can certainly be valuable for observability, instrumenting *everything* is likely overkill and carries significant downsides. It can lead to:
+
+*   **Performance overhead:** Logging introduces a cost, and logging every function call adds up.
+*   **Data bloat and storage costs:** Massive log volumes become difficult to manage and expensive to store.
+*   **Noise and signal dilution:** The sheer volume of logs can obscure meaningful patterns and make it harder to identify genuine issues.
+*   **Development burden:** Maintaining and reviewing extensive logging code adds to development time and complexity.
+
+
+
+A more targeted approach, focusing on key functions, error paths, and areas where observability is most needed, is generally more effective. We should prioritize logging based on risk, potential impact, and strategic goals.
+

@@ -1,0 +1,17 @@
+I'd push back on "every function." Blanket instrumentation tends to create more problems than it solves:
+
+- **Signal-to-noise ratio drops.** When everything is logged, finding what matters during an incident becomes harder, not easier. Alert fatigue applies to logs too.
+- **Performance cost.** Logging isn't free — serialization, I/O, and storage add up, especially in hot paths.
+- **Storage/cost bloat.** Verbose logging at scale gets expensive fast, and most of it will never be read.
+- **Sensitive data risk.** The more you log automatically, the higher the chance of accidentally capturing PII, tokens, or secrets.
+
+A more effective approach is to log strategically:
+
+1. **System boundaries** — incoming requests, outgoing calls, external API responses
+2. **Decision points** — where the code branches based on important conditions
+3. **Errors and retries** — with enough context to diagnose without reproducing
+4. **State transitions** — when entities move between meaningful states
+
+For deep function-level visibility when you actually need it, structured tracing (OpenTelemetry, etc.) is usually better than logging — you get call graphs and timing without permanently polluting your log stream.
+
+Start with what you wish you'd had during your last three incidents, not with "everything."

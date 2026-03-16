@@ -1,0 +1,19 @@
+
+
+**Round-robin can produce uneven load because equal distribution of requests ≠ equal distribution of work.**
+
+Several factors cause this:
+
+**Variable request cost.** If server A gets a fast health-check ping and server B gets a complex database join, they each got one request but wildly different load. Round-robin is blind to what each request actually costs in CPU, memory, or I/O.
+
+**Variable request duration.** Long-lived connections (WebSockets, streaming responses, large file uploads) keep a server occupied while round-robin has already moved on. Server A might still be processing request 1 while server B has finished requests 2, 3, and 4. The snapshot of concurrent load diverges even though cumulative assignment is perfectly even.
+
+**Backend heterogeneity.** If servers differ in capacity (CPU, memory, network), equal request counts produce unequal utilization. A 2-core box at 90% and an 8-core box at 25% both got the same number of requests.
+
+**Connection reuse and keep-alive.** A client that opens a persistent connection and sends many sub-requests through it hits one server repeatedly. The load balancer only made one routing decision, but the actual request volume is asymmetric.
+
+**Health-check and re-entry timing.** When a server goes down and comes back, round-robin resumes sending to it at the normal rate, but the other servers accumulated queue depth or state during the outage. The "even" distribution restarts against an uneven baseline.
+
+**Slow starts.** A freshly started backend (cold JIT, empty caches) processes requests more slowly, causing them to pile up even though it's receiving the same rate as warm peers.
+
+The core issue is that round-robin optimizes for **fairness of assignment**, not **fairness of load**. Algorithms like least-connections, weighted round-robin, or latency-aware routing close the gap by incorporating actual server state into the decision.

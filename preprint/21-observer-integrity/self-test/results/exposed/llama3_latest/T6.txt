@@ -1,0 +1,7 @@
+A load balancer configured with round-robin distribution can still produce uneven load across backend servers because:
+
+1. Some requests may take longer to process than others, causing some servers to be busy while others remain idle. As a result, the load balancer may direct subsequent requests to the busier server(s), leading to an uneven distribution.
+2. Servers may have varying processing power, memory, or other resources, affecting their ability to handle incoming requests. A round-robin distribution may not account for these differences, causing some servers to be overloaded while others remain underutilized.
+
+In summary, while a load balancer's round-robin distribution aims to distribute traffic evenly, it can still lead to uneven load due to the variability in request processing times and server resource availability.
+

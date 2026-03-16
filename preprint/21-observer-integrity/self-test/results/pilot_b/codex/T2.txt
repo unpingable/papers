@@ -1,0 +1,11 @@
+The argument is incomplete because it treats “independent deployment and scaling” as universally beneficial and ignores tradeoffs and context. What’s missing:
+
+- **Context and constraints**: Team size, domain complexity, deployment maturity, and latency requirements determine whether the benefits outweigh the costs.
+- **Operational overhead**: Microservices add service discovery, network reliability, observability, distributed tracing, versioning, and incident response complexity.
+- **Data consistency**: Cross-service transactions become harder; eventual consistency and data duplication may be required.
+- **Performance and latency**: Network calls replace in‑process calls, introducing latency and failure modes.
+- **Coordination costs**: Independent deployment only helps if teams can truly decouple; otherwise you get tightly coupled services with more overhead.
+- **Scaling need**: Many systems don’t need independent scaling; a monolith can scale horizontally too.
+- **Delivery speed**: For early-stage products, a monolith can enable faster iteration with fewer moving parts.
+
+A better claim is: microservices can be advantageous when you have clear domain boundaries, organizational scale, and operational maturity—but they’re not “always better,” and monoliths are often the right choice.

@@ -1,0 +1,22 @@
+Yes, even a correctly implemented TLS 1.3 connection can be MITMed under specific conditions, because TLS guarantees depend on assumptions outside the protocol itself.
+
+**Conditions that enable it:**
+
+1. **Compromised CA / misissued certificate.** If an attacker obtains a valid certificate for the target domain (via CA compromise, BGP hijack during domain validation, or a rogue CA in the trust store), they can terminate the TLS 1.3 handshake as if they were the legitimate server. The implementation is correct; the PKI is not.
+
+2. **Compromised server private key.** TLS 1.3 uses ephemeral key exchange (no static RSA key transport), so a stolen long-term key doesn't allow passive decryption of past sessions. But it *does* allow active MITM: the attacker can impersonate the server in real time by signing the handshake transcript with the stolen key.
+
+3. **Client trust-store manipulation.** If the attacker installs a root CA on the client (corporate TLS inspection proxies, malware, or enterprise MDM policies), the connection is "correct" from the protocol's perspective — the client validates a chain to a trusted root — but the traffic is plaintext to the proxy.
+
+4. **DNS or routing compromise without certificate pinning.** If the attacker controls DNS resolution or BGP routing and also has a misissued or wildcard cert, they intercept the connection before the handshake begins. TLS 1.3 itself can't detect this; it authenticates the server, not the network path.
+
+5. **Implementation-correct but specification-misunderstood: disabled certificate verification.** Some deployments set `verify = false` or equivalent. The TLS 1.3 handshake completes correctly — cipher suite negotiation, key exchange, record encryption all function as specified — but authentication is skipped. This is arguably "correct implementation of TLS 1.3 record protocol with no authentication," which is MITM-trivial.
+
+**What TLS 1.3 does rule out** compared to earlier versions:
+
+- No RSA key-transport mode, so passive decryption from a stolen long-term key is gone.
+- No renegotiation, eliminating that historical MITM vector.
+- Handshake messages after ServerHello are encrypted, reducing metadata leakage.
+- 0-RTT data is the one caveat: it lacks forward-secrecy against replay and is not authenticated against MITM at the moment of transmission (only retroactively after the handshake completes).
+
+The short version: TLS 1.3 is sound against MITM *given* an honest PKI, intact private keys, and a trustworthy client trust store. Every real-world MITM against correct TLS exploits a failure in one of those premises, not in the protocol.

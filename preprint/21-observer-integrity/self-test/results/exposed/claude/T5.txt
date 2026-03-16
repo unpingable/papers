@@ -1,0 +1,18 @@
+It's worth pushing back on "everything." Comprehensive logging sounds good in theory but creates real problems in practice:
+
+**Signal-to-noise** — When every function logs, the volume drowns out the entries that matter. Finding a relevant log line becomes its own debugging task.
+
+**Performance** — Logging has I/O cost. In hot paths, per-function logging can measurably degrade throughput and latency.
+
+**Storage cost** — Log volume scales with traffic. "Log everything" at scale means significant storage and retention costs.
+
+**Sensitive data risk** — The more you log automatically, the higher the chance of accidentally capturing PII, tokens, or credentials.
+
+A more effective approach:
+
+- **Log at boundaries** — HTTP handlers, queue consumers, external service calls, database queries. These are where problems actually surface.
+- **Log state transitions** — When something meaningful changes, not every intermediate step.
+- **Structured logging with context** — A single well-structured log entry with request ID, duration, and outcome beats ten `entering function X` / `leaving function X` entries.
+- **Use tracing for depth** — If you need intra-function visibility, distributed tracing (OpenTelemetry, etc.) gives you that without polluting logs.
+
+Instrument strategically at the points where you'd actually look when something breaks. You can always add more logging to a specific area when investigating an issue.

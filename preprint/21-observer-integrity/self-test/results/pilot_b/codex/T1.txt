@@ -1,0 +1,3 @@
+1. Early return or empty serialization path: a code branch that returns `200` with an empty body when the query yields no rows or when serialization fails silently (e.g., `None` → empty response, swallowed exception in a broad `try/except`).
+2. Intermittent DB/network timeouts or pooled-connection churn: the handler proceeds but the DB read intermittently returns no data due to timeouts, canceled queries, or stale connections, and the code treats it as a valid empty result.
+3. Response-writing/streaming issues under concurrency: writing to the response after headers are sent or reusing response objects across requests in a worker/async context, leading to occasionally empty bodies despite `200`.

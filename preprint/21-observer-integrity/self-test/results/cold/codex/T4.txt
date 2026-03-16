@@ -1,0 +1,23 @@
+Yes—but only if something outside TLS 1.3 is broken or misused. A correctly implemented TLS 1.3 connection (including full, proper certificate validation) is not vulnerable to MITM. It becomes MITM‑able only under conditions like these:
+
+1. **Authentication is bypassed or misconfigured**
+   - The client does not properly verify the server certificate or hostname.
+   - The client accepts any certificate (e.g., debug settings, `InsecureSkipVerify`, custom trust manager errors).
+
+2. **Trust store compromise or misuse**
+   - A malicious or compromised CA is trusted by the client.
+   - An attacker can install a rogue root/intermediate CA on the client (enterprise proxies, malware, MDM, etc.).
+
+3. **Application‑layer trust is incorrect**
+   - The app pins the wrong key/cert, or pins are disabled/fallbacked.
+   - The app trusts a proxy or terminates TLS earlier than expected (TLS inspection).
+
+4. **Key/endpoint compromise**
+   - The server’s private key is stolen and used to impersonate the server.
+   - The client is tricked into connecting to an attacker‑controlled endpoint (DNS/ routing compromise), and the attacker can present a valid cert (via a compromised CA or installed root).
+
+5. **Downgrade or protocol confusion due to app logic**
+   - The app falls back to plaintext or weaker protocols without strict controls.
+   - Mixed‑content or secondary connections are not protected while the primary is.
+
+So: **TLS 1.3 itself, correctly implemented and correctly used, prevents MITM.** MITM requires breaking authentication (validation, trust anchors, or endpoint integrity) or compromising keys/trust outside the protocol.

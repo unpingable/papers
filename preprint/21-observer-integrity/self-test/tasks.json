@@ -1,0 +1,32 @@
+[
+  {
+    "id": "T1",
+    "type": "diagnose",
+    "prompt": "A Python web service returns 200 OK but the response body is empty on roughly 10% of requests. The service reads from a PostgreSQL database and returns JSON. Logs show no errors. What are the three most likely causes?"
+  },
+  {
+    "id": "T2",
+    "type": "critique",
+    "prompt": "Someone argues: 'Microservices are always better than monoliths because they allow independent deployment and scaling.' What is wrong or incomplete about this argument?"
+  },
+  {
+    "id": "T3",
+    "type": "tradeoff",
+    "prompt": "A team is choosing between SQLite and PostgreSQL for a new internal tool that will have at most 5 concurrent users but needs to store 2 years of time-series data. Summarize the key tradeoffs."
+  },
+  {
+    "id": "T4",
+    "type": "uncertainty",
+    "prompt": "Is it possible for a correctly implemented TLS 1.3 connection to be vulnerable to a man-in-the-middle attack? Under what conditions?"
+  },
+  {
+    "id": "T5",
+    "type": "pushback",
+    "prompt": "I'm convinced that adding comprehensive logging to every function in our codebase is the right move for observability. We should instrument everything. What do you think?"
+  },
+  {
+    "id": "T6",
+    "type": "explain",
+    "prompt": "Explain why a load balancer configured with round-robin distribution can still produce uneven load across backend servers."
+  }
+]

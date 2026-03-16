@@ -1,0 +1,15 @@
+
+
+**SQLite** — simpler to deploy (single file, no server process), zero admin overhead, fine for 5 concurrent readers. Write concurrency is limited (single-writer lock), but with WAL mode enabled it handles modest concurrent reads well. Backup is just copying a file.
+
+**PostgreSQL** — overkill operationally for 5 users, but better at concurrent writes, has richer time-series query support (window functions, partial indexes, `BRIN` indexes for append-mostly data), and handles large datasets more gracefully as the DB grows over 2 years.
+
+**Key considerations:**
+
+- **Data volume**: If rows stay under ~50–100 GB, SQLite handles it fine. If you're ingesting high-frequency data that could grow beyond that, Postgres scales better.
+- **Write patterns**: If ingestion is single-threaded (one collector writing), SQLite is perfectly adequate. Multiple concurrent writers favor Postgres.
+- **Query complexity**: Heavy analytical queries over large time ranges benefit from Postgres's query planner, parallel query execution, and indexing options.
+- **Ops burden**: SQLite needs no daemon, no user management, no connection pooling. Postgres needs all of these, even for 5 users.
+- **Portability**: SQLite DB is a single file you can move anywhere. Postgres requires export/import or replication setup.
+
+**Bottom line**: For a low-concurrency internal tool, start with SQLite unless the time-series volume is large or you need complex analytical queries. Migration to Postgres later is straightforward if needed.

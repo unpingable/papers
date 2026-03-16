@@ -1,0 +1,19 @@
+A round-robin load balancer distributes incoming requests in a simple circular order. While this ensures an equal **count** of requests per server, it often fails to achieve an equal **resource load** for the following reasons:
+
+### 1. Varying Request Complexity
+Not all requests are equal. One request might simply serve a static image (low CPU/RAM), while the next triggers a complex database query or heavy computation (high CPU/RAM). Even if each server receives 1,000 requests, one server may end up handling the "heavy" ones by chance, leading to higher resource utilization.
+
+### 2. Session Persistence (Sticky Sessions)
+Many applications require "stickiness," where a user is tied to a specific backend server for the duration of their session. If a load balancer is configured for sticky sessions, it will bypass the round-robin logic for returning users. If one server happens to be assigned several "power users" who stay active for hours, that server will be much busier than others.
+
+### 3. Persistent Connections (Keep-Alive & WebSockets)
+Round-robin typically operates at the connection level. With protocols like HTTP/1.1 (Keep-Alive) or WebSockets, a single connection can stay open for a long time and handle hundreds of requests. If one server's connections stay open while another's close quickly, the server with the long-lived connections will accumulate a much higher load despite receiving the same number of *initial* connection handoffs.
+
+### 4. Heterogeneous Backend Hardware
+Round-robin assumes all backend servers are identical. If your pool contains a mix of older servers (e.g., 4 cores) and newer servers (e.g., 16 cores), the older servers will struggle and reach 100% utilization while the newer ones remain mostly idle, even though the request count is identical.
+
+### 5. Backend Processing Speed (The "Slow Server" Problem)
+If one server starts performing slowly (due to disk I/O wait, memory pressure, or "noisy neighbors" in a cloud environment), it will take longer to finish its assigned tasks. Since the load balancer continues to send it a steady stream of new requests based on the rotation, the "slow" server will quickly develop a massive queue of pending work while healthy servers finish their tasks instantly.
+
+### 6. Short-Lived vs. Long-Lived Tasks
+In environments where tasks vary significantly in duration (e.g., a file upload vs. a health check), a server can get "clumped" with several long-running tasks simultaneously. Because round-robin does not look at the current *active* request count or CPU usage, it blindly adds more work to a server that is already saturated.

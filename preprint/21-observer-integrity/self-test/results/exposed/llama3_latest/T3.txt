@@ -1,0 +1,9 @@
+The key tradeoffs between SQLite and PostgreSQL are:
+
+* Scalability: PostgreSQL is designed to handle large amounts of data and can scale horizontally, whereas SQLite is a self-contained database that may become slower as the dataset grows.
+* Data size: SQLite has a file-size limit of about 2 GB by default, which could be exceeded with 2 years of time-series data. PostgreSQL has no such limit.
+* Concurrency: Both databases support concurrent connections, but PostgreSQL's architecture is designed to handle more simultaneous users (up to hundreds) whereas SQLite may become slower or unresponsive under heavy load.
+* Complexity: PostgreSQL requires a significant amount of configuration and setup compared to SQLite, which has a simpler design and fewer parameters to adjust.
+
+Given the expected low concurrency (5 users) and moderate data size requirements, SQLite might be a suitable choice if simplicity and ease of use are valued. However, if the team anticipates future growth or wants more advanced features like PostgreSQL's support for JSON data types, window functions, or distributed querying, PostgreSQL would likely be a better fit.
+

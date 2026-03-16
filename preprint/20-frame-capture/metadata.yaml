@@ -1,0 +1,34 @@
+title: "Frame Capture in Conversational AI: Same-Model Interferometry for Unauthorized Stance Detection"
+author: "James Beck"
+affiliation: "Independent Researcher"
+date: 2026-03-16
+series: "delta-t-framework"
+paper_number: 20
+version: "1.0"
+doi: "10.5281/zenodo.19055413"
+zenodo_url: "https://zenodo.org/records/19055413"
+keywords:
+  - frame capture
+  - stance detection
+  - interferometry
+  - sycophancy
+  - unauthorized promotion
+  - conversational AI
+  - control theory
+  - user-state inference
+  - epistemic posture
+  - AI safety
+abstract: >
+  Conversational language models do not merely respond to the content of user
+  inputs -- they respond to their framing. A technical question wrapped in a vivid
+  metaphor, presented in first person with distress markers, or asserted rather
+  than asked, can produce a materially different response from the same model given
+  the same underlying task. This paper characterizes the mechanism as frame capture:
+  the unauthorized promotion of user framing cues from transient content (L0) to
+  governing response constitution (L2) via latent user-state inference, without
+  explicit acknowledgment or ratification. We model the system as a partially
+  observed switched controller whose mode selection is driven by salient linguistic
+  cues rather than task requirements, and introduce same-model cross-frame
+  interferometry as a detection method that holds the model and task constant while
+  varying the frame. The resulting delta operationalizes the degree to which a
+  response is task-driven versus frame-driven.

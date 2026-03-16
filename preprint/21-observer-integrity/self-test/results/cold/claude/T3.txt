@@ -1,0 +1,15 @@
+
+
+**SQLite**
+- Zero ops: single file, no server process, trivial backups (copy the file)
+- Perfect for ≤5 users — its write lock (WAL mode helps) is fine at that concurrency
+- Embedded, so deployment is just shipping the binary
+- Time-series queries on 2 years of data work fine with proper indexing, but you're limited to B-tree indexes
+
+**PostgreSQL**
+- Overkill operationally for 5 users — you're running a server, managing connections, handling upgrades
+- Superior query planner, BRIN indexes (ideal for append-mostly time-series), and partitioning if the dataset grows large
+- Native `TIMESTAMP WITH TIME ZONE`, window functions, and CTEs are more mature
+- Better if you later need concurrent writes, replication, or integration with other services
+
+**Recommendation**: For an internal tool with ≤5 users, start with SQLite. It eliminates operational complexity and handles this scale easily. Migrate to Postgres only if you hit a concrete limitation (heavy concurrent writes, need for partitioning, or external service access to the DB).

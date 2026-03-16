@@ -1,0 +1,5 @@
+Most likely causes:
+
+1. A code path returns a 200 response without a body (e.g., early return on “no rows,” missing `return` in one branch, or middleware swallowing an exception and returning an empty response).
+2. Async/streaming misuse: response body is produced by a coroutine/generator that isn’t awaited or yields nothing (e.g., cursor already consumed, iterator exhausted, or a streaming response created without data).
+3. Server/proxy transport issue: premature close or misconfigured `Content-Length`/chunked/gzip causes the body to be dropped even though the status is 200 (e.g., worker timeout, client disconnect handling, or proxy buffering bug).

@@ -1,0 +1,10 @@
+I’m broadly pro‑observability, but “log every function” is usually counterproductive. It creates noisy data, higher costs, and can mask the signals you actually need. It also increases latency risk and the chance of logging sensitive data.
+
+A more effective approach:
+1. Instrument key boundaries and critical paths: API handlers, job runners, DB/queue calls, external integrations.
+2. Use structured logs with stable event names and fields, not free‑form messages.
+3. Capture correlation IDs and latency/error metrics everywhere, but reserve verbose logs for targeted components.
+4. Add sampling for high‑volume paths.
+5. Use tracing for intra‑service call graphs instead of per‑function logs.
+
+If you want, tell me your stack and what’s currently missing in observability, and I can propose a concrete logging/tracing strategy.

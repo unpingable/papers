@@ -1,0 +1,16 @@
+Instrumenting every function for comprehensive logging is generally considered an anti-pattern in mature observability strategies due to several significant trade-offs:
+
+1.  **Signal-to-Noise Ratio:** Logging every function call creates an immense volume of data that obscures critical events. Finding the "needle" of a production bug in a "haystack" of routine entry/exit logs becomes exponentially harder.
+2.  **Performance Overhead:** Even "cheap" logs incur costs in CPU cycles, memory allocation, and I/O pressure. In high-frequency paths, this can significantly degrade application throughput and latency.
+3.  **Storage and Cost:** In cloud-native environments, log ingestion and storage are often priced by volume. Unfiltered logging can lead to runaway operational costs without a proportional increase in diagnostic value.
+4.  **Security Risks:** Broad instrumentation increases the surface area for accidental exposure of PII, credentials, or sensitive business logic in log streams.
+
+### Recommended Alternative
+A more effective approach to observability typically involves:
+
+*   **Distributed Tracing:** Use tools like OpenTelemetry to track the flow of requests across service boundaries. This provides the "connective tissue" that function-level logs lack.
+*   **Structured Logging at Boundaries:** Log at the entry/exit points of your system (API handlers, database clients, external service calls) and within error-handling blocks.
+*   **Metrics for High-Frequency Events:** Use counters and histograms for repetitive actions. They are much cheaper to aggregate and more effective for alerting than logs.
+*   **Contextual Logging:** Ensure logs include correlation IDs (like `request_id` or `trace_id`) so you can reconstruct the execution path only when a specific transaction fails.
+
+While the desire for total visibility is understandable, strategic instrumentation provides better "audit value" and maintainability than a blanket logging policy.

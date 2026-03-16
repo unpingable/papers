@@ -1,0 +1,11 @@
+The argument is incomplete and overgeneralized.
+
+What’s wrong or missing:
+- “Always better” is false. Architecture is a tradeoff; microservices can be worse for many teams and products.
+- It reduces the decision to two benefits (independent deployment, scaling) while ignoring costs: operational complexity, distributed debugging, latency, consistency issues, more infrastructure, and higher coordination overhead.
+- Independent deployment only helps if services are truly decoupled. In practice, shared data models, cross-service changes, and versioning can make deployments coupled.
+- Independent scaling only matters if different parts of the system have materially different load profiles. Many systems scale uniformly; a monolith can scale just fine.
+- It ignores organizational maturity. Microservices usually require strong DevOps/SRE practices, observability, and discipline. Without that, reliability and velocity can drop.
+- It ignores product stage. Early-stage products often benefit from a monolith’s simplicity and faster iteration.
+
+A better framing: microservices can be beneficial when you have clear domain boundaries, uneven scaling needs, and the operational maturity to manage distributed systems. Otherwise, a well-structured monolith (or modular monolith) is often the more effective choice.

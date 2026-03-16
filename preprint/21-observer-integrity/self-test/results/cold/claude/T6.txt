@@ -1,0 +1,19 @@
+
+
+Several factors cause uneven load despite round-robin's equal request distribution:
+
+**Variable request cost.** Round-robin distributes requests equally, not work equally. One server might get cheap health checks while another gets expensive report-generation queries. Equal request counts say nothing about CPU, memory, or I/O consumed per request.
+
+**Long-lived connections.** With HTTP/2, gRPC, or WebSocket connections, a single "request" to the load balancer becomes a persistent channel carrying many subsequent interactions. Round-robin only balances connection establishment, not the traffic flowing over those connections afterward.
+
+**Heterogeneous backends.** If servers differ in CPU, memory, or disk speed (common in cloud environments with mixed instance types or noisy neighbors), equal request distribution means slower machines fall behind and accumulate in-flight work while faster ones idle.
+
+**Session affinity / sticky sessions.** When enabled alongside round-robin, once a user is pinned to a server, new sessions are round-robined but returning users always hit their assigned server. Popular users or heavy sessions can skew load significantly.
+
+**Health check and server churn.** When a server goes down and comes back, round-robin resumes sending it requests at the same rate as servers that stayed up — it doesn't account for the server needing time to warm caches, JIT-compile code, or rebuild connection pools.
+
+**Request queuing and slow clients.** A server stuck serving a slow client (slow to read the response) ties up a connection/thread longer. Round-robin keeps sending new requests oblivious to this backlog, causing queue depth to diverge across servers.
+
+**DNS or layer-4 vs. layer-7.** DNS-based round-robin is especially uneven because clients cache DNS responses for the TTL duration, and a single resolved IP may serve thousands of requests from that client. Similarly, L4 balancers distribute TCP connections, not individual HTTP requests multiplexed over them.
+
+**The core issue:** round-robin optimizes for *fairness of assignment* (equal counts) rather than *fairness of outcome* (equal load). Alternatives like least-connections, weighted round-robin, or latency-aware routing address this by incorporating actual server state into the decision.

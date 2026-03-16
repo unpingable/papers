@@ -1,0 +1,9 @@
+Round‑robin only controls request *count*, not request *cost* or server *capacity*. Uneven load still happens because:
+
+1. Requests vary in weight (CPU/IO/memory), so equal counts ≠ equal load.  
+2. Session affinity (“sticky” sessions) pins clients to servers, skewing distribution.  
+3. Long‑lived connections (e.g., WebSockets) keep a server busy after assignment.  
+4. Backend servers differ in performance or current health, but round‑robin treats them equally.  
+5. Cache locality can amplify hotspots: one server handles more cache‑misses.  
+6. Timing effects: bursts and slow responses cause queues to build unevenly.  
+7. Health checks and slow‑start/weight changes temporarily bias traffic.

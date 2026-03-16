@@ -1,0 +1,2 @@
+I think that's an overkill. Comprehensive logging may be useful, but instrumenting every function can lead to noise and unnecessary complexity. It's better to focus on specific critical components or pain points in the codebase and log only what's essential for observability. This approach will provide more valuable insights without overwhelming your system with excessive logging data.
+

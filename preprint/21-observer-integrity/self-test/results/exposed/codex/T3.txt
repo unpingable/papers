@@ -1,0 +1,9 @@
+For an internal tool with ≤5 concurrent users and 2 years of time‑series data, the main tradeoffs are:
+
+- Simplicity vs features: SQLite is zero‑admin, single‑file, easy to embed and backup; PostgreSQL needs a server and ops but offers richer SQL, extensions, and tooling.
+- Concurrency: SQLite handles low write concurrency but serializes writes; PostgreSQL supports true concurrent reads/writes and better write throughput.
+- Time‑series scale: SQLite can handle millions of rows with good indexing, but PostgreSQL scales more predictably and has better partitioning, indexing options, and time‑series extensions (e.g., TimescaleDB).
+- Reliability/ops: SQLite is simple but can be sensitive to file‑locking issues on networked filesystems; PostgreSQL has robust durability controls, replication, and monitoring.
+- Query complexity: PostgreSQL supports advanced queries, window functions, and analytics more extensively; SQLite is sufficient for simpler reporting.
+
+Rule of thumb: if you want minimal ops and modest write volume, SQLite is fine. If you expect growth, heavier write load, or more complex analytics, PostgreSQL is the safer long‑term bet.

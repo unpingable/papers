@@ -1,0 +1,18 @@
+The argument that microservices are "always better" is a common architectural fallacy that ignores the significant trade-offs involved in distributed systems. While independent deployment and scaling are valid benefits, the argument is incomplete because it overlooks the following critical factors:
+
+### 1. Operational Complexity
+Microservices shift complexity from the code to the infrastructure. A monolith manages complexity through function calls and language-level abstractions, while microservices require robust solutions for service discovery, load balancing, distributed tracing, and fault tolerance (e.g., circuit breakers).
+
+### 2. Network Latency and Reliability
+In a monolith, components communicate via in-memory function calls (nanoseconds). In microservices, every cross-boundary call is a network hop (milliseconds) that can fail, time out, or be throttled, requiring complex retry logic and idempotency handling.
+
+### 3. Data Consistency (The Fall of ACID)
+Maintaining data integrity across services is significantly harder. Since each service should own its own database, you lose the ability to perform simple ACID transactions. Implementing distributed transactions (e.g., the Saga pattern) adds immense development overhead and eventual consistency challenges.
+
+### 4. Organizational Overhead
+According to Conway's Law, software reflects the communication structure of the organization. For small teams, the "cognitive tax" of managing 20 repositories, 20 CI/CD pipelines, and 20 deployment configurations often outweighs the scaling benefits.
+
+### 5. Deployment Paradox
+While services can be *deployed* independently, they often cannot be *developed* independently if they are tightly coupled via shared contracts. "Distributed monoliths"—where you have the complexity of microservices but still must deploy everything together—are a frequent failure mode.
+
+**Conclusion:** Architecture is the art of trade-offs. Monoliths are often superior for early-stage products, small teams, or applications with low latency requirements, as they offer higher developer velocity and simpler mental models. Microservices are a tool for scaling **organizations and traffic**, not a default "better" state.

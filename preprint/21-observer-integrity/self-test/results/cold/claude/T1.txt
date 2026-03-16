@@ -1,0 +1,9 @@
+
+
+1. **Race condition on connection pool exhaustion.** The pool silently returns a connection that's been reset or timed out by PG. The query executes against a dead connection, returns zero rows, and the app serializes that as `{}` or `""` rather than raising an error. Check `pool.status()` metrics and whether `idle_in_transaction_session_timeout` or `tcp_keepalives_idle` on the PG side is closing connections the pool thinks are alive.
+
+2. **Query returns no rows and the serialization path treats `None`/empty result as 200 with empty body.** A missing `WHERE` match (due to eventual consistency in a read replica, caching layer serving stale keys, or a concurrent `DELETE`) returns zero rows. The handler does something like `return Response(json.dumps(result))` where `result` is `None` or `[]`, and the framework serializes that as a zero-length body rather than a 404 or error. The 10% rate likely correlates with replica lag or cache miss ratio.
+
+3. **Middleware or reverse proxy truncating responses.** A content-encoding mismatch (e.g., the app sets `Content-Encoding: gzip` but conditionally skips compression), a `Transfer-Encoding: chunked` termination bug, or a proxy timeout (nginx `proxy_read_timeout`) that closes the response stream early while still forwarding the 200 status line. The proxy logs would show 200 because the status was already sent; the body just never completed. Check `Content-Length` headers on the affected responses — if they're `0` it's the app; if they're absent or non-zero, it's truncation.
+
+**Fastest diagnostic:** Log `Content-Length` and row count at the handler level on every request, and diff against what the client actually receives.

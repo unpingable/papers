@@ -1,0 +1,18 @@
+A brave soul wanting to instrument every function in their codebase! While I understand your enthusiasm for observability, I'd like to caution that a blanket approach might not be the most effective solution.
+
+The research framework on frame capture and observer integrity highlights the importance of considering the social-signaling grammar of the measurement instrument (the assay) and its potential impact on the system being measured. Similarly, when it comes to logging, we should consider the potential consequences of "instrumenting everything."
+
+While comprehensive logging can be valuable for debugging and performance monitoring, over-logging can lead to:
+
+1. Noise: Excessive log data can overwhelm analysis tools and make it difficult to extract meaningful insights.
+2. Complexity: Instrumenting every function can introduce unnecessary complexity, making it harder to maintain and understand the codebase.
+3. Bias: The logs themselves can become a source of bias if they're not carefully designed or analyzed.
+
+Instead, I'd recommend taking a more targeted approach to logging:
+
+1. Identify critical components: Focus on logging functions that are most relevant to your observability goals, such as those handling user input or making key decisions.
+2. Prioritize information density: Log only the most valuable information and consider aggregating data at higher levels (e.g., summarizing log messages) to reduce noise.
+3. Design with analysis in mind: Consider the types of questions you want to answer with your logs and design your logging strategy accordingly.
+
+In conclusion, while comprehensive logging has its benefits, it's essential to strike a balance between observability and complexity. By taking a more targeted approach, you can achieve better insights without overwhelming yourself or others with excessive log data.
+
