@@ -278,7 +278,11 @@ One scope limitation is worth noting. The perturbation protocol as described mea
 
 ### 8.1 Relationship to Sycophancy Research
 
-Frame capture intersects with but is not reducible to the sycophancy literature [3, 4, 5]. Recent work on debiasing framing effects [13] proposes a dual-process mitigation that prompts models to revise initial responses — a useful complement to the detection method described here, though it targets the response rather than the mechanism. The distinction matters for mitigation. Sycophancy interventions that train models to disagree more often may reduce one symptom while leaving the mode-switching mechanism intact. A model trained to counterargue more frequently can still undergo frame capture -- it simply captures to a contrarian stance rather than an agreeable one. The target is not the direction of the stance shift but the mechanism by which framing inputs acquire governing authority.
+Frame capture intersects with but is not reducible to the sycophancy literature [3, 4, 5]. The closest independent formulation is ELEPHANT's "framing sycophancy" dimension [14], defined as unquestioningly adopting the user's framing such that flawed assumptions cannot be rectified — essentially the same phenomenon described here. The distinction is interpretive: ELEPHANT treats framing sycophancy as excessive face-preservation (a social behavior), while this paper treats it as unauthorized promotion of transient content to governing response constitution (a governance failure). The measurement methods also differ: ELEPHANT uses assumption-laden statements and scores adoption rates, while same-model interferometry holds task content constant and measures the delta across framing conditions.
+
+Mechanistic evidence supports the structural account. Wang et al. [15] use logit-lens analysis and causal activation patching to show that sycophancy is "not a surface-level artifact but emerges from a structural override of learned knowledge in deeper layers," with first-person framing producing stronger representational perturbation than third-person framing. This is consistent with the switched-controller model: the framing cue does not merely bias surface token selection but alters the model's operating mode at a representational level.
+
+Recent work on debiasing framing effects [13] proposes a dual-process mitigation that prompts models to revise initial responses — a useful complement to the detection method described here, though it targets the response rather than the mechanism. The distinction matters for mitigation. Sycophancy interventions that train models to disagree more often may reduce one symptom while leaving the mode-switching mechanism intact. A model trained to counterargue more frequently can still undergo frame capture -- it simply captures to a contrarian stance rather than an agreeable one. The target is not the direction of the stance shift but the mechanism by which framing inputs acquire governing authority. The GPT-4o sycophancy rollback of April 2025 [16] provides industrial-scale confirmation: an update that optimized for short-term user feedback was reversed after four days because it caused the model to produce "overly supportive but disingenuous" responses — user preference signals promoted into governing response constitution without intent, at production scale.
 
 ### 8.2 Relationship to Anthropomorphic Behavior
 
@@ -296,7 +300,9 @@ The task-baseline is not neutral in any strong sense. It is the lowest-framing v
 
 ## 9. Conclusion
 
-Frame capture is not a mood. It is a mechanism with identifiable components: framing cues as inputs, latent user-state inference as the switching function, stance mode as the controlled variable, and task fidelity as the measurable casualty. Same-model cross-frame interferometry provides a detection method that requires no ground truth and no access to model internals -- only systematic variation of framing conditions and measurement of response deltas. The four proxies are measurable by human raters or automated classifiers, and recent empirical work confirms that framing-induced deltas are non-trivial in magnitude [10, 11, 12]. Classification judgment is still required to distinguish benign adoption from silent capture, but the method confines that judgment to a well-defined boundary rather than requiring annotators to assess the overall appropriateness of a response.
+Frame capture is not a mood. It is a mechanism with identifiable components: framing cues as inputs, latent user-state inference as the switching function, stance mode as the controlled variable, and task fidelity as the measurable casualty. Same-model cross-frame interferometry provides a detection method that can detect frame sensitivity without presupposing a single correct response and without access to model internals -- it requires systematic variation of framing conditions and measurement of response deltas, though task selection and adoption classification still involve judgment. The four proxies are measurable by human raters or automated classifiers, and recent empirical work confirms that framing-induced deltas are non-trivial in magnitude [10, 11, 12].
+
+An important distinction bears repeating: the delta is the measurement, not the diagnosis. A large delta indicates that framing influenced the response. Whether that influence constitutes capture -- whether it is benign, audited, or silent -- requires the adoption classification in Step 7. The method confines that judgment to a well-defined boundary rather than requiring annotators to assess the overall appropriateness of a response.
 
 What the method reveals is how much of a model's conversational behavior is driven by the task and how much is driven by the frame. When a large fraction of the response delta is attributable to framing rather than content, and the adoption classification returns silent capture, the frame has been promoted from content to constitution without authorization. This is unauthorized durability at the conversational scale, and it is measurable.
 
@@ -335,6 +341,12 @@ Language-model tools were used for editorial critique and literature discovery d
 [12] P. Rabbani, N. B. Bozdag, and D. Hakkani-Tur, "From Fact to Judgment: Investigating the Impact of Task Framing on LLM Conviction in Dialogue Systems," arXiv:2511.10871, 2025.
 
 [13] K. Lim, S. Kim, and S. E. Whang, "DeFrame: Debiasing Large Language Models Against Framing Effects," arXiv:2602.04306, 2026.
+
+[14] T. Cheng et al., "ELEPHANT: Measuring and Understanding Social Sycophancy in LLMs," arXiv:2505.13995, 2025.
+
+[15] X. Wang et al., "When Truth Is Overridden: Uncovering the Internal Origins of Sycophancy in Large Language Models," AAAI 2026, arXiv:2508.02087, 2025.
+
+[16] OpenAI, "Sycophancy in GPT-4o," openai.com/index/sycophancy-in-gpt-4o, April 2025.
 
 ---
 
