@@ -8,7 +8,8 @@ design work.
 
 | File | Description |
 |------|-------------|
-| `atproto_governance_transfer_proof.md` | Ontology transfer proof: maps the governor's 5-artifact ontology (MeasurementSnapshot, TransitionProposal, AuthorityReceipt, RecoveryPlanReceipt, ResetReceipt) onto ATProto's PDS and relay layers. Demonstrates domain-independence of the governance primitives and identifies "containment without erasure" as a general capability gap. |
+| `atproto_governance_transfer_proof.md` | Ontology transfer proof: maps the governor's 5-artifact ontology onto ATProto's PDS and relay layers. Demonstrates domain-independence of the governance primitives and identifies "containment without erasure" as a general capability gap. |
+| `atproto_provenance_instrument.md` | Specification sketch for a provenance/SIGINT layer on ATProto. Three-layer decomposed scoring (actor, relay, domain), provenance explainer, propagation mapping. Framed as radar, not tribunal — constitutional constraints prevent collapse from intelligence to governance. Composable with labelwatch and driftwatch. |
 
 ## Related
 
