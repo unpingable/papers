@@ -1,0 +1,32 @@
+title: "No Universal Plant Clock: Temporal Failure Geometry in Distributed Control Systems"
+author: "James Beck"
+affiliation: "Independent Researcher"
+date: 2026-03-19
+series: "delta-t-framework"
+paper_number: 22
+version: "0.9"
+doi: "10.5281/zenodo.19119618"
+zenodo_url: "https://zenodo.org/records/19119618"
+keywords:
+  - temporal coherence
+  - distributed control
+  - clock synchronization
+  - state estimation
+  - control delay
+  - timescale analysis
+  - systems governance
+  - cyber-physical systems
+  - coordination failure
+abstract: >
+  Modern distributed systems routinely behave as though they possess a shared
+  present, interchangeable clocks, fresh state observations, and timely control
+  channels. In practice, none of these assumptions is guaranteed. This paper
+  introduces a four-layer model of temporal failure in distributed control
+  systems: (1) gauge mismatch in the construction of shared temporal reference
+  frames, (2) clock divergence in the accumulation of local elapsed time,
+  (3) retarded-state estimation under delayed observation, and (4) delayed
+  actuation in closed-loop control. The framework treats temporal coherence not
+  as a metaphysical property but as an operational constraint and, in many
+  systems, a scarce control resource. We introduce characteristic timescale
+  ratios and show that the dominant failure mode in a given system is determined
+  by which ratio has the least remaining margin to its critical threshold.

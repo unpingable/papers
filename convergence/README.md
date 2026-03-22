@@ -56,6 +56,10 @@ Convergence labels: **Strong** (core mechanism independently rediscovered), **Pa
 | 21 | [Observer Integrity](paper-21.md) | Tension | LLM-as-judge literature; Goodhart's Law in evaluation; Chaudhary et al. (2025) evaluation awareness scaling | Shared-grammar recursive perturbation problem, procedural sociality as measurement confound, awareness/susceptibility distinction | Evaluation awareness scales with parameter count (Chaudhary et al. 2025); paper's architecture-specific susceptibility finding should be scoped to susceptibility structure, not treated as scale-invariant | Novel framing; one claim narrowed in response to scaling evidence |
 | 22 | [No Universal Plant Clock](paper-22.md) | **Strong** | Hespanha NCS (2007); AoI literature (Yates 2021); Kopetz & Steiner (2024); Bulusu SoK (2025) | Four-layer decomposition as unified taxonomy, multi-ratio triage, temporal coherence as budgetable governance resource, diagnostic relabeling claim | None | Every layer maps to mature literature; unified framework fills gap Bulusu SoK explicitly identified |
 
+## Falsification Guardrails
+
+The convergence audit shows where the framework has independent support. The [falsification guardrails](../docs/method/falsification.md) show where it could be wrong and how to test it: rival explanations, kill conditions, reclassification rules, and a reusable audit template.
+
 ## Match Type Key
 
 - **exact** — independent work reaches same conclusion with similar mechanism

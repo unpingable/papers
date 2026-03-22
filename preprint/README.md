@@ -40,3 +40,12 @@ dependencies are summarized below.
 ### Observer Integrity and Frame Capture
 - *Frame Capture in Conversational AI: Same-Model Interferometry for Unauthorized Stance Detection* (2026)
 - *Observer Integrity Under Procedural Sociality: Measurement When the Instrument Shares the Grammar* (2026)
+
+### Temporal Failure Geometry
+- *No Universal Plant Clock: Temporal Failure Geometry in Distributed Control Systems* (2026)
+
+---
+
+### Methodology
+- [Convergence audit](../convergence/README.md) — retroactive literature audit across all 22 papers
+- [Falsification guardrails](../docs/method/falsification.md) — rival explanations, kill conditions, and reclassification rules for the framework
