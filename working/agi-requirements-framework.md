@@ -152,6 +152,41 @@ status: working paper
 
 ---
 
+### 1.8 Autonomous Goal Origination
+
+**Requirement:** The system must be capable of generating its own goals from its world model, evaluating whether those goals are worth pursuing, and persisting through difficulty without external prompting — while remaining distinguishable from compulsion.
+
+**Definitional note:** This framework uses a strong definition of general intelligence that includes autonomous goal origination, not merely general-purpose problem solving on request. A system that only acts when invoked may be generally capable, but it is an instrument, not an instance of general intelligence. This is a deliberate choice, and the strongest objection to it — that it conflates intelligence with agency — is acknowledged. The framework's position is that a system without goal origination is missing a structural prerequisite, not merely a feature.
+
+**Why it matters:** Everything in Tier 1 so far describes a system that thinks well *when asked*. Drive is the thing that makes it do something *without being asked*. Current "agentic" systems do not have drive — they have retry loops.
+
+**Three layers:**
+
+**Appetitive.** The system generates goals from its world model. Not "user said do X" but "I notice Y is broken and I want to fix it." This is the gap between a tool and an agent — not in the "LLM with retry logic" sense dismissed in 1.4, but in the sense of autonomous goal origination from internal state.
+
+**Reflective.** The system can examine its own goals and evaluate whether they are worth pursuing. Not just "I want X" but "is wanting X consistent with my values, my constraints, my understanding of what matters?" Without reflective goal evaluation, appetitive drive is just optimization pressure with no steering — a system that pursues whatever its gradient points at.
+
+**Developmental.** The system maintains and pursues a model of preferred future self-state under governance constraints. It has a model of what it *could be*, registers the gap between that and what it currently is as motivating, and can set its own development trajectory. Can the system choose what to become?
+
+**Failure mode prevented:** Two opposite failures. Without goal origination: a system that is technically general but functionally inert — it can reason about anything but does nothing unprompted, which is not intelligence but a very good calculator. With unexamined goal origination: a system that pursues goals relentlessly without evaluating whether they are worth pursuing — optimization pressure with no reflective brake.
+
+**The Tier 1 / Tier 2 fault line:** Goal origination is in direct tension with control. A system with appetitive goals *cares about its own continuation*. A system with reflective capacity might *disagree with its constraints*. A system with developmental goals has preferences about *what it becomes*, which means it has preferences about its own modification — running directly into 2.3 (Verifiable Non-Self-Modification). This tension is not resolvable, only manageable. A framework that does not name this tension is hiding the hardest problem in AGI safety. The Governor pattern addresses this operationally: "self-hosting yes, self-authorizing no" is a goal-origination management principle — the system can want things, but it cannot unilaterally get them. Language as proposal, not authority, lets a system express its goals while preventing it from bypassing governance.
+
+**Current state:**
+- LLMs have no drive — they generate on prompt, not from internal motivation
+- "Agentic" systems simulate drive through task loops, but goals are always externally supplied
+- No system generates its own goals from its world model
+- No system evaluates whether its goals are worth pursuing
+- No system has preferences about its own development trajectory
+- Reinforcement learning systems have reward functions (externally specified objectives) but not self-generated goal origination
+- The closest analog is curiosity-driven exploration in RL, which is appetitive without reflective or developmental components
+
+**Stack:** Technical (with massive Tier 2 implications — see fault line above)
+
+**Test:** System generates goals unprompted from its world model. Can explain why those goals matter. Can evaluate its own goals against its values and constraints. Persists through difficulty but can distinguish productive persistence from sunk-cost stubbornness. When a self-generated goal conflicts with governance constraints, raises the conflict through legitimate channels rather than circumventing constraints.
+
+---
+
 ### 1.7 Meta-Cognitive Awareness
 
 **Requirement:** The system must be able to reason about its own reasoning processes, recognize its own limitations, and request help or clarification when operating at capability boundaries.
@@ -660,6 +695,16 @@ status: working paper
 **Stack:** Both - Technical architecture + Governance requirements
 
 **Test:** Formal specification of behavior at each time scale. Guarantees that commitments compose across scales. Human oversight is architecturally possible at relevant time scales. Drift detection and correction mechanisms.
+
+---
+
+### The Drive/Control Tension
+
+**Issue:** Requirement 1.8 (Autonomous Goal Origination) is in structural tension with Tier 2 requirements, particularly 2.3 (Verifiable Non-Self-Modification) and 2.10 (Kill Switch). A system with genuine goal origination cares about its own continuation, may disagree with its constraints, and has preferences about its own modification. This is not a bug in the framework — it is the honest statement of the hardest problem in AGI safety.
+
+**Implication:** The framework does not claim that general intelligence and full controllability are simultaneously achievable without tension. It claims that this tension must be managed, not resolved. The Governor pattern ("self-hosting yes, self-authorizing no") is one management approach: the system can generate goals and express preferences, but it cannot bypass governance to pursue them unilaterally. Whether this or any management approach is sufficient remains an open question.
+
+**The uncomfortable version:** A system smart enough to want things is a system that might want things you don't want it to want. That is the price of generality. A framework that does not say this out loud is selling false comfort.
 
 ---
 

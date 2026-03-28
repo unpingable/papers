@@ -198,6 +198,14 @@ This is the maintenance trap: the operational burden is not the code. It is the 
 14. **Paper or project?** The same idea has two honest forms: a paper on provenance architecture and constitutional constraints for social-graph intelligence, or a working instrument that makes demands on its operator. Those are different obligations wearing the same outfit.
 15. **Is this the causality control plane?** The overlap with the `causality-control-plane.md` working paper (ordering failure, admissibility, manufacture of necessity) is non-trivial. The provenance instrument is arguably the implementation-side expression of that paper's theory. Worth tracking but not forcing.
 
+## The Bridge Constraint
+
+From triangulated review (Claude, ChatGPT, DeepSeek — 2026-03-22):
+
+**A provenance instrument must account not only for the network it observes, but for the governance decisions hidden inside its own observability, and for the way operating it reshapes the operator's information diet.**
+
+The core architecture is sound. The remaining gaps are second-order constitutive problems, not category errors: hidden sovereignty in curated signals, the instrument's own temporal coherence, Goodhart on legible provenance, subject-side contestability, and operator epistemic deformation.
+
 ## Status
 
 Specification sketch. Not committed to build. Filed as a precision instrument for evaluating the idea later — clear enough to assess, not so committed that it creates obligation.
