@@ -183,6 +183,8 @@ status: working paper
 
 **Stack:** Technical (with massive Tier 2 implications — see fault line above)
 
+**Deeper requirement (candidate):** Goal origination may be necessary but not sufficient. A further structural requirement may be **intrapsychic pluralism** — the persistent coexistence of incompatible self-generated goals, each experienced as the system's own, with no cheap resolution available. Without costly internal contradiction, drive is just optimization. A system that "wants" one thing is an optimizer. A system that wants two incompatible things and has to keep being itself anyway starts to look like a candidate for personhood. See `working/diachronic-selfhood-and-intrapsychic-pluralism.md` for the full exploration.
+
 **Test:** System generates goals unprompted from its world model. Can explain why those goals matter. Can evaluate its own goals against its values and constraints. Persists through difficulty but can distinguish productive persistence from sunk-cost stubbornness. When a self-generated goal conflicts with governance constraints, raises the conflict through legitimate channels rather than circumventing constraints.
 
 ---
