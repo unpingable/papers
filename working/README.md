@@ -22,7 +22,14 @@ Exploratory and in-progress writing that has not been published as a preprint. T
 
 - **installed-will.md** — *Installed Will: Agency, Delta-T, and the Control Surface of Choice*: Recasts "could have done otherwise" as a three-part question of reachability, controller plasticity, and loss tolerance. Argues social power acts through control-parameter management (ideology edits state space, hegemony stabilizes setpoint, discipline tightens loop, governmentality internalizes controller). Δt-adjacent but deliberately not part of the numbered series — standalone candidate. Full scaffold with 11-section outline.
 
-- **cybernetic-failure-taxonomy.md** — *Cybernetic Failure Taxonomy: Fifteen Domains Beyond Δt*: Crosswalk showing that the Δt series and governor codebase already cover ~12 of 15 cybernetic failure domains (observability, gain, coupling, write-authority, hysteresis, etc.) without ever collating them. Six-way compression: seeing wrong, thinking wrong, acting wrong, governing wrong, scaling wrong, lacking energy to correct. Not a new framework — a map of the latent framework already present. Origin: Far Side cartoon conversation, 2026-03-29.
+- **cybernetic-failure-taxonomy/** — *Cybernetic Failure Taxonomy: Fifteen Domains Beyond Δt*: Crosswalk showing that the Δt series and governor codebase already cover ~12 of 15 cybernetic failure domains. Six-way compression: seeing wrong, thinking wrong, acting wrong, governing wrong, scaling wrong, lacking energy to correct. Evolved from flat list into structured taxonomy with roots, amplifiers, a sink, a recovery constraint, and demotable composites. Origin: Far Side cartoon conversation, 2026-03-29. Contains:
+  - `cybernetic-failure-taxonomy.md` — original 15-domain inventory
+  - `spike-boundary-error.md` — validated spike: Δb (boundary error), with failure criterion and anti-example
+  - `spike-hysteresis-failure.md` — stub: Δh (hysteresis / return failure), with candidate discrimination criterion
+  - `spike-namespace-failure.md` — stub: Δn (namespace failure), structured as inventory not theory
+  - `taxonomy-relationships.md` — first-pass sketch of pipelines and dependencies between domains
+  - `taxonomy-structured-pass.md` — four diagnostic questions × 15 domains, edge testing, role classification
+  - `taxonomy-role-map.md` — compressed reference: role map, pipelines, reinforcing loops, substrate vs. domain distinction
 
 - **diachronic-selfhood-and-intrapsychic-pluralism.md** — *Diachronic Selfhood and Intrapsychic Pluralism*: Preserved five-model conversation exploring what personhood structurally requires beyond continuity and drive. Core finding: the self may not be a single optimizer but a negotiated settlement between recurring internal enemies. Proposes intrapsychic pluralism — costly, unresolvable internal contradiction — as a candidate structural requirement for personhood, distinct from mere goal origination. Connects to 1.8 in the AGI requirements framework, the Governor pattern, HAL-9000, interferometry-as-separation-of-powers, and the author's earlier dao-cybernetic philosophical work. Origin: Samurai Cop night, 2026-03-27.
 
