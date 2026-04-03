@@ -9,6 +9,11 @@
 
 This paper synthesizes the Δt framework developed across Papers 1-5, providing a unified account of temporal coherence requirements for synthetic systems. We demonstrate that three architectural operators (timescale separation, endogenous state, adaptive control) are necessary and sufficient for maintaining coherent identity across perturbations. The framework explains the Simulator Gap: why large language models can simulate temporal reasoning without implementing temporal closure. We provide testable predictions for both biological and artificial systems, falsification protocols, and correspondence with neuroscience. Five supplementary documents provide: (1) reference Python implementation, (2) neuroscience correspondence and clinical predictions, (3) comparison with existing consciousness theories, (4) RFC-style architectural invariants, and (5) comprehensive falsification test suite.
 
+## Lean Kernel (Phase 1)
+
+A Lean 4 Phase 1 kernel exists for the Baby River environment semantics. It formalizes the deterministic step/reset kernel with explicit exogenous inputs and proves bounded-state invariants. This is about environment semantics and measurement scaffolding, not PPO convergence, adaptation claims, or empirical superiority.
+Proved invariants (Phase 1): torus-valid positions, bounded energy/heat/food, spike expiry, and consume monotonicity/bounds.
+
 
 ## Key Contributions
 
