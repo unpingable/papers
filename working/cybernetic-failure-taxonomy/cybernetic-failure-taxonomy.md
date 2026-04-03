@@ -75,3 +75,29 @@ The question is not "should we build this" but "should we acknowledge it exists.
 Not a new paper. Not a new framework. A crosswalk showing that the existing series already covers most of the territory, and that Paper 15's "cybernetic fault domains" title is more prophetic than its contents currently deliver.
 
 If this ever becomes something, it's probably a table in the book, not a standalone paper.
+
+---
+
+## Formal Verification Results (2026-04-03/04)
+
+The taxonomy was formalized in Lean 4 as a directed graph with 15 domains and 21 pipeline edges. Three layers of machine-checked proofs corrected the informal theory. Full details in `~/git/lean/WHAT-THE-LEAN-STACK-PROVES.md`.
+
+### Static topology
+
+The pipeline graph has three terminal families — {Δg, Δa}, {Δx}, and {Δh} — not one universal sink. Signal corruption and coupling mismatch dead-end without reaching Δh. The coupling family {Δk, Δx} is completely graph-isolated from the rest of the taxonomy. Any claim that all failures eventually reach hysteresis must be stated as a temporal hypothesis, not a graph fact.
+
+### Closure-family selection
+
+For the five branching precursors (Δn, Δo, Δb, Δp, Δr) that can reach both gain/actuation and hysteresis terminals, closure family is selected by the interaction of burn profile and pre-existing budget asymmetry, not by precursor type alone. A system with weakened authority-consequence coupling is susceptible to hysteresis regardless of what kind of failure hits it.
+
+### Persistence dynamics
+
+Hysteresis is driven by cumulative rollback depletion under detached commits, not by contiguous duration of detachment. Repeated short episodes, each individually recoverable, can accumulate into irrecoverability. Once internal return is unavailable, external restructuring can restore operability but not original baseline resilience.
+
+### Recovery distinction
+
+Three formally distinct categories: internally recoverable (reattach from detached states), externally repairable (restructure from hysteretic, new regime with less capacity), and locked in (hysteretic without external intervention).
+
+### Meta-result
+
+The common error pattern: informal prose was compressing static, dynamic, and restorative claims into single sentences. Formalization forced each claim to declare its type. The machine didn't make the theory more impressive. It made it more honest.
