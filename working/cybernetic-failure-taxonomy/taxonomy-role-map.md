@@ -72,7 +72,7 @@ Not every durable failure is Δh in the strong sense. Distinction:
 - **Persistent failure:** The failure continues because nobody fixed it. Unresolved, not self-stabilizing. Remove the neglect and the failure is correctable.
 - **Hysteretic failure (Δh proper):** The failure has become self-stabilizing — the state of being in the failure actively maintains the failure. Reversal attempts are resisted or structurally prevented.
 
-Δh as "universal sink" means it's the *destination* of uncorrected failures, not that every old failure is hysteretic. The discrimination criterion (from the Δh spike): **pathological when the persistence mechanism is self-referential rather than environment-referential.**
+Δh is a persistence sink but not a universal one in the static pipeline graph — Lean formalization (2026-04-03) proved that the graph has three terminal families: {Δg, Δa}, {Δx}, and {Δh}. Signal corruption (Δs) and coupling mismatch (Δk) dead-end without reaching Δh. Any claim that all failures eventually reach Δh is a temporal hypothesis about cumulative rollback depletion, not a graph-topological fact. The discrimination criterion (from the Δh spike): **pathological when the persistence mechanism is self-referential rather than environment-referential.**
 
 ---
 

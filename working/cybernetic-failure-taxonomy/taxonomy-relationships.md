@@ -133,7 +133,7 @@ PERSISTENCE
 
 1. **The taxonomy has real structure**, not just 15 peers. Roots, pipelines, and a persistence sink.
 2. **Δn, Δp, and Δe** are the deepest roots — framing, polarity, and energy. Everything else is downstream or operational.
-3. **Δh** is the universal sink — any failure that persists long enough becomes hysteresis.
+3. **Δh** is one of three terminal families in the static pipeline graph, not a universal sink. The graph has terminals {Δg, Δa}, {Δx}, and {Δh} — signal and coupling failures dead-end without reaching Δh. Any claim that all failures eventually reach Δh must be stated as a temporal hypothesis about persistence dynamics, not a graph fact. The discrimination criterion: pathological when the persistence mechanism is self-referential rather than environment-referential (see taxonomy-role-map.md).
 4. **Δm** is the weakest independent domain — it's usually a symptom.
 5. **Δi** is confirmed composite — don't add it.
 6. **Δk and Δa** are genuinely independent operational failures — they don't need framing fixes, they need engineering fixes.

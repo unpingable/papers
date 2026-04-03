@@ -195,7 +195,9 @@
 | Invertible? | **Yes — this is the strongest therapeutic inversion in the taxonomy.** Hysteresis as stabilization: anti-flap, damping, regime persistence against transient noise. The governor's `hysteresis.py` is literally this. Same mechanism, opposite sign. The failure criterion from the spike: pathological when the persistence mechanism is self-referential rather than environment-referential. |
 | Primitive? | **Primitive.** Clear mechanism, sharp failure criterion (from the Δh spike). Not a bundle. |
 
-**Role: Universal sink + lateral generator.** Receives from everything. Generates lateral effects (Δh → Δn, Δh → Δc) by normalizing what should be temporary. Best therapeutic inversion in the taxonomy.
+**Role: Persistence sink + lateral generator.** Receives from many pipeline paths (but not all — Δs and Δk dead-end at Δg/Δa and Δx respectively without reaching Δh). Generates lateral reinforcement effects (Δh → Δn, Δh → Δc) that stabilize the locked-in state. Not a universal sink in the static graph; Δh is one of three terminal families. Its reach beyond direct pipeline connections is a temporal/dynamic claim (cumulative rollback depletion under detached commits), not a graph-topological one. Best therapeutic inversion in the taxonomy.
+
+**Recovery distinction (formally proved, 2026-04-03):** Once in Δh, the system is internally irrecoverable — no internal reattachment of authority to consequence can restore baseline. External restructuring can restore operability (→ a new operational regime), but not original baseline resilience. A restructured system can become hysteretic again, typically faster, because external repair restores operability without restoring the original rollback margin. Three distinct categories: internally recoverable (detached states), externally repairable (hysteretic), and locked in (hysteretic without external intervention).
 
 ---
 
@@ -259,7 +261,7 @@
 - **Δe** — energy deficit. Orthogonal resource constraint. Determines recoverability.
 
 ### Sink (receives from everything, locks failures in)
-- **Δh** — hysteresis. Universal sink. Best therapeutic inversion.
+- **Δh** — hysteresis. Persistence sink (one of three terminal families; not universal in static graph). Best therapeutic inversion.
 
 ### Composites (don't promote)
 - **Δi** — identity failure. = Δn + Δr + Δw. No independent residue.
