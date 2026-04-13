@@ -179,8 +179,8 @@ The ratify/reissue distinction is the sovereign hinge. If `ratify` collapses int
 $$
 M(G) =
 \begin{cases}
-\text{enforcement} & \text{if } D \le \epsilon \text{ and } H \le \eta \\
-\text{migration} & \text{if } D > \epsilon \text{ or } H > \eta
+\text{enforcement} & \text{if } D_a \le \epsilon \text{ and } H \le \eta \\
+\text{migration} & \text{if } D_a > \epsilon \text{ or } H > \eta
 \end{cases}
 $$
 
@@ -233,11 +233,13 @@ $$
 \text{recompute } D
 $$
 
-Terminal condition is two-tier:
+Closure predicates are two-tier (not "terminal conditions" — closure is a maintenance condition, not an achievement):
 
 **Pass completion**: $D_a(G,t) < \epsilon$ and all unresolved items are in controlled state (quarantine or defer) with explicit owner, review condition, expiry trigger, and non-expansion guarantee.
 
 **Regime closure**: additionally $P(G,t) < \kappa$, with no expired deferred items and no quarantined items still exerting live force. Without this second condition, `defer` becomes a constitutional landfill.
+
+**Critical property (machine-checked):** Closure is not monotone under escalation. A governed cell can satisfy pass completion at time $t$ and lose it when expired parked items are reclassified into active shadow state. This means the repair operator is not a one-shot closure function — it is a maintained control regime. "We fixed it" is a claim about a moment, not a state. The operator needs a heartbeat, not just a trigger.
 
 ---
 
@@ -324,6 +326,50 @@ Each child cell gets its own $D$, $P_{\mathcal{R}}$, $\Gamma$. Parent aggregates
 - The influence weight $I(x)$ — "effective influence on behavior" is easy to write and hard to operationalize
 
 The repair receipt chain gives second-order observability of repair behavior. That is not L4. It is the beginning of one, with fewer lies in it.
+
+---
+
+## Formal verification results (2026-04-13)
+
+Hostile kernel check via Lean 4 (`~/git/lean/LeanProofs/RepairOperator.lean`). Goal: force separation of structural invariants from political placeholders and measurement handwaving. Not a full formalization — $I(x)$, $\sigma$, $O(G,t)$, and $\Phi$ are deliberately left abstract.
+
+### Partition soundness (4 theorems)
+
+- `active_parked_disjoint`: $S_a \cap S_p = \emptyset$ — an item cannot be simultaneously active and parked
+- `parked_resolved_disjoint`: parked and resolved are disjoint
+- `active_resolved_disjoint`: active and resolved are disjoint
+- `trichotomy`: every shadow item is in exactly one of {active, parked, resolved}
+
+### Classification effects (4 theorems)
+
+- `classify_resolves`: ratify/reissue/repeal produces a resolved item
+- `classify_resolves_not_active`: resolving classification removes item from $S_a$
+- `classify_parks_contained`: park outcome + real containment → item enters $S_p$
+- `classify_parks_uncontained`: park outcome + fake containment → item stays in $S_a$. **Fake containment does not magically park anything.**
+
+### Escalation (2 theorems)
+
+- `escalate_no_outcome_becomes_active`: expired parked item with no reclassification returns to $S_a$
+- `escalate_to_resolve`: escalation to a resolving outcome resolves the item
+
+### Terminal conditions (2 theorems)
+
+- `regime_implies_pass`: regime closure implies pass completion
+- `empty_is_closed`: empty shadow inventory trivially satisfies regime closure
+
+### The structural finding (1 theorem)
+
+- `escalation_can_break_pass_completion`: **pass completion is not monotone under escalation.** A cell that achieved $D_a < \epsilon$ can lose it when expired deferred items are reclassified back to active shadow. Constructed witness: a cell with one parked `defer` item (age 5, $\tau_{\max}$ = 3) satisfies pass completion; after escalation with no new outcome, containment is revoked and the item returns to $S_a$.
+
+This is the theorem that earns its keep. It proves that repair is a maintained regime, not an achieved state. The escalation clock is always running.
+
+### What the kernel did NOT check
+
+- Influence weight $I(x)$ — left as abstract `Nat` field, not grounded
+- Sovereign mandate $\sigma$ — not represented at all
+- Observability $O(G,t)$ — not represented
+- Parent aggregation $\Phi$ — not represented
+- Real-world convergence — the operator converges in the toy transition system; whether it converges in practice is not a Lean question
 
 ---
 
