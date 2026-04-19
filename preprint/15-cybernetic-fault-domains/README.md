@@ -9,6 +9,21 @@
 
 We hypothesize that when irreversible commitments cross a boundary faster than verification can complete, unverified state transitions accumulate and systems exhibit recurring loss-of-control signatures. We formalize this condition as **cybernetic fault domains** — boundary-relative temporal regimes defined by a commitment boundary (C_k), commitment-verification lag (Δt), and boundary load (σ) — and provide a measurement protocol with nine domain instantiations spanning organizations, language models, censorship systems, security operations, safety tuning, platforms, representational transforms, optimization dynamics, and synthetic coherence. An architectural containment pattern — **governors** that separate proposal from commitment and gate crossings of C_k on evidence — is implemented and mechanically tested in one domain via an enforcement kernel with 37 verifiable claims and a dimensionless risk index (R_t = PD/E) that formalizes the gate as a single inequality. Four falsifiable claims, seven testable predictions, and the strongest adversarial target are specified: a system that sustains high Δt and σ without degradation would kill the framework.
 
+## Formalization Status
+
+`TaxonomyGraph.lean` in `~/git/lean/LeanProofs/` provides structural backing for the nine-domain instantiation. `BranchSelector.lean` covers closure-family selection. Cashout classes: **sharpen** + **expose looseness**. Paper-ready.
+
+Formalized claims that certify or correct the prose:
+
+- Exactly four terminal domains (Δg, Δa, Δx, Δh) organized into three terminal families (not one)
+- "Δh is the universal sink" is false as pipeline reachability — Δs and Δk cannot reach Δh (see `CLAIM-REGISTER.md` #1; priority rewrites applied to taxonomy working notes on 2026-04-03)
+- Coupling family is graph-isolated (Δk → Δx partition)
+- Role coherence verified for 10/11 domains (Δx flagged as structural mismatch)
+- Identity failure decomposition (Δi = Δn + Δr + Δw)
+- Closure-family selection by budget asymmetry, not precursor type (susceptibility/priming)
+
+Revision candidacy: **v1.1 with a Formal Verification subsection** — natural extension of the paper's existing "37 verifiable claims" verification-forward posture. See [`docs/formalization-index.md`](../../docs/formalization-index.md) for the full crosswalk.
+
 ## Key Contributions
 
 1. A boundary-relative definition of cybernetic fault domains in terms of Δt, C_k, H, and σ, with a minimal measurement protocol.

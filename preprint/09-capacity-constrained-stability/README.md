@@ -10,6 +10,19 @@
 This paper introduces a control-theoretic stability constraint governing institutional failure under exogenous shock. Formalizing the relationship between shock arrival rate, processing capacity, buffer reserves, and response latency, it demonstrates why institutional collapse often appears sudden despite being structurally predictable. The framework integrates queueing theory, resilience engineering, and multi-timescale control to identify measurable failure boundaries and metastable operating regimes across healthcare, finance, and infrastructure systems.
 
 
+## Formalization Status
+
+`BranchSelector.lean` in `~/git/lean/LeanProofs/` formalizes the mechanism behind this paper's claim that institutional collapse is "structurally predictable despite appearing sudden." Cashout classes: **certify** + **sharpen**. Paper-ready.
+
+Formalized claims:
+
+- Budget asymmetry selects closure family (pre-existing damage dominates over burn profile)
+- Dual-channel budget depletion race — mechanism for metastable operating regime
+- Precursor type does NOT determine closure family (slogan correction)
+- `CLAIM-REGISTER.md` #10 marks the paper's p.279-285 claim as SOUND — no prose rewrite needed; appendix certification only
+
+Revision candidacy: **v1.1 with formalization appendix**. See [`docs/formalization-index.md`](../../docs/formalization-index.md) for the full crosswalk.
+
 ## Key Contributions
 
 - Our contribution is threefold.

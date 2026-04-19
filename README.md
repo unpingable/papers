@@ -16,6 +16,10 @@ If you're new:
 - Use the Markdown files for source context or LLM ingestion
 - See `preprint/README.md` for a conceptual map of the research program
 
+## Formalization
+
+A subset of the papers has machine-checked backing in Lean 4 (`~/git/lean/`). The paper-indexed crosswalk — which papers have formalization warrants, what kind (certify / sharpen / expose looseness / bridge), and whether the mapping is paper-ready — lives in [`docs/formalization-index.md`](docs/formalization-index.md). The module-indexed inverse lives in the Lean repo at `PAPER-MAP.md`.
+
 ## License & Attribution
 
 - Materials published on Zenodo are licensed CC BY 4.0, as indicated there.
