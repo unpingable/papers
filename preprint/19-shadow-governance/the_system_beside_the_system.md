@@ -378,4 +378,4 @@ Language-model tools were used for editorial critique and literature discovery d
 
 [9] Hollnagel, E. (2014). *Safety-I and Safety-II: The Past and Future of Safety Management.* Ashgate.
 
-[10] Beck, J. (2026). The Temporal Attack Surface: When Detection, Decision, and Response Clocks Diverge. Preprint, Δt Framework Paper 14. doi:10.5281/zenodo.18680816
+[10] Beck, J. (2026). The Temporal Attack Surface: A Δt Framework for Asynchronous Security Systems. Preprint, Δt Framework Paper 14. doi:10.5281/zenodo.18236164

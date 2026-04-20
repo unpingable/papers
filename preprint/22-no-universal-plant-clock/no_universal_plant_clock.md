@@ -16,7 +16,7 @@ Independent Researcher
 
 **Series:** Δt Framework, Paper 22
 
-**Status:** Preprint v0.9
+**Status:** Preprint v1.1 (adds §6.4 Lean-formalization paragraph; not yet pushed to Zenodo — Zenodo record is v1.0)
 
 **DOI:** [10.5281/zenodo.19119618](https://doi.org/10.5281/zenodo.19119618)
 
@@ -445,6 +445,8 @@ The temporal coherence resource framework unifies several constructs from earlie
 
 - **Cybernetic fault domains** (Paper 15) formalized commitment-verification lag. The actuation budget provides the temporal grounding: commitments outrun verification precisely when the actuation ratio exceeds the system's ability to verify state before acting on it.
 
+A parallel formalization of the Δt framework in Lean applies the same scope discipline at finer grain. The formalization separates static claims (closure classification and reachability in the cybernetic failure taxonomy) from dynamic claims (rollback depletion, recovery taxonomy, Δc→Δh persistence), with a boundary axiom explicitly marking where static commitments end. The four-layer temporal decomposition presented here occupies the temporal-claim side of that boundary: its content is operational control theory, and its critical quantities are timescale ratios rather than reachability classes. A cross-layer formalization index is maintained in the papers repository (`docs/formalization-index.md`).
+
 The four-layer framework does not replace these prior results. It identifies the common substrate — four distinct temporal resources whose depletion produces the specific failure modes each prior paper characterized in domain-specific form.
 
 ---
@@ -531,11 +533,11 @@ Language-model tools were used for editorial critique and literature discovery d
 
 ## References
 
-[1] Beck, J. (2025). Temporal Closure Requirements for Synthetic Coherence: Architectural Foundations and the Simulator Gap. Preprint, Δt Framework Paper 6. doi:10.5281/zenodo.17800925
+[1] Beck, J. (2025). Temporal Closure Requirements for Synthetic Coherence: Architectural Foundations and the Simulator Gap. Preprint, Δt Framework Paper 6. doi:10.5281/zenodo.17849277
 
 [2] Beck, J. (2025). Δt-Constrained Inference: A General Model of Temporal Coherence in Hierarchical Systems. Preprint, Δt Framework Paper 7. doi:10.5281/zenodo.17857541
 
-[3] Beck, J. (2026). The Temporal Attack Surface: When Detection, Decision, and Response Clocks Diverge. Preprint, Δt Framework Paper 14. doi:10.5281/zenodo.18680816
+[3] Beck, J. (2026). The Temporal Attack Surface: A Δt Framework for Asynchronous Security Systems. Preprint, Δt Framework Paper 14. doi:10.5281/zenodo.18236164
 
 [4] Beck, J. (2026). The Gain Geometry of Temporal Mismatch: Shear, Leverage, and Capture in Multi-Timescale Systems. Preprint, Δt Framework Paper 16. doi:10.5281/zenodo.18717619
 

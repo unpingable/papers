@@ -14,7 +14,7 @@ Independent Researcher
 
 **Series:** Δt Framework, Paper 18
 
-**Status:** Preprint v0.3
+**Status:** Preprint v1.1 (adds Appendix A; not yet pushed to Zenodo — Zenodo record is v1.0)
 
 ---
 
@@ -393,6 +393,8 @@ The framework may also function as an analytical frame for institutions and huma
 
 6. **Threat taxonomy refinement.** The current taxonomy groups threats along three axes (capture target, structural mechanism, temporal consequence) but the interactions between axes are not fully formalized. Ontological spoofing in particular straddles the boundary between structural mechanism and capture target -- it is a mechanism for bypassing gates, but its success depends on which layer's type system is being gamed. Whether a more orthogonal decomposition would improve analytical power is a question for future work.
 
+Appendix A formalizes a specific substructure relevant to questions 4 and 5: the post-breach persistence dynamics in the Δc→Δh channel. Rollback depth is shown to be a finite resource that depletes under detached commits rather than under elapsed time; hysteresis is shown to be bounded in the narrow sense that external repair guarantees exit from the locked-in state, but not in the sense of restoring baseline capacity. The appendix does not resolve either question fully, but it constrains the space of answers.
+
 ---
 
 ## 11. Conclusion
@@ -408,6 +410,81 @@ The practical implication is direct. Most current safety regimes govern what sys
 The shortest version:
 
 > The governance question is not "did the system do something bad?" It is "what write path allowed this to become permanent?"
+
+---
+
+## Appendix A: Formal Verification of Persistence Dynamics
+
+The Δt framework's Lean formalization stack includes `PersistenceModel.lean`, a mechanically verified model of the post-coupling-break dynamics that underlie the unauthorized-durability claims developed in §4 and §10.4. This appendix lists the formal results that sharpen or extend specific prose claims. Each entry follows a fixed format: (i) the formal object; (ii) the prose claim it sharpens; (iii) what it does not prove; (iv) repository location.
+
+The formalization is subordinate to the paper's framework. It does not replace the four-tier layer model, the six invariants, the five write barriers, or the promotion ceremony. It constrains a specific substructure — the dynamics of rollback capacity once authority-consequence coupling is broken — and within that substructure, several of the paper's implicit claims become explicit, and two claims that were not in the paper's prose emerge as novel results.
+
+### A.1 Detached commits, not elapsed time, burn rollback capacity
+
+- **Formal object.** `PersistenceModel.lean` encodes five events (`detach`, `commit`, `idle`, `reattach`, `externalRepair`) over five states (`aligned`, `detachedShort`, `detachedWarn`, `hysteretic`, `restructured`) with `rollback_capacity` as a numeric resource. The lemma `idle_preserves_capacity` proves that idle events do not decrement capacity; only commit events while detached do.
+- **Prose claim sharpened.** Invariant 2 ("repetition is not authorization") and Barrier 4 ("repeated exposure cannot bypass write barriers"). The formal result narrows what "exposure" or "repetition" consume in the Δc→Δh channel: elapsed time does not. What consumes rollback budget is cumulative *committed* action while authority-consequence coupling is broken. This distinguishes sustained ambient pressure (idle detachment) from repeated unauthorized writes (detached commits); only the latter erodes reversibility.
+- **What it does not prove.** The model does not empirically calibrate the rollback depletion rate; each detached commit is a unit decrement. Commit magnitude, scope, and domain-specific gradations are outside the formalization.
+- **Pointer.** `lean/LeanProofs/PersistenceModel.lean` — `idle_preserves_capacity`.
+
+### A.2 Episode recoverability does not imply lifetime recoverability
+
+- **Formal object.** The theorem `hysteresis_without_warn` proves that the system can reach the hysteretic state without ever passing through the `detachedWarn` diagnostic state — i.e., without any single episode of prolonged detachment.
+- **Prose claim sharpened.** §10.4 open question #5 (hysteresis bounds) and the conclusion's claim that capture operates through "transient signals silently acquiring the force of durable policy." The formal result establishes that individually-recoverable episodes — each short enough to warn no one, each internally reversible in isolation — can compose into irrecoverable state. Episode-level recovery is not lifetime-level recovery.
+- **What it does not prove.** The model does not specify the real-world threshold separating short recoverable from cumulative irrecoverable episodes. The result is structural: the composition is possible; the specific threshold is system-dependent.
+- **Pointer.** `lean/LeanProofs/PersistenceModel.lean` — `hysteresis_without_warn`.
+
+### A.3 Hysteretic is absorbing for internal events
+
+- **Formal object.** The theorems `hysteretic_absorbing_internal` and `reattach_from_hysteretic_fails` prove that no internal event sequence exits the hysteretic state. Only the `externalRepair` event transitions out.
+- **Prose claim sharpened.** Barrier 5 ("observer-affecting updates require special scrutiny") and the implicit claim that unauthorized durability, once established, cannot be undone by the system's own mechanisms. The formal result makes this precise: once `rollback_capacity` depletes to zero, no combination of `reattach`, `commit`, `idle`, or `detach` exits hysteretic. Recovery requires intervention from outside the model's normal dynamics.
+- **What it does not prove.** The model treats `externalRepair` as an atomic event. What that consists of in practice — regulatory action, system reset, operator intervention, architectural replacement — and what preconditions must be satisfied for it to be available, are outside the formalization.
+- **Pointer.** `lean/LeanProofs/PersistenceModel.lean` — `hysteretic_absorbing_internal`, `reattach_from_hysteretic_fails`.
+
+### A.4 External repair produces a restructured regime, not aligned baseline
+
+- **Formal object.** The theorem `repair_produces_restructured_not_aligned` proves that `externalRepair` transitions the system from `hysteretic` to `restructured`, never directly to `aligned`. The theorem `repair_capacity_is_configured` establishes that the restructured state's `rollback_capacity` is set by the repair configuration, not automatically restored to its original value.
+- **Prose claim extended.** The paper asserts that reversibility decreases with depth (Invariant 6) but does not address what successful recovery looks like. The formal model fills that gap: external repair restores operability without restoring original resilience. The system is governable again but in a different regime, with repair-configured rollback capacity.
+- **What it does not prove.** The model does not specify whether restructured capacity can be greater than, less than, or equal to aligned capacity — only that it is configured rather than automatically restored. Whether real systems can design repair to restore full baseline is an open empirical question.
+- **Pointer.** `lean/LeanProofs/PersistenceModel.lean` — `repair_produces_restructured_not_aligned`, `repair_capacity_is_configured`.
+
+### A.5 Restructured systems can fail again, faster
+
+- **Formal object.** The theorem `restructured_can_fail_again` establishes a legal trajectory `aligned → hysteretic → restructured → hysteretic`. Because the restructured state's `rollback_capacity` is set by repair configuration — typically below the original aligned capacity — the second trajectory to hysteretic can complete with fewer detached commits than the first.
+- **Prose claim extended.** The paper does not address whether successfully repaired systems are more, less, or equally vulnerable to repeated capture. The formal result states the conditional: if repair sets capacity below baseline, the system is more vulnerable to re-entry of hysteretic state. Successful intervention is not immunity; it is a second chance with a smaller margin.
+- **What it does not prove.** The model does not establish whether repair can be configured with *greater* capacity than the original baseline (a "hardened" restructured regime), nor whether repeated repair cycles necessarily lead to monotonic capacity erosion.
+- **Pointer.** `lean/LeanProofs/PersistenceModel.lean` — `restructured_can_fail_again`.
+
+### A.6 Three-way recovery distinction
+
+A.1–A.5 compose into a three-way classification of recovery modalities:
+
+| Class | Mechanism | Result |
+|---|---|---|
+| Internally recoverable | `reattach` while `rollback_capacity > 0` | Returns to `aligned`; original capacity |
+| Externally repairable | `externalRepair` from `hysteretic` | `restructured`; repair-configured capacity |
+| Locked in | `hysteretic` without external intervention | No internal event exits |
+
+- **Prose claim sharpened.** The paper groups governance responses under the promotion ceremony (§5) but does not name the recovery modalities available *after* a ceremony failure. For audit and intervention-selection, this classification is the level at which the choice matters.
+- **What it does not prove.** The taxonomy is exhaustive within the formal model; it may not be outside it. Gradual capacity regeneration under remediation, or partial interventions that shift hysteretic thresholds without full repair, are recovery paths that real systems might admit and the model does not cover.
+
+### A.7 Relation to the paper's framework
+
+The Lean persistence model is subordinate to the paper's framework. It formalizes post-failure dynamics assuming some unauthorized durability has already accumulated. The promotion ceremony (§5) and the invariants/barriers (§4) are *prevention* mechanisms; the Lean model describes what happens when prevention fails. The pieces compose:
+
+- When all barriers hold: the system remains aligned; no detached commits occur; rollback capacity is irrelevant.
+- When Barrier 1 or Barrier 4 is breached: detached commits accumulate; `rollback_capacity` erodes; the system drifts toward `hysteretic`.
+- Once `hysteretic`: the promotion ceremony is no longer sufficient; `externalRepair` is required; recovery produces `restructured`, not `aligned`.
+
+§10.4 questions #4 (rollback depth) and #5 (hysteresis bounds) gain partial answers from this model. Rollback is a finite resource that depletes with detached commits. Hysteresis is bounded in the sense that external repair guarantees exit, but not in the sense of restoring baseline capacity.
+
+### A.8 What the formalization does not cover
+
+- **Pre-breach dynamics.** The model begins at `aligned` and asks what happens as authority-consequence coupling breaks. It does not formalize the promotion ceremony itself (proposal, evaluation, attestation, application, audit) or the write barriers at the point of attempted promotion.
+- **Observer-integrity dynamics.** The paper identifies observer degradation as a central threat (§10.2). The Lean model tracks a single capacity resource; it does not model `o(t)` separately.
+- **Tier escalation paths.** The model treats the Δc→Δh channel as a single stream; it does not formalize L0→L1→L2→L3 escalation.
+- **Empirical calibration.** No estimates of capacity decrement per detached commit; no domain-specific repair configurations.
+
+These are scope fences, not defects. The model underwrites what happens once breach has begun to accumulate; earlier, wider, and observer-level dynamics would require additional formalization layers.
 
 ---
 

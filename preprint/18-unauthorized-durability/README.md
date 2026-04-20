@@ -23,7 +23,9 @@ Formalized claims that sharpen or extend the prose:
 - Restructured systems can fail again, faster (novel relative to prose)
 - Three-way recovery taxonomy: internally recoverable / externally repairable / locked in
 
-Revision candidacy: **v1.1 with formalization appendix**, possibly **v1.2** if the reframing ripples into the abstract or key contributions. See [`docs/formalization-index.md`](../../docs/formalization-index.md) for the full crosswalk.
+Revision candidacy: **v1.1 — Appendix A added; local source bumped to `version: "1.1"`; PDF rebuilt 2026-04-20; Zenodo push deferred (Zenodo record remains v1.0 pending explicit push).** Paper published v1.0 on Zenodo March 10, 2026. The appendix uses a fixed four-field structure per claim (formal object / prose claim extended or sharpened / what it does not prove / repository pointer). Abstract, introduction, and conclusion are unchanged.
+
+If the formal results later ripple into the abstract or key contributions (e.g., making the "cumulative commitment, not duration" and "recovery is restructuring, not restoration" points visible in the top-level summary), that would be a v1.2 move — deferred for now. See [`docs/formalization-index.md`](../../docs/formalization-index.md) for the full crosswalk and `NOTES.md` for the 2026-04-20 changelog entries.
 
 ## Key Contributions
 

@@ -17,7 +17,7 @@ keywords:
   - falsifiable predictions 
 status: "preprint"
 series: "delta-t-framework"
-version: "1.0"
+version: "1.1"
 license: "CC-BY-4.0"
 abstract: |
   Hierarchical systems with mismatched timescales fail in predictable ways. Paper 1 established the spectral stability condition ρ(M) < 1; Paper 2 derived the kinetic phase boundaries that produce metastability when temporal mismatch Δt exceeds critical thresholds. This paper completes the trilogy by answering: What can we actually do about it?

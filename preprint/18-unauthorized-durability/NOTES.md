@@ -1,7 +1,41 @@
 # Paper 18: Entrainment Control Model — Working Notes
 
+## Changelog
+
+### 2026-04-20 — formalization appendix drafted (local source; v1.1 candidate)
+
+Paper is published v1.0 on Zenodo (March 10, 2026; DOI 10.5281/zenodo.18940008). These edits are a **v1.1 candidate in local source**, not yet pushed. Source `metadata.yaml` still shows `version: "1.0"`; a Zenodo push would require bumping to `1.1` and rebuilding the PDF.
+
+Changes:
+
+- `unauthorized_durability.md`: added Appendix A (Formal Verification of Persistence Dynamics) between §11 Conclusion and Acknowledgments. Structure: A.1–A.6 per-claim entries using chatty's four-field format (formal object / prose claim sharpened / what it does not prove / repo pointer); A.7 relates the formalization to the paper's framework; A.8 enumerates scope fences.
+- No changes to abstract, introduction, main-body structure, or conclusion. The appendix is additive; it does not rewrite prior claims.
+- Updated README Formalization Status block to reflect the appendix landing and to note the v1.2 question (whether to promote any of the novel results into the abstract) is deferred.
+
+Cashout rationale: sharpen + bridge artifact. Two novel results (external repair produces restructured; restructured systems fail faster) are explicit additions to the paper's substance; the other four entries sharpen or formalize claims that were implicit. See `docs/formalization-index.md` (Tier 1, P18) for the full cashout record.
+
+Appendix design constraint (from chatty, 2026-04-19): brutally mechanical, no Lean-tourism. Each entry is the formal object, the exact prose claim it sharpens, what it does not prove, and the repo pointer. The appendix resists the temptation to narrate the Lean stack.
+
+Follow-up (2026-04-20, from chatty review): added a forward reference at the end of §10.4 (Open Questions), pointing to Appendix A for partial answers to questions #4 (rollback depth) and #5 (hysteresis bounds). Keeps the appendix from feeling like a hidden basement.
+
+Polish pass (2026-04-20, same day, after chatty's review):
+- Dropped "(novel)" labels from A.4 and A.5 headings. Removed the "This result is not in the paper's prose" / "Also not in the paper's prose" self-announcements from the Prose-claim-extended fields. Reason: chatty flagged that explicit novelty-labeling changes the rhetorical temperature and academic readers can be allergic to being told where the novelty is. The content still makes clear these are extensions (the field is labeled "Prose claim extended," not "Prose claim sharpened"); novelty now emerges from what's written rather than from a banner.
+- Tightened A.6: changed the intro from "The preceding results compose into..." to "A.1–A.5 compose into..." (more explicit reference to the earlier entries so A.6 reads as consequence). Tightened the Prose-claim bullet to remove the "practical consequence is that the current state class determines which remediation path is legitimate" phrasing (too synthesized-sounding) in favor of "this classification is the level at which the choice matters." Sharpened the What-it-does-not-prove bullet to explicitly distinguish model-internal exhaustiveness from real-world exhaustiveness.
+
+### 2026-04-20 — release mechanics (local): version bumped, PDF rebuilt
+
+- `metadata.yaml`: `version: "1.0"` → `version: "1.1"`
+- Paper front matter: `**Status:** Preprint v0.3` (stale from pre-publication draft; chatty flagged this drift) → `**Status:** Preprint v1.1 (adds Appendix A; not yet pushed to Zenodo — Zenodo record is v1.0)`
+- Rebuilt `unauthorized_durability.pdf` with pandoc + xelatex + Libertinus font stack (standard build command).
+- README Formalization Status block updated to reflect the bump being applied.
+- Zenodo push is *not* done. Zenodo record remains v1.0 until explicit push.
+
+Still deferred:
+- Whether / when to push v1.1 to Zenodo (new version under same concept DOI). User will decide by-hand or via me later.
+- v1.2 trigger: A.4 and A.5 are the pressure points. If they start making the main paper look under-claimed on re-read, abstract/introduction changes follow. Not now.
+
 ## Status
-Spec exists in agent_gov (`specs/core/ENTRAINMENT_CONTROL_MODEL.md`). Paper not yet drafted. `paper.md` is the raw multi-model conversation that generated the idea.
+Spec exists in agent_gov (`specs/core/ENTRAINMENT_CONTROL_MODEL.md`). Paper published v1.0 on Zenodo (March 10, 2026). `paper.md` is the raw multi-model conversation that generated the idea.
 
 ## Thesis (one sentence)
 The problem is not influence alone; the problem is illegitimate promotion of transient influence into durable governing structure.

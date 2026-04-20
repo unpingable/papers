@@ -186,3 +186,24 @@ This is the paper that reveals what the Δt series has been building on top of. 
 
 ## Origin Note
 Came to the author at 6am. Captured before coffee finished. The kind of thing that needs to be written down in the moment because the shape is clear and will blur by afternoon.
+
+## Changelog
+
+### 2026-04-20 — formalization incorporation (local source; v1.1 candidate)
+
+P22 is already published on Zenodo (March 19, 2026; DOI 10.5281/zenodo.19119618). An earlier working memory described P22 as "v0.9 draft, DOI reserved" — that was stale by the time of this fold-in. These edits are therefore a **v1.1 candidate in local source**, not a pre-release fold-in. Source `metadata.yaml` still shows `version: "0.9"`; the Zenodo record is the authoritative publication. Bumping the metadata and rebuilding the PDF are prerequisites to pushing a new version to Zenodo; not done here.
+
+Changes:
+
+- `no_universal_plant_clock.md` §6.4 (Connection to Prior Series Work): added one paragraph acknowledging the Lean formalization's scope-fence discipline — static claims and dynamic claims separated by an explicit boundary axiom (`persistence_normalizes`). This paper occupies the temporal-claim side of that boundary.
+- Created `README.md` with Formalization Status block matching Tier 1 paper pattern (P9, P15, P18).
+- No changes to abstract, main-body structure, or conclusion.
+
+Cashout rationale: certify + bridge. The Lean axiom explicitly marks the static/temporal boundary this paper already polices in prose. See `docs/formalization-index.md` (Tier 2, P22) for the full cashout record.
+
+### 2026-04-20 — release mechanics (local): version aligned, PDF rebuilt
+
+- `metadata.yaml`: `version: "0.9"` → `version: "1.1"`. The "0.9" value was stale from the pre-publication draft era; Zenodo has had this paper published since March 19, 2026. Bumping to 1.1 aligns source with intended next-version state (1.0 Zenodo → 1.1 candidate source).
+- Paper front matter: `**Status:** Preprint v0.9` → `**Status:** Preprint v1.1 (adds §6.4 Lean-formalization paragraph; not yet pushed to Zenodo — Zenodo record is v1.0)`.
+- Rebuilt `no_universal_plant_clock.pdf` with pandoc + xelatex + Libertinus font stack.
+- Zenodo push is *not* done. Zenodo record remains at v1.0 until explicit push.

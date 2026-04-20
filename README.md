@@ -8,6 +8,7 @@ This repository contains technical writing, diagnostic frameworks, and specifica
 - `working/` — upstream framing, theoretical substrate, and exploratory writing not yet published
 - `specifications/` — formal architecture and design specifications
 - `templates/` — reusable templates for metadata and READMEs
+- `tools/` — operational scripts (currently: `zenodo_validate.py`, a pre-push drift checker)
 
 ## Reading Guidance
 

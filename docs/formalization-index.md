@@ -42,7 +42,7 @@ Chatty's pushback (2026-04-19): calling a revision "v2.0" oversignals rupture wh
 - **Lean modules:** `PersistenceModel.lean` (primary), `BranchSelector.lean` (secondary, for closure-family selection context)
 - **Cashout classes:** 2 (sharpen) + 4 (bridge artifact)
 - **Paper-ready:** Yes. `PersistenceModel.lean` is the formalization of Paper 18's central mechanism.
-- **Revision candidacy:** v1.1 with formalization appendix, *and* one reframed sentence in the abstract. Possibly v1.2 if the reframing ripples into the key-contributions list.
+- **Revision candidacy:** *v1.1 candidate — Appendix A drafted in local source 2026-04-20; not yet pushed to Zenodo.* Paper is published v1.0 on Zenodo (March 10, 2026). Appendix A uses a fixed four-field per-claim structure (formal object / prose claim sharpened / what it does not prove / repo pointer). Abstract, introduction, and conclusion untouched. v1.2 deferred — that would be the move if "cumulative commitment, not duration" and "recovery is restructuring" are promoted into the abstract or key contributions list.
 
 **What Lean underwrites:**
 
@@ -73,15 +73,15 @@ Chatty's pushback (2026-04-19): calling a revision "v2.0" oversignals rupture wh
 
 ### P22 — *No Universal Plant Clock*
 
-- **Lean modules:** `PersistenceModel.lean` (persistence-normalizes axiomatic boundary), `TaxonomyGraph.lean` (coupling family isolation relates to four-layer decomposition)
+- **Lean modules:** `PersistenceModel.lean` (`persistence_normalizes` axiomatic boundary)
 - **Cashout classes:** 1 (certify) + 4 (bridge artifact)
-- **Paper-ready:** Partial. The persistence-normalizes axiom is clean; the four-layer / coupling-family mapping needs thought.
-- **Revision candidacy:** *Pre-release incorporation.* Paper 22 is still v0.9 with DOI reserved. Fold in before v1.0 release, not as a subsequent revision.
+- **Paper-ready:** Yes, for the scope-fence point. The earlier draft index also listed `TaxonomyGraph.lean`'s coupling-family isolation as a secondary tie-in; on closer reading that mapping was too forced and has been dropped.
+- **Revision candidacy:** *v1.1 candidate — local source edits complete 2026-04-20; not yet pushed to Zenodo.* P22 is already published on Zenodo (March 19, 2026; the earlier memory calling it "v0.9 with DOI reserved" was stale). One paragraph added to §6.4 acknowledging the Lean formalization's scope-fence discipline, README created, changelog entry in `NOTES.md`. Source `metadata.yaml` still shows `version: "0.9"`; a Zenodo push would require bumping metadata and rebuilding the PDF.
 
 **What Lean underwrites:**
 
-- **Persistence-normalizes as axiomatic boundary marker.** The axiom explicitly states where static formalization ends and temporal logic would begin. This aligns with Paper 22's scope-fence discipline (gauge / clock / estimation / actuation as operational constraints, not metaphysics).
-- **Coupling family isolation (Δk → Δx partition).** Relates to the gauge/clock boundary in the four-layer decomposition.
+- **`persistence_normalizes` as axiomatic boundary marker.** The axiom explicitly states where static formalization ends and temporal logic would begin. This aligns with Paper 22's scope-fence discipline (gauge / clock / estimation / actuation as operational constraints, not metaphysics).
+- **Three-terminal-families result** is structurally analogous (anti-universalism at the failure-taxonomy layer) but not a direct warrant for Paper 22's specific claims. Mentioned in the README's Formalization Status block as resonance, not as warrant.
 
 ### P9 — *Capacity-Constrained Stability*
 
@@ -160,3 +160,5 @@ These are not "never" candidates — just not current. If the Lean stack grows d
 ## Change log
 
 - **2026-04-19** — Index created. Based on Lean inventory as of commits `cfc612f` (misc tex) / `d6adbbc` (lean proofs) / `6bc8037` (lean work integration) / `18c1f7c` (phase 1 baby river lean kernel).
+- **2026-04-20** — P22 formalization fold-in complete in local source (v1.1 candidate, not yet pushed to Zenodo). §6.4 paragraph added, README created, NOTES.md changelog entry added. Reclassified P22 cashout to drop the too-forced `TaxonomyGraph.lean` coupling-family tie-in; kept `PersistenceModel.lean` `persistence_normalizes` axiom as the primary anchor plus three-terminal-families as structural resonance. Corrected earlier working-memory assumption that P22 was still pre-release — it has been on Zenodo since March 19, 2026.
+- **2026-04-20** — P18 Appendix A drafted in local source (v1.1 candidate, not yet pushed to Zenodo). Appendix structure: A.1–A.6 per-claim entries in chatty's four-field format (formal object / prose claim sharpened / what it does not prove / pointer), plus A.7 (relation to the paper's framework) and A.8 (scope fences — pre-breach dynamics, observer-integrity, tier escalation, empirical calibration not covered). Abstract, introduction, and conclusion left unchanged; v1.2 (abstract reframe) deferred.
