@@ -10,11 +10,7 @@ December 2024
 
 ## Abstract
 
-Contemporary social media platforms implement scalar reward optimization in closed loops: engagement metrics drive algorithmic curation, which determines content visibility, which generates the engagement metrics that update the algorithm. We demonstrate that platforms are instances of the multiplicative reweighting dynamics proven in Beck (2024d) to produce inevitable eigenstructure collapse. Under standard platform design choices—tight metric-algorithm coupling, real-time analytics, continuous deployment—the theorems of scalar reward collapse apply directly: (1) all non-engagement-maximal content modes decay exponentially (Eigenstructure Evaporation), (2) the system converges to fixed points concentrated on metric-maximizing content with reduced entropy (Fixed-Point Convergence), and (3) recovery interventions fail without structural modification (Irreversibility). We show this is not a correctable design flaw but a mathematical necessity of engagement-maximization business models. Platform architectures systematically violate the stability conditions required to prevent collapse. This analysis establishes that observed pathologies—content homogenization, algorithmic amplification of engagement bait, elimination of slow-mode information integration—are structural consequences of the optimization architecture itself.
-
----
-
-[^1]: Internal citations maintain the 2024a-d sequence for the Δt framework series; actual publication dates span November 2024-January 2025.
+Contemporary social media platforms implement scalar reward optimization in closed loops: engagement metrics drive algorithmic curation, which determines content visibility, which generates the engagement metrics that update the algorithm. We demonstrate that platforms are instances of the multiplicative reweighting dynamics proven in Beck (2025c) to produce inevitable eigenstructure collapse. Under standard platform design choices—tight metric-algorithm coupling, real-time analytics, continuous deployment—the theorems of scalar reward collapse apply directly: (1) all non-engagement-maximal content modes decay exponentially (Eigenstructure Evaporation), (2) the system converges to fixed points concentrated on metric-maximizing content with reduced entropy (Fixed-Point Convergence), and (3) recovery interventions fail without structural modification (Irreversibility). We show this is not a correctable design flaw but a mathematical necessity of engagement-maximization business models. Platform architectures systematically violate the stability conditions required to prevent collapse. This analysis establishes that observed pathologies—content homogenization, algorithmic amplification of engagement bait, elimination of slow-mode information integration—are structural consequences of the optimization architecture itself.
 
 ---
 
@@ -30,7 +26,7 @@ Platforms implement **scalar reward optimization in closed loops**:
 2. **Multiplicative reweighting**: Algorithms amplify visibility of high-engagement content exponentially 
 3. **Closed loop**: The amplified content generates the engagement signals that update the algorithm
 
-This is precisely the structure analyzed in Beck (2024d)[^1], which proves three theorems about such systems:
+This is precisely the structure analyzed in Beck (2025c), which proves three theorems about such systems:
 
 - **Eigenstructure Evaporation (Lemma 2.1)**: All non-maximal modes decay exponentially
 - **Fixed-Point Convergence (Theorem 2.5)**: The system collapses to distributions concentrated on reward-maximal states with reduced entropy
@@ -57,7 +53,7 @@ The analysis demonstrates that observed platform pathologies—content homogeniz
 
 We establish three primary results:
 
-**Claim 1 (Structural Identity):** Platform architectures implement the mathematical structure proven in Beck (2024d) to produce inevitable collapse: finite state space (content types), scalar reward function (engagement metrics), and multiplicative reweighting operator (algorithmic curation) in closed loops (metric feedback).
+**Claim 1 (Structural Identity):** Platform architectures implement the mathematical structure proven in Beck (2025c) to produce inevitable collapse: finite state space (content types), scalar reward function (engagement metrics), and multiplicative reweighting operator (algorithmic curation) in closed loops (metric feedback).
 
 **Claim 2 (Theorem Application):** The three scalar reward collapse theorems apply directly to platforms:
 - Non-engagement-maximal content modes decay exponentially (Eigenstructure Evaporation)
@@ -104,7 +100,7 @@ Traditional media ecosystems maintained slow integrators (editorial processes, i
 
 ### 3.1 The Multiplicative Reweighting Operator
 
-The scalar reward collapse theorems (Beck 2024d) analyze systems governed by the operator:
+The scalar reward collapse theorems (Beck 2025c) analyze systems governed by the operator:
 
 **T(p)(x) = [p(x) · e^{η r(x)}] / Z(p)**
 
@@ -143,7 +139,7 @@ This is the closed-loop iteration:
 
 **p_{t+1} = T(p_t)**
 
-analyzed in Beck (2024d, Section 2.4). The theorems proven there apply immediately.
+analyzed in Beck (2025c, Section 2.4). The theorems proven there apply immediately.
 
 ### 3.3 Mapping the 4×4 Model to Scalar Dynamics
 
@@ -174,11 +170,11 @@ These design choices place platforms squarely in the regime where the scalar rew
 
 ## 4. Application of Scalar Reward Collapse Theorems
 
-Having established that platforms implement the operator T in closed loops, the three theorems from Beck (2024d) apply directly. We state each theorem and derive its platform-specific consequences.
+Having established that platforms implement the operator T in closed loops, the three theorems from Beck (2025c) apply directly. We state each theorem and derive its platform-specific consequences.
 
 ### 4.1 Theorem 1: Eigenstructure Evaporation
 
-**Theorem (Beck 2024d, Lemma 2.1):** Under multiplicative reweighting T, for any content type x with engagement r(x) < r_max, the probability mass decays as:
+**Theorem (Beck 2025c, Lemma 2.1):** Under multiplicative reweighting T, for any content type x with engagement r(x) < r_max, the probability mass decays as:
 
 p_t(x) = p_0(x) · e^{-η Δr · t}
 
@@ -198,7 +194,7 @@ For example, with η = 0.3 and Δr = 1.0 (content with 20% lower engagement than
 
 ### 4.2 Theorem 2: Fixed-Point Convergence
 
-**Theorem (Beck 2024d, Theorem 2.5):** The closed-loop dynamics p_{t+1} = T(p_t) converge to a fixed point p_∞ satisfying:
+**Theorem (Beck 2025c, Theorem 2.5):** The closed-loop dynamics p_{t+1} = T(p_t) converge to a fixed point p_∞ satisfying:
 
 1. p_∞(x) = 0 for all x with r(x) < r_max (non-maximal modes eliminated)
 2. H(p_∞) ≤ H(p_0) (entropy reduced)
@@ -214,7 +210,7 @@ For example, with η = 0.3 and Δr = 1.0 (content with 20% lower engagement than
 
 ### 4.3 Theorem 3: Irreversibility
 
-**Theorem (Beck 2024d, Corollary 2.7):** Once p_t has converged to p_∞, continued application of T cannot restore suppressed modes. Recovery requires either:
+**Theorem (Beck 2025c, Corollary 2.7):** Once p_t has converged to p_∞, continued application of T cannot restore suppressed modes. Recovery requires either:
 
 1. **Exogenous forcing**: External injection of non-maximal content at rates exceeding decay
 2. **Structural modification**: Changing the reward function r or operator T
@@ -248,7 +244,7 @@ These are not empirical observations subject to counterexample—they are **math
 
 ### 5.1 Conditions That Would Prevent Collapse
 
-Beck (2024d, Section 8.6) identifies structural modifications that can prevent scalar reward collapse. For platforms, these translate to:
+Beck (2025c, Section 8.6) identifies structural modifications that can prevent scalar reward collapse. For platforms, these translate to:
 
 **Condition 1 (Multi-Objective Optimization):** Replace scalar engagement r: X → ℝ with vector-valued objectives r: X → ℝ^n where objectives are incommensurable (no single metric captures all desirable properties).
 
@@ -461,7 +457,7 @@ We have demonstrated that contemporary social media platforms, operating under s
 
 **Main results:**
 
-1. **Platforms are scalar reward systems**: Engagement metrics + algorithmic curation + closed loops implement the operator T analyzed in Beck (2024d)
+1. **Platforms are scalar reward systems**: Engagement metrics + algorithmic curation + closed loops implement the operator T analyzed in Beck (2025c)
 
 2. **Collapse is mathematically necessary**: Given this structure, non-engagement-maximal content modes must decay, distributions must converge to engagement maxima, and diversity cannot be restored within the same architecture
 
@@ -483,14 +479,11 @@ Whether such changes are feasible—through regulation, business model transform
 
 ## References
 
-Beck, J. (2024a). "Δt Framework Part 1: Multi-Scale Temporal Integration in Complex Systems." Zenodo. https://doi.org/10.5281/zenodo.14203887
+Beck, J. (2025a). "The Coherence Criterion: A Unified Framework for Stability in Hierarchical Systems." Zenodo. https://doi.org/10.5281/zenodo.17726789
 
-Beck, J. (2024b). "Δt Framework Part 2: Metastability and Crisis Serialization in Institutional Systems." Zenodo. https://doi.org/10.5281/zenodo.14210617
+Beck, J. (2025b). "The Second Law of Organizations: How Temporal Lag Drives Irreversible Institutional Decay." Zenodo. https://doi.org/10.5281/zenodo.17726889
 
-Beck, J. (2024c). "Δt Framework Part 3: Kinetic Theory and Phase Transitions in Information Systems." Zenodo. https://doi.org/10.5281/zenodo.14226991
-
-Beck, J. (2024d). Scalar Reward Collapse: A General Theory of Eigenstructure 
-Evaporation in Closed-Loop Systems. Zenodo. https://doi.org/10.5281/zenodo.17791873
+Beck, J. (2025c). "Scalar Reward Collapse: A General Theory of Eigenstructure Evaporation in Closed-Loop Systems." Zenodo. https://doi.org/10.5281/zenodo.17791872
 
 ---
 

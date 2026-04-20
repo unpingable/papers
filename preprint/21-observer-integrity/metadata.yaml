@@ -4,9 +4,9 @@ affiliation: "Independent Researcher"
 date: 2026-03-16
 series: "delta-t-framework"
 paper_number: 21
-version: "1.0"
-doi: "10.5281/zenodo.19055416"
-zenodo_url: "https://zenodo.org/records/19055416"
+version: "1.0.1"
+doi: "10.5281/zenodo.19055415"
+zenodo_url: "https://zenodo.org/records/19672438"
 keywords:
   - observer integrity
   - measurement perturbation

@@ -1,5 +1,13 @@
 # Paper 19: The System Beside the System — Working Notes
 
+## Changelog
+
+### 2026-04-20 — v1.0.1 (citation correction)
+
+- Reference [10] corrected: Paper 14 citation had an incorrect DOI and subtitle. Reconciled against `14-temporal-attack-surface/metadata.yaml` via `tools/citation_graph.py`.
+- `metadata.yaml`: `version: "1.0"` → `"1.0.1"`. Body status line updated to match.
+- PDF rebuilt.
+
 ## Status
 Not yet drafted. Concept emerged during Paper 18 development. `paper.md` is the raw multi-model conversation that generated both Paper 18 and this follow-on.
 

@@ -14,9 +14,9 @@ Independent Researcher
 
 **Series:** Δt Framework, Paper 20
 
-**Status:** Preprint v1.0
+**Status:** Preprint v1.0.1
 
-**DOI:** [10.5281/zenodo.19055413](https://doi.org/10.5281/zenodo.19055413)
+**DOI:** [10.5281/zenodo.19055412](https://doi.org/10.5281/zenodo.19055412)
 
 ---
 
@@ -316,7 +316,7 @@ Language-model tools were used for editorial critique and literature discovery d
 
 ## References
 
-[1] J. Beck, "Unauthorized Durability: A Composable Governance Primitive for State Promotion in Adaptive Systems," Δt Framework, Paper 18, 2026. doi:10.5281/zenodo.15052393
+[1] J. Beck, "Unauthorized Durability: A Composable Governance Primitive for State Promotion in Adaptive Systems," Δt Framework, Paper 18, 2026. doi:10.5281/zenodo.18940007
 
 [2] J. Beck, "The System Beside the System: Shadow Governance and the Stabilization of Unauthorized Authority," Δt Framework, Paper 19, 2026. doi:10.5281/zenodo.19038241
 

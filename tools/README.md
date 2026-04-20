@@ -77,6 +77,25 @@ python3 tools/citation_graph.py
 
 Caught on first run: P19 [10] and P22 [1,3] citing completely unrelated Zenodo records (a meconium biomarker paper, a service industry paper). Real content-level drift.
 
+## `doi_validate.py`
+
+For every DOI cited in every paper body, resolves it (Zenodo API for `10.5281/zenodo.*`, CrossRef for others) and compares the resolved title against the title text in the citation. Flags hallucinated DOIs — the failure mode where a model-generated number happens to hit a real stranger's paper on Zenodo or DOI.org.
+
+```bash
+python3 tools/doi_validate.py             # full sweep (uses ./tools/.doi_cache.json)
+python3 tools/doi_validate.py --only 20,21
+python3 tools/doi_validate.py --no-cache  # force refresh
+```
+
+The tool fills the gap left by `citation_graph.py`, which only audits intra-series references tagged with "Paper N". Hallucinated DOIs to non-series works are invisible to that tool because they have no "Paper N" tag.
+
+Caveats:
+- Runs a polite 1 req/sec rate. Full sweep takes a few minutes the first time.
+- Cache at `tools/.doi_cache.json` persists resolved metadata across runs.
+- The cited-title extractor is heuristic and handles APA / Chicago / arXiv-ish styles. Self-DOIs from each paper's own metadata are suppressed. Complex reference formats may occasionally mis-extract; when that happens, the "cited" text in the complaint looks garbled but the real-hallucination cases look cleanly like "paper X title" vs "totally different paper".
+
+Origin: 2026-04-20. Built after `citation_graph.py` caught 3 hallucinated intra-series DOIs and we wanted protection against the broader class. On first full run, found 8 more hallucinated citations across P03, P04, P06, P12, P20, P21 — exactly the class the tool was built to catch.
+
 ## `formalization_crosswalk.py`
 
 Verifies that Lean theorem names cited in `docs/formalization-index.md` and in P18's Appendix A actually exist in the Lean repo at `~/git/lean/LeanProofs/`. Catches "renamed a theorem in Lean, the papers repo now lies" drift.
@@ -89,7 +108,7 @@ Scope is narrow on purpose: scanning paper bodies broadly produces too many fals
 
 ## `check_all.sh`
 
-Runs all five validators in sequence and prints a unified summary with per-check ok/FAIL status. Exit code is 1 if any check fails, 0 if all pass.
+Runs all six validators in sequence and prints a unified summary with per-check ok/FAIL status. Exit code is 1 if any check fails, 0 if all pass.
 
 ```bash
 tools/check_all.sh

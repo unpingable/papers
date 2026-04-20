@@ -14,7 +14,7 @@ Independent Researcher
 
 **Series:** Δt Framework, Paper 19
 
-**Status:** Preprint v1.0
+**Status:** Preprint v1.0.1
 
 ---
 
@@ -360,7 +360,7 @@ Language-model tools were used for editorial critique and literature discovery d
 
 ## References
 
-[1] Beck, J. (2026). Unauthorized Durability: A Composable Governance Primitive for State Promotion in Adaptive Systems. Preprint, Δt Framework Paper 18. doi:10.5281/zenodo.18940008
+[1] Beck, J. (2026). Unauthorized Durability: A Composable Governance Primitive for State Promotion in Adaptive Systems. Preprint, Δt Framework Paper 18. doi:10.5281/zenodo.18940007
 
 [2] Vaughan, D. (1996). *The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA.* University of Chicago Press.
 

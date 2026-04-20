@@ -32,11 +32,12 @@ run zenodo_validate        tools/zenodo_validate.py
 run metadata_schema        tools/metadata_schema.py
 run pdf_freshness          tools/pdf_freshness.py
 run citation_graph         tools/citation_graph.py
+run doi_validate           tools/doi_validate.py
 run formalization_crosswalk tools/formalization_crosswalk.py
 
 echo
 echo "=== summary ==="
-for name in zenodo_validate metadata_schema pdf_freshness citation_graph formalization_crosswalk; do
+for name in zenodo_validate metadata_schema pdf_freshness citation_graph doi_validate formalization_crosswalk; do
   status="${results[$name]:-skipped}"
   printf "  %-27s %s\n" "$name" "$status"
 done

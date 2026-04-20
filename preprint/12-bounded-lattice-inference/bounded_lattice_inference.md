@@ -613,8 +613,8 @@ Control Theory
      processes. SIAM J. Control Optim. 25(1), 206-230.
 
 Prior Work (Author)
-   • Beck, J. (2025). The Coherence Criterion: Temporal Coupling and Cross-Domain Failure
-     Modes. Zenodo. https://doi.org/10.5281/zenodo.17726789
+   • Beck, J. (2025). The Coherence Criterion: A Unified Framework for Stability in
+     Hierarchical Systems. Zenodo. https://doi.org/10.5281/zenodo.17726789
    • Beck, J. (2025). Representational Invariance and the Observer Problem in Language
      Model Alignment. Zenodo. https://doi.org/10.5281/zenodo.18071264
 

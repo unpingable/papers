@@ -18,7 +18,7 @@ Independent Researcher
 
 **Status:** Preprint v1.1 (adds §6.4 Lean-formalization paragraph; not yet pushed to Zenodo — Zenodo record is v1.0)
 
-**DOI:** [10.5281/zenodo.19119618](https://doi.org/10.5281/zenodo.19119618)
+**DOI:** [10.5281/zenodo.19119617](https://doi.org/10.5281/zenodo.19119617)
 
 ---
 

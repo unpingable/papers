@@ -439,15 +439,15 @@ Future work will analyze the minimal regulatory structures required for systems 
 
 References
 
-\[1\] Beck, J. (2024a). The Coherence Criterion: Spectral Stability Conditions for Hierarchical Systems. Zenodo. https://doi.org/10.5281/zenodo.17726789
+\[1\] Beck, J. (2025a). The Coherence Criterion: A Unified Framework for Stability in Hierarchical Systems. Zenodo. https://doi.org/10.5281/zenodo.17726789
 
-\[2\] Beck, J. (2024b). The Second Law of Organizations: Entropic Dynamics in Multi-Timescale Systems. Zenodo. https://doi.org/10.5281/zenodo.17726889
+\[2\] Beck, J. (2025b). The Second Law of Organizations: How Temporal Lag Drives Irreversible Institutional Decay. Zenodo. https://doi.org/10.5281/zenodo.17726889
 
-\[3\] Beck, J. (2024c). Control Laws for Hierarchical Kinetics: Design Principles and Intervention Strategies. Zenodo. https://doi.org/10.5281/zenodo.17727144
+\[3\] Beck, J. (2025c). Control Laws for Hierarchical Kinetics: Design Principles and Intervention Strategies for Multi-Timescale Systems. Zenodo. https://doi.org/10.5281/zenodo.17727144
 
-\[4\] Beck, J. (2024d). Scalar Reward Collapse: General Theorem for Degenerate Feedback Architectures. Zenodo. https://doi.org/10.5281/zenodo.17791872
+\[4\] Beck, J. (2025d). Scalar Reward Collapse: A General Theory of Eigenstructure Evaporation in Closed-Loop Systems. Zenodo. https://doi.org/10.5281/zenodo.17791872
 
-\[5\] Beck, J. (2024e). Eigenstructure Collapse in Social Platforms: Temporal Pathologies of Metric-Coupled Recommendation Systems. Zenodo. https://doi.org/10.5281/zenodo.17803843
+\[5\] Beck, J. (2025e). Eigenstructure Collapse in Social Media Platforms: An Application of Scalar Reward Dynamics Theory. Zenodo. https://doi.org/10.5281/zenodo.17803843
 
 \[6\] Freidlin, M.I. and Wentzell, A.D. (1998). Random Perturbations of Dynamical Systems. Springer.
 

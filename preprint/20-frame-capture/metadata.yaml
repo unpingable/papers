@@ -4,9 +4,9 @@ affiliation: "Independent Researcher"
 date: 2026-03-16
 series: "delta-t-framework"
 paper_number: 20
-version: "1.0"
-doi: "10.5281/zenodo.19055413"
-zenodo_url: "https://zenodo.org/records/19055413"
+version: "1.0.1"
+doi: "10.5281/zenodo.19055412"
+zenodo_url: "https://zenodo.org/records/19672437"
 keywords:
   - frame capture
   - stance detection

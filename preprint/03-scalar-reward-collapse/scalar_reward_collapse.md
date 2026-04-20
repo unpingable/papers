@@ -45,7 +45,7 @@ These results are **domain-agnostic**: they apply to any system with the specifi
 
 ### 1.3 Relation to Δt Framework
 
-This work connects to the Δt framework developed in prior papers [Beck 2024a,b,c], which analyzes multi-timescale systems and their stability properties. Section 6 provides the temporal interpretation: scalar optimization collapses multi-timescale structure by forcing all system dynamics to evolve at a single cadence determined by the optimization update frequency. This produces what we term **temporal monoculture**—the elimination of slow modes that would otherwise provide system adaptability and resilience.
+This work connects to the Δt framework developed in prior papers [Beck 2025a,b], which analyzes multi-timescale systems and their stability properties. Section 6 provides the temporal interpretation: scalar optimization collapses multi-timescale structure by forcing all system dynamics to evolve at a single cadence determined by the optimization update frequency. This produces what we term **temporal monoculture**—the elimination of slow modes that would otherwise provide system adaptability and resilience.
 
 ### 1.4 Scope and Structure
 
@@ -354,7 +354,7 @@ Real systems often exhibit multiple characteristic timescales:
 
 We can represent this as a distribution over timescales τ, where different system components evolve at different rates.
 
-In the Δt framework [Beck 2024a], a system's coherence depends on maintaining **slow-mode dominance**: the ability of slow integrators to govern long-term behavior even as fast modes fluctuate.
+In the Δt framework [Beck 2025a], a system's coherence depends on maintaining **slow-mode dominance**: the ability of slow integrators to govern long-term behavior even as fast modes fluctuate.
 
 ### 6.2 Scalar Optimization as Timescale Homogenization
 
@@ -593,11 +593,9 @@ Arora, S., Hazan, E., & Kale, S. (2012). "The Multiplicative Weights Update Meth
 
 Beck, A., & Teboulle, M. (2003). "Mirror descent and nonlinear projected subgradient methods for convex optimization." *Operations Research Letters*, 31(3), 167-175.
 
-Beck, J. (2024a). "Δt Framework Part 1: Multi-Scale Temporal Integration in Complex Systems." Zenodo. https://doi.org/10.5281/zenodo.14203887
+Beck, J. (2025a). "The Coherence Criterion: A Unified Framework for Stability in Hierarchical Systems." Zenodo. https://doi.org/10.5281/zenodo.17726789
 
-Beck, J. (2024b). "Δt Framework Part 2: Metastability and Crisis Serialization in Institutional Systems." Zenodo. https://doi.org/10.5281/zenodo.14210617
-
-Beck, J. (2024c). "Δt Framework Part 3: Kinetic Theory and Phase Transitions in Information Systems." Zenodo. https://doi.org/10.5281/zenodo.14226991
+Beck, J. (2025b). "The Second Law of Organizations: How Temporal Lag Drives Irreversible Institutional Decay." Zenodo. https://doi.org/10.5281/zenodo.17726889
 
 Bush, R. R., & Mosteller, F. (1953). *A Stochastic Model with Applications to Learning*. Wiley.
 

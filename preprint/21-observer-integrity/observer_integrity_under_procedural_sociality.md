@@ -14,9 +14,9 @@ Independent Researcher
 
 **Series:** Δt Framework, Paper 21
 
-**Status:** Preprint v1.0
+**Status:** Preprint v1.0.1
 
-**DOI:** [10.5281/zenodo.19055416](https://doi.org/10.5281/zenodo.19055416)
+**DOI:** [10.5281/zenodo.19055415](https://doi.org/10.5281/zenodo.19055415)
 
 ---
 
@@ -358,7 +358,7 @@ Language-model tools were used for editorial critique and literature discovery d
 
 ## References
 
-[1] J. Beck, "Unauthorized Durability: A Composable Governance Primitive for State Promotion in Adaptive Systems," Δt Framework, Paper 18, 2026. doi:10.5281/zenodo.15052393
+[1] J. Beck, "Unauthorized Durability: A Composable Governance Primitive for State Promotion in Adaptive Systems," Δt Framework, Paper 18, 2026. doi:10.5281/zenodo.18940007
 
 [2] J. Beck, "Frame Capture in Conversational AI: Same-Model Interferometry for Unauthorized Stance Detection," Δt Framework, Paper 20, 2026.
 
