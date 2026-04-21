@@ -1,0 +1,31 @@
+title: "Ops Is Control with a Non-Self-Identical Controller"
+author: "James Beck"
+affiliation: "Independent Researcher"
+date: 2026-04-21
+series: "delta-t-framework"
+paper_number: 23
+version: "0.1"
+status: "preprint"
+license: "CC-BY-4.0"
+keywords:
+  - controller continuity
+  - hybrid control
+  - operational systems
+  - identifiability
+  - viability theory
+  - switched systems
+  - human supervisory control
+  - resilience engineering
+  - authority routing
+abstract: >
+  We study two distinct failure modes of controller continuity in
+  operational systems. Continuity of action concerns whether the controller
+  can still intervene in time: handoff distortion, authority-routing delay,
+  and fatigue-induced contraction loss jointly consume a viability budget
+  that can be stated as a single inequality. Continuity of identity fails
+  when the controller's real composition differs from the nominal
+  controller in ways the measurement-and-authority map cannot resolve:
+  under three sufficient masking conditions, latent human compensation
+  becomes structurally unidentifiable from observed outputs. Classical
+  control assumes the controller is self-identical across time. Operations
+  begins where that assumption breaks.
