@@ -1,6 +1,6 @@
 # Epistemic Border Control as Proxy Regulation Under Partial Observability
 
-*Working note — 2026-04-21. Bucket: **model-seed with paper potential.** Paper 25 candidate or possibly §N case-study extension of Paper 24, to be decided after the three-test gate clears. Not promoted until the gate clears.*
+*Working note — started 2026-04-21, single-agent sim folded in 2026-04-22. Bucket: **earning its keep** — gate item 1 substantially cleared, sibling-vs-§N still pending compound-regime test. Paper 25 candidate or possibly §N case-study extension of Paper 24; promotion deferred until the compound-regime sim runs and the literature differential holds.*
 
 ## Core claim
 
@@ -59,9 +59,10 @@ Agent-governor-claude flagged that the original list mixed formal claims with il
 
 **Formally instantiable (the sim should reproduce these):**
 
-- **Control-target substitution (the headline).** The controller optimizes $V'$ (reputational containment) instead of $V$ (truth-tracking) whenever $Y_t$ loads on $V'$ and not on $V$. Necessity-framed, not possibility-framed.
+- **Control-target substitution (the headline).** The controller optimizes $V'$ (reputational containment) instead of $V$ (truth-tracking) whenever $Y_t$ loads on $V'$ and not on $V$. Necessity-framed, not possibility-framed. *Reproduced in the single-agent sim; see §"Sim results" below.*
 - **High gain / overshoot.** When $K$ is large relative to the signal-to-noise ratio on $Y_t$, weak contamination signals produce disproportionate suppression action. Classic proportional-controller instability — a sim should reproduce this with standard parameters.
 - **Hysteresis.** Threshold asymmetry in topic-classification: the threshold to enter "suspect" status is lower than the threshold to leave. Directly analogous to Paper 23's §2.1 handoff reset structure, and formally instantiable as a state-dependent discrete variable.
+- **Shock-statistics mismatch (added 2026-04-22 after the sim run).** If the filter's model assumes smooth (e.g., Gaussian) innovations on $C$ but the real $C$ process has heavy-tailed or impulsive shocks (crank-arrival events, coalition rupture, reputational cascades), then $Y_t$-jumps that the filter cannot explain as within-model $C$-noise get partially misattributed to $T$, and the standard substitution cascade fires even at high $\alpha_T/\alpha_C$. The broader necessity statement the sim suggests: substitution is forced whenever the filter's assumed state statistics diverge from the real ones on a channel coupled to $Y_t$, not only when $\alpha_T \ll \alpha_C$. Shown to persist at $\alpha_T / \alpha_C = 10$ in the sim.
 
 **Illustrative analogies (useful in prose, no theoretical commitment):**
 
@@ -69,7 +70,7 @@ Agent-governor-claude flagged that the original list mixed formal claims with il
 - **Integral windup as institutional memory.** Past failures accumulate as "we let weird shit grow once, never again." This is metaphor on metaphor — the sim might produce equivalent behavior through accumulated state, but the "institutional memory" framing does not carry theoretical commitment.
 - **Sensor fusion from bad instruments.** The system combines who's saying it, what genre it resembles, what clusters nearby, whether institutions dislike it, whether embarrassing people agree. True as inventory; not a sharp pathology claim distinct from the core substitution mechanism.
 
-The split matters because the paper should not pretend all six items are on the same theoretical footing. The first three are what the sim should demonstrate and the theorems should cover. The second three are prose tools for making the mechanism legible to readers without over-committing.
+The split matters because the paper should not pretend all items are on the same theoretical footing. The first four are what the sim should demonstrate and the theorems should cover. The second three are prose tools for making the mechanism legible to readers without over-committing.
 
 ## Scope, before the example
 
@@ -107,27 +108,54 @@ Because the object-level question never got cleanly answered. The system did *no
 
 The example is ugly in exactly the right way: there are plenty of real object-level concerns, it also attracts spectacle and paranoia, institutions have incentives to bullshit, coalition actors are terrified of being seen as adjacent to woo. Concrete without being cartoonish.
 
-## Sim sketch (for when / if the toy gets built)
+## Sim results: single-agent minimum-viable (2026-04-22)
 
-Not building this tonight. If built in the `shared_vision.py` / `ops_continuity.py` tradition, the shape would be:
+Built at `~/git/lean/paper25_substitution.py`. Correctly-specified Kalman-LQR, two-latent state $(T_{dev}, C)$, cost function $E[q_T T_{dev}^2 + q_C C^2 + \lambda U^2]$ with $q_C = 0$ — the "rhetoric stays fixed on $V$" axiom is baked in at the cost function, not smuggled in through controller misspecification. Process dynamics: $T$ random walk, $C$ AR(1) with Poisson crank shocks. Observation $Y_t = \alpha_T T_t + \alpha_C C_t + v_t$. Control affects both latents, asymmetrically: $b_C = -1.0$, $b_T = -0.05$.
 
-- **Latent state.** $T_t$ evolving slowly (e.g., $T_{t+1} = T_t + \text{slow drift}$), with institutional-opacity scalar $I_t$ hiding a fraction from observation.
-- **Contamination state.** $C_t$ growing as rhetorical markers accumulate, with crank-adjacency events modeled as discrete shocks that raise $C_t$ instantaneously.
-- **Reputational risk.** $R_t$ as a function of $C_t$ and coalition signals (who's in the discourse).
-- **Observation.** $Y_t = \alpha_C C_t + \alpha_R R_t + \alpha_T T_t + \text{noise}$, with $\alpha_C, \alpha_R \gg \alpha_T$ and higher noise on the $T_t$ channel.
-- **Controller.** $U_t = K \hat{Y}_t + \text{integral memory term}$ — proportional-plus-integral on the observed signal, not on latent truth.
-- **Diagnostic: target-drift gap.** Track the divergence between what the controller *thinks* it's regulating (its nominal objective) and what it is *actually* minimizing. Compute this as the difference between the control action's correlation with $T_t$-deviation versus its correlation with $R_t$-deviation over a window. The headline visualization would be a time-series plot showing the two correlations decoupling as $C_t$ rises.
-- **Regimes to expect.**
-  - *Nominal regime:* low $C_t$, $Y_t$ tracks $T_t$ reasonably, system behaves as advertised.
-  - *Substitution regime:* high $C_t$, $Y_t$ decouples from $T_t$, controller optimizes $R_t$ while rhetoric stays fixed on $T$. This is the headline regime, not a "drift" — $V'$ replaces $V$ at every $t$ once the observability condition bites, not slowly over time.
-  - *Hysteretic regime:* transient contamination event, system overshoots into $R_t$-regulation and stays there even after $C_t$ decays.
-  - *Reputational-equilibrium lock-in:* structurally analogous to the bias-cancellation lock-in in Paper 24 — $R_t$ regulation converges to a stable point that is provably not optimal for $T_t$.
+**What ran.**
+
+- *Phase-transition sweep.* $\alpha_T / \alpha_C$ varied from 0.01 to 10, $\alpha_C$ held at 1. Five seeds per ratio, 3000 steps each, burn-in 500.
+- *Counterfactual.* Same run with an added clean-T observation channel ($y_2 = T + \text{low noise}$). Controller's cost, LQR gains, and dynamics all unchanged — only the sensor geometry differs. Policy divergence between asymmetric-Y and clean-sensor runs quantifies substitution magnitude.
+
+**Headline: substitution magnitude scales as a power law in observability ratio.** $T_{rms}^{asym} / T_{rms}^{clean}$ drops from ~333 at $\alpha_T/\alpha_C = 0.01$ to ~1.9 at $\alpha_T/\alpha_C = 10$, roughly $(\alpha_T/\alpha_C)^{-0.75}$. No sharp threshold; a continuous gradient that never fully recovers within the tested range. The "sincere controller fails structurally" language is earned: same cost function, same model, same gains, same dynamics, only the sensor changes, and the tracking-error ratio spans two orders of magnitude.
+
+**Second diagnostic: effort without effect.** $|U|_{asym} > |U|_{clean}$ at every ratio tested. At $\alpha_T/\alpha_C = 0.05$: $|U|$ asymmetric = 0.20, clean-sensor = 0.09, $T_{rms}$ asymmetric = 6.8, clean = 0.04. The asymmetric controller is doing more than twice the work for ~180× worse tracking. The effort is not wasted — it is going into $C$-suppression (mean $|C|$ is in fact lower in the asymmetric run by a small amount), with the controller's subjective report remaining "I am regulating $T$." This is the rhetorical payload of the paper stated in two numbers.
+
+**Mechanism confirmation.** LQR gain is $[-2.92, 0]$ across the whole sweep — the controller puts zero weight on $C$ in its cost function, as the $q_C = 0$ axiom requires. The substitution runs entirely through the Kalman filter: $\hat T$ is pulled around by $C$ because $Y = \alpha_T T + \alpha_C C$ and $\alpha_C$ dominates. LQR responds to its (contaminated) $\hat T$. Control output lands via $B = [b_T, b_C]^T$ with $|b_C| = 20|b_T|$, so the same $U$ mostly suppresses $C$. The subjective report stays fixed on $T$ because the cost function does; the objective controlled variable is $C$ because that is where the posterior signal lives. No misspecification required, no wrong beliefs, no corrupted intent — filter geometry alone forces the substitution.
+
+**Unexpected: shock-statistics mismatch is a second substitution channel.** Even at $\alpha_T/\alpha_C = 10$, $T_{rms}^{asym}/T_{rms}^{clean} \approx 1.9$, not unity. The remaining gap comes from the filter's Gaussian model being blindsided by Poisson crank shocks on $C$. A unit-amplitude shock ten times the one-step $C$-sigma arrives instantaneously; the filter, expecting smooth Gaussian $C$-innovations, misattributes part of the resulting $Y$-jump to $T$. That drives $\hat T$ up, LQR applies $U$, and the substitution cascade fires — even though $\alpha_T$ is large enough that the smooth-$C$ component would be well-separated. This widens the necessity claim: substitution is forced not only by observation-weight asymmetry ($\alpha_T \ll \alpha_C$) but by any systematic mismatch between the filter's assumed state statistics and the real ones on a channel coupled to $Y_t$. Promoted to an instantiable pathology in §6 above.
+
+**What the sim has not yet done.**
+
+- *Compound-regime multi-agent sim.* Deferred as a persuasion artifact rather than a decision prerequisite. The homogeneous-agent sibling-vs-§N adjudication is earned by algebra (§"Paper 24 sibling status" below); the sim would confirm the algebra ($1/\sqrt{N}$ variance scaling with unchanged observability direction) but does not discover anything new. If later needed for readers, keep brutally minimal: shared global asymmetry, independent noise, identity witness inclusion, simple aggregation.
+- *Heterogeneous-agent extension.* Separate object: what cohort-witness composition (different $C_{obs}^{(i)}$ across agents) restores $T$-observability? Belongs to a Paper 24/25 follow-on, not this paper.
+- *Hysteresis / asymmetric suspect-status thresholds.* Elaborative, not scope-deciding. Not yet encoded.
+
+### Paper 23 §3.3 bridge: observability-Gramian geometry (added 2026-04-22)
+
+Operationalized. Computed $O_T = [C_{obs};\, C_{obs} A;\, \ldots;\, C_{obs} A^{T-1}]$ at horizon $T = 20$ across the $\alpha_T/\alpha_C$ sweep, tracked the T-axis observability $e_T^\top W_o\, e_T$ and the alignment of the least-observable direction $v_{\min}$ with the T-axis:
+
+| $\alpha_T/\alpha_C$ | $\sigma_{\min}(O_T)$ | $e_T^\top W_o e_T$ | $|\langle v_{\min}, e_T\rangle|$ | $T_{rms}^{asym}/T_{rms}^{clean}$ |
+|---:|---:|---:|---:|---:|
+| 0.01 | 0.0226 | 0.002 | **0.9999** | 333 |
+| 0.05 | 0.1127 | 0.050 | 0.9964 | 175 |
+| 0.20 | 0.4278 | 0.80 | 0.9435 | 57 |
+| 0.50 | 0.8364 | 5.0 | 0.7145 | 25 |
+| 1.00 | 1.0499 | 20.0 | 0.4215 | 13 |
+| 2.00 | 1.1248 | 80.0 | 0.2178 | 7.2 |
+| 10.0 | 1.1509 | 2000 | **0.0439** | 1.9 |
+
+The T-axis literally rotates into and out of the observability null-space as $\alpha_T/\alpha_C$ varies. At small $\alpha_T$, the least-observable direction $v_{\min}$ is essentially the T-axis itself (alignment ≈ 1); at large $\alpha_T$, $v_{\min}$ has rotated away (alignment ≈ 0) and the ill-conditioned direction is now the C-axis (via the $\rho_C^k$ geometric decay).
+
+This is the flatter bridge: Paper 23 §3.3 case (ii) is the case where $\text{Im}(B) \cap \ker(O_T) \neq \{0\}$ (invisible interventions); Paper 25 is the case where the cost-targeted state direction lies near $\ker(O_T)$ (uncontrollable-via-observation). Both papers invoke the same geometric object — $\ker(O_T)$ or its near-kernel — and use it to state distinct closed-loop consequences. The "Paper 25 is the closed-loop dual of Paper 23 §3.3" framing was rhetorical rather than mathematical; the operational statement is *"both papers instantiate distinct consequences of the same observability-null-space geometry"*. Theorem shape within reach: *under an LTI system whose cost is concentrated on a state direction $q$ aligned with $v_{\min}(O_T)$, the steady-state substitution index grows as a monotone function of $|\langle v_{\min}, q\rangle|$ and the ill-conditioning of $O_T$ along $q$, independently of controller sincerity or model correctness.*
+
+The headline shape — power-law substitution scaling plus a second channel via shock-model mismatch — is clean enough that Paper 25 has started paying rent. Promotion to preprint still blocked on the compound-regime test and the literature differential. The single-agent theorem of shape *"under ill-conditioned finite-horizon observability Gramian, LQR with cost on the ill-conditioned state direction structurally substitutes regardless of sincere intent"* is within reach.
 
 ## Three-test gate for promotion to preprint
 
 Paralleling Paper 24's gate, with content specific to this object:
 
-1. **Toy sim produces a regime where the target-drift gap opens and stays open** — i.e., the controller's action correlates with $R_t$-minimization and decorrelates with $T_t$-minimization, while the nominal objective function stays written on $T_t$. Not just transient; a stable regime.
+1. **Toy sim produces a regime where the target-drift gap opens and stays open** — i.e., the controller's action correlates with $R_t$-minimization and decorrelates with $T_t$-minimization, while the nominal objective function stays written on $T_t$. Not just transient; a stable regime. *Cleared 2026-04-22.* Single-agent sim shows power-law substitution magnitude across two decades of $\alpha_T/\alpha_C$ under correctly-specified Kalman-LQR with $q_C = 0$; effort-without-effect signature confirmed; shock-statistics mismatch surfaced as a second substitution channel; Paper 23 §3.3 observability-Gramian bridge operationalized. The scope-decision sub-claim (substitution survives Paper 24's clean-aggregation-open-witness fix) is earned by the homogeneous-agent algebraic argument in the sibling-status section below — heterogeneous-agent extension deferred as a separate object.
 2. **One sharp claim beyond mood.** The paper-line sentence above is the candidate; needs to survive pressure-testing against adjacent cases.
 3. **Adjacent-literature differential survives cold read.** The specific cut — *observability-driven target substitution, with rhetoric staying fixed on the nominal objective* — is not cleanly covered by performative prediction (Perdomo et al.), closed-loop recommenders (Sprenger et al.), feedback-loop classification (Pagan et al.), moderation trade-offs (Dwork et al.), or opinion-dynamics-under-control. If any of those already formalize the target-substitution mechanism, this folds into that literature rather than standing as a new object.
 
@@ -135,11 +163,22 @@ Paralleling Paper 24's gate, with content specific to this object:
 
 ## Paper 24 sibling status (revisited)
 
-Open question: is this Paper 25, or is it §N of Paper 24?
+**Adjudication: sibling, by algebraic argument (2026-04-22).** The compound-regime question — does target substitution survive Paper 24's clean-aggregation-open-witness fix? — admits a cleaner answer at the level of observability geometry than a sim would produce. The proposition below earns sibling status in principle; the multi-agent sim is a persuasion artifact if needed later, not a decision prerequisite.
 
-**Decisive argument (promoted from "curiosity at the bottom" to lead): the compound-regime case.** If a discourse community exhibits *both* Paper 24's mechanisms (aggregation-masking freeze + witness-filter) *and* this paper's mechanism (objective-aliasing substitution) *simultaneously and independently*, then the two failures stack: $V$ is frozen against updates AND silently replaced by $V'$, at the same time. If the sim shows that you can take a system with clean aggregation + open witness inclusion (Paper 24's sufficient condition) and *still* observe target substitution because $Y_t$ structurally underdetermines $T_t$ regardless of how you aggregate, then the cases are **independent**, and sibling status is correct. Paper 24's fix does not address Paper 25's failure. Conversely, if the substitution always rides on aggregation failure — if shape-preserving aggregation with open witnesses always recovers $T$-tracking — then this is §N of Paper 24.
+**Proposition (homogeneous-agent sibling case).** Let $N$ homogeneous agents observe the same latent state $x_t = [T_t, C_t]^\top$ through a common measurement map $C_{obs} = [\alpha_T,\ \alpha_C]$ with independent additive noise: $y_{i,t} = C_{obs} x_t + v_{i,t}$, $i = 1, \ldots, N$. Stack the observations as $\bar y_t = \bar C x_t + \bar v_t$ with $\bar C = \mathbf{1}_N \otimes C_{obs}$. Then:
 
-This is what the sim has to decide. Framed this way, the three-test-gate item 1 becomes specifically: *build Paper 24's clean-aggregation-open-witness sim configuration, then add the observability asymmetry, then show substitution still occurs*. That is a clean experimental design, not just "does the toy produce regimes."
+- The stacked finite-horizon observability matrix $O_T^{stack} = \mathbf{1}_N \otimes O_T$, where $O_T$ is the single-agent observability matrix of §"Paper 23 §3.3 bridge" above. Consequently $\ker(O_T^{stack}) = \ker(O_T)$.
+- The least-observable direction is unchanged: $v_{\min}(O_T^{stack}) = v_{\min}(O_T)$ (it is merely scaled).
+- The stacked-observation Kalman filter has posterior variance $O(\sigma^2/N)$ — aggregation improves SNR — but the *direction* of residual uncertainty is unchanged.
+- The LQR gain depends only on $(A, B, Q, R)$ and is identical to the single-agent case. The policy $u = -K_{lqr} \hat x$ uses the aggregated posterior $\hat x$ whose T-axis component is still dominated by filter-leakage from $C$, now at variance $\sigma^2/N$ rather than $\sigma^2$.
+
+**Therefore:** Paper 24's clean aggregation (shape-preserving, open witness inclusion) reduces observation noise but *does not rotate the observability subspace*. The substitution magnitude scales as $O(1/\sqrt{N})$ of the single-agent case but its direction and its structural origin are unchanged. Paper 24's sufficient condition for freeze-freedom is not sufficient for substitution-freedom. The mechanisms are independent. **Paper 25 is a sibling, not §N.**
+
+**The core line**, in one sentence: *aggregation improves SNR; it does not rotate the observability subspace.*
+
+**Scope condition for this argument.** Homogeneity of the measurement map across agents is load-bearing. Heterogeneous agents with genuinely different measurement maps $C_{obs}^{(i)}$ — for instance, a privileged witness with access to $T$ through a different channel than the rest of the cohort — *can* rotate the effective observability subspace, and the sibling claim does not apply to that case without further argument. The heterogeneous-agents extension is a Paper 24/25 follow-on object (what cohort-witness composition restores $T$-observability?), not part of the sibling-vs-§N decision.
+
+**Why this earns it without a sim.** The claim is structural, not empirical. A multi-agent Kalman-LQR sim would confirm the algebra, not discover anything new — it would show posterior variance scaling as $1/N$ while the least-observable-direction alignment with the T-axis stays at its single-agent value. Confirmation, not adjudication. If the paper needs the plot for persuasion against a skeptical reader, it can be built later using the shared global-asymmetry / independent-noise / identity-witness-inclusion shape described above, brutally minimal. Until there is a reader to persuade, the algebra is the artifact.
 
 **Supplementary arguments for sibling:**
 
@@ -171,7 +210,7 @@ The novelty candidate is the *specific synthesis*: not "feedback loops exist," n
 
 ## Open / deferred
 
-- **Sim build.** Deferred. Gate item 1 is "toy produces distinct regimes"; no need to build it tonight.
+- **Sim build.** *Single-agent minimum-viable done 2026-04-22* at `~/git/lean/paper25_substitution.py` — see §"Sim results" above. Next sim work is the Paper 23 observability-Gramian bridge (compute $\sigma_{\min}(O_T)$ across the sweep; connect to the near-kernel geometry the paper inherits from Paper 23's apparatus), followed by the compound-regime multi-agent sim (Paper 24's clean-aggregation-open-witness scaffold with observability asymmetry added). Hysteresis / asymmetric-threshold pathology is elaborative, not scope-deciding — sim that last.
 - **Full lit review.** Needed before committing to Paper 25 status. Should include: epistemic network effects, social epistemology of moderation, Goodhart variants, credibility-weighting schemes, misinformation-diffusion models. Chatty's pass is a first-pass spike, not a finished review.
 - **Substack vs preprint.** This concept is particularly well-suited to Substack essay form — the data center example carries a lot of the work, and the target-substitution claim lands in prose without needing formalism for lay readers. Could land as essay first, paper second if the three-test gate clears.
 - **ICU contrast case.** Paper 23's deferred ICU case may apply here too — a domain where target-substitution is especially stark and ethical stakes are high. Worth noting as a possible sibling example if the paper goes long.
