@@ -30,6 +30,12 @@ The three-class typography is load-bearing. Future edits should not flatten the 
 
 ## Changelog
 
+### 2026-04-22
+
+- **§6 swap: "Notes for next pass" → "Adjacency and distinction."** Removed workshop-residue §6 from the paper body per external review (chatty, 2026-04-22): the preprint should not ship with process-narration and "next-pass branches" in the shipped artifact. Replaced with a compact 5-paragraph §6 Adjacency and distinction that promotes the four adjacency buckets (switched/hybrid, viability, identifiability, human supervisory control) from their pre-lit-review "differs from X because Y" form into a compressed, defensive anti-misreading shield. Per chatty's rule of thumb: does each paragraph sharpen the reader's understanding of the paper's object, or prove I've seen adjacent discourse? Only the first kind kept.
+- Lean-status detail (case (i) in `OpsMasking.lean`, deferred cases (ii) and (iii), signature note on $\text{proj}$ vs $\Pi_{A_t}$) moved here to NOTES; see "Lean status" section below.
+- ICU contrast case and second-Case-A-example items were already in the Open/deferred section below; no change needed.
+
 ### 2026-04-21 (morning / afternoon)
 
 - §1 operationalization paragraph added after the bolded thesis. Disowns the metaphysical reading of "non-self-identical" and pins the claim to controller-side identifiability. Independent flags from DeepSeek, chatty, and the Lean signature check converged on this as the highest-priority defensibility patch.
@@ -47,6 +53,16 @@ The three-class typography is load-bearing. Future edits should not flatten the 
 - §3.3 case (ii) theorem statement gains a parenthetical clarifying the equivalent finite-horizon observability-matrix form ($O_T = [C; CA; \ldots; CA^{T-1}]$), matching the terminology used in the proof sketch so a reader doesn't have to bridge it themselves.
 - PDF rebuilt.
 
+## Lean status
+
+Projection-masking case (i) is formalized in `LeanProofs/OpsMasking.lean` as `projection_masking`, built on a more general lemma `trajectory_eq_of_projected_eq`: under any plant dynamics $f$ and measurement map $h$, two controllers whose *gated* actions agree pointwise produce identical plant trajectories and observations from any initial state. The paper-form corollary takes actions in an additive type and asserts $\Pi(C+H) = \Pi(C)$ pointwise ⇒ outputs coincide exactly. Deterministic case only. Cases (ii) (measurement null-space, first-order) and (iii) (local gain aliasing, $\varepsilon$-resolution) remain paper-level and are not yet Leaned.
+
+One signature note for future Lean work: in the current formalization the gate is a fixed function $\text{proj} : U \to U$ rather than the paper's authority-state-indexed $\Pi_{A_t}$; for case (i) this is harmless (the masking hypothesis is already pointwise and absorbs any gate-state dependence), but lifting to $\text{proj} : X \to U \to U$ is required if a future module wants to carry $A_t$ explicitly — e.g., to formalize the §2 continuity-budget inequality, where authority delay is the load-bearing object. The §2 ADT bound itself remains imported scaffolding and is intentionally not Leaned.
+
+## Predicted governance family
+
+The admissibility family's spatial receipts (authorization, provenance) predict a temporal-axis sibling: handoff receipts, authority-routing receipts, operator-state receipts, continuity witnesses. This is a structural prediction, worth pulling into the family paper when it gets written — not a scope expansion for Paper 23.
+
 ## Open / deferred
 
 - **Full weakly-unobservable subspace version of case (ii).** The current finite-horizon first-order statement is honest and demonstrable; a fully nonlinear global version requires the Isidori construction and is deferred.
@@ -58,4 +74,4 @@ The three-class typography is load-bearing. Future edits should not flatten the 
 
 ## Parallel track
 
-Paper 24 candidate ("Shared Vision as Coordinating Prior") captured as a working-note seed at `working/shared-vision-coordinating-prior.md` with companion sim scaffold at `lean/shared_vision.py`. Bucket: **model-seed with paper potential, not yet promoted.** Three-test gate defined in the working note. The connection to Paper 23 is structural: Paper 23's §3 masking result at the controller-composition level, Paper 24's shared-vision claim at the multi-agent / organizational level — same alias-compatibility failure family, different scales. Paper 24 is exploratory-first; promotion only after the sim produces the three proposed regimes (fragmented realism / useful fiction / cargo-cult ideology) as distinct phases and the governance layer integrates cleanly.
+Paper 24 ("Shared Vision as Coordinating Prior") was promoted from working-note seed to preprint artifact on 2026-04-22; see `preprint/24-shared-vision-coordinating-prior/`. The structural connection to Paper 23 is explicit: Paper 23's §3 Operational Masking Theorem names alias-compatibility at the controller-composition layer; Paper 24 lifts the same structural move to the multi-agent / organizational layer and supplies the specific aggregation-layer mechanism by which organizations fail to notice the alias-compatibility even when they nominally have feedback loops. The single-sentence braid (Paper 24 §7.6): *organizations mistake compressed public alignment for resolved internal composition.* The two papers cross-cite naturally; neither is a prerequisite for the other.

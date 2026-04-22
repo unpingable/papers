@@ -83,6 +83,19 @@ Chatty's pushback (2026-04-19): calling a revision "v2.0" oversignals rupture wh
 - **`persistence_normalizes` as axiomatic boundary marker.** The axiom explicitly states where static formalization ends and temporal logic would begin. This aligns with Paper 22's scope-fence discipline (gauge / clock / estimation / actuation as operational constraints, not metaphysics).
 - **Three-terminal-families result** is structurally analogous (anti-universalism at the failure-taxonomy layer) but not a direct warrant for Paper 22's specific claims. Mentioned in the README's Formalization Status block as resonance, not as warrant.
 
+### P23 — *Ops Is Control with a Non-Self-Identical Controller*
+
+- **Lean module:** `OpsMasking.lean` (case (i) only)
+- **Cashout classes:** 4 (bridge artifact) + 1 (certify), case (i) projection masking only
+- **Paper-ready:** Yes for the kernel theorem. The general lemma `trajectory_eq_of_projected_eq` and the paper-form corollary `projection_masking` are both verified and cited in the paper's Formalization Status block.
+- **Revision candidacy:** Not applicable; P23 is itself v0.1 (not yet pushed to Zenodo) and was drafted concurrently with the Lean module. Cases (ii) (measurement null-space, first-order over horizon $T$) and (iii) (local gain aliasing, $\varepsilon$-resolution) remain paper-level and are not yet Leaned. Formalizing case (ii) is on the §6 / NOTES.md punch-list.
+
+**What Lean underwrites:**
+
+- **Case (i) projection masking, exact.** Two controllers with pointwise-equal projected actions produce identical trajectories under any plant dynamics and measurement map. Paper-form corollary $\Pi(C+H) = \Pi(C)$ pointwise ⇒ outputs coincide exactly.
+- **Signature discipline.** The kernel pins the signatures of "controller", "projection", "trajectory", and "observation" so the §3.3 prose claim survives translation. Companion sim `ops_continuity.py` exhibits the case bit-exactly under saturating authority.
+- **Open: cases (ii) and (iii) and gate-state-indexed projection.** The current Lean uses a fixed projection $\text{proj} : U \to U$ rather than the paper's $\Pi_{A_t}$; for case (i) this is harmless but a future module carrying $A_t$ explicitly (e.g., to formalize the §2 continuity-budget inequality) would need $\text{proj} : X \to U \to U$.
+
 ### P9 — *Capacity-Constrained Stability*
 
 - **Lean module:** `BranchSelector.lean`
@@ -131,6 +144,15 @@ Chatty's pushback (2026-04-19): calling a revision "v2.0" oversignals rupture wh
 - **Paper-ready:** Partial.
 - **Revision candidacy:** Prose tightening in SI-C ("long enough" → coexistence framing). Not a version bump on the main paper; supplementary document edit.
 
+## Sim-only cashout (no Lean module yet)
+
+### P24 — *Shared Vision as Coordinating Prior*
+
+- **Lean module:** None yet. Companion simulation `shared_vision.py` in the Lean repo provides the §4 probe artifacts (aggregation-boundary, alias-compatibility, filter).
+- **Paper-ready (sim side):** Yes. The §4 probes are reproducible and the §3 theorems (T1, T3, T4) have proofs / proof sketches in the paper that do not require Lean for soundness.
+- **Formalization gap:** Proposition 1 (no-scalar-free-lunch) is currently probe-backed conjecture. Promoting it to theorem requires fixing the scalar-aggregator class precisely (continuous? Lipschitz? permutation-invariant?) and exhibiting the structural trade-off between freeze-freedom and stability within that class. This is the single highest-value Lean target for P24, flagged in P24 §8 item 1 and in `preprint/24-shared-vision-coordinating-prior/NOTES.md`.
+- **Revision candidacy:** N/A; P24 is v0.1 (not yet pushed to Zenodo). A future v0.2 fold-in on Proposition 1 would parallel the P18 Appendix A pattern.
+
 ## No clean cashout
 
 Papers with no current Lean mapping worth attaching as a warrant:
@@ -162,3 +184,4 @@ These are not "never" candidates — just not current. If the Lean stack grows d
 - **2026-04-19** — Index created. Based on Lean inventory as of commits `cfc612f` (misc tex) / `d6adbbc` (lean proofs) / `6bc8037` (lean work integration) / `18c1f7c` (phase 1 baby river lean kernel).
 - **2026-04-20** — P22 formalization fold-in complete in local source (v1.1 candidate, not yet pushed to Zenodo). §6.4 paragraph added, README created, NOTES.md changelog entry added. Reclassified P22 cashout to drop the too-forced `TaxonomyGraph.lean` coupling-family tie-in; kept `PersistenceModel.lean` `persistence_normalizes` axiom as the primary anchor plus three-terminal-families as structural resonance. Corrected earlier working-memory assumption that P22 was still pre-release — it has been on Zenodo since March 19, 2026.
 - **2026-04-20** — P18 Appendix A drafted in local source (v1.1 candidate, not yet pushed to Zenodo). Appendix structure: A.1–A.6 per-claim entries in chatty's four-field format (formal object / prose claim sharpened / what it does not prove / pointer), plus A.7 (relation to the paper's framework) and A.8 (scope fences — pre-breach dynamics, observer-integrity, tier escalation, empirical calibration not covered). Abstract, introduction, and conclusion left unchanged; v1.2 (abstract reframe) deferred.
+- **2026-04-22** — Added P23 entry under Tier 2 (`OpsMasking.lean`, case (i) projection masking, bridge artifact + certify; cases (ii) and (iii) deferred). Added P24 entry under new "Sim-only cashout" section — no Lean module yet, only `shared_vision.py` companion sim; Proposition 1 (no-scalar-free-lunch) flagged as the single highest-value Lean target. Both papers are v0.1, not yet pushed to Zenodo. Mirrors the `PAPER-MAP.md` update in the Lean repo.

@@ -1,0 +1,41 @@
+title: "Shared Vision as Coordinating Prior: Aggregation-Layer Masking and the Witness-Filter Pathology"
+author: "James Beck"
+affiliation: "Independent Researcher"
+date: 2026-04-22
+series: "delta-t-framework"
+paper_number: 24
+version: "0.1"
+status: "preprint"
+license: "CC-BY-4.0"
+keywords:
+  - multi-agent coordination
+  - shared prior
+  - aggregation theory
+  - observational masking
+  - witness inclusion
+  - cohort witness
+  - receipt-lineage governance
+  - federated learning
+  - organizational epistemology
+  - cybernetic regulation
+abstract: >
+  Shared visions, strategic priors, and operating theses coordinate
+  multi-agent systems by reducing policy divergence around a common token.
+  We identify three structural failure modes by which such coordination
+  produces persistently wrong steady states even when the system has
+  working feedback, solicits dissent, and updates on reported error.
+  First, any first-moment aggregator (mean, balanced weighted mean,
+  rank-symmetric median) maps balanced bias-split witness populations
+  to zero; the shared prior is therefore frozen by the arithmetic of the
+  aggregation rule, not by any procedural refusal to update. Second,
+  public alignment to a shared prior is alias-compatible with arbitrary
+  internal compositional divergence under stationary conditions, with
+  the divergence surfacing only under strategic shift. Third, witness
+  inclusion correlated with prior-alignment defeats every aggregator —
+  including shape-preserving receipt-lineage architectures — by removing
+  signal upstream of aggregation; a single such filtering event produces
+  persistent non-vanishing error with no internal mechanism for
+  self-correction. The constructive consequence is that the only
+  governance architecture satisfying both freeze-freedom and stability
+  preserves per-witness receipts and maintains witness inclusion
+  independent of prior-alignment.
