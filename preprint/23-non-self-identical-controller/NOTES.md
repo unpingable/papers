@@ -53,6 +53,43 @@ The three-class typography is load-bearing. Future edits should not flatten the 
 - §3.3 case (ii) theorem statement gains a parenthetical clarifying the equivalent finite-horizon observability-matrix form ($O_T = [C; CA; \ldots; CA^{T-1}]$), matching the terminology used in the proof sketch so a reader doesn't have to bridge it themselves.
 - PDF rebuilt.
 
+### 2026-04-23 — v1.0 freeze (three codex audit rounds + sanity review)
+
+v0.1 → v1.0. Pushed through three codex audit rounds (pass 1: 9 findings; pass 2: 3 new issues from pass-1 revisions; pass 3: clean with two notation cleanup suggestions), then a sanity pass flagged three DOI-readiness cleanups. All addressed here.
+
+**Pass 1 findings (all addressed):**
+
+- §3.3 Theorem (ii): now quantifies condition for every $s \in [t, t+T-1]$; proof sketch uses an explicit convolution sum and per-summand observability-matrix vanishing, closing the prior proof/statement scope mismatch.
+- §3.3 Standing Assumptions block added: $C^1$ smoothness of $f, h$ on a neighborhood of the nominal trajectory; both systems remain in a compact set $\Omega$ where $f, h$ are Lipschitz; small-$\|H\|$ regime; stochastic-case noise handled as two alternatives (sample-path equality OR law-level independence, with distinct conclusions); projection non-smoothness scope.
+- §2.2 Institutional Ruin Condition: restated in reach-set form $\mathrm{Reach}_{A_t, \tau_{\text{auth}}}(x_t) \cap V(A_{\text{expanded}}) = \emptyset$, robust over admissible controls and disturbances.
+- §2.4 non-substitutability: reframed as first-order decomposition; second-order cross-couplings named explicitly (handoff priming, authority delay inflating ambiguity); diagnostic-about-dominant-levers replaces orthogonality claim.
+- §3.4 "most effective compensators hardest to detect": demoted from assertion to explicit **Hypothesis** block with "not proven by the theorem" caveat.
+- §4 numerics: transformer ratings cited to IEEE C57.91 and NERC standards; scenario self-identified as composed.
+- §4.3: incoming-operator fatigue made semantically clean (both crews in back-to-back extended storm shifts); three-component $\delta_h$ distinctions now explicit.
+- Abstract scope-fence tightened ("Much of classical control theory...").
+- References section added: 19 entries covering switched/hybrid (Hespanha-Morse, Liberzon, Goebel-Sanfelice-Teel), viability (Aubin, Blanchini/Miani), identifiability (Hermann-Krener, Isidori), human supervisory / resilience / SRE (Sheridan, Endsley, Hollnagel/Woods/Leveson, Rasmussen, Dekker, Google SRE), grid standards, and series cross-refs.
+
+**Pass 2 findings (all addressed):**
+
+- §3.3 case (ii) scope: added explicit local-LTI regime restriction (Jacobians frozen over $[t, t+T]$); time-varying generalization deferred with pointer to state-transition operator $\Phi(s+k, s)$ and time-indexed observability Gramian.
+- §3.3 noise assumption: sample-path equality and law-level independence now presented as two alternative sufficient conditions with distinct conclusions (pathwise equality vs equality in law), not as equivalent.
+- §4 escalation-latency claim softened further to scenario parameter, not empirical estimate.
+
+**Pass 3 cleanups:**
+
+- Measurement Jacobian renamed $C \to C_y$ throughout §3.3 to eliminate clash with nominal controller symbol $C$.
+- §3.2 gained "(under a local-LTI linearization over horizon $T$; see §3.3 standing assumptions)" parenthetical to prevent skim-level misread.
+
+**Sanity DOI-readiness pass:**
+
+- Status bumped to v1.0 (sanity: "don't mint a DOI labelled v0.1").
+- Reference hygiene: [17] NERC / [18] NTSB / [19] NRC pinned to specific standard families, CFR citations, accessed dates where appropriate — no more "current edition" / "ongoing series" hand-waves.
+- §4 further tightened: dropped the "commonly reported as a minutes-to-tens-of-minutes process in post-mortem summaries" clause that was still reading attackable; latency figure now framed as scenario parameter, not empirical estimate.
+
+metadata.yaml bumped to `version: "1.0"`, `date: 2026-04-23`; abstract field rewritten to match the tightened in-body abstract.
+
+PDF rebuild pending before Zenodo push.
+
 ## Lean status
 
 Projection-masking case (i) is formalized in `LeanProofs/OpsMasking.lean` as `projection_masking`, built on a more general lemma `trajectory_eq_of_projected_eq`: under any plant dynamics $f$ and measurement map $h$, two controllers whose *gated* actions agree pointwise produce identical plant trajectories and observations from any initial state. The paper-form corollary takes actions in an additive type and asserts $\Pi(C+H) = \Pi(C)$ pointwise ⇒ outputs coincide exactly. Deterministic case only. Cases (ii) (measurement null-space, first-order) and (iii) (local gain aliasing, $\varepsilon$-resolution) remain paper-level and are not yet Leaned.

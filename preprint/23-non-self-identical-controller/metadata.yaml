@@ -1,10 +1,10 @@
 title: "Ops Is Control with a Non-Self-Identical Controller"
 author: "James Beck"
 affiliation: "Independent Researcher"
-date: 2026-04-21
+date: 2026-04-24
 series: "delta-t-framework"
 paper_number: 23
-version: "0.1"
+version: "1.0"
 status: "preprint"
 license: "CC-BY-4.0"
 keywords:
@@ -26,6 +26,9 @@ abstract: >
   when the controller's real composition differs from the nominal
   controller in ways the measurement-and-authority map cannot resolve:
   under three sufficient masking conditions, latent human compensation
-  becomes structurally unidentifiable from observed outputs. Classical
-  control assumes the controller is self-identical across time. Operations
-  begins where that assumption breaks.
+  becomes structurally unidentifiable from observed outputs. Much of
+  classical control theory treats the controller as self-identical
+  across time; hybrid and switched-systems frameworks admit controller
+  change but typically assume its identity at each instant is specified.
+  Operational systems of the kind considered here begin where those
+  assumptions break.

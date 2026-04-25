@@ -1,8 +1,9 @@
 # No Universal Plant Clock: Temporal Failure Geometry in Distributed Control Systems
 
 **Author:** James Beck
-**Status:** Published (Zenodo, March 19 2026). Local source has v1.1 candidate edits (formalization fold-in) not yet pushed.
-**DOI:** [10.5281/zenodo.19119618](https://doi.org/10.5281/zenodo.19119618)
+**Status:** Published (Zenodo v1.1, 2026-04-20). Initial release: 2026-03-19 (v1.0).
+**DOI (concept, resolves to latest):** [10.5281/zenodo.19119617](https://doi.org/10.5281/zenodo.19119617)
+**DOI (v1.1 version):** [10.5281/zenodo.19671885](https://doi.org/10.5281/zenodo.19671885)
 
 ## Abstract
 
@@ -14,10 +15,10 @@ A parallel Lean formalization of the Δt framework applies the same scope discip
 
 Formalized anchors relevant to this paper:
 
-- `persistence_normalizes` axiom in `PersistenceModel.lean` — explicitly marks where static formalization ends and temporal/dynamic claims would require different machinery. Paper 22 occupies the temporal-claim side of that boundary.
+- `persistence_normalizes` axiom in `TaxonomyGraph.lean` — explicitly marks where static formalization ends and temporal/dynamic claims would require different machinery. Paper 22 occupies the temporal-claim side of that boundary.
 - Three-terminal-families result in `TaxonomyGraph.lean` — structurally analogous "no universal X, multiple families" pattern at the failure-taxonomy layer (not a direct warrant for this paper's specific claims, but consistent with the anti-universalism framing).
 
-Revision candidacy: **v1.1 — §6.4 paragraph added; local source bumped to `version: "1.1"`; PDF rebuilt 2026-04-20; Zenodo push deferred (Zenodo record remains v1.0 pending explicit push).** Acknowledged in §6.4 via a single paragraph; no abstract or conclusion changes. See [`docs/formalization-index.md`](../../docs/formalization-index.md) for the full crosswalk and `NOTES.md` for the 2026-04-20 changelog entries.
+v1.1 release: §6.4 Lean-formalization paragraph added; references [1] and [3] corrected. No abstract or conclusion changes. Published to Zenodo 2026-04-20 (version DOI [10.5281/zenodo.19671885](https://doi.org/10.5281/zenodo.19671885)). See [`docs/formalization-index.md`](../../docs/formalization-index.md) for the full crosswalk and `NOTES.md` for the 2026-04-20 changelog entries.
 
 ## Key Contributions
 

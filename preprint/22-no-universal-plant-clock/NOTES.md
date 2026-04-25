@@ -207,3 +207,14 @@ Cashout rationale: certify + bridge. The Lean axiom explicitly marks the static/
 - Paper front matter: `**Status:** Preprint v0.9` → `**Status:** Preprint v1.1 (adds §6.4 Lean-formalization paragraph; not yet pushed to Zenodo — Zenodo record is v1.0)`.
 - Rebuilt `no_universal_plant_clock.pdf` with pandoc + xelatex + Libertinus font stack.
 - Zenodo push is *not* done. Zenodo record remains at v1.0 until explicit push.
+
+### 2026-04-20 — Zenodo v1.1 push (reconciliation note, logged 2026-04-23)
+
+The two entries immediately above were written *before* the v1.1 push. The push did go out the same day, 2026-04-20 at 21:10 UTC, but this changelog and `README.md` were never updated to reflect it. Correcting that here so the record matches Zenodo.
+
+- Zenodo record 19671885 published 2026-04-20 as **v1.1**. Version DOI `10.5281/zenodo.19671885`; concept DOI `10.5281/zenodo.19119617` (unchanged across versions).
+- Zenodo description: "Version 1.1: adds §6.4 formalization paragraph; corrects references [1] and [3]".
+- Local `README.md` reconciled 2026-04-23 to remove "not yet pushed" language and correct the DOI display (previously showed the v1.0 version DOI `19119618`; now shows concept DOI and v1.1 version DOI).
+- Local `README.md` Lean-file pointer corrected 2026-04-23: `persistence_normalizes` lives in `TaxonomyGraph.lean`, not `PersistenceModel.lean` (codex audit finding, 2026-04-23).
+- Local `no_universal_plant_clock.md:19` status line still contains the parenthetical "not yet pushed to Zenodo — Zenodo record is v1.0". That text is frozen in the published v1.1 PDF/MD on Zenodo (embarrassing but not incorrect — the paper says v1.1 and Zenodo says v1.1). Leaving as-is; will be cleaned up if a v1.2 push is ever warranted.
+- Codex also noted §6.4 carries a mild overclaim risk (readers could infer the boundary is *proved* when `persistence_normalizes` is an axiom placeholder). Verdict: not worth a v1.2 push on its own — the paragraph already uses the word "axiom" and "marking" (demarcation, not derivation). Logged here so it's addressed if other v1.2 edits accumulate.
