@@ -7,6 +7,8 @@ paper_number: 23
 version: "1.0"
 status: "preprint"
 license: "CC-BY-4.0"
+doi: "10.5281/zenodo.19055415"
+zenodo_url: "https://zenodo.org/records/19715302"
 keywords:
   - controller continuity
   - hybrid control

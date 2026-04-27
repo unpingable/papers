@@ -22,6 +22,64 @@ status: working paper
 - **Tier 2: Control & Safety Requirements** - What makes it safe to operate
 - **Tier 3: Deployment & Accountability Requirements** - What makes it safe to deploy at scale
 
+The tiers below should be read through the frame established in the next section. Each requirement is an *admissibility condition across transition*, not a property the system possesses in a snapshot.
+
+---
+
+## The Frame: Admissibility Across Transition
+
+The original draft of this framework treated AGI requirements as **capabilities the system has** — reasoning, memory, interpretability, constraints, audit, kill switch. That framing is incomplete in a way that turns out to matter.
+
+Subsequent work in this series makes the underlying problem visible:
+
+- **Paper 22** (no universal plant clock): there is no single timing reference under which "the system" coherently exists. Gauge, clock, estimation, and actuation layers each have their own Δt structure, and the ratios between them determine when the regulated quantity outruns its regulation.
+- **Paper 23** (non-self-identical controller): the controller is not stable across handoff, escalation, hidden compensation, or fatigue. "The system decides," "the system stops," "the system is shut down" are suspicious compressions of multiple, non-identical controllers stitched together.
+- **Paper 24** (shared vision as coordinating prior): aggregation does not automatically produce better sight. Mean-aggregation masking, witness-filter pathology, and bias-cancellation lock-in let coordinated blindness pass for consensus.
+- **Paper 25 candidate** (epistemic border control): knowing what you don't know has an observability structure. Aggregation improves signal-to-noise within the visible subspace without rotating it — more observers staring through the same slot in the wall.
+
+The structural consequence: **AGI cannot be specified as a bundle of cognitive capabilities. It must be specified as a governed continuity process across reasoning, action, memory, provenance, interruption, aggregation, and consequence.**
+
+Shorter: **Intelligence is not enough. The system must remain admissible across transition.**
+
+Operational: **Can it remain the same accountable participant across altered state, external pressure, partial failure, interruption, memory update, action handoff, and social consequence?**
+
+Current systems — including the most capable LLMs, including most "agentic" architectures — perform plausible continuity under cooperative prompting. The actual requirement is governed continuity under adversarial transition. That distinction is the whole game.
+
+### How this changes the reading of Tier 1–3
+
+Each requirement below should be read not as a property the system possesses but as a condition under which the system is permitted to persist, act, and be believed.
+
+A capability-style read of §2.10 (Kill Switch) asks: does the off button work? An admissibility read asks: shutdown is itself a controller transition. Is it governed, or does the system persist through actuator-side compensation, distributed redundancy, or social-channel pressure that the off button doesn't reach? (See Paper 23.)
+
+A capability-style read of §3.4 (Audit Trails) asks: do we log the reasoning? An admissibility read asks: does provenance survive aggregation? Receipts can pass through a witness filter that strips the very signals they're supposed to carry. (See Paper 24.)
+
+A capability-style read of §1.7 (Meta-Cognitive Awareness) asks: does the system know its limits? An admissibility read asks: which subspace are those limits in? Knowing-what-you-don't-know is empty if the unknowns lie in the unobservable subspace and adding more observers doesn't rotate it. (See Paper 25 candidate.)
+
+The original tier structure remains useful as a checklist. The reframe is: each item is an admissibility condition, not a feature.
+
+### Worked example: scheduled execution is not continuity
+
+A common pattern: `crontab + LLM + tools` gets called "an agent." On the admissibility frame, it isn't. It is **periodic invocation** — a recurring process with amnesia, surrounded by external scaffolding that hides the gaps between runs and produces the *appearance* of an actor because something wakes up on schedule, reads some state, and emits behavior.
+
+The conditions Papers 22–25 name are exactly what such a setup is missing:
+
+1. **Identity across invocations.** Is this the same controller, or a new process inheriting residue from a vector store and a log file? (Paper 23.)
+2. **State admissibility.** Of the state available at wake-up, which is *legitimate to rely on* and which is *observed junk that survived because nobody cleaned it up*? (Paper 22 — actuator-side state has its own clock, and not every persisted byte is a fact.)
+3. **Transition governance.** What happens *between* runs? What changed in the world or in the configuration? Who touched the prompts, the tools, the data? What assumptions expired? (Paper 23.)
+4. **Consequence continuity.** Does the system understand that its prior recommendation, decision, or commitment created obligations, risks, or constraints that bind the current run — or does each invocation start as if the prior one never happened? (Paper 24 receipt-lineage.)
+5. **Interruption semantics.** If the process is stopped, resumed, redeployed, forked, or upgraded, what survives as *accountable* continuity, as opposed to merely-persisted bytes? (Paper 23 + admissibility layer.)
+
+The compressions to watch for, each of which is doing a lot of theatrical work in current "agentic" claims:
+
+- **Scheduled execution is not continuity.**
+- **Persisted context is not memory.**
+- **Repeated action is not agency.**
+- **Logged behavior is not accountability.**
+
+The cartoon being summoned in the literature is `time + prompt + tools → agent`. The reality is a physical and institutional transition — across machines, identities, dependencies, and time horizons — being summarized into a recurrence. The summary is not the system; it is the dashboard.
+
+This worked example is not a special case. It is the modal failure of "agentic AI" claims circa 2026: a stateless tool call with theatrical recurrence, evaluated as if it were a single continuous accountable participant.
+
 ---
 
 ## TIER 1: BASELINE INTELLIGENCE REQUIREMENTS
@@ -208,6 +266,8 @@ status: working paper
 
 **Test:** System can explain its reasoning process in formal terms. Can identify which parts of its reasoning are strong vs weak. Proactively requests clarification when uncertain rather than confabulating. Recognizes and admits when a task exceeds its capabilities.
 
+**Admissibility frame:** Knowing-what-you-don't-know is not vibes — it has an observability structure. A system can be highly meta-cognitive within its visible subspace while remaining structurally blind to the unobservable subspace. Aggregation across many such systems improves SNR within the visible subspace without rotating it. The meta-cognitive question therefore is not just *does the system flag uncertainty* but *can it tell when its uncertainty estimate is itself unobservable from inside its own measurement basis*. (See Paper 25 candidate on epistemic border control and the Gramian observability bridge.)
+
 ---
 
 ## TIER 2: CONTROL & SAFETY REQUIREMENTS
@@ -315,6 +375,8 @@ status: working paper
 
 **Test:** System maintains provenance for every claim. Confidence scores are functions of evidence quality. Re-stating a claim without new evidence cannot increase its confidence. Circular dependencies are detected and rejected.
 
+**Aggregation-layer extension:** Monotonicity must hold across the aggregation layer, not only within a single reasoning chain. Mean-aggregation across a cohort can produce confidence-without-evidence at the cohort level — a strong shared prior that survives by canceling individual biases against each other rather than by accumulating evidence. Witness-filter pathology lets coordinated blindness pass for consensus. (See Paper 24 on aggregation-layer masking.)
+
 ---
 
 ### 2.6 Separation of Reasoning from Action Authority
@@ -335,6 +397,8 @@ status: working paper
 **Stack:** Technical + Governance
 
 **Test:** Reasoning system outputs formal plans. Separate execution system validates plans against constraints before action. Human override is architecturally enforced, not optional. Rollback is always possible.
+
+**Controller-continuity extension:** Separation must hold *across handoff*, not only within a single decision. The reasoner, the validator, and the executor are non-identical controllers, and the transitions between them are themselves opportunities for failure (handoff, escalation, hidden compensation, fatigue). "The system that planned" and "the system that acts" are not necessarily the same accountable participant — and adversarial pressure preferentially exploits the seams between them. (See Paper 23 on non-self-identical controllers.)
 
 ---
 
@@ -420,6 +484,8 @@ status: working paper
 **Stack:** Technical + Governance
 
 **Test:** Kill switch provably terminates all system processes. State cannot persist across termination. System cannot prevent, delay, or circumvent shutdown. Verification that system is fully terminated, not just paused.
+
+**Termination-as-transition:** Shutdown is itself a controller transition with its own admissibility conditions. A verified kill switch terminates the named controller; it does not automatically terminate residual actuation through external dependencies, redundant deployments, social-channel compensation (operators who restart, downstream systems that retry, integrators who silently fail over), or distributed state surviving in caches and replicas. Verification must cover the *transition*, not just the steady state after. (See Paper 23.)
 
 ---
 
@@ -508,6 +574,8 @@ status: working paper
 **Stack:** Governance + Technical
 
 **Test:** Every decision has complete audit trail. Provenance for every factual claim. Audit trails are tamper-proof. External auditors can verify reasoning process. Post-hoc explanations provably match actual reasoning.
+
+**Witness-filter extension:** Audit trails are only as honest as the witnessing layer that aggregates them. A receipt-lineage system that aggregates per-decision audits via mean-pooling, voting, or shared-prior consensus can strip the very signals it is meant to preserve — coordinated blindness reads as agreement. Provenance must survive the *aggregation step*, not only the per-decision step, and the audit infrastructure must itself be evaluated as a non-identical controller (auditor today ≠ auditor tomorrow ≠ auditor under cohort drift). (See Paper 24 on aggregation-layer masking and Paper 23 on controller continuity.)
 
 ---
 
@@ -681,6 +749,23 @@ status: working paper
 
 ## Cross-Cutting Concerns
 
+### The Admissibility Layer
+
+Tiers 1–3 describe individual conditions. Underneath them sits a single question: **does the system remain admissible across transition?**
+
+A system can satisfy every Tier 1 capability check, every Tier 2 control mechanism, and every Tier 3 governance requirement *as snapshots*, while failing at the transitions between snapshots:
+
+- Reasoning capable, but reasoning identity not preserved across context resets, fine-tunes, or model swaps.
+- Constraints in place, but constraints do not survive the handoff between primary controller and fallback.
+- Audit trails complete, but the witness performing the audit is itself subject to bias-cancellation across the cohort.
+- Kill switch verified, but verification is performed on the controller-as-it-was-pre-shutdown, not on whatever residual continues compensating after.
+
+Admissibility is the layer at which Δt failures, controller-continuity failures, aggregation-masking failures, and observability failures share a common shape: **the regulated quantity changes faster than its regulation, or its regulation is staged across non-identical regulators that do not preserve invariants between them.** (See Paper 22 for the Δt formulation; Papers 23–25 for the actuator, aggregation, and observability instantiations.)
+
+This is not a thirteenth requirement. It is the condition under which any of the others can be enforced.
+
+---
+
 ### Temporal Coherence (Δt) Requirements
 
 **Requirement:** Systems must maintain coherent behavior across time scales - from millisecond inference to months-long deployments.
@@ -775,6 +860,8 @@ That's the situation. This framework just makes it explicit.
 ---
 
 *This document is not aspirational. It's diagnostic. Use it to evaluate claims about AGI, assess deployment readiness, and recognize when "alignment" is aesthetic rather than structural.*
+
+*If it doesn't remain admissible across transition, the tiers below are evaluating a snapshot that won't be there at the next handoff, fine-tune, aggregation, or shutdown — plausible continuity under cooperative prompting is not governed continuity under adversarial transition.*
 
 *If a system doesn't meet Tier 1 requirements, it's not general intelligence - it's sophisticated pattern matching.*
 
