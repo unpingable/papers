@@ -1,0 +1,43 @@
+title: "Ephemerality Is a Transition Property: Obligation-Unsound Reconciliation in Kubernetes and Other Control Loops"
+author: "James Beck"
+affiliation: "Independent Researcher"
+date: 2026-04-28
+series: "delta-t-framework"
+paper_number: 27
+version: "0.0-stub"
+status: "scaffold / queue-jumped"
+license: "CC-BY-4.0"
+keywords:
+  - reconciliation controllers
+  - transition admissibility
+  - obligation accounting
+  - Kubernetes
+  - control-plane amnesia
+  - observability null space
+  - audit semantics
+  - quotient machines
+  - receipt durability
+  - forensic readiness
+abstract: >
+  STUB. Reconciliation controllers are commonly specified in terms of
+  convergence: given a desired state, the controller should eventually
+  drive observed state toward that target and maintain it. This paper
+  identifies a complementary safety property missing from that
+  correctness vocabulary: transition admissibility. A reconciliation
+  transition may restore desired state while silently degrading the
+  obligations required for later diagnosis, governance, or operator
+  reliance — including evidence, causality, custody, authority, and
+  substrate accountability. We model Kubernetes-style controllers as
+  operating over lossy projections of substrate state. When the
+  projection collapses substrate states that carry different operator
+  obligations, the controller produces an obligation-unsound quotient:
+  convergence-correct, operator-unsound. We define ephemerality not as
+  an object property but as a transition property under declared
+  obligations and retention horizons. We introduce audit states
+  including Masked recovery, Orphaned causality, and DegradedWithReceipt,
+  and sketch a reconciliation auditor that preserves temporal bindings
+  between control-plane transitions and substrate accusations. The
+  result is a formal complement to convergence-oriented controller
+  verification: a controller may be correct with respect to
+  desired-state convergence while remaining unsound with respect to
+  operational testimony.

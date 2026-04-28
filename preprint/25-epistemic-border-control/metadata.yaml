@@ -1,0 +1,34 @@
+title: "Epistemic Border Control as Proxy Regulation Under Partial Observability"
+author: "James Beck"
+affiliation: "Independent Researcher"
+date: 2026-04-28
+series: "delta-t-framework"
+paper_number: 25
+version: "0.0-stub"
+status: "candidate / scaffold"
+license: "CC-BY-4.0"
+keywords:
+  - partial observability
+  - control-target substitution
+  - proxy regulation
+  - observability null space
+  - discourse moderation
+  - epistemic asymmetry
+  - performative prediction
+  - cybernetic regulation
+abstract: >
+  STUB. Discourse communities and moderation systems operate as feedback
+  controllers attempting to regulate epistemic risk under partial
+  observability. When the underlying target — truth, claim quality —
+  has no real-time sensor, while reputational contamination and
+  coalition-adjacency risk are fast and legible, the controller is
+  structurally forced to substitute a proxy objective for its nominal
+  objective. The rhetoric remains fixed on the nominal target while the
+  actual controlled variable becomes the proxy. This paper formalizes
+  the substitution as a consequence of observability asymmetry,
+  connects it to Paper 23's controller-layer masking via shared
+  observability-null-space geometry, and characterizes the regime in
+  which the substitution is not avoidable by sincere intent. Sibling
+  to Paper 24 (aggregation-layer masking) by algebraic argument:
+  aggregation improves SNR but does not rotate the observability
+  subspace.
