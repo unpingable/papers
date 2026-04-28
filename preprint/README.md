@@ -6,6 +6,16 @@ This repository contains a coherent research program on temporal coherence,
 The papers are organized chronologically by publication date. Conceptual
 dependencies are summarized below.
 
+## Status
+
+Entries below are tagged where they are not yet released:
+
+- **published** — on Zenodo with a DOI (the default for P01–P23)
+- **drafted** — `paper.md` complete, release pending
+- **scaffold** — claim container with metadata, README, and notes; no draft yet
+
+Numbering reflects the order in which a claim was named, not relative maturity or publication commitment. A higher number is not a stronger claim than a lower one; it is just newer in the sequence.
+
 ### Core Framework
 - *The Coherence Criterion: A Unified Framework for Stability in Hierarchical Systems* (2025)
 - *Δt-Constrained Inference: A General Model of Temporal Coherence in Hierarchical Systems* (2025)
@@ -43,6 +53,13 @@ dependencies are summarized below.
 
 ### Temporal Failure Geometry
 - *No Universal Plant Clock: Temporal Failure Geometry in Distributed Control Systems* (2026)
+
+### Controller Continuity and Admissibility
+- *Ops Is Control with a Non-Self-Identical Controller* (2026)
+- *Shared Vision as Coordinating Prior: Aggregation-Layer Masking and the Witness-Filter Pathology* (2026) — **drafted**
+- *Epistemic Border Control as Proxy Regulation Under Partial Observability* (2026) — **scaffold**
+- *Premature Commitment and Belated Consequence as Dual Orientations of Δt Detachment* (2026) — **scaffold**
+- *Ephemerality Is a Transition Property: Obligation-Unsound Reconciliation in Kubernetes and Other Control Loops* (2026) — **scaffold**
 
 ---
 

@@ -1,10 +1,10 @@
 title: "Shared Vision as Coordinating Prior: Aggregation-Layer Masking and the Witness-Filter Pathology"
 author: "James Beck"
 affiliation: "Independent Researcher"
-date: 2026-04-27
+date: 2026-04-28
 series: "delta-t-framework"
 paper_number: 24
-version: "0.2"
+version: "1.0"
 status: "preprint"
 license: "CC-BY-4.0"
 keywords:
@@ -35,7 +35,8 @@ abstract: >
   including shape-preserving receipt-lineage architectures — by removing
   signal upstream of aggregation; a single such filtering event produces
   persistent non-vanishing error with no internal mechanism for
-  self-correction. The constructive consequence is that the only
-  governance architecture satisfying both freeze-freedom and stability
-  preserves per-witness receipts and maintains witness inclusion
-  independent of prior-alignment.
+  self-correction. The constructive consequence is that corrective
+  governance architectures must preserve per-witness structure and
+  maintain witness inclusion independent of prior-alignment; collapsing
+  witness reports to scalar summaries or curating the witness population
+  by alignment reintroduces the pathology.

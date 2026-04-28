@@ -1,12 +1,12 @@
 # Shared Vision as Coordinating Prior: Aggregation-Layer Masking and the Witness-Filter Pathology
 
 **Author:** James Beck
-**Status:** Preprint v0.1 (initial draft, 2026-04-22). Not yet pushed to Zenodo.
-**DOI:** Not yet assigned.
+**Status:** Preprint v1.0 (2026-04-28). Zenodo draft awaiting review (deposit 19861996); not yet public.
+**DOI:** Reserved `10.5281/zenodo.19861996` (pending publish; concept DOI may be reassigned by Zenodo on publish).
 
 ## Abstract
 
-Shared visions, strategic priors, and operating theses coordinate multi-agent systems by reducing policy divergence around a common token. We identify three structural failure modes by which such coordination produces persistently wrong steady states even when the system has working feedback, solicits dissent, and updates on reported error. First, any first-moment aggregator (mean, balanced weighted mean, rank-symmetric median) maps balanced bias-split witness populations to zero; the shared prior is therefore frozen by the arithmetic of the aggregation rule, not by any procedural refusal to update. Second, public alignment to a shared prior is alias-compatible with arbitrary internal compositional divergence under stationary conditions, with the divergence surfacing only under strategic shift. Third, witness inclusion correlated with prior-alignment defeats every aggregator — including shape-preserving receipt-lineage architectures — by removing signal upstream of aggregation; a single such filtering event produces persistent non-vanishing error with no internal mechanism for self-correction. The constructive consequence is that the only governance architecture satisfying both freeze-freedom and stability preserves per-witness receipts and maintains witness inclusion independent of prior-alignment.
+Shared visions, strategic priors, and operating theses coordinate multi-agent systems by reducing policy divergence around a common token. We identify three structural failure modes by which such coordination produces persistently wrong steady states even when the system has working feedback, solicits dissent, and updates on reported error. First, any first-moment aggregator (mean, balanced weighted mean, rank-symmetric median) maps balanced bias-split witness populations to zero; the shared prior is therefore frozen by the arithmetic of the aggregation rule, not by any procedural refusal to update. Second, public alignment to a shared prior is alias-compatible with arbitrary internal compositional divergence under stationary conditions, with the divergence surfacing only under strategic shift. Third, witness inclusion correlated with prior-alignment defeats every aggregator — including shape-preserving receipt-lineage architectures — by removing signal upstream of aggregation; a single such filtering event produces persistent non-vanishing error with no internal mechanism for self-correction. The constructive consequence is that corrective governance architectures must preserve per-witness structure and maintain witness inclusion independent of prior-alignment; collapsing witness reports to scalar summaries or curating the witness population by alignment reintroduces the pathology.
 
 ## Formalization Status
 
@@ -44,6 +44,7 @@ Two results are flagged as conjecture-strength rather than theorem-strength: Pro
 | Artifact | Location | Role |
 | --- | --- | --- |
 | Simulation | `../../../lean/shared_vision.py` | Scaffold for §4 probes (aggregation-boundary, alias-compatibility, filter) |
+| Lean shard | `../../../lean/LeanProofs/Paper24SharedVision.lean` | Algebraic shard for §4 metric probes and Theorems 3–4 (seven lemmas; certifies metric scaling and survivor-cohort centered-mean-zero, sharpens Proposition 2 sign) |
 | Working note | `../../working/shared-vision-coordinating-prior.md` | Discovery-history archive; not part of the published artifact |
 
 ## Position in the Series
@@ -59,3 +60,4 @@ Paper 24 is not a prerequisite for Paper 23 and vice versa; the two papers cross
 - v0.1 is a coherent first-pass draft, not yet whittled to DOI-ready shape. NOTES.md contains an explicit punch-list of next-pass branches (Proposition 1 theorem-ization, Theorem 2 Appendix A, probe-artifact reproducibility, Zenodo push).
 - Per external review (chatty, 2026-04-22): preprint-close but DOI-not-yet. The compression pass has landed; the claim surface may tighten further once Proposition 1 is promoted and Paper 23 is formally in place.
 - The scoping discipline in §5 is load-bearing: Agile/Scrum is presented as one worked example of a broader claim class, not as the target of the paper. The structural analysis is the contribution; the case study is illustrative.
+- **Pending sign correction (Proposition 2).** The Lean shard at `lean/LeanProofs/Paper24SharedVision.lean` (theorem `alias_shift_pairwise_difference`, 2026-04-28) gives the formal pairwise difference as $(\varphi_i - \varphi_j)\cdot V$; the paper's proposition statement currently has the opposite sign. The metric-scaling claims (absolute difference, variance) are unaffected — they consume `|·|` and `(·)²`, which kill the sign — but the proposition statement should be updated before Zenodo push.
