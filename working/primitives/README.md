@@ -21,19 +21,29 @@ If a candidate fails any of these, leave it as a candidate or fold it into anoth
 
 ## Statuses
 
-| Status | Meaning |
-|---|---|
-| **candidate** | Recurring shape noticed; primitive note may exist but framework-level use is not yet load-bearing. |
-| **working** | Actively cited across multiple papers/projects with stable vocabulary. |
-| **ratified** | Stable enough to live in `specifications/` as normative apparatus vocabulary. |
+| Status | Meaning | Promotion requires |
+|---|---|---|
+| **candidate** | Named shape with failure predicate, examples, and "do not confuse with." | (initial — written when the shape is noticed) |
+| **working** | Reused across multiple papers/projects without semantic drift. | Reuse — observed cross-use, not formal stress |
+| **ratified** | Formal object survives math / proof sketch / counterexample pressure; becomes normative apparatus vocabulary in `specifications/`. | Formal stress — survives contact with a hostile whiteboard |
 
-Promotion is lazy: a primitive becomes *working* by being used, not by being voted on.
+> **Working requires reuse. Ratified requires formal stress.**
+
+Promotion is lazy and earned, not voted on:
+
+- **candidate** is language-first — written when the shape is noticed
+- **working** is usage-first — earned by being cited across papers without drift
+- **ratified** is formal-first — earned by surviving math or counterexample pressure
+
+Don't ratify from vibes. Even very handsome vibes wearing a little theorem hat.
 
 ## Active primitive notes
 
 | Primitive | Status | Primary home | Notes |
 |---|---|---|---|
 | [Stale Binding](stale-binding.md) | candidate | P26 (empty-window theorem; headline exhibit) | Touches P23/P24/P25/P26/P27; corrected from DeepSeek's "unbounded" to base-rate-decay theorem shape |
+| [Design-Basis Erasure](design-basis-erasure.md) | candidate | no current paper home (cross-cutting) | Controller transferred without its hazard model; surfaces in P24 Agile case + SRE-as-shock-absorption + Governor→prose leakage. Diagnostic: *if removed in the imported domain, what specific failure would re-emerge?* Self-applies to this field-notebook |
+| [Trajectory-Actuator Gap](trajectory-actuator-gap.md) | candidate | no current paper home (likely Latent Capitalism / Chronopolitics; adjacencies to P22/P25/P26) | Observed historical trajectory mistaken for an available control surface. Sibling to Design-Basis Erasure (both "import without preserving load-bearing context"). Diagnostic: *which parts of the historical transition do we actually have standing/access/capacity to affect now?* Naming note: *Causal Standing Gap* rejected on collision with Governor-native *Standing* |
 
 ## Candidates (observed but not yet pulled out)
 
