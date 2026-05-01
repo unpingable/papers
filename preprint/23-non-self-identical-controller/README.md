@@ -1,8 +1,8 @@
 # Ops Is Control with a Non-Self-Identical Controller
 
 **Author:** James Beck
-**Status:** Preprint v0.1 (initial draft, 2026-04-21). Not yet pushed to Zenodo.
-**DOI:** Not yet assigned.
+**Status:** Preprint v1.0 (published on Zenodo 2026-04-24).
+**DOI:** [`10.5281/zenodo.19055415`](https://doi.org/10.5281/zenodo.19055415) (concept) — record: <https://zenodo.org/records/19715302>
 
 ## Abstract
 
@@ -52,5 +52,5 @@ Dynamical hinge between Paper 21 (observer integrity under procedural sociality)
 
 ## Status Notes
 
-- v0.1 is a coherent first-pass draft, not yet whittled to DOI-ready shape. §6 contains an explicit punch-list of next-pass branches (related-work expansion, real-data §4 hardening, governance-witness family extraction).
+- v1.0 published to Zenodo 2026-04-24. §6 carries a punch-list of next-pass branches (related-work expansion, real-data §4 hardening, governance-witness family extraction) — candidates for a future v1.x rather than v1.0 blockers.
 - The §1 operationalization paragraph following the bolded thesis is load-bearing: it disowns the metaphysical reading of "non-self-identical" and pins the math to controller-side identifiability. Independent flags from DeepSeek, chatty, and the Lean signature check converged on this as the single highest-priority defensibility patch.

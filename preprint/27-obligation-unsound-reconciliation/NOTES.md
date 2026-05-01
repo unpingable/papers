@@ -2,7 +2,11 @@
 
 ## Status
 
-**v0.0-scaffold — 2026-04-28.** Directory + outline + abstract stub + Lean skeleton. **No full prose draft yet.** No full proof development. No K8s implementation. Companion Lean skeleton at `~/git/lean/LeanProofs/Admissibility.lean`.
+**v0.0-scaffold — 2026-04-28.** Directory + outline + abstract stub + Lean skeleton. **No full prose draft yet.** No K8s implementation. Companion Lean skeleton at `~/git/lean/LeanProofs/Admissibility.lean`.
+
+**Update 2026-05-01.** Lean skeleton sorry-eliminated. Three theorems carry real proofs against the local `admissible` definition (`unaccounted_implies_inadmissible`, `short_receipt_horizon_inadmissible`, `open_finding_admissible_with_durability`); two remain `True`-placeholder discharges with deferred-real-statement docstrings (`masked_recovery_not_resolved`, `orphaned_causality_inadmissible`) — those need substrate-accusation and causal-binding predicates that P27 has not declared. House rule: kill the sorrys, do not let the sorrys design the constitution. File remains unwired by deliberate slot decision.
+
+**Update 2026-05-01.** Working note `working/admissible-recovery-semantics.md` exists. Corrective monotonicity / non-laundering recovery semantics with companion Lean module at `~/git/lean/LeanProofs/Admissibility/Corrective.lean`. Candidate fold-in target for P27 pending the seven-path audit (working note §8). Slot decision deferred until audit produces concrete laundering paths or rules them out cleanly.
 
 ## Scope discipline (queue-jumping guardrail)
 

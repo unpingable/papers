@@ -68,6 +68,7 @@ The cache loses testimonial advantage over guessing.
 - **Stale controller identity (P23)** — symptom-shaped sibling. P23's failure is the *controller* being non-self-identical. Stale binding is a more general statement about decisions bound to cached state, of which P23's hat-x reinitialization is one instance.
 - **Versioned semantics** (candidate primitive) — *truth didn't move; the interpreter moved.* Stale binding is "truth moved, decision didn't notice"; versioned semantics is "decision didn't change, but its meaning did." Different animal.
 - **External irreversibility** (candidate primitive) — different axis. External irreversibility is about consequence escaping the rollback boundary; stale binding is about commitment to a value that has already moved.
+- **Prose-State Inversion** (candidate primitive) — substrate-typed specialization. Stale Binding is substrate-general (caches, priors, hat-x estimates, proxies); Prose-State Inversion is the case where the cache is *prose specifically*, which lacks expiry/validator semantics by default. PSI inherits stale-binding pathology and adds the legibility-without-enforceability hazard. A typed cache with a stale TTL exhibits Stale Binding without PSI; a stale README claim picked up as authority exhibits both.
 
 ## Architectural rules
 

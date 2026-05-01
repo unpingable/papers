@@ -6,10 +6,18 @@ Paper-side view lives here. Module-side view lives in the Lean repo at `PAPER-MA
 
 This file is the bridge object. It tells you, for any paper, whether Lean has produced a warrant upgrade and what kind.
 
+## Source of truth and reader's entry point
+
+The Lean repository at `~/git/lean` (public: <https://github.com/unpingable/lean>) is the canonical formal source. Citations in this index point at module paths and theorem/declaration names within that repo, not at rendered HTML or doc-gen4 output. The Lean repo's own `README.md`, `PAPER-MAP.md`, `CLAIM-REGISTER.md`, and `WHAT-THE-LEAN-STACK-PROVES.md` together form the human-readable proof reader's portal — currently surfaced at <https://unpingable.github.io/lean/> via classic GitHub Pages rendering of the README. Generated doc-gen4 API HTML is not part of that portal today; if it is added later it will sit as a secondary reference layer beneath the human-readable index, not as the front door. Identifier-drift between this index and the Lean source is checked by `tools/formalization_crosswalk.py`.
+
 ## Stable identifiers
 
 - `P{N}` — preprint number (e.g., `P18`)
-- Lean modules in `~/git/lean/LeanProofs/` are `TaxonomyGraph.lean`, `BranchSelector.lean`, `PersistenceModel.lean`
+- Lean modules in `~/git/lean/LeanProofs/`:
+    - Paper-anchored: `TaxonomyGraph.lean`, `BranchSelector.lean`, `PersistenceModel.lean`, `OpsMasking.lean`, `Paper24SharedVision.lean`
+    - No paper anchor: `RepairOperator.lean`
+    - P27 skeleton (sorry-free as of 2026-05-01, intentionally unwired): `Admissibility.lean`
+    - Infrastructure substrate kernel: `Admissibility/Authority.lean`, `Admissibility/StateTransition.lean`, `Admissibility/Derivation.lean`, `Admissibility/Execution.lean`, `Admissibility/Corrective.lean`
 - Lean modules in `~/git/babyriver/lean/BabyRiver/` are kernel modules for Phase 1 population dynamics
 
 ## Cashout classes
@@ -88,7 +96,7 @@ Chatty's pushback (2026-04-19): calling a revision "v2.0" oversignals rupture wh
 - **Lean module:** `OpsMasking.lean` (case (i) only)
 - **Cashout classes:** 4 (bridge artifact) + 1 (certify), case (i) projection masking only
 - **Paper-ready:** Yes for the kernel theorem. The general lemma `trajectory_eq_of_projected_eq` and the paper-form corollary `projection_masking` are both verified and cited in the paper's Formalization Status block.
-- **Revision candidacy:** Not applicable; P23 is itself v0.1 (not yet pushed to Zenodo) and was drafted concurrently with the Lean module. Cases (ii) (measurement null-space, first-order over horizon $T$) and (iii) (local gain aliasing, $\varepsilon$-resolution) remain paper-level and are not yet Leaned. Formalizing case (ii) is on the §6 / NOTES.md punch-list.
+- **Revision candidacy:** P23 was drafted concurrently with the Lean module and went out at v1.0 with the formalization already in the Status block, so no retroactive revision is needed. v1.0 published to Zenodo 2026-04-24 (DOI `10.5281/zenodo.19055415`). Cases (ii) (measurement null-space, first-order over horizon $T$) and (iii) (local gain aliasing, $\varepsilon$-resolution) remain paper-level and are not yet Leaned. Formalizing case (ii) is on the §6 / NOTES.md punch-list and is a candidate v1.x fold-in.
 
 **What Lean underwrites:**
 
@@ -171,6 +179,30 @@ These are not "never" candidates — just not current. If the Lean stack grows d
 
 `~/git/babyriver/lean/BabyRiver/*.lean` — state preservation invariants, Kaplan-Meier survival monotonicity, log-rank bookkeeping. Sits outside the current 22-paper scope. Candidate warrant for a future paper on biological/population-level Δt dynamics (not yet written). Not a current-paper revision question.
 
+## Infrastructure substrate (no paper anchor)
+
+### Admissibility kernel — Authority + StateTransition + Derivation + Execution + Corrective
+
+- **Lean modules:** `LeanProofs/Admissibility/Authority.lean`, `StateTransition.lean`, `Derivation.lean`, `Execution.lean` (Layers 0–4, 2026-04-30), `Corrective.lean` (Layer 5, 2026-05-01). All under namespace `Admissibility.*`, all wired into `LeanProofs.lean` root, all `sorry`-free.
+- **Cashout class:** N/A — infrastructure substrate, not paper-claim cashout
+- **Paper-ready:** N/A
+- **Revision candidacy:** N/A — no paper anchored to this kernel yet
+- **Companion working note:** `working/admissible-recovery-semantics.md` (2026-05-01). Corrective monotonicity / non-laundering recovery semantics. Slot decision (P27 fold-in vs standalone P28) deferred pending the seven-path audit named in §8 of the working note.
+
+**What Lean underwrites:**
+
+- Verdict algebra (`Authority.lean`): `authorized ⇔ admissible basis ∧ resolved precedence ∧ standing`. Pure gate — direct parameters, no half-evaluated `Transition` struct.
+- Store-partitioned mutation (`StateTransition.lean`): governance state split into `PolicyStore` / `EvidenceStore` / `GapStore` / `RevocationStore`. Only `Step.amendPolicy` mutates `PolicyStore`. `StepAllowed` predicate gates raw mutation by per-step standing predicates.
+- Read-side bridge (`Derivation.lean`): `decideAuthority : GovState × Actor × AuthorityClaim → AuthorityVerdict` composes derivations through the verdict gate. Bundled-structure design (`BasisDerivation` etc. carry function + spec obligations). One revocation-shaped safety consequence: `revoked_basis_never_authorized`.
+- Closed bridge (`Execution.lean`): `AuthorizedStep` requires both mutation standing and claim verdict by construction. Load-bearing theorem: `revoked_basis_cannot_be_authorized_step` — a revoked basis cannot bind at the mutation layer.
+- Corrective monotonicity (`Corrective.lean`): `classify : Step → StepClassification` (corrective / forward / neutral) is total — adding a new `Step` constructor without an arm is a Lean non-exhaustive-match error, which is the enforcement surface against silently-corrective-and-authority-granting transitions. `WeaklyLessPermissive env Γ' Γ` is the preorder; `CorrectiveMonotone env` carries the proof obligation as a structure field (no global axiom). `RecoveryEnv` bundles env + obligation; recovery-facing APIs take `RecoveryEnv`, not raw `DerivationEnv` — the kernel makes monotonicity expressible, the type signature makes it operationally required at the recovery boundary. Load-bearing corollary: `corrective_no_authority_laundering` rules out same-basis laundering.
+
+The kernel is **Governor-neutral**: it pins the algebraic skeleton so a concrete Governor (`agent_gov`) instantiation can cite "no laundering" with a formal warrant rather than a slogan. Concrete `claimForStep` resolvers and `AuthorityClaim` schema commitments are deferred to Governor's instantiation, not the kernel itself; pre-committing the resolver here would be ontology bait.
+
+Existing P27 `Admissibility.lean` (namespace `P27`) sits alongside but independent: P27 is post-transition obligation accounting; the kernel is pre-action authorization. Complementary, not duplicate. As of 2026-05-01 the P27 skeleton is sorry-free (three real proofs against the local `admissible` definition; two `True`-placeholder discharges with deferred-real-statement docstrings pending substrate-accusation / causal-binding predicates). Intentionally unwired — sorry-elimination does not imply wiring. The kernel does not subsume P27 and P27 does not cover the kernel's authority-gate question.
+
+See `LeanProofs/Admissibility/README.md` in the Lean repo for the five-module breakdown and an explicit "what it warrants vs what it does not warrant" list.
+
 ## Priority ordering if revisions proceed
 
 1. **P22** — pre-release incorporation; cheapest to fold in before v1.0 ships.
@@ -185,3 +217,5 @@ These are not "never" candidates — just not current. If the Lean stack grows d
 - **2026-04-20** — P22 formalization fold-in complete in local source (v1.1 candidate, not yet pushed to Zenodo). §6.4 paragraph added, README created, NOTES.md changelog entry added. Reclassified P22 cashout to drop the too-forced `TaxonomyGraph.lean` coupling-family tie-in; kept `PersistenceModel.lean` `persistence_normalizes` axiom as the primary anchor plus three-terminal-families as structural resonance. Corrected earlier working-memory assumption that P22 was still pre-release — it has been on Zenodo since March 19, 2026.
 - **2026-04-20** — P18 Appendix A drafted in local source (v1.1 candidate, not yet pushed to Zenodo). Appendix structure: A.1–A.6 per-claim entries in chatty's four-field format (formal object / prose claim sharpened / what it does not prove / pointer), plus A.7 (relation to the paper's framework) and A.8 (scope fences — pre-breach dynamics, observer-integrity, tier escalation, empirical calibration not covered). Abstract, introduction, and conclusion left unchanged; v1.2 (abstract reframe) deferred.
 - **2026-04-22** — Added P23 entry under Tier 2 (`OpsMasking.lean`, case (i) projection masking, bridge artifact + certify; cases (ii) and (iii) deferred). Added P24 entry under new "Sim-only cashout" section — no Lean module yet, only `shared_vision.py` companion sim; Proposition 1 (no-scalar-free-lunch) flagged as the single highest-value Lean target. Both papers are v0.1, not yet pushed to Zenodo. Mirrors the `PAPER-MAP.md` update in the Lean repo.
+- **2026-04-30** — Added "Infrastructure substrate (no paper anchor)" section for the Admissibility kernel (four modules: `Authority.lean`, `StateTransition.lean`, `Derivation.lean`, `Execution.lean`). Kernel is Governor-neutral; substrate for future Governor (`agent_gov`) implementation citation, not paper-claim cashout. All four wired into `LeanProofs.lean` root. Updated "Stable identifiers" to reflect the full module set (paper-anchored, no-paper-anchor, P27 skeleton, infrastructure substrate). Mirrors `PAPER-MAP.md` update in the Lean repo.
+- **2026-05-01** — Added `Corrective.lean` as fifth Admissibility kernel module (Layer 5: corrective monotonicity). Pinned thesis: corrective recovery transitions cannot increase the authorized action set; authority-increasing recovery requires a separately classified forward transition with fresh basis. `classify : Step → StepClassification` is the enforcement surface; `RecoveryEnv` bundles `DerivationEnv` with a `CorrectiveMonotone` witness and is the type-level gate at which monotonicity becomes operationally required. Companion working note `working/admissible-recovery-semantics.md` (slot decision deferred between P27 fold-in and standalone P28 pending the seven-path audit named in working-note §8). Same-day, P27 skeleton (`Admissibility.lean`) sorry-eliminated: three real proofs against the local `admissible` definition (`unaccounted_implies_inadmissible`, `short_receipt_horizon_inadmissible`, `open_finding_admissible_with_durability`) and two `True`-placeholder discharges with deferred-real-statement docstrings (pending substrate-accusation / causal-binding predicates). House rule: kill the sorrys, do not let the sorrys design the constitution; sorry-elimination does not imply wiring. Mirrors `PAPER-MAP.md` update in the Lean repo.

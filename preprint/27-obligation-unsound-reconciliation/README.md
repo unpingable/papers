@@ -27,8 +27,9 @@ P27 *adds*: transition admissibility predicate, obligation accounting (preserved
 
 | Artifact | Location | Role |
 | --- | --- | --- |
-| Lean skeleton | `~/git/lean/LeanProofs/Admissibility.lean` | Obligation/Outcome/Accounting algebra; theorem statements with deferred proofs |
-| Conversation precursor | (multi-model riff 2026-04-28) | Kernel produced via DeepSeek/Gemini/Claude/chattY synthesis; no working/ note yet |
+| Lean skeleton | `~/git/lean/LeanProofs/Admissibility.lean` | Obligation/Outcome/Accounting algebra; sorry-eliminated 2026-05-01 (three real proofs against `admissible`; two `True`-placeholder discharges pending substrate-accusation / causal-binding vocabulary). Unwired by deliberate slot decision |
+| Working note | `working/admissible-recovery-semantics.md` | Corrective monotonicity / non-laundering recovery semantics. Candidate fold-in target for P27 pending seven-path audit; alternatively standalone P28 |
+| Conversation precursor | (multi-model riff 2026-04-28) | Kernel produced via DeepSeek/Gemini/Claude/chattY synthesis |
 
 ## Files
 
@@ -39,4 +40,4 @@ P27 *adds*: transition admissibility predicate, obligation accounting (preserved
 | `NOTES.md` | Scope discipline, drafting plan, lit-differential sketch |
 | `README.md` | This file |
 
-This is a claim container, not a draft. No prose draft yet. Lean skeleton is sorry-only.
+This is a claim container, not a draft. No prose draft yet. Lean skeleton is sorry-free as of 2026-05-01 (three real proofs + two named-debt placeholders); zero sorry does not mean zero debt — see `working/admissible-recovery-semantics.md` and `~/git/lean/LeanProofs/Admissibility.lean` for the deferred vocabulary.

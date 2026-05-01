@@ -6,7 +6,7 @@
 
 **One-line slide form:** *controller-correct, operator-unsound.*
 
-**Status:** scaffolded — abstract + section outline + Lean skeleton committed; no prose draft, no proof development, no Kubernetes implementation. Queue-jumped per dependency-discovery argument (P27 supplies the constructive endpoint the P22–P26 negative spine demands).
+**Status:** scaffolded — abstract + section outline + Lean skeleton committed; no prose draft, no Kubernetes implementation. Lean skeleton sorry-free as of 2026-05-01 (three real proofs against the local `admissible` definition; two theorems remain `True`-placeholder pending substrate-accusation / causal-binding predicates that have not been declared). Queue-jumped per dependency-discovery argument (P27 supplies the constructive endpoint the P22–P26 negative spine demands).
 
 **Imports:**
 - **Paper 25** (projection α: B → K; observability null space). P27 specializes B = substrate, K = control-plane visible state. Argues obligations live in or across the null space when not first-class control-plane objects.
@@ -37,6 +37,9 @@
 - Paper 26. P27 imports horizons; P26's full temporal-seam argument stays in P26.
 - SRE essay (`working/sre-as-shock-absorption.md`). Methodology critique on a different axis (P23-companion lane). Do not load into P27 introduction.
 - "Self-healing systems" and "Kubernetes operator" literature. Adjacent but distinct: those describe recovery; P27 audits recovery transitions for obligation soundness.
+
+**Candidate companion / fold-in target:**
+- `working/admissible-recovery-semantics.md`. Corrective monotonicity / non-laundering recovery semantics. Same animal as P27's "controller-correct, operator-unsound" by spine: post-corrective state may be machine-correct but operator-unsound. Slot decision deferred pending the seven-path audit named in §8 of the working note. If two or more candidates yield concrete laundering paths in agent_gov, draft as standalone P28; if all rule out, fold into P27 as a formal-recovery-discipline section. Either way the Lean kernel reference in `~/git/lean/LeanProofs/Admissibility/Corrective.lean` stands.
 
 ## Section outline
 
