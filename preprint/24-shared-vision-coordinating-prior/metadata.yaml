@@ -7,6 +7,8 @@ paper_number: 24
 version: "1.0"
 status: "preprint"
 license: "CC-BY-4.0"
+doi: "10.5281/zenodo.19861995"
+zenodo_url: "https://zenodo.org/records/19861996"
 keywords:
   - multi-agent coordination
   - shared prior
@@ -28,8 +30,8 @@ abstract: >
   rank-symmetric median) maps balanced bias-split witness populations
   to zero; the shared prior is therefore frozen by the arithmetic of the
   aggregation rule, not by any procedural refusal to update. Second,
-  public alignment to a shared prior is alias-compatible with arbitrary
-  internal compositional divergence under stationary conditions, with
+  public alignment to a shared prior is alias-compatible with hidden
+  local-gradient compositional divergence under stationary conditions, with
   the divergence surfacing only under strategic shift. Third, witness
   inclusion correlated with prior-alignment defeats every aggregator —
   including shape-preserving receipt-lineage architectures — by removing

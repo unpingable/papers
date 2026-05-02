@@ -56,7 +56,7 @@ Numbering reflects the order in which a claim was named, not relative maturity o
 
 ### Controller Continuity and Admissibility
 - *Ops Is Control with a Non-Self-Identical Controller* (2026)
-- *Shared Vision as Coordinating Prior: Aggregation-Layer Masking and the Witness-Filter Pathology* (2026) — **drafted**
+- *Shared Vision as Coordinating Prior: Aggregation-Layer Masking and the Witness-Filter Pathology* (2026) — **v1.0 (2026-04-28)**
 - *Epistemic Border Control as Proxy Regulation Under Partial Observability* (2026) — **scaffold**
 - *Premature Commitment and Belated Consequence as Dual Orientations of Δt Detachment* (2026) — **scaffold**
 - *Ephemerality Is a Transition Property: Obligation-Unsound Reconciliation in Kubernetes and Other Control Loops* (2026) — **scaffold**

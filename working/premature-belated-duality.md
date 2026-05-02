@@ -155,3 +155,114 @@ Each case requires (a) a measured premature-commit rate or latency, (b) a measur
 ---
 
 *Next action: work §6 against one concrete case end-to-end. FDA or pre-registration most tractable. If redistribution shows up in one, try the rest. If redistribution shows up in none, the paper does not exist and this becomes a §-insert.*
+
+---
+
+## Chatty paper-shaping pass — 2026-05-01
+
+Capture of chatty's structural pass on P26, brought in alongside the P25 v0.2 work. Held here so it isn't lost; not yet folded into the spine. Where this pass disagrees with the existing note (especially around the conservation-law framing), the note above is the standing record and the pass below is a candidate revision to be evaluated.
+
+### Verdict
+
+P26 is *less ready than P25 but potentially more important*. P25 has a crisp negative claim (unsensed target → proxy substitution); P26 has a candidate formalism that earns its keep only if the **empty-window condition** does work that prose would otherwise blur. The anti-inflation fuse named in the working note above (parts already exist in corpus; what's new is duality + two-curve formalism + empty-window condition) is the right discipline.
+
+### The center of the paper
+
+The fresh contribution is *not* "sometimes people act too early and sometimes they act too late" (chatty: "sociology with a wristwatch"). The fresh contribution is:
+
+> **Some binding events have no valid time at all because admissibility matures only after consequence viability has decayed.**
+
+Keeper line:
+
+> **Some decisions are not mishandled inside the window. The window never exists.**
+
+That is what makes P26 a paper rather than a §-insert.
+
+### Stricter promotion discipline than P25
+
+P26 must establish three things to land as a paper:
+
+1. **Premature and belated are formally dual, not just rhetorically paired.** The duality is load-bearing only if $m(t)$ and $c(t)$ let you distinguish cases prose would blur. The §3 working-note formalism already names that as the risk.
+2. **Empty-window is the promotion gate.** $W = \varnothing$ is the contribution. Not "they acted too early." Not "they acted too late." But: *the system architecture made admissible consequential action impossible.* This is the difference between procedural failure and temporal impossibility result.
+3. **Power asymmetry remains secondary.** *Power buys time twice* is good but possibly too good — risks becoming a feral essay and eating the paper. Keep the four moves (compress own $m(t)$; preserve own $c(t)$; slow others' $m(t)$; accelerate others' $c(t)$) as a formal extension, not the main character. Chronopolitics is the book version; the paper is the formal claim.
+
+### The landing test
+
+For each candidate worked case, force it through this grid:
+
+- **Type A — premature.** A future valid window existed; actor bound before $m(t)$ matured. Normal premature-commitment case.
+- **Type B — belated.** An earlier valid window existed; actor bound after $c(t)$ decayed. Normal delay / stale-action pathology.
+- **Type C — empty window.** No time existed when both conditions held. **This is the paper.**
+
+If a case cannot show type C, it may still support P26 but does not promote it.
+
+### Recommended skeleton (chatty 2026-05-01)
+
+```
+1. Thesis
+2. Model: Maturity, Consequence, and Binding Windows
+3. Premature and Belated Failure Modes
+4. Empty Binding Windows
+5. Curve Shape vs Operating Point
+6. Asymmetric Power: Buying Time Twice
+7. Relation to Prior Papers
+   7.1 Paper 15: Premature Commitment
+   7.2 Paper 22: Layer Failure vs Temporal Orientation
+   7.3 Paper 25: Spatial Substitution vs Temporal Detachment
+8. Worked Cases
+9. Open Problems
+References
+```
+
+### Suggested next artifact: `CASE_TESTS.md`
+
+Before drafting prose, build a small `CASE_TESTS.md` (in `working/` or in the P26 scaffold directory). Per-case template:
+
+```markdown
+## Case name
+
+### Binding event
+What is being bound?
+
+### m(t): admissibility maturity
+What has to become true before binding is legitimate/admissible?
+
+### c(t): consequence viability
+What must still be true for binding to matter?
+
+### thresholds
+theta_m:
+theta_c:
+
+### curve relation
+- valid overlap exists?
+- premature-only?
+- belated-only?
+- empty-window?
+
+### why prose would blur this
+What would ordinary narrative call this?
+
+### what P26 uniquely explains
+What does the m(t)/c(t) formalism reveal?
+```
+
+Three cases max in the first pass: one clean premature, one clean belated, one empty-window. If the empty-window case survives, P26 becomes real.
+
+### Position relative to the series
+
+- **P22:** asks *which layer* fails (gauge / clock / estimation / actuation).
+- **P25:** spatial substitution under observability asymmetry.
+- **P26:** temporal seam failure under maturity / consequence detachment — *which temporal direction the gap opens.*
+
+P26 is temporal sibling to P25's spatial result. The README crosswalk in `preprint/26-premature-belated-duality/README.md` already states this position cleanly.
+
+### Where this disagrees with the working note above
+
+The chatty pass treats the conservation-law framing (§6 of the working note) as secondary to the empty-window condition. The working note above places conservation as the §6 promotion gate; chatty places empty-window as the gate. These are not strictly incompatible — empty-window failure is one shape conservation could take — but the foregrounding is different. Resolution deferred to the next pass on §6 case-testing: whichever framing produces concrete cases that prose would otherwise blur earns the gate slot.
+
+### Discipline reminder
+
+The paper should be *almost annoyingly narrow*: **when can a binding act be both admissible and consequential?** If the answer is "never" (for some non-trivial cases), that's P26.
+
+P26's failure mode is bloat by importance. The way to make it land is to refuse the broad version.

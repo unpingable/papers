@@ -1,8 +1,8 @@
 # Shared Vision as Coordinating Prior: Aggregation-Layer Masking and the Witness-Filter Pathology
 
 **Author:** James Beck
-**Status:** Preprint v1.0 (2026-04-28). Zenodo draft awaiting review (deposit 19861996); not yet public.
-**DOI:** Reserved `10.5281/zenodo.19861996` (pending publish; concept DOI may be reassigned by Zenodo on publish).
+**Status:** Preprint v1.0 (2026-04-28). Published on Zenodo (record 19861996).
+**DOI:** `10.5281/zenodo.19861996` (version 1.0). Concept DOI: `10.5281/zenodo.19861995` (resolves to latest version).
 
 ## Abstract
 
@@ -57,7 +57,6 @@ Paper 24 is not a prerequisite for Paper 23 and vice versa; the two papers cross
 
 ## Status Notes
 
-- v1.0 (2026-04-28). Zenodo deposit 19861996 awaiting review (DOI `10.5281/zenodo.19861996` reserved, not yet public). NOTES.md carries a punch-list of next-pass branches (Proposition 1 theorem-ization, Theorem 2 Appendix A, probe-artifact reproducibility) as v1.x candidates.
+- v1.0 (2026-04-28). Published on Zenodo (record 19861996, DOI `10.5281/zenodo.19861996`; concept DOI `10.5281/zenodo.19861995`). NOTES.md carries a punch-list of next-pass branches (Proposition 1 theorem-ization, probe-artifact reproducibility) as v1.x candidates.
 - Per external review (chatty, 2026-04-22): preprint-close but DOI-not-yet. The compression pass has landed; the claim surface may tighten further once Proposition 1 is promoted and Paper 23 is formally in place.
 - The scoping discipline in §5 is load-bearing: Agile/Scrum is presented as one worked example of a broader claim class, not as the target of the paper. The structural analysis is the contribution; the case study is illustrative.
-- **Pending sign correction (Proposition 2).** The Lean shard at `lean/LeanProofs/Paper24SharedVision.lean` (theorem `alias_shift_pairwise_difference`, 2026-04-28) gives the formal pairwise difference as $(\varphi_i - \varphi_j)\cdot V$; the paper's proposition statement currently has the opposite sign. The metric-scaling claims (absolute difference, variance) are unaffected — they consume `|·|` and `(·)²`, which kill the sign — but the proposition statement should be updated before Zenodo push.

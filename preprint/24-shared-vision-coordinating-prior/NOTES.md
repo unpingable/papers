@@ -2,7 +2,7 @@
 
 ## Status
 
-**v0.1 — 2026-04-22.** Promoted from working-note seed to preprint artifact. Local source only; Zenodo push deferred until after cold reread and any Paper 23 alignment pass. Preprint close, DOI not-yet (per chatty's review, 2026-04-22): the compression pass has landed but the claim surface may tighten another notch once Paper 23 is formally in place and once Proposition 1 is promoted to theorem.
+**v1.0 — 2026-04-28.** Promoted from working-note seed to preprint artifact and published on Zenodo (record 19861996; version DOI `10.5281/zenodo.19861996`; concept DOI `10.5281/zenodo.19861995`). Pre-publish punch list (per chatty's review, 2026-04-22, plus a 2026-05-01 cold-read pass): compression pass landed; Theorem 4 wording tightened from "stable fixed point" to "absorbing fixed-point family"; abstract softened from "arbitrary internal compositional divergence" to "hidden local-gradient compositional divergence" to match Proposition 2's scope; Theorem 2 → Proposition 2 demotion (codex review) reflected in the four-result stack. The claim surface may tighten further once Proposition 1 is promoted to theorem.
 
 **Next branches, rough cost order:**
 
@@ -18,7 +18,7 @@ The paper's spine is a three-layer pathology plus a temporal-persistence result,
 
 - **Theorem 1 — Aggregation-layer masking (exact under stated hypotheses).** First-moment aggregator + balanced bias-split ⇒ V-freeze in expectation. Named: *Mean-Aggregation Masking* in the body. Proved in §3.2.
 - **Proposition 1 — No-scalar-free-lunch (probe-backed conjecture).** No scalar aggregator is simultaneously freeze-free on balanced bias-splits and stable on asymmetric populations. Four-aggregator probe in §4.1 exhibits every tested aggregator satisfying (P1) ↔ violating (P2). Formal proof deferred (§8, item 1).
-- **Theorem 2 — Organizational alias-compatibility (sketch; Appendix A deferred).** Public action-level alignment is independent of $\varphi$-spread under stationary $V$; divergence surfaces proportionally under strategic shift. Structurally parallel to Paper 23 §3.3 case (i), lifted one scale.
+- **Proposition 2 — Organizational alias-compatibility (scope-conditional).** Public action-level alignment is independent of $\varphi$-spread under stationary $V$; divergence surfaces proportionally under strategic shift. Structurally parallel to Paper 23 §3.3 case (i), lifted one scale.
 - **Theorem 3 — Witness-filter (exact under stated hypotheses).** Alignment-correlated filter + 1-Lipschitz aggregator ⇒ update bound $|V_{t+1} - V_t| \leq \eta \tau$ regardless of aggregator. Corollary: shape-preserving aggregation is necessary but not sufficient.
 - **Theorem 4 — Persistence of dissident-filter effects (exact under stated hypotheses).** One-shot filter + non-zero residual bias ⇒ fixed point with plant-error = $|\bar{b}_S|$, bounded below by filter threshold, no self-correction without exogenous witness reintroduction.
 
@@ -71,7 +71,6 @@ External independent reviews (codex, gemini-cli) prompted the following tighteni
 ## Open / deferred
 
 - **Proposition 1 theorem-ization.** Highest-value next item. See §8, item 1.
-- **Theorem 2 Appendix A.** Full alias-compatibility computation currently deferred.
 - **Case (iii)-style extension.** The framework's aggregation-layer pathology has three sufficient conditions (first-moment + balanced bias-split; Lipschitz aggregator + alignment-filter; one-shot filter + residual bias). A fourth sufficient condition — aggregator linearity in noise at the null space of witness second-order structure — is conjectured but not developed. Exploratory only.
 - **Vector $V_t$.** Sketched in working note. Left for sequel.
 - **Binding problem.** Who authors $V_t$, under what legitimacy. Connects to admissibility-family work.

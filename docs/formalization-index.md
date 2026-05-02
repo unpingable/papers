@@ -159,7 +159,7 @@ Chatty's pushback (2026-04-19): calling a revision "v2.0" oversignals rupture wh
 - **Lean module:** None yet. Companion simulation `shared_vision.py` in the Lean repo provides the §4 probe artifacts (aggregation-boundary, alias-compatibility, filter).
 - **Paper-ready (sim side):** Yes. The §4 probes are reproducible and the §3 theorems (T1, T3, T4) have proofs / proof sketches in the paper that do not require Lean for soundness.
 - **Formalization gap:** Proposition 1 (no-scalar-free-lunch) is currently probe-backed conjecture. Promoting it to theorem requires fixing the scalar-aggregator class precisely (continuous? Lipschitz? permutation-invariant?) and exhibiting the structural trade-off between freeze-freedom and stability within that class. This is the single highest-value Lean target for P24, flagged in P24 §8 item 1 and in `preprint/24-shared-vision-coordinating-prior/NOTES.md`.
-- **Revision candidacy:** N/A; P24 is v0.1 (not yet pushed to Zenodo). A future v0.2 fold-in on Proposition 1 would parallel the P18 Appendix A pattern.
+- **Revision candidacy:** P24 is v1.0 (published 2026-04-28; concept DOI `10.5281/zenodo.19861995`, version DOI `10.5281/zenodo.19861996`). A future v1.1 fold-in on Proposition 1 would parallel the P18 Appendix A / P22 Lean fold-in patterns.
 
 ## No clean cashout
 
