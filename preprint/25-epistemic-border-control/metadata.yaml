@@ -1,11 +1,11 @@
 title: "Epistemic Border Control as Proxy Regulation Under Partial Observability"
 author: "James Beck"
 affiliation: "Independent Researcher"
-date: 2026-04-28
+date: 2026-05-01
 series: "delta-t-framework"
 paper_number: 25
-version: "0.0-stub"
-status: "candidate / scaffold"
+version: "0.1-draft"
+status: "preprint draft"
 license: "CC-BY-4.0"
 keywords:
   - partial observability
@@ -17,7 +17,7 @@ keywords:
   - performative prediction
   - cybernetic regulation
 abstract: >
-  STUB. Discourse communities and moderation systems operate as feedback
+  Discourse communities and moderation systems operate as feedback
   controllers attempting to regulate epistemic risk under partial
   observability. When the underlying target — truth, claim quality —
   has no real-time sensor, while reputational contamination and

@@ -1,7 +1,7 @@
 # Paper 25: Epistemic Border Control as Proxy Regulation Under Partial Observability
 
 **Author:** James Beck
-**Status:** Candidate / scaffold (2026-04-28). Working note: `working/epistemic-border-control.md`.
+**Status:** Preprint v0.1 draft (2026-05-01). Canonical draft: `epistemic_border_control.md`.
 **DOI:** Not yet assigned.
 
 ## Center of gravity
@@ -16,9 +16,9 @@ P25 sits in the escalating-negative-results sequence P22→P26 as the *spatial* 
 
 | File | Description |
 | --- | --- |
-| `metadata.yaml` | Series metadata + abstract stub |
+| `epistemic_border_control.md` | Canonical preprint v0.1 draft |
+| `metadata.yaml` | Series metadata + abstract |
 | `CANDIDATES.md` | Claim container (status, imports, dependencies, risks) |
-| `NOTES.md` | Gate items, loose fragments, working-note pointer |
+| `NOTES.md` | Gate items, loose fragments |
+| `archive/` | Superseded working-note body (do not edit) |
 | `README.md` | This file |
-
-This is a claim container, not a draft. Substantive content lives in `working/epistemic-border-control.md`.
