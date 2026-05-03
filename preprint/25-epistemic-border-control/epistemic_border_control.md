@@ -168,6 +168,14 @@ Let $N$ homogeneous agents observe the same latent state $x_t = [T_t, C_t]^\top$
 
 The core line, in one sentence: *aggregation improves SNR; it does not rotate the observability subspace.*
 
+**Subspace, not vector.** A technical caveat is worth making explicit. When the smallest singular value of $O_T$ is degenerate, there is no distinguished "least observable direction" $v_\text{min}$; the invariant claim of the algebraic argument is about the unobservable subspace, not a privileged vector. Concretely, homogeneous-witness replication scales the Gramian,
+
+$$
+(\mathbf{1}_N \otimes O_T)^\top (\mathbf{1}_N \otimes O_T) = N \cdot O_T^\top O_T,
+$$
+
+preserving its eigenspaces (and in particular its kernel) and multiplying its eigenvalues by $N$. Aggregation improves weight along already-observed directions; it does not create epistemic access to a direction outside the observation subspace. The kernel-preservation and Gramian-scaling claims are recorded as Lean theorems in `LeanProofs/Paper25EpistemicBorderControl.lean` in the companion proofs repository.
+
 ### Scope condition for the algebraic argument
 
 Homogeneity of the measurement map across agents is load-bearing. Heterogeneous agents with genuinely different measurement maps $C_\text{obs}^{(i)}$ — for instance, a privileged witness with access to $T$ through a different sensor channel — *can* rotate the effective observability subspace, and the sibling claim does not extend to that case without further argument. The heterogeneous-agent extension is a Paper 24/25 follow-on object — *what cohort-witness composition restores $T$-observability?* — not part of the sibling-vs-nested decision.
