@@ -27,3 +27,37 @@ P24 §7.6 names the masking trilogy explicitly: P23 (identifiability masking) / 
 Substantive content: `working/epistemic-border-control.md`.
 
 Sim artifacts: `~/git/lean/paper25_substitution.py`, plus `paper25_*.png` in `~/git/lean/`.
+
+## Series-spine connections and deferred targets
+
+Items below were scavenged from the superseded working note (archived 2026-05-03 at `archive/epistemic-border-control.working-superseded-2026-05-03.md`). Status: **preserved for future review, not promoted into the draft.** Promotion into preprint body, references, or §8 expansion is a separate decision, deliberate, preferably after P27 stabilizes.
+
+### Latent Capitalism substrate connection
+
+The data-center example is Latent-Capitalism-adjacent: opaque procurement, captured tax abatements, infrastructure burden shifted onto public commons. The substitution mechanism names a specific *defense* by which enclosure resists scrutiny — make the scrutiny itself reputationally contaminated, so the regulator switches from regulating enclosure to regulating the discourse about enclosure. The rhetoric of "truth-tracking" continues; the controlled variable is now reputational contamination.
+
+Shorthand: **contamination-as-enclosure-defense.** Not promoted into §7 — adding it there risks making the data-center example the paper's emotional center, which `CANDIDATES.md` already flags as a scope risk. Belongs as a series-spine / Latent Capitalism bridge for future writing.
+
+### §8 edit pin — receipt-lineage as architectural enforcement
+
+The working note articulated the architectural escape sharper than §8 currently does:
+
+> Admissibility gates as refusing to collapse $T_t$ and $R_t$ into a single $Y_t$ — keeping separate accounting for object-level claim quality, reputational risk, institutional opacity, and contamination state. Receipt-lineage as the architectural enforcement that these states cannot be silently unified.
+
+§8's third bullet ("Witness-cohort heterogeneity") and the closing paragraph touch the idea but do not name *receipt-lineage as the architectural enforcement* — the bridge to Governor's mechanical layer. Folding into §8 is content promotion (imports Governor machinery into P25); deferred until after P27 stabilizes its receipt-durability vocabulary.
+
+### Deferred literature targets (beyond v0.1 references)
+
+Beyond Perdomo / Pagan / Sprenger / Dwork / Manheim-Garrabrant cited in §6, future drafts should also survey:
+
+- Epistemic network effects
+- Social epistemology of moderation
+- Goodhart variants beyond Manheim-Garrabrant 2018
+- Credibility-weighting schemes
+- Misinformation-diffusion models
+
+Chatty's first-pass spike found the four primary citations; the broader review is deferred work, not gating v0.1.
+
+### ICU contrast case (sibling instantiation candidate)
+
+Paper 23's deferred ICU case may apply here too — a domain where target-substitution is especially stark and ethical stakes are high. Status: possible sibling instantiation, not planned §7 expansion. High-stakes examples have gravity wells.
