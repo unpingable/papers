@@ -1,23 +1,49 @@
 # Primitives — Field Notebook
 
-This directory records reusable theoretical shapes — *primitives* — that surface across multiple papers in the Δt-framework series without belonging wholly to any one of them. **It is a field notebook, not a ratified registry.** Inclusion here does not mean ratification, doctrinal status, or commitment to a future paper.
+This directory records reusable theoretical shapes that surface across multiple papers in the Δt-framework series without belonging wholly to any one of them. **It is a field notebook, not a ratified registry.** Inclusion here does not mean ratification, doctrinal status, or commitment to a future paper.
+
+> **Use the map to locate judgment. Do not let the map perform judgment.**
+
+Entries here are not all the same kind of object. They may be primitives, candidate primitives, motifs, coordinates, transitions, attractors, or boundary conditions (see *Kinds of objects* below). The purpose of the directory is **diagnostic orientation** — to help identify what kind of failure is being observed, what axes are involved, what role conversions are occurring, where admissibility or authority may break.
+
+It is **not a state-space machine**. The machinery is used to *explain* candidates, not *manufacture* them. *The state space is diagnostic, not generative.*
 
 ## Why this exists
 
 Theory work needs earlier naming than code does. By the time five papers have each localized the same shape under different vocabulary ("cache invalidation," "stale aggregate," "proxy drift," "belated invalidation," "authority decay"), the consolidation cost is higher than naming-it-early-as-candidate ever was. The point of the notebook is to **prevent conceptual drift before it hardens into five near-duplicates that later need reconciliation.**
 
+## Kinds of objects
+
+Entries may belong to any of the following kinds, with different metabolic loads. Naming the kind is part of writing the entry:
+
+| Kind | What it names | Example |
+|---|---|---|
+| **Axis** | A dimension along which failures vary | observability, controllability, authority, time, scope, evidence-role, corpus-role |
+| **Transition** | A role/state conversion | detector → generator; receipt → decision; proxy → target; certificate → authority |
+| **Attractor** | A recurring basin systems fall into | metric displacement, compliance theater, taxonomy autocatalysis |
+| **Boundary condition** | Where a claim stops being valid | stale binding, design-basis erasure, scope bleed |
+| **Coordinate / motif / instance** | Local expression — real but not canon-worthy | a specific failure case located on existing axes; lives as a note under the relevant parent rather than minting its own primitive |
+
+The "Active primitive notes" table below predates this distinction. Existing entries are **not retroactively reclassified** — the new ontology gets voting rights forward, not emergency powers over the archive. Future entries should declare their kind.
+
 ## What counts as a primitive
 
-A primitive is allowed only if it names a reusable failure geometry that:
+A primitive earns canonization only if it satisfies all of the following:
 
 1. Appears in at least three papers/projects (or has clear potential to).
 2. Has a small formal object (definition, predicate, or relation).
-3. Has a recognizable failure predicate.
-4. Prevents duplicate terminology across papers.
-5. Does not merely rename a paper's central thesis.
-6. Can be cited without dragging the whole paper with it.
+3. Has a recognizable **failure predicate**.
+4. Has a clear **non-case** — a situation that resembles it but isn't.
+5. Has a **distinctness test** against neighboring primitives ("Do not confuse with X because…").
+6. Has at least two domains where it **changes diagnosis or admissible intervention**.
+7. Names an **axis, transition, attractor, or boundary condition** — not merely a coordinate produced by existing machinery.
+8. Prevents duplicate terminology across papers.
+9. Does not merely rename a paper's central thesis.
+10. Can be cited without dragging the whole paper with it.
 
-If a candidate fails any of these, leave it as a candidate or fold it into another primitive. **Do not promote ceremoniously.** The question to ask is *"does this note prevent duplication or confusion right now?"* — not *"should we ratify this primitive?"*
+If a candidate fails the kind test (item 7) — i.e., it is a coordinate, not a generator — keep it as a motif, instance, or note under its parent. Most coordinates do not need names; naming has metabolic consequences.
+
+**Do not promote ceremoniously.** The question to ask is *"does this note prevent duplication or confusion right now?"* — not *"should we ratify this primitive?"*
 
 ## Statuses
 
@@ -68,6 +94,7 @@ These are recurring shapes that have been noticed but do not yet have their own 
 - **Soup with bylaws.** A registry with elaborate templates but no actual cross-paper use. The directory exists to *prevent duplication*, not to model governance.
 - **Primitive-shaped papers.** A primitive should be citable without dragging a paper with it. If a primitive starts wanting its own §1–§8, it's a paper, not a primitive.
 - **Renaming.** Don't import a paper's central thesis as a primitive. P27's *obligation-unsound reconciliation* is not a primitive; *Receipt* and *Masked Transition* might be.
+- **Coordinate combinatorics (anti-generator rule).** Do not generate new entries by mechanically combining axes. A proposed primitive must introduce a new generator — a new axis, transition, attractor, or boundary condition. If it is merely a coordinate produced by existing machinery, keep it as a motif or instance under the relevant parent. *The state space is diagnostic, not generative.* Running the ontology to enumerate candidate primitives is the Finder-Generator failure mode wearing a more sophisticated hat.
 
 ## Note template
 

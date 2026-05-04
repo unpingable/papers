@@ -14,7 +14,7 @@ The Lean repository at `~/git/lean` (public: <https://github.com/unpingable/lean
 
 - `P{N}` — preprint number (e.g., `P18`)
 - Lean modules in `~/git/lean/LeanProofs/`:
-    - Paper-anchored: `TaxonomyGraph.lean`, `BranchSelector.lean`, `PersistenceModel.lean`, `OpsMasking.lean`, `Paper24SharedVision.lean`
+    - Paper-anchored: `TaxonomyGraph.lean`, `BranchSelector.lean`, `PersistenceModel.lean`, `OpsMasking.lean`, `Paper24SharedVision.lean`, `Paper25EpistemicBorderControl.lean`
     - No paper anchor: `RepairOperator.lean`
     - P27 skeleton (sorry-free as of 2026-05-01, intentionally unwired): `Admissibility.lean`
     - Infrastructure substrate kernel: `Admissibility/Authority.lean`, `Admissibility/StateTransition.lean`, `Admissibility/Derivation.lean`, `Admissibility/Execution.lean`, `Admissibility/Corrective.lean`
@@ -104,6 +104,27 @@ Chatty's pushback (2026-04-19): calling a revision "v2.0" oversignals rupture wh
 - **Signature discipline.** The kernel pins the signatures of "controller", "projection", "trajectory", and "observation" so the §3.3 prose claim survives translation. Companion sim `ops_continuity.py` exhibits the case bit-exactly under saturating authority.
 - **Open: cases (ii) and (iii) and gate-state-indexed projection.** The current Lean uses a fixed projection $\text{proj} : U \to U$ rather than the paper's $\Pi_{A_t}$; for case (i) this is harmless but a future module carrying $A_t$ explicitly (e.g., to formalize the §2 continuity-budget inequality) would need $\text{proj} : X \to U \to U$.
 
+### P25 — *Epistemic Border Control as Proxy Regulation Under Partial Observability*
+
+- **Lean module:** `Paper25EpistemicBorderControl.lean`
+- **Cashout classes:** 1 (certify) + 4 (bridge artifact) + 2 (sharpen)
+- **Paper-ready:** Yes for the structural-refusal core. Five theorems cover §5's sibling-vs-§N algebraic adjudication and §3.1's Theorem 1 epistemic-access core. Proposition 1 (Gramian scaling for substitution magnitude) is paper-marked open and intentionally not Leaned; closed-loop induction is fenced as cathedral risk.
+- **Revision candidacy:** P25 is v0.1 draft (2026-05-01), not yet pushed to Zenodo. §5 has a clarifying paragraph (added 2026-05-03) that names the Gramian identity $(\mathbf{1}_N \otimes O_T)^\top (\mathbf{1}_N \otimes O_T) = N \cdot O_T^\top O_T$, distinguishes subspace-preservation from individual-vector preservation, and points at the companion Lean module. v1.0 push will incorporate this; no separate fold-in revision needed.
+
+**What Lean underwrites:**
+
+- **§5 sibling-vs-§N adjudication: kernel preservation under homogeneous stacking** (`ker_replicateRows_eq_ker`). Stacking $N$ homogeneous witnesses preserves the observability kernel: $\ker(\mathbf{1}_N \otimes M) = \ker(M)$ for $N > 0$. Paper 24's clean-aggregation-open-witness fix therefore cannot by itself solve P25's substitution problem.
+- **§5 quantitative companion: Gramian scaling identity** (`replicateRows_transpose_mul`). $(\mathbf{1}_N \otimes M)^\top (\mathbf{1}_N \otimes M) = N \cdot M^\top M$. Eigenspaces are invariant; eigenvalues (and squared singular values) scale by $N$. The qualitative kernel statement is the special case at eigenvalue zero; the quantitative identity exposes the subspace-vs-vector precision the paper now reflects.
+- **§3.1 Theorem 1 epistemic-access core** (`obsEquiv_policy_same`). Any policy that depends only on the observation trace is constant on observation-equivalence classes. The structural refusal: observation geometry forecloses target regulation regardless of controller sincerity.
+- **§3.1 corollary — target-distinct-but-policy-same** (`target_distinct_policy_same`). Even when nominal target values differ between observation-equivalent states, the policy assigns the same control sequence. The target-inequality hypothesis is intentionally unused in the proof — that is the point: the policy never sees the target. The unused-hypothesis posture is the formal echo of the paper's Goodhart firewall.
+
+**What it does not prove (intentional):**
+
+- Proposition 1's quantitative substitution scaling for general $A$, $B$, noise structures (paper-marked open; partial result is paper-sequel territory, not gap-closure).
+- Closed-loop dynamics, Kalman filtering, LQR. The paper's §3.1 prose proof hand-waves a closed-loop induction; that vindication is correct but separable from the structural refusal. Formalizing it would import machinery the paper deliberately does not need.
+- Explicit finite-horizon observability matrix $O_T$ as a single matrix object. The §5 corollary is mechanical once $O_T$ is in scope; the abstract `replicateRows N M` already proves the load-bearing claim.
+- SVD or least-observable-direction quantitative claims. Mathlib coverage limited; the qualitative kernel + Gramian results here are the qualitative substrate the paper actually needs.
+
 ### P9 — *Capacity-Constrained Stability*
 
 - **Lean module:** `BranchSelector.lean`
@@ -152,14 +173,27 @@ Chatty's pushback (2026-04-19): calling a revision "v2.0" oversignals rupture wh
 - **Paper-ready:** Partial.
 - **Revision candidacy:** Prose tightening in SI-C ("long enough" → coexistence framing). Not a version bump on the main paper; supplementary document edit.
 
-## Sim-only cashout (no Lean module yet)
-
 ### P24 — *Shared Vision as Coordinating Prior*
 
-- **Lean module:** None yet. Companion simulation `shared_vision.py` in the Lean repo provides the §4 probe artifacts (aggregation-boundary, alias-compatibility, filter).
-- **Paper-ready (sim side):** Yes. The §4 probes are reproducible and the §3 theorems (T1, T3, T4) have proofs / proof sketches in the paper that do not require Lean for soundness.
-- **Formalization gap:** Proposition 1 (no-scalar-free-lunch) is currently probe-backed conjecture. Promoting it to theorem requires fixing the scalar-aggregator class precisely (continuous? Lipschitz? permutation-invariant?) and exhibiting the structural trade-off between freeze-freedom and stability within that class. This is the single highest-value Lean target for P24, flagged in P24 §8 item 1 and in `preprint/24-shared-vision-coordinating-prior/NOTES.md`.
-- **Revision candidacy:** P24 is v1.0 (published 2026-04-28; concept DOI `10.5281/zenodo.19861995`, version DOI `10.5281/zenodo.19861996`). A future v1.1 fold-in on Proposition 1 would parallel the P18 Appendix A / P22 Lean fold-in patterns.
+- **Lean module:** `Paper24SharedVision.lean` (added 2026-04-28). Algebraic shard for §4 metric probes and Theorems 3–4. Companion simulation `shared_vision.py` in the Lean repo provides the §4 probe artifacts (aggregation-boundary, alias-compatibility, filter).
+- **Cashout classes:** 2 (sharpen) + 1 (certify)
+- **Paper-ready:** Yes for the algebraic shard. The §4 metric algebra, the η-step bound, and the survivor-cohort centered-mean-zero algebra are formalized. Lean correction landed: the formal pairwise difference is $(\varphi_i - \varphi_j) \cdot V$; the paper's Proposition 2 statement currently has the opposite sign. Metric claims (absolute value, square) are unaffected.
+- **Formalization gap:** Proposition 1 (no-scalar-free-lunch) is currently probe-backed conjecture, intentionally not Leaned. Promoting it to theorem requires fixing the scalar-aggregator class precisely (continuous? Lipschitz? permutation-invariant?) and exhibiting the structural trade-off between freeze-freedom and stability within that class. This is the single highest-value future Lean target for P24, flagged in P24 §8 item 1 and in `preprint/24-shared-vision-coordinating-prior/NOTES.md`.
+- **Revision candidacy:** P24 is v1.0 (published 2026-04-28; concept DOI `10.5281/zenodo.19861995`, version DOI `10.5281/zenodo.19861996`). The Lean module landed the same day as v1.0 publication; the paper text already reflects the algebraic shard. A future v1.1 fold-in on Proposition 1 would parallel the P18 Appendix A / P22 Lean fold-in patterns. The Proposition 2 sign is a candidate prose correction in any v1.1 push.
+
+**What Lean underwrites:**
+
+- **§4 metric algebra** (`alias_baseline_zero`, `alias_shift_pairwise_difference`, `two_agent_absdiff_scales_linear`, `two_agent_variance_scales_quadratic`). Pairwise difference identity, baseline-zero, two-agent absolute-difference linear scaling, two-agent variance quadratic scaling.
+- **Theorem 3 kernel — sup-norm bound** (`filtered_supnorm_bound`). Stated with witness-filter retention as hypotheses ($|\Phi(E^F)| \le \text{maxRetained} \le \tau$), not as operator-theoretic abstraction over arbitrary aggregators.
+- **η-step bound** (`step_bound`). $|V_{t+1} - V_t| \le \eta \cdot \tau$ given the sup-norm bound.
+- **Theorem 4 kernel — survivor-cohort centered-mean-zero** (`survivor_centered_errors_mean_zero`). The cohort first-moment-zero algebra.
+
+**What it does not prove (intentional):**
+
+- Conjecture 1 / Proposition 1 (no-scalar-free-lunch). Probe-backed only; promoting requires the aggregator-class precision noted above.
+- The agile case study, closed-loop dynamics, witness-filter institutional prose.
+- Big-O / noise-floor falsifiability hooks.
+- Aggregator-in-the-abstract operator theory.
 
 ## No clean cashout
 
@@ -218,4 +252,5 @@ See `LeanProofs/Admissibility/README.md` in the Lean repo for the five-module br
 - **2026-04-20** — P18 Appendix A drafted in local source (v1.1 candidate, not yet pushed to Zenodo). Appendix structure: A.1–A.6 per-claim entries in chatty's four-field format (formal object / prose claim sharpened / what it does not prove / pointer), plus A.7 (relation to the paper's framework) and A.8 (scope fences — pre-breach dynamics, observer-integrity, tier escalation, empirical calibration not covered). Abstract, introduction, and conclusion left unchanged; v1.2 (abstract reframe) deferred.
 - **2026-04-22** — Added P23 entry under Tier 2 (`OpsMasking.lean`, case (i) projection masking, bridge artifact + certify; cases (ii) and (iii) deferred). Added P24 entry under new "Sim-only cashout" section — no Lean module yet, only `shared_vision.py` companion sim; Proposition 1 (no-scalar-free-lunch) flagged as the single highest-value Lean target. Both papers are v0.1, not yet pushed to Zenodo. Mirrors the `PAPER-MAP.md` update in the Lean repo.
 - **2026-04-30** — Added "Infrastructure substrate (no paper anchor)" section for the Admissibility kernel (four modules: `Authority.lean`, `StateTransition.lean`, `Derivation.lean`, `Execution.lean`). Kernel is Governor-neutral; substrate for future Governor (`agent_gov`) implementation citation, not paper-claim cashout. All four wired into `LeanProofs.lean` root. Updated "Stable identifiers" to reflect the full module set (paper-anchored, no-paper-anchor, P27 skeleton, infrastructure substrate). Mirrors `PAPER-MAP.md` update in the Lean repo.
+- **2026-05-03** — Added P25 entry under Tier 2 (`Paper25EpistemicBorderControl.lean`, certify + bridge artifact + sharpen). Five theorems covering §5 sibling-vs-§N adjudication (kernel preservation under homogeneous stacking; Gramian scaling identity $(\mathbf{1}_N \otimes M)^\top (\mathbf{1}_N \otimes M) = N \cdot M^\top M$) and §3.1 Theorem 1 epistemic-access core (observation-equivalence ⇒ policy-equivalence; target-distinct-but-policy-same corollary with intentionally-unused target hypothesis). Companion §5 clarifying paragraph added to `epistemic_border_control.md` (subspace-vs-vector precision; explicit Gramian identity; Lean repository pointer). Promoted P24 out of "Sim-only cashout" section to its own Tier 2 entry: `Paper24SharedVision.lean` was added 2026-04-28 (same day as P24 v1.0 publication) and the index had not yet been patched. Stable identifiers updated to include `Paper25EpistemicBorderControl.lean`. Mirrors `PAPER-MAP.md` and `CLAIM-REGISTER.md` entries (#11, #12) in the Lean repo.
 - **2026-05-01** — Added `Corrective.lean` as fifth Admissibility kernel module (Layer 5: corrective monotonicity). Pinned thesis: corrective recovery transitions cannot increase the authorized action set; authority-increasing recovery requires a separately classified forward transition with fresh basis. `classify : Step → StepClassification` is the enforcement surface; `RecoveryEnv` bundles `DerivationEnv` with a `CorrectiveMonotone` witness and is the type-level gate at which monotonicity becomes operationally required. Companion working note `working/admissible-recovery-semantics.md` (slot decision deferred between P27 fold-in and standalone P28 pending the seven-path audit named in working-note §8). Same-day, P27 skeleton (`Admissibility.lean`) sorry-eliminated: three real proofs against the local `admissible` definition (`unaccounted_implies_inadmissible`, `short_receipt_horizon_inadmissible`, `open_finding_admissible_with_durability`) and two `True`-placeholder discharges with deferred-real-statement docstrings (pending substrate-accusation / causal-binding predicates). House rule: kill the sorrys, do not let the sorrys design the constitution; sorry-elimination does not imply wiring. Mirrors `PAPER-MAP.md` update in the Lean repo.
