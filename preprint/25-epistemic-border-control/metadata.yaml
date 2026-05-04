@@ -1,11 +1,11 @@
 title: "Epistemic Border Control as Proxy Regulation Under Partial Observability"
 author: "James Beck"
 affiliation: "Independent Researcher"
-date: 2026-05-01
+date: 2026-05-04
 series: "delta-t-framework"
 paper_number: 25
-version: "0.1-draft"
-status: "preprint draft"
+version: "0.2-draft"
+status: "draft"
 license: "CC-BY-4.0"
 keywords:
   - partial observability
@@ -17,18 +17,26 @@ keywords:
   - performative prediction
   - cybernetic regulation
 abstract: >
-  Discourse communities and moderation systems operate as feedback
-  controllers attempting to regulate epistemic risk under partial
-  observability. When the underlying target — truth, claim quality —
-  has no real-time sensor, while reputational contamination and
-  coalition-adjacency risk are fast and legible, the controller is
-  structurally forced to substitute a proxy objective for its nominal
-  objective. The rhetoric remains fixed on the nominal target while the
-  actual controlled variable becomes the proxy. This paper formalizes
-  the substitution as a consequence of observability asymmetry,
-  connects it to Paper 23's controller-layer masking via shared
-  observability-null-space geometry, and characterizes the regime in
-  which the substitution is not avoidable by sincere intent. Sibling
-  to Paper 24 (aggregation-layer masking) by algebraic argument:
-  aggregation improves SNR but does not rotate the observability
-  subspace.
+  Informal regulatory systems and institutional feedback controllers
+  often attempt to govern targets — claim quality, truth-tracking,
+  infrastructure burden, epistemic hygiene — under partial
+  observability. When no real-time sensor on the target exists, but
+  fast and legible observables load on a distinct proxy variable, the
+  controller is structurally forced to substitute the proxy for the
+  nominal target. The rhetoric of regulation remains fixed on the
+  nominal target while the actual controlled variable becomes the
+  proxy. This paper formalizes the substitution as a consequence of
+  observability asymmetry, gives a finite-horizon observability-Gramian
+  characterization of the substitution magnitude, and operationalizes
+  both via a single-agent Kalman-LQR simulation. The substitution does
+  not require corrupt intent, gamed metrics, or slow drift: sincere
+  regulators with a correctly-specified cost function and a
+  correctly-specified plant model produce the same substitution under
+  the same sensor geometry. The result is sibling to Paper 24's
+  aggregation-layer masking by an algebraic argument — aggregation
+  reduces variance as O(σ²/N) but does not rotate the observability
+  subspace — and shares closed-loop substitution geometry with Paper
+  23's identifiability-masking apparatus. Informal discourse moderation
+  is the worked case; the contribution is a control-geometry result
+  that applies wherever a controller with a fixed sensor map confronts
+  a target outside its observable subspace.

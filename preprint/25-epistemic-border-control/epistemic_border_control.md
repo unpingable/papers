@@ -10,17 +10,17 @@ header-includes:
 **James Beck**
 Independent Researcher
 
-**Date:** April 2026
+**Date:** 2026-05-04
 
 **Series:** Δt Framework, Paper 25
 
-**Status:** Preprint v0.1 draft (2026-05-01). Working note: `working/epistemic-border-control.md`.
+**Status:** Preprint v0.2 draft (2026-05-04). Working note: `working/epistemic-border-control.md`.
 
 ---
 
 ## Abstract
 
-Informal regulatory systems and institutional feedback controllers often attempt to govern targets — claim quality, truth-tracking, infrastructure burden, epistemic hygiene — under partial observability. When no real-time sensor on the target exists, but fast and legible observables load on a distinct proxy variable, the controller is structurally forced to substitute the proxy for the nominal target. The rhetoric of regulation remains fixed on the nominal target while the actual controlled variable becomes the proxy. This paper formalizes the substitution as a consequence of observability asymmetry, gives a finite-horizon observability-Gramian characterization of the substitution magnitude, and operationalizes both via a single-agent Kalman-LQR simulation. The substitution does not require corrupt intent, gamed metrics, or slow drift: sincere regulators with a correctly-specified cost function and a correctly-specified plant model produce the same substitution under the same sensor geometry. The result is sibling to Paper 24's aggregation-layer masking by an algebraic argument — aggregation reduces variance as $O(\sigma^2/N)$ but does not rotate the observability subspace — and shares closed-loop substitution geometry with Paper 23's identifiability-masking apparatus. Informal discourse moderation is the worked case in §7; the contribution is a control-geometry result that applies wherever a controller with a fixed sensor map confronts a target outside its observable subspace.
+Informal regulatory systems and institutional feedback controllers often attempt to govern targets — claim quality, truth-tracking, infrastructure burden, epistemic hygiene — under partial observability. When no real-time sensor on the target exists, but fast and legible observables load on a distinct proxy variable, the controller is structurally forced to substitute the proxy for the nominal target. The rhetoric of regulation remains fixed on the nominal target while the actual controlled variable becomes the proxy. This paper formalizes the substitution as a consequence of observability asymmetry, gives a finite-horizon observability-Gramian characterization of the substitution magnitude, and operationalizes both via a single-agent Kalman-LQR simulation. The substitution does not require corrupt intent, gamed metrics, or slow drift: sincere regulators with a correctly-specified cost function and a correctly-specified plant model produce the same substitution under the same sensor geometry. The result is sibling to Paper 24's [2] aggregation-layer masking by an algebraic argument — aggregation reduces variance as $O(\sigma^2/N)$ but does not rotate the observability subspace — and shares closed-loop substitution geometry with Paper 23's [1] identifiability-masking apparatus. Informal discourse moderation is the worked case in §7; the contribution is a control-geometry result that applies wherever a controller with a fixed sensor map confronts a target outside its observable subspace.
 
 ---
 
@@ -36,7 +36,7 @@ The load-bearing claim: **the controller cannot regulate what its sensorium does
 This distinguishes the present claim from at least three adjacent positions, each developed in §6:
 
 - **vs Goodhart.** Goodhart's Law says a metric becomes a target — a contingent corruption that better metrics or more disciplined measurement could in principle avoid. The present claim is sharper: when the underlying target has no real-time sensor at all, no amount of sincere intent produces target-tracking. The substitution is necessary, not contingent.
-- **vs performative prediction.** Performative prediction (Perdomo et al. 2020) addresses the case where a model's output changes the data distribution it later trains on. The present claim does not require performativity: the substitution arises *before* the controller's actions perturb the environment, by virtue of the sensor map alone.
+- **vs performative prediction.** Performative prediction (Perdomo et al. [4]) addresses the case where a model's output changes the data distribution it later trains on. The present claim does not require performativity: the substitution arises *before* the controller's actions perturb the environment, by virtue of the sensor map alone.
 - **vs platform-moderation trade-off literature.** Existing moderation literature addresses domain-specific balancing under explicit policy regimes. The present claim is a general control-geometry result that applies wherever a controller with a fixed sensor map confronts a target lying outside the observable subspace.
 
 The constructive consequence — what an architecture must do to prevent the substitution rather than merely apologize for it — is sketched in §8.
@@ -137,13 +137,13 @@ This widens the necessity claim. Substitution is forced not only by observation-
 
 ### 4.6 Bridge to Paper 23
 
-Paper 23 §3.3 case (ii) — the *measurement null-space masking* result — formalizes the case where a compensator $H_t$ acts in the null space of the measurement map and is observationally invisible to first order over a horizon $T$. The present paper instantiates a different consequence of the same geometric object: the cost-targeted state direction $q$ lies near $\ker(O_T)$, and the closed-loop control problem inherits ill-conditioning. Paper 23 case (ii) is the identity-axis manifestation (compensator invisibility); the present paper is the action-axis manifestation (regulation infeasibility). Both invoke $\ker(O_T)$ or its near-kernel and use it to state distinct closed-loop consequences. The present paper inherits Paper 23's formal apparatus rather than reconstructing it, and theorem statements above cite §3.3 case (ii) directly.
+Paper 23 [1] §3.3 case (ii) — the *measurement null-space masking* result — formalizes the case where a compensator $H_t$ acts in the null space of the measurement map and is observationally invisible to first order over a horizon $T$. The present paper instantiates a different consequence of the same geometric object: the cost-targeted state direction $q$ lies near $\ker(O_T)$, and the closed-loop control problem inherits ill-conditioning. Paper 23 case (ii) is the identity-axis manifestation (compensator invisibility); the present paper is the action-axis manifestation (regulation infeasibility). Both invoke $\ker(O_T)$ or its near-kernel and use it to state distinct closed-loop consequences. The present paper inherits Paper 23's formal apparatus rather than reconstructing it, and theorem statements above cite §3.3 case (ii) directly.
 
 ---
 
 ## 5. Distinction from Paper 24
 
-Paper 24 (Beck 2026) names *aggregation-layer masking* as a structurally distinct failure mode of multi-agent epistemic regulation. The present paper is the *spatial substitution* counterpart, sibling rather than nested. The sibling adjudication is algebraic, not empirical:
+Paper 24 [2] names *aggregation-layer masking* as a structurally distinct failure mode of multi-agent epistemic regulation. The present paper is the *spatial substitution* counterpart, sibling rather than nested. The sibling adjudication is algebraic, not empirical:
 
 | | Paper 24 | This paper |
 |---|---|---|
@@ -194,27 +194,25 @@ The present claim is *necessity-framed*. When the underlying target has no real-
 
 The pithy form: Goodhart says *the measure is gamed*. The present claim says *the target never entered the controller*. Different pathology, different remedy: Goodhart can in principle be avoided by replacing the gamed metric with a less-gameable one; observability-asymmetry substitution can only be avoided by restoring the $T$-channel itself, which is by hypothesis unavailable.
 
-The strongest opposing form is Manheim and Garrabrant's (2018) classification of Goodhart variants — *regressional, extremal, causal, adversarial* — which collectively cover the family of failures that can occur when a proxy is selected, optimized, sampled, selected on, or adversarially exploited. Each variant assumes a regime in which a proxy has already been chosen and is being relied upon, and each describes a way in which reliance fails. The present paper names a *prior* condition: the nominal target is outside the controller's observation channel, so the proxy is not merely selected badly. It is the only regulable object available. None of the four Goodhart variants applies *before* a proxy has been selected; all four describe what happens *to* a proxy under optimization pressure. Observability-asymmetry substitution names what happens *because the controller cannot do otherwise* — the regulable surface itself is foreclosed by sensor geometry, prior to any optimization pressure on whatever proxy is reached for next.
+The strongest opposing form is Manheim and Garrabrant's [3] classification of Goodhart variants — *regressional, extremal, causal, adversarial* — which collectively cover the family of failures that can occur when a proxy is selected, optimized, sampled, selected on, or adversarially exploited. Each variant assumes a regime in which a proxy has already been chosen and is being relied upon, and each describes a way in which reliance fails. The present paper names a *prior* condition: the nominal target is outside the controller's observation channel, so the proxy is not merely selected badly. It is the only regulable object available. None of the four Goodhart variants applies *before* a proxy has been selected; all four describe what happens *to* a proxy under optimization pressure. Observability-asymmetry substitution names what happens *because the controller cannot do otherwise* — the regulable surface itself is foreclosed by sensor geometry, prior to any optimization pressure on whatever proxy is reached for next.
 
-### 6.2 vs performative prediction (Perdomo et al. 2020)
+### 6.2 vs performative prediction (Perdomo et al. [4])
 
 Performative prediction names the phenomenon where a model's predictions shape the data distribution it later trains on. The closed loop is between model output and environment response. The mathematical apparatus addresses convergence to *performatively stable* points and the gap between performatively stable and performatively optimal solutions.
 
 The present claim does not require performativity. The substitution arises *before* the controller's actions perturb the environment, by virtue of the sensor map alone. A controller observing a static distribution through a $T$-blind sensor still substitutes $V'$ for $V$. Performative prediction is a separate (and stackable) failure mode; the present paper isolates the sensor-geometry channel.
 
-### 6.3 vs feedback-loop classifications (Pagan et al. 2023)
+### 6.3 vs feedback-loop classifications (Pagan et al. [5])
 
-Pagan et al. give a dynamical-systems taxonomy of feedback loops in automated decision-making. Their classification covers many of the loop shapes that include the present mechanism, but does not name observability-driven target substitution as a distinct failure mode with a distinct architectural remedy. The present paper is one entry in their zoology, made explicit and given a closed-loop formal characterization.
+Pagan et al. give a five-type classification of feedback loops in automated decision-making — *individual, feature, outcome, ML-model, sampling* — and trace how each contributes to bias amplification under retraining. Their taxonomy is broad enough that the present mechanism could be located within it (loosely, a feature-loop instance), but they do not name observability-driven target substitution as a distinct failure mode with a distinct architectural remedy: their loops are about how proxies get *amplified* once selected, not about how the structural unavailability of a real-time target sensor *forces* a proxy in the first place. The present paper is one entry their classification leaves implicit, given a closed-loop formal characterization.
 
-### 6.4 vs recommender-system control models (Sprenger et al. 2024)
+### 6.4 vs recommender-system control models (Sprenger et al. [6])
 
-Sprenger et al. give a control-theoretic framing of recommender/user closed loops. Their object is the user-recommender feedback dynamic, not informal discourse moderation. The present paper inherits their framing posture (treat regulation as control under partial observability) but operates on a different surface and isolates a different pathology: target substitution rather than equilibrium drift.
+Sprenger et al. give a closed-loop control formalization of recommender systems acting on opinion dynamics in social networks, with engagement maximization as the controller objective and full state visibility on the network. The present paper shares the control-theoretic posture but operates on a different surface and isolates a different pathology: target substitution forced by sensor-map asymmetry, rather than equilibrium drift under engagement-maximizing closed loops with observable state. Their model is closer to *what happens once the controller can see everything and is optimizing the wrong thing*; the present paper is *what happens when the controller cannot see what it is rhetorically trying to optimize*.
 
-### 6.5 vs platform-moderation trade-off literature
+### 6.5 vs platform-moderation theoretical models
 
-Existing platform-moderation work (Dwork et al. and others) addresses domain-specific balancing under explicit policy regimes. The present paper does not claim to cover formal platform moderation — those systems have explicit policy documents that can be revised in response to errors and explicit fact-checking apparatus that constitute partial $T$-sensors. The mechanism named here applies to *informal* discourse regulators (academics, journalists, ad-hoc moderators, professional pundits, coalition enforcers) where no formal $T$-sensor exists.
-
-> **[Edit pin — lit differential.]** This section needs a final cold-read pass against current literature. Each of Perdomo, Pagan, Sprenger, Dwork should be read once more with the question "does this paper's apparatus already cover observability-driven target substitution as a named failure mode?" The current draft asserts negative; verify before publish.
+Existing theoretical work on platform moderation — Dwork et al.'s [7] window-based moderation framework, in which a platform chooses a content-moderation window and users decide whether to participate based on the fraction of admitted content aligning with their preferences — addresses domain-specific balancing under explicit policy regimes with platform-side visibility into content positions. The present paper does not claim to cover formal platform moderation: those systems have explicit policy documents that can be revised in response to errors and explicit fact-checking apparatus that constitute partial $T$-sensors. The mechanism named here applies to *informal* discourse regulators (academics, journalists, ad-hoc moderators, professional pundits, coalition enforcers) where no formal $T$-sensor exists. Dwork et al.'s framework is the natural sibling for the formal-platform case; the present paper sits where their assumed observability does not hold.
 
 ---
 
@@ -262,9 +260,7 @@ The architectural moves that are *not* foreclosed:
 - **Refuse to collapse $T$ and $V'$ into a single regulated variable.** Maintain separate accounting for the observable proxy and the unobservable target. Permit action under the proxy regime, but deny rhetorical closure: refuse to claim that controlling $V'$ amounts to controlling $V$.
 - **Witness-cohort heterogeneity.** Different agents with genuinely different $C_\text{obs}^{(i)}$ — for instance, witnesses positioned to observe $T$ through different channels — *can* rotate the effective observability subspace. This does not contradict Theorem 1 within an agent; it changes the effective $C_\text{obs}$ at the cohort level. Paper 24's witness-inclusion machinery becomes relevant here as the architecture for keeping the heterogeneity intact under aggregation.
 
-The third path is the most tractable and connects back to Paper 24 and to the Governor / admissibility working track: separate sensor channels, separate admissibility accounting, separate update rules for each latent. None of these is a complete remedy; the unobservable component of $T$ remains unobservable. What changes is whether the system rhetorically conflates the regulable $V'$ with the nominal $V$, and whether the cohort can supply observation channels that the single agent cannot.
-
-> **[Edit pin — architectural implication.]** This section is currently sketch-level, in line with the working note's "Open / deferred" posture. Whether the preprint should commit to a sharper constructive position, or hold this as deliberately open, is a posture call. The negative-result version (Theorem 1 forecloses, three named partial mitigations, none complete) is honest and short.
+The third path is the most tractable and connects back to Paper 24 [2] and to the Governor / admissibility working track: separate sensor channels, separate admissibility accounting, separate update rules for each latent. None of these is a complete remedy; the unobservable component of $T$ remains unobservable. What changes is whether the system rhetorically conflates the regulable $V'$ with the nominal $V$, and whether the cohort can supply observation channels that the single agent cannot.
 
 ### Open problems
 
@@ -277,14 +273,16 @@ The third path is the most tractable and connects back to Paper 24 and to the Go
 
 ## References
 
-> **[Edit pin — references.]** Lit-differential targets to be cited:
->
-> - Perdomo, J. C., Zrnic, T., Mendler-Dünner, C., & Hardt, M. (2020). Performative Prediction.
-> - Pagan, N. et al. (2023). A classification of feedback loops in automated decision-making systems.
-> - Sprenger, M. et al. (2024). Recommender systems as closed-loop control.
-> - Dwork, C. et al. Moderation / community-formation theoretical models. (Specific paper TBD.)
-> - Manheim, D. & Garrabrant, S. (2018). Categorizing Variants of Goodhart's Law.
-> - Beck, J. (2026). Ops Is Control with a Non-Self-Identical Controller. (Paper 23.)
-> - Beck, J. (2026). Shared Vision as Coordinating Prior. (Paper 24.)
->
-> Final list pending lit-differential cold read.
+[1] Beck, J. (2026). The Non-Self-Identical Controller. Δt Framework series, Paper 23. Zenodo. doi:10.5281/zenodo.19055415
+
+[2] Beck, J. (2026). Shared Vision as Coordinating Prior. Δt Framework series, Paper 24. Zenodo. doi:10.5281/zenodo.19861995
+
+[3] Manheim, D., & Garrabrant, S. (2018). Categorizing Variants of Goodhart's Law. arXiv:1803.04585.
+
+[4] Perdomo, J. C., Zrnic, T., Mendler-Dünner, C., & Hardt, M. (2020). Performative Prediction. *Proceedings of the 37th International Conference on Machine Learning*, PMLR 119:7599–7609. arXiv:2002.06673.
+
+[5] Pagan, N., Baumann, J., Elokda, E., De Pasquale, G., Bolognani, S., & Hannák, A. (2023). A Classification of Feedback Loops and Their Relation to Biases in Automated Decision-Making Systems. *Proceedings of the 3rd ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization* (EAAMO '23). doi:10.1145/3617694.3623227. arXiv:2305.06055.
+
+[6] Sprenger, B., De Pasquale, G., Soloperto, R., Lygeros, J., & Dörfler, F. (2024). Control strategies for recommendation systems in social networks. *IEEE Control Systems Letters*, 8.
+
+[7] Dwork, C., Hays, C., Kleinberg, J., & Raghavan, M. (2024). Content Moderation and the Formation of Online Communities: A Theoretical Framework. *Proceedings of the ACM Web Conference 2024*. doi:10.1145/3589334.3645490. arXiv:2310.10573.
