@@ -1,32 +1,44 @@
-title: "Premature Commitment and Belated Consequence as Dual Orientations of Δt Detachment"
+title: "Premature Commitment, Belated Consequence, and the Empty Binding Window"
+subtitle: "A Two-Curve Framework for Temporal Detachment in Bound Decisions"
 author: "James Beck"
 affiliation: "Independent Researcher"
-date: 2026-04-28
+date: 2026-05-04
 series: "delta-t-framework"
 paper_number: 26
-version: "0.0-stub"
-status: "candidate / scaffold"
+version: "0.2-draft"
+status: "draft"
 license: "CC-BY-4.0"
 keywords:
   - admissibility maturity
   - consequence viability
   - temporal detachment
   - binding window
-  - power asymmetry
-  - chronopolitics
+  - empty-window failure
   - regulatory lag
   - Δt framework
 abstract: >
-  STUB. Premature commitment and belated consequence are dual
-  orientations of Δt detachment: the former binds before
-  admissibility has matured; the latter binds after consequence
-  can still attach. This paper formalizes the duality via two
-  curves on the temporal axis — admissibility maturity m(t) and
-  consequence viability c(t) — and the valid binding window
-  W = { t | m(t) ≥ θ_m ∧ c(t) ≥ θ_c }. Premature is binding at
-  t with m(t) < θ_m; belated is binding at t with c(t) < θ_c.
-  The empty-window case (W = ∅) and the asymmetric-power case
-  (one party can compress own m, preserve own c, decelerate
-  others' m, and accelerate others' c — "power buys time twice")
-  are characterized as the two failure modes of Δt detachment
-  under sibling status to Paper 25.
+  Many institutional failures are attributed to "slow process" or
+  "execution shortfall." This paper argues that a structurally
+  distinct class of failure — empty binding windows — is hidden
+  inside that vocabulary. Plainly: an empty binding window exists
+  when the system can only know enough to act after acting would
+  no longer matter. We formalize the temporal seam as a two-curve
+  model: admissibility maturity m(t), informally whether the
+  system knows enough to bind, and consequence viability c(t),
+  informally whether binding can still matter. The valid binding
+  window W is the set of times on which both curves are above
+  their thresholds. Three failure orientations follow: premature
+  commitment binds while m has not matured; belated consequence
+  binds after c has decayed; empty-window failure is the regime
+  in which W is empty for all t. Distinguishing empty-window
+  failure from ordinary process delay requires a discriminator:
+  residual event-class mismatch. Closure requires changing the
+  event class itself, not merely improving execution. Worked
+  cases — generational climate harm, FDA pre-market approval,
+  administrative-queue cascades, Sarbanes-Oxley and complex
+  fraud, scientific pre-registration, platform-worker
+  classification — illustrate the framework across natural-
+  latency, manufactured, and ontological sub-types. The result
+  is sibling to spatial substitution failures (Paper 25) on a
+  temporal axis, and orthogonal to the four-layer decomposition
+  (Paper 22).
