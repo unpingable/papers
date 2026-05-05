@@ -1,7 +1,8 @@
 # Boundary Composition Investigation
 
 **Logged:** 2026-05-05 (late session, multi-model: claude-code + chatty + deepseek)
-**Status:** Pin / handle for tomorrow. Methodological pivot named, no Lean work started yet.
+**Updated:** 2026-05-06 (AG audit completed)
+**Status:** Audit completed 2026-05-06 (AG). Result: **Family-with-composition-lemmas (fork 2 of 3).** Boundary Calculus title not earned; working hypothesis is **Admissibility Boundary Family with composition lemmas.** No P28 draft, no namespace promotion, no new doctrine.
 **Lives near:** P28 candidate territory (synthesis question for the P22→P27 spine).
 
 ---
@@ -120,6 +121,8 @@ These are sketches, not commitments. Stated to mark the territory; the audit may
 
 **1. Denial composition (boundary violation blocks authorization, action-indexed):**
 
+> **Status (2026-05-06 AG audit): Stateable but unwarranted under current kernel.** Abstract store ops lack behavioral commitments needed to prove this as stated. Do **not** strengthen the kernel mid-search to make it go through. Whether to develop the missing behavioral commitments deliberately, as their own object, is a separate decision — not a calculus-rescue move.
+
 ```lean
 theorem boundary_violation_blocks_authorization
   (a : Action) (b : Boundary) :
@@ -147,7 +150,122 @@ Note: conclusion is `¬ authorized_by d a`, not `¬ authorized a` — another de
 
 **4. Kind separation:** policy / evidence / gap / receipt / corrective stores do not collapse into each other under transition. Likely partially in the five-sibling-module decomposition.
 
-**5. Possible null result:** boundaries may not form a lattice or clean algebra because authority, evidence, time, scope, execution are different *kinds*, not elements of one neat order. → Family, not Calculus.
+**5. Possible null result:** boundaries may not form a lattice or clean algebra because authority, evidence, time, scope, execution are different *kinds*, not elements of one neat order. → Family, not Calculus. **(Effectively the audited outcome; see Status.)**
+
+---
+
+## Audit extension (2026-05-06): candidates #2–#5
+
+Same commitments check as #1, applied to the remaining candidates. **Audit-extension only — no theorem changes, no kernel strengthening, no calculus rescue.**
+
+### Compact verdicts
+
+| # | Candidate | Stateable? | Warrantable? | Missing semantic commitment | New vocabulary needed | Family / Calculus / null |
+|---|---|---|---|---|---|---|
+| 2 | Receipt non-laundering | Weak form: yes (already proved). Strong form (with derivation-trace): no | Weak: yes. Strong: no | For strong form: derivation provenance + behavioral law on `appendEvidence` + receipt→basis bridge | Yes — `uses_receipt` predicate, derivation-trace object | Family-shape after vocabulary additions; weak form already a composition lemma |
+| 3 | TTL / revocation breaks composition | **Yes (static case)** / partial (TTL aspect) | **Yes (static)** — already proved | None for static; temporal model for TTL | None for static; clock + expiry-horizon for TTL | **Family with composition lemma — already partially in kernel** |
+| 4 | Kind separation (store partitioning) | **Yes** | **Yes** — mechanical extensions of existing trapdoors | None (purely structural) | None | **Family with mechanical projection lemmas — Phase 0 territory** |
+| 5 | Possible null result (no clean algebra) | Yes (as meta-claim); partial as Lean theorem | Not under current axioms | Behavioral laws on `applyUpdate` / `appendGap` / `appendRevocation` / `appendEvidence` | Definitions / axioms on the abstract store ops | **Empirically the kernel's current shape; recorded as `sorry` in `Corrective.corrective_then_forward_is_not_monotone`** |
+
+### Per-candidate detail
+
+**#2 Receipt non-laundering.** The kernel has `Receipt`, `appendEvidence`, `EvidenceStore`, and `BasisDerivation` with the `revoked_never_admissible` obligation.
+
+A *weak* version of #2 — "if the basis verdict is not `admissibleBasis`, the action is not authorized" — is *already proved* as the contrapositive of `Authority.authorized_iff_all_green`, projecting through `Derivation.decide_authorized_requires_all_green` to `decideAuthority`. That covers the "no admissible basis ⇒ no authorization" content.
+
+The *strong* version as originally drafted (with a derivation `d` that uses receipt `r`) requires a derivation-trace object the kernel does not have. `BasisDerivation` is a *strategy* structure (function + proof obligations), not a *derivation-with-provenance*. Stating the strong form requires a new `uses_receipt` predicate plus a behavioral law tying receipt-presence-in-`EvidenceStore` to the `BasisVerdict` a concrete `BasisDerivation` returns. Both are speculative; do not add.
+
+Verdict: weak form is already a Family composition lemma; strong form requires new vocabulary at the same layer as #1, plus an additional missing concept (derivation provenance).
+
+**#3 TTL / revocation breaks composition.** **Already partially proved.** Static revocation is captured by:
+
+- `Derivation.revoked_basis_never_authorized` — `BasisDerivation.basisRevoked` projects through the verdict gate.
+- `Execution.revoked_basis_cannot_be_authorized_step` — same projection lifted through the `AuthorizedStep` bridge ("stale basis cannot bind at execution layer").
+
+These are vertical composition lemmas. The TTL aspect — *time-based* revocation — is not yet in the kernel; revocation is currently boolean (`basisRevoked : GovState → AuthorityClaim → Prop`), not temporal. Adding TTL requires a clock / expiry-horizon model and is its own object, not a calculus rescue.
+
+Verdict: composition-lemma status confirmed for static revocation; TTL extension is a separate future investigation requiring temporal vocabulary.
+
+**#4 Kind separation.** **Stateable and warrantable mechanically.** The four-store partition is the existing structural commitment. The PolicyStore-isolation case is already proved by `record_receipt_does_not_amend_policy`, `declare_policy_gap_does_not_amend_policy`, `record_revocation_does_not_amend_policy` (raw layer) and their `executeAuthorizedStep`-lifted siblings (Execution layer). Symmetric statements for the other three stores ("recordReceipt does not mutate GapStore", "declarePolicyGap does not mutate EvidenceStore", etc.) are pattern-match-and-`rfl` proofs in the same shape. These are Phase 0 projection lemmas in their cleanest form — purely structural, no behavioral commitments needed.
+
+Verdict: cleanest Family-with-composition-lemma candidate; lemmas are already half-present in PolicyStore-shape and the other stores follow mechanically.
+
+**#5 Possible null result.** Empirically the kernel's current state. The recorded `sorry` at `Corrective.corrective_then_forward_is_not_monotone` (lines 280-284) names the precise vocabulary deficit: under the worst-case axiomatization where the abstract store ops are identity, every Step is state-preserving and the existential is *provably FALSE*. Until a behavioral law on the abstract store ops is committed, the kernel is consistent with both the existential and its negation. The kernel docstring itself says: *"This `sorry` is a recorded investigative null, not a deferred proof to be eliminated by axiomatizing `applyUpdate` here."*
+
+That is Family-not-Calculus visible in the kernel's own source. The AG audit verdict is what the kernel already documents.
+
+Verdict: confirmed empirically; the null-shape is the current truth-value-assignment under the kernel's current commitments.
+
+### What the audit extension does *not* claim
+
+- That candidates #2 and #5 are unprovable forever. They are unprovable *under current commitments*. Whether to develop the missing commitments deliberately, as their own object, is a separate decision.
+- That candidate #3 (static revocation) is "the calculus." It is one composition lemma in a Family with composition lemmas. Title still not earned.
+- That candidate #4's mechanical extensions should be added now. They are isolated and mechanical, but adding them was outside this audit's scope. See Phase 0 inventory below for landing locations.
+
+---
+
+## Harvestables (post-audit, 2026-05-06)
+
+From the AG audit and the over-architectural overnight roadmap, two pieces are worth keeping forward; the rest is dropped.
+
+- **Phase 0 projection lemmas.** Composition results that hold by *projection* between boundaries — a property of one boundary projects through a morphism onto a related property of another. Likely the cheapest place where composition lemmas can land cleanly without strengthening the kernel.
+- **Vertical / horizontal composition distinction.** Sequential composition (one action after another) vs parallel composition (actions composed across the same temporal slice). Standard categorical distinction; worth keeping as the framing language for any composition lemma the warranted theorems eventually carry.
+
+Everything else from the overnight roadmap is over-architectural for current kernel state and dropped. No `BoundaryCompositionExperiments` namespace until the kernel earns it.
+
+---
+
+## Phase 0 projection lemma inventory (2026-05-06)
+
+Phase 0 projection lemmas: composition results that hold by projection between boundaries, without strengthening kernel commitments. Two compositional axes, per the harvestable distinction:
+
+- **Vertical** (layer-to-layer): Authority ← Derivation ← Execution ← Corrective.
+- **Horizontal** (within-layer, sequential): `applySteps`, transitivity of `WeaklyLessPermissive`.
+
+### Existing projection lemmas already in the kernel
+
+**Vertical:**
+- `Derivation.decide_authorized_requires_all_green` — component verdicts → `AuthorityVerdict`. Direct corollary of `Authority.authorized_iff_all_green`; the bridge layer's load-bearing composition theorem.
+- `Derivation.revoked_basis_never_authorized` — `BasisDerivation.basisRevoked` projects through the verdict gate.
+- `Execution.revoked_basis_cannot_be_authorized_step` — same projection, lifted through the `AuthorizedStep` bridge.
+- `Execution.authorized_record_receipt_does_not_amend_policy` and three siblings — structural trapdoor invariants from StateTransition lifted through `StepAllowed` + `AuthorizedStep`.
+- `Execution.authorized_amend_policy_targets_policy_store` — positive witness lifted through the bridge.
+
+**Horizontal:**
+- `Corrective.weakly_less_permissive_trans` — transitivity of the authorized-set preorder.
+- `Corrective.corrective_sequence_monotone` — single-step monotonicity composes into list-step monotonicity by induction.
+- `Corrective.recovery_monotone` — bundled-environment projection through the recovery applier.
+
+The kernel is already meaningfully populated with projection lemmas in both axes. The Family verdict is supported by what's there.
+
+### Where new Phase 0 lemmas would land (not added)
+
+**Mechanical and isolated (candidate #4 territory):**
+
+Symmetric kind-separation trapdoors. For each of the four stores, three trapdoor theorems analogous to the existing PolicyStore-isolation set. Twelve theorems total in raw + lifted forms; pattern-match-and-`rfl` in every case. Landing sites:
+
+- `LeanProofs/Admissibility/StateTransition.lean` — raw layer (analogous to existing `record_receipt_does_not_amend_policy` etc.).
+- `LeanProofs/Admissibility/Execution.lean` — lifted layer (analogous to existing `authorized_record_receipt_does_not_amend_policy` etc.).
+
+**Mechanical-but-derivative (Derivation-layer symmetrics):**
+
+`Authority.lean` has five "no-* never authorized" theorems (`no_basis_never_authorized`, `advisory_basis_never_authorized`, `incomparable_precedence_never_authorized`, `conflicting_precedence_never_authorized`, `no_standing_never_authorized`). Currently only the `revoked_basis_never_authorized` analogue is lifted into `Derivation.lean`. Symmetric forms — e.g. `incomparable_precedence_never_authorized_in_decide`, `conflicting_precedence_never_authorized_in_decide`, `no_standing_never_authorized_in_decide` — would project the existing Authority-layer no-* theorems through `decideAuthority`, paralleling the revocation case. Each is a one-line proof: `unfold decideAuthority; exact <Authority-layer theorem>`. Landing site: `LeanProofs/Admissibility/Derivation.lean`.
+
+**Not Phase 0 (out of scope):**
+
+- TTL-extended revocation (candidate #3 TTL aspect) — requires temporal vocabulary; not mechanical, not isolated.
+- Derivation-trace / receipt-provenance (candidate #2 strong form) — requires new structural concept.
+- Behavioral laws on abstract store ops (candidate #5 enabler) — strengthens kernel commitments; explicitly out of audit scope.
+
+### Decision
+
+The audit-extension does not propose adding any Phase 0 lemmas in this pass. The inventory exists so the next move (whoever takes it, whenever) can choose between:
+
+a) Adding the mechanical symmetrics as a one-shot Family fold-in pass (twelve store-isolation theorems + three Derivation-layer no-* lifts ≈ fifteen one-line proofs).
+b) Deferring and treating them as a separate "Family fold-in" investigation, possibly tied to a specific paper need.
+c) Leaving the kernel as-is and treating the existing projection lemmas as sufficient evidence for the Family verdict.
+
+Each is honest. None rescues the calculus. The Family verdict — the kernel proves Family-with-composition-lemmas, not Calculus — is already supported by what's in the kernel without any of (a)/(b)/(c).
 
 ---
 
@@ -184,17 +302,27 @@ The atlas is the anti-universal-solvent companion to the synthesis paper. It can
 
 ---
 
-## Tomorrow's first move
+## Original "tomorrow's first move" (retired 2026-05-06)
+
+This plan was the prospective audit protocol on 2026-05-05. The AG audit completed it overnight; result is recorded in the Status header at top and detailed in the "Audit extension" section. Preserved here as history of the original investigative move.
 
 1. Open `~/git/lean/`.
 2. Walk the five admissibility modules + `AuthorizedStep` + `classify`.
-3. Fill the audit table (above) per existing object.
+3. Fill the audit table per existing object.
 4. Mark which objects are already composition theorems vs single-step properties.
 5. Mark which boundary individuations are load-bearing vs cosmetic.
 6. From the audit, decide which candidate theorems are already (partially) proved, which are vocabulary-deficient, and which are next-target-shaped.
 7. *Then* state targets in `BoundaryCompositionExperiments`.
 
 The audit is not a theorem. The audit is the precondition for honest theorem-stating.
+
+## Current state (2026-05-06)
+
+- AG audit complete; verdict **Family-with-composition-lemmas** (fork 2 of 3).
+- Audit extension to candidates #2–#5 complete; detailed in "Audit extension" section above.
+- Phase 0 projection lemma inventory documented; no new theorems added.
+- No P28 draft. No `BoundaryCompositionExperiments` namespace promotion. No new doctrine. Kernel earns the calculus or it doesn't.
+- Open separate decisions, none made: (a) develop missing behavioral commitments on store ops as their own object; (b) add mechanical Phase 0 symmetrics as a one-shot Family fold-in; (c) leave kernel as-is and treat existing projection lemmas as sufficient evidence for the Family verdict.
 
 ---
 
