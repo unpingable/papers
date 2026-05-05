@@ -108,7 +108,7 @@ Chatty's pushback (2026-04-19): calling a revision "v2.0" oversignals rupture wh
 
 - **Lean module:** `Paper25EpistemicBorderControl.lean`
 - **Cashout classes:** 1 (certify) + 4 (bridge artifact) + 2 (sharpen)
-- **Paper-ready:** Yes for the structural-refusal core. Five theorems cover §5's sibling-vs-§N algebraic adjudication and §3.1's Theorem 1 epistemic-access core. Proposition 1 (Gramian scaling for substitution magnitude) is paper-marked open and intentionally not Leaned; closed-loop induction is fenced as cathedral risk.
+- **Paper-ready:** Yes for the structural-refusal core. Five theorems cover §5's sibling-vs-§N algebraic adjudication and §3.1's Theorem 1 epistemic-access core. Diagnostic 1 (Gramian-conditioning, regime-specific substitution-magnitude scaling) is paper-marked open and intentionally not Leaned; closed-loop induction is fenced as cathedral risk.
 - **Revision candidacy:** P25 is v0.1 draft (2026-05-01), not yet pushed to Zenodo. §5 has a clarifying paragraph (added 2026-05-03) that names the Gramian identity $(\mathbf{1}_N \otimes O_T)^\top (\mathbf{1}_N \otimes O_T) = N \cdot O_T^\top O_T$, distinguishes subspace-preservation from individual-vector preservation, and points at the companion Lean module. v1.0 push will incorporate this; no separate fold-in revision needed.
 
 **What Lean underwrites:**
@@ -120,7 +120,7 @@ Chatty's pushback (2026-04-19): calling a revision "v2.0" oversignals rupture wh
 
 **What it does not prove (intentional):**
 
-- Proposition 1's quantitative substitution scaling for general $A$, $B$, noise structures (paper-marked open; partial result is paper-sequel territory, not gap-closure).
+- Diagnostic 1's quantitative substitution scaling for general $A$, $B$, noise structures (paper-marked open; partial result is paper-sequel territory, not gap-closure).
 - Closed-loop dynamics, Kalman filtering, LQR. The paper's §3.1 prose proof hand-waves a closed-loop induction; that vindication is correct but separable from the structural refusal. Formalizing it would import machinery the paper deliberately does not need.
 - Explicit finite-horizon observability matrix $O_T$ as a single matrix object. The §5 corollary is mechanical once $O_T$ is in scope; the abstract `replicateRows N M` already proves the load-bearing claim.
 - SVD or least-observable-direction quantitative claims. Mathlib coverage limited; the qualitative kernel + Gramian results here are the qualitative substrate the paper actually needs.

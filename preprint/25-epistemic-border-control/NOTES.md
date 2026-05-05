@@ -99,3 +99,47 @@ Paper 23's deferred ICU case may apply here too — a domain where target-substi
 **Scope of the patch.** ~4–8 new sentences in the body, 3–4 new references. Hardening pass, not rewrite. Does not block P26/P27 spine work. Land before v0.3 → v1.0 ratchet, but doesn't have to be the next motion.
 
 **Not P25 territory (recorded to prevent re-confusion).** Event-triggered / self-triggered control (Tabuada, Heemels, Lemmon) is **not** the right adjacency for P25 — that literature is about temporal sparsity of control updates under continuous-time dynamics, which belongs to P22 actuation / Δt timing, not to P25's spatial observability asymmetry. Earlier conflation corrected.
+
+## Gemini harvest — P25 ↔ Authority-kernel bridge candidate (recorded, not executed)
+
+Logged 2026-05-05. Outside-model (Gemini, FAST setting; resubmission) closed the v0.3 review with an integration question — *how does the Governor kernel handle the refusal to collapse $T$ and $V'$ rhetorically?* — and proposed a basis/evidence-gate shape with named denial reasons (`BASIS_SUBSTITUTION_UNADMITTED`, `TARGET_SENSOR_DEAD`, `PROXY_CANNOT_SPEND_TARGET_AUTHORITY`). Sorting before close so it does not turn into kernel implementation work.
+
+This is a **paper-side bridge candidate**, not a kernel primitive. The live object is how P25's $T \rightarrow V'$ substitution failure maps onto the existing Authority kernel without pretending the bridge is already built.
+
+### Keep
+
+- **"You may not hide a proxy inside the target's name."** Candidate keeper line for the eventual binding spec. Sharper than "do not collapse $T$ and $V'$" because it names the move the gate refuses, not a virtue the actor must possess.
+
+- **Substitution as a `BasisDerivation`-shaped failure predicate.** Concrete instance of the existing kernel slot, parallel in shape to revoked / expired / stale basis failure. Candidate predicate name `basisSubstituted` or `proxyCannotSpendTargetAuthority` (TBD). Symmetric obligation to `revoked_never_admissible`: a substitution-flagged claim cannot produce `admissibleBasis`. **Status:** candidate, non-binding; do not mint until paper-side binding spec ratifies the predicate name and obligation shape.
+
+- **Cross-dimensional decomposition of the same substitution case.** The important paper-side insight: $T/V'$ collapse can surface in any of the three Authority dimensions plus the evidence layer, depending on who is substituting and what consequence is being authorized.
+
+  - *Basis failure:* no admissible bridge from $V'$ to $T$.
+  - *Evidence failure:* available evidence concerns $V'$ or contamination signal $C$, not $T$.
+  - *Precedence failure:* a better/subordinate witness relation for $T$ exists but is ignored.
+  - *Standing failure:* the actor or source lacks authority to define the $V' \to T$ substitution relation.
+
+  This prevents the seductive reduction "proxy substitution is just a basis failure." Sometimes yes; sometimes precedence, standing, or evidence. Boundary Family framing handles this cleanly; Boundary Calculus would over-promise.
+
+- **Verdict trichotomy at the consequence boundary** (Gemini's clean cut). The same proxy evidence is admissible at different consequence levels:
+
+  - *Allowed:* collect more evidence, mark uncertainty, request witness.
+  - *Advisory:* "$V'$ raises concern about $T$."
+  - *Denied:* act as though $T$ has been established.
+
+  Maps directly onto the kernel's `denied / advisory / authorized` trichotomy with the advisory-basis short-circuit. Rhetoric is not forbidden — it just cannot authorize.
+
+### Quarantine
+
+- **Do not mint a kernel primitive yet.** No `basisSubstituted` predicate, no `proxy_cannot_spend` axiom, no Lean module added. The kernel already carries the BasisDerivation shape; substitution-as-instance is a binding-spec question, not a kernel-extension question.
+- **Do not treat this as *the* P25 ↔ kernel bridge.** It is one bridge candidate. Audit finding F4 (no bridge between Admissibility/ kernel and Admissibility.lean P27 skeleton) names the whole binding seam as open; this harvest closes one shape of one piece of it.
+- **Do not hand to AG-claude / implementation.** AG-claude will be tempted to turn this into kernel work; that is premature without a paper-side binding spec.
+- **Do not promote into P25 §8.** §8's "refuse to collapse $T$ and $V'$ into a single regulated variable" already names the architectural move at the paper's scope; importing kernel-binding vocabulary into §8 is the receipt-lineage promotion already deferred until P27 stabilizes.
+
+### Disposition
+
+- **Where this lives now:** here, as candidate harvest. Not promoted to working/, not promoted to kernel, not promoted into P25 v1.0 body.
+- **Forcing case for promotion to a dedicated bridge memo:** a second independent piece of binding-spec material (e.g., from P27 obligation-unsound reconciliation, or from a future controller-side admissibility instance) that needs the same scaffold. Until then, one harvest does not earn a memo file.
+- **Forcing case for paper-side body promotion:** P25 v1.1 or sequel that explicitly takes the kernel-binding turn. Not v1.0 territory.
+
+End of harvest. Stop.

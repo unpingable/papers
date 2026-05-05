@@ -10,11 +10,11 @@ header-includes:
 **James Beck**
 Independent Researcher
 
-**Date:** 2026-05-04
+**Date:** 2026-05-05
 
 **Series:** Δt Framework, Paper 25
 
-**Status:** Preprint v0.3 draft (2026-05-06). Working note: `working/epistemic-border-control.md`.
+**Status:** Preprint v0.3 draft (2026-05-05). Working note: `working/epistemic-border-control.md`.
 
 ---
 
@@ -86,7 +86,7 @@ We state the substitution claim in two forms: a static algebraic version (Theore
 
 ### 3.1 Theorem 1 (static observability-asymmetry substitution)
 
-**Theorem 1 (noiseless case).** *Let the observation map be deterministic ($v_t \equiv 0$). Let $x, x' \in \mathbb{R}^n$ be plant states with $C_\text{obs} A^k x = C_\text{obs} A^k x'$ for all $k = 0, \ldots, T-1$, but $q^\top x \neq q^\top x'$ (i.e., distinct values of the nominal target $V$). Then any controller whose policy depends only on $\{y_0, \ldots, y_{T-1}\}$ assigns the same control action sequence to $x$ and $x'$. Consequently, no such controller can regulate $V$ as $V$; the regulable component of any policy is restricted to the projection of $V$ onto the observable subspace.*
+**Theorem 1 (noiseless case).** *Let the observation map be deterministic ($v_t \equiv 0$). Let $x, x' \in \mathbb{R}^n$ be plant states with $C_\text{obs} A^k x = C_\text{obs} A^k x'$ for all $k = 0, \ldots, T-1$, but $q^\top x \neq q^\top x'$ (i.e., distinct values of the nominal target $V$). Then any controller whose policy depends only on $\{y_0, \ldots, y_{T-1}\}$ assigns the same control action sequence to $x$ and $x'$. Consequently, no such controller can condition its action on the difference in $V$ between these states. Any effect on $V$ is therefore not target-specific regulation of $V$ through observation, but an undifferentiated action over observationally aliased states. The regulable component of the policy is restricted to what the observation trajectory makes distinguishable.*
 
 *Proof.* By construction the observation trajectories are identical: $y_k = C_\text{obs} A^k x = C_\text{obs} A^k x'$ for all $k < T$. Any policy $K(y_0, \ldots, y_{T-1})$ depends on the trajectory only through these observations and so assigns the same $u_{0:T-1}$ to both initial conditions. The closed-loop trajectory of $V_t = q^\top x_t$ then differs between $x$ and $x'$ — by an amount that propagates the initial-condition difference $q^\top(x - x')$ through the closed loop — without the controller having any policy degree of freedom to track that difference. The controller's regulable target is therefore not $V$ but its projection onto the trajectory-observable subspace, i.e., a proxy $V'$. ∎
 
@@ -102,7 +102,7 @@ This is a regime-specific diagnostic, not a proved theorem. Statement and ration
 
 **Diagnostic 1.** *Let $W_o = O_T^\top O_T$ be the finite-horizon observability Gramian. For an LTI system with cost concentrated on a state direction $q$, the steady-state substitution index — the gap between the closed-loop tracking error in $V = q^\top x$ achieved by an ideal observer of $V$ and the tracking error achieved by the available controller — is tracked, in the regime simulated in §4, by $|\langle v_\text{min}(O_T), q \rangle|$ and by the conditioning of $W_o$ along $q$. The substitution index increases as both quantities increase in this regime, independently of controller sincerity or model correctness.*
 
-*Diagnostic rationale.* In the standard LTI estimation setting, the Kalman posterior covariance along the cost direction $q$ is controlled by the observability conditioning in the $q$ direction; in the finite-horizon / low-process-noise approximation this appears as $q^\top W_o^{-1} q$ at steady state, modulo process and observation noise (Anderson & Moore [9], ch. 4). When $q$ aligns with $v_\text{min}(O_T)$, this quantity grows as the inverse of the smallest singular value $\sigma_\text{min}(O_T)^2$. The LQR feedback law applied to the resulting estimate $\hat x$ propagates the posterior uncertainty into the closed-loop tracking error; in the simulated regime, the substitution magnitude is therefore tracked by $|\langle v_\text{min}, q \rangle|$ and by $1/\sigma_\text{min}(O_T)$. The bridge from finite-horizon observability Gramian to steady-state Kalman-LQR tracking error is regime-specific (LTI plant, low process noise, well-specified cost), not a general theorem. The fully general claim across all $(A, B, Q, R)$ and noise structures is open. ∎
+*Diagnostic rationale.* In the standard LTI estimation setting, the Kalman posterior covariance along the cost direction $q$ is controlled by the observability conditioning in the $q$ direction; in the finite-horizon / low-process-noise approximation this appears as $q^\top W_o^{-1} q$ at steady state, modulo process and observation noise (Anderson & Moore [9], ch. 4), where $W_o$ is taken to be invertible on the relevant subspace, or under the usual regularized / noise-conditioned interpretation of the Kalman covariance when $W_o$ is singular along $\ker(O_T)$. When $q$ aligns with $v_\text{min}(O_T)$, this quantity grows as the inverse of the smallest singular value $\sigma_\text{min}(O_T)^2$. The LQR feedback law applied to the resulting estimate $\hat x$ propagates the posterior uncertainty into the closed-loop tracking error; in the simulated regime, the substitution magnitude is therefore tracked by $|\langle v_\text{min}, q \rangle|$ and by $1/\sigma_\text{min}(O_T)$. The bridge from finite-horizon observability Gramian to steady-state Kalman-LQR tracking error is regime-specific (LTI plant, low process noise, well-specified cost), not a general theorem. The fully general claim across all $(A, B, Q, R)$ and noise structures is open. ∎
 
 The simulation in §4 traces the empirical scaling in this regime: $|\langle v_\text{min}, e_T \rangle|$ varies from $0.9999$ to $0.0439$ as $\alpha_T/\alpha_C$ varies from $0.01$ to $10$, and the substitution magnitude scales correspondingly across two orders of magnitude.
 
@@ -112,7 +112,7 @@ The simulation in §4 traces the empirical scaling in this regime: $|\langle v_\
 
 ### 4.1 Single-agent Kalman-LQR setup
 
-A single-agent simulation (`paper25_substitution.py`, available with the companion repository) instantiates the model of §2 with a correctly-specified Kalman-LQR controller. The two-latent process has $T_t$ as a random walk and $C_t$ as an AR(1) process with Poisson crank-shock innovations. Observation $y_t = \alpha_T T_t + \alpha_C C_t + v_t$. Control affects both latents asymmetrically: $b_C = -1.0$, $b_T = -0.05$. The cost function has $q_C = 0$ — the rhetoric-stays-fixed-on-$V$ axiom is baked in at the cost function, not smuggled in through controller misspecification.
+A single-agent simulation (`paper25_substitution.py`; see `docs/formalization-index.md` for the companion-artifact crosswalk) instantiates the model of §2 with a correctly-specified Kalman-LQR controller. The two-latent process has $T_t$ as a random walk and $C_t$ as an AR(1) process with Poisson crank-shock innovations. Observation $y_t = \alpha_T T_t + \alpha_C C_t + v_t$. Control affects both latents asymmetrically: $b_C = -1.0$, $b_T = -0.05$. The cost function has $q_C = 0$ — the rhetoric-stays-fixed-on-$V$ axiom is baked in at the cost function, not smuggled in through controller misspecification.
 
 *Scope of the simulation.* This simulation illustrates one correctly-specified Kalman-LQR regime — fixed plant, fixed cost, Gaussian-with-Poisson-shock innovations, five seeds per parameter point, no confidence bounds reported. It is offered as a mechanism check, not as a universal scaling law across $(A, B, Q, R)$. The numbers below are representative of this sweep, not derived bounds.
 
@@ -170,14 +170,16 @@ The substitution mechanism is structurally distinct from freeze. Freezing $V$ is
 
 ### Algebraic adjudication
 
+The two structural facts of this section are recorded in the companion Lean as the **kernel-preservation lemma** (`ker_replicateRows_eq_ker`) and the **Gramian-scaling identity** (`replicateRows_transpose_mul`); the paper-side crosswalk is `docs/formalization-index.md`.
+
 Let $N$ homogeneous agents observe the same latent state $x_t = [T_t, C_t]^\top$ through a common measurement map $C_\text{obs} = [\alpha_T, \alpha_C]$ with independent additive noise: $y_{i,t} = C_\text{obs} x_t + v_{i,t}$, $i = 1, \ldots, N$. Stack the observations as $\bar y_t = \bar C x_t + \bar v_t$ with $\bar C = \mathbf{1}_N \otimes C_\text{obs}$. Then:
 
 - The stacked finite-horizon observability matrix $O_T^\text{stack} = \mathbf{1}_N \otimes O_T$. Consequently $\ker(O_T^\text{stack}) = \ker(O_T)$.
-- The least-observable direction is unchanged: $v_\text{min}(O_T^\text{stack}) = v_\text{min}(O_T)$ (it is merely scaled).
+- The least-observable eigenspace / subspace is unchanged; in the nondegenerate case (smallest singular value of $O_T$ simple) this can be represented by the same $v_\text{min}$ up to scale and sign.
 - The stacked-observation Kalman filter has posterior variance $O(\sigma^2/N)$ — aggregation improves SNR — but the *direction* of residual uncertainty is unchanged.
 - The LQR gain depends only on $(A, B, Q, R)$ and is identical to the single-agent case.
 
-**Therefore:** Paper 24's clean aggregation (shape-preserving, open witness inclusion) reduces observation noise but does not rotate the observability subspace. The substitution magnitude scales as $O(1/\sqrt{N})$ of the single-agent case; its direction and structural origin are unchanged. Paper 24's sufficient condition for freeze-freedom is *not* sufficient for substitution-freedom. The mechanisms are independent.
+**Therefore:** Paper 24's clean aggregation (shape-preserving, open witness inclusion) reduces observation noise but does not rotate the observability subspace. The measurement-noise-driven component of substitution can shrink like $O(1/\sqrt{N})$ under independent homogeneous observations, but the residual direction of uncertainty, the kernel of $O_T$, and any structural / model-mismatch channel — including the shock-statistics channel of §4.5 — remain unchanged. Paper 24's sufficient condition for freeze-freedom is *not* sufficient for substitution-freedom. The mechanisms are independent.
 
 The core line, in one sentence: *aggregation improves SNR; it does not rotate the observability subspace.*
 
@@ -187,7 +189,7 @@ $$
 (\mathbf{1}_N \otimes O_T)^\top (\mathbf{1}_N \otimes O_T) = N \cdot O_T^\top O_T,
 $$
 
-preserving its eigenspaces (and in particular its kernel) and multiplying its eigenvalues by $N$. Aggregation improves weight along already-observed directions; it does not create epistemic access to a direction outside the observation subspace. The kernel-preservation and Gramian-scaling claims are recorded as Lean theorems in `LeanProofs/Paper25EpistemicBorderControl.lean` in the companion proofs repository.
+preserving its eigenspaces (and in particular its kernel) and multiplying its eigenvalues by $N$. Aggregation improves weight along already-observed directions; it does not create epistemic access to a direction outside the observation subspace. The formal statements are the Lean lemmas named at the head of this section.
 
 ### Scope condition for the algebraic argument
 
@@ -199,7 +201,7 @@ Homogeneity of the measurement map across agents is load-bearing. Heterogeneous 
 
 This section is the principal "not just X" firewall. The contribution depends on holding a sharper edge than the adjacent literatures supply.
 
-The classical structural anchor for the strict-unobservability case is Francis and Wonham's [10] *internal model principle*: exact regulation of a reference signal requires the controller to embed a model of that reference. The present paper uses this as a structural analogue for the contrapositive reading: where no observation channel supports an internal model of the target, exact regulation of that target is unavailable. When the underlying target $T$ has no real-time sensor, no internal model of $T$ can be derived from the observable trajectory, so exact regulation of $T$ is structurally impossible. The sub-sections below treat distinctions from contemporary adjacent literatures; the foundational anchor is fifty years older and structurally complete on its own terms. The paper's contribution is not to refine the internal model principle but to read it normatively as an admissibility claim about proxy-derived authority.
+The classical structural anchor for the strict-unobservability case is Francis and Wonham's [10] *internal model principle*: exact regulation of a reference signal requires the controller to embed a model of that reference. The present paper uses this as a structural analogue rather than a direct theorem import: where no observation channel supports an internal model of the target, exact regulation of that target is unavailable. When the underlying target $T$ has no real-time sensor, no internal model of $T$ can be derived from the observable trajectory, so exact regulation of $T$ is structurally impossible. The sub-sections below treat distinctions from contemporary adjacent literatures; the foundational anchor is fifty years older and structurally complete on its own terms. The paper's contribution is not to refine the internal model principle but to read it normatively as an admissibility claim about proxy-derived authority.
 
 ### 6.1 vs Goodhart's Law
 
@@ -276,6 +278,17 @@ The architectural moves that are *not* foreclosed:
 - **Witness-cohort heterogeneity.** Different agents with genuinely different $C_\text{obs}^{(i)}$ — for instance, witnesses positioned to observe $T$ through different channels — *can* rotate the effective observability subspace. This does not contradict Theorem 1 within an agent; it changes the effective $C_\text{obs}$ at the cohort level. Paper 24's witness-inclusion machinery becomes relevant here as the architecture for keeping the heterogeneity intact under aggregation.
 
 The third path is the most tractable and connects back to Paper 24 [2] and to the Governor / admissibility working track: separate sensor channels, separate admissibility accounting, separate update rules for each latent. None of these is a complete remedy; the unobservable component of $T$ remains unobservable. What changes is whether the system rhetorically conflates the regulable $V'$ with the nominal $V$, and whether the cohort can supply observation channels that the single agent cannot.
+
+### Lean formalization
+
+A companion Lean module `Paper25EpistemicBorderControl.lean` formalizes the load-bearing structural claims of §3.1 and §5:
+
+- **Theorem 1 epistemic-access core** (`obsEquiv_policy_same`). Any policy that depends only on the observation trace is constant on observation-equivalence classes — the structural refusal of §3.1.
+- **Theorem 1 corollary — target-distinct, policy-same** (`target_distinct_policy_same`). Observation-equivalent states with distinct target values still receive identical control sequences. The target-inequality hypothesis is intentionally unused in the proof; the policy never sees the target.
+- **§5 kernel preservation under homogeneous witness replication** (`ker_replicateRows_eq_ker`). Stacking $N$ homogeneous witnesses preserves the observability kernel: $\ker(\mathbf{1}_N \otimes M) = \ker(M)$ for $N > 0$.
+- **§5 Gramian scaling identity** (`replicateRows_transpose_mul`). $(\mathbf{1}_N \otimes M)^\top (\mathbf{1}_N \otimes M) = N \cdot M^\top M$. Eigenspaces are invariant; eigenvalues (and squared singular values) scale by $N$.
+
+The module deliberately does not formalize: (i) Diagnostic 1's quantitative substitution scaling for general $(A, B)$ and noise structures (paper-marked open and Lean-marked open); (ii) closed-loop Kalman / LQR dynamics (separable from the structural refusal and not needed for it); (iii) explicit finite-horizon $O_T$ as a single matrix object (the abstract `replicateRows N M` carries the load-bearing claim); (iv) SVD or least-observable-direction quantitative claims (qualitative kernel and Gramian results are the substrate the paper actually needs). The paper-side crosswalk listing module / lemma / paper-section correspondences is `docs/formalization-index.md`.
 
 ### Open problems
 
