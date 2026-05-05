@@ -61,3 +61,41 @@ Chatty's first-pass spike found the four primary citations; the broader review i
 ### ICU contrast case (sibling instantiation candidate)
 
 Paper 23's deferred ICU case may apply here too — a domain where target-substitution is especially stark and ethical stakes are high. Status: possible sibling instantiation, not planned §7 expansion. High-stakes examples have gravity wells.
+
+## Classical-control citation-debt hardening pass (logged 2026-05-05)
+
+**Problem.** Paper invokes finite-horizon observability matrix $O_T$, observability Gramian $W_o$, Kalman filter, LQR, $\sigma_\text{min}(O_T)$, posterior covariance projection — every load-bearing object is classical control-theory inventory — while the reference list contains zero classical control citations. Theorem 1 is the closed-loop reading of Kalman observability decomposition; Proposition 1 is the LTI Kalman posterior-Gramian formula. Currently reads as if the author may not know this. Reviewers in control / formal-methods communities will read it that way.
+
+**Severity.** Medium-high if P25 reaches control / formal-methods readers; medium for Δt/admissibility audience. Not fatal. Untucked shirt, not broken zipper.
+
+**Goal.** Own classical substrate explicitly; preserve novelty as the admissibility / proxy-authority reading. Internal warning label: **cite the classical math, claim the admissibility reading.** Do not let this become a new section explaining control theory to control theorists.
+
+**Add references (minimum set).**
+
+1. **Sontag, *Mathematical Control Theory* (2nd ed., 1998)** — observability decomposition. Cite at §3.1 / Theorem 1.
+2. **Anderson & Moore, *Optimal Filtering* (1979)** *or* **Kailath, Sayed & Hassibi, *Linear Estimation* (2000)** — Kalman posterior covariance / Gramian scaling. Cite at §3.2 proof sketch.
+3. **Francis & Wonham, "The Internal Model Principle of Control Theory" (Automatica 1976)** — exact regulation requires a model of the reference. Highest-leverage citation; structural anchor for the necessity claim. Cite in §6 (probably a new sub-section between §6.1 and §6.2, ~half the length of §6.1) or in §1 thesis.
+4. *Optional:* **Åström & Murray, *Feedback Systems* (2nd ed., 2020)** — readable modern bridge. Add to §1 only if a reader-bridge sentence is needed.
+
+**Placement summary.**
+
+- §3.1 Theorem 1 proof: one sentence acknowledging this is the closed-loop reading of Kalman's observability decomposition [Sontag].
+- §3.2 Proposition 1 proof sketch: one sentence citing the standard Kalman posterior-Gramian formula [Anderson & Moore / Kailath].
+- §6 firewall section: new "vs internal model principle" item [Francis & Wonham], distinguishing classical impossibility from the admissibility reading.
+- §1 or §6.5: spine-welding sentences (below).
+
+**Spine-welding sentences (draftable core).**
+
+> Classical observability results explain why the hidden target cannot be recovered from the proxy channel alone. The admissibility claim here is that a controller acting only on proxy-derived feedback cannot legitimately bind its action to the target it cannot observe.
+
+> This is the partial-observability instance of the series' broader authority-binding refusal: a mechanism may be well formed at one layer while lacking standing to bind, mutate or authorize at another.
+
+**Why this earns its keep three ways.**
+
+1. Cleans control-theory citation debt before a reviewer does.
+2. Owns the math substrate as classical, sharpening the §6 firewalls (Goodhart and performative prediction become contemporary distinctions; IMP becomes the structural anchor).
+3. Surfaces P25's spine position — partial-observability instance of the same authority-binding refusal that lives in the Lean kernel (`AuthorizedStep`: stale basis cannot bind at mutation layer) and across the admissibility family. Currently implicit; making it explicit welds P25 into the series rather than letting it float as a one-off control-theory paper.
+
+**Scope of the patch.** ~4–8 new sentences in the body, 3–4 new references. Hardening pass, not rewrite. Does not block P26/P27 spine work. Land before v0.3 → v1.0 ratchet, but doesn't have to be the next motion.
+
+**Not P25 territory (recorded to prevent re-confusion).** Event-triggered / self-triggered control (Tabuada, Heemels, Lemmon) is **not** the right adjacency for P25 — that literature is about temporal sparsity of control updates under continuous-time dynamics, which belongs to P22 actuation / Δt timing, not to P25's spatial observability asymmetry. Earlier conflation corrected.
