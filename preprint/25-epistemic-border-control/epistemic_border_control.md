@@ -14,13 +14,13 @@ Independent Researcher
 
 **Series:** Δt Framework, Paper 25
 
-**Status:** Preprint v0.2 draft (2026-05-04). Working note: `working/epistemic-border-control.md`.
+**Status:** Preprint v0.3 draft (2026-05-06). Working note: `working/epistemic-border-control.md`.
 
 ---
 
 ## Abstract
 
-Informal regulatory systems and institutional feedback controllers often attempt to govern targets — claim quality, truth-tracking, infrastructure burden, epistemic hygiene — under partial observability. When no real-time sensor on the target exists, but fast and legible observables load on a distinct proxy variable, the controller is structurally forced to substitute the proxy for the nominal target. The rhetoric of regulation remains fixed on the nominal target while the actual controlled variable becomes the proxy. This paper formalizes the substitution as a consequence of observability asymmetry, gives a finite-horizon observability-Gramian characterization of the substitution magnitude, and operationalizes both via a single-agent Kalman-LQR simulation. The substitution does not require corrupt intent, gamed metrics, or slow drift: sincere regulators with a correctly-specified cost function and a correctly-specified plant model produce the same substitution under the same sensor geometry. The result is sibling to Paper 24's [2] aggregation-layer masking by an algebraic argument — aggregation reduces variance as $O(\sigma^2/N)$ but does not rotate the observability subspace — and shares closed-loop substitution geometry with Paper 23's [1] identifiability-masking apparatus. Informal discourse moderation is the worked case in §7; the contribution is a control-geometry result that applies wherever a controller with a fixed sensor map confronts a target outside its observable subspace.
+Informal regulatory systems and institutional feedback controllers often attempt to govern targets — claim quality, truth-tracking, infrastructure burden, epistemic hygiene — under partial observability. When no real-time sensor on the target exists, or its signal-to-noise is dominated by a distinct proxy variable, the controller is structurally driven to substitute the proxy for the nominal target — strictly in the unobservable case, practically in the weakly-observable case as observability conditioning deteriorates. The rhetoric of regulation remains fixed on the nominal target while the actual controlled variable becomes the proxy. This paper isolates the substitution as a consequence of observability asymmetry, offers a finite-horizon observability-Gramian diagnostic for the substitution magnitude in the simulated regime, and operationalizes both via a single-agent Kalman-LQR simulation. The substitution does not require corrupt intent, gamed metrics, or slow drift: sincere regulators with a correctly-specified cost function and a correctly-specified plant model produce the same substitution under the same sensor geometry. The result is sibling to Paper 24's [2] aggregation-layer masking by an algebraic argument — aggregation reduces variance as $O(\sigma^2/N)$ but does not rotate the observability subspace — and shares closed-loop substitution geometry with Paper 23's [1] identifiability-masking apparatus. Informal discourse moderation is the worked case in §7; the contribution is a control-geometry result that applies wherever a controller with a fixed sensor map confronts a target outside its observable subspace.
 
 ---
 
@@ -31,7 +31,12 @@ The proxy is sensed.
 The controller acts through the sensed channel.
 Substitution is therefore not corruption, laziness, or Goodharting. It is the control consequence of observability asymmetry.
 
-The load-bearing claim: **the controller cannot regulate what its sensorium does not admit.** Or, more sharply: when the nominal target $V$ is not real-time observable and a proxy $V'$ is, sincerity changes the moral status of substitution but not its control geometry. Sincere regulators facing the same sensor set produce the same substitution. The mechanism is structural; the action is agential — humans still choose how to deploy the control inputs the structural pressure narrows them toward, and the moral surface lives at that choice — but the geometry of the substitution does not depend on the choice.
+The load-bearing claim has two regimes:
+
+- **Strict unobservability.** When target values produce identical observation trajectories, the controller cannot regulate what its sensorium does not admit. This is the impossibility result of Theorem 1.
+- **Weak observability / ill-conditioning.** When the target enters the observation map but is dominated by the proxy, target tracking is in principle possible but practically collapses into proxy tracking as observability conditioning deteriorates. This is the regime simulated in §4.
+
+In both regimes: when the nominal target $V$ is not effectively observable and a proxy $V'$ is, sincerity changes the moral status of substitution but not its control geometry. Sincere regulators facing the same sensor set produce the same substitution. The mechanism is structural; the action is agential — humans still choose how to deploy the control inputs the structural pressure narrows them toward, and the moral surface lives at that choice — but the geometry of the substitution does not depend on the choice.
 
 This distinguishes the present claim from at least three adjacent positions, each developed in §6:
 
@@ -40,6 +45,8 @@ This distinguishes the present claim from at least three adjacent positions, eac
 - **vs platform-moderation trade-off literature.** Existing moderation literature addresses domain-specific balancing under explicit policy regimes. The present claim is a general control-geometry result that applies wherever a controller with a fixed sensor map confronts a target lying outside the observable subspace.
 
 The constructive consequence — what an architecture must do to prevent the substitution rather than merely apologize for it — is sketched in §8.
+
+Classical observability explains why the hidden target cannot be recovered from the proxy channel alone. The admissibility claim here is that a controller acting only on proxy-derived feedback cannot legitimately bind its action to the target it cannot observe. This is the partial-observability instance of the series' broader authority-binding refusal: a mechanism may be well formed at one layer while lacking standing to bind, mutate, or authorize at another. The control result is classical; the contribution is the admissibility interpretation.
 
 ---
 
@@ -75,7 +82,7 @@ The controller's policy depends on $y_{0:t}$ via a state estimator (e.g. a Kalma
 
 ## 3. Substitution-forcing theorem
 
-We state the substitution-forcing claim in two forms: a static algebraic version (Theorem 1) and a dynamic finite-horizon Gramian version (Proposition 1) that quantifies the substitution magnitude.
+We state the substitution claim in two forms: a static algebraic version (Theorem 1) for the strict-unobservability case, and a regime-specific finite-horizon Gramian diagnostic (Diagnostic 1) that tracks the substitution magnitude in the weakly-observable / simulated regime.
 
 ### 3.1 Theorem 1 (static observability-asymmetry substitution)
 
@@ -83,17 +90,21 @@ We state the substitution-forcing claim in two forms: a static algebraic version
 
 *Proof.* By construction the observation trajectories are identical: $y_k = C_\text{obs} A^k x = C_\text{obs} A^k x'$ for all $k < T$. Any policy $K(y_0, \ldots, y_{T-1})$ depends on the trajectory only through these observations and so assigns the same $u_{0:T-1}$ to both initial conditions. The closed-loop trajectory of $V_t = q^\top x_t$ then differs between $x$ and $x'$ — by an amount that propagates the initial-condition difference $q^\top(x - x')$ through the closed loop — without the controller having any policy degree of freedom to track that difference. The controller's regulable target is therefore not $V$ but its projection onto the trajectory-observable subspace, i.e., a proxy $V'$. ∎
 
-*Remark (noisy case).* Adding observation noise $v_t$ does not lift the impossibility: the noiseless argument captures the structural fact that observation geometry forecloses the regulation. When observation noise is present, near-identical observable trajectories produce near-identical control actions; the substitution magnitude is then quantified by Proposition 1 below, with the noise floor entering through the Kalman posterior covariance.
+*Remark (classical anchor).* Theorem 1's structural fact — states identical to the controller across the observation trajectory are indistinguishable to any policy with horizon $\leq T$ — is the closed-loop reading of Kalman's observability decomposition (Sontag [8], ch. 6). The control-theoretic content is classical; the contribution here is the substitution-forcing reading of that classical fact, prior to any cost-function or sincerity considerations.
+
+*Remark (noisy case).* Adding observation noise $v_t$ does not lift indistinguishability in the strict case: the noiseless argument captures the structural fact that observation geometry forecloses regulation when trajectories are exactly identical. In the weakly-observable case — where target distinguishability is in principle present but ill-conditioned — noise does not produce strict impossibility but converts the geometry into estimation-conditioning / SNR dependence; near-identical observable trajectories produce near-identical control actions, and the substitution magnitude is then tracked, in the simulated regime, by Diagnostic 1 below, with the noise floor entering through the Kalman posterior covariance.
 
 The theorem says nothing about whether the controller's stated cost weights the unobservable component of $V$. It says only that observation geometry already forecloses the regulation: a sincere controller with $q_C = 0$ and a correctly-specified cost is in exactly the same position as a corrupt controller that explicitly swapped $V$ for $V'$.
 
-### 3.2 Proposition 1 (Gramian scaling — diagnostic claim)
+### 3.2 Diagnostic 1 (Gramian-conditioning diagnostic)
 
-**Proposition 1.** *Let $W_o = O_T^\top O_T$ be the finite-horizon observability Gramian. For an LTI system with cost concentrated on a state direction $q$, the steady-state substitution index — the gap between the closed-loop tracking error in $V = q^\top x$ achieved by an ideal observer of $V$ and the tracking error achieved by the available controller — is governed by $|\langle v_\text{min}(O_T), q \rangle|$ and by the conditioning of $W_o$ along $q$. In the simulated regime characterized in §4, the substitution index increases as both quantities increase, independently of controller sincerity or model correctness.*
+This is a regime-specific diagnostic, not a proved theorem. Statement and rationale are explicitly limited to the simulated LTI / Kalman-LQR setting; the fully general claim is named below as open.
 
-*Proof sketch.* The Kalman filter's posterior covariance restricted to the cost direction $q$ scales as $q^\top W_o^{-1} q$ at steady state, modulo process and observation noise. When $q$ aligns with $v_\text{min}(O_T)$, this quantity grows as the inverse of the smallest singular value $\sigma_\text{min}(O_T)^2$. The LQR feedback law applied to the resulting estimate $\hat x$ propagates the posterior uncertainty into the closed-loop tracking error; the substitution magnitude is therefore controlled by $|\langle v_\text{min}, q \rangle|$ and by $1/\sigma_\text{min}(O_T)$. The fully general claim (across all $A$, $B$, noise structures) is open; the simulated regime in §4 exhibits monotone scaling in both quantities. ∎
+**Diagnostic 1.** *Let $W_o = O_T^\top O_T$ be the finite-horizon observability Gramian. For an LTI system with cost concentrated on a state direction $q$, the steady-state substitution index — the gap between the closed-loop tracking error in $V = q^\top x$ achieved by an ideal observer of $V$ and the tracking error achieved by the available controller — is tracked, in the regime simulated in §4, by $|\langle v_\text{min}(O_T), q \rangle|$ and by the conditioning of $W_o$ along $q$. The substitution index increases as both quantities increase in this regime, independently of controller sincerity or model correctness.*
 
-The simulation in §4 traces the empirical scaling: $|\langle v_\text{min}, e_T \rangle|$ varies from $0.9999$ to $0.0439$ as $\alpha_T/\alpha_C$ varies from $0.01$ to $10$, and the substitution magnitude scales correspondingly across two orders of magnitude.
+*Diagnostic rationale.* In the standard LTI estimation setting, the Kalman posterior covariance along the cost direction $q$ is controlled by the observability conditioning in the $q$ direction; in the finite-horizon / low-process-noise approximation this appears as $q^\top W_o^{-1} q$ at steady state, modulo process and observation noise (Anderson & Moore [9], ch. 4). When $q$ aligns with $v_\text{min}(O_T)$, this quantity grows as the inverse of the smallest singular value $\sigma_\text{min}(O_T)^2$. The LQR feedback law applied to the resulting estimate $\hat x$ propagates the posterior uncertainty into the closed-loop tracking error; in the simulated regime, the substitution magnitude is therefore tracked by $|\langle v_\text{min}, q \rangle|$ and by $1/\sigma_\text{min}(O_T)$. The bridge from finite-horizon observability Gramian to steady-state Kalman-LQR tracking error is regime-specific (LTI plant, low process noise, well-specified cost), not a general theorem. The fully general claim across all $(A, B, Q, R)$ and noise structures is open. ∎
+
+The simulation in §4 traces the empirical scaling in this regime: $|\langle v_\text{min}, e_T \rangle|$ varies from $0.9999$ to $0.0439$ as $\alpha_T/\alpha_C$ varies from $0.01$ to $10$, and the substitution magnitude scales correspondingly across two orders of magnitude.
 
 ---
 
@@ -102,6 +113,8 @@ The simulation in §4 traces the empirical scaling: $|\langle v_\text{min}, e_T 
 ### 4.1 Single-agent Kalman-LQR setup
 
 A single-agent simulation (`paper25_substitution.py`, available with the companion repository) instantiates the model of §2 with a correctly-specified Kalman-LQR controller. The two-latent process has $T_t$ as a random walk and $C_t$ as an AR(1) process with Poisson crank-shock innovations. Observation $y_t = \alpha_T T_t + \alpha_C C_t + v_t$. Control affects both latents asymmetrically: $b_C = -1.0$, $b_T = -0.05$. The cost function has $q_C = 0$ — the rhetoric-stays-fixed-on-$V$ axiom is baked in at the cost function, not smuggled in through controller misspecification.
+
+*Scope of the simulation.* This simulation illustrates one correctly-specified Kalman-LQR regime — fixed plant, fixed cost, Gaussian-with-Poisson-shock innovations, five seeds per parameter point, no confidence bounds reported. It is offered as a mechanism check, not as a universal scaling law across $(A, B, Q, R)$. The numbers below are representative of this sweep, not derived bounds.
 
 ### 4.2 Phase-transition sweep
 
@@ -117,23 +130,23 @@ Varying $\alpha_T / \alpha_C$ from $0.01$ to $10$ (five seeds per ratio, 3000 st
 | 2.00 | 1.1248 | 80.0  | 0.2178 | 7.2 |
 | 10.0 | 1.1509 | 2000  | **0.0439** | 1.9 |
 
-Reading the table left-to-right, the $T$-axis literally rotates into and out of the observability null-space as the sensor weighting varies. At small $\alpha_T$ the least-observable direction $v_\text{min}$ is essentially the $T$-axis itself (alignment $\approx 1$); at large $\alpha_T$ the alignment has rotated away ($\approx 0$) and the ill-conditioned direction is now the $C$-axis. The substitution magnitude $T_\text{rms}^\text{asym} / T_\text{rms}^\text{clean}$ tracks the alignment column closely, scaling roughly as $(\alpha_T/\alpha_C)^{-0.75}$.
+Reading the table left-to-right, the $T$-axis rotates into and out of the observability null-space as the sensor weighting varies. At small $\alpha_T$ the least-observable direction $v_\text{min}$ is essentially the $T$-axis itself (alignment $\approx 1$); at large $\alpha_T$ the alignment has rotated away ($\approx 0$) and the ill-conditioned direction is now the $C$-axis. In this sweep, the substitution magnitude $T_\text{rms}^\text{asym} / T_\text{rms}^\text{clean}$ tracks the alignment column closely, with the ratio scaling roughly as $(\alpha_T/\alpha_C)^{-0.75}$ across the five seeds per parameter point. The exponent is a fit to this sweep, not a derived law.
 
 ### 4.3 Effort without effect
 
-A second diagnostic isolates the rhetorical payload. At $\alpha_T/\alpha_C = 0.05$: $|U|_\text{asym} = 0.20$ vs $|U|_\text{clean} = 0.09$, with $T_\text{rms}^\text{asym} = 6.8$ vs $T_\text{rms}^\text{clean} = 0.04$. The asymmetric-sensor controller is doing more than twice the control work for $\sim$180× worse tracking. The work is not wasted; it is going into $C$-suppression. The controller's subjective report — its cost function — remains "I am regulating $T$." The actual closed-loop variable being regulated is $C$, because that is where the posterior signal lives.
+A second diagnostic isolates the rhetorical payload. At $\alpha_T/\alpha_C = 0.05$ in this representative sweep: $|U|_\text{asym} = 0.20$ vs $|U|_\text{clean} = 0.09$, with $T_\text{rms}^\text{asym} = 6.8$ vs $T_\text{rms}^\text{clean} = 0.04$. The asymmetric-sensor controller in this point is doing more than twice the control work for $\sim$180× worse tracking. The work is not wasted; it is going into $C$-suppression. The controller's subjective report — its cost function — remains "I am regulating $T$." The actual closed-loop variable being regulated is $C$, because that is where the posterior signal lives.
 
 This is the rhetoric-stays-fixed phenomenon stated in two numbers.
 
 ### 4.4 Mechanism confirmation
 
-The LQR gain is $[-2.92, 0]$ across the entire sweep — the controller assigns zero weight to $C$ in its cost function, as the $q_C = 0$ axiom requires. The substitution runs entirely through the Kalman filter: $\hat T$ is pulled around by $C$ because $y = \alpha_T T + \alpha_C C$ and $\alpha_C$ dominates. LQR responds to the contaminated $\hat T$ via $B = [b_T, b_C]^\top$ with $|b_C| = 20|b_T|$, so the same control input mostly suppresses $C$. No misspecification, no wrong beliefs, no corrupted intent — filter geometry alone forces the substitution.
+The LQR gain is $[-2.92, 0]$ across the entire sweep — the controller assigns zero weight to $C$ in its cost function, as the $q_C = 0$ axiom requires. The substitution runs entirely through the Kalman filter: $\hat T$ is pulled around by $C$ because $y = \alpha_T T + \alpha_C C$ and $\alpha_C$ dominates. LQR responds to the contaminated $\hat T$ via $B = [b_T, b_C]^\top$ with $|b_C| = 20|b_T|$, so the same control input mostly suppresses $C$. No misspecification, no wrong beliefs, no corrupted intent — in this regime, estimator geometry drives the observed substitution.
 
 ### 4.5 A second substitution channel: shock-statistics mismatch
 
 Even at $\alpha_T/\alpha_C = 10$, $T_\text{rms}^\text{asym} / T_\text{rms}^\text{clean} \approx 1.9$, not unity. The remaining gap arises from the filter's Gaussian model being blindsided by Poisson crank-shock innovations on $C$. A unit-amplitude shock ten times the one-step $C$-sigma arrives instantaneously; the filter, expecting smooth Gaussian $C$-innovations, misattributes part of the resulting $y$-jump to $T$. That drives $\hat T$ up, LQR applies $u$, and the substitution cascade fires — even though $\alpha_T$ is large enough that the smooth-$C$ component would be well-separated.
 
-This widens the necessity claim. Substitution is forced not only by observation-weight asymmetry ($\alpha_T \ll \alpha_C$) but by any systematic mismatch between the filter's assumed state statistics and the real ones on a channel coupled to $y$. The observability-Gramian condition of Proposition 1 is sufficient but not necessary; shock-model mismatch is a second sufficient condition. We do not pursue the shock-statistics channel further in this paper.
+This suggests a second sufficient channel, not developed here. In addition to observation-weight asymmetry ($\alpha_T \ll \alpha_C$), filter mis-specification with respect to the real state statistics on a channel coupled to $y$ may produce substitution; the Gaussian filter's blindness to Poisson jumps in this simulation is one instance. The observability-Gramian condition of Diagnostic 1 is therefore sufficient but not necessary in this regime, and shock-model mismatch is a further sufficient condition observed in simulation. We do not pursue the shock-statistics channel further in this paper.
 
 ### 4.6 Bridge to Paper 23
 
@@ -186,15 +199,17 @@ Homogeneity of the measurement map across agents is load-bearing. Heterogeneous 
 
 This section is the principal "not just X" firewall. The contribution depends on holding a sharper edge than the adjacent literatures supply.
 
+The classical structural anchor for the strict-unobservability case is Francis and Wonham's [10] *internal model principle*: exact regulation of a reference signal requires the controller to embed a model of that reference. The present paper uses this as a structural analogue for the contrapositive reading: where no observation channel supports an internal model of the target, exact regulation of that target is unavailable. When the underlying target $T$ has no real-time sensor, no internal model of $T$ can be derived from the observable trajectory, so exact regulation of $T$ is structurally impossible. The sub-sections below treat distinctions from contemporary adjacent literatures; the foundational anchor is fifty years older and structurally complete on its own terms. The paper's contribution is not to refine the internal model principle but to read it normatively as an admissibility claim about proxy-derived authority.
+
 ### 6.1 vs Goodhart's Law
 
 Goodhart's Law and its descendants describe a *contingent corruption*: when a measure becomes a target, optimization pressure tends to game the measure. The literature treats this as a problem amenable to better metrics, more robust measures, or counterfactual auditing.
 
-The present claim is *necessity-framed*. When the underlying target has no real-time sensor at all — when $T$ does not enter the observation map $C_\text{obs}$ — no metric is being gamed, because the target was never available to optimize against in the first place. The controller is not corrupted; the controller is structurally barred from regulating $T$. Sincere intent does not save it. The substitution is forced by sensor geometry.
+The present claim is *upstream-framed*. When the underlying target has no real-time sensor at all — when $T$ does not enter the observation map $C_\text{obs}$ — no metric is being gamed, because the target was never available to optimize against in the first place. When the target enters but is dominated by the proxy, the controller can in principle track it but practically does not, because the posterior signal lives in the proxy direction. The controller is not corrupted; in the strict-unobservability case it is structurally barred from regulating $T$, and in the weakly-observable case it is practically pushed away from regulating $T$ by ill-conditioning. Sincere intent does not save it.
 
-The pithy form: Goodhart says *the measure is gamed*. The present claim says *the target never entered the controller*. Different pathology, different remedy: Goodhart can in principle be avoided by replacing the gamed metric with a less-gameable one; observability-asymmetry substitution can only be avoided by restoring the $T$-channel itself, which is by hypothesis unavailable.
+The pithy form: Goodhart says *the measure is gamed*. The present claim says *the target never effectively entered the controller's decision loop*. The two are compatible: observability-asymmetry substitution names a precondition that often precedes Goodhart-style proxy failure. Goodhart's remedy — replacing the gamed metric with a less-gameable one — does not address the upstream condition where the target itself is unavailable or only weakly available. That can only be addressed by restoring or strengthening the $T$-channel, which is by hypothesis difficult or impossible.
 
-The strongest opposing form is Manheim and Garrabrant's [3] classification of Goodhart variants — *regressional, extremal, causal, adversarial* — which collectively cover the family of failures that can occur when a proxy is selected, optimized, sampled, selected on, or adversarially exploited. Each variant assumes a regime in which a proxy has already been chosen and is being relied upon, and each describes a way in which reliance fails. The present paper names a *prior* condition: the nominal target is outside the controller's observation channel, so the proxy is not merely selected badly. It is the only regulable object available. None of the four Goodhart variants applies *before* a proxy has been selected; all four describe what happens *to* a proxy under optimization pressure. Observability-asymmetry substitution names what happens *because the controller cannot do otherwise* — the regulable surface itself is foreclosed by sensor geometry, prior to any optimization pressure on whatever proxy is reached for next.
+Manheim and Garrabrant's [3] classification of Goodhart variants — *regressional, extremal, causal, adversarial* — collectively covers the family of failures that occur when a proxy is selected, optimized, sampled, selected on, or adversarially exploited. Each variant assumes a regime in which a proxy has already been chosen and is being relied upon, and each describes a way in which reliance fails. Observability-asymmetry substitution sits *upstream* of these variants — particularly regressional Goodhart: before optimization pressure corrupts a chosen proxy, the sensor map may already determine which proxy is regulable in the first place. The two mechanisms are compatible. The contribution here is not to claim the four Goodhart variants do not apply; they describe the post-selection dynamics that follow once observability geometry has narrowed the regulable surface. The present paper isolates the upstream condition under which a proxy becomes the only available object.
 
 ### 6.2 vs performative prediction (Perdomo et al. [4])
 
@@ -218,7 +233,7 @@ Existing theoretical work on platform moderation — Dwork et al.'s [7] window-b
 
 ## 7. Worked example: local data center opposition
 
-We work one example in detail. The example is drawn from informal discourse at the county / regional / local-coalition level, not from a formal platform-moderation case. The scope conditioning of §6.5 applies.
+We work one example in detail. The example is drawn from informal discourse at the county / regional / local-coalition level, not from a formal platform-moderation case. The example is stylized: it is meant to expose the control geometry, not to adjudicate any particular project. The scope conditioning of §6.5 applies.
 
 A county learns a large data center is coming in with tax abatements, heavy power demand, opaque procurement, and possible strain on water or grid infrastructure.
 
@@ -264,7 +279,7 @@ The third path is the most tractable and connects back to Paper 24 [2] and to th
 
 ### Open problems
 
-1. **Quantitative version of Theorem 1.** Theorem 1's clean statement uses identical observation trajectories as the hypothesis. A version with near-identical trajectories under noise plus a quantitative bound in terms of $|\langle v_\text{min}, q \rangle|$ and $\sigma_\text{min}(O_T)$ is the natural sharpening. Proposition 1 gives the form; promotion to a full theorem with explicit constants is open.
+1. **Quantitative version of Theorem 1.** Theorem 1's clean statement uses identical observation trajectories as the hypothesis. A version with near-identical trajectories under noise plus a quantitative bound in terms of $|\langle v_\text{min}, q \rangle|$ and $\sigma_\text{min}(O_T)$ is the natural sharpening. Diagnostic 1 gives the form; promotion to a full theorem with explicit constants across $(A, B, Q, R)$ is open.
 2. **Heterogeneous-cohort analysis.** What cohort composition $\{C_\text{obs}^{(i)}\}$ restores $T$-observability at the cohort level? When does it fail to under aggregation rules borrowed from Paper 24?
 3. **Compound-regime sim.** Does Paper 24's witness-filter pathology stack with the present substitution mechanism, and what is the joint scaling? The algebraic adjudication of §5 establishes independence of the two mechanisms in the homogeneous case; the heterogeneous extension is where stacking would matter.
 4. **Hysteresis and asymmetric thresholds.** Threshold asymmetry in topic-classification (lower bar to enter "suspect" status than to leave) is a sibling pathology that the present model does not encode. Worth a separate treatment.
@@ -286,3 +301,9 @@ The third path is the most tractable and connects back to Paper 24 [2] and to th
 [6] Sprenger, B., De Pasquale, G., Soloperto, R., Lygeros, J., & Dörfler, F. (2024). Control strategies for recommendation systems in social networks. *IEEE Control Systems Letters*, 8.
 
 [7] Dwork, C., Hays, C., Kleinberg, J., & Raghavan, M. (2024). Content Moderation and the Formation of Online Communities: A Theoretical Framework. *Proceedings of the ACM Web Conference 2024*. doi:10.1145/3589334.3645490. arXiv:2310.10573.
+
+[8] Sontag, E. D. (1998). Mathematical Control Theory: Deterministic Finite Dimensional Systems (2nd ed.). Springer-Verlag.
+
+[9] Anderson, B. D. O., & Moore, J. B. (1979). Optimal Filtering. Prentice-Hall.
+
+[10] Francis, B. A., & Wonham, W. M. (1976). The internal model principle of control theory. *Automatica*, 12(5), 457–465. doi:10.1016/0005-1098(76)90006-6
