@@ -22,11 +22,15 @@ The missing layer asks: *what kind of state is this, who is changing it, under w
 
 This is potentially the **OS-substrate instantiation of the admissibility shape**, not merely adjacent to admissibility. The framing matters because "adjacent" is too weak: the mutation questions below map approximately onto the admissibility-family six boundaries plus the Corrective-monotonicity / non-laundering recovery vocabulary plus zombie-obligation-as-stale-basis.
 
-Keeper line:
+Keeper lines:
 
 > **If accountable mutation is the missing OS primitive, zombie obligation is one of its named failure modes.**
+>
+> **The operator is currently the missing primitive.**
 
 A zombie obligation is what you see when a mutation's basis decayed but the mutation kept firing. The authority graph is dead. The system has no shared primitive to notice the contradiction. That is not merely an ops/book primitive — it is an accountable-mutation failure mode visible from a different angle.
+
+The second keeper sharpens the first. A graybeard with `grep`, `journalctl`, `systemctl`, `strace`, `auditd`, shell scripts and resentment can reconstruct almost anything. That does not mean the OS has the primitive. It means the operator is acting *as* the missing primitive, holding the dependency graph in their head and adjudicating basis validity by hand.
 
 ## Non-claim
 
@@ -57,6 +61,27 @@ For any meaningful state change:
 
 ## Existing partial ancestors
 
+### What each ancestor asks
+
+| Ancestor | The question it asks |
+| --- | --- |
+| Capability OSes (KeyKOS, EROS) | *Do you hold authority?* |
+| Provenance systems (PASS, Hi-Fi, CamFlow) | *How did this state come to be?* |
+| OS transactions (TxOS) | *Can this mutation commit atomically or roll back?* |
+| Information-flow OSes (HiStar, Flume, DStar) | *What may influence what?* |
+| Standing-obligation managers (systemd, runit) | *Is this obligation still declared?* |
+| Reconciliation engines (Kubernetes, operators) | *Does the desired state still hold?* |
+| History / reproducibility (Git, Nix) | *What was the prior state, and how was it derived?* |
+| Audit / eBPF | *What just happened?* |
+
+Accountable mutation asks the question none of them ask:
+
+> **Is this mutation still justified?**
+
+That is the floor. Not access. Not trace. Not rollback. Not declared-state convergence. **Basis validity.**
+
+### Detailed inventory
+
 These addressed pieces but did not synthesize the bundle:
 
 - **Capability OSes** (KeyKOS, EROS): authority-as-unforgeable-token, persistence, checkpoint/restart. Mostly access, not full mutation accounting.
@@ -79,7 +104,7 @@ Mutation as **typed, scoped, time-bounded, consequence-bearing**, with receipt a
 
 This recognition is **empty** if its specific synthesis reduces cleanly to "capability + provenance + transactions + DIFC + receipts repackaged with new vocabulary."
 
-Bite test: does it distinguish failure modes the partial ancestors miss?
+Bite test: does it distinguish failure modes the partial ancestors miss — *natively*, not through operator archaeology?
 
 Candidate distinguishing failure modes (held, not promoted):
 
@@ -87,8 +112,11 @@ Candidate distinguishing failure modes (held, not promoted):
 - **Cross-tool mutation laundering.** One role's mutation is reattributed to another via shared substrate or ambient permission inheritance.
 - **Receipt-unsoundness.** Recovery path exists in code but cannot be evidenced after the fact (controller-correct, operator-unsound — see P27).
 - **Decay-blindness.** The OS has no native vocabulary for "this authorization was valid when issued but is not now."
+- **Recurrent mutation after justification lapse.** Reconciliation engines keep trying to apply a spec whose authoring basis has expired; convergence does not check basis currency.
 
-If these reduce cleanly to existing partial-ancestor vocabularies, the recognition has not earned its keep and the note retires.
+**Operator archaeology does not count as native support.** A competent operator with `journalctl`, `systemctl`, `auditd`, `strace`, eBPF probes, shell scripts and resentment can reconstruct most of these symptoms after the fact. That does not mean the OS has the primitive. It means the operator is *acting as* the missing primitive — holding the dependency graph in their head, manually adjudicating basis validity, paying the cost the OS refuses to pay. The bite test is whether the system itself can natively name, question, and revoke the basis of a mutation, not whether a sufficiently determined human can do it from logs.
+
+If the candidate failure modes reduce cleanly to existing partial-ancestor vocabularies *under that constraint*, the recognition has not earned its keep and the note retires.
 
 ## Forcing case (not yet)
 
@@ -116,6 +144,35 @@ Start workspace-scoped on Linux, where the failure evidence lives:
 - Cockpit answers: what changed, why, by whom, recoverable how.
 
 FreeBSD is the cleaner *conceptual* lift (ZFS, jails, Capsicum, MAC framework, base-system coherence) but the *wrong substrate first*. The accountable-mutation thesis is about the topology age's actual mutation failures: browsers, systemd unit explosion, cgroup mismanagement, Wayland fragility, Electron forests, package managers, cloud agents, AI tools mutating files on inferred intent. Those bodies are buried in Linux. Substrate clarity follows from problem reality, not the other way around.
+
+## User-facing vocabulary (if revisited — not now)
+
+If accountable mutation ever surfaces to the operator, it should not be bureaucracy. It should be ordinary workbench questions answered in concrete, boring vocabulary:
+
+| Term | What it names |
+| --- | --- |
+| **standing** | who/what may act |
+| **basis** | why the action is currently allowed |
+| **lease** | how long the basis remains valid |
+| **scope** | what state boundary the action may cross |
+| **receipt** | what durable record survives |
+| **revoke** | stop future mutation under this basis |
+| **recover** | undo or reconstruct previous state |
+| **quarantine** | preserve evidence, block propagation |
+
+The shape of the user-facing surface is more `workbench` than `mutationctl-as-lifestyle-brand`:
+
+```sh
+workbench status
+workbench changes --since yesterday
+workbench why path/to/file
+workbench standing
+workbench revoke <actor-or-lease>
+workbench receipts --state config
+workbench recover <receipt-id>
+```
+
+The cockpit is not a metric dashboard. It is a **standing-and-recovery surface** for the continuity layer. The earlier memory-pressure widget is a degenerate case: widget = witness, user = authorizer, restart = mutation, oomd = automated mutator, app.slice rule = standing policy, PSI threshold = evidence trigger. The gap is that the receipt and recovery side is currently scattered or absent — which is why the operator ends up improvising the missing primitive.
 
 ## Relation to existing constellation
 
