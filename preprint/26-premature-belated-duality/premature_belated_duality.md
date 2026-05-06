@@ -4,13 +4,13 @@
 
 **James Beck**
 Independent Researcher
-2026-05-04 — Draft v0.2
+2026-05-06 — Draft v0.3 / 1.0-candidate
 
 ---
 
 ## Abstract
 
-Many institutional failures are attributed to "slow process" or "execution shortfall." This paper argues that a structurally distinct class of failure — empty binding windows — is hidden inside that vocabulary. Plainly: an empty binding window exists when the system can only know enough to act after acting would no longer matter. We formalize the temporal seam as a two-curve model: admissibility maturity m(t), informally whether the system knows enough to bind, and consequence viability c(t), informally whether binding can still matter. The valid binding window W is the set of times on which both curves are above their thresholds. Three failure orientations follow: premature commitment binds while m has not matured; belated consequence binds after c has decayed; empty-window failure is the regime in which W is empty for all t. Distinguishing empty-window failure from ordinary process delay requires a discriminator: residual event-class mismatch. Closure requires changing the event class itself, not merely improving execution. Because the discrimination depends on what counts as feasible execution, we introduce a counterfactual regime selection rule and a subtype matrix that name which regime applies by default and what override burdens are required to deviate. Worked cases — generational climate harm, FDA pre-market approval, administrative-queue cascades, Sarbanes-Oxley and complex fraud, scientific pre-registration, platform-worker classification — demonstrate the framework across natural-latency, manufactured, and ontological sub-types. The result is sibling to spatial substitution failures (Paper 25 [8]) on a temporal axis, and orthogonal to the four-layer decomposition (Paper 22 [5]). The framework's central political move is making the regime choice explicit: the same case can classify differently under different counterfactuals, and naming the regime is part of what the framework lets a reader see clearly.
+Many institutional failures are attributed to "slow process" or "execution shortfall." This paper argues that a structurally distinct class of failure — empty binding windows — is hidden inside that vocabulary. Plainly: an empty binding window exists when the system can only know enough to act after acting would no longer matter. We formalize the temporal seam as a two-curve model: admissibility maturity m(t), informally whether the system knows enough to bind, and consequence viability c(t), informally whether binding can still matter. The valid binding window W is the set of times on which both curves are above their thresholds. Three failure orientations follow: premature commitment binds while m has not matured; belated consequence binds after c has decayed; empty-window failure is the regime in which W is empty for all t. Distinguishing empty-window failure from ordinary process delay requires a discriminator: residual event-class mismatch. Closure requires changing the event class itself, not merely improving execution. Because the discrimination depends on what counts as feasible execution, we introduce a counterfactual regime selection rule and a subtype matrix that name which regime applies by default and what override burdens are required to deviate. Worked cases — generational climate harm, FDA pre-market approval, routine administrative appeal, administrative-burden cascades, Sarbanes-Oxley and complex fraud, scientific pre-registration, platform-worker classification — demonstrate the framework across natural-latency, procedural, manufactured, and ontological sub-types. The result is sibling to spatial substitution failures (Paper 25 [8]) on a temporal axis, and orthogonal to the four-layer decomposition (Paper 22 [5]). The framework's central political move is making the regime choice explicit: the same case can classify differently under different counterfactuals, and naming the regime is part of what the framework lets a reader see clearly.
 
 ---
 
@@ -29,7 +29,7 @@ The paper makes four contributions:
 3. A discriminator (§4) — *residual event-class mismatch* — that distinguishes empty-window failure from ordinary process delay.
 4. A counterfactual regime selection rule and subtype matrix (§5) that constrain how the discriminator is applied, with an enforcement layer that prevents framework-driven classification laundering.
 
-Worked cases (§6) cover three of the four sub-types the matrix names — natural-latency, manufactured, and ontological. Relations to adjacent series results follow (§7). The framework is presented as a working draft: enough discrimination to classify a useful set of cases, with explicit limitations (§8) on what remains rough.
+Worked cases (§6) cover all four sub-types the matrix names — natural-latency, procedural, manufactured, and ontological — including one procedural negative control that the framework refuses to inflate into Type C. Relations to adjacent series results follow (§7). The framework is presented as a 1.0-candidate draft: enough discrimination to classify a useful set of cases, with explicit limitations (§8) on what remains rough.
 
 The argument is positive in form but negative in import. Like related results in *No Universal Plant Clock* (Paper 22 [5]) and *Epistemic Border Control* (Paper 25 [8]), it identifies a class of failures that admit no purely procedural fix. The framework's value is to make these failures visible to analytical vocabulary that currently absorbs them under the more comfortable label of "slow process."
 
@@ -170,7 +170,7 @@ The two regimes ask different questions. Status-quo asks: under prevailing polit
 
 ### 5.3 Subtype matrix
 
-We classify candidate empty-window cases into four sub-types, each with its default regime and override burden:
+We classify candidate temporal-detachment cases at the empty-window boundary into four sub-types, each with its default regime and override burden:
 
 | Claimed sub-type | Default regime | Feasible execution improvement | Override burden |
 |---|---|---|---|
@@ -185,7 +185,7 @@ The third column gives per-subtype shorthand for what counts as feasible executi
 
 These defaults are conservative: they prevent an author from escaping a sub-type merely by imagining a friendlier counterfactual.
 
-To make the procedural bar concrete: an author overriding a *procedural* default to manufactured must show not merely that reforms have been slow or contested but that they are *predictably reconstituted* — for example, that streamlined-eligibility measures, where enacted, are reliably replaced with work requirements or integrity audits that restore the original burden, or that §404 controls, where enacted, are reliably eroded by carve-outs that recreate the pre-reform exposure. The bar is a pattern of reform-and-recapture, not a single contested decision.
+To make the procedural bar concrete: an author overriding a *procedural* default to manufactured must show not merely that reforms have been slow or contested but that they are *predictably reconstituted* — for example, that streamlined-eligibility measures, where enacted, are reliably replaced with work requirements or integrity audits that restore the original burden, or that §404 controls, where enacted, are reliably eroded by carve-outs that recreate the pre-reform exposure. The bar is a pattern of reform-and-recapture, not a single contested decision. The procedural default is therefore not an insult category; it is the regime in which the ordinary execution-improvement story remains live until the case supplies evidence that the queue is reproduced rather than merely slow.
 
 The ontological bar carries a companion framing: closure of an ontological case requires *making a new binding event operative*, not improving execution within the existing one. This prevents the any-feasible regime from accidentally swallowing event-class creation as ordinary execution improvement, and it disambiguates contested cases (where reform is in motion but not complete) — without it, such cases admit both ontological and manufactured classifications depending on the reader's preferred framing.
 
@@ -205,7 +205,7 @@ The mechanism is not airtight. A determined author can still cherry-pick by misc
 
 ## 6. Worked Cases
 
-We illustrate the framework through six cases (across five subsections) spanning three of the four sub-types — natural-latency, manufactured, and ontological. The procedural sub-type is named in the matrix but not exemplified here. Each case is presented in narrative form; per-case scoring scaffolds (m(t), c(t), threshold-by-threshold) appear in supplementary material.
+We illustrate the framework through seven cases spanning all four sub-types — natural-latency, procedural, manufactured, and ontological. One procedural case is included as a negative control: not every late administrative process is an empty-window failure. Each case is presented in narrative form; per-case scoring scaffolds (m(t), c(t), threshold-by-threshold) appear in supplementary material.
 
 ### 6.1 Generational climate harm — natural-latency Type C
 
@@ -231,27 +231,37 @@ The case classification depends on which counterfactual regime applies. Reformer
 
 The compressed #4 splits the difference. The residual after feasible execution improvement is non-zero and structural to the binding event class — "approval as gatekeeping certification under uncertainty." Closing the residual requires changing the binding event class itself: from approval to conditional approval with mandatory long-term post-market study and pre-committed withdrawal triggers, or from agency certification to a different licensing regime entirely.
 
-Under either regime, FDA pre-market approval for mass-market chronic-use drugs satisfies the compressed #4 once the residual is properly framed. The case is borderline because it has a substantial execution-tractable component; it earns Type C classification on the residual rather than the total gap.
+Under either regime, FDA pre-market approval for mass-market chronic-use drugs satisfies the compressed #4 once the residual is properly framed. The case is borderline because it has a substantial execution-tractable component; it earns Type C classification on the residual rather than the total gap. This does not imply that all drug approvals are Type C; the classification attaches only where the residual safety-profile gap survives feasible trial and surveillance improvements.
 
-### 6.3 Administrative-queue cascades and complex financial fraud — manufactured/status-quo fork
+### 6.3 Routine administrative appeal — procedural Type B calibration
+
+Consider a routine appeal of an administratively denied, time-sensitive benefit: emergency rental assistance, temporary disability continuation, short-term medical authorization, or a comparable program in which the claimant already seeks a binding under an existing entitlement rule. The event class exists. The authority exists. The evidence object is legible. What lags is the administrative path by which the file becomes complete, reviewed, and bound.
+
+Admissibility maturity rises as documents are collected, eligibility facts are matched, and the reviewing authority reaches a procedurally valid determination. Consequence viability decays as the rent cure period expires, treatment is interrupted, employment is lost, or the claimant's short-term liquidity problem becomes an irreversible downstream cascade. If the appeal is granted after eviction, interruption, or loss has already occurred, the consequence binding is belated: $c(t_\text{consequence}) < \theta_c$.
+
+The case claims procedural. Default regime: prevailing authority/incentive regime. Under that regime, feasible execution improvement includes staffing, triage, presumptive temporary eligibility, partial provisional grants, portal integration, cross-program verification, queue redesign, and enforceable appeal-time service levels. If these measures would close the gap without changing the entitlement definition, burden of proof, authority structure, or binding event class, the case is Type B rather than Type C.
+
+This is the calibration case. It prevents the framework from treating every ugly queue as an empty window. A routine administrative appeal may be devastating and still remain a belated-process failure if the residual gap disappears under feasible execution improvement. The classification changes only if the case can show that such reforms are predictably reconstituted — for example, that streamlined intake is reliably replaced by new integrity checks, work requirements, documentation burdens, or appeal hurdles that restore the delay. At that point the case migrates from procedural Type B toward manufactured Type C. Surface similarity is not enough; the residual has to survive the procedural fix.
+
+### 6.4 Administrative-burden cascades and complex financial fraud — manufactured/status-quo fork
 
 Two cases illustrate the manufactured sub-type and the regime-selection problem it surfaces.
 
-**Administrative-queue cascade.** A claimant's binding to an entitlement program (food assistance, disability, housing assistance, prior-authorization care) under conditions where state administration controls eligibility verification through process design. Documentation collection, prior-authorization navigation, denial-and-appeal cycles, and cross-program coordination produce admissibility maturity timelines that, on the reading developed by Herd and Moynihan [16] under the rubric of administrative burden, exceed the consequence-viable window for the underlying need (food insecurity, housing loss, untreated illness, lost employment trajectory).
+**Administrative-burden cascade.** A claimant's binding to an entitlement program (food assistance, disability, housing assistance, prior-authorization care) under conditions where state administration controls eligibility verification through process design. Documentation collection, prior-authorization navigation, denial-and-appeal cycles, and cross-program coordination produce admissibility maturity timelines that, on the reading developed by Herd and Moynihan [16] under the rubric of administrative burden, exceed the consequence-viable window for the underlying need (food insecurity, housing loss, untreated illness, lost employment trajectory).
 
 **Sarbanes-Oxley and complex fraud.** A binding of financial-reporting accuracy via audit attestation. For simple fraud, the post-SOX regime narrows the gap: §906 criminal-attestation requirements (18 U.S.C. §1350) plus §404 internal-controls reporting (15 U.S.C. §7262) [17] are widely understood to advance $t_m$ for many disclosure failures, though the empirical evidence on §404 specifically is mixed [18]. For complex fraud — off-balance-sheet structures, multi-jurisdiction shells, related-party concealment — the residual gap remains, and $t_m$ frequently exceeds $t_c$ (firm collapse precedes detection).
 
 Both cases share a structural feature: classification depends on the chosen counterfactual regime.
 
-Under any-feasible-configuration, both arguably classify as Type B (belated-process). For administrative-queue cascades, reform options with operational track records exist — single-portal applications, presumptive eligibility, automated cross-program checks — though their distributional effects under sustained political pressure are contested. For SOX/complex fraud, more radical reforms (public-utility auditors replacing the private big-four model, real-time SEC monitoring, mandatory beneficial-ownership registries) could plausibly narrow the gap. Closure is *in principle executable* under sufficient political will.
+Under any-feasible-configuration, both arguably classify as Type B (belated-process). For administrative-burden cascades, reform options with operational track records exist — single-portal applications, presumptive eligibility, automated cross-program checks — though their distributional effects under sustained political pressure are contested. For SOX/complex fraud, more radical reforms (public-utility auditors replacing the private big-four model, real-time SEC monitoring, mandatory beneficial-ownership registries) could plausibly narrow the gap. Closure is *in principle executable* under sufficient political will.
 
 Under status-quo regime, both arguably classify as Type C (manufactured empty-window). Reform measures, where deployed against political opposition, are reconstituted as new gates: work requirements substituted for streamlined eligibility; integrity audits substituted for presumptive determination; legislative carve-outs (e.g., the JOBS Act of 2012's exemption of Emerging Growth Companies from §404(b)) peeling back parts of post-Enron controls.
 
 On this reading the slowness is reproduced by interested parties; closure under prevailing political pressure requires changing the political-economic configuration that produces the renewal, not just deploying the next round of reform.
 
-The fork is informative rather than defective. It is what makes the manufactured sub-type analytically distinct from procedural failure: same surface, different durability under political pressure. The framework's central political move is making the regime choice explicit. A claimant arguing for reform is properly served by the status-quo classification (the gap is reproduced by interested authority, and a one-shot reform will be undone). A regulator estimating the structural-impossibility upper bound is properly served by the any-feasible classification (some closure is achievable in principle). Both are legitimate; the discipline is naming which question is being answered.
+The fork is informative rather than defective. It is what makes the manufactured sub-type analytically distinct from procedural failure: same surface, different durability under political pressure. The framework's central political move is making the regime choice explicit. The status-quo classification answers the durability question: whether reform remains closed under prevailing opposition. The any-feasible classification answers the upper-bound question: whether closure is possible under a different feasible institutional configuration. Both are legitimate; the discipline is naming which question is being answered.
 
-### 6.4 Pre-registration in science — successful event-class repair
+### 6.5 Pre-registration in science — successful event-class repair
 
 Pre-registration in scientific publication is the worked example of a community recognizing an empty-window failure and resolving it through event-class change.
 
@@ -263,7 +273,7 @@ The community's response was event-class change: a new binding event ("registere
 
 The case is doubly instructive. It demonstrates the framework's policy traction — communities that recognize an empty-window failure can in principle do something about it. And it confirms the ontological clarification: "exists" means *codified-and-operative*. Pre-registration as concept existed for decades before it was codified-and-operative; the empty-window resolution required not the concept but the operative infrastructure.
 
-### 6.5 Platform-worker classification — ontological breaker / clarification
+### 6.6 Platform-worker classification — ontological breaker / clarification
 
 The platform-worker classification case (gig-economy labor 2009–2024) is the ontological breaker test that produced the codified-and-operative clarification.
 
@@ -291,7 +301,7 @@ The empty-window framework sits in a constellation of negative results across th
 
 The two-paper pair carries a stronger joint claim than either alone. A system can have spatial substitution without temporal detachment (an unsensed-target failure within a temporally tractable binding window) or temporal detachment without spatial substitution (a properly-sensed target whose binding window is empty). Systems with both — including many of the institutional failures most resistant to reform — face a joint problem that neither sub-framework alone makes visible.
 
-*Obligation-Unsound Reconciliation* (Paper 27 [9]) is currently scaffolded; the relationship is preliminary. We expect Paper 27 [9] to import the m(t)/c(t) framing for evidence horizons, causality horizons, and substrate-accusation horizons. Paper 27 [9] should not absorb the full premature/belated duality; it should import horizons, not the temporal-seam argument. This expectation is provisional and will be tightened (or revised) when Paper 27 [9] leaves scaffold status.
+The m(t)/c(t) framing is available to later obligation-unsound reconciliation work (Paper 27 [9], forthcoming) as a horizon vocabulary for evidence, causality, and substrate-accusation horizons. The present paper does not require that work to adopt the full premature/belated duality. The relationship is sibling-with-shared-vocabulary, not nested.
 
 ---
 
@@ -299,7 +309,7 @@ The two-paper pair carries a stronger joint claim than either alone. A system ca
 
 The framework is a working draft from a series of stress-tests rather than settled doctrine. Three limitations require explicit naming.
 
-**Politically-reproduced as candidate sub-type.** Two cases (administrative-queue cascade, SOX/complex fraud) suggest a manufactured child sub-type characterized by adversarial closure: reform measures, where deployed, are reconstituted by interested parties through alternative gating mechanisms. Naming this sub-type would buy a closure-strategy distinction (adversarial vs inertial closure are different problems requiring different responses, including anti-reconstitution machinery: sunset clauses with strong defaults, anti-rollback provisions, constitutional rather than statutory entrenchment, insulated enforcement funding). Held as candidate, not promoted; promotion would require a third confirming case or a counter-case (a manufactured failure that is *not* politically-reproduced, where the inertial/adversarial distinction has analytic bite).
+**Politically-reproduced as candidate sub-type.** Two cases (administrative-burden cascade, SOX/complex fraud) suggest a manufactured child sub-type characterized by adversarial closure: reform measures, where deployed, are reconstituted by interested parties through alternative gating mechanisms. Naming this sub-type would buy a closure-strategy distinction (adversarial vs inertial closure are different problems requiring different responses, including anti-reconstitution machinery: sunset clauses with strong defaults, anti-rollback provisions, constitutional rather than statutory entrenchment, insulated enforcement funding). Held as candidate, not promoted; promotion would require a third confirming case or a counter-case (a manufactured failure that is *not* politically-reproduced, where the inertial/adversarial distinction has analytic bite).
 
 **Sub-type-by-phase as candidate refinement.** The platform-worker case shows a single case-domain transiting sub-types over time (ontological pre-2014; manufactured post-2017). The matrix as developed treats sub-type as a per-case property. The transit suggests sub-type-by-phase may need explicit treatment. Held as candidate; promotion requires a second case-domain showing the same transit, since one case is below the threshold for matrix-structural change.
 
@@ -377,4 +387,4 @@ The vocabulary for this kind of failure is currently absorbed under the more com
 
 ---
 
-*Status: v0.2 draft, 2026-05-04. Companion working material: `working/premature-belated-duality.md`, `working/six-meets-six.md`, `preprint/26-premature-belated-duality/CASE_TESTS.md`, `preprint/26-premature-belated-duality/NOTES.md`. Not yet pushed to Zenodo. External-literature citation pass completed in v0.2.*
+*Status: v0.3 / 1.0-candidate draft, 2026-05-06. Companion working material: `working/premature-belated-duality.md`, `working/six-meets-six.md`, `preprint/26-premature-belated-duality/CASE_TESTS.md`, `preprint/26-premature-belated-duality/NOTES.md`. Not yet pushed to Zenodo. External-literature citation pass completed in v0.2.*

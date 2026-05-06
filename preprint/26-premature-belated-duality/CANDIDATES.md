@@ -8,7 +8,7 @@
 2. *Belated* — binding at t with c(t) < θ_c.
 3. *Empty window* — W = ∅; no admissible binding ever exists for this binding event.
 
-**Status:** paper-shaped candidate after empty-window case testing — see "Empty-window case-test outcome" section below. Sharpened test (revised #4 + counterfactual regime selection rule + subtype matrix + anti-cosplay enforcement + ontological clarification) recorded in `NOTES.md` as ratification candidate; **not yet ratified**. Destination decision still deferred among Paper 26 proper / §-insert / Substack / book chapter.
+**Status:** v0.3 / 1.0-candidate (2026-05-06). Sharpened test — revised condition #4 (residual event-class mismatch), counterfactual regime selection rule, subtype matrix, anti-cosplay enforcement, codified-and-operative ontological clarification — **ratified for Paper 26**. Destination: Paper 26 proper. The four-way fork (Paper 26 / §-insert / Substack / book chapter) is retired now that the prose exists in paper form.
 
 **Imports:**
 - Paper 15 — premature commitment instances (commitment can become irreversible before verification could possibly complete).
@@ -24,32 +24,35 @@
 - Curve-shape / operating-point distinction not collapsing under scrutiny.
 - `working/six-meets-six.md` partial-overlap analysis between binding-event six-tuple and admissibility-family six (currently not assumed identical).
 
-**Risk:**
-- Curve-shape distinction collapsing → folds back to §-insert in Paper 15 or Paper 22.
-- Asymmetric-power moves ("power buys time twice") becoming the emotional center and dragging the paper into chronopolitics rather than formalism.
-- "Much math, such control theory" prestige fog. The math has to distinguish cases prose would blur. If it doesn't, keep as architecture prose.
-- **Override-burden standard underspecified** (after 2026-05-04 case-test exercise). Matrix override columns use "show X" language without specifying standard of evidence. Platform-worker case showed this produces inconsistent classifications on contested cohorts. Must disambiguate before matrix ratifies, or the matrix becomes theatre.
-- **Sub-type-by-phase pressure.** One case-domain (gig-worker classification, 2009–2024) shows sub-type transit over time (ontological → manufactured, 2014–2017). If a second case-domain confirms, matrix needs structural modification rather than refinement. Risk: structural modification opens taxonomy creep; alternative is to cap matrix scope at single-phase cases, which narrows reach.
-- **Politically-reproduced taxonomy creep.** Two cases (Brasília, SOX/complex-fraud) suggest a manufactured child sub-type with adversarial-closure character. Each new case threatens to surface another candidate child. Hold-as-candidate discipline must apply.
+**Bounded limitations (no longer gating; preserved as §8 of the paper):**
+- **Override-burden standard of evidence** is per-burden ("show X is institutionally produced," "show reforms are predictably reconstituted," etc.) rather than uniformly specified. Conservative defaults apply when the burden is unmet. Future sharpening could tighten the standard further; ratification did not require it.
+- **Sub-type-by-phase** as candidate refinement. One case-domain (gig-worker 2009–2024) shows sub-type transit over time. Held; promotion requires a second case-domain showing the same transit before structural matrix modification.
+- **Politically-reproduced** as candidate child sub-type of manufactured. Two cases (administrative-burden cascade, SOX/complex-fraud) share an adversarial-closure shape. Held; promotion requires a third confirming case or a counter-case.
+- **Curve-shape vs operating-point boundary** not fully formalized. Per-regime feasibility specifications carry the load; a sharper formalization is possible future work.
+
+**Standing risks (unchanged):**
+- Asymmetric-power moves ("power buys time twice") drifting the paper toward chronopolitics rather than formalism. Mitigated by §6.4 fork being descriptive rather than advocacy.
+- "Much math, such control theory" prestige fog. The math earned its keep by distinguishing cases prose would blur (Brasília fork, FDA residual, ontological codified-and-operative). Standing test passed; future expansions face the same bar.
 
 **Do not accidentally merge with:**
 - Paper 25 (spatial substitution under observability asymmetry). P26 is the *temporal* sibling — both negative results in same family, distinct mechanisms. Do not let P26 absorb the substitution argument.
 - Paper 22 (four-layer decomposition). Orthogonal axis; P22 asks *which layer* fails, P26 asks *which direction* the temporal gap opens.
 - The book volume *Chronopolitics*. Adjacent thematically; the paper is the formal claim, the book chapter is the worked-out narrative. Don't conflate.
 
-## Empty-window case-test outcome (2026-05-04)
+## Empty-window case-test outcome (2026-05-04 → ratified 2026-05-06)
 
-End-to-end case-test exercise documented in `CASE_TESTS.md`. Six cases run; sharpened test (revised #4 + counterfactual regime selection rule + subtype matrix + anti-cosplay enforcement + ontological clarification) recorded in `NOTES.md` as ratification candidate.
+End-to-end case-test exercise documented in `CASE_TESTS.md`. Six cases run plus one procedural negative control (Case 7).
 
 **Outcome:**
 
 - **Three clean Type C** empty-window cases: generational climate harm (natural-latency), pre-pre-reg scientific publication (worked example of event-class change actually happening), SOX/complex-fraud (status-quo regime).
-- **Two differentiated borderline cases**: FDA pre-market approval, Brasília administrative queue cascade. Both classify cleanly only after declaring counterfactual regime; both surfaced the regime-selection problem and forced the addition of the prescriptive selection rule + anti-cosplay enforcement.
+- **Two differentiated borderline cases**: FDA pre-market approval, Brasília administrative-burden cascade. Both classify cleanly only after declaring counterfactual regime; both surfaced the regime-selection problem and forced the addition of the prescriptive selection rule + anti-cosplay enforcement.
 - **One ontological breaker**: platform-worker classification 2009–2024. Confirmed ontological default to any-feasible survives; surfaced override-burden ambiguity ("exists" must mean codified-and-operative-as-binding-event); surfaced sub-type-by-phase as candidate refinement.
+- **One procedural negative control**: routine administrative appeal. Classifies as Type B under the matrix; confirms the framework refuses to inflate every late administrative process into Type C.
 
-Promotion-gate item from chatty 2026-05-01 ("at least one Type C case must exist") satisfied in stronger form: three clean Type C, plus two regime-conditional Type C, plus one ontological Type C-by-phase.
+Promotion-gate item from chatty 2026-05-01 ("at least one Type C case must exist") satisfied in stronger form: three clean Type C, plus two regime-conditional Type C, plus one ontological Type C-by-phase, plus one procedural Type B negative control demonstrating the matrix has bite both directions.
 
-**Status promoted from "scaffolded — paper-shaped after formalization pass" to "paper-shaped candidate after empty-window case testing."** Not ratified. Destination still deferred among Paper 26 proper / §-insert / Substack / book chapter.
+**Ratified 2026-05-06** as the Paper 26 test. Held items (politically-reproduced sub-type, sub-type-by-phase, override-burden standard of evidence, curve-shape vs operating-point) preserved as §8 limitations; not gating.
 
 ## Four asymmetric power moves
 

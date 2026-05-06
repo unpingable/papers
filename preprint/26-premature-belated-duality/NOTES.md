@@ -2,22 +2,17 @@
 
 ## Status
 
-**v0.0-stub — 2026-04-28.** Scaffold only. Substantive content lives in `working/premature-belated-duality.md`. Book companion (`working/book-empty-binding-window.md`) carries the prose-narrative version.
+**v0.3 / 1.0-candidate — 2026-05-06.** Full paper draft (`premature_belated_duality.md`) with sharpened discriminator ratified for Paper 26. Destination resolved: Paper 26 proper. Book companion (`working/book-empty-binding-window.md`) remains the prose-narrative version for *Chronopolitics*.
 
-## Decision deferred
+Historical: scaffold 2026-04-28; v0.1 first-pass 2026-05-01; case-test exercise + sharpening pass 2026-05-04 (`CASE_TESTS.md`); v0.2 prose draft + external citation pass 2026-05-04; v0.3 / 1.0-candidate hardening + procedural negative control 2026-05-06.
 
-This could become:
+## Destination (resolved)
 
-1. Paper 26 proper.
-2. A §-insert in Paper 15 or Paper 22.
-3. Standalone working note.
-4. A book chapter (likely *Chronopolitics*).
+Paper 26 proper. The earlier four-way fork (Paper 26 / §-insert / Substack / book chapter) is retired. The book chapter in *Chronopolitics* remains a separate artifact and a separate voice; the formal claim lives in Paper 26.
 
-Promotion gate: §6 empty-window case testing produces concrete instances; curve-shape / operating-point distinction does not collapse under scrutiny.
+## Anti-inflation fuse (retrospective)
 
-## Anti-inflation fuse
-
-From the working note: the parts already exist in the corpus. What is new is (1) the explicit duality, (2) the two-curve formalization, and (3) the empty-window condition. If these three don't earn their keep, fold back to §-insert.
+The original test: parts already exist in the corpus; what is new is (1) the explicit duality, (2) the two-curve formalization, (3) the empty-window condition. The case-test exercise added (4) the residual event-class mismatch discriminator, (5) the counterfactual regime selection rule + subtype matrix + anti-cosplay enforcement, and (6) the codified-and-operative ontological clarification. All six earned their keep against cases prose would have blurred (Brasília fork, FDA residual, post-2017 platform-worker phase). Fuse retired.
 
 ## Position in the series
 
@@ -70,9 +65,9 @@ A candidate case should satisfy all four:
 
 If ordinary process improvement can create overlap, the case is probably a *belated-process failure*, not an *empty-window failure*. The fourth condition is the discriminator — without it, every slow institution becomes an empty-window example, which is the failure mode that turns this from a primitive into slop.
 
-### Ratification-candidate sharpened test (2026-05-04)
+### Ratified sharpened test (2026-05-04 → ratified 2026-05-06)
 
-**Status: ratification candidate after end-to-end case-test exercise** in `CASE_TESTS.md`. Six cases run (climate, FDA, Brasília, pre-registration, Sarbanes-Oxley, platform-worker classification); test refined through compression pass, sharpening pass, and ontological breaker. Not yet ratified — held items below remain open.
+**Status: ratified for Paper 26.** Six cases run in the case-test exercise (climate, FDA, Brasília, pre-registration, Sarbanes-Oxley, platform-worker classification); test refined through compression pass, sharpening pass, and ontological breaker. One procedural negative control added 2026-05-06 (Case 7, routine administrative appeal). Held items below preserved as §8 limitations of the paper, not as gating concerns.
 
 #### 1. Revised condition #4
 
@@ -111,13 +106,15 @@ The ontological override burden ("show the missing event class already exists an
 
 The companion framing (per chatty mid-pass) is: closure of an ontological case requires *making a new binding event operative*, not improving execution within the existing one. This prevents the any-feasible regime from accidentally swallowing event-class creation as ordinary execution improvement.
 
-#### 6. Held refinements (candidate, not promoted)
+#### 6. Held refinements (preserved as §8 limitations, not gating)
 
-- **Sub-type-by-phase.** Cases can transit sub-types over time (Case 6's pre-2014 / post-2017 split). The matrix currently treats sub-type as a per-case property; it may need to handle sub-type-by-phase explicitly. One case-domain shows the transit; promotion requires a second.
-- **Politically-reproduced empty-window** (candidate child of manufactured). Two cases (Brasília, SOX/complex fraud) share an adversarial-closure shape distinct from one-time engineered slowness, where reform measures are reconstituted by interested parties through alternative gating mechanisms. Promotion would slot it as a manufactured child with its own override burden ("show the slowness is inertial rather than adversarially renewed"). Held until a third confirming case or a counter-case (manufactured-but-not-politically-reproduced).
+- **Sub-type-by-phase.** Cases can transit sub-types over time (Case 6's pre-2014 / post-2017 split). The matrix currently treats sub-type as a per-case property; it may need to handle sub-type-by-phase explicitly. One case-domain shows the transit; promotion to a structural matrix change requires a second.
+- **Politically-reproduced empty-window** (candidate child of manufactured). Two cases (administrative-burden cascade, SOX/complex fraud) share an adversarial-closure shape distinct from one-time engineered slowness, where reform measures are reconstituted by interested parties through alternative gating mechanisms. Promotion would slot it as a manufactured child with its own override burden ("show the slowness is inertial rather than adversarially renewed"). Held until a third confirming case or a counter-case (manufactured-but-not-politically-reproduced).
+- **Override-burden standard of evidence.** The right-column language ("show X is institutionally produced") is per-burden rather than uniformly specified. Conservative defaults apply when the burden is unmet. Tightening the standard further is possible future work; ratification did not require it.
+- **Curve-shape vs operating-point boundary.** Per-regime feasibility specifications carry the load; a sharper formalization is possible future work.
 
-Both held items are candidate, not promoted. The matrix above (with anti-cosplay enforcement) is the standing ratification candidate; promoting either held item would require modifying it.
+All four are preserved as §8 limitations of the paper. Promotion would modify the matrix; absent promotion, the matrix as ratified stands.
 
 ### Provenance
 
-Taxonomy and four-condition test from chatty's structural pass, 2026-05-03. Sharpened test (revised #4, regime selection rule, matrix, anti-cosplay enforcement, ontological clarification, held refinements) from claude-code's case-test exercise plus chatty's mid-pass nudges, 2026-05-04, documented in `CASE_TESTS.md`. Recorded as candidate gate material per name-early discipline; ratification deferred pending override-burden standard-of-evidence sharpening and additional ontological / politically-reproduced cases.
+Taxonomy and four-condition test from chatty's structural pass, 2026-05-03. Sharpened test (revised #4, regime selection rule, matrix, anti-cosplay enforcement, ontological clarification, held refinements) from claude-code's case-test exercise plus chatty's mid-pass nudges, 2026-05-04, documented in `CASE_TESTS.md`. Recorded as candidate gate material per name-early discipline. Hardening pass + procedural negative control + ratification 2026-05-06: discriminator ratified for Paper 26; override-burden standard sharpening and additional politically-reproduced / sub-type-by-phase cases preserved as §8 limitations rather than gating concerns.

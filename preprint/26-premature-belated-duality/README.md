@@ -1,7 +1,7 @@
 # Paper 26: Premature Commitment, Belated Consequence, and the Empty Binding Window
 
 **Author:** James Beck
-**Status:** v0.2 draft (2026-05-04). External-literature citation pass complete; held refinements (politically-reproduced sub-type, sub-type-by-phase) preserved as limitations, not promoted.
+**Status:** v0.3 / 1.0-candidate (2026-05-06). Full paper draft. The sharpened empty-window discriminator is ratified for Paper 26; remaining uncertainty (override-burden standard-of-evidence, politically-reproduced sub-type, sub-type-by-phase, curve-shape vs operating-point boundary) is bounded in §8 as limitations rather than gating work. Destination: Paper 26 proper.
 **DOI:** Not yet assigned.
 
 ## Center of gravity
@@ -16,7 +16,7 @@ P26 sits as the *temporal* sibling to P25's *spatial* result. P25 names substitu
 
 | File | Description |
 | --- | --- |
-| `premature_belated_duality.md` | Draft paper (v0.2) |
+| `premature_belated_duality.md` | Paper 26 (v0.3 / 1.0-candidate) |
 | `metadata.yaml` | Series metadata + abstract |
 | `CANDIDATES.md` | Claim container (status, imports, dependencies, risks) |
 | `CASE_TESTS.md` | Empty-window case-test exercise |

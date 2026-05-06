@@ -483,9 +483,62 @@ The override burden as stated does not adjudicate. "Already exists" is ambiguous
 
 ---
 
+---
+
+## Case 7: Routine administrative appeal (procedural negative control)
+
+*Added 2026-05-06 as part of the v0.3 / 1.0-candidate hardening pass. Goal: confirm the ratified matrix correctly classifies a procedural Type B case **without** inflating it to Type C. The case earns its place by being **rejected** as empty-window, not by being one.*
+
+### Selection rationale
+
+The matrix has been tested against natural-latency, manufactured, and ontological cases — all of which pass #4 (under their default regimes). It has not been tested against a procedural case the framework should recognize as *not* an empty window. Without a negative control, the matrix looks like it was built to swallow every late administrative process. This case fills that hole.
+
+### Binding event
+
+A claimant's appeal of an administratively denied, time-sensitive benefit: emergency rental assistance, temporary disability continuation, short-term medical authorization, or a comparable program where the claimant already seeks a binding under an existing entitlement rule. Event class exists. Authority exists. Evidence object is legible. What lags is the administrative path by which the file becomes complete, reviewed, and bound.
+
+### m(t): admissibility maturity
+
+Rises as documents are collected, eligibility facts are matched, and the reviewing authority reaches a procedurally valid determination. Maturity timeline is bounded by intake throughput, review staffing, queue policy, and verification turnaround. No structural gap; only execution latency.
+
+### c(t): consequence viability
+
+Decays as the rent cure period expires, treatment is interrupted, employment is lost, or short-term liquidity issues become an irreversible downstream cascade. Where the appeal is granted after eviction, interruption, or loss, the consequence binding is belated.
+
+### Conditions
+
+1. ✓ — consequence has a viable window only before the rent cure / treatment interruption / job loss point.
+2. ✓ — admissibility requires the procedurally valid determination, which lags the harm window.
+3. **Often yes** — for time-sensitive benefits, the appeal cycle frequently outlasts the consequence window.
+4. **Fails under default regime.** Default by claimed sub-type (procedural): prevailing authority/incentive regime. Feasible execution improvement under that regime includes staffing, triage, presumptive temporary eligibility, partial provisional grants, portal integration, cross-program verification, queue redesign, enforceable appeal-time SLAs. If these measures close the gap without changing the entitlement definition, burden of proof, authority structure, or binding event class, the residual is zero. Type B (belated-process), not Type C.
+
+### Anti-cosplay test
+
+Could the case be rerouted to manufactured to obtain a Type C verdict?
+
+The procedural→manufactured override burden is *show reforms are predictably reconstituted by the regime*. For a routine, single-program time-sensitive appeal — without a documented pattern of reform-and-recapture in the relevant jurisdiction — the burden is unmet. Conservative default applies: procedural classification stands.
+
+The case can migrate toward manufactured if and only if the author can show the queue is reproduced rather than merely slow — for example, that streamlined intake is reliably replaced by integrity audits or new documentation hurdles that restore the delay. Surface similarity to the administrative-burden cascade (Case 3 / §6.4) is not sufficient; the residual has to survive the procedural fix.
+
+### Verdict
+
+**Type B (procedural / belated-process).** The matrix correctly refuses to inflate this case into an empty window. The procedural default plus override burden does the work the framework needs it to do: not every devastating queue is Type C.
+
+### What this case does for the matrix
+
+It confirms two-directional bite:
+
+- The matrix passes empty-window candidates that satisfy the residual condition (Cases 1, 4, 5 clean; Cases 2, 3 conditional; Case 6 by-phase).
+- The matrix rejects empty-window candidates that don't (Case 7).
+
+A taxonomy that classifies everything as Type C is bespoke classification laundering. The negative control demonstrates the framework refuses that move.
+
+---
+
 ## Provenance
 
 - Four conditions: NOTES.md §"Four-condition promotion test" (chatty 2026-05-03).
 - Case-test template: `working/premature-belated-duality.md` §"Suggested next artifact: CASE_TESTS.md" (chatty 2026-05-01).
 - Brasília book-side framing: `working/book-empty-binding-window.md`.
-- This file: claude-code, 2026-05-04. Cases 1–3 scored against the original four conditions; postmortem from where the cases bent the test; compression pass on #4 (same day) producing a candidate revision plus subtype matrix; Cases 4–5 (pre-registration, Sarbanes-Oxley) scored against the compressed revision; sharpening pass (same day, prompted by chatty's "academic buffet" warning) producing the prescriptive counterfactual regime selection rule, compact matrix, and anti-cosplay mechanism, with per-regime feasibility folded in as foundation; Case 6 (platform-worker classification) as compact end-to-end ontological breaker against the prescriptive matrix. Politically-reproduced sub-type held as candidate, not promoted. Sub-type-by-phase surfaced as candidate refinement, held. Compressed #4 not ratified. Highest-value remaining sharpening: ontological override-burden disambiguation ("exists" = codified-and-operative). Next move per user direction: extraction into NOTES/CANDIDATES as ratification candidate.
+- This file: claude-code, 2026-05-04. Cases 1–3 scored against the original four conditions; postmortem from where the cases bent the test; compression pass on #4 (same day) producing a candidate revision plus subtype matrix; Cases 4–5 (pre-registration, Sarbanes-Oxley) scored against the compressed revision; sharpening pass (same day, prompted by chatty's "academic buffet" warning) producing the prescriptive counterfactual regime selection rule, compact matrix, and anti-cosplay mechanism, with per-regime feasibility folded in as foundation; Case 6 (platform-worker classification) as compact end-to-end ontological breaker against the prescriptive matrix.
+- Hardening pass + Case 7 (routine administrative appeal as procedural negative control) + ratification: claude-code, 2026-05-06, prompted by chatty's "must-fix before 1.0" review. Sharpened test ratified for Paper 26. Override-burden standard, sub-type-by-phase, politically-reproduced sub-type, and curve-shape vs operating-point preserved as §8 limitations rather than gating concerns.

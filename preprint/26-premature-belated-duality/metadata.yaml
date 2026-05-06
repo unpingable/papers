@@ -2,11 +2,11 @@ title: "Premature Commitment, Belated Consequence, and the Empty Binding Window"
 subtitle: "A Two-Curve Framework for Temporal Detachment in Bound Decisions"
 author: "James Beck"
 affiliation: "Independent Researcher"
-date: 2026-05-04
+date: 2026-05-06
 series: "delta-t-framework"
 paper_number: 26
-version: "0.2-draft"
-status: "draft"
+version: "0.3"
+status: "1.0-candidate"
 license: "CC-BY-4.0"
 keywords:
   - admissibility maturity
@@ -14,6 +14,8 @@ keywords:
   - temporal detachment
   - binding window
   - empty-window failure
+  - residual event-class mismatch
+  - counterfactual regime
   - regulatory lag
   - Δt framework
 abstract: >
@@ -33,12 +35,18 @@ abstract: >
   in which W is empty for all t. Distinguishing empty-window
   failure from ordinary process delay requires a discriminator:
   residual event-class mismatch. Closure requires changing the
-  event class itself, not merely improving execution. Worked
-  cases — generational climate harm, FDA pre-market approval,
-  administrative-queue cascades, Sarbanes-Oxley and complex
-  fraud, scientific pre-registration, platform-worker
-  classification — illustrate the framework across natural-
-  latency, manufactured, and ontological sub-types. The result
-  is sibling to spatial substitution failures (Paper 25) on a
-  temporal axis, and orthogonal to the four-layer decomposition
-  (Paper 22).
+  event class itself, not merely improving execution. Because the
+  discrimination depends on what counts as feasible execution, we
+  introduce a counterfactual regime selection rule and a subtype
+  matrix that name which regime applies by default and what
+  override burdens are required to deviate, with an enforcement
+  layer that prevents framework-driven classification laundering.
+  Worked cases — generational climate harm, FDA pre-market
+  approval, routine administrative appeal, administrative-burden
+  cascades, Sarbanes-Oxley and complex fraud, scientific
+  pre-registration, platform-worker classification — demonstrate
+  the framework across all four sub-types (natural-latency,
+  procedural, manufactured, ontological), including one
+  procedural negative control. The result is sibling to spatial
+  substitution failures (Paper 25) on a temporal axis, and
+  orthogonal to the four-layer decomposition (Paper 22).
