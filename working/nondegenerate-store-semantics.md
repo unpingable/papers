@@ -1,9 +1,10 @@
 # Nondegenerate Store Semantics (working note)
 
 **Logged:** 2026-05-06
-**Status:** Design / investigation only. Not doctrine, not a P28 draft, not authorization to add code, axioms, typeclasses, or theorem statements.
-**Sibling:** `working/boundary-composition-investigation.md` (audit + custody record); `working/boundary-transition-model.md` (candidate object).
-**Lives near:** the recorded investigative null `corrective_then_forward_is_not_monotone` at `Corrective.lean` L280-284.
+**Updated:** 2026-05-07 — Gate A closed via model-dependence boundary result (see closing note below).
+**Status:** Design / investigation document; Gate A now resolved. Not doctrine, not a P28 draft.
+**Sibling:** `working/boundary-composition-investigation.md` (audit + custody record); `working/boundary-transition-model.md` (candidate object); `~/git/lean/LeanProofs/Admissibility/CorrectiveBoundary.lean` (boundary-result module that closed Gate A).
+**Lives near:** the formerly-admitted recorded null `corrective_then_forward_is_not_monotone` at `Corrective.lean`. The `sorry` was removed 2026-05-07; the abstract theorem statement is preserved as a comment-shape pointing to the boundary module.
 
 ---
 
@@ -243,7 +244,42 @@ These gates are conditional, not strictly sequential — Gate A could be pursued
 
 - `working/boundary-composition-investigation.md` — audit record, candidate-theorem audit, Phase 0 inventory, custody decisions.
 - `working/boundary-transition-model.md` — candidate object (executable + contextual transitions), §7 nondegeneracy note, smuggling-risk discipline.
-- `~/git/lean/LeanProofs/Admissibility/Corrective.lean` L280-284 — recorded investigative null with structured category header.
-- `~/git/lean/LeanProofs/Admissibility/StateTransition.lean` — abstract store ops; (3.1) discharge site if Gate A is opened.
-- `~/git/lean/LeanProofs/Admissibility/Derivation.lean` — `BasisDerivation`; (3.2) discharge site if Gate A is opened.
+- `~/git/lean/LeanProofs/Admissibility/Corrective.lean` — formerly-admitted recorded null; sorry removed 2026-05-07, theorem statement preserved as comment-shape pointing to the boundary module.
+- `~/git/lean/LeanProofs/Admissibility/CorrectiveBoundary.lean` — Gate A closure: parallel miniature kernel proving model-dependence (identity model: existential FALSE; witness model: existential TRUE; abstract `NondegenerateStoreSemantics` predicate + parametric theorem).
+- `~/git/lean/LeanProofs/Admissibility/StateTransition.lean` — abstract store ops; remain unconstrained `axiom`s in the abstract kernel.
+- `~/git/lean/LeanProofs/Admissibility/Derivation.lean` — abstract `BasisDerivation`.
+- `~/git/lean/CLAIM-REGISTER.md` — entries #13 (corrective monotonicity, OPEN), #14 (boundary result, SOUND), A1 (formerly-admitted, resolved).
 - Project memory: `project-authority-kernel.md`, `project-admissibility-family-structure.md`.
+
+---
+
+## Closing note (2026-05-07): Gate A closed via model-dependence
+
+**What was opened:** Gate A from §7 above — "decide the recorded null."
+
+**What was actually done:** chatty's "prove the boundary, not the theorem" plan, executed 2026-05-07. Rather than discharging the abstract kernel's recorded null directly (which the abstract kernel's `axiom`-typed store ops make impossible without committing behavioral laws — exactly the laundering this note's §5 warns against), built `LeanProofs/Admissibility/CorrectiveBoundary.lean`: a parallel miniature kernel with concrete types (`PolicyStore := List Nat`, etc.) and parameterized `StoreOps`. Proved both possible answers exist:
+
+- `Identity.corrective_then_forward_is_monotone_universally` — under identity store ops, the existential is FALSE for any env.
+- `Witness.corrective_then_forward_is_not_monotone` — under nondegenerate ops + verdict-sensitive `BasisDerivation`, the existential holds for a concrete `(initialState, recordRevocation 999, amendPolicy 1)` witness.
+
+Plus the abstract `NondegenerateStoreSemantics` structure (the three commitments from §3 of this note) and `corrective_then_forward_is_not_monotone_of_nondegenerate` (parametric theorem), with `witness_satisfies_nondegenerate` certifying the witness model.
+
+**What this is not:** the abstract kernel still does not decide the recorded null. The abstract kernel's existential remains formally undecidable in current vocabulary — that is the doctrinally-correct stance, and the `axiom`-typed store ops in `StateTransition.lean` are unchanged. What changed is that the *abstractness* of the abstract null is now a positive boundary result: the question is genuinely model-dependent, exhibited concretely in the parallel miniature kernel.
+
+**Smuggling-risk audit (per §5 of this note):**
+
+- *5.1 Ambient typeclasses* — avoided. `StoreOps` is a `structure`, not a `class`; passed as explicit value parameter throughout. `NondegenerateStoreSemantics` is a `structure`, not a `class`.
+- *5.2 Axiomatizing store effects* — avoided. The miniature kernel uses concrete `def`s for store ops (`fun s p => p :: s`, etc.); no axioms. The abstract kernel's `axiom`-typed ops are unchanged.
+- *5.3 Tautological verdict bridges* — partially mitigated. The witness model's `BasisDerivation` (`if K ∈ revocationStore then noBasis else if K ∈ policyStore then admissibleBasis else noBasis`) is motivated by the operational shape AG actually uses — basis is admitted by policy and invalidated by revocation. Not engineered to make the existential trivially true; the existential follows from the natural shape of the derivation.
+- *5.4 Structure-named-after-conclusion* — partially-but-honestly-handled. `NondegenerateStoreSemantics`'s `mixed_class_witness` field IS the existential-with-witness; this note's §3 explicitly acknowledges that (3.3) is "the recorded null's existential restated." The first two fields (`applyUpdate_nontrivial`, `verdict_sensitive`) are independent and are the load-bearing content; the structure is honest about what it bundles.
+
+**What Gate A closure does NOT give (per §6 of this note):**
+
+- A *general* characterization of when mixed-class composition fails monotonicity (we have one witness, not a predicate).
+- A *systematic* theory of how forward and corrective steps interact across longer sequences.
+- Composition theorems over arbitrary boundary transitions.
+- An algebraic structure (lattice, category, order) over admissibility transitions.
+
+The sharper Family verdict is: *Family-with-composition-lemmas, **plus** the mixed-class non-monotonicity question is decided as model-dependent: false in identity-store models, true in nondegenerate-store models, and the abstract kernel correctly preserves the question as undecidable.* Gates B (predicate characterization) and C (Calculus) remain unopened; their conditions are unchanged.
+
+**Custody:** `CorrectiveBoundary.lean` is wired into `LeanProofs.lean` root and verified by `lake build`. `Corrective.lean`'s comment-shape and `CLAIM-REGISTER.md` entries #13, #14, A1 carry the audit trail. The repo is sorry-free as of 2026-05-07.
