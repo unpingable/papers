@@ -191,8 +191,89 @@ The OS-substrate framing would mean: these doctrines are not parallel domain-spe
 
 This claim is **not made**. It is recorded as the dangerous-but-interesting version of the recognition, so that if the constellation keeps pointing at it, the connection is already named rather than rediscovered as if novel.
 
+## Addendum — construction discipline (2026-05-06, late)
+
+A parallel-construction experiment in Ada/SPARK against the admissibility kernel surfaced a structural property the Lean kernel doesn't currently express. The Ada probe used `type Outcome is private` — a sealed type with no public constructor — to make "success is not authorization" enforceable at the type level rather than at the proof level.
+
+Keeper lines:
+
+> **Authority should be observable by consumers, not constructible by consumers.**
+>
+> **Authority is a product of admissible process, not a shape consumers are allowed to imitate.**
+
+The implementation-level line is the discipline; the doctrine-form line is the register-shifted version that ports to paper / book / methodology prose.
+
+### The validity / construction distinction
+
+A theorem about valid authority is not the same as a construction rule for authority:
+
+- **Validity theorem** (`Authorized → AdmissibleBasis`): catches malformed reasoning *after* the value exists.
+- **Construction discipline** (only `decide` may produce `Authority`): prevents consumers from minting the value in the first place.
+
+Different failure class. The Lean kernel currently has the first; the Ada probe demonstrated the second. Both are valuable; they close different holes. A consumer can satisfy a validity theorem with a manufactured `Authority` value as long as the manufacturing satisfied the type signature — the validity proof rules out *malformed* authority, not *unsanctioned* authority.
+
+### Four-move framing (chatty 2026-05-06)
+
+Categorizes the kinds of move the kernel makes, distinct from the next-step planning axis (concrete env, cross-dimensional law, deliberate breakage) for non-vacuity:
+
+1. **Verdict algebra** — what outcomes exist (currently in `Authority.lean`).
+2. **Validity theorems** — authorized implies admissible basis, standing, etc. (currently in the bridge).
+3. **State-transition theorems** — receipts/gaps/revocations cannot mutate policy by accident (currently in `StateTransition.lean` partitioning).
+4. **Construction discipline** — authority observable, not constructible. **Not currently expressed.**
+
+The next-step planning axis (Move 1: concrete witness `BasisDerivation`; Move 2: relationally-scoped cross-dimensional law; Move 3: deliberate-breakage adversarial env) is about discharging existing obligations into non-vacuous form. Chatty's Move 4 is about adding a structural property the kernel currently lacks. They're complementary, not substitutes — Move 4 can be implemented while Moves 1-3 remain vacuous, and Moves 1-2 don't address what Move 4 addresses.
+
+### Sibling-primitive notes
+
+- This addendum is the *constructive* sibling to `working/breach-mistaken-for-authorization.md` (which is the *historical-failure* sibling on the same basis-validity axis). The breach-mistaken-for-authorization primitive describes what happens when authority is treated as constructible by consumers (specifically, by the consumer who got away with it once); the construction-discipline primitive is the structural anti-pattern that prevents that move at the type level.
+- Together they sit underneath the accountable-mutation recognition: forward-looking decay-blindness (kernel thought above), backward-looking retroactive-legitimacy-blindness (breach-mistaken-for-authorization), and structural unconstructibility (this addendum) are three faces of the same basis-validity primitive.
+
+### Sealed Outcome Boundary (the named term)
+
+The structural property has a heading-shaped name:
+
+> **Sealed Outcome Boundary** — authority is an emitted result of a governed decision path, not a data shape consumers may imitate.
+
+Architecture stack:
+
+```
+Witnesses / receipts / invariant checks      ← attestation layer
+        ↓
+Attested evidence / basis material
+        ↓
+Admissibility decision path                   ← authority mint
+        ↓
+Minted authority value
+        ↓
+Consumers may observe/use it, not manufacture it
+```
+
+The two layers are distinct:
+
+- **Attestation layer** (e.g. `receipt_kernel` Python: PASS/WARN/FAIL/UNKNOWN over invariants): publicly constructible attestations are fine here. A fake PASS is an *attestation-integrity* problem (signatures, hash chains, recomputation) — different immune system.
+- **Admissibility / mint layer** (e.g. `agent_gov` / `standing`): authority values must be unconstructible by consumers. A fake authorized verdict is an *authorization-laundering* problem — sealed-constructor immune system.
+
+Conflating the two layers was a real error in my earlier framing of the diff target. Receipt-kernel attestation can stay open-construction; admissibility-mint authority cannot.
+
+### Cheapest informative next move (held)
+
+Diff `agent_gov` / `standing` (not `receipt_kernel`) against the construction-discipline questions:
+
+- Can any consumer instantiate an "authorized" result directly?
+- Is authorization only produced by one decision function/path?
+- Are inspection success and mutation authority represented as separate concepts?
+- Are denial/advisory outcomes structurally unable to mutate policy?
+- Is "capability succeeded" ever allowed to imply "standing existed"?
+
+If the Python kernel enforces structurally, the Ada result is confirmation. If it relies on caller discipline, the finding is "adopt sealed-constructor pattern in Python" — private mint token, frozen dataclass, module-local factory, no public `authorized=True` bag of vibes. Python privacy is a polite fiction, so this blocks accidental laundering rather than malicious laundering; for adversarial integrity you'd reach for receipts / signatures / hash chains / recomputation, which is the attestation-layer problem, not the construction-discipline problem.
+
+Held for cold-eyes tomorrow. SPARK / gnatprove install explicitly deferred — bonus boss, not on the critical path. The Ada probe is a language-substrate version of the interferometer — parallel construction surfaced a structural property that the primary translation hadn't crystallized.
+
+---
+
 ## Provenance
 
 - Multi-model conversation 2026-05-06: chatty riff on "Unix stopped one abstraction level too early" plus Plan 9 / capability-OS / provenance / TxOS / DIFC research-island survey.
 - claude-code corrections folded in: Linux-first (not FreeBSD-first), constellation-pointer sharpening (substrate, not adjacent), falsifier requirement, prewarmed-branch framing.
+- Construction-discipline addendum 2026-05-06 (late): Ada/SPARK parallel-construction experiment surfaced the validity-vs-construction distinction; chatty articulated the four-move framing; both keeper lines preserved verbatim. Receipt_kernel diff held for cold-eyes session.
 - Filed as working note, recognize-don't-build, per name-early-ratify-lazily discipline. Not a paper, not a project, not a P28.
