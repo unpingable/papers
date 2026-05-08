@@ -1,5 +1,7 @@
 # Δt Framework — Papers and Working Notes
 
+*New here? See [unpingable.github.io](https://unpingable.github.io/) for the project root — author (James Beck), scope, and the full preprint list. The companion [Lean repo](https://github.com/unpingable/lean) is the formal audit harness. See the [methodology page](docs/methodology.md) for what the BROKEN / STALE / SOUND register is doing and why.*
+
 This repository contains the prose side of the Δt framework: a research series on systemic failure, temporal mismatch, authority collapse, and recovery under degraded conditions.
 
 The papers develop the theory. The companion Lean repo audits selected claims by translating them into explicit definitions and theorem statements, then checking whether they actually follow. Some survive. Some need narrower conditions. Some break.
