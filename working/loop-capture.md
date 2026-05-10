@@ -46,7 +46,35 @@ Loop Capture is one of those roles. It is not the umbrella over them.
 
 > *This is a map of attack surfaces, not a throne.*
 
-**Caveat on "dual."** The framing is conceptual, not yet formal. Whether Loop Capture earns formal duality (in the Lean / category-theoretic sense) is open and would need to be earned by the actual machinery. The current claim is that the *role* is dual — enough to keep the synthesis from drifting into master-paper claims, not enough to assert mathematical structure that hasn't been proved.
+**Caveat on "dual."** The framing is conceptual, not yet formal. The current claim is that the *role* is dual — enough to keep the synthesis from drifting into master-paper claims, not enough to assert mathematical structure that hasn't been proved. *Do not formalize by vibes.*
+
+The safe and dangerous framings:
+
+- **Safe:** *Loop Capture is the adversarial inversion of admissibility.*
+- **Dangerous-but-interesting:** *Loop Capture may be the dual of admissibility.*
+
+Pair definitions, in their loosest form:
+
+> **Admissibility.** Conditions under which action may validly proceed.
+>
+> **Loop Capture.** Conditions under which invalid / value-degrading action is made to proceed as valid.
+
+Candidate dual axes (named, not earned):
+
+| Admissibility condition | Adversarial counterpart        |
+| ----------------------- | ------------------------------ |
+| evidence                | evidence laundering            |
+| standing                | standing spoofing              |
+| scope                   | scope expansion                |
+| authority               | authority capture              |
+| receipt                 | legitimacy signal preservation |
+| witness                 | witness co-capture             |
+
+**The earning test.** Loop Capture earns formal duality iff every admissibility condition has a corresponding capture transformation that *preserves local pass/fail shape* while *reversing defended-value consequence*. Most candidate pairs above are plausible but unproven; some may collapse, some may need refinement, some may have no counterpart at all. The table is a hypothesis register, not a proof.
+
+**Pin label:**
+
+> *Possible duality candidate: Loop Capture as adversarial dual of admissibility. Do not formalize by vibes.*
 
 **Dependency direction.** This runs one way. Loop Capture cannot be defined without the spine — you cannot describe the exploit until you know what counts as valid action. The synthesis depends on the spine; it does not subsume it.
 
