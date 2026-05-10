@@ -8,7 +8,7 @@
 
 ### Proposed state-binding axes (candidate, 2026-04-23)
 
-Source: conversation synthesis 2026-04-23 (duality discussion → chatty's six expansion).
+Source: conversation synthesis 2026-04-23 (duality discussion → ChatGPT's six expansion).
 
 1. **Object** — what is being bound?
 2. **Evidence** — what warrants the binding?
@@ -74,7 +74,7 @@ If this holds up, the disposition is **Option 3: partial overlap**. The overlap 
 - **Governor is not an axis; it is the enforcement layer.** The binding-grammar six may need a seventh element — or an explicit statement that the six are *conditions* and enforcement is a separate stage.
 - **Δm predicted seventh.** Model adequacy / representation calibration may be where "Object" actually lives.
 
-## Formal distinction (chatty pass, 2026-04-23)
+## Formal distinction (ChatGPT pass, 2026-04-23)
 
 Admissibility pipeline:
 
@@ -168,7 +168,7 @@ If both survive, the binding grammar contributes two genuinely new axes to the a
 4. **Existing six needs revision.** Possible — if Scope survives as a genuine axis, the admissibility family may need a seventh (or eighth, after Δm) admissibility system.
 5. **Proposed binding six collapses under mapping.** Possible if the tests above show Scope reduces to Standing-or-Governor and Object reduces to Δm.
 
-### Current disposition, per chatty pass 2026-04-23
+### Current disposition, per ChatGPT pass 2026-04-23
 
 > **Partial overlap. Binding grammar is a transition-validity lens. Admissibility six is a pipeline-boundary model. Scope appears underformalized. Object requires Δm comparison before promotion.**
 

@@ -1,7 +1,7 @@
 # Control-Set Laundering
 
 **Status:** candidate (discovery-phase)
-**Originated:** 2026-05-03 (chatty structural riff during P25 Lean session; not promoted into P25 prose)
+**Originated:** 2026-05-03 (ChatGPT structural riff during P25 Lean session; not promoted into P25 prose)
 **Primary home:** no current paper home — cross-cutting primitive, possibly future paper slot or §-insert in P25
 
 ## Aphorism (keeper)

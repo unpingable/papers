@@ -1,7 +1,7 @@
 # Orientation Debt
 
 **Status:** active candidate primitive (recurrence within authorial domain ratified — own house style plus the cold-read pass on the lean/papers READMEs surfaced it directly today; not yet promoted to full primitive pending cross-domain confirmation, see *Promotion criterion* below)
-**Originated:** 2026-05-01 (DeepSeek cold-read pass on lean + papers repos surfaced the failure mode; user recognized it as personal house style; multi-model synthesis with chatty + claude-code)
+**Originated:** 2026-05-01 (DeepSeek cold-read pass on lean + papers repos surfaced the failure mode; user recognized it as personal house style; multi-model synthesis with ChatGPT + claude-code)
 **Primary home:** no paper home — communication / documentation primitive, specific to the artifact-reader interface
 **Shelf:** system primitive, sibling to `design-basis-erasure.md` and `apprenticeship-substrate-erosion.md`. Communication register, distinct from the control-loop register (inhibitory-governance-collapse) and the cognitive register (stale-task-replay).
 

@@ -5,7 +5,7 @@
 **Likely role:** adversarial-mechanism synthesis across P22 / P25 / P27 / admissibility family / WIF-composition.
 **Do not assign paper number until P25/P26/P27 settlement and position decision.**
 
-**Originated:** 2026-05-09 multi-model brainstorm from the "Control-Theoretic Sun Tzu" thread; chatty zhuzh pass + prior-art sniff test 2026-05-09; claude-code-papers cross-corpus mapping + filing 2026-05-10.
+**Originated:** 2026-05-09 multi-model brainstorm from the "Control-Theoretic Sun Tzu" thread; ChatGPT zhuzh pass + prior-art sniff test 2026-05-09; claude-code-papers cross-corpus mapping + filing 2026-05-10.
 
 **Working public hook:**
 
@@ -95,7 +95,7 @@ Sharper:
 
 > *Reflexive control explains how the enemy gets inside the decision frame. Loop capture explains how the captured frame continues to pass its own gates.*
 
-Other adjacent prior art to engage carefully (not exhaustive; chatty's sniff test): OODA / Boyd; false-data injection and stealthy attacks in cyber-physical systems security (Pasqualetti / Dörfler / Bullo and successors); Goodhart's law and specification gaming; performative prediction; adversarial ML; organizational cybernetics; metric-gaming in institutional sociology; observability/SRE incident literature.
+Other adjacent prior art to engage carefully (not exhaustive; ChatGPT's sniff test): OODA / Boyd; false-data injection and stealthy attacks in cyber-physical systems security (Pasqualetti / Dörfler / Bullo and successors); Goodhart's law and specification gaming; performative prediction; adversarial ML; organizational cybernetics; metric-gaming in institutional sociology; observability/SRE incident literature.
 
 The likely contribution is the splice, not the inventory:
 
@@ -538,7 +538,7 @@ Reserve bench:
 
 ## Provenance
 
-- **2026-05-09 origin.** "Control-Theoretic Sun Tzu" thread surfaced loop capture as a serious paper candidate; multi-model brainstorm (operator + chatty + DeepSeek touched it) developed the formal skeleton, taxonomy, OODA relation, and aphorism bank.
-- **chatty (zhuzh pass + prior-art sniff test).** Cut taxonomy expansion; added legitimacy/value divergence as formal heart; named *authorized wrongness* as central concept; added nearby-failures table and case matrix as sludge prophylaxis; quarantined aphorisms; identified reflexive control as the closest strategic prior art and the obvious Reviewer 2 ambush; wrote the prior-art and position boxes used verbatim above.
-- **claude-code-papers (this file, 2026-05-10).** Folded chatty's draft into the working/ structure with the prior-art warning up front per operator instruction. Added cross-corpus mapping section connecting loop capture to P22 / P25 / P27 / admissibility family / WIF-composition / Lean kernel — the connections that suggest position (3) (synthesis paper). Marked status as rich-staging note (earns the density per note-subtypes discipline because it bridges multiple already-mature converging registers).
+- **2026-05-09 origin.** "Control-Theoretic Sun Tzu" thread surfaced loop capture as a serious paper candidate; multi-model brainstorm (operator + ChatGPT + DeepSeek touched it) developed the formal skeleton, taxonomy, OODA relation, and aphorism bank.
+- **ChatGPT (zhuzh pass + prior-art sniff test).** Cut taxonomy expansion; added legitimacy/value divergence as formal heart; named *authorized wrongness* as central concept; added nearby-failures table and case matrix as sludge prophylaxis; quarantined aphorisms; identified reflexive control as the closest strategic prior art and the obvious Reviewer 2 ambush; wrote the prior-art and position boxes used verbatim above.
+- **claude-code-papers (this file, 2026-05-10).** Folded ChatGPT's draft into the working/ structure with the prior-art warning up front per operator instruction. Added cross-corpus mapping section connecting loop capture to P22 / P25 / P27 / admissibility family / WIF-composition / Lean kernel — the connections that suggest position (3) (synthesis paper). Marked status as rich-staging note (earns the density per note-subtypes discipline because it bridges multiple already-mature converging registers).
 - Filed as working note, no paper number, position open. Not committed (per current cluster discipline). Companion entry added to [where-admissibility-fits-candidates.md](where-admissibility-fits-candidates.md) under paper candidates.

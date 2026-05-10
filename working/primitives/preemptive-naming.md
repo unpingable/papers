@@ -1,7 +1,7 @@
 # Preemptive Naming
 
-**Status:** meta-doctrine (not active primitive — design-governance level, per chatty's level call 2026-05-01)
-**Originated:** 2026-05-01 (user identification mid-session; multi-model synthesis with chatty + claude-code)
+**Status:** meta-doctrine (not active primitive — design-governance level, per ChatGPT's level call 2026-05-01)
+**Originated:** 2026-05-01 (user identification mid-session; multi-model synthesis with ChatGPT + claude-code)
 **Primary home:** no paper home — meta-discipline / design-governance
 **Shelf:** sibling to `design-basis-erasure.md` (design-governance lane), not a system primitive like standing / continuity / basis / directness
 

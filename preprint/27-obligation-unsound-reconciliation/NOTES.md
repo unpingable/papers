@@ -28,7 +28,7 @@ Queue-jumped per dependency-discovery argument: P27 supplies the constructive en
 - Full prose draft
 - Kubernetes implementation rabbit hole
 
-## Lean algebra correction (chattY pass, 2026-04-28)
+## Lean algebra correction (ChatGPT pass, 2026-04-28)
 
 Initial sketch had `openFinding ⇒ inadmissible`. That was wrong — it formalized the wrong doctrine. Corrected:
 

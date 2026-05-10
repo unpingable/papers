@@ -1,7 +1,7 @@
 # Stale-Task Replay
 
-**Status:** active primitive (graduated 2026-05-01 by user override on operational-recurrence grounds; chatty's "wait for 2–3 confirmations" gate explicitly overruled — the world has already peer-reviewed it)
-**Originated:** 2026-05-01 (user identification mid-session; multi-model synthesis with chatty + claude-code)
+**Status:** active primitive (graduated 2026-05-01 by user override on operational-recurrence grounds; ChatGPT's "wait for 2–3 confirmations" gate explicitly overruled — the world has already peer-reviewed it)
+**Originated:** 2026-05-01 (user identification mid-session; multi-model synthesis with ChatGPT + claude-code)
 **Primary home:** no current paper home — operational/cognitive primitive; closest adjacency is P23 (non-self-identical controller / hidden compensation lane) where stale-task replay is one mechanism producing latent operator load. May also instantiate as an example in any future agent-side admissibility paper.
 
 ## Working definition

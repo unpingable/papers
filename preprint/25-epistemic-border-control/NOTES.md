@@ -56,7 +56,7 @@ Beyond Perdomo / Pagan / Sprenger / Dwork / Manheim-Garrabrant cited in §6, fut
 - Credibility-weighting schemes
 - Misinformation-diffusion models
 
-Chatty's first-pass spike found the four primary citations; the broader review is deferred work, not gating v0.1.
+ChatGPT's first-pass spike found the four primary citations; the broader review is deferred work, not gating v0.1.
 
 ### ICU contrast case (sibling instantiation candidate)
 

@@ -53,4 +53,4 @@ Dynamical hinge between Paper 21 (observer integrity under procedural sociality)
 ## Status Notes
 
 - v1.0 published to Zenodo 2026-04-24. §6 carries a punch-list of next-pass branches (related-work expansion, real-data §4 hardening, governance-witness family extraction) — candidates for a future v1.x rather than v1.0 blockers.
-- The §1 operationalization paragraph following the bolded thesis is load-bearing: it disowns the metaphysical reading of "non-self-identical" and pins the math to controller-side identifiability. Independent flags from DeepSeek, chatty, and the Lean signature check converged on this as the single highest-priority defensibility patch.
+- The §1 operationalization paragraph following the bolded thesis is load-bearing: it disowns the metaphysical reading of "non-self-identical" and pins the math to controller-side identifiability. Independent flags from DeepSeek, ChatGPT, and the Lean signature check converged on this as the single highest-priority defensibility patch.

@@ -1,7 +1,7 @@
 # Stale Binding
 
 **Status:** candidate
-**Originated:** 2026-04-28 (DeepSeek "cache invalidation as a Δt primitive" sketch + chatty correction; this session's exchange in `papers/` repo)
+**Originated:** 2026-04-28 (DeepSeek "cache invalidation as a Δt primitive" sketch + ChatGPT correction; this session's exchange in `papers/` repo)
 **Primary home:** P26 (premature/belated duality) — headline exhibit / worked primitive
 
 ## Formal object
@@ -100,5 +100,5 @@ Operational design implications (each is a small theorem-shaped claim, not forma
 ## Cross-references
 
 - DeepSeek seed: original "Cache Invalidation as a Δt Primitive" sketch (2026-04-28 thread).
-- chattY correction: bounded base-rate decay (not unbounded $\Delta_t$); rename from "cache invalidation" (mechanism) to "Stale Binding" (failure mode); placement as P26 headline exhibit, not P28.
+- ChatGPT correction: bounded base-rate decay (not unbounded $\Delta_t$); rename from "cache invalidation" (mechanism) to "Stale Binding" (failure mode); placement as P26 headline exhibit, not P28.
 - Folk antecedent: "There are only two hard things in computer science: cache invalidation and naming things." This note formalizes the first while incidentally honoring the second.

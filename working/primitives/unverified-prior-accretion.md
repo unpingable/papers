@@ -85,7 +85,7 @@ Diagnostic discipline: before invoking the primitive, rule out (1) and (2). Most
 - **Role accretion** (`role-accretion.md`) — adjacent mechanism (cumulative compounding via accumulated context) on a different axis. Role accretion: scope creeps. UPA: prior's verified-vs-unverified mass shifts toward unverified.
 - **Goodhart** — adjacent but distinct. Goodhart is feedback-loop-shaped (optimization pressure on a measure). UPA is calibration-shaped (no optimization pressure required; the prior just keeps updating on whatever the counterparty produces).
 - **Stale binding** (`stale-binding.md`) — adjacent but distinct. Stale binding: basis is *aged*. UPA: basis hasn't formed yet — verifications haven't closed. Different decay direction.
-- **Asymmetric grader bias** (section in `feedback-multi-model-routing.md`) — that's a *static* asymmetry between two agents (chatty conservative-skewed, claude-code activity-biased). UPA is a *temporal* asymmetry within one agent's prior. Different shape, related register.
+- **Asymmetric grader bias** (section in `feedback-multi-model-routing.md`) — that's a *static* asymmetry between two agents (ChatGPT conservative-skewed, claude-code activity-biased). UPA is a *temporal* asymmetry within one agent's prior. Different shape, related register.
 
 ## Do not confuse with
 

@@ -30,8 +30,8 @@ Load-bearing pieces of the description:
 - Directional permeability between contexts: read-only sharing, no write-bleed in the wrong direction.
 - Governed persistent memory (`~/git/continuity` MCP tool) with observe / commit / rely semantics.
 - Public claim audit (BROKEN / STALE / SOUND / OPEN register) maintained in the open.
-- Multi-model interferometry: triangulation across chatty / claude-code / web-claude / agent-governor-claude with explicit source-labeling.
-- Editorial brake (chatty as designated skeptic) with explicit override discipline.
+- Multi-model interferometry: triangulation across ChatGPT / claude-code / web-claude / agent-governor-claude with explicit source-labeling.
+- Editorial brake (ChatGPT as designated skeptic) with explicit override discipline.
 - Public falsification (Osprey audit; "universal sink" retraction; Labelwatch model).
 
 ### Section 2 — Theory of why the labor split works

@@ -1,7 +1,7 @@
 # Apprenticeship Substrate Erosion
 
 **Status:** active primitive (operational recurrence ratifies — offshoring decade, AI/tooling adoption cycle, social-media + FT-piece-circulating discussion 2026-05-01)
-**Originated:** 2026-05-01 (user identification mid-session via FT piece [https://www.ft.com/content/7325e967-5f4e-40b1-af3f-7d2351781843?syn-25a6b1a6=1] surfacing through social media; multi-model synthesis with chatty + claude-code; the primitive itself is older and well-documented across labor / education / engineering literatures, but not previously named on this shelf)
+**Originated:** 2026-05-01 (user identification mid-session via FT piece [https://www.ft.com/content/7325e967-5f4e-40b1-af3f-7d2351781843?syn-25a6b1a6=1] surfacing through social media; multi-model synthesis with ChatGPT + claude-code; the primitive itself is older and well-documented across labor / education / engineering literatures, but not previously named on this shelf)
 **Primary home:** no current paper home — operational/organizational primitive. Closest adjacencies: P23-companion lane (hidden compensation / capability decay at the operator layer) and the broader Δt framework's failure-of-reproduction shapes
 **Shelf:** system primitive, sibling to `design-basis-erasure.md` and `role-accretion.md`. Distinct from meta-doctrine primitives like `preemptive-naming.md`
 

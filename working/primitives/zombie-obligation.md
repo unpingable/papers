@@ -2,7 +2,7 @@
 
 **Status:** candidate
 **Kind:** boundary condition (with attractor flavor — systems fall into this state by default when re-derivation is not budgeted)
-**Originated:** 2026-05-05 (claude-code session, after DeepSeek "software ecology" riff + chatty structural pushback; user routed to claude-code for operational knife rather than authorial register)
+**Originated:** 2026-05-05 (claude-code session, after DeepSeek "software ecology" riff + ChatGPT structural pushback; user routed to claude-code for operational knife rather than authorial register)
 **Primary home (paper):** none yet. Candidate destinations: future "Operational Afterlives" essay/chapter, or sibling paper to the admissibility family. Decision deferred.
 
 ## Formal object

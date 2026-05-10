@@ -183,10 +183,38 @@ Two phrasings, depending on audience:
 
 The first is for a spec; the second is for an essay. Both are quotable; neither is to be edited without preserving the structural claim. Essay version is queued for after this note has cooled.
 
+## Sibling doctrine candidate: reliance observable, not constructible
+
+A neighboring doctrine emerged from the integrity/availability/reliance split:
+
+> *Reliance is observable, not constructible.*
+
+This blocks a laundering move parallel to authority construction:
+
+> *publicly accessible → relied upon → therefore obligation exists*
+
+Public expression, signed data, mirrored state, or visible availability do not by themselves create an admissible obligation for the originator to sustain third-party reliance. Reliance must become observable, scoped, and accountable before it can bear consequence.
+
+This is **the same shape as constructed authority, at a different boundary**: authority asks *who may bind consequence*; reliance asks *who has become load-bearing on whom, under what witnessed basis*.
+
+The useful modal split is:
+
+- **epistemic** — can I know it is real?
+- **material** — can I get it?
+- **political** — who may rely on it, and who bears failure?
+
+Do not expand this into a 3×3 framework unless earned. The modal axis is a diagnostic handle, not a new taxonomy.
+
+**Keeper:**
+
+> *A signature proves authorship. A mirror proves survivability. A dependency creates politics.*
+
+**Scope guard:** this is not yet a standalone field, *dependency calculus*, or independent doctrine. For now it is a sibling-doctrine pointer attached to authority-observable-not-constructible. The load-bearing claim is only that *silent reliance can launder availability into obligation* — and that this failure shape is structurally adjacent to *silent construction can launder shape into authority*.
+
 ## Provenance
 
 - **2026-05-06.** Ada/SPARK probe (`~/git/gnat/standing_spark`) surfaced the validity-vs-construction distinction. Construction-discipline addendum filed in `working/accountable-mutation-os-layer.md` (lines 194-270). **Sealed Outcome Boundary** named.
 - **2026-05-07.** Six-probe day: Common Lisp (Tier-4 trap; visible-violation principle named), Rust (Receipt/Authority split made physical), TypeScript (re-mint-after-validation technique named, brand-ergonomics trap), Prolog (deductive negative baseline), Erlang (process-capability row, live-custodian non-replicability), Macaroons (cryptographic-verification technique, **framework correction** from one-table to two-axis).
-- **Multi-model conversation lineage:** ag_claude (Ada validation, agent_gov diff against construction-discipline rules), gnat_claude (probes, doctrine file maintenance), chatty (framework correction to two-axis split, terminology lock, threat-model and crypto-token caveats, stop condition, operational checklist, writeup-seed phrasings, scope discipline), claude-code-papers (Lean-kernel mapping, this writeup).
+- **Multi-model conversation lineage:** ag_claude (Ada validation, agent_gov diff against construction-discipline rules), gnat_claude (probes, doctrine file maintenance), ChatGPT (framework correction to two-axis split, terminology lock, threat-model and crypto-token caveats, stop condition, operational checklist, writeup-seed phrasings, scope discipline), claude-code-papers (Lean-kernel mapping, this writeup).
 - **Lab in the jar 2026-05-07.** Local caveat in `~/.claude/projects/-home-jbeck-git-papers/memory/project-authority-kernel.md` updated to match the matured framework. Doctrine memory note in gnat-claude register at `~/.claude/projects/-home-jbeck-git-gnat/memory/doctrine_authority_observable_not_constructible.md`. This file is the repo-public artifact.
 - Filed as working note, not paper, not P28. Repo-public doctrine; substrate-agnostic at the top level; portable to a future cross-repo doctrine artifact when the destination shape stabilizes.

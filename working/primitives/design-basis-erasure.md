@@ -1,7 +1,7 @@
 # Design-Basis Erasure
 
 **Status:** candidate
-**Originated:** 2026-04-29 (user noticed mid-session — Governor controls leaking into book-prose review; chattY + claude-code containment-rule pass)
+**Originated:** 2026-04-29 (user noticed mid-session — Governor controls leaking into book-prose review; ChatGPT + claude-code containment-rule pass)
 **Primary home:** no current paper home — cross-cutting primitive
 
 ## Aphorism (keeper)
@@ -110,6 +110,6 @@ The primitive applies to itself. Useful reflexive check: any time this directory
 ## Cross-references
 
 - User's mid-session observation, 2026-04-29 (Governor controls leaking into book-prose review).
-- chattY's pass: confirmed containment criteria all clear; named "bureaucracy is symptom not mechanism"; framed the diagnostic question; wrote the scope brief that drove this draft.
+- ChatGPT's pass: confirmed containment criteria all clear; named "bureaucracy is symptom not mechanism"; framed the diagnostic question; wrote the scope brief that drove this draft.
 - Containment rule: `README.md` in this directory. Six criteria all pass; primitive added as candidate, not promoted.
 - Adjacent primitives: P25 (Substitution, candidate); [Stale Binding](stale-binding.md); Versioned Semantics (candidate).

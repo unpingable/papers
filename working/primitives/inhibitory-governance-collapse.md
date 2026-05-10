@@ -1,7 +1,7 @@
 # Inhibitory Governance Collapse
 
 **Status:** active primitive (recurrence ratifies — cron, Kubernetes reconciliation, auto-remediation, alert routing, agent plans, and organizational routines all instantiate it; not speculative)
-**Originated:** 2026-05-01 (multi-model synthesis with chatty + claude-code; the failure mode itself is older and well-documented across control theory and ops literature, but not previously named on this shelf)
+**Originated:** 2026-05-01 (multi-model synthesis with ChatGPT + claude-code; the failure mode itself is older and well-documented across control theory and ops literature, but not previously named on this shelf)
 **Primary home:** no current paper home — operational / control-loop primitive. Closest adjacencies: P23 (non-self-identical controller / controller continuity lane) and P27 (obligation-unsound reconciliation, where one of P27's K8s examples is essentially this primitive)
 **Shelf:** system primitive, sibling to `stale-binding.md`, `stale-task-replay.md`, `design-basis-erasure.md`, `role-accretion.md`, `apprenticeship-substrate-erosion.md`. Distinct from meta-doctrine primitives like `preemptive-naming.md`
 

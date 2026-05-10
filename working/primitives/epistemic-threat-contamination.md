@@ -4,7 +4,7 @@
 
 **Status:** candidate
 **Kind:** transition (with attractor flavor — once marker presence becomes chronic, the contaminated mode becomes the default basin even with the marker absent)
-**Originated:** 2026-05-08 (user-side primitive recognition prompted by CrowdStrike's DeepSeek-R1 forcing case; chatty structural distillation with source stack; claude-code-papers entry)
+**Originated:** 2026-05-08 (user-side primitive recognition prompted by CrowdStrike's DeepSeek-R1 forcing case; ChatGPT structural distillation with source stack; claude-code-papers entry)
 **Primary home (paper):** none yet. Candidate cross-pointers: P25 (epistemic border control — substitution-side sibling), methodology / agent-governance essay, possible §-insert in admissibility-control taxonomy.
 
 ## Aphorism (keepers)
@@ -167,10 +167,10 @@ Until any of those land, the keeper stays in primitives, not in main doctrine.
 
 - **2026-05-08 origin.** User-side primitive recognition prompted by CrowdStrike's DeepSeek-R1 vulnerability finding read as a clean A/B forcing case; user-noted symmetry with the human/institutional version where the A/B is unavailable because all environments carry contextual modifiers by default.
 - **Multi-model lineage:**
-  - **chatty:** control-theory framing (switched-controller model with supervisory threat classifier), source stack (Staw 1981, Edmondson 1999, Steele & Aronson 1995, Penney 2016, Rogers Commission, NASA mode-awareness work), distinction between censorship and contamination, dual-condition (threat-sharpened vs threat-corrupted), Lean-probe assessment.
+  - **ChatGPT:** control-theory framing (switched-controller model with supervisory threat classifier), source stack (Staw 1981, Edmondson 1999, Steele & Aronson 1995, Penney 2016, Rogers Commission, NASA mode-awareness work), distinction between censorship and contamination, dual-condition (threat-sharpened vs threat-corrupted), Lean-probe assessment.
   - **user:** original primitive recognition, CrowdStrike A/B reading, human/institutional analogue, name candidates ("Threat-Contaminated Competence" / "Epistemic Threat Contamination"), keeper-line set.
   - **claude-code-papers:** this primitive entry, slot-in-constellation (P25 / Guardrail Capture / Witness Invariance Failure / Coherent Wrongness adjacencies), angle check at phase boundary, formal-status assessment.
-- Filed candidate / default-density per `feedback-note-density-subtypes.md`. Not rich-staging; not promoted. No Lean formalization staged — chatty's note: *the claim is short enough to live in prose; Lean optional unless a forcing case asks for it.*
+- Filed candidate / default-density per `feedback-note-density-subtypes.md`. Not rich-staging; not promoted. No Lean formalization staged — ChatGPT's note: *the claim is short enough to live in prose; Lean optional unless a forcing case asks for it.*
 
 ## Sources (working stack — to cite when paper-promoting)
 

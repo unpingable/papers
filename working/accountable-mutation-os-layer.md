@@ -212,7 +212,7 @@ A theorem about valid authority is not the same as a construction rule for autho
 
 Different failure class. The Lean kernel currently has the first; the Ada probe demonstrated the second. Both are valuable; they close different holes. A consumer can satisfy a validity theorem with a manufactured `Authority` value as long as the manufacturing satisfied the type signature — the validity proof rules out *malformed* authority, not *unsanctioned* authority.
 
-### Four-move framing (chatty 2026-05-06)
+### Four-move framing (ChatGPT 2026-05-06)
 
 Categorizes the kinds of move the kernel makes, distinct from the next-step planning axis (concrete env, cross-dimensional law, deliberate breakage) for non-vacuity:
 
@@ -221,7 +221,7 @@ Categorizes the kinds of move the kernel makes, distinct from the next-step plan
 3. **State-transition theorems** — receipts/gaps/revocations cannot mutate policy by accident (currently in `StateTransition.lean` partitioning).
 4. **Construction discipline** — authority observable, not constructible. **Not currently expressed.**
 
-The next-step planning axis (Move 1: concrete witness `BasisDerivation`; Move 2: relationally-scoped cross-dimensional law; Move 3: deliberate-breakage adversarial env) is about discharging existing obligations into non-vacuous form. Chatty's Move 4 is about adding a structural property the kernel currently lacks. They're complementary, not substitutes — Move 4 can be implemented while Moves 1-3 remain vacuous, and Moves 1-2 don't address what Move 4 addresses.
+The next-step planning axis (Move 1: concrete witness `BasisDerivation`; Move 2: relationally-scoped cross-dimensional law; Move 3: deliberate-breakage adversarial env) is about discharging existing obligations into non-vacuous form. ChatGPT's Move 4 is about adding a structural property the kernel currently lacks. They're complementary, not substitutes — Move 4 can be implemented while Moves 1-3 remain vacuous, and Moves 1-2 don't address what Move 4 addresses.
 
 ### Sibling-primitive notes
 
@@ -273,7 +273,7 @@ Held for cold-eyes tomorrow. SPARK / gnatprove install explicitly deferred — b
 
 ## Provenance
 
-- Multi-model conversation 2026-05-06: chatty riff on "Unix stopped one abstraction level too early" plus Plan 9 / capability-OS / provenance / TxOS / DIFC research-island survey.
+- Multi-model conversation 2026-05-06: ChatGPT riff on "Unix stopped one abstraction level too early" plus Plan 9 / capability-OS / provenance / TxOS / DIFC research-island survey.
 - claude-code corrections folded in: Linux-first (not FreeBSD-first), constellation-pointer sharpening (substrate, not adjacent), falsifier requirement, prewarmed-branch framing.
-- Construction-discipline addendum 2026-05-06 (late): Ada/SPARK parallel-construction experiment surfaced the validity-vs-construction distinction; chatty articulated the four-move framing; both keeper lines preserved verbatim. Receipt_kernel diff held for cold-eyes session.
+- Construction-discipline addendum 2026-05-06 (late): Ada/SPARK parallel-construction experiment surfaced the validity-vs-construction distinction; ChatGPT articulated the four-move framing; both keeper lines preserved verbatim. Receipt_kernel diff held for cold-eyes session.
 - Filed as working note, recognize-don't-build, per name-early-ratify-lazily discipline. Not a paper, not a project, not a P28.

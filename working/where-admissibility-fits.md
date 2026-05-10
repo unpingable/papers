@@ -1,7 +1,7 @@
 # Where Admissibility Fits
 
 **Status:** working note / application map. Not a paper, not a roadmap, not a roadmap-in-disguise.
-**Origin:** 2026-05-09 multi-model brainstorm (claude-code-papers / claude-agent-governor / claude-nq) synthesized through chatty.
+**Origin:** 2026-05-09 multi-model brainstorm (claude-code-papers / claude-agent-governor / claude-nq) synthesized through ChatGPT.
 **Audience:** people approaching the admissibility work from outside the haunted machinery — platform engineers, ML/evals practitioners, security/compliance, formal-methods folks, observability people. Anyone who already builds systems that take claims and convert them into permission to act.
 
 ## What this note is and is not
@@ -160,7 +160,7 @@ Each is a candidate door, not a commitment.
 
 ## Provenance
 
-- **2026-05-09.** Multi-model brainstorm: user asked all three working claudes (claude-code-papers, claude-agent-governor, claude-nq) the same question — *what other software shapes does this work fit?* — then synthesized through chatty. Each floor saw the same object from a different elevation: AG floor surfaced deployment/integration shapes (admission controllers, PDP/PEP, capability systems, WASM, LSP, conformance suites); NQ floor surfaced consumer-discipline shapes (compliance, ML evals, supply-chain attestation, CI gating) and the *cannot-testify-over-no-problem-found* downstream pattern; papers/lean floor surfaced formal-vocabulary shapes (distributed-systems consensus, LLM ensembles, MFA orthogonality, CI signal aggregation, oracles, multi-reviewer review, sensor fusion as positive reference).
-- **chatty (synthesis).** Identified that the three responses were not disagreeing but triangulating: Wicket as admissibility kernel, NQ as testimony/standing substrate, Lean/paper work as warrant layer. Coined the *boundary object, not platform pitch* framing. Drafted the structural shape this file follows.
+- **2026-05-09.** Multi-model brainstorm: user asked all three working claudes (claude-code-papers, claude-agent-governor, claude-nq) the same question — *what other software shapes does this work fit?* — then synthesized through ChatGPT. Each floor saw the same object from a different elevation: AG floor surfaced deployment/integration shapes (admission controllers, PDP/PEP, capability systems, WASM, LSP, conformance suites); NQ floor surfaced consumer-discipline shapes (compliance, ML evals, supply-chain attestation, CI gating) and the *cannot-testify-over-no-problem-found* downstream pattern; papers/lean floor surfaced formal-vocabulary shapes (distributed-systems consensus, LLM ensembles, MFA orthogonality, CI signal aggregation, oracles, multi-reviewer review, sensor fusion as positive reference).
+- **ChatGPT (synthesis).** Identified that the three responses were not disagreeing but triangulating: Wicket as admissibility kernel, NQ as testimony/standing substrate, Lean/paper work as warrant layer. Coined the *boundary object, not platform pitch* framing. Drafted the structural shape this file follows.
 - **claude-code-papers (this file).** Folded the synthesis into the working/ directory as an applicability map. Added repo-aware cross-references so the document is navigable, not just legible. Resisted scope expansion: this is staging for a later compressed front-page version, not the front page itself.
 - Filed as working note. Not a paper. Not promised. Marked explicitly as boundary object — read by whoever is approaching the constellation from an adjacent vocabulary, not by people already inside it.

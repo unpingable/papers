@@ -50,7 +50,7 @@ End-to-end case-test exercise documented in `CASE_TESTS.md`. Six cases run plus 
 - **One ontological breaker**: platform-worker classification 2009–2024. Confirmed ontological default to any-feasible survives; surfaced override-burden ambiguity ("exists" must mean codified-and-operative-as-binding-event); surfaced sub-type-by-phase as candidate refinement.
 - **One procedural negative control**: routine administrative appeal. Classifies as Type B under the matrix; confirms the framework refuses to inflate every late administrative process into Type C.
 
-Promotion-gate item from chatty 2026-05-01 ("at least one Type C case must exist") satisfied in stronger form: three clean Type C, plus two regime-conditional Type C, plus one ontological Type C-by-phase, plus one procedural Type B negative control demonstrating the matrix has bite both directions.
+Promotion-gate item from ChatGPT 2026-05-01 ("at least one Type C case must exist") satisfied in stronger form: three clean Type C, plus two regime-conditional Type C, plus one ontological Type C-by-phase, plus one procedural Type B negative control demonstrating the matrix has bite both directions.
 
 **Ratified 2026-05-06** as the Paper 26 test. Held items (politically-reproduced sub-type, sub-type-by-phase, override-burden standard of evidence, curve-shape vs operating-point) preserved as §8 limitations; not gating.
 

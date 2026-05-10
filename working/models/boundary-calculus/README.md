@@ -58,7 +58,7 @@ This is an **observation**, not a synthesis claim. The examples are toy models f
 
 The toy models have already exposed rule-level errors — particularly cases where preservation would accidentally allow stale or belated authority to continue authorizing an action (Examples 5 and 6 both began as drafts with this bug, caught and corrected during review). Those failures are useful because they make implicit prose claims testable: a slogan like "stale evidence cannot authorize fresh use" looks self-evident in prose and turns out to be a non-trivial structural constraint on the transport / degradation split.
 
-Three of chatty's four containment conditions for promoting toy notation into a named calculus appear to be met (shared judgment form; ≥3 examples; the toys catch errors). The fourth — **rules compose** — is not yet established. The examples *chain* but composition has not been tested directly. The discriminating question:
+Three of ChatGPT's four containment conditions for promoting toy notation into a named calculus appear to be met (shared judgment form; ≥3 examples; the toys catch errors). The fourth — **rules compose** — is not yet established. The examples *chain* but composition has not been tested directly. The discriminating question:
 
 > If \(B_1\) transports/degrades \(\kappa\) into \(\kappa'\), and \(B_2\) transports/degrades \(\kappa'\) into \(\kappa''\), does \(B_2 \circ B_1\) produce the same admissibility result as the stepwise composition?
 

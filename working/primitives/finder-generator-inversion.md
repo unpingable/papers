@@ -2,7 +2,7 @@
 
 **Status:** candidate
 **Kind:** transition
-**Originated:** 2026-05-03 (chatty surfaced during a session-internal self-audit — the primitive-detector was running hot enough that "what we are doing right now" became a load-bearing instance)
+**Originated:** 2026-05-03 (ChatGPT surfaced during a session-internal self-audit — the primitive-detector was running hot enough that "what we are doing right now" became a load-bearing instance)
 **Primary home:** no current paper home — cross-cutting meta-discipline; the ontology layer over the rest of the field notebook
 
 ## Settled status

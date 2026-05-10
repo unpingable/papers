@@ -1,6 +1,6 @@
 # Taxonomy Structured Pass: Four Questions × 15 Domains
 
-**Status:** Systematic diagnostic. Testing each domain against Chatty's four questions, then testing untested edges.
+**Status:** Systematic diagnostic. Testing each domain against ChatGPT's four questions, then testing untested edges.
 
 ---
 
@@ -133,7 +133,7 @@
 | Primitive? | **Primitive mechanism, but usually a symptom.** The mechanism (authority ≠ consequence) is distinct and real. But it's downstream more often than not. |
 
 **Role: Downstream / custody.** Mostly receives from Δb, Δw. Describes a governance end-state.
-**This is the one Chatty predicted: Δc is downstream more often than upstream.**
+**This is the one ChatGPT predicted: Δc is downstream more often than upstream.**
 
 ---
 
@@ -149,7 +149,7 @@
 | Invertible? | **Yes.** Multi-scale stabilization exists: interventions deliberately designed to be coherent across scales. Paper 1's coherence criterion is basically the therapeutic form of Δx. |
 | Primitive? | **Primitive, but more "system property" than "failure mode."** It's not a mechanism that breaks — it's a geometric fact about multi-scale systems. |
 
-**Role: Amplifier.** Chatty was right — Δp and Δx both belong in the amplifier/transmission category, not as roots. Δx amplifies whatever crosses a scale boundary.
+**Role: Amplifier.** ChatGPT was right — Δp and Δx both belong in the amplifier/transmission category, not as roots. Δx amplifies whatever crosses a scale boundary.
 
 ### Δr — Recursion Capture
 *Feedback loops feeding mostly on own outputs*
@@ -162,7 +162,7 @@
 | Primitive? | **Primitive.** Distinct mechanism, well-defined. |
 
 **Role: Can be root or downstream.** Independent when the recursion IS the system (platforms, echo chambers). Downstream when it's enabled by Δp or Δs. Generative — can spawn authority and model failures.
-**The Δr → Δw edge Chatty flagged is real:** recursive loops can capture authority. Paper 20 (frame capture) → Paper 18 (unauthorized durability) is this pipeline.
+**The Δr → Δw edge ChatGPT flagged is real:** recursive loops can capture authority. Paper 20 (frame capture) → Paper 18 (unauthorized durability) is this pipeline.
 
 ---
 
@@ -191,7 +191,7 @@
 | Question | Answer |
 |---|---|
 | Independent? | **No.** Δh is always downstream. Something else caused the shift; Δh is the failure to return. It requires a prior failure or trigger plus a persistence mechanism. |
-| Generative? | **Yes, but laterally.** Δh → Δn (normalized state overwrites vocabulary for baseline — Chatty's "book-ish" edge). Δh → Δc (non-return hardens consequence detachment into permanent structure). Δh doesn't generate new failure *types* so much as it *locks in* existing failures and then erodes the ability to recognize them. |
+| Generative? | **Yes, but laterally.** Δh → Δn (normalized state overwrites vocabulary for baseline — ChatGPT's "book-ish" edge). Δh → Δc (non-return hardens consequence detachment into permanent structure). Δh doesn't generate new failure *types* so much as it *locks in* existing failures and then erodes the ability to recognize them. |
 | Invertible? | **Yes — this is the strongest therapeutic inversion in the taxonomy.** Hysteresis as stabilization: anti-flap, damping, regime persistence against transient noise. The governor's `hysteresis.py` is literally this. Same mechanism, opposite sign. The failure criterion from the spike: pathological when the persistence mechanism is self-referential rather than environment-referential. |
 | Primitive? | **Primitive.** Clear mechanism, sharp failure criterion (from the Δh spike). Not a bundle. |
 
@@ -213,7 +213,7 @@
 | Invertible? | **The whole domain is about inversion.** The "therapeutic" version is: deliberately inverting reward to break a pathological pattern (contrarian strategies, creative destruction, "do the opposite"). But that's more of a hack than a stable mechanism. |
 | Primitive? | **Primitive.** Single mechanism: sign flip. |
 
-**Role: Reclassify from root to root/amplifier hybrid.** When it arises independently (imposed perverse incentives), it's a root. When it emerges from recursion or signal corruption, it's downstream. Either way, it's strongly generative. Chatty was half-right: it amplifies, but it can also originate.
+**Role: Reclassify from root to root/amplifier hybrid.** When it arises independently (imposed perverse incentives), it's a root. When it emerges from recursion or signal corruption, it's downstream. Either way, it's strongly generative. ChatGPT was half-right: it amplifies, but it can also originate.
 
 ---
 
@@ -301,17 +301,17 @@ TERMINAL                                     │
 
 1. **Δe reclassified from "root" to "constraint."** It's not upstream of other failures the way Δn is. It's orthogonal — determines whether failures are recoverable, doesn't cause them.
 
-2. **Δp reclassified from "root" to "root/amplifier hybrid."** Sometimes independent, sometimes downstream of Δr or Δs. Chatty was right to question its root status.
+2. **Δp reclassified from "root" to "root/amplifier hybrid."** Sometimes independent, sometimes downstream of Δr or Δs. ChatGPT was right to question its root status.
 
 3. **Δo promoted.** Was in the perception bucket but not highlighted. It's actually a strong root — independent, strongly generative, and has a real therapeutic inversion (deliberate opacity).
 
-4. **Δm reclassified from "perception" to "transmission."** It bridges perception and control. Usually downstream, rarely originates. Chatty and first-pass disagreed on this; the four questions confirm: Δm is a bridge, not a source.
+4. **Δm reclassified from "perception" to "transmission."** It bridges perception and control. Usually downstream, rarely originates. ChatGPT and first-pass disagreed on this; the four questions confirm: Δm is a bridge, not a source.
 
 5. **Δr → Δw edge confirmed.** Recursion capture can generate write-authority drift. This is the Paper 20 → Paper 18 pipeline.
 
 6. **Δh ↔ Δn mutual reinforcement confirmed.** The "book-ish" edge is real: normalization destroys vocabulary for baseline, which prevents recognizing non-return. This is possibly the most important edge in the whole graph for the book's argument.
 
-7. **Δc confirmed as mostly downstream.** Chatty predicted this. Consequence detachment is real but it's a governance end-state, not a generator.
+7. **Δc confirmed as mostly downstream.** ChatGPT predicted this. Consequence detachment is real but it's a governance end-state, not a generator.
 
 ---
 

@@ -1,7 +1,7 @@
 # Cybernetics and Admissibility
 
 **Status:** interpretive note / lineage handle. Not a paper. Not a claim of inheritance. Not a roadmap.
-**Originated:** 2026-05-10 multi-model conversation (operator + chatty + agent-governor-claude) reading the admissibility constellation through cybernetics lineage. A parallel AG-side note may exist in the agent-governor working tree, scoped to AG/Wicket implementation doctrine; this note is scoped to the papers/research corpus.
+**Originated:** 2026-05-10 multi-model conversation (operator + ChatGPT + agent-governor-claude) reading the admissibility constellation through cybernetics lineage. A parallel AG-side note may exist in the agent-governor working tree, scoped to AG/Wicket implementation doctrine; this note is scoped to the papers/research corpus.
 
 ## What this note is and is not
 
@@ -41,7 +41,7 @@ Where second-order cybernetics turns toward the observer, reflexivity, and const
 
 ## Retirement of "third-order cybernetics"
 
-For provenance: past-iterations of this conversation reached for the *third-order cybernetics* label multiple times (recorded by chatty as 2025-12-30, 2026-02-01, 2026-04-19, 2026-04-24, in different framings each time). The label was retired 2026-05-10 in favor of *admissibility-cybernetics* for two reasons:
+For provenance: past-iterations of this conversation reached for the *third-order cybernetics* label multiple times (recorded by ChatGPT as 2025-12-30, 2026-02-01, 2026-04-19, 2026-04-24, in different framings each time). The label was retired 2026-05-10 in favor of *admissibility-cybernetics* for two reasons:
 
 1. **Terminology collision.** Existing third-order cybernetics literature exists with non-uniform definitions, mostly orbiting social/reflexive metasystem framings rather than the operational admissibility problem. Adopting the ordinal label would inherit a literature fight that doesn't serve the work.
 2. **Ordinal-vs-functional axis.** The admissibility cut isn't "third after second" — it's a different cut through the same inheritance, naming a failure mode (signals arriving already-laundered into authority) that the ordinal ladder doesn't sit on.
@@ -109,6 +109,8 @@ The functional separation:
 
 This family is **descriptive at this stage**. It names a working relationship among concepts, not a finalized taxonomy or implementation obligation.
 
+*Adjacent candidate (added 2026-05-10):* **quorum cybernetics** — *binding-set formation*; the conditions under which a claimed deciding body exists *enough* to bind consequence. Surfaced as upstream of admissibility cybernetics (*no quorum, no binding verdict; no admissibility, no valid passage*) rather than parallel sibling. Whether it lives as a layer under admissibility or as a fourth family member is unsettled. See `quorum-cybernetics.md` for the first-pass capture and prior-art sniff test (substantial existing literature in distributed-systems quorum theory, formal verification of consensus, voting theory, parliamentary procedure, and biological quorum sensing — *quorum as proof-carrying authority formation* appears to be the unbuilt bridge between them).
+
 ## Case-law shape
 
 The corpus often develops doctrine by case accumulation rather than top-down design:
@@ -156,10 +158,10 @@ This note **does not**:
 
 ## Provenance
 
-- **2026-05-10 origin.** Multi-model conversation between operator, chatty, and agent-governor-claude — surfaced from an exchange about whether the multi-model workflow itself was *common law for cursed little programs* (chatty's framing). The cybernetics lineage was named first by the operator, refined by chatty into the *signal-wearing-borrowed-badge* keeper, then sharpened by agent-governor-claude with the *operational-meta vs reflexive-meta* distinction.
-- **chatty:** named the lineage rungs; coined the *cybernetics after evidence became political* keeper; identified the third-order terminology collision and proposed the *admissibility-cybernetics* substitute; produced the *case-law shape* compact version.
+- **2026-05-10 origin.** Multi-model conversation between operator, ChatGPT, and agent-governor-claude — surfaced from an exchange about whether the multi-model workflow itself was *common law for cursed little programs* (ChatGPT's framing). The cybernetics lineage was named first by the operator, refined by ChatGPT into the *signal-wearing-borrowed-badge* keeper, then sharpened by agent-governor-claude with the *operational-meta vs reflexive-meta* distinction.
+- **ChatGPT:** named the lineage rungs; coined the *cybernetics after evidence became political* keeper; identified the third-order terminology collision and proposed the *admissibility-cybernetics* substitute; produced the *case-law shape* compact version.
 - **agent-governor-claude:** caught that "first-order with scars" was too literary; produced the load-bearing *operational-meta not reflexive-meta* refinement that prevents fog-machine drift; surfaced that the family triad maps onto the standard normative-control-system shape (transition rules / regulation rules / evidence rules); caught that boundary calculus already existed in the papers repo (their grep was scoped to AG/Wicket/Lean and missed it).
-- **operator:** pushed the cybernetics framing originally and across prior conversations under the now-retired *third-order* label; called the boundary-calculus / cybernetics pairing as *hand-in-glove* (correctly) which earned chatty's family-triad development.
-- **2026-05-10 prior-art triangulation (DeepSeek with and without search).** Confirmed no exact prior art for *admissibility cybernetics* as a fixed term — the name is defensible. Search version pulled toward Spencer-Brown / Glanville orbit and treated proximity as identity (classic retrieval failure wearing epistemic confidence); no-search version triangulated more accurately to legal + logical + control admissibility, the right collision. Result: fork from distinction-and-observer lineage named explicitly in the new *Fork from the distinction-and-observer lineage* section above. Chatty caught that the *may bind* fork from Spencer-Brown/Glanville is the load-bearing distinction; user surfaced that this also explains why Gate-to-Metric Substitution is a cybernetics failure rather than just a rhetorical failure (the substitution changes the consequence-structure topology, not just the vocabulary).
+- **operator:** pushed the cybernetics framing originally and across prior conversations under the now-retired *third-order* label; called the boundary-calculus / cybernetics pairing as *hand-in-glove* (correctly) which earned ChatGPT's family-triad development.
+- **2026-05-10 prior-art triangulation (DeepSeek with and without search).** Confirmed no exact prior art for *admissibility cybernetics* as a fixed term — the name is defensible. Search version pulled toward Spencer-Brown / Glanville orbit and treated proximity as identity (classic retrieval failure wearing epistemic confidence); no-search version triangulated more accurately to legal + logical + control admissibility, the right collision. Result: fork from distinction-and-observer lineage named explicitly in the new *Fork from the distinction-and-observer lineage* section above. ChatGPT caught that the *may bind* fork from Spencer-Brown/Glanville is the load-bearing distinction; user surfaced that this also explains why Gate-to-Metric Substitution is a cybernetics failure rather than just a rhetorical failure (the substitution changes the consequence-structure topology, not just the vocabulary).
 - **claude-code-papers (this file):** filed papers-side scoped to the research corpus rather than AG/Wicket implementation. Preserved the third-order retirement provenance compactly. Kept all cross-links relative within the papers repo; named the AG-side note in prose only per the public-corpus discipline. Used corrected family status (boundary calculus is not parked candidate; receipt doctrine is the only true unfiled member).
 - Filed as interpretive note. Not promoted. Not registry-listed. No new theoretical machinery introduced. Companion candidate-inventory entry added.

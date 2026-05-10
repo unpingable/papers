@@ -4,7 +4,7 @@
 
 **Status:** candidate
 **Kind:** attractor (recurring basin) — multi-agent review loops fall into this basin when two or more cautious reviewers compose, without any single agent recommending recklessness or refusing action.
-**Originated:** 2026-05-08 (chatty diagnosis after operator-surfaced pattern from driftwatch case: 97 stall captures, recurring writer stalls, millions of queue-boundary drops, ~3.4 days disk runway, and yet the next proposed move was still *"maybe run one more toggle"* or *"Phase 1 only."* User named the pattern as recurring across the cabinet, not driftwatch-specific).
+**Originated:** 2026-05-08 (ChatGPT diagnosis after operator-surfaced pattern from driftwatch case: 97 stall captures, recurring writer stalls, millions of queue-boundary drops, ~3.4 days disk runway, and yet the next proposed move was still *"maybe run one more toggle"* or *"Phase 1 only."* User named the pattern as recurring across the cabinet, not driftwatch-specific).
 **Primary home (paper):** none yet. Cross-tooling primitive — applies to Nightshift, Continuity, papers/Lean cabinet, and any multi-agent review loop. Candidate destinations: methodology essay, agent-governance section.
 
 ## Aphorism (keepers)
@@ -81,7 +81,7 @@ The six conditions are jointly required. (1)+(2) alone is healthy multi-agent re
 - **Guardrail Capture** (`primitives/guardrail-capture.md`) — single-agent sibling. Guardrail Capture: an agent suppresses task in service of a misread constraint. Thin-slice ratchet: two agents jointly suppress action by amplifying each other's caution. Same family (constraint-shaped pathology), different cardinality.
 - **Conservative-trim override** (`feedback-conservative-trim-override.md`) — operator-side correction for the single-agent variant. Same axis as ratchet, different intervention point. Conservative-trim override is *"operator overrides one agent's over-trim"*; ratchet is *"operator must override the composition of multiple agents' trims."*
 - **Failed factoring as honest boundary** (`feedback-failed-factoring-as-honest-boundary.md`) — adjacent but distinct. That memory: knowing when to stop trying to factor. Ratchet: knowing when to stop slicing. Both are anti-perfectionism disciplines but at different stages.
-- **Solution-family exhaustion** (chatty's note, not yet a separate primitive) — adjacent. SFE: too many fixes inside the same premise (premise wrong but unrecognized). Ratchet: review keeps shrinking action even after the premise is already indicted. SFE is premise-blindness; ratchet is threshold-blindness.
+- **Solution-family exhaustion** (ChatGPT's note, not yet a separate primitive) — adjacent. SFE: too many fixes inside the same premise (premise wrong but unrecognized). Ratchet: review keeps shrinking action even after the premise is already indicted. SFE is premise-blindness; ratchet is threshold-blindness.
 - **Δt framework / belated consequence** — late-action direction. Belated consequence is the temporal-shadow form of the same shape: by the time review converges, the window in which action could have mattered is closed. Thin-slice ratchet is one mechanism for getting there.
 
 ## Do not confuse with
@@ -93,7 +93,7 @@ The six conditions are jointly required. (1)+(2) alone is healthy multi-agent re
 
 ## Worked instance (origin)
 
-**Driftwatch case, 2026-05-08.** 97 stall captures, recurring writer stalls, millions of queue-boundary drops, ~3.4 days disk runway. Multiple cabinet rounds proposed bounded next steps (*"maybe run one more toggle,"* *"Phase 1 only"*). Cumulative evidence had long crossed the threshold for consequential action; the slicing continued anyway. Recognition surfaced operator-side; chatty named the pattern.
+**Driftwatch case, 2026-05-08.** 97 stall captures, recurring writer stalls, millions of queue-boundary drops, ~3.4 days disk runway. Multiple cabinet rounds proposed bounded next steps (*"maybe run one more toggle,"* *"Phase 1 only"*). Cumulative evidence had long crossed the threshold for consequential action; the slicing continued anyway. Recognition surfaced operator-side; ChatGPT named the pattern.
 
 Exhibits all six failure-predicate conditions: multiple review agents, individually-calibrated caution, threshold-crossed cumulative evidence, bounded-narrower-than-licensed proposals, premise-preserving slicing, no explicit evidence-threshold check.
 
@@ -113,6 +113,6 @@ Hold as candidate until at least one of:
 
 ## Provenance
 
-- **2026-05-08 origin.** Chatty diagnosis after operator-surfaced pattern from driftwatch case. Keepers and structured failure-mode summary (recognition / guardrail / keeper) provided by chatty in standard cabinet-shaped format.
-- **Multi-model lineage:** chatty (naming, structural diagnosis, four keeper lines, structured summary), user (operator-side recognition; named the pattern as recurring across cabinet, not driftwatch-specific), claude-code-papers (this primitive entry).
+- **2026-05-08 origin.** ChatGPT diagnosis after operator-surfaced pattern from driftwatch case. Keepers and structured failure-mode summary (recognition / guardrail / keeper) provided by ChatGPT in standard cabinet-shaped format.
+- **Multi-model lineage:** ChatGPT (naming, structural diagnosis, four keeper lines, structured summary), user (operator-side recognition; named the pattern as recurring across cabinet, not driftwatch-specific), claude-code-papers (this primitive entry).
 - Filed candidate / default-density per `feedback-note-density-subtypes.md`. Cross-tooling — applies to any multi-agent review loop, not just Nightshift / Continuity / driftwatch.

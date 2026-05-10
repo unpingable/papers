@@ -29,7 +29,7 @@ P27 *adds*: transition admissibility predicate, obligation accounting (preserved
 | --- | --- | --- |
 | Lean skeleton | `~/git/lean/LeanProofs/Admissibility.lean` | Obligation/Outcome/Accounting algebra; sorry-eliminated 2026-05-01 (three real proofs against `admissible`; two `True`-placeholder discharges pending substrate-accusation / causal-binding vocabulary). Unwired by deliberate slot decision |
 | Working note | `working/admissible-recovery-semantics.md` | Corrective monotonicity / non-laundering recovery semantics. Candidate fold-in target for P27 pending seven-path audit; alternatively standalone P28 |
-| Conversation precursor | (multi-model riff 2026-04-28) | Kernel produced via DeepSeek/Gemini/Claude/chattY synthesis |
+| Conversation precursor | (multi-model riff 2026-04-28) | Kernel produced via DeepSeek/Gemini/Claude/ChatGPT synthesis |
 
 ## Files
 

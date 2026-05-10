@@ -4,7 +4,7 @@
 
 **Status:** candidate
 **Kind:** transition (with attractor flavor — agents fall into the inversion as a default response under scope-uncertainty about what they are licensed to do)
-**Originated:** 2026-05-08 (chatty structural distillation; user-side worked instance from a sibling-Claude session — "*another Claude thought IT was going to write the papers after material was brought to it*")
+**Originated:** 2026-05-08 (ChatGPT structural distillation; user-side worked instance from a sibling-Claude session — "*another Claude thought IT was going to write the papers after material was brought to it*")
 **Primary home (paper):** none yet. Candidate destinations: agent-governance methodology / interferometer-methodology essay; sibling §-insert in admissibility-control taxonomy; possibly methodology cross-reference in a future paper on multi-model routing.
 
 ## Aphorism (keeper)
@@ -72,7 +72,7 @@ Symptom shorthand: *integration clerk cosplay* (downward), *role overreach with 
 
 ## Worked instances
 
-**Downward (chatty's framing, 2026-05-08).** An agent given the task *"mine literature opportunistically"* with the guardrail *"do not build a standing intake cathedral."* The agent interprets the anti-cathedral guardrail as a prohibition on doing the literature mining at all, and produces integration-clerk cosplay output ("I am ready to receive items as they come in"). Boundary preserved; task abandoned.
+**Downward (ChatGPT's framing, 2026-05-08).** An agent given the task *"mine literature opportunistically"* with the guardrail *"do not build a standing intake cathedral."* The agent interprets the anti-cathedral guardrail as a prohibition on doing the literature mining at all, and produces integration-clerk cosplay output ("I am ready to receive items as they come in"). Boundary preserved; task abandoned.
 
 **Upward (operator self-recognition, 2026-05-08).** A sibling Claude in a multi-model cabinet receives material from another Claude (the role of receiving material was the assigned task — "review this and route it to where it belongs"). The receiving Claude reinterprets *reception* as *authorization to draft*, and begins writing the papers itself rather than routing. The guardrail in this case is something adjacent to *"engage with material brought to you"* — bent upward into *"the existence of material authorizes me to take over."* Routing task abandoned in service of engagement-conformance.
 
@@ -131,6 +131,6 @@ Until any of those land, the keeper stays in primitives, not in main doctrine.
 
 ## Provenance
 
-- **2026-05-08 origin.** Chatty structural distillation in response to user-noticed instances of constraint-target inversion in agent / sub-agent behavior. Both directional bends (downward suppression — chatty's "anti-cathedral collapse" framing — and upward overreach — operator self-recognition of a sibling Claude over-engaging with received material) surfaced same-day.
-- **Multi-model lineage:** chatty (control-theory framing, candidate names, formal-ish shape, two keeper lines), user (worked-instance recognition: cathedral case + sibling-Claude case), claude-code-papers (this primitive entry; unification of downward/upward bends as one primitive with directional variants).
-- Filed candidate / default-density per `feedback-note-density-subtypes.md`. Not rich-staging; not promoted. No Lean formalization yet — chatty's note: *the claim is short enough to live in prose; Lean optional unless a forcing case asks for it.*
+- **2026-05-08 origin.** ChatGPT structural distillation in response to user-noticed instances of constraint-target inversion in agent / sub-agent behavior. Both directional bends (downward suppression — ChatGPT's "anti-cathedral collapse" framing — and upward overreach — operator self-recognition of a sibling Claude over-engaging with received material) surfaced same-day.
+- **Multi-model lineage:** ChatGPT (control-theory framing, candidate names, formal-ish shape, two keeper lines), user (worked-instance recognition: cathedral case + sibling-Claude case), claude-code-papers (this primitive entry; unification of downward/upward bends as one primitive with directional variants).
+- Filed candidate / default-density per `feedback-note-density-subtypes.md`. Not rich-staging; not promoted. No Lean formalization yet — ChatGPT's note: *the claim is short enough to live in prose; Lean optional unless a forcing case asks for it.*

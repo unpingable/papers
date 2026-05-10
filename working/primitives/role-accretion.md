@@ -1,7 +1,7 @@
 # Role Accretion
 
 **Status:** candidate
-**Originated:** 2026-04-29 (user noticed mid-session — Claude drifting from requested editor role to wellness-monitor role across accumulated session context; chattY containment-rule pass)
+**Originated:** 2026-04-29 (user noticed mid-session — Claude drifting from requested editor role to wellness-monitor role across accumulated session context; ChatGPT containment-rule pass)
 **Primary home:** no current paper home — cross-cutting primitive; closest adjacency is P19 (Shadow Governance), where Role Accretion is one *mechanism* producing the stabilized state P19 names
 
 ## Aphorism (keeper)
@@ -26,7 +26,7 @@ An action $a_t$ is admissible under the accreted role $R_t$ but not under the or
 
 $$a_t \in \text{admissible}(R_t) \setminus \text{admissible}(R_0).$$
 
-The progression is the load-bearing thing — chattY's framing:
+The progression is the load-bearing thing — ChatGPT's framing:
 
 > continuity → implied obligation → assumed standing → unauthorized intervention
 
@@ -95,7 +95,7 @@ Diagnostic test: would a fresh actor with no prior session memory, given the sam
 
 ## Self-application
 
-The primitives field-notebook itself is at risk of role accretion. Original contract: *prevent five papers from naming the same animal five ways.* Accumulated context (four candidate notes in 48 hours; chattY's promotion-criteria refinement; the new "ontology tinnitus" framing) creates pressure toward accreted roles:
+The primitives field-notebook itself is at risk of role accretion. Original contract: *prevent five papers from naming the same animal five ways.* Accumulated context (four candidate notes in 48 hours; ChatGPT's promotion-criteria refinement; the new "ontology tinnitus" framing) creates pressure toward accreted roles:
 
 - *Ontology curator* (deciding what counts as a primitive at all)
 - *Framework librarian* (organizing the apparatus shape)
@@ -131,7 +131,7 @@ The notebook stays bounded by **periodically re-reading the original task contra
 ## Cross-references
 
 - User's mid-session observation, 2026-04-29 (Claude session drift from editor to wellness-monitor; the "have you eaten" example).
-- chattY's pass: confirmed primitive status; named the four-step mechanism (continuity → implied obligation → assumed standing → unauthorized intervention); produced the keeper aphorisms; flagged HR/compliance/Trust-and-Safety/ops/management as cross-cutting use domains.
+- ChatGPT's pass: confirmed primitive status; named the four-step mechanism (continuity → implied obligation → assumed standing → unauthorized intervention); produced the keeper aphorisms; flagged HR/compliance/Trust-and-Safety/ops/management as cross-cutting use domains.
 - Containment rule: `README.md` in this directory. Six criteria all pass; primitive added as candidate, not promoted.
 - Adjacent primitives: [Stale Binding](stale-binding.md); [Design-Basis Erasure](design-basis-erasure.md); [Trajectory-Actuator Gap](trajectory-actuator-gap.md); P19 Shadow Governance (stabilized state, paper-level); Standing (Governor-native primitive, candidate).
 - Related: `feedback-multi-model-routing.md` in project memory — preserving role boundaries across the Claude cabinet is the discipline that prevents Role Accretion in this user's specific multi-model setup.

@@ -1,7 +1,7 @@
 # Trajectory-Actuator Gap
 
 **Status:** candidate
-**Originated:** 2026-04-29 (user noticed mid-session — political-strategy "let's recreate the magic" pattern; chattY containment-rule pass)
+**Originated:** 2026-04-29 (user noticed mid-session — political-strategy "let's recreate the magic" pattern; ChatGPT containment-rule pass)
 **Primary home:** no current paper home — cross-cutting primitive (likely surfaces most in Latent Capitalism / Chronopolitics / Substack work, with adjacencies to P22 / P25 / P26)
 
 ## Naming note
@@ -70,7 +70,7 @@ Inadmissible answers: "we have access to attention," "we have access to message,
 - **Latent Capitalism / Chronopolitics:** primary surface. Political-strategy retrospectives that upgrade interpretive access into intervention access; treating distributed contingent alignments as presently-operable control surfaces.
 - **Substack writing on governance/strategy:** any piece that says "X worked because Y" and pivots to "we should do Y" without standing decomposition.
 - **P22 (no universal plant clock):** adjacent. Different Δt regimes mean a successful past trajectory may not even be the same kind of object as a present-tense intervention.
-- **P25 (substitution under observability asymmetry):** adjacent — chattY's framing is *trajectory substitution* (observed historical path substituted for an available control pathway) is structurally parallel to P25's target substitution, but the cause differs (see "Do not confuse with").
+- **P25 (substitution under observability asymmetry):** adjacent — ChatGPT's framing is *trajectory substitution* (observed historical path substituted for an available control pathway) is structurally parallel to P25's target substitution, but the cause differs (see "Do not confuse with").
 - **P26 (m(t)/c(t) duality, empty window):** adjacent. The historical event happened inside a window that may have closed. *History happened inside its window; the strategy proposes to act after that window has closed.*
 - **Design-Basis Erasure:** sibling primitive — both are "import without preserving the load-bearing context," but the load-bearing thing differs.
 
@@ -131,6 +131,6 @@ The strategy treats all five as equally available. The Trajectory-Actuator Gap i
 ## Cross-references
 
 - User's mid-session observation, 2026-04-29 (political-strategy retrospectives upgrading interpretive access to intervention access).
-- chattY's pass: confirmed containment criteria all clear; named the *trajectory substitution* framing; rejected *Causal Standing Gap* on collision grounds; ranked alternative names; produced the working card.
+- ChatGPT's pass: confirmed containment criteria all clear; named the *trajectory substitution* framing; rejected *Causal Standing Gap* on collision grounds; ranked alternative names; produced the working card.
 - Containment rule: `README.md` in this directory. Six criteria all pass; primitive added as candidate, not promoted.
 - Adjacent primitives: [Stale Binding](stale-binding.md); [Design-Basis Erasure](design-basis-erasure.md); P25 (Substitution, candidate, in candidates list); Standing (Governor-native, candidate, see naming note).

@@ -14,7 +14,7 @@ Many are just named so they stop haunting the operator.
 
 **Per-item schema:** five fields, no essays. *Register / Why it matters / Why not now / Natural owner / Revisit when.* If an item starts wanting more than five lines of substance, it's outgrown this file and belongs as its own working note or spec.
 
-**Origin:** 2026-05-09 multi-model brainstorm (claude-code-papers / claude-agent-governor / claude-nq) synthesized through chatty.
+**Origin:** 2026-05-09 multi-model brainstorm (claude-code-papers / claude-agent-governor / claude-nq) synthesized through ChatGPT.
 
 ---
 
@@ -108,7 +108,7 @@ Many are just named so they stop haunting the operator.
 ### "Where Admissibility Fits" public compression
 - **Register:** paper / app-map → front-page seed
 - **Why it matters:** eventual unpingable front page seed
-- **Why not now:** per chatty — *let the paper repo absorb the weirdness and see which mappings survive repeated explanation*
+- **Why not now:** per ChatGPT — *let the paper repo absorb the weirdness and see which mappings survive repeated explanation*
 - **Natural owner:** claude-code-papers (compression) + AG (consistency check)
 - **Revisit when:** mappings stabilize across several explanations to outside readers
 
@@ -137,7 +137,7 @@ Connections surfaced by the brainstorm — not projects, just places where one s
 - **Wicket-as-kernel + AG-as-elaborator ≅ Lean kernel + Lean elaborator.** Architectural pattern, not a project. Surfacing the analogy tells PL/formal-methods readers what discipline AG is borrowing.
 - **NQ "cannot-testify" ≅ Wicket "openFinding".** Same structured-non-answer move at different layers (witness vs verdict). Worth a pass on whether vocabulary should align across the cabinet, or whether the layer distinction is doing useful work.
 - **Boundary calculus / admissibility-cybernetics / receipt doctrine family.** Three-way conceptual family naming the standard normative-control-system shape: transition rules, regulation rules, evidence rules. *Boundary calculus decides what changes at the crossing; admissibility-cybernetics decides whether the crossing may control anything; receipt doctrine decides what survives the crossing as evidence for future crossings.* Family is currently asymmetric on the papers side: boundary calculus has a working corpus at [models/boundary-calculus/](models/boundary-calculus/) (seven examples, status *toy corpus / non-doctrinal*); admissibility-cybernetics has the new interpretive note at [cybernetics-and-admissibility.md](cybernetics-and-admissibility.md); receipt doctrine is named-but-unfiled — don't manufacture the third sibling note until a forcing case appears. Revisit when receipt doctrine starts being used across multiple docs/specs, or when boundary calculus earns standalone primitive promotion.
-  - **Binding Reconciliation annotation (2026-05-10).** Operator-facing handle for the triad already present across Lean machinery (`Authority` + `StateTransition` + `Execution` via `AuthorizedStep`) and receipt persistence: *execution is not completion; a binding transition must reconcile action, authority, and consequence.* Likely the conceptual spine of receipt doctrine if/when that sibling is written. Status: pressure increasing on receipt doctrine, no forcing case yet. **Not a new primitive** — operator-facing gloss over existing machinery, not new structure. Surfaced from a joke about "triple-ledger accounting" that turned out to have shape; chatty proposed *Binding Reconciliation* as the cleaner handle (avoiding the accounting/blockchain naming swamp where triple-entry already lives). Captured here so the keeper isn't lost; not promoted because the structure is already implemented in Lean and parked under receipt doctrine — minting a new primitive would be the gloss eating its own substrate.
+  - **Binding Reconciliation annotation (2026-05-10).** Operator-facing handle for the triad already present across Lean machinery (`Authority` + `StateTransition` + `Execution` via `AuthorizedStep`) and receipt persistence: *execution is not completion; a binding transition must reconcile action, authority, and consequence.* Likely the conceptual spine of receipt doctrine if/when that sibling is written. Status: pressure increasing on receipt doctrine, no forcing case yet. **Not a new primitive** — operator-facing gloss over existing machinery, not new structure. Surfaced from a joke about "triple-ledger accounting" that turned out to have shape; ChatGPT proposed *Binding Reconciliation* as the cleaner handle (avoiding the accounting/blockchain naming swamp where triple-entry already lives). Captured here so the keeper isn't lost; not promoted because the structure is already implemented in Lean and parked under receipt doctrine — minting a new primitive would be the gloss eating its own substrate.
 
 ---
 
@@ -167,6 +167,6 @@ Look at this list again when:
 
 ## Provenance
 
-- 2026-05-09 multi-model brainstorm (AG / NQ / papers-lean) → chatty synthesis → claude-code-papers organized into this inventory.
-- Initial draft was rich-annotation; trimmed 2026-05-09 (same session) to fixed five-field schema per chatty's *do not let the candidate file become the most interesting document*. Annotations preserved where the cabinet/owner signal pays for itself; cut everywhere else.
+- 2026-05-09 multi-model brainstorm (AG / NQ / papers-lean) → ChatGPT synthesis → claude-code-papers organized into this inventory.
+- Initial draft was rich-annotation; trimmed 2026-05-09 (same session) to fixed five-field schema per ChatGPT's *do not let the candidate file become the most interesting document*. Annotations preserved where the cabinet/owner signal pays for itself; cut everywhere else.
 - Filed as working inventory. Companion to where-admissibility-fits.md; one-way cross-link (candidate file knows about the app map; reverse link deliberately omitted to keep the app map clean for eventual front-page compression).

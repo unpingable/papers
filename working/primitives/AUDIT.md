@@ -183,7 +183,7 @@ This audit does not promote, demote, or remove. It records — for each primitiv
 - **Overclaim risk:** every doc-drift labeled PSI; "bad documentation" laundering ("write better prose" — PSI says the answer is bind-to-substrate, not better prose).
 - **Strict non-case:** drift without operational load-bearing is documentation drift, not PSI; typed cache with stale TTL fails loudly under validator and exhibits Stale Binding without exhibiting PSI. PSI requires (4) and (5) — drift becomes operationally load-bearing.
 - **Closest neighbor:** Stale Binding (substrate-general parent — PSI is the prose-substrate specialization); Design-Basis Erasure (sibling — claim-without-validator vs controller-without-hazard-model).
-- **Merge / extract candidate:** **dual-cluster member.** (a) candidate member of *Certificate-Scope Laundering* cluster (chatty's note: prose description spent as structured-state authority); (b) candidate member of *Temporal Basis Decay* cluster (specialization of stale binding to prose substrate). Sits at the cluster intersection.
+- **Merge / extract candidate:** **dual-cluster member.** (a) candidate member of *Certificate-Scope Laundering* cluster (ChatGPT's note: prose description spent as structured-state authority); (b) candidate member of *Temporal Basis Decay* cluster (specialization of stale binding to prose substrate). Sits at the cluster intersection.
 - **Promotion blocker:** working → ratified gate. Cross-domain (non-LLM-mediated) instances earn substrate-generality; LLM-amplification dynamics empirically tested.
 - **Natural extension:** dual cluster membership; possibly the headline example for *Certificate-Scope Laundering* in LLM-mediated workflows.
 
@@ -200,7 +200,7 @@ This audit does not promote, demote, or remove. It records — for each primitiv
 
 ## Cross-cutting findings
 
-### 1. Cluster proposals (chatty)
+### 1. Cluster proposals (ChatGPT)
 
 Three candidate clusters are forming. Naming the cluster is *not* implementation; it is a handle for review.
 

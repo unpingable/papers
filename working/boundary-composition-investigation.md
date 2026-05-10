@@ -1,6 +1,6 @@
 # Boundary Composition Investigation
 
-**Logged:** 2026-05-05 (late session, multi-model: claude-code + chatty + deepseek)
+**Logged:** 2026-05-05 (late session, multi-model: claude-code + ChatGPT + deepseek)
 **Updated:** 2026-05-06 (AG audit completed)
 **Status:** Audit completed 2026-05-06 (AG). Result: **Family-with-composition-lemmas (fork 2 of 3).** Boundary Calculus title not earned; working hypothesis is **Admissibility Boundary Family with composition lemmas.** No P28 draft, no namespace promotion, no new doctrine.
 **Lives near:** P28 candidate territory (synthesis question for the P22→P27 spine).
@@ -53,7 +53,7 @@ The discipline the new mode requires that the old one didn't:
 
 ---
 
-## The discipline package (DeepSeek + chatty + claude lint)
+## The discipline package (DeepSeek + ChatGPT + claude lint)
 
 ### Action-indexing
 
@@ -66,7 +66,7 @@ The discipline the new mode requires that the old one didn't:
 
 ### Locked-ish definitions before the search
 
-Required commitments (chatty's six + one):
+Required commitments (ChatGPT's six + one):
 
 1. What counts as a boundary?
 2. What counts as crossing?
@@ -271,7 +271,7 @@ Each is honest. None rescues the calculus. The Family verdict — the kernel pro
 
 ## Three promotion errors (the compression target if synthesis lands)
 
-If the synthesis paper happens, the operator vocabulary should compress to one slogan and a small number of promotion errors. Chatty's compressed list (after self-correcting from a 14-operator overshoot):
+If the synthesis paper happens, the operator vocabulary should compress to one slogan and a small number of promotion errors. ChatGPT's compressed list (after self-correcting from a 14-operator overshoot):
 
 1. **Evidence promoted to authority.** "We observed something, therefore we may act."
 2. **Proxy promoted to target.** "We can measure V′, therefore we are governing V." (P25 case.)

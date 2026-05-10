@@ -58,5 +58,5 @@ Paper 24 is not a prerequisite for Paper 23 and vice versa; the two papers cross
 ## Status Notes
 
 - v1.0 (2026-04-28). Published on Zenodo (record 19861996, DOI `10.5281/zenodo.19861996`; concept DOI `10.5281/zenodo.19861995`). NOTES.md carries a punch-list of next-pass branches (Proposition 1 theorem-ization, probe-artifact reproducibility) as v1.x candidates.
-- Per external review (chatty, 2026-04-22): preprint-close but DOI-not-yet. The compression pass has landed; the claim surface may tighten further once Proposition 1 is promoted and Paper 23 is formally in place.
+- Per external review (ChatGPT, 2026-04-22): preprint-close but DOI-not-yet. The compression pass has landed; the claim surface may tighten further once Proposition 1 is promoted and Paper 23 is formally in place.
 - The scoping discipline in §5 is load-bearing: Agile/Scrum is presented as one worked example of a broader claim class, not as the target of the paper. The structural analysis is the contribution; the case study is illustrative.

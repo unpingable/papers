@@ -64,7 +64,7 @@ Canon docs (`PAPER-MAP.md`, `CLAIM-REGISTER.md`, `docs/formalization-index.md`) 
 
 **Paper updates pending:** None currently. P23 v1.0 published 2026-04-24 with formalization status block already accurate.
 
-**Potential next formal target:** Case (ii) measurement null-space masking. *Hold-for-later* per chatty's pushback (2026-05-03): formalizing case (ii) keeps the work inside the P25/P23 null-space corridor and risks cathedral-mode. Better next move is P22 ratios for flavor change.
+**Potential next formal target:** Case (ii) measurement null-space masking. *Hold-for-later* per ChatGPT's pushback (2026-05-03): formalizing case (ii) keeps the work inside the P25/P23 null-space corridor and risks cathedral-mode. Better next move is P22 ratios for flavor change.
 
 **Out of scope (intentional, current):** Cases (ii), (iii); gate-state-indexed projection $\Pi_{A_t}$ (current Lean uses fixed `proj : U → U`).
 
@@ -94,11 +94,11 @@ Canon docs (`PAPER-MAP.md`, `CLAIM-REGISTER.md`, `docs/formalization-index.md`) 
 
 **Out of scope (intentional):**
 - Proposition 1 quantitative substitution scaling (paper-marked open).
-- Closed-loop dynamics, Kalman, LQR (cathedral risk; chatty fence).
+- Closed-loop dynamics, Kalman, LQR (cathedral risk; ChatGPT fence).
 - Explicit `obsMatrix A C T` as a single matrix object (mechanical instantiation; current abstract `replicateRows N M` carries the load-bearing claim).
 - SVD / least-observable-direction quantitative claims (Mathlib coverage limited).
 
-**Future polish (eventually, not urgently):** Sharpen the `target_distinct_policy_same` docstring so the trivial `rw [hObs]` proof isn't misread as empty. Suggested language (chatty, 2026-05-03): the trivial proof *is* the theorem's content — once the policy is defined only over observations, observation-equivalence is sufficient for policy-equivalence; the unused target-distinction hypothesis marks the structural refusal, not a missing proof obligation. Hold until P25-P27 cluster settles per the notes-now-backfill-later discipline.
+**Future polish (eventually, not urgently):** Sharpen the `target_distinct_policy_same` docstring so the trivial `rw [hObs]` proof isn't misread as empty. Suggested language (ChatGPT, 2026-05-03): the trivial proof *is* the theorem's content — once the policy is defined only over observations, observation-equivalence is sufficient for policy-equivalence; the unused target-distinction hypothesis marks the structural refusal, not a missing proof obligation. Hold until P25-P27 cluster settles per the notes-now-backfill-later discipline.
 
 ---
 

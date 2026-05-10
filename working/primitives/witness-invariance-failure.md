@@ -2,9 +2,9 @@
 
 **Status:** candidate
 **Kind:** boundary condition (with attractor flavor — interpretability and audit work fall into this state by default when invariance is not explicitly tested)
-**Originated:** 2026-05-08 (multi-model: paper-claude/web summary of McGee, Zhang, Blank 2026 *Cognitive Science* 50(3); chatty control-theory translation; DeepSeek invariance-test sharpening; chatty operator-side reframe + spike-strip discipline; Lean spike skeleton)
+**Originated:** 2026-05-08 (multi-model: paper-claude/web summary of McGee, Zhang, Blank 2026 *Cognitive Science* 50(3); ChatGPT control-theory translation; DeepSeek invariance-test sharpening; ChatGPT operator-side reframe + spike-strip discipline; Lean spike skeleton)
 **Primary home (paper):** none yet. Candidate destinations: methodological cross-pointer in P25 §5; sibling §-insert in admissibility-family work; standalone primitive entry.
-**Lean formalization:** `~/git/lean/LeanProofs/Admissibility/WitnessInvariance.lean` — three layered forms: relational (`Encapsulated` / `MovesUnderExcludedPerturbation`), typed perturbation-relation refinement (`EncapsulatedWrt` / `MovesUnderDisturbance` parameterized by an *allowed-perturbation relation* on the disturbance class, per chatty 2026-05-08), and regime-bounded refinement (`EncapsulatedWithinRegime` / `MovesWithinRegime` adding an operating regime as a predicate on `ProductWorld`, per chatty's 2026-05-08 follow-on patch). Boundary theorems for each form. Refinement-monotonicity for the perturbation-relation form (`encapsulated_wrt_mono`) and for the regime form (`encapsulated_within_regime_mono`). `encapsulated_wrt_iff_relational` bridge between the relational and perturbation-bounded forms; `encapsulated_within_universal_regime_iff_encapsulated_wrt` bridge showing the regime layer is a strict generalization of the perturbation-bounded form. Toy counterexample showing selectivity ↛ encapsulation.
+**Lean formalization:** `~/git/lean/LeanProofs/Admissibility/WitnessInvariance.lean` — three layered forms: relational (`Encapsulated` / `MovesUnderExcludedPerturbation`), typed perturbation-relation refinement (`EncapsulatedWrt` / `MovesUnderDisturbance` parameterized by an *allowed-perturbation relation* on the disturbance class, per ChatGPT 2026-05-08), and regime-bounded refinement (`EncapsulatedWithinRegime` / `MovesWithinRegime` adding an operating regime as a predicate on `ProductWorld`, per ChatGPT's 2026-05-08 follow-on patch). Boundary theorems for each form. Refinement-monotonicity for the perturbation-relation form (`encapsulated_wrt_mono`) and for the regime form (`encapsulated_within_regime_mono`). `encapsulated_wrt_iff_relational` bridge between the relational and perturbation-bounded forms; `encapsulated_within_universal_regime_iff_encapsulated_wrt` bridge showing the regime layer is a strict generalization of the perturbation-bounded form. Toy counterexample showing selectivity ↛ encapsulation.
 
 ## Aphorism (keeper)
 
@@ -65,7 +65,7 @@ MovesUnderExcludedPerturbation(sameAdmittedBasis, witness) :=
 
 ### Typed perturbation-bounded form (sharper)
 
-Per chatty 2026-05-08: the disturbance class is not merely a *type* — it is a *declared perturbation relation* over that type. Otherwise we accidentally imply that all type-distinct values constitute admissible perturbations, which is too strong. The right operator-facing question is *"invariant with respect to which excluded perturbations?"* — a relation, not a type.
+Per ChatGPT 2026-05-08: the disturbance class is not merely a *type* — it is a *declared perturbation relation* over that type. Otherwise we accidentally imply that all type-distinct values constitute admissible perturbations, which is too strong. The right operator-facing question is *"invariant with respect to which excluded perturbations?"* — a relation, not a type.
 
 When the world factors as `Basis × Disturbance` (a basis the witness is claimed to depend on, and a disturbance class the witness is claimed to be invariant under), and `allowedDisturbanceShift : Disturbance → Disturbance → Prop` declares which perturbations are admissible:
 
@@ -114,7 +114,7 @@ Without the invariance test, "specialization" is a license plate, not an inspect
 
 ## Adjacency map
 
-The three-mode distinction (chatty 2026-05-08) keeps these neighbors disjoint:
+The three-mode distinction (ChatGPT 2026-05-08) keeps these neighbors disjoint:
 
 | Concept | Mode | What it does |
 |---|---|---|
@@ -170,7 +170,7 @@ The paper's finding maps cleanly onto the four-tier ladder: heads are selective 
 - **Independence is not unconditional.** A witness is invariant *with respect to a declared perturbation class over a declared basis* — not in general. Naming the perturbation class is the move that makes "what variable should not move it" admissible as a question.
 - **Selectivity is the cheapest signal; modularity is the most expensive.** Don't promote across the ladder without perturbation evidence at each step.
 
-## Witness-failure classification (chatty 2026-05-08)
+## Witness-failure classification (ChatGPT 2026-05-08)
 
 The typed perturbation-bounded form supports a clean four-part classification:
 
@@ -199,14 +199,14 @@ Until any of those land, the keeper stays in primitives, not in main doctrine.
 
 - **2026-05-08 origin.** Paper: McGee, Zhang, Blank 2026 *Cognitive Science* 50(3), surfaced via paper-claude/web channel.
 - **Multi-model lineage:**
-  - chatty (control-theory translation: gain-scheduling, MIMO, invariance-as-disturbance-decoupling).
+  - ChatGPT (control-theory translation: gain-scheduling, MIMO, invariance-as-disturbance-decoupling).
   - DeepSeek (invariance-test methodology + mixed-selectivity sharpening).
-  - chatty (operator-side reframe — interpretive substitution at admissibility boundary, not internal goblin theater; P25-as-projection-not-direct-theorem-reuse spike strip; Lean spike skeleton).
+  - ChatGPT (operator-side reframe — interpretive substitution at admissibility boundary, not internal goblin theater; P25-as-projection-not-direct-theorem-reuse spike strip; Lean spike skeleton).
   - claude-code-papers (initial primitive entry; Lean formalization).
-  - chatty (2026-05-08 sharpening pass — DD/ICP/WIF mode-distinction; *disturbance class is a perturbation relation, not a type*; refinement-monotonicity and bridge theorem; four-part witness-failure classification including the then-unformalized regime-leakage layer).
+  - ChatGPT (2026-05-08 sharpening pass — DD/ICP/WIF mode-distinction; *disturbance class is a perturbation relation, not a type*; refinement-monotonicity and bridge theorem; four-part witness-failure classification including the then-unformalized regime-leakage layer).
   - claude-code-papers (perturbation-relation Lean refinement; primitive note update pass).
-  - chatty (2026-05-08 follow-on — diagnosed the prose/formal vocabulary gap: prose had four failure modes, Lean had only three; recommended internal-Lean-patch-first, then optional literature scout. Provided `EncapsulatedWithinRegime` skeleton).
+  - ChatGPT (2026-05-08 follow-on — diagnosed the prose/formal vocabulary gap: prose had four failure modes, Lean had only three; recommended internal-Lean-patch-first, then optional literature scout. Provided `EncapsulatedWithinRegime` skeleton).
   - claude-code-papers (regime-layer Lean patch: `EncapsulatedWithinRegime` / `MovesWithinRegime` / failure theorem; this note's regime-formalized update).
-  - chatty (2026-05-08 strict-mode trim — pulled universal-regime collapse and regime monotonicity from the patch under "regime lattices or regime monotonicity" disallowed-list discipline).
+  - ChatGPT (2026-05-08 strict-mode trim — pulled universal-regime collapse and regime monotonicity from the patch under "regime lattices or regime monotonicity" disallowed-list discipline).
   - **operator override (2026-05-08)** — strict-mode trim reverted; both theorems restored to the Lean module. Rationale: the regime layer is uninterpretable as a single orphan definition. Universal-regime collapse establishes that the regime layer is *refinement* of the perturbation-bounded form rather than parallel structure; regime monotonicity is *what the regime layer is for* — without it, per-regime claims do not compose. Anti-cathedral discipline correctly protects against speculative machinery, but these specific theorems are foundation, not decoration. Each cut to "kernel" risks losing the body that made the kernel useful.
 - Filed candidate / default-density per `feedback-note-density-subtypes.md`. Not rich-staging; not promoted.

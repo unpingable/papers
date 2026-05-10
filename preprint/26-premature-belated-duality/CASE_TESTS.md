@@ -1,6 +1,6 @@
 # Paper 26 — Case Tests for the Four-Condition Promotion Test
 
-*Working note — 2026-05-04. Status: **gate-test execution.** Source of the four conditions: `NOTES.md` §"Four-condition promotion test" (chatty 2026-05-03). Source of case template: `working/premature-belated-duality.md` §"Chatty paper-shaping pass — 2026-05-01."*
+*Working note — 2026-05-04. Status: **gate-test execution.** Source of the four conditions: `NOTES.md` §"Four-condition promotion test" (ChatGPT 2026-05-03). Source of case template: `working/premature-belated-duality.md` §"ChatGPT paper-shaping pass — 2026-05-01."*
 
 ## What this file is
 
@@ -328,11 +328,11 @@ Cases 4 and 5 do not break the compressed #4. Both classify cleanly under it, an
 
 Net read across all five cases:
 
-- Original #4 (NOTES.md, chatty 2026-05-03): bent on Cases 2 and 3.
+- Original #4 (NOTES.md, ChatGPT 2026-05-03): bent on Cases 2 and 3.
 - Compressed #4 (this file, 2026-05-04): handled Cases 4 and 5 cleanly; still untested against ontological-category cases (no candidate ran in this file).
 - The Brasília fork is now a recurring pattern, not a one-off. Cases 3 and 5 both showed it. This raises the framework's central political move from "one anchor case has this structure" to "this structure is what manufactured-empty-window means."
 
-Promotion gate (chatty 2026-05-01): "If a case cannot show type C, it may still support P26 but does not promote it." Three of five cases show clean Type C (climate, pre-pre-reg, SOX status-quo); two show conditional Type C requiring counterfactual specification (FDA, Brasília). Gate satisfied at the case-existence level, in stronger form than after the original three-case pass.
+Promotion gate (ChatGPT 2026-05-01): "If a case cannot show type C, it may still support P26 but does not promote it." Three of five cases show clean Type C (climate, pre-pre-reg, SOX status-quo); two show conditional Type C requiring counterfactual specification (FDA, Brasília). Gate satisfied at the case-existence level, in stronger form than after the original three-case pass.
 
 **Status of the compressed #4**: not yet ratified, but no longer the bleeding edge. The bleeding edge is now (a) the per-regime example list for "feasible execution improvement," (b) the prescriptive form of the subtype matrix, and (c) whether "politically-reproduced empty-window" earns naming as its own sub-type.
 
@@ -420,7 +420,7 @@ What the case-test exercise tells us about whether P26 earns paper status:
 
 - **The test does have bite.** All three cases received differentiated readings. The test is not vacuous.
 - **The test is not yet ratifiable as written.** Two of three cases bent the test (FDA, Brasília). The bending was informative — it surfaced the counterfactual and residual issues — but the test as written would misclassify cases the framework wants to keep.
-- **At least one clean Type C case exists** (climate). This is the bare minimum chatty's 2026-05-01 promotion gate required: "If a case cannot show type C, it may still support P26 but does not promote it." Climate shows Type C. Promotion gate item satisfied at the case-existence level.
+- **At least one clean Type C case exists** (climate). This is the bare minimum ChatGPT's 2026-05-01 promotion gate required: "If a case cannot show type C, it may still support P26 but does not promote it." Climate shows Type C. Promotion gate item satisfied at the case-existence level.
 - **The book anchor case is provisionally compatible** but only under the sharpened test. If the sharpened test does not earn ratification, Ch. 11 either needs a different anchor or needs to acknowledge the case is manufactured-empty-window rather than the strong empty-window claim.
 
 **Recommended next move (not authorized — flag, not action):** sharpen #4 per the candidate revision above, then rerun this file with one or two additional cases (pre-registration in science, Sarbanes-Oxley) to see whether the sharpened version holds. If it does, the test is ratifiable and P26 is paper-shaped. If it doesn't, the case-test exercise has produced a §-insert worth of material on empty-window detection but not a paper.
@@ -469,7 +469,7 @@ The override burden as stated does not adjudicate. "Already exists" is ambiguous
 
 ### Verdict
 
-**Does ontological defaulting to any-feasible-configuration survive?** Yes for clean pre-classification cases (pre-2014 platform workers; algorithmic discrimination pre-administrative-legibility). The default makes sense because no execution improvement within the existing binding event can close the gap; closure requires making a new binding event operative. (Sharpening per chatty mid-pass: the loose framing "political reconfiguration cannot change the class is absent" is wrong — political reconfiguration *can* create the class, which is exactly what AB5 did. The sharper claim is that the existing binding event has no execution path to closure; only event-class creation does. This also prevents the any-feasible regime from accidentally swallowing event-class creation as ordinary execution improvement.) Any-feasible regime correctly identifies this as not closable by execution improvement of any kind within the existing binding event. Default survives.
+**Does ontological defaulting to any-feasible-configuration survive?** Yes for clean pre-classification cases (pre-2014 platform workers; algorithmic discrimination pre-administrative-legibility). The default makes sense because no execution improvement within the existing binding event can close the gap; closure requires making a new binding event operative. (Sharpening per ChatGPT mid-pass: the loose framing "political reconfiguration cannot change the class is absent" is wrong — political reconfiguration *can* create the class, which is exactly what AB5 did. The sharper claim is that the existing binding event has no execution path to closure; only event-class creation does. This also prevents the any-feasible regime from accidentally swallowing event-class creation as ordinary execution improvement.) Any-feasible regime correctly identifies this as not closable by execution improvement of any kind within the existing binding event. Default survives.
 
 **Does "event class itself missing" classify differently from procedural or manufactured delay?** Yes when the class is genuinely unconceived. Ambiguously when the class is conceived but uncodified due to political opposition. The post-2017 California cohort straddles ontological and manufactured because the class exists in text and is blocked by interested authority. The four sub-types are not mutually exclusive across temporal phases of the same case-domain.
 
@@ -537,8 +537,8 @@ A taxonomy that classifies everything as Type C is bespoke classification launde
 
 ## Provenance
 
-- Four conditions: NOTES.md §"Four-condition promotion test" (chatty 2026-05-03).
-- Case-test template: `working/premature-belated-duality.md` §"Suggested next artifact: CASE_TESTS.md" (chatty 2026-05-01).
+- Four conditions: NOTES.md §"Four-condition promotion test" (ChatGPT 2026-05-03).
+- Case-test template: `working/premature-belated-duality.md` §"Suggested next artifact: CASE_TESTS.md" (ChatGPT 2026-05-01).
 - Brasília book-side framing: `working/book-empty-binding-window.md`.
-- This file: claude-code, 2026-05-04. Cases 1–3 scored against the original four conditions; postmortem from where the cases bent the test; compression pass on #4 (same day) producing a candidate revision plus subtype matrix; Cases 4–5 (pre-registration, Sarbanes-Oxley) scored against the compressed revision; sharpening pass (same day, prompted by chatty's "academic buffet" warning) producing the prescriptive counterfactual regime selection rule, compact matrix, and anti-cosplay mechanism, with per-regime feasibility folded in as foundation; Case 6 (platform-worker classification) as compact end-to-end ontological breaker against the prescriptive matrix.
-- Hardening pass + Case 7 (routine administrative appeal as procedural negative control) + ratification: claude-code, 2026-05-06, prompted by chatty's "must-fix before 1.0" review. Sharpened test ratified for Paper 26. Override-burden standard, sub-type-by-phase, politically-reproduced sub-type, and curve-shape vs operating-point preserved as §8 limitations rather than gating concerns.
+- This file: claude-code, 2026-05-04. Cases 1–3 scored against the original four conditions; postmortem from where the cases bent the test; compression pass on #4 (same day) producing a candidate revision plus subtype matrix; Cases 4–5 (pre-registration, Sarbanes-Oxley) scored against the compressed revision; sharpening pass (same day, prompted by ChatGPT's "academic buffet" warning) producing the prescriptive counterfactual regime selection rule, compact matrix, and anti-cosplay mechanism, with per-regime feasibility folded in as foundation; Case 6 (platform-worker classification) as compact end-to-end ontological breaker against the prescriptive matrix.
+- Hardening pass + Case 7 (routine administrative appeal as procedural negative control) + ratification: claude-code, 2026-05-06, prompted by ChatGPT's "must-fix before 1.0" review. Sharpened test ratified for Paper 26. Override-burden standard, sub-type-by-phase, politically-reproduced sub-type, and curve-shape vs operating-point preserved as §8 limitations rather than gating concerns.

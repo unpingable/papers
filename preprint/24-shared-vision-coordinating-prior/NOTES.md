@@ -2,7 +2,7 @@
 
 ## Status
 
-**v1.0 — 2026-04-28.** Promoted from working-note seed to preprint artifact and published on Zenodo (record 19861996; version DOI `10.5281/zenodo.19861996`; concept DOI `10.5281/zenodo.19861995`). Pre-publish punch list (per chatty's review, 2026-04-22, plus a 2026-05-01 cold-read pass): compression pass landed; Theorem 4 wording tightened from "stable fixed point" to "absorbing fixed-point family"; abstract softened from "arbitrary internal compositional divergence" to "hidden local-gradient compositional divergence" to match Proposition 2's scope; Theorem 2 → Proposition 2 demotion (codex review) reflected in the four-result stack. The claim surface may tighten further once Proposition 1 is promoted to theorem.
+**v1.0 — 2026-04-28.** Promoted from working-note seed to preprint artifact and published on Zenodo (record 19861996; version DOI `10.5281/zenodo.19861996`; concept DOI `10.5281/zenodo.19861995`). Pre-publish punch list (per ChatGPT's review, 2026-04-22, plus a 2026-05-01 cold-read pass): compression pass landed; Theorem 4 wording tightened from "stable fixed point" to "absorbing fixed-point family"; abstract softened from "arbitrary internal compositional divergence" to "hidden local-gradient compositional divergence" to match Proposition 2's scope; Theorem 2 → Proposition 2 demotion (codex review) reflected in the four-result stack. The claim surface may tighten further once Proposition 1 is promoted to theorem.
 
 **Next branches, rough cost order:**
 
@@ -66,7 +66,7 @@ External independent reviews (codex, gemini-cli) prompted the following tighteni
 
 - Abstract — the qualitative claims survive the demotion (alias-compatibility is still alias-compatibility) and the proof tightenings (claims become more, not less, precise). No abstract edits needed.
 - Section numbering — kept 1–8 intact; new adjacency content folded into existing subsections rather than spawning new ones.
-- §5 case study (Agile) — unchanged; chatty's discipline (Agile as illustration not target) remains intact.
+- §5 case study (Agile) — unchanged; ChatGPT's discipline (Agile as illustration not target) remains intact.
 
 ## Open / deferred
 

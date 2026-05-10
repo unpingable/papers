@@ -1,7 +1,7 @@
 # Narrow After Contact
 
 **Status:** working note / operator discipline. Not a primitive. Not a process. Phase-calibration posture.
-**Originated:** 2026-05-10 multi-model conversation; chatty crystallization of a discipline already implicit in the operator's cajoling pattern with other Claude sessions.
+**Originated:** 2026-05-10 multi-model conversation; ChatGPT crystallization of a discipline already implicit in the operator's cajoling pattern with other Claude sessions.
 **Sibling operator doctrine** (parent class: *Operator Doctrine*; siblings classified by *failure mode prevented*, not by audience): [claim-shape-brain-stack](claim-shape-brain-stack.md) protects charge/remedy integrity; [falsification-guardrails](../docs/method/falsification.md) (canonical methodology artifact) protects framework scope from universal-solvent drift; note-density discipline (in user memory, actively cited from primitive notes) protects artifacts from overbuilt staging. **Narrow-after-contact protects against phase-misaligned narrowing.** Same audience, distinct vetoes.
 
 ## What this note is and is not
@@ -120,8 +120,8 @@ This note **does not**:
 
 ## Provenance
 
-- **2026-05-10 origin.** Operator surfaced the two failure modes for narrow-discipline (*building software based on expected roadmap* and *exploratory work*) as known-territory cajoling problems with other Claude sessions; chatty crystallized the three-zone schema and the *narrow after contact* formulation.
-- **chatty:** named the two phase-discipline formulations (*narrow after contact* + *exploration needs surplus meaning, ratification needs minimum sufficient meaning*); produced the three-zone schema; named the *failed names as fossil record* framing for retired exploration-phase names; proposed the *same audience does not imply same doctrine* keeper as the meta-discipline that justifies the standalone-not-fold-in call.
+- **2026-05-10 origin.** Operator surfaced the two failure modes for narrow-discipline (*building software based on expected roadmap* and *exploratory work*) as known-territory cajoling problems with other Claude sessions; ChatGPT crystallized the three-zone schema and the *narrow after contact* formulation.
+- **ChatGPT:** named the two phase-discipline formulations (*narrow after contact* + *exploration needs surplus meaning, ratification needs minimum sufficient meaning*); produced the three-zone schema; named the *failed names as fossil record* framing for retired exploration-phase names; proposed the *same audience does not imply same doctrine* keeper as the meta-discipline that justifies the standalone-not-fold-in call.
 - **operator:** named the original two failure modes; provided the canonical example (third-order cybernetics arc as fossil record); insisted on standalone filing rather than fold-in to claim-shape-brain-stack on the grounds that this is phase-discipline not claim-shape-discipline; produced the obnoxious-form keeper *do not classify by who uses the tool when the failure mode lives in what the tool prevents*.
-- **claude-code-papers (this file):** filed standalone per operator+chatty greenlight; preserved chatty's exact keeper list verbatim; folded both anti-merger keepers in; explicit anti-fold-in section in *anti-scope clauses* to prevent future drift back into claim-shape-brain-stack; named the existing memory disciplines (name-early, forcing-case) that this note is the synthesis parent of.
+- **claude-code-papers (this file):** filed standalone per operator+ChatGPT greenlight; preserved ChatGPT's exact keeper list verbatim; folded both anti-merger keepers in; explicit anti-fold-in section in *anti-scope clauses* to prevent future drift back into claim-shape-brain-stack; named the existing memory disciplines (name-early, forcing-case) that this note is the synthesis parent of.
 - Filed as working note / operator discipline. Not promoted. Not registry-listed. Memory entry at `feedback-narrow-after-contact.md` carries the operational version for automatic loading in future sessions.

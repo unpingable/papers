@@ -28,7 +28,7 @@ The actor confuses *what they got away with* with *what they were entitled to*. 
 
 ## Cross-domain reach
 
-Sample list (not exhaustive; chatty's compilation 2026-05-06):
+Sample list (not exhaustive; ChatGPT's compilation 2026-05-06):
 
 - **State / foreign policy.** Successful military / diplomatic overreach reframed as inherent prerogative; "we did it, therefore we must have been allowed to."
 - **Executive power.** End-runs around legislatures (Iran-Contra, war powers, signing statements, "inherent authority") that survive without serious accountability and become muscle memory for the next administration.
@@ -45,7 +45,7 @@ The shape is identical across domains because the function is identical: *unrevi
 
 ## Slots under admissibility
 
-Chatty's framing — "a precedent without standing is just a fossilized exploit" — slots the primitive directly under the admissibility family.
+ChatGPT's framing — "a precedent without standing is just a fossilized exploit" — slots the primitive directly under the admissibility family.
 
 - **Authority kernel** (`LeanProofs/Admissibility/`): the primitive describes a failure mode where `basis` is treated as admissible because past invocations succeeded, regardless of whether the basis was ever derivable. The kernel's `revoked_basis_never_authorized` is the formal anti-pattern; breach-as-authorization is the operational instance the kernel's discipline is supposed to refuse.
 - **Six non-collapsible boundaries**: this primitive sits at the boundary between *standing* (who may act) and *outcome* (what happened). The failure mode is collapse of the two — outcome retroactively confers standing.
@@ -100,6 +100,6 @@ This is **not** a paper. It is **not** a P28 candidate. It is **not** the kernel
 ## Provenance
 
 - Multi-model conversation 2026-05-06: DeepSeek surfaced the original "every successful breach gets mistaken for permanent authorization" framing in foreign-policy register, with the sudoers/NOPASSWD metaphor as accompanying tissue.
-- Chatty cleaned it up to general primitive form: separated metaphor (sysadmin) from substance (five-stage pattern), listed cross-domain instances, slotted under admissibility ("fossilized exploit" line), flagged manifesto-risk explicitly.
+- ChatGPT cleaned it up to general primitive form: separated metaphor (sysadmin) from substance (five-stage pattern), listed cross-domain instances, slotted under admissibility ("fossilized exploit" line), flagged manifesto-risk explicitly.
 - Recorded by claude-code 2026-05-06, late session, with name-early discipline applied per existing memory pattern. Filed as working note adjacent to `accountable-mutation-os-layer.md` (sibling primitive on the dual basis-validity axis).
 - Not promoted. No memory pointer tonight (small-batch memory landing already complete this session). Memory pointer earned if the primitive recurs in subsequent work or supplies a forcing case for a future paper.

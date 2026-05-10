@@ -10,7 +10,7 @@
 
 This taxonomy was generated in a single multi-turn conversation with one web Claude instance, late in a long sprint, on the back of unrelated work on the Δt framework's kernel formalization. It has **not** been:
 
-- Stress-tested against chatty's structural-pushback register.
+- Stress-tested against ChatGPT's structural-pushback register.
 - Cold-read by claude-code with full repo span.
 - Validated against published literature on SRE / DevOps / reliability engineering.
 - Sanity-checked against the author's own ops experience for cherry-picking or recall bias.

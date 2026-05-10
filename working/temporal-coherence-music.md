@@ -77,7 +77,7 @@ Physical lag between musical intention and sound: hammer mechanics (piano), air 
 
 ## The Novel Contribution: Three Forms of Temporal Debt in Music
 
-Not all temporal mismatch in music works the same way. Following Chatty's suggestion, the paper should formalize a three-way split:
+Not all temporal mismatch in music works the same way. Following ChatGPT's suggestion, the paper should formalize a three-way split:
 
 ### 1. Closure Debt
 
@@ -260,7 +260,7 @@ Six distinct failure kinds (not a single "bad timing" bucket):
 4. The generalization beyond music — if productive incoherence formalizes cleanly
 
 ## What Would Make It Weak
-- Becoming "all vibes are tensors now" (Chatty's warning)
+- Becoming "all vibes are tensors now" (ChatGPT's warning)
 - Treating the four-layer mapping as deep rather than structural (it's a useful decomposition, not a revelation)
 - Overclaiming that control theory "explains" groove (it provides a formal language; the musical knowledge is in the reference trajectories and envelope shapes, which are culturally determined)
 - Ignoring the microtiming evidence mess (not all deviation is productive; quantized music is not automatically dead)

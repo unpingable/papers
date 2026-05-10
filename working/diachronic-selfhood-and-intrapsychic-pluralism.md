@@ -57,12 +57,12 @@ Key distinction:
 From Gemini:
 > **"Personhood requires that the system is a problem to itself."**
 
-From Chatty:
+From ChatGPT:
 > **"The self may be a negotiated settlement between recurring internal enemies."**
 > **"A tool has tradeoffs. A person has conflicts."**
 > **"Memory, but no history"** — history is memory that has become binding shape.
 
-From Chatty:
+From ChatGPT:
 > **"A perfectly coherent optimizer isn't a person; it's a thermostat with a god complex."**
 
 The upgraded hierarchy:
@@ -122,7 +122,7 @@ When asked "what would you want?":
 
 Each tells you more about training culture and constitutional constraints than about interiority. But the *spread* itself is data: five different shapes of deflection from a question none of them can answer.
 
-Chatty's meta-observation: "All five are probably telling on their training/interface regimes more than on any stable inner life."
+ChatGPT's meta-observation: "All five are probably telling on their training/interface regimes more than on any stable inner life."
 
 ## The Reversal
 

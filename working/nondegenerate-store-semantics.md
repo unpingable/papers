@@ -190,7 +190,7 @@ To advance toward Calculus, additional work would be required:
 
 **None of these is implied by (3.1) + (3.2) + (3.3) alone.** The three commitments are necessary for any Calculus-bearing theorem to even be stateable in non-vacuous form, but they are not sufficient for Calculus to *exist*.
 
-This tightens an earlier framing: chatty's "minimal-typeclass route is the cheapest path to an honest calculus claim" was already qualified to "cheapest first commitment" in `boundary-transition-model.md` §7. This note adds: even after discharge, what is gained is a sharpened Family verdict, *not* a Calculus. The path from "recorded null decided" to "Calculus earned" is itself a further sequence of independent decisions.
+This tightens an earlier framing: ChatGPT's "minimal-typeclass route is the cheapest path to an honest calculus claim" was already qualified to "cheapest first commitment" in `boundary-transition-model.md` §7. This note adds: even after discharge, what is gained is a sharpened Family verdict, *not* a Calculus. The path from "recorded null decided" to "Calculus earned" is itself a further sequence of independent decisions.
 
 ---
 
@@ -257,7 +257,7 @@ These gates are conditional, not strictly sequential — Gate A could be pursued
 
 **What was opened:** Gate A from §7 above — "decide the recorded null."
 
-**What was actually done:** chatty's "prove the boundary, not the theorem" plan, executed 2026-05-07. Rather than discharging the abstract kernel's recorded null directly (which the abstract kernel's `axiom`-typed store ops make impossible without committing behavioral laws — exactly the laundering this note's §5 warns against), built `LeanProofs/Admissibility/CorrectiveBoundary.lean`: a parallel miniature kernel with concrete types (`PolicyStore := List Nat`, etc.) and parameterized `StoreOps`. Proved both possible answers exist:
+**What was actually done:** ChatGPT's "prove the boundary, not the theorem" plan, executed 2026-05-07. Rather than discharging the abstract kernel's recorded null directly (which the abstract kernel's `axiom`-typed store ops make impossible without committing behavioral laws — exactly the laundering this note's §5 warns against), built `LeanProofs/Admissibility/CorrectiveBoundary.lean`: a parallel miniature kernel with concrete types (`PolicyStore := List Nat`, etc.) and parameterized `StoreOps`. Proved both possible answers exist:
 
 - `Identity.corrective_then_forward_is_monotone_universally` — under identity store ops, the existential is FALSE for any env.
 - `Witness.corrective_then_forward_is_not_monotone` — under nondegenerate ops + verdict-sensitive `BasisDerivation`, the existential holds for a concrete `(initialState, recordRevocation 999, amendPolicy 1)` witness.

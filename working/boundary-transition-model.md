@@ -171,7 +171,7 @@ These are **shapes**, not theorems. None should be added to the kernel without (
 
 ## Basis-indexed admissibility (candidate refinement)
 
-DeepSeek / chatty refinement of how the admissibility judgment should be indexed. Records pressure for a sharper indexing than `Adm(a, Γ)`. Candidate, non-binding; does not earn Boundary Calculus.
+DeepSeek / ChatGPT refinement of how the admissibility judgment should be indexed. Records pressure for a sharper indexing than `Adm(a, Γ)`. Candidate, non-binding; does not earn Boundary Calculus.
 
 ### Core shift
 

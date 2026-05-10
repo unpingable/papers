@@ -2,7 +2,7 @@
 
 *Working note — 2026-04-23. Status: **paper-shaped theorem candidate after formalization pass.** Bucket: Paper 26 candidate. Decision deferred pending §6 empty-window case testing. Destinations non-exclusive: §-insert in Paper 15 or Paper 22, standalone working note, or Paper 26.*
 
-> **Evening capture — 2026-04-23.** Conversation chain (paper-Claude corpus audit → chatty math pass → voice-in-the-room synthesis) produced formal content that promotes this from "nice duality" to "paper-shaped theorem candidate." Math preserved in §3 below. Saturday-recoverable from this note cold. Do not push tired.
+> **Evening capture — 2026-04-23.** Conversation chain (paper-Claude corpus audit → ChatGPT math pass → voice-in-the-room synthesis) produced formal content that promotes this from "nice duality" to "paper-shaped theorem candidate." Math preserved in §3 below. Saturday-recoverable from this note cold. Do not push tired.
 
 > **Anti-inflation fuse.** The parts already exist in the corpus. What is new is the explicit duality, the two-curve formalization, and the empty-window condition. If the empty-window condition fails to produce concrete instances and the curve-shape/operating-point distinction collapses, this folds back into §-insert territory.
 
@@ -30,7 +30,7 @@ The ingredients are present. The unification is not.
 
 In both cases, the detachment is a *separation between the binding event and the information required to bind correctly*. The difference is orientation relative to the binding event on the Δt axis.
 
-## 3. Formalization (chatty's math pass, 2026-04-23)
+## 3. Formalization (ChatGPT's math pass, 2026-04-23)
 
 ### 3.1 Binding event as coordinate
 
@@ -158,9 +158,9 @@ Each case requires (a) a measured premature-commit rate or latency, (b) a measur
 
 ---
 
-## Chatty paper-shaping pass — 2026-05-01
+## ChatGPT paper-shaping pass — 2026-05-01
 
-Capture of chatty's structural pass on P26, brought in alongside the P25 v0.2 work. Held here so it isn't lost; not yet folded into the spine. Where this pass disagrees with the existing note (especially around the conservation-law framing), the note above is the standing record and the pass below is a candidate revision to be evaluated.
+Capture of ChatGPT's structural pass on P26, brought in alongside the P25 v0.2 work. Held here so it isn't lost; not yet folded into the spine. Where this pass disagrees with the existing note (especially around the conservation-law framing), the note above is the standing record and the pass below is a candidate revision to be evaluated.
 
 ### Verdict
 
@@ -168,7 +168,7 @@ P26 is *less ready than P25 but potentially more important*. P25 has a crisp neg
 
 ### The center of the paper
 
-The fresh contribution is *not* "sometimes people act too early and sometimes they act too late" (chatty: "sociology with a wristwatch"). The fresh contribution is:
+The fresh contribution is *not* "sometimes people act too early and sometimes they act too late" (ChatGPT: "sociology with a wristwatch"). The fresh contribution is:
 
 > **Some binding events have no valid time at all because admissibility matures only after consequence viability has decayed.**
 
@@ -196,7 +196,7 @@ For each candidate worked case, force it through this grid:
 
 If a case cannot show type C, it may still support P26 but does not promote it.
 
-### Recommended skeleton (chatty 2026-05-01)
+### Recommended skeleton (ChatGPT 2026-05-01)
 
 ```
 1. Thesis
@@ -259,7 +259,7 @@ P26 is temporal sibling to P25's spatial result. The README crosswalk in `prepri
 
 ### Where this disagrees with the working note above
 
-The chatty pass treats the conservation-law framing (§6 of the working note) as secondary to the empty-window condition. The working note above places conservation as the §6 promotion gate; chatty places empty-window as the gate. These are not strictly incompatible — empty-window failure is one shape conservation could take — but the foregrounding is different. Resolution deferred to the next pass on §6 case-testing: whichever framing produces concrete cases that prose would otherwise blur earns the gate slot.
+The ChatGPT pass treats the conservation-law framing (§6 of the working note) as secondary to the empty-window condition. The working note above places conservation as the §6 promotion gate; ChatGPT places empty-window as the gate. These are not strictly incompatible — empty-window failure is one shape conservation could take — but the foregrounding is different. Resolution deferred to the next pass on §6 case-testing: whichever framing produces concrete cases that prose would otherwise blur earns the gate slot.
 
 ### Discipline reminder
 

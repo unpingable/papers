@@ -1,7 +1,7 @@
 # Prose-State Inversion
 
 **Status:** candidate
-**Originated:** 2026-04-30 (DeepSeek "LLM-native antipatterns" sketch + chatty refinement; this session's P23 README/metadata Zenodo mismatch as worked minimal example)
+**Originated:** 2026-04-30 (DeepSeek "LLM-native antipatterns" sketch + ChatGPT refinement; this session's P23 README/metadata Zenodo mismatch as worked minimal example)
 **Primary home:** no current paper home — cross-cuts P23 (handoff briefings), P25 (proxy substitution), P27 (operator-unsound reconciliation), and the LLM-substrate / governor doctrine work. Sibling to Stale Binding; specialization to the prose substrate.
 
 ## Core definition
@@ -86,15 +86,15 @@ For LLM-mediated workflows specifically: when an agent's read path crosses prose
 
 ## Keeper aphorisms
 
-> *The artifact is legible enough to be trusted but not structured enough to fail.* (chatty, 2026-04-30)
+> *The artifact is legible enough to be trusted but not structured enough to fail.* (ChatGPT, 2026-04-30)
 
 > *Natural language is allowed to explain state, but not to own state.*
 
 > *If prose is the only place a fact exists, the fact is not operationally real.*
 
-> *Markdown is where state goes to become plausible.* (chatty)
+> *Markdown is where state goes to become plausible.* (ChatGPT)
 
-> *The system is fully documented. None of the documentation is accountable.* (chatty, on the LLM-amplified version)
+> *The system is fully documented. None of the documentation is accountable.* (ChatGPT, on the LLM-amplified version)
 
 ## Open questions
 
@@ -106,5 +106,5 @@ For LLM-mediated workflows specifically: when an agent's read path crosses prose
 ## Cross-references
 
 - DeepSeek seed: 2026-04-30 thread on LLM-native antipatterns (README-as-database, zombie comments, frontmatter-as-config, prose IPC, soft dependencies).
-- chatty refinement: 2026-04-30. Promoted "soft dependency" to its own framing; reshaped the failure predicate from `authority(P) > freshness(P)` motto into the five-condition chain (motto preserved as keeper aphorism, not predicate); bounded the scope (no MEMORY.md write, no directory restructuring, no broad paper-claim mapping); flagged the role-accretion gravity that wanted to memorialize this into a ministry.
+- ChatGPT refinement: 2026-04-30. Promoted "soft dependency" to its own framing; reshaped the failure predicate from `authority(P) > freshness(P)` motto into the five-condition chain (motto preserved as keeper aphorism, not predicate); bounded the scope (no MEMORY.md write, no directory restructuring, no broad paper-claim mapping); flagged the role-accretion gravity that wanted to memorialize this into a ministry.
 - Worked minimal example: this session's P23 README/metadata Zenodo divergence and propagation chain.

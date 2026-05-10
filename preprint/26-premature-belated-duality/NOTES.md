@@ -104,7 +104,7 @@ The mechanism is not airtight — a determined author can still cherry-pick by m
 
 The ontological override burden ("show the missing event class already exists and only execution lags") requires "exists" to mean **codified-and-operative-as-binding-event**, not merely conceived or proposed. Without this disambiguation, the matrix produces inconsistent classifications on cases where reform is in motion but not complete (the platform-worker test case, post-2017 California cohort). With the sub-clause: pre-2014 platform workers stay ontological; post-2017 California reclassifies to manufactured.
 
-The companion framing (per chatty mid-pass) is: closure of an ontological case requires *making a new binding event operative*, not improving execution within the existing one. This prevents the any-feasible regime from accidentally swallowing event-class creation as ordinary execution improvement.
+The companion framing (per ChatGPT mid-pass) is: closure of an ontological case requires *making a new binding event operative*, not improving execution within the existing one. This prevents the any-feasible regime from accidentally swallowing event-class creation as ordinary execution improvement.
 
 #### 6. Held refinements (preserved as §8 limitations, not gating)
 
@@ -117,4 +117,4 @@ All four are preserved as §8 limitations of the paper. Promotion would modify t
 
 ### Provenance
 
-Taxonomy and four-condition test from chatty's structural pass, 2026-05-03. Sharpened test (revised #4, regime selection rule, matrix, anti-cosplay enforcement, ontological clarification, held refinements) from claude-code's case-test exercise plus chatty's mid-pass nudges, 2026-05-04, documented in `CASE_TESTS.md`. Recorded as candidate gate material per name-early discipline. Hardening pass + procedural negative control + ratification 2026-05-06: discriminator ratified for Paper 26; override-burden standard sharpening and additional politically-reproduced / sub-type-by-phase cases preserved as §8 limitations rather than gating concerns.
+Taxonomy and four-condition test from ChatGPT's structural pass, 2026-05-03. Sharpened test (revised #4, regime selection rule, matrix, anti-cosplay enforcement, ontological clarification, held refinements) from claude-code's case-test exercise plus ChatGPT's mid-pass nudges, 2026-05-04, documented in `CASE_TESTS.md`. Recorded as candidate gate material per name-early discipline. Hardening pass + procedural negative control + ratification 2026-05-06: discriminator ratified for Paper 26; override-burden standard sharpening and additional politically-reproduced / sub-type-by-phase cases preserved as §8 limitations rather than gating concerns.

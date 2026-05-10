@@ -30,4 +30,4 @@ P27 imports P25's projection α: B → K and observability-null-space framing, b
 
 ## Attribution
 
-Control-theory framing, state decomposition, classic-control-pathology list, and worked data-center example came from chatty in the 2026-04-21 riff. Necessity-framing sharpening from agent-governor-claude review (2026-04-21 late). Sibling-vs-§N algebraic adjudication 2026-04-22.
+Control-theory framing, state decomposition, classic-control-pathology list, and worked data-center example came from ChatGPT in the 2026-04-21 riff. Necessity-framing sharpening from agent-governor-claude review (2026-04-21 late). Sibling-vs-§N algebraic adjudication 2026-04-22.
