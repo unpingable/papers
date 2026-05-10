@@ -11,6 +11,45 @@
 
 > *Boyd gave us the shape of victory. Control-Theoretic Sun Tzu gives us the shape of its theft.*
 
+> **Scope discipline.** Do not treat Loop Capture as a replacement for P22 / P25 / P27. Treat it as the **adversarial dual** of the spine (see *Role* below) unless the positioning question is later resolved otherwise. This warning exists because the cross-corpus connections are dense enough that the synthesis framing can quietly mutate into a master-paper claim it has not earned.
+
+---
+
+## Role: adversarial dual of admissibility
+
+Loop Capture is not a new ontology. It is the adversarial inversion of the existing spine — the same coordinate system rotated from *failure diagnosis* to *adversarial exploitation*.
+
+**Polarity flip:**
+
+| Existing spine                                                  | Loop Capture                                                                        |
+| --------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| How does a system preserve admissible action under uncertainty? | How does an adversary make inadmissible action remain admissible-looking under uncertainty? |
+| Where can the loop lose contact with reality?                   | How can someone exploit that loss of contact while the loop still thinks it is governed? |
+| *May this system act, given its evidence, standing, scope, and consequence?* | *How can those same gates be made to pass while the defended value is being degraded?* |
+
+**Roles in the constellation:**
+
+- **P22.** What layers can drift / mask / misbind.
+- **P25.** What happens when the real target is unsensed and substitutes appear.
+- **P27.** What happens when the controller is correct but operator reality is unsound.
+- **Admissibility family.** What makes action valid or invalid.
+- **WIF / witness work.** How independent channels resist co-capture.
+- **Loop Capture.** How an adversary turns those seams into self-authorized wrongness.
+
+Loop Capture is one of those roles. It is not the umbrella over them.
+
+**Containment keepers:**
+
+> *Loop Capture does not introduce new machinery; it reverses the sign on the existing machinery and asks how validity becomes an attack surface.*
+
+> *Loop Capture is not the master paper. It is the adversarial-mechanism paper.*
+
+> *This is a map of attack surfaces, not a throne.*
+
+**Caveat on "dual."** The framing is conceptual, not yet formal. Whether Loop Capture earns formal duality (in the Lean / category-theoretic sense) is open and would need to be earned by the actual machinery. The current claim is that the *role* is dual — enough to keep the synthesis from drifting into master-paper claims, not enough to assert mathematical structure that hasn't been proved.
+
+**Dependency direction.** This runs one way. Loop Capture cannot be defined without the spine — you cannot describe the exploit until you know what counts as valid action. The synthesis depends on the spine; it does not subsume it.
+
 ---
 
 ## Prior-art warning: reflexive control
@@ -310,7 +349,11 @@ This is what makes loop capture a synthesis-shaped object rather than a standalo
 
 ### Connection to P22 (foundational failure geometry)
 
-P22's four-layer decomposition (gauge / clock / estimation / actuation) is *already a capture-surface taxonomy in different vocabulary*. The mapping is roughly:
+P22's four-layer decomposition (gauge / clock / estimation / actuation) is *already a capture-surface taxonomy in different vocabulary*.
+
+*This mapping is not merely comparative; it is the main evidence for the open positioning question, because it shows which parts of Loop Capture are already latent in P22 and which parts are genuinely introduced by the admissibility/reporting layer.*
+
+The mapping is roughly:
 
 | Loop capture surface | P22 layer        | Notes                                                 |
 | -------------------- | ---------------- | ----------------------------------------------------- |
