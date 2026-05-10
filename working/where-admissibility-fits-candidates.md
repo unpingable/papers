@@ -112,6 +112,13 @@ Many are just named so they stop haunting the operator.
 - **Natural owner:** claude-code-papers (compression) + AG (consistency check)
 - **Revisit when:** mappings stabilize across several explanations to outside readers
 
+### Admissibility-kernel reverse-gap frontiers (Lean-first; Drive/Control as paper-frontier)
+- **Register:** Lean frontier notes + paper-frontier candidate
+- **Why it matters:** AGI requirements doc reverse-pass surfaced four real frontiers where the kernel doesn't yet deliver what the doc demands. Load-bearing wound is **admissibility ≠ safety bridge** — kernel says actions are authorized, not that authorized actions are safe. *Authorized garbage is still authorized.* Three frontiers are Lean-first (safety bridge, belief coherence, non-self-modification of binding layer); Drive/Control Tension is paper-frontier first.
+- **Why not now:** First-pass discipline is *frontier notes, not theorem claims* (no sorry stubs); second-pass is *minimal counterexamples before positive theorems*; positive theorems wait for the third pass. Sequence runs by dependency order (load-bearing first), not tractability order.
+- **Natural owner:** claude-code-papers (Lean side, frontiers 1-3); paper companion candidate for Drive/Control (frontier 4) deferred until conceptual work surfaces the right primitive.
+- **Revisit when:** the Lean frontier notes' first-pass becomes second-pass (counterexamples land); OR a paper draft needs the safety-bridge primitive; OR the AGI requirements doc gets a citation pass and the Lean companion needs to be ready. **Filed at `~/git/lean/FRONTIERS.md` (2026-05-10).**
+
 ### Loop Capture (synthesis-shaped paper candidate)
 - **Register:** paper / synthesis across spine
 - **Why it matters:** adversarial-mechanism formalization of why P22 / P25 / P27 / admissibility family / WIF-composition rhyme; the admissibility layer (*authorized wrongness*) is the differentiator from Boyd / reflexive-control / Goodhart prior art. Working note at [loop-capture.md](loop-capture.md).
