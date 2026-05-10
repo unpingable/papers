@@ -411,6 +411,17 @@ Admissibility capture (surface 4) is the adversarial extension of stale binding 
 
 The Witness Necessity Claim is the WIF-composition probe's *audited failure-surface orthogonality* under adversarial conditions. The probe requires that witnesses fail independently under atomic perturbations; loop capture requires that at least one witness fail differently from the captured channel. Same doctrine, different framing. The probe's two-route discipline (corroborative composition vs aggregate-invariance composition) extends directly to the adversarial setting: corroboration requires non-co-captured witnesses; aggregate-invariance requires the aggregator itself to be uncaptured and invariant under admitted perturbations.
 
+### Connection to Attack-Surface Laundering (discourse-layer cousin)
+
+Gate-to-Metric Substitution — named in [primitives/attack-surface-laundering.md](primitives/attack-surface-laundering.md) — appears structurally adjacent to Loop Capture's admissibility-capture surface (surface 4 of the five-surface taxonomy). In both cases, a gate that should constrain action is reframed so continuation remains permissible:
+
+- *Loop Capture admissibility capture* (controller layer) — the controller's internal admissibility predicate $A$ gets replaced by a captured $A'$; actions remain self-authorized while defended value decays.
+- *Gate-to-Metric Substitution* (discourse layer) — the dispute's framing of an admissibility gate gets replaced by an optimization metric; actions remain in-progress while the violation gets "optimized" against continuous-variable harms.
+
+Same shape, different scope. The Loop Capture working note's *Caveat on "dual"* applies identically here: the framing is conceptual, not earned formal duality. Treat as **discourse-layer cousin**, not as proven structural identity.
+
+The Attack-Surface Laundering primitive's contribution to Loop Capture: where surfaces 1–5 describe how an internal control loop loses contact with reality, the discourse-layer cousin describes how *third-party accountability* against a captured loop can be redirected by the same shape of move, at a different scale, by good-faith actors with no malicious coordination.
+
 ### Connection to Lean machinery
 
 The existing Lean kernel (Authority + StateTransition + Derivation + Execution + Corrective + WitnessInvariance, all in `~/git/lean/LeanProofs/Admissibility/`) covers most of the *admissibility capture* theorem already, in non-adversarial form:
