@@ -61,6 +61,36 @@ The full pattern requires all three:
 
 Removing any one weakens but does not eliminate the failure mode. Naming all three is what makes the primitive prosecutable in retrospect.
 
+## Consequence-Structure Substitutions (broader class)
+
+Gate-to-Metric Substitution is one case of a broader admissibility failure: a hard boundary is translated into a different resolution surface, changing what counts as closure.
+
+**Diagnostic:**
+
+> *After the substitution, what counts as resolution that did not count before?*
+
+If the new resolution path allows the system to proceed without satisfying the original boundary, the substitution is not merely rhetorical. It changes the consequence structure of the system.
+
+**Five candidate families:**
+
+- **Boundary-to-surface substitutions** — gate → metric; consent → mitigation; contestability → feedback
+- **Authority-to-performance substitutions** — authorization → capability; scope → quality; obligation → SLA
+- **Evidence-to-signal substitutions** — evidence → confidence; observation → testimony; custody → possession
+- **Temporal-status substitutions** — revocation → freshness; harm → risk; consent → notification
+- **Absence-to-permission substitutions** — policy gap → discretion; silence → assent; unknown → acceptable risk
+
+**Load-bearing keepers (the anti-strawman shield):**
+
+> *The failure is not that the replacement category is useless. The failure is that it offers a closure path the original boundary did not permit.*
+
+> *Wrong closure authority, not wrong abstraction.*
+
+Without these keepers, the taxonomy reads as "metrics bad, feedback bad, risk bad" — the dumb version institutions will preferentially argue against. The actual claim is narrower: *these substitutions become failures when they are allowed to resolve a question they are not authorized to resolve.* The replacement categories themselves can be useful in their proper roles; the failure is admissibility laundering across resolution authority.
+
+**Promotion pressure (not yet promotion verdict).** This taxonomy creates promotion pressure for Gate-to-Metric Substitution as its own primitive: the move now appears across 15 distinct cases spanning 5 domains. Future extraction may be warranted if reuse continues. Holding at *candidate for future extraction if reuse continues* rather than declaring promotion criterion satisfied — that's a meta-verdict about pressure, not the verdict itself, and we have learned this lesson repeatedly with small decorative rakes.
+
+**Origin:** 2026-05-10 chatty taxonomy pass; user surfaced the pattern from the *changing the consequence structure of what resolution means* line in the cybernetics-and-admissibility note exchange.
+
 ## Formal kernel (narrow)
 
 A knife-test against the laundering primitive surfaces a hard core that survives independently of the discourse dynamics. The full social phenomenon (why people accept the unsafe projection, why correctors stabilize the auxiliary surface, why attention migrates) remains honest-boundary. The narrow formal core does not.
