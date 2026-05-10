@@ -2,7 +2,7 @@
 
 **Status:** working note / operator discipline. Not a primitive. Not a process. Phase-calibration posture.
 **Originated:** 2026-05-10 multi-model conversation; ChatGPT crystallization of a discipline already implicit in the operator's cajoling pattern with other Claude sessions.
-**Sibling operator doctrine** (parent class: *Operator Doctrine*; siblings classified by *failure mode prevented*, not by audience): [claim-shape-brain-stack](claim-shape-brain-stack.md) protects charge/remedy integrity; [falsification-guardrails](../docs/method/falsification.md) (canonical methodology artifact) protects framework scope from universal-solvent drift; note-density discipline (in user memory, actively cited from primitive notes) protects artifacts from overbuilt staging. **Narrow-after-contact protects against phase-misaligned narrowing.** Same audience, distinct vetoes.
+**Sibling operator doctrine** (parent class: *Operator Doctrine*; siblings classified by *failure mode prevented*, not by audience): [claim-shape-brain-stack](claim-shape-brain-stack.md) protects charge/remedy integrity; [anti-collapse-runbook](anti-collapse-runbook.md) protects against axis-impersonation laundering during generative idea production; [falsification-guardrails](../docs/method/falsification.md) (canonical methodology artifact) protects framework scope from universal-solvent drift; note-density discipline (in user memory, actively cited from primitive notes) protects artifacts from overbuilt staging. **Narrow-after-contact protects against phase-misaligned narrowing.** Same audience, distinct vetoes.
 
 ## What this note is and is not
 

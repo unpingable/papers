@@ -2,7 +2,7 @@
 
 **Status:** working note / doctrine / posture. Not a primitive. Not a process. Not a framework.
 **Originated:** 2026-05-10 multi-model conversation following the Chrome / Hanff brownwashing analysis. Surfaced as the cognitive prerequisite for the [Attack-Surface Laundering](primitives/attack-surface-laundering.md) discipline.
-**Sibling operator doctrine** (parent class: *Operator Doctrine*; siblings classified by *failure mode prevented*, not by audience): [narrow-after-contact](narrow-after-contact.md) protects against phase-misaligned narrowing; [falsification-guardrails](../docs/method/falsification.md) (canonical methodology artifact) protects framework scope from universal-solvent drift; note-density discipline (in user memory, actively cited from primitive notes) protects artifacts from overbuilt staging. **Claim-shape brain protects charge/remedy integrity.** Same audience, distinct vetoes.
+**Sibling operator doctrine** (parent class: *Operator Doctrine*; siblings classified by *failure mode prevented*, not by audience): [narrow-after-contact](narrow-after-contact.md) protects against phase-misaligned narrowing; [anti-collapse-runbook](anti-collapse-runbook.md) protects against axis-impersonation laundering during generative idea production; [falsification-guardrails](../docs/method/falsification.md) (canonical methodology artifact) protects framework scope from universal-solvent drift; note-density discipline (in user memory, actively cited from primitive notes) protects artifacts from overbuilt staging. **Claim-shape brain protects charge/remedy integrity.** Same audience, distinct vetoes.
 
 ## What this note is and is not
 
