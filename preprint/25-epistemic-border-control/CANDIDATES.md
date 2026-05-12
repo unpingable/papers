@@ -4,7 +4,7 @@
 
 **Candidate claim:** Under observability asymmetry where no real-time sensor on the target V exists and the available observables load on a fast proxy V′, the controller is *structurally forced* to substitute V′ for V. The rhetoric remains fixed on V. Sincere regulators facing the same sensor set produce the same substitution. The mechanism is structural; the action is agential.
 
-**Status:** ready-for-formalization. Single-agent sim done; Paper 23 Gramian bridge operationalized. Literature differential remains as the only outstanding gate item.
+**Status:** v1.0 (2026-05-12); published to Zenodo: [10.5281/zenodo.20145155](https://doi.org/10.5281/zenodo.20145155). Lean spine landed (`Paper25EpistemicBorderControl.lean`, four theorems); literature differential closed. Single-agent sim done; Paper 23 Gramian bridge operationalized.
 
 **Imports:**
 - Paper 23 §3.3 case (ii) — closed-loop dynamical dual of measurement null-space masking. P25 inherits the formal apparatus rather than reconstructing it.

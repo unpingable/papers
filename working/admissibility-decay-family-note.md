@@ -64,6 +64,18 @@ The repair operators differ between regimes:
 - **Structural cases:** refuse the inference outright. The license never existed; no recovery move available; the only honest path is denial.
 - **Conditional cases:** detect staleness; consider whether to re-bind under new conditions or acknowledge revocation. Re-binding may be possible (the original commitment can be renewed under updated viability); explicit revocation may be required.
 
+## Adjacent candidate observations (named, not promoted)
+
+The five-axis family has neighbors worth naming without filing as primitives. Each surfaced from a separate forcing case; none has the second-domain forcing case required for primitive ratification.
+
+- **Regime-conditioned admissibility.** The same action may invert admissibility across regimes — normally inadmissible under nominal conditions, uniquely admissible under specific sensor-certified critical conditions. Extension request for the existing kernel's `classify`-shaped functions to take a regime parameter; not yet a primitive on its own axis. Surfaced 2026-05-11.
+
+- **Selectorate mutation.** Tactical admission can mutate the future authority surface. Distinct axis from Commitment Standing Decay (which is commitment-standing-over-time): this is *authority-surface mutation by admission* — the body authorized to decide changes as a result of prior admissions. Generalizes beyond electoral politics (open-source captured by corporate contributors, standards bodies captured by large implementers, platforms captured by engagement-maximizing users, etc.). Candidate handle; not promoted. Surfaced 2026-05-11.
+
+- **Register-as-admissibility-filter.** (See `register-capture-admissibility.md`.) Style operating as an admissibility prior on claim-emission. Currently a working-note analytical synthesis; primitive ratification awaits a second forcing case in a non-LLM domain (academic publishing, legal precedent, regulatory framework). Surfaced 2026-05-11.
+
+All three are watch-list items: forcing-case + cross-domain instance required for primitive promotion.
+
 ## What this is NOT
 
 - **Not a license to mint a sixth primitive just because it would "fit."** The family is descriptive of what's already been surfaced through independent forcing cases. New primitives still need their own forcing cases and basis audits.

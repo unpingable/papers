@@ -109,7 +109,7 @@ ChatGPT's pushback (2026-04-19): calling a revision "v2.0" oversignals rupture w
 - **Lean module:** `Paper25EpistemicBorderControl.lean`
 - **Cashout classes:** 1 (certify) + 4 (bridge artifact) + 2 (sharpen)
 - **Paper-ready:** Yes for the structural-refusal core. Five theorems cover §5's sibling-vs-§N algebraic adjudication and §3.1's Theorem 1 epistemic-access core. Diagnostic 1 (Gramian-conditioning, regime-specific substitution-magnitude scaling) is paper-marked open and intentionally not Leaned; closed-loop induction is fenced as cathedral risk.
-- **Revision candidacy:** P25 is v0.1 draft (2026-05-01), not yet pushed to Zenodo. §5 has a clarifying paragraph (added 2026-05-03) that names the Gramian identity $(\mathbf{1}_N \otimes O_T)^\top (\mathbf{1}_N \otimes O_T) = N \cdot O_T^\top O_T$, distinguishes subspace-preservation from individual-vector preservation, and points at the companion Lean module. v1.0 push will incorporate this; no separate fold-in revision needed.
+- **Revision candidacy:** P25 v1.0 (2026-05-12) published to Zenodo: [10.5281/zenodo.20145155](https://doi.org/10.5281/zenodo.20145155). §5 has a clarifying paragraph (added 2026-05-03) that names the Gramian identity $(\mathbf{1}_N \otimes O_T)^\top (\mathbf{1}_N \otimes O_T) = N \cdot O_T^\top O_T$, distinguishes subspace-preservation from individual-vector preservation, and points at the companion Lean module.
 
 **What Lean underwrites:**
 
@@ -124,6 +124,22 @@ ChatGPT's pushback (2026-04-19): calling a revision "v2.0" oversignals rupture w
 - Closed-loop dynamics, Kalman filtering, LQR. The paper's §3.1 prose proof hand-waves a closed-loop induction; that vindication is correct but separable from the structural refusal. Formalizing it would import machinery the paper deliberately does not need.
 - Explicit finite-horizon observability matrix $O_T$ as a single matrix object. The §5 corollary is mechanical once $O_T$ is in scope; the abstract `replicateRows N M` already proves the load-bearing claim.
 - SVD or least-observable-direction quantitative claims. Mathlib coverage limited; the qualitative kernel + Gramian results here are the qualitative substrate the paper actually needs.
+
+**Companion artifacts (simulation):**
+
+The §4 simulation results are produced by a single Python script in the Lean repo. The script is a mechanism check in one correctly-specified Kalman-LQR regime, not a derived scaling law; see §4.1 for scope conditions.
+
+- **`paper25_substitution.py`** (`~/git/lean/`) — single-agent Kalman-LQR simulation of the §2 two-latent model with Poisson crank-shock innovations on $C$. Produces the §4.2 phase-transition sweep, the §4.6 Gramian-conditioning bridge, and the four figures below.
+- **`paper25_phase_transition.png`** — §4.2 sweep of $T_\text{rms}^\text{asym} / T_\text{rms}^\text{clean}$ across $\alpha_T/\alpha_C \in [0.01, 10]$. Source of the table at §4.2.
+- **`paper25_counterfactual.png`** — §4.3 effort-without-effect diagnostic: tracking-ratio and mean $|U|$ for asymmetric-sensor vs clean-$T$-sensor controllers across the same sweep.
+- **`paper25_trajectory.png`** — §4.4 mechanism confirmation: single trajectory showing $T$, $\hat T$, $C$, $\hat C$, $U$ at a chosen $(\alpha_T, \alpha_C)$. Visualizes how $\hat T$ is pulled by $C$ through the Kalman posterior despite $q_C = 0$ in the LQR cost.
+- **`paper25_gramian_bridge.png`** — §4.6 / §3.2 Diagnostic 1: finite-horizon observability Gramian $W_o = O_T^\top O_T$, smallest singular value $\sigma_\text{min}(O_T)$, and $T$-axis alignment $|\langle v_\text{min}, e_T \rangle|$ across the sweep. Operationalizes the Paper 23 §3.3 case (ii) bridge.
+
+The script is the single source of truth for §4 numbers; the table at §4.2 is a representative readout of one parameter sweep (five seeds per ratio, 3000 steps, 500-step burn-in), not a derived bound.
+
+**Adjacent formal work (not Paper 25 dependencies):**
+
+The `LeanProofs/Admissibility/` modules (FiatAdmissibility, SurfaceAuthorization, NumericalAdmissibility, RecoveryMargin, ClosureEligibility, PublicReceiptRefinement, CorrectiveBoundary, WitnessInvariance, etc., built out 2026-05-11/12) develop the broader admissibility family that Paper 25's §8 nods toward via "Governor / admissibility working track." They are not part of Paper 25's proof dependency chain; the four theorems in `Paper25EpistemicBorderControl.lean` are the load-bearing formal spine, and §8's architectural sketch is paper-marked open. Folding receipt-lineage vocabulary into §8 is deferred per `preprint/25-epistemic-border-control/NOTES.md` ("§8 edit pin — receipt-lineage as architectural enforcement … deferred until after P27 stabilizes").
 
 ### P9 — *Capacity-Constrained Stability*
 

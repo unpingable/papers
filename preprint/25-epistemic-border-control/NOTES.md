@@ -2,13 +2,13 @@
 
 ## Status
 
-**v0.0-stub — 2026-04-28.** Scaffold only. Substantive content lives in `working/epistemic-border-control.md`. This directory exists to reserve the paper number and make the candidate visible alongside published siblings.
+**v1.0 — 2026-05-12.** Canonical: `epistemic_border_control.md`. Published to Zenodo: [10.5281/zenodo.20145155](https://doi.org/10.5281/zenodo.20145155). The original working-note body was archived 2026-05-03 to `archive/epistemic-border-control.working-superseded-2026-05-03.md`; `working/epistemic-border-control.md` is now a redirect tombstone. Lean spine (`Paper25EpistemicBorderControl.lean`, four theorems) landed; crosswalk at `docs/formalization-index.md`.
 
 ## Gate items
 
 1. **Single-agent sim.** Done (2026-04-22). `~/git/lean/paper25_substitution.py`. Power-law phase transition observed (T_rms_asym / T_rms_clean = 333 at α_T/α_C=0.01 → 1.9 at α_T/α_C=10). Two substitution channels identified: (a) pure observability asymmetry; (b) filter Gaussian model ignorant of Poisson crank shocks. Paper 23 Gramian bridge operationalized (T-axis rotates into ker(O_T) as α_T→0; alignment 0.9999 → 0.044).
 2. **Sibling-vs-§N adjudication.** Resolved 2026-04-22 by algebraic argument (homogeneous agents with shared C_obs yield O_T^stack = 1_N ⊗ O_T; kernel and observability subspace unchanged; aggregation reduces variance as O(σ²/N) but does not rotate the subspace). P25 is sibling to P24, not §N.
-3. **Literature differential.** Pending. Targets: Perdomo, Pagan, Sprenger, Dwork.
+3. **Literature differential.** Landed in v0.3. References: Perdomo et al. (performative prediction), Pagan et al. (feedback-loop classification), Sprenger et al. (recommenders as closed-loop control), Dwork et al. (moderation trade-offs), Manheim & Garrabrant (Goodhart variants), Sontag (observability decomposition), Anderson & Moore (Kalman filtering), Francis & Wonham (internal model principle).
 
 ## Position in the series
 

@@ -132,11 +132,12 @@ Pointing at named artifacts without these fields is the parasitic layer the rest
 
 ### Lean Admissibility kernel (formal-methods entrance)
 
-- **Claim:** Authority verdicts, mutation algebra, read-side bridge, authorized step composition, corrective monotonicity, witness invariance — proven, not asserted. Now also: artifact-kind × use-kind admissibility (FiatAdmissibility, 2026-05-11, scaffold-only).
-- **Artifact:** `~/git/lean/LeanProofs/Admissibility/` (Authority, StateTransition, Derivation, Execution, Corrective, CorrectiveBoundary, WitnessInvariance, FiatAdmissibility)
-- **Canonical version:** HEAD of `~/git/lean` main branch; commit `19217be` as of 2026-05-11
+- **Claim:** Authority verdicts, mutation algebra, read-side bridge, authorized step composition, corrective monotonicity, witness invariance, artifact-kind × use-kind admissibility (FiatAdmissibility), Governor-facing collapsed-surface refusal gate (SurfaceAuthorization), NQ-facing visible-green-vs-recovery-margin refusal (RecoveryMargin), NS-facing one-step closure-eligibility refusal (ClosureEligibility), numerical-kind × numerical-use admissibility (NumericalAdmissibility), public-receipt-refinement recovery doctrine for SurfaceAuthorization (PublicReceiptRefinement) — proven, not asserted.
+- **Artifact:** `~/git/lean/LeanProofs/Admissibility/` (Authority, StateTransition, Derivation, Execution, Corrective, CorrectiveBoundary, WitnessInvariance, FiatAdmissibility, SurfaceAuthorization, RecoveryMargin, ClosureEligibility, NumericalAdmissibility, PublicReceiptRefinement) + root sibling `LeanProofs/CollapsedSurface.lean`
+- **Canonical version:** HEAD of `~/git/lean` main branch; commit pending as of 2026-05-12
 - **Verification:** `lake build` green; CI proof-gate-only per repo doctrine; no `sorry`
-- **Change rule:** ratification note + proof update; lake build must stay green; new theorems require docstring + sibling-module audit; changes to ArtifactKind / UseKind / classify (FiatAdmissibility) require explicit ratification
+- **Change rule:** ratification note + proof update; lake build must stay green; new theorems require docstring + sibling-module audit; changes to ArtifactKind / UseKind / classify (FiatAdmissibility), to the SurfaceStatus × ActionKind × Breaker gate (SurfaceAuthorization), or to the ThreatState × SlackState × IntervalOutcome verdict (ClosureEligibility) require explicit ratification
+- **Scope fences worth preserving:** ClosureEligibility is a one-step closure kernel, not a persistence model — caller-supplied direct handoff→closure comparison; no trace/waiver/authority modeling. SurfaceAuthorization encodes the refusal gate, not the recovery epistemology (Breaker stays abstract). RecoveryMargin proves the independence of visible-green from recovery-margin, not a recovery dynamics
 
 ### Substack archive — Neutral Ambassador (civic-public entrance)
 
@@ -177,7 +178,7 @@ Status taxonomy (honest):
 - **Candidate primitives (named, not ratified):** control-set laundering, local-global validity gap (filed 2026-05-10), testimony-vs-self-theory (filed 2026-05-10), plus the active list in `working/primitives/`
 - **Doctrine stubs:** declared-substitution stubs (per `project-admissibility-doctrine-stubs.md` memory)
 - **Methodology notes (not for citation):** `methodology-as-operational-discipline.md`, `phase-model-nonlinear-work.md`, `narrow-after-contact.md`, `anti-collapse-runbook.md`
-- **Lean:** five sibling modules + WitnessInvariance + CorrectiveBoundary; lake build green; no sorry
+- **Lean:** thirteen `Admissibility/` modules (Authority/StateTransition/Derivation/Execution/Corrective/CorrectiveBoundary/WitnessInvariance/FiatAdmissibility/SurfaceAuthorization/RecoveryMargin/ClosureEligibility/NumericalAdmissibility/PublicReceiptRefinement) plus root `CollapsedSurface`; lake build green; no sorry
 - **Substack archive:** Hugo site, separate repo, not numbered, browse-only
 - **Software kernels:** Wicket / agent-governor / NQ — exist as code, not all public, not all in this repo
 - **Parked / superseded:** `working/epistemic-border-control.md` (now pointer to P25); various drafts archived under preprint dirs

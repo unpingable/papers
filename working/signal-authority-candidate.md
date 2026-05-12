@@ -149,6 +149,24 @@ A distinct pattern showed up in the same thread: when a platform's public explai
 
 The theorem `obsEquiv_policy_same` in `Paper25EpistemicBorderControl.lean` is the formal core. `collapsed_surface_not_identifying` and `public_receipt_refines_observation` as I proposed them earlier are not new — `obsEquiv_policy_same` is the first; the second (receipt-refines-observation) is implicit in Paper 24's receipt-lineage discussion ("preserving per-witness receipts for downstream interpretation") as the constructive complement to the witness-filter pathology. The Lean module names I reserved should be retired in favor of pointing at the existing kit.
 
+## Recovery side: breaking collapsed observation
+
+A collapsed surface cannot identify cause from the surface alone. Recovery requires a discriminating channel outside the collapsed render.
+
+Known recovery paths:
+
+1. **Preserved history.** Receipts, lineage, state-at-time-T records, or provenance that preserve distinctions the public surface erased. *Partial corpus home:* Paper 24's receipt-lineage / per-witness preservation discussion.
+2. **Independent measurement.** Another witness/sensor whose observations add rank rather than replicate the same collapsed surface. *Partial corpus home:* Paper 25's Gramian scaling under inhomogeneous-witness stacking (`ker_replicateRows_eq_ker`, `replicateRows_transpose_mul`).
+3. **Admissible perturbation.** Controlled excitation that produces distinguishable response traces — system-identification-style — without treating harm or coercion as measurement. *Newly named here; underspecified; not in corpus formally.* The "admissible" qualifier is doing real work: not all perturbations are licensed measurement, and conflating them produces its own laundering pattern.
+
+> **Reading the tombstone harder does not recover the body.**
+
+**Status:** held synthesis / deferred theorem family. Preserved-history and independent-measurement cases have partial homes in P24/P25. Admissible perturbation is newly named here and remains underspecified. The three-part shape is stable enough across repeated cross-primitive surfacing (testimony-vs-self-theory, Signal Authority, CollapsedSurface) to preserve as doctrine; not stable enough to formalize as Lean theorem machinery. Captured here as deferred recovery doctrine, not as `public_receipt_refines_observation.lean`.
+
+The discipline this expresses:
+
+> *Deferral should prevent premature proof, not erase repeated convergence.*
+
 ## Relation to existing kit
 
 This *brushes* FiatAdmissibility without becoming a new UseKind. The difference is the axis:
