@@ -308,7 +308,7 @@ The module deliberately does not formalize: (i) Diagnostic 1's quantitative subs
 
 ## References
 
-[1] Beck, J. (2026). The Non-Self-Identical Controller. Δt Framework series, Paper 23. Zenodo. doi:10.5281/zenodo.19055415
+[1] Beck, J. (2026). Ops Is Control with a Non-Self-Identical Controller. Δt Framework series, Paper 23. Zenodo. doi:10.5281/zenodo.19715301
 
 [2] Beck, J. (2026). Shared Vision as Coordinating Prior. Δt Framework series, Paper 24. Zenodo. doi:10.5281/zenodo.19861995
 
@@ -316,7 +316,7 @@ The module deliberately does not formalize: (i) Diagnostic 1's quantitative subs
 
 [4] Perdomo, J. C., Zrnic, T., Mendler-Dünner, C., & Hardt, M. (2020). Performative Prediction. *Proceedings of the 37th International Conference on Machine Learning*, PMLR 119:7599–7609. arXiv:2002.06673.
 
-[5] Pagan, N., Baumann, J., Elokda, E., De Pasquale, G., Bolognani, S., & Hannák, A. (2023). A Classification of Feedback Loops and Their Relation to Biases in Automated Decision-Making Systems. *Proceedings of the 3rd ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization* (EAAMO '23). doi:10.1145/3617694.3623227. arXiv:2305.06055.
+[5] Pagan, N., Baumann, J., Elokda, E., De Pasquale, G., Bolognani, S., & Hannák, A. (2023). A Classification of Feedback Loops and Their Relation to Biases in Automated Decision-Making Systems. *Proceedings of EAAMO '23*. doi:10.1145/3617694.3623227. arXiv:2305.06055.
 
 [6] Sprenger, B., De Pasquale, G., Soloperto, R., Lygeros, J., & Dörfler, F. (2024). Control strategies for recommendation systems in social networks. *IEEE Control Systems Letters*, 8.
 

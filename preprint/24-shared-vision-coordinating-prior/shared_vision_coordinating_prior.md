@@ -308,7 +308,7 @@ The constructive architectural implication of §6 — that escape from the three
 
 ## References
 
-[1] Beck, J. (2026a). Ops Is Control with a Non-Self-Identical Controller. Δt Framework, Paper 23. Zenodo. https://doi.org/10.5281/zenodo.19055415
+[1] Beck, J. (2026a). Ops Is Control with a Non-Self-Identical Controller. Δt Framework, Paper 23. Zenodo. https://doi.org/10.5281/zenodo.19715301
 
 [2] Beck, J. (in preparation). Receipt-Lineage Governance and the Admissibility Family. Δt Framework, working note.
 

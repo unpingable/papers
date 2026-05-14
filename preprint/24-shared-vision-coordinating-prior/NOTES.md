@@ -68,6 +68,14 @@ External independent reviews (codex, gemini-cli) prompted the following tighteni
 - Section numbering — kept 1–8 intact; new adjacency content folded into existing subsections rather than spawning new ones.
 - §5 case study (Agile) — unchanged; ChatGPT's discipline (Agile as illustration not target) remains intact.
 
+### 2026-05-14 — Ref [1] DOI corrected in local source only (intentional source/published divergence)
+
+P23 cited at `https://doi.org/10.5281/zenodo.19055415` in `shared_vision_coordinating_prior.md:311` resolved to P21 (*Observer Integrity Under Procedural Sociality*), not P23 — copy-paste error inherited from P23's own `metadata.yaml`, which had its `doi:` field similarly miscopied (P21's concept DOI pasted in as P23's). P23 metadata fixed locally this session; P25 ref also fixed and rebuilt before push. P24's local ref updated to P23's actual concept DOI `10.5281/zenodo.19715301`.
+
+**Not pushed to Zenodo.** Published v1.0 record (19861996) retains the original wrong DOI in its frozen PDF / bibliography. Decision to skip a v1.0.1 push given low citation traffic and the immutability cost; revisit if P24 is ever re-touched substantively.
+
+**Implication for `check_all.sh`:** `pdf_freshness` will report P24 as STALE from now on because the local `.md` is newer than the published `.pdf`. This is intentional state, not a defect — the local PDF still matches the Zenodo record. Do not reflexively rebuild the PDF.
+
 ## Open / deferred
 
 - **Proposition 1 theorem-ization.** Highest-value next item. See §8, item 1.

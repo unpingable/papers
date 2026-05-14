@@ -31,7 +31,7 @@ The paper makes four contributions:
 
 Worked cases (§6) cover all four sub-types the matrix names — natural-latency, procedural, manufactured, and ontological — including one procedural negative control that the framework refuses to inflate into Type C. Relations to adjacent series results follow (§7). The framework is presented as a 1.0-candidate draft: enough discrimination to classify a useful set of cases, with explicit limitations (§8) on what remains rough.
 
-The argument is positive in form but negative in import. Like related results in *No Universal Plant Clock* (Paper 22 [5]) and *Epistemic Border Control* (Paper 25 [8]), it identifies a class of failures that admit no purely procedural fix. The framework's value is to make these failures visible to analytical vocabulary that currently absorbs them under the more comfortable label of "slow process."
+The argument is positive in form but negative in import. Like related results in *No Universal Plant Clock* (Paper 22 [5]) and *Epistemic Border Control* (Paper 25 [8]), it identifies a class of failures that admit no purely procedural fix. Pieces of the phenomenon are recognized across administrative-burden scholarship, regulatory-lag analysis, climate-litigation standing doctrine, and pharmaceutical pharmacovigilance; the temporal class itself lacks a shared cross-domain vocabulary. The framework's value is to supply that vocabulary and make the structural-vs-execution distinction analytically tractable — currently absorbed under the more comfortable label of "slow process."
 
 ---
 
@@ -53,26 +53,28 @@ $$W = \{ t \mid m(t) \geq \theta_m \ \land \ c(t) \geq \theta_c \}$$
 
 A binding at time $t$ is valid only if $t \in W$. $W$ can be a proper interval, multiple disjoint intervals, or empty.
 
+The thresholds $\theta_m$ and $\theta_c$ default to the governing standard of the binding event under analysis: $\theta_m$ is the admissibility threshold the binding's authority structure already recognizes (the evidentiary bar at which the binding is operationally licensed), and $\theta_c$ is the consequence threshold the binding's purpose already presupposes (the point below which binding does not produce the consequence the binding was for). Overriding either threshold requires explicit argument tied to the case at hand; thresholds chosen to make the framework's classification come out a preferred way are not defensible.
+
 A schematic picture of the four cases the framework distinguishes:
 
 ```
-Time →                                      θ = threshold
+Time →                                      theta = threshold
 
 (a) Normal overlap          m(t) _____/--------         W non-empty;
                             c(t) --------\_____         binding within W
                                   [ ─── W ─── ]
 
 (b) Premature commitment    m(t) ___/-------            bind at t with
-    (Type A)                c(t) ------\____            m(t) < θ_m
+    (Type A)                c(t) ------\____            m(t) < theta_m
                                 ↑bind here
 
 (c) Belated consequence     m(t) _____/-------          bind at t with
-    (Type B)                c(t) ------\______          c(t) < θ_c
+    (Type B)                c(t) ------\______          c(t) < theta_c
                                               ↑bind here
 
-(d) Empty window            m(t) ____________/---       m crosses θ_m
+(d) Empty window            m(t) ____________/---       m crosses theta_m
     (Type C)                c(t) ------\___________     only after c
-                                                        falls below θ_c;
+                                                        falls below theta_c;
                                                         W = ∅
 ```
 
@@ -81,7 +83,7 @@ We disambiguate two binding events that the temporal model places on the same ax
 - **Action binding** at $t_\text{action}$: the decision is committed; resources are allocated; the system is reconfigured around it.
 - **Consequence binding** at $t_\text{consequence}$: the decision's effects attach to the responsible parties — recovery, accountability, learning, course correction.
 
-These are distinct events. Conflating them is a common source of analytical error. The three failure orientations of the next section are defined on these two event labels.
+These are distinct events on the same axis but governed by different curves. Action binding's legitimacy is gated by $m(t)$: an action binding at $t_\text{action}$ with $m(t_\text{action}) < \theta_m$ is premature. Consequence binding's viability is gated by $c(t)$: a consequence binding at $t_\text{consequence}$ with $c(t_\text{consequence}) < \theta_c$ is belated. Conflating the two events is a common source of analytical error. The three failure orientations of the next section are defined on these two event labels.
 
 ---
 
@@ -159,6 +161,8 @@ The compressed #4 is regime-relative: "within the specified counterfactual regim
 We distinguish two counterfactual regimes within which feasibility can be evaluated.
 
 **Status-quo regime.** Feasible execution improvement is bounded by *political durability*. What counts as feasible is what would be deployable under prevailing institutional incentives, accounting for opposition reconstitution. This includes process tuning within current authority structure, workflow redesign without legislative change, tool deployment within existing oversight frameworks, and reform measures politically durable in the relevant jurisdiction's recent history. It excludes reforms attempted and reconstituted (e.g., work requirements substituted for streamlined eligibility), reforms exceeding prevailing political acceptability, and reforms requiring legislative change against entrenched opposition.
+
+The status-quo regime is not a passive constraint. When the institutional configuration itself reproduces the delay — by substituting new gating mechanisms whenever reform measures threaten to close the gap — the regime is operating as a *political equilibrium*, not merely a current snapshot. "Feasible improvement" under such an equilibrium must be evaluated as *politically durable*, not merely technically available. The manufactured sub-type is the canonical case where this distinction does load-bearing work; the politically-reproduced refinement (§8) names the equilibrium dynamic explicitly.
 
 **Any-feasible-configuration.** Feasible execution improvement is bounded by *physical, technological, and economic possibility*. What counts as feasible is what is within demonstrated technological capability and physical/economic constraints, regardless of political durability. It includes the status-quo set plus reforms requiring legislative change in counterfactual political configurations. It excludes reforms that violate physical causality (faster epidemiology than cohort accumulation can produce) or definitional constraints (event class doesn't yet exist).
 
@@ -315,6 +319,8 @@ The framework is a working draft from a series of stress-tests rather than settl
 
 **Curve-shape vs operating-point.** The two-curve model isolates the temporal axis and treats m(t) and c(t) as exogenous given the case. In practice, intervention can change the curves (faster evidence maturity, longer consequence preservation, reversibility infrastructure) rather than just shifting the operating point along fixed curves. The framework distinguishes execution improvement (operating-point) from event-class change (curve-shape, in part), but the boundary is not always sharp. Cases that look like operating-point shifts may be enabled by latent curve-shape interventions. We have not formalized the operating-point/curve-shape distinction beyond the per-regime feasibility specifications in §5.1.
 
+**Contested or partially-operative event classes.** The codified-and-operative clarification (§5.3) provides stable classification but cannot fully accommodate cases where the event class is in motion but not complete — a proposal pending legislative action, a draft rule in regulatory consultation, a court doctrine emerging through circuit-split litigation. The present draft treats such cases as phase-sensitive within the existing matrix (sub-type-by-phase, above) rather than introducing a fifth classification that would dilute the four-subtype structure; the issue is recorded as a limitation pending a forcing case where phase-sensitive treatment is insufficient.
+
 ---
 
 ## 9. Conclusion
@@ -345,11 +351,11 @@ The vocabulary for this kind of failure is currently absorbed under the more com
 
 [5] Beck, J. (2026). No Universal Plant Clock: A Four-Layer Decomposition of Δt Failure. Δt Framework series, Paper 22, version 1.1. Zenodo. doi:10.5281/zenodo.19119617
 
-[6] Beck, J. (2026). The Non-Self-Identical Controller. Δt Framework series, Paper 23. Zenodo. doi:10.5281/zenodo.19055415
+[6] Beck, J. (2026). Ops Is Control with a Non-Self-Identical Controller. Δt Framework series, Paper 23. Zenodo. doi:10.5281/zenodo.19715301
 
 [7] Beck, J. (2026). Shared Vision as Coordinating Prior. Δt Framework series, Paper 24. Zenodo. doi:10.5281/zenodo.19861995
 
-[8] Beck, J. (2026). Epistemic Border Control: Substitution under Observability Asymmetry. Δt Framework series, Paper 25. Forthcoming.
+[8] Beck, J. (2026). Epistemic Border Control: Substitution under Observability Asymmetry. Δt Framework series, Paper 25. Zenodo. doi:10.5281/zenodo.20145155
 
 [9] Beck, J. (forthcoming). Obligation-Unsound Reconciliation. Δt Framework series, Paper 27.
 

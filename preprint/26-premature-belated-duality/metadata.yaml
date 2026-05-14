@@ -2,12 +2,14 @@ title: "Premature Commitment, Belated Consequence, and the Empty Binding Window"
 subtitle: "A Two-Curve Framework for Temporal Detachment in Bound Decisions"
 author: "James Beck"
 affiliation: "Independent Researcher"
-date: 2026-05-06
+date: 2026-05-14
 series: "delta-t-framework"
 paper_number: 26
-version: "0.3"
-status: "1.0-candidate"
+version: "1.0"
+status: "preprint"
 license: "CC-BY-4.0"
+doi: "10.5281/zenodo.20189777"
+zenodo_url: "https://zenodo.org/records/20189777"
 keywords:
   - admissibility maturity
   - consequence viability
