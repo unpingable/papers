@@ -10,6 +10,7 @@ design work.
 |------|-------------|
 | `atproto_governance_transfer_proof.md` | Ontology transfer proof: maps the governor's 5-artifact ontology onto ATProto's PDS and relay layers. Demonstrates domain-independence of the governance primitives and identifies "containment without erasure" as a general capability gap. |
 | `atproto_provenance_instrument.md` | Specification sketch for a provenance/SIGINT layer on ATProto. Three-layer decomposed scoring (actor, relay, domain), provenance explainer, propagation mapping. Framed as radar, not tribunal — constitutional constraints prevent collapse from intelligence to governance. Composable with labelwatch and driftwatch. |
+| `civic_migration_appliance.md` | Specification sketch for jurisdictional portability between online community governance environments. Locks candidate object model (FOUNDING_CHARTER / EXIT_CHARTER / LANDING_RECEIPT / MIGRATION_PACKET) and four invariants ("evidence crosses, authority does not"; pre-crisis exit policy; steward-as-notary; advisory quarantine for imported sanctions). Protocol-agnostic; atproto is closest live substrate. Concept memo at `../working/regime-change-with-backups.md`. |
 
 ## Related
 
