@@ -4,7 +4,7 @@
 
 **James Beck**
 Independent Researcher
-2026-05-06 — Draft v0.3 / 1.0-candidate
+2026-05-14 — Version 1.0
 
 ---
 
@@ -29,7 +29,7 @@ The paper makes four contributions:
 3. A discriminator (§4) — *residual event-class mismatch* — that distinguishes empty-window failure from ordinary process delay.
 4. A counterfactual regime selection rule and subtype matrix (§5) that constrain how the discriminator is applied, with an enforcement layer that prevents framework-driven classification laundering.
 
-Worked cases (§6) cover all four sub-types the matrix names — natural-latency, procedural, manufactured, and ontological — including one procedural negative control that the framework refuses to inflate into Type C. Relations to adjacent series results follow (§7). The framework is presented as a 1.0-candidate draft: enough discrimination to classify a useful set of cases, with explicit limitations (§8) on what remains rough.
+Worked cases (§6) cover all four sub-types the matrix names — natural-latency, procedural, manufactured, and ontological — including one procedural negative control that the framework refuses to inflate into Type C. Relations to adjacent series results follow (§7). The framework is presented as a first stabilized release: enough discrimination to classify a useful set of cases, with explicit limitations (§8) on what remains rough.
 
 The argument is positive in form but negative in import. Like related results in *No Universal Plant Clock* (Paper 22 [5]) and *Epistemic Border Control* (Paper 25 [8]), it identifies a class of failures that admit no purely procedural fix. Pieces of the phenomenon are recognized across administrative-burden scholarship, regulatory-lag analysis, climate-litigation standing doctrine, and pharmaceutical pharmacovigilance; the temporal class itself lacks a shared cross-domain vocabulary. The framework's value is to supply that vocabulary and make the structural-vs-execution distinction analytically tractable — currently absorbed under the more comfortable label of "slow process."
 
@@ -311,7 +311,7 @@ The m(t)/c(t) framing is available to later obligation-unsound reconciliation wo
 
 ## 8. Limitations
 
-The framework is a working draft from a series of stress-tests rather than settled doctrine. Three limitations require explicit naming.
+The framework is a stabilized result from a series of stress-tests rather than settled doctrine. Three limitations require explicit naming.
 
 **Politically-reproduced as candidate sub-type.** Two cases (administrative-burden cascade, SOX/complex fraud) suggest a manufactured child sub-type characterized by adversarial closure: reform measures, where deployed, are reconstituted by interested parties through alternative gating mechanisms. Naming this sub-type would buy a closure-strategy distinction (adversarial vs inertial closure are different problems requiring different responses, including anti-reconstitution machinery: sunset clauses with strong defaults, anti-rollback provisions, constitutional rather than statutory entrenchment, insulated enforcement funding). Held as candidate, not promoted; promotion would require a third confirming case or a counter-case (a manufactured failure that is *not* politically-reproduced, where the inertial/adversarial distinction has analytic bite).
 
@@ -390,7 +390,3 @@ The vocabulary for this kind of failure is currently absorbed under the more com
 [24] Directive (EU) 2024/2831 of the European Parliament and of the Council of 23 October 2024 on improving working conditions in platform work. *Official Journal of the European Union*, L series, 11 November 2024.
 
 [25] Manheim, D., & Garrabrant, S. (2018). Categorizing variants of Goodhart's Law. arXiv:1803.04585.
-
----
-
-*Status: v0.3 / 1.0-candidate draft, 2026-05-06. Companion working material: `working/premature-belated-duality.md`, `working/six-meets-six.md`, `preprint/26-premature-belated-duality/CASE_TESTS.md`, `preprint/26-premature-belated-duality/NOTES.md`. Not yet pushed to Zenodo. External-literature citation pass completed in v0.2.*

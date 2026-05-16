@@ -16,7 +16,7 @@ P26 sits as the *temporal* sibling to P25's *spatial* result. P25 names substitu
 
 | File | Description |
 | --- | --- |
-| `premature_belated_duality.md` | Paper 26 (v0.3 / 1.0-candidate) |
+| `premature_belated_duality.md` | Paper 26 (v1.0) |
 | `metadata.yaml` | Series metadata + abstract |
 | `CANDIDATES.md` | Claim container (status, imports, dependencies, risks) |
 | `CASE_TESTS.md` | Empty-window case-test exercise |
