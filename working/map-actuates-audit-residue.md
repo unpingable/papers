@@ -13,6 +13,18 @@ forbidden_use: new kernel, new P28, new taxonomy, new "map actuates" doctrine fa
 
 Fresh-chat session (2026-05-16) derived a "bounded-controller / admissible-compression / the map actuates" paper-shaped artifact. Kernel-overlap audit found ~half the candidates were re-derivation of Papers 15 / 23 / 25 + admissibility-decay family under new vocabulary. This file preserves the sharp phrases without granting them citizenship. Not a paper. Not a primitive. Not a Lean module.
 
+## Correction / supersession note (2026-05-16)
+
+The sentence-bank form "the map actuates" (item 1 below) is underspecified.
+
+Corrected transition-predicate form:
+
+> **The map actuates only when a system grants map-state transition authority.**
+
+The map is not the actor; the transition predicate is. The map supplies the partition over which the transition operates.
+
+See `working/transition-predicate-frame.md`. The sentence-bank entry is preserved below as historical residue; the corrected form is canonical.
+
 ## Sentence-shape residues (sentence bank only)
 
 1. **"What the system cannot distinguish, it cannot govern differently."**

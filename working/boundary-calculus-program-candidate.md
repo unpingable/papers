@@ -41,6 +41,14 @@ Names the larger cybernetic claim:
 
 One is form apparatus; the other is the field of application / explanatory program. The analogy is not exact, but it captures the form/domain split that lets each side be cited independently.
 
+## Transition predicate frame
+
+See `working/transition-predicate-frame.md`.
+
+Boundary calculus studies crossings; admissibility cybernetics governs which crossings may control future state. The shared object type is the *transition predicate*: the rule by which state asks to become authority.
+
+This is a vocabulary upgrade for indexing existing primitives, not a new program or paper.
+
 ## Why not collapse to one name yet
 
 - **Boundary calculus alone** reads dry / formal / Lean-coded; undersells the cybernetic sweep.
