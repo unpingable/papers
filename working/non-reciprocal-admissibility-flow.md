@@ -107,6 +107,8 @@ Surfaced via NPC Alex's "Non-Equilibrium Attention Markets" piece (NEAM) and Cha
 
 **ChatGPT's caveats that travel:** the adiabatic approximation (attention equilibrates fast, learning slow) is load-bearing and markets often violate it; "Π rises → crash" needs an explicit failure criterion (infinite relative to *what* — liquidity, margin, coordination bandwidth?); "efficient market = MaxEnt market" is a usefully delicious slogan and a rake.
 
+**Lean tripwire (non-canonical, in existing sketch):** Appended to `~/git/lean/non-reciprocal-admissibility-flow-sketch.lean` as a `## NEAM measurement adapter — non-canonical lead` block. Encodes only the boundary shape via `DiagnosticMeasure` / `DiagnosticUse` / `diagnosticUseAllowed`, plus three tripwire theorems (`no_measure_authorizes`, `no_measure_declares_admissibility_failure`, `no_measure_declares_laundering`). No Markov plumbing, no Schnakenberg formula, no HHI formula, no markets structure. If a future change tries to use Π or HHI as authorization / verdict / laundering surface, the tripwires break. Audit step before promoting to canonical: check whether `NumericalAdmissibility.lean` already encodes the MeasurementKind × AuthorityUse pattern; if so, this sketch retires rather than competes.
+
 ---
 
 **Cross-references:**
