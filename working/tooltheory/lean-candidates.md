@@ -36,7 +36,7 @@ Until those are met, the candidate stays here.
 
 ## Sim candidate (lane-1+4)
 
-If the heterogeneous-cohort simulation lane ever earns its keep, the spec from chatty's lane-mapping:
+If the heterogeneous-cohort simulation lane ever earns its keep, the spec from ChatGPT's lane-mapping:
 
 ```
 - agents with replicated proxy sensors only;

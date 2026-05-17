@@ -4,7 +4,7 @@
 
 **Operational form:** *A shock on the proxy channel is evidence of changed conditions, not proof of target state.*
 
-**Source:** P25 §4.5 second-channel observation; grok reviewer Q2 + chatty lane-mapping 2026-05-12.
+**Source:** P25 §4.5 second-channel observation; grok reviewer Q2 + ChatGPT lane-mapping 2026-05-12.
 
 ## What it is
 

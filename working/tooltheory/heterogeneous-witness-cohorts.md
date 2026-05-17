@@ -2,7 +2,7 @@
 
 **Slogan:** Witness diversity is not count diversity; it is observability diversity under preserved standing.
 
-**Source:** P25 §8 collective-observability paragraph; grok reviewer Q1 + chatty lane-mapping 2026-05-12.
+**Source:** P25 §8 collective-observability paragraph; grok reviewer Q1 + ChatGPT lane-mapping 2026-05-12.
 
 ## What it is
 

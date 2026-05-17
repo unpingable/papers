@@ -1,6 +1,6 @@
 # Social-telemetry claim boundaries
 
-**Source:** P25 admissibility frame applied to social telemetry / observatory work; chatty extension 2026-05-12.
+**Source:** P25 admissibility frame applied to social telemetry / observatory work; ChatGPT extension 2026-05-12.
 
 ## The admissibility ladder in observatory clothing
 

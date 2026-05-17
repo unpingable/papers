@@ -1,6 +1,6 @@
 # Regime Change with Backups: Jurisdictional Portability and the Civic Migration Appliance
 
-**Status:** Working concept / not a specification. Filed 2026-05-15. Surfaced via multi-model conversation (Gemini → chatty → DeepSeek → user) about platform exit, federation, and atproto's missing middle layer.
+**Status:** Working concept / not a specification. Filed 2026-05-15. Surfaced via multi-model conversation (Gemini → ChatGPT → DeepSeek → user) about platform exit, federation, and atproto's missing middle layer.
 
 **Spec promotion gate:** Promote object model to `specifications/civic_migration_appliance.md` (stub already filed alongside this note) when an implementation, protocol sketch, or receipt format needs stable terms. Do not promote prose; promote the object model.
 

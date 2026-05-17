@@ -4,7 +4,7 @@
 
 **Operational phrasing:** *"This evidence supports caution, triage, or further inquiry; it does not support closure on the underlying claim."*
 
-**Source:** P25 §3.1 / §6.1 admissibility frame; grok reviewer Q3 + chatty lane-mapping 2026-05-12.
+**Source:** P25 §3.1 / §6.1 admissibility frame; grok reviewer Q3 + ChatGPT lane-mapping 2026-05-12.
 
 ## What it is
 

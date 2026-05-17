@@ -47,7 +47,7 @@ Papers where source version is *ahead* of Zenodo are marked `←PUSH?` in the su
 
 **Origin note:**
 
-Written 2026-04-20 during a state-validation pass that found three source-level drifts (P05 version behind Zenodo, P15 zenodo_url typo, P19 URL format inconsistency). Chatty's frame at the time: "paper ecosystem needed its own observability pass." Promoting the script from `/tmp/` to `tools/` institutionalizes the check so the next ops cycle doesn't start from scratch.
+Written 2026-04-20 during a state-validation pass that found three source-level drifts (P05 version behind Zenodo, P15 zenodo_url typo, P19 URL format inconsistency). ChatGPT's frame at the time: "paper ecosystem needed its own observability pass." Promoting the script from `/tmp/` to `tools/` institutionalizes the check so the next ops cycle doesn't start from scratch.
 
 ## `pdf_freshness.py`
 

@@ -2,7 +2,7 @@
 
 **Filed:** 2026-05-12
 **Status:** Pre-ratified program-name candidate. Not a paper title. Not a preprint directory. Not authorization to build P28.
-**Source:** Chatty brief, recorded verbatim below.
+**Source:** ChatGPT brief, recorded verbatim below.
 
 ## What this is
 
@@ -10,7 +10,7 @@ A candidate dual name for the research program implicit across the Δt corpus, t
 
 This document records the candidate so that future drafting passes can run the generator test against it. Ratification is lazy: name it now so the abstraction is available to test against future work; promote it only when the generator test starts paying off.
 
-## The dual structure (chatty's hypothesis)
+## The dual structure (ChatGPT's hypothesis)
 
 **Boundary calculus** = the formal apparatus.
 
@@ -136,7 +136,7 @@ First generator-test run. Audited P01–P24 against the candidate program name. 
 
 **P28 not forced.** What is forced is the **program note essay** (Tier 2 on the artifact ladder): declare scope, name the substrate/program split, name P22 as bridge and P18 as constitutional, name P27 as constructive closer, mark P28 as unscaffolded until forced.
 
-## Post-P27 artifact-mode change (chatty, 2026-05-12)
+## Post-P27 artifact-mode change (ChatGPT, 2026-05-12)
 
 A second finding, structurally distinct from the audit but adjacent: once P27 ships as the constructive closer, the work shifts mode.
 

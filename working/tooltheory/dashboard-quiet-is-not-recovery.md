@@ -2,7 +2,7 @@
 
 **Slogan:** Dashboard quiet is not recovered reliability unless the dashboard has standing for the harmed surface.
 
-**Source:** P25 §7 SRE / operations sibling paragraph; chatty lane-mapping 2026-05-12.
+**Source:** P25 §7 SRE / operations sibling paragraph; ChatGPT lane-mapping 2026-05-12.
 
 ## What it is
 

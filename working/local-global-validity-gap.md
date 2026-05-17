@@ -3,7 +3,7 @@
 **Status:** candidate primitive / exploratory
 **Not:** paper-numbered, Lean-lifted, sheaf-committed
 **Opened:** 2026-05-10
-**Origin:** A/B between paper-claude and DeepSeek on "candidate dynamics equivalently large to admissibility." Both AIs surfaced four candidates (drift / coupling / saturation / mimicry). Chatty named the hinge: those four are *failure surfaces*; the actual primitive is the gap they share.
+**Origin:** A/B between paper-claude and DeepSeek on "candidate dynamics equivalently large to admissibility." Both AIs surfaced four candidates (drift / coupling / saturation / mimicry). ChatGPT named the hinge: those four are *failure surfaces*; the actual primitive is the gap they share.
 
 ## The candidate
 

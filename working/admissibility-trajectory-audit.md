@@ -3,7 +3,7 @@
 **Status:** scout / audit-grounded / not primitive-promoted. Boundary object,
 not framework.
 **Originated:** 2026-05-14. claude-code-papers audit following an extended
-chatty + web-Claude generative session on "closure standing" as a candidate
+ChatGPT + web-Claude generative session on "closure standing" as a candidate
 training-signal / witness-format for deployed tool-using model systems.
 **Stance:** **Do not preserve the whole schema. Preserve the residue after
 audit.**
@@ -252,14 +252,14 @@ The test. Everything else is lineage management.
 
 ## Provenance
 
-- 2026-05-14 generative session: chatty + web-Claude tag-team produced a
+- 2026-05-14 generative session: ChatGPT + web-Claude tag-team produced a
   multi-version state-machine architecture ("closure standing") with Lean
   v1–v4 sketches, a §1–§7 paper structure, and a witness-format YAML. The
   Osprey audit trace forced the withdrawn-vs-stale distinction in v4.
 - claude-code-papers audit against the admissibility kernel + working-note
   tree found that most proposed deltas reduce to existing substrate; the
   Binding Reconciliation precedent was the controlling filing decision.
-- Structure: chatty's five-section "option-B-with-ankle-monitors" outline
+- Structure: ChatGPT's five-section "option-B-with-ankle-monitors" outline
   plus an explicit non-promotion section. Filed as boundary object, not
   framework.
 - Local retrieval for the Osprey / `custody` trace: claude project memory

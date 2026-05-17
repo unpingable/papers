@@ -30,7 +30,7 @@ working fragment
 
 ## Initial seed — 2026-05-12
 
-Filed from the P25 v1.0 follow-on conversation (grok friendly-reviewer pass + chatty's lane mapping). Four working notes covering the four lanes that fell out of P25 but did not earn a numbered slot:
+Filed from the P25 v1.0 follow-on conversation (grok friendly-reviewer pass + ChatGPT's lane mapping). Four working notes covering the four lanes that fell out of P25 but did not earn a numbered slot:
 
 - `consequence-scoping.md` — evidence may authorize inquiry/caution without authorizing closure
 - `heterogeneous-witness-cohorts.md` — witness diversity as observability diversity under preserved standing
@@ -55,7 +55,7 @@ Cross-project invariant the P25 material hands across:
 
 > **Evidence has scope. Scope limits consequence.**
 
-Tool role split (chatty 2026-05-12):
+Tool role split (ChatGPT 2026-05-12):
 
 - **NQ** observes / testifies — what the evidence can testify to.
 - **AG** authorizes / bounds — what consequence that testimony can authorize.

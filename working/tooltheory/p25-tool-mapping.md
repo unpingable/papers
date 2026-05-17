@@ -1,6 +1,6 @@
 # P25 doctrine — tool mapping
 
-Where the P25 v1.0 follow-on material sits across the tool suite. Filed 2026-05-12 from the grok + chatty lane-mapping conversation.
+Where the P25 v1.0 follow-on material sits across the tool suite. Filed 2026-05-12 from the grok + ChatGPT lane-mapping conversation.
 
 ## Mapping table
 

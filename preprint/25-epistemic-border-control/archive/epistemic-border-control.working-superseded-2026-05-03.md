@@ -36,7 +36,7 @@ Paper 24's failures freeze $V$ against updates: the system fails to learn. This 
 
 ## Minimal state decomposition
 
-Adopted essentially as-is from chatty's sketch:
+Adopted essentially as-is from ChatGPT's sketch:
 
 - $T_t$ — object-level claim quality / truth state. Latent, slow, expensive to measure.
 - $I_t$ — institutional opacity / incentive-to-hide state. Latent, usually not directly observable.
@@ -80,7 +80,7 @@ The reason the scope matters: without this conditioning, the example below reads
 
 ## Worked example: local data center opposition
 
-The example is chatty's from the seed conversation; reproduced here so the note carries its own concrete grounding. Read under the scope conditioning above: this is informal discourse at the county / regional / local-coalition level, not a formal platform-moderation case.
+The example is ChatGPT's from the seed conversation; reproduced here so the note carries its own concrete grounding. Read under the scope conditioning above: this is informal discourse at the county / regional / local-coalition level, not a formal platform-moderation case.
 
 A county learns a large data center is coming in with tax abatements, heavy power demand, opaque procurement, and possible strain on water or grid infrastructure.
 
@@ -193,7 +193,7 @@ Paralleling Paper 24's gate, with content specific to this object:
 
 **Defer the decision** until the compound-regime sim runs. Either outcome is fine; the machinery doesn't care which title it ends up under.
 
-## Adjacent literature (from chatty's pass)
+## Adjacent literature (from ChatGPT's pass)
 
 - **Perdomo et al. (2020), *Performative Prediction*.** Models change the environment they react to. Captures "Goodhart-shaped" loops but does not center rhetoric-stays-fixed objective substitution.
 - **Pagan et al. (2023), *A Classification of Feedback Loops in Automated Decision-Making Systems*.** Dynamical-systems taxonomy of feedback loops. Covers the zoology but does not isolate observability-driven target substitution as a named failure.
@@ -211,7 +211,7 @@ The novelty candidate is the *specific synthesis*: not "feedback loops exist," n
 ## Open / deferred
 
 - **Sim build.** *Single-agent minimum-viable done 2026-04-22* at `~/git/lean/paper25_substitution.py` — see §"Sim results" above. Next sim work is the Paper 23 observability-Gramian bridge (compute $\sigma_{\min}(O_T)$ across the sweep; connect to the near-kernel geometry the paper inherits from Paper 23's apparatus), followed by the compound-regime multi-agent sim (Paper 24's clean-aggregation-open-witness scaffold with observability asymmetry added). Hysteresis / asymmetric-threshold pathology is elaborative, not scope-deciding — sim that last.
-- **Full lit review.** Needed before committing to Paper 25 status. Should include: epistemic network effects, social epistemology of moderation, Goodhart variants, credibility-weighting schemes, misinformation-diffusion models. Chatty's pass is a first-pass spike, not a finished review.
+- **Full lit review.** Needed before committing to Paper 25 status. Should include: epistemic network effects, social epistemology of moderation, Goodhart variants, credibility-weighting schemes, misinformation-diffusion models. ChatGPT's pass is a first-pass spike, not a finished review.
 - **Substack vs preprint.** This concept is particularly well-suited to Substack essay form — the data center example carries a lot of the work, and the target-substitution claim lands in prose without needing formalism for lay readers. Could land as essay first, paper second if the three-test gate clears.
 - **ICU contrast case.** Paper 23's deferred ICU case may apply here too — a domain where target-substitution is especially stark and ethical stakes are high. Worth noting as a possible sibling example if the paper goes long.
 - **Note:** the compound-regime question (does Paper 24's freeze stack independently with this paper's substitution?) has been moved out of open/deferred and promoted to the decisive argument in the Paper 24 sibling-status section above. That's where the sim has to land a specific configuration to answer the scope question.

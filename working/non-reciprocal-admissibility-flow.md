@@ -2,7 +2,7 @@
 
 **Status:** Candidate / generator-tested / primitive-status pending. Filed per name-early discipline. Explicitly **not promoted.** No `NonReciprocalAdmissibility.md` in primitives. No Lean module staged.
 
-Filed 2026-05-15. Surfaced via attention-mechanism analogy (Gemini → chatty pushback), but the handle survives outside that vocabulary — see five passing non-LLM domains below.
+Filed 2026-05-15. Surfaced via attention-mechanism analogy (Gemini → ChatGPT pushback), but the handle survives outside that vocabulary — see five passing non-LLM domains below.
 
 ## Core keeper
 
@@ -86,6 +86,26 @@ Conditions for candidate → doctrine:
 - **Composition audit:** how does NRAF compose with SurfaceAuthorization specifically? Is NRAF the *neutrality-disguised* sub-case of SurfaceAuthorization, or is it cross-cutting?
 
 Not promoted. Filed.
+
+## Markets specimen + measurement-import (NEAM, 2026-05-16)
+
+Surfaced via NPC Alex's "Non-Equilibrium Attention Markets" piece (NEAM) and ChatGPT's read. NEAM derives softmax attention from MaxEnt over continuous Ising states, then argues that asymmetric `WQᵀWK` coupling breaks detailed balance, drives entropy production, concentrates the stationary attention distribution, and produces endogenous fat tails / crashes.
+
+**Treat as: markets specimen for NRAF, with two useful measurement surfaces. Not a new primitive. Not a sixth gate-firing domain instance** (it's an import of measurement vocabulary, not a domain that needs the NRAF primitive to be communicable — markets discourse already has "asymmetric information," "front-running," "informed/uninformed").
+
+**Useful imports (with guardrails):**
+
+1. **Schnakenberg entropy production rate** `Π = ½ Σᵢⱼ (πᵢpᵢⱼ − πⱼpⱼᵢ) ln(πᵢpᵢⱼ / πⱼpⱼᵢ)` as a rate-like diagnostic for non-reciprocal Markov flux.
+   - **Guardrail:** Π measures *entropy production from asymmetric flux inside a chosen Markov representation under NEAM modeling assumptions.* It is **not** an admissibility verdict. Otherwise the measurement quietly becomes the judge. The map from "Π is high" to "NRAF is occurring" requires a separate authority-status claim.
+
+2. **Herfindahl-Hirschman Index over stationary distribution** `HHI = Σⱼ πⱼ²` as a scalar for attention/influence concentration.
+   - **Guardrail:** HHI measures *concentration of effective influence.* It is **not** a laundering measure. Laundering requires the separate claim that the concentrated relation is presented as neutral measurement / scoring / market signal. Concentration without disguise is ordinary oligopoly; NRAF needs the surface-neutrality step (generator test Q4).
+
+**Symmetrization is not moral repair.** NEAM treats symmetric coupling as the equilibrium baseline, but real markets may *require* asymmetry to function (price discovery, market-making, information aggregation). The NRAF question is not "is the coupling asymmetric?" — it is "which asymmetries acquire authority while denying they are authority relations?" Symmetrization restores detailed balance in the model; it does not restore admissibility legitimacy in the world.
+
+**Public-facing payoff worth keeping:** endogenous fat tails as consequence of adaptive asymmetric attention topology rather than exogenous anomaly. Rhymes with reflexivity / structural fragility without collapsing into either. NEAM's attention-collapse → HHI spike → diffusion explosion → flash crash chain is the piece that earns the drama; it's also the piece NRAF *doesn't* need to import to stay a primitive candidate.
+
+**ChatGPT's caveats that travel:** the adiabatic approximation (attention equilibrates fast, learning slow) is load-bearing and markets often violate it; "Π rises → crash" needs an explicit failure criterion (infinite relative to *what* — liquidity, margin, coordination bandwidth?); "efficient market = MaxEnt market" is a usefully delicious slogan and a rake.
 
 ---
 
