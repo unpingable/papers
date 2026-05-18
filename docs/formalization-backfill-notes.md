@@ -112,15 +112,15 @@ Canon docs (`PAPER-MAP.md`, `CLAIM-REGISTER.md`, `docs/formalization-index.md`) 
 
 ---
 
-### P27 — *Obligation-Unsound Reconciliation (candidate)*
+### P27 — *Obligation-Unsound Reconciliation (published v1.0 2026-05-18)*
 
-**Lean status:** Local lemma support. `Admissibility.lean` skeleton sorry-free as of 2026-05-01: three real proofs against the local `admissible` definition; two `True`-placeholder discharges with deferred-real-statement docstrings (pending substrate-accusation / causal-binding predicates). Intentionally unwired into `LeanProofs.lean` umbrella — sorry-elimination does not imply wiring.
+**Lean status:** Local lemma support. `Admissibility.lean` skeleton sorry-free as of 2026-05-01: three real proofs against the local `admissible` definition (`unaccounted_implies_inadmissible`, `short_receipt_horizon_inadmissible`, `open_finding_admissible_with_durability`); two `True`-placeholder discharges with deferred-real-statement docstrings (pending substrate-accusation / causal-binding predicates). Intentionally unwired into `LeanProofs.lean` umbrella — sorry-elimination does not imply wiring. Paper §8 explicitly scopes Lean as local accounting core; distributed admissibility, three-horizon durability, and non-subordination constraint are carried by the paper model.
 
-**Paper updates pending:** P27 is candidate/scaffold. Substantive work happens in working notes; preprint paper.md not yet drafted.
+**Paper updates pending:** None — v1.0 published 2026-05-18, DOI `10.5281/zenodo.20275071`. Future v1.1 candidates: TLA-disjointness one-liner in §2; abstract sentence adding non-subordination alongside the three-horizon framing; §5 table footnote distinguishing kernel-`openFinding` from deferred-eligible predicates.
 
-**Discipline note:** Do not vocabulary-design through Lean until worked cases force the predicates. The `True` placeholders are deliberate; "kill the sorrys, don't let the sorrys design the constitution" is the active rule.
+**Discipline note:** Do not vocabulary-design through Lean until worked cases force the predicates. The `True` placeholders are deliberate; "kill the sorrys, don't let the sorrys design the constitution" is the active rule. Two predicates (`substrateAccusation`, `receiptOutlives`) cleared the two-case forcing gate but are not promoted in v1.0 — would be constitution-by-typechecker without a downstream composing theorem.
 
-**Out of scope (intentional):** Concrete substrate-accusation and causal-binding predicates (deferred until P27 working notes force them); wiring into `LeanProofs.lean` (deferred until predicates land).
+**Out of scope (intentional):** Concrete substrate-accusation and causal-binding predicates (deferred until a downstream composing theorem forces them); wiring into `LeanProofs.lean` (deferred until predicates land).
 
 ---
 

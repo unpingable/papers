@@ -103,7 +103,7 @@ def main() -> int:
     lean_files = []
     for src_root in [LEAN_REPO / "LeanProofs"]:
         if src_root.exists():
-            lean_files += list(src_root.glob("*.lean"))
+            lean_files += list(src_root.rglob("*.lean"))
     # .py files at the top of the lean repo (e.g., dc_dh_persistence.py)
     if LEAN_REPO.exists():
         lean_files += list(LEAN_REPO.glob("*.py"))

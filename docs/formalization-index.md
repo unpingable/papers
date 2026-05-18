@@ -16,7 +16,7 @@ The Lean repository at `~/git/lean` (public: <https://github.com/unpingable/lean
 - Lean modules in `~/git/lean/LeanProofs/`:
     - Paper-anchored: `TaxonomyGraph.lean`, `BranchSelector.lean`, `PersistenceModel.lean`, `OpsMasking.lean`, `Paper24SharedVision.lean`, `Paper25EpistemicBorderControl.lean`
     - No paper anchor: `RepairOperator.lean`
-    - P27 skeleton (sorry-free as of 2026-05-01, intentionally unwired): `Admissibility.lean`
+    - P27 anchored (sorry-free as of 2026-05-01, intentionally unwired; paper v1.0 published 2026-05-18 DOI `10.5281/zenodo.20275071`): `Admissibility.lean`
     - Infrastructure substrate kernel: `Admissibility/Authority.lean`, `Admissibility/StateTransition.lean`, `Admissibility/Derivation.lean`, `Admissibility/Execution.lean`, `Admissibility/Corrective.lean`
 - Lean modules in `~/git/babyriver/lean/BabyRiver/` are kernel modules for Phase 1 population dynamics
 
@@ -249,7 +249,7 @@ These are not "never" candidates — just not current. If the Lean stack grows d
 
 The kernel is **Governor-neutral**: it pins the algebraic skeleton so a concrete Governor (`agent_gov`) instantiation can cite "no laundering" with a formal warrant rather than a slogan. Concrete `claimForStep` resolvers and `AuthorityClaim` schema commitments are deferred to Governor's instantiation, not the kernel itself; pre-committing the resolver here would be ontology bait.
 
-Existing P27 `Admissibility.lean` (namespace `P27`) sits alongside but independent: P27 is post-transition obligation accounting; the kernel is pre-action authorization. Complementary, not duplicate. As of 2026-05-01 the P27 skeleton is sorry-free (three real proofs against the local `admissible` definition; two `True`-placeholder discharges with deferred-real-statement docstrings pending substrate-accusation / causal-binding predicates). Intentionally unwired — sorry-elimination does not imply wiring. The kernel does not subsume P27 and P27 does not cover the kernel's authority-gate question.
+Existing P27 `Admissibility.lean` (namespace `P27`) sits alongside but independent: P27 is post-transition obligation accounting; the kernel is pre-action authorization. Complementary, not duplicate. The P27 skeleton is sorry-free (three real proofs against the local `admissible` definition: `unaccounted_implies_inadmissible`, `short_receipt_horizon_inadmissible`, `open_finding_admissible_with_durability`; two `True`-placeholder discharges with deferred-real-statement docstrings pending substrate-accusation / causal-binding predicates). Intentionally unwired — sorry-elimination does not imply wiring. Paper v1.0 published 2026-05-18; P27 §8 explicitly scopes the Lean kernel as local accounting core, with distributed admissibility and three-horizon durability carried by the paper model rather than the kernel. The kernel does not subsume P27 and P27 does not cover the kernel's authority-gate question.
 
 See `LeanProofs/Admissibility/README.md` in the Lean repo for the five-module breakdown and an explicit "what it warrants vs what it does not warrant" list.
 
