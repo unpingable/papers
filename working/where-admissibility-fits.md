@@ -20,6 +20,8 @@ Every shape below is, underneath, asking one question:
 
 Different communities have different vocabularies for the parts. The constellation supplies a compact decomposition.
 
+> **Admissibility is the layer where Δt becomes enforceable or evasible.** Other layers can be timely or untimely without temporal coherence becoming jurisdictional. (Multi-model relay 2026-05-18; longer multi-axis form at `agi-requirements-framework.md:767`.)
+
 ## Core pattern
 
 Every admissibility decision involves seven parts:
@@ -66,6 +68,23 @@ Monitoring asks *what happened*. Admissibility asks *whether what happened may b
 
 ### Supply-chain attestation (SLSA / in-toto / Sigstore)
 Provenance, signed receipts, transitive trust — already half-admissibility-shaped. The gap: *provenance is not standing.* SLSA today does not have a structured place for "this attestation is qualified for this regime but not that one." Aggregator-contamination ($D_A$) shows up as which attestations get surfaced and how transitive trust is computed.
+
+### Coordinated vulnerability disclosure (CVE / CVD)
+A reporter discovers V in product P; a CNA (one of ~400 — Mitre, GitHub, Red Hat, Apple, etc.) mints a CVE-ID; the vendor confirms / disputes / scopes; NVD scores CVSS separately; downstream scanners, compliance, and procurement bind remediation. Seven-part mapping:
+
+- **Claim:** *V exists in P versions R, allowing impact I via prerequisite C.*
+- **Evidence:** PoC, reproduction, static-analysis trace, sometimes a working exploit.
+- **Standing:** *forked across at least five roles* — reporter (claim) / CNA (publication-mint) / vendor (confirm/dispute/scope) / NVD (independent scoring) / downstream (remediation-binding).
+- **Scope:** affected product+version range; expands post-publication as variants surface.
+- **Precedence:** RESERVED / PUBLIC / DISPUTED / REJECT state graph; non-monotone in publication time.
+- **Consequence:** patch obligation, scanner alert, compliance flag, procurement block, regulatory action (DORA, NIS2).
+- **Receipt:** CVE record + CVSS vector + advisory. The CVE-ID is the canonical bearer.
+
+Two worked examples illustrate that the kernel handles the strain without new primitives:
+
+**DISPUTED is not gap.** A DISPUTED CVE carries reporter's positive claim and vendor's denial as concurrent first-class entries; both retain Receipt-issuing standing; consumers adjudicate downstream. The multi-mint allowance from `authority-observable-not-constructible.md` (each trust boundary mints its own Authority; consumers compose) encodes persistent multi-party disagreement without a "parallax" or "posted-disagreement" primitive. Cross-CNA scoring divergence (NVD vs. vendor CVSS) is structural permission, not bureaucratic dysfunction.
+
+**Embargo as temporal-scope specimen.** Between reporter→vendor contact and publication, the CVE has standing inside the embargo group and none outside; publication is a scope-of-standing expansion at time T. Second named instance of the temporal-scope gap tracked at `admissible-recovery-semantics.md` §11 Open Question 5 and the Δt crosswalk above (specimen 1: evaluator-mutation laundering). Tracking, not promoting.
 
 ### Compliance and audit
 A logged control is not necessarily evidence with standing. SOC2 / HIPAA / FedRAMP tooling routinely treats *the control was logged* as *the evidence has standing.* That collapse is exactly the gap the constellation targets. Auditors actually want the temporal-admissibility split (state moved / authority fell off / verdict at decision time); current tooling does not articulate it.

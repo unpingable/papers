@@ -54,6 +54,14 @@ Independent failure modes. A substrate that handles construction but not spend (
 
 The classic laundering path — *"audit artifact says authorized, therefore I can act"* — is structurally wrong. `apply` consumes the Authority, not the Receipt. The receipt can say whatever the receipt says; what makes the action legitimate is that the Authority was minted by the decision function and is being spent (not replayed) by this specific call.
 
+**Sibling aphorisms (fossil-bed harvest, 2026-05-19):**
+
+> **A cached answer is not fresh authority. It is authorized staleness.** *(DNS — RFC 1034 zone-authoritative vs cached-resolver split.)*
+>
+> **Delivery is not endorsement. Receipt is not agreement.** *(SMTP / RFC 822 envelope-vs-content custody trace.)*
+
+DNS encodes the receipt/authority distinction as cache-TTL vs zone-authoritative answer: a cached resolver answer carries the prior verdict but not the standing to mint a fresh one. SMTP encodes it as envelope-vs-content custody trace: the transport path delivered the message, but delivery is not the recipient's endorsement of the content. Both are 1980s precedents for the same structural split the kernel encodes today.
+
 ## Vocabulary lock
 
 The probes surfaced enough adjacent vocabulary that drift is a real risk. Lock these six terms:
@@ -144,7 +152,7 @@ The doctrine in operational form: a checklist, not a slogan.
 
 ## Connection to existing constellation
 
-- **Authority + StateTransition + Derivation + Execution + Corrective Lean kernel** (`~/git/lean/LeanProofs/Admissibility/`): clean instance of construction discipline isolated from the other two axes. `AuthorityVerdict` derives `DecidableEq, Repr` — the Receipt half. `AuthorizedStep` derives nothing and is consumed by `executeIfAllowed` against proof obligations — the Authority half. The split is structurally present in the kernel today; this doctrine adds vocabulary, not new structure. Spend discipline (replay) and serialization discipline (re-derive `StepAllowed` on the receiving side) are *not* covered by the Lean kernel; an executor that pickles state across processes must add them. Lean's consumption is propositional, not affine — the Erlang-shaped registry is the right pattern for an executor, not the Rust-shaped move.
+- **Authority + StateTransition + Derivation + Execution + Corrective Lean kernel** (`~/git/lean/LeanProofs/Admissibility/`): clean instance of construction discipline isolated from the other two axes. `AuthorityVerdict` derives `DecidableEq, Repr` — the Receipt half. `AuthorizedStep` derives nothing and is consumed by `executeIfAllowed` against proof obligations — the Authority half. The split is structurally present in the kernel today; this doctrine adds vocabulary, not new structure. Spend discipline (replay) and serialization discipline (re-derive `StepAllowed` on the receiving side) are *not* covered by the Lean kernel; an executor that pickles state across processes must add them. Lean's consumption is propositional, not affine — the Erlang-shaped registry is the right pattern for an executor, not the Rust-shaped move. **Executable composition example:** `Admissibility.Examples.MultiReceiptComposition` (bottom of `Derivation.lean`) exhibits two `DerivationEnv` values producing opposite `AuthorityVerdict`s on the same `(state, actor, claim)` triple — each env mints within its own trust boundary, the kernel produces both Receipt-shaped verdicts without a resolver theorem, consumer-side adjudication is structural permission, not workaround. Show-don't-extend; CVD specimen.
 - **`working/accountable-mutation-os-layer.md`** (construction-discipline addendum, 2026-05-06 late): the proto-doctrine. Surfaced the validity-vs-construction distinction, named the **Sealed Outcome Boundary**, articulated the four-move framing. This writeup is the cross-substrate cash-out of that addendum.
 - **`working/breach-mistaken-for-authorization.md`**: sibling primitive on the historical-failure axis. The construction-discipline doctrine is the structural anti-pattern; breach-as-authorization is what happens when consumers discover they can construct authority by precedent and the system has no native vocabulary to refuse the move.
 - **agent_gov / standing / receipt_kernel** (Python): the family this doctrine is for. The Ada probe surfaced a real laundering vector — `StandingReceipt` is `frozen=True` but freely constructible; `AuthorizationVerdict` had no minter at all. The receipt_kernel attestation layer is intentionally open-construction (a fake PASS is an attestation-integrity problem, not a construction-discipline problem); the agent_gov / standing mint layer is what needs sealing. Conflating the two layers was an early framing error this doctrine prevents.

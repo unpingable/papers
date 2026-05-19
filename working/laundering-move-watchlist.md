@@ -25,6 +25,17 @@ The systems-ops analogue: you do not predict every outage; you know cache-stalen
 
 That's the gate between haunted zoo and anti-laundering doctrine.
 
+## Compressed-specimen quad
+
+Multi-model relay 2026-05-18, ChatGPT compression of the laundering pattern as it lands at the admissibility boundary:
+
+> *A risk score becomes a refusal.*
+> *A story becomes a warrant.*
+> *A vibe becomes policy.*
+> *A dashboard becomes jurisdiction.*
+
+Each line is a prose specimen of existing Section A / B entries — diagnostic→verdict + numerical-kind→admissibility-kind; narrative→standing; register-narrowness→admissibility-narrowness; visibility→accountability + receipt→consequence. Aphorism-shaped recognition vocabulary, not new primitives.
+
 ---
 
 ## Entry template
@@ -88,8 +99,9 @@ ChatGPT's 2026-05-16 seed list, lightly trimmed and cross-referenced. These are 
 | **Prediction → control right** | epistemic access | operational standing | controller-continuity (sibling axis) |
 | **Publicness → harmlessness** | public data | safety of recomposition | privacy-adjacent; civic-migration-appliance fragments; specimen card with XOR construction at `laundering-move-math-leads.md` § 7 (recurrence-gate 1/3) |
 | **Receipt → consequence** | record of event | enforcement of consequence | sibling of visibility→accountability; receipt-doctrine adjacent |
+| **Schedule → standing** | scheduled execution / cron firing | license to bind / authority for the action to matter | commitment-standing-decay-candidate; admissibility-decay family. Keeper (cron fossil, 2026-05-19): *Schedule is not standing.* — "this ran" laundering into "the world was in a valid state for it to run." |
 
-Twelve handles. Several have strong existing-neighbor matches — those should be checked for whether the existing primitive *already covers the move* before any new handle gets minted. Treat the handle column as recognition vocabulary, not as new doctrine.
+Thirteen handles. Several have strong existing-neighbor matches — those should be checked for whether the existing primitive *already covers the move* before any new handle gets minted. Treat the handle column as recognition vocabulary, not as new doctrine.
 
 ---
 
@@ -116,6 +128,8 @@ ChatGPT's analogy table 2026-05-16. Pure diagnostic device: when a laundering mo
 | Replay attack | Prior authorization reused after standing expires |
 
 Diagnostic-only. Not a taxonomy promotion. The analogy table is allowed to be imprecise as long as it accelerates recognition; do not formalize the mapping.
+
+**Cited fossil (2026-05-19):** the *Privilege escalation* row's canonical historical specimen is SNMP — *the same channel that observes state must not silently acquire standing to mutate it.* The SNMP management-plane is the worst-case fossil for what happens when observation and mutation share one vocabulary; the row is the abstract shape, SNMP is the worked example. Also surfaced in `authority-observable-not-constructible.md` (sealed-mint discipline) and `StateTransition.lean`'s `PolicyStore` trapdoor (only `Step.amendPolicy` may touch policy, even with mutation standing).
 
 ---
 

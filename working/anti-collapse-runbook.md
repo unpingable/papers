@@ -98,6 +98,44 @@ Filing levels, in order of escalating commitment:
 
 ---
 
+## Section 2½: Kernel-overlap audit (external input variant)
+
+Sibling to Section 1's anti-collapse pass. Anti-collapse is for *generative-loop* containment — when a conversation throws off shiny field-shaped fragments from inside the operator's own thinking. This procedure is for *external-input* containment — when an LLM relay, an adjacent-domain mapping, or a proposed module/paper sketch arrives carrying register-consistent novelty claims that may or may not already be in the kernel.
+
+The discipline is the same as `feedback-kernel-overlap-audit` in memory, in repo-public operational form.
+
+**Procedure:**
+
+1. **Identify candidate** — transcript, adjacent domain, proposed module, suspicious shiny object.
+2. **Run seven-part mapping** against the kernel: *claim / evidence / standing / scope / precedence / consequence / receipt.*
+3. **Classify strain** at each point: *prose-only / implementation-level / forcing-case-pending / resist-the-primitive.*
+4. **Recommend smallest warranted artifact**: A (narrow patch) / B (breadcrumb or watchlist-count increment) / C (no artifact). Default toward smallest.
+5. **Update recurrence counts** for any open gap the audit instantiates a second/third specimen of. Do not promote on count < 3 unless the domains are structurally distinct.
+
+**Consumer-check discipline (added 2026-05-19):**
+
+Consumer-checks must enumerate the **repo constellation** explicitly. Before claiming *"no current consumer,"* the audit must list checked repos (`agent_governor`, `nq`, `continuity`, `wlp`, `resonance`, `standing`, `custody`, `verifier`, `cadence`, `dossier`, `nq-witness`, plus any others currently in the constellation) and mark uninspected repos as *out-of-aperture*. Conversational salience is not evidence of absence. The 2026-05-19 metric-time-admissibility audit nearly recommended B (working note only) because its consumer-check defaulted to the conversationally-salient set (agent_gov, NQ, Wicket, papers, Lean) and missed Standing — which is a complete production-quality reference implementation of the exact gap being audited. The graybeard correction surfaced Standing; the audit-procedure step was where the aperture-bounded claim should have been caught.
+
+**Speculative-recurrence-gating vs. consumer-backed build-gating (added 2026-05-19):**
+
+The count gate (step 5 above) applies to *speculative* primitives — a candidate gap with N domain specimens but no concrete consumer in the repo constellation. A live consumer that already implements the structure changes the regime: a small axis-kernel may be authorized even when the recurrence count is below the primitive-promotion threshold. The discipline is the same (smallest-warranted-artifact, default toward smallest, scope-fence the build); what changes is which gate applies. *Build because a consumer needs it, not because three speculative specimens have stacked up.*
+
+| Situation | Rule |
+|---|---|
+| No live consumer, repeated structural fanout only | speculative recurrence-gate / candidate note |
+| Live consumer already implements the shape | small axis-kernel may be authorized |
+| Grand metaphysical module name appears | spray bottle |
+
+**Operator rule:**
+
+> *Audits surface confirmation, strain, and maintenance drift. They do not authorize new modules by themselves. Modules require independent forcing cases — either three structurally-distinct domain specimens, or one live consumer in the repo constellation.*
+
+The procedure has been performed cleanly three times (2026-05-18 LLM-relay audit → README staleness + two prose residues; 2026-05-19 CVD seven-part mapping → one application-map patch + temporal-scope specimen-count increment; 2026-05-19 metric-time-admissibility audit → consumer-backed `Admissibility/Freshness.lean` build, after the consumer-check aperture failure was corrected). It has earned a five-line checklist plus two procedural-discipline addenda; it has not earned doctrine register or a Lean encoding of its own.
+
+Acceptable residues from a clean audit: README updates, application-map entries, watchlist-count increments, sentence-shaped crosswalks, and — when a live repo-constellation consumer is named — a small axis-kernel sibling. Not acceptable from an audit alone: a new paper dir, a new primitive name, a new methodology essay, or a Lean module without either three structurally-distinct specimens or a confirmed consumer.
+
+---
+
 ## Section 3: Failure modes
 
 The named failure modes the runbook is designed to catch. Each is a real pattern, not theoretical.

@@ -18,6 +18,12 @@ The companion structural claim — paper-shaped, also staged:
 
 These two lines are the candidate keepers from the OS authority-substrate survey (gnat-claude `survey_os_authority_substrates.md`, finding 6). Both are stronger than substrate-family-expansion alone; both are what makes the OS work earn its keep beyond extending the gnat lab matrix. Both are held pending row review.
 
+**Sibling formulation (AFS callbacks, fossil-bed harvest 2026-05-19):**
+
+> **Freshness can be leased, but only if the revocation channel exists.**
+
+AFS callbacks encode this in pull-mode: a client treats cached state as valid until the server breaks the callback promise. The lease is real only if the revocation channel exists; otherwise it is silence wearing a fake badge. The 1985 AFS implementation is a worked-out case for *how* the revocation channel must be structured to actually bind — sibling to seL4's `cap_revoke` walking the derivation tree (substrate-side) and to the same-K corrective discipline in `Corrective.lean` (kernel-side). The callback pattern is `corrective_no_authority_laundering` in pull-mode rather than push-mode: revocation must be *channel-present*, not merely *theoretically possible*, or the lease is fake.
+
 ## Why this is a separate axis (the 5a/5b split)
 
 The 5a/5b split — attenuation vs revocation as separate columns in the OS survey — was earned post-survey by row pressure. Capsicum, Hurd, macaroons, and Fuchsia each had distinct stories for the two mechanisms, and bundling them into one bullet papered over the substrate divergence. Promoted retroactively, same shape as the 4a/4b (confer / recognize) and 7a/7b (inter-task / inter-host) splits.
