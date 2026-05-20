@@ -134,6 +134,31 @@ Canon docs (`PAPER-MAP.md`, `CLAIM-REGISTER.md`, `docs/formalization-index.md`) 
 
 ---
 
+### AxisSkew — directional comparison kernel (added 2026-05-20)
+
+**Lean status:** Formal model fragment. `LeanProofs/Admissibility/AxisSkew.lean`. `lake build` green, no `sorry`. Three theorems:
+
+1. `not_lagging_and_leading_same_axis` — classification is functional; no single (prior, observed) pair is both lagging and leading.
+2. `classify_self` — comparing a value to itself classifies as `matched`, given irreflexivity at that point.
+3. `reverse_lagging_is_leading` — swapping (prior, observed) argument order swaps lagging ↔ leading; the classification is orientation, not verdict (requires asymmetry of the supplied relation).
+
+The comparison relation is consumer-supplied; the kernel keeps the underlying order opaque so partial, preorder, lattice, and total orderings can each be its argument. No `ClaimAxis` enum in kernel.
+
+**Companion working primitive:** `working/primitives/memory-skew.md` (candidate, Kind: Axis). Operator-facing application; carries the five candidate axes (recency / completeness / authority / capability / integration) which are explicitly not kernel-pinned.
+
+**Forcing residue:** Stale Binding is the substrate-rich primitive for the *lagging direction* (caches, hat-x estimates, briefings, P23–P27). The *leading direction* — prior overclaims observed state — had no equivalent general primitive before this. Time-axis bidirectional was already in `Freshness.lean` (NotYetValid / Expired). The new module supplies the substrate-general bidirectional kernel.
+
+**Discipline note:** This module is the *positive* counterpart to the AWP audit's null result two days prior. Same gate (kernel-overlap audit before any new module), opposite outcome — the audit surfaced residue that did *not* collapse into existing substrate. Specifically the leading direction generally + the orientation theorem (reverse_lagging_is_leading) had no formal home. Strict scope discipline applied throughout: no `ClaimAxis` enum, no `Corrective` import, no operational authorization theorem, no calculus naming.
+
+**Out of scope (intentional):**
+- Five-axis `ClaimAxis` enum (operator-facing taxonomy, lives in `memory-skew.md` not kernel).
+- Operational bridge theorem *"lagging may support correction, not authorize mutation"* — would compose with `Corrective` / `Authority`; deferred until a live consumer needs it.
+- Symmetric leading-direction bridge *"leading may support refusal of binding, not authorize forward mutation"* — same deferral.
+- Subsumption of Stale Binding into AxisSkew (parallel relationship preserved; stale-binding's consequence-window machinery is substrate detail the kernel does not absorb).
+- Trichotomy theorem in cleaner LinearOrder form — held until a consumer needs it.
+
+---
+
 ### Adversarial Witness Protocol — kernel-overlap audit (no module warranted)
 
 **Lean status:** No new Lean support. AWP working note at `working/adversarial-witness-protocol.md` is a protocol-level articulation of existing no-attribution and witness-discipline kernels; no new module added.
@@ -159,3 +184,4 @@ Canon docs (`PAPER-MAP.md`, `CLAIM-REGISTER.md`, `docs/formalization-index.md`) 
 
 - **2026-05-03** — File created. Initial seed entries for P15, P18, P22, P23, P24, P25, P26, P27, and the Admissibility kernel. Captures current deltas after P25 Lean spine completion. Subsequent entries land here as deltas accumulate; canon backfill (per-paper appendix updates, audit-doc reorganization) deferred until P25–P27 cluster stabilizes.
 - **2026-05-19** — AWP kernel-overlap audit entry added. Null result: no new module warranted. AWP backed by existing CollapsedSurface / PublicReceiptRefinement / SurfaceAuthorization theorems. Two candidate handles (advance tombstone, aggregation-as-authority-laundering) held as named-not-promoted.
+- **2026-05-20** — `AxisSkew.lean` added. Three theorems, lake build green. First positive Lean addition since the AWP-audit null result two days prior — same audit gate, opposite outcome. Companion primitive `memory-skew.md` filed as candidate (Kind: Axis); parallel-not-subsumed relationship with Stale Binding preserved.
