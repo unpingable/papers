@@ -50,6 +50,7 @@ Plus:
 ## Subsequent additions
 
 - `affective-coupling.md` (2026-05-20) — runtime/social-loop diagnostic candidate. Toxic basin = response affect invariant to input affect; affective capture = prior response predicts current response better than input does. Two-layer split between runtime monitor (Python/etc) and (not-yet-staged) Lean classification semantics. labelwatch / driftwatch-adjacent. Held at note; Lean kernel **not** authorized — fourth on the promotion ladder, not first.
+- `documentation-keepers.md` (2026-05-20) — fossil-bed pass holding area for sharper compressions of existing doctrine awaiting a documentation-legibility pass. *Not* a deferred-build register (that lives at `working/parked-leads.md`); *not* new doctrine. Holds keeper sentences whose underlying claims are already in place but whose canonical homes haven't received a compression pass yet. Separated from `parked-leads.md` because the custody state is different — these wait for docs passes, not for build forcing-cases.
 
 ## Stance
 
