@@ -47,6 +47,10 @@ Plus:
 - `p25-tool-mapping.md` — cross-tool mapping table for P25 doctrine
 - `lean-candidates.md` — candidate Lean predicate names for whatever survives the cooking
 
+## Subsequent additions
+
+- `affective-coupling.md` (2026-05-20) — runtime/social-loop diagnostic candidate. Toxic basin = response affect invariant to input affect; affective capture = prior response predicts current response better than input does. Two-layer split between runtime monitor (Python/etc) and (not-yet-staged) Lean classification semantics. labelwatch / driftwatch-adjacent. Held at note; Lean kernel **not** authorized — fourth on the promotion ladder, not first.
+
 ## Stance
 
 > Tool theory is where paper doctrine becomes operational boundary discipline before any specific tool is allowed to own it.
