@@ -134,6 +134,28 @@ Canon docs (`PAPER-MAP.md`, `CLAIM-REGISTER.md`, `docs/formalization-index.md`) 
 
 ---
 
+### Adversarial Witness Protocol — kernel-overlap audit (no module warranted)
+
+**Lean status:** No new Lean support. AWP working note at `working/adversarial-witness-protocol.md` is a protocol-level articulation of existing no-attribution and witness-discipline kernels; no new module added.
+
+**Audit performed:** 2026-05-19. Three proposed Lean claims tested against `FiatAdmissibility`, `PublicReceiptRefinement`, `WitnessInvariance`, `SurfaceAuthorization`:
+
+1. *Observation can refute declared operational consistency* — collapsed into existing artifact-classification substrate (`FiatAdmissibility.classify` already refuses spurious support claims by artifact kind). Observational variant would be bare modus tollens, no kernel content beyond schema-as-prose.
+2. *Refutation does not imply causal attribution* — **already directly covered** by `CollapsedSurface.collapsed_surface_not_identified` + `PublicReceiptRefinement.refines_without_identification` + `SurfaceAuthorization` keeper line (*"A collapsed surface may authorize inquiry. It may not authorize attribution."*). This is the strongest finding: AWP's §0 motive-claim guardrail is the prose articulation of theorems the kernel has carried since Paper 25 / CollapsedSurface landed.
+3. *A witness artifact cannot certify legitimacy without changing type* — enforced by structural type discipline (no `Witness → Verdict` constructor anywhere in the kernel). Not theorem-shaped; Lean's type system carries this without explicit statement.
+
+**Candidate handles surfaced — held as named-not-promoted:**
+
+- *Advance tombstone / pre-committed voluntary admissibility revocation* — sibling to admissibility-decay family. Needs non-AWP recurrence before earning Lean residue.
+- *Aggregation-as-authority-laundering* — `ContradictionLog ↛ HealthScore` is consumer-side prohibition (doctrinal-rule shape), not kernel claim. Lean can refuse to provide such a constructor but cannot prevent downstream consumers from writing one. Hold.
+
+**Discipline note:** This audit is the kernel-overlap-audit memory rule (`feedback-kernel-overlap-audit`) working as designed. The closure-standing precedent (2026-05-14, ~30k words collapsed into existing substrate) is the cautionary scar; the AWP case is the same shape at smaller scale. AWP's structural residue is zero modules; the doctrine residue lives in the working note. Tiny goblin version per the working note: *AWP is not a tool. It is a refusal pattern with YAML tendencies.*
+
+**Out of scope (intentional):** `ObservedDecoupling.lean` (would be true-but-redundant); `Tombstone.lean` (premature, single instance); aggregation-as-laundering theorem (not kernel-shape, deferred); docstring cross-references inside `SurfaceAuthorization.lean` or `CollapsedSurface.lean` (held — risk of staple-receipt-to-receipt without future-reader benefit).
+
+---
+
 ## Change log
 
 - **2026-05-03** — File created. Initial seed entries for P15, P18, P22, P23, P24, P25, P26, P27, and the Admissibility kernel. Captures current deltas after P25 Lean spine completion. Subsequent entries land here as deltas accumulate; canon backfill (per-paper appendix updates, audit-doc reorganization) deferred until P25–P27 cluster stabilizes.
+- **2026-05-19** — AWP kernel-overlap audit entry added. Null result: no new module warranted. AWP backed by existing CollapsedSurface / PublicReceiptRefinement / SurfaceAuthorization theorems. Two candidate handles (advance tombstone, aggregation-as-authority-laundering) held as named-not-promoted.
