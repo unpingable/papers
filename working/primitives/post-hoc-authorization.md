@@ -9,9 +9,11 @@
 
 > **Lucky is not authorized.**
 
-Adjacent line:
+Adjacent lines:
 
 > Success after the fact cannot mint prior authority.
+
+> **No transition may smuggle its warrant backward from the state it creates.** *(Formal/transition-system register, added 2026-05-21 from a Federalist-Papers riff with ChatGPT + DeepSeek. The anti-time-travel rule for authority: the witness authorizing S → S′ must already be valid in S, not created by S′.)*
 
 ## Failure shape
 
@@ -36,6 +38,39 @@ Post-hoc authorization laundering occurs when:
 - After $t'$, the success outcome is invoked as evidence that authorization was present at $t$.
 
 The error is *temporal direction*: post-$t'$ outcome evidence is being used to claim pre-$t$ authority. Outcome surfaces do not testify backward across causality.
+
+## Decision branches (transition-system shape)
+
+For a candidate transition $S \to S'$ whose authorization is being evaluated:
+
+| Branch | Verdict | Reading |
+|---|---|---|
+| Witness already valid in $S$ | **Allowed** | *"This rule existed before the change and permits this change."* The standard case. |
+| Witness created by $S'$ | **Denied** (backward smuggling) | *"After the change, there will be a rule saying the change was permitted."* The post-hoc authorization core case. |
+| Witness *is* the transition artifact | **Denied** (self-validating transition) | *"The artifact produced by the transition is also the proof that the transition had authority."* A specific sub-case of backward smuggling where the change and its warrant are the same object. |
+| Witness valid in $S$ but only because it is entrenched against renewal | **Suspicious / deferred** | *"The old rule permits this, but only because it has outlived the substrate that justified it."* Handoff to [[stale-binding]] / [[project-commitment-standing-decay]] — the witness *is* in $S$ (so this is not post-hoc smuggling), but its presence in $S$ is itself a separate admissibility question. |
+
+The fourth branch is the load-bearing one for cases where Post-Hoc Authorization isn't quite the right diagnosis but the transition still smells wrong. The first three are temporal-direction failures (warrant flow from future-state back to past-state); the fourth is a temporal-persistence failure (warrant flow from past-state into present-state without renewal) — Post-Hoc's sibling on the temporal-authority axis, not Post-Hoc itself.
+
+## Do not collapse: self-certification vs. self-entrenchment
+
+The second and fourth branches above describe different errors and should not be conflated, even though both can produce *"this transition smells unauthorized"* reactions.
+
+**Self-certification** is when the proposed authority validates itself:
+
+> *This transition is authorized because the state produced by the transition says it was authorized.*
+
+This is the canonical Post-Hoc Authorization case (branch 2). The witness for $S \to S'$ exists in $S'$ but not in $S$. The transition is its own warrant.
+
+**Self-entrenchment** is when existing authority protects itself from revision:
+
+> *This rule was already valid in $S$, and it constrains future changes to itself.*
+
+This is branch 4. The witness genuinely is in $S$ — self-entrenchment is *not* post-hoc authorization. The error (when there is one) is in a different layer: stale-basis authority, foreclosed renewal, [[project-commitment-standing-decay]]. Self-entrenchment may be **formally valid** while still raising serious admissibility concerns about whether the entrenched basis still tracks present substrate.
+
+The distinction matters because the *countermeasure* is different. Self-certification refuses at the transition gate (Post-Hoc verdict; CollapsedSurface + SurfaceAuthorization machinery already handles it). Self-entrenchment refuses upstream of the transition, by asking whether the entrenched rule still has authority over present conditions — a renewal question, not a witness-time-direction question.
+
+Worked example of self-entrenchment that is *not* Post-Hoc: U.S. Constitution Article V's equal-Senate-suffrage clause — the rule blocks its own modification absent state consent. The witness predates any candidate transition; the question is whether the entrenched witness still has standing, not whether it's been backward-smuggled. Wrong tool: Post-Hoc verdict. Right tool: stale-basis / renewal-failure audit.
 
 ## Verdict naming
 
@@ -105,3 +140,5 @@ Until then: named pattern, kernel-backed, no implementation.
 ## Provenance
 
 Emerged from the 2026-05-20 eight-slice brainstorm following the morning's MemorySkew/AxisSkew work and the methodology discussion about *specification vs attack*. Identified as the strongest genuinely-new candidate from the brainstorm after audit ruled out seven other slices. The pattern was floating in the operational substrate of multiple repos without a named handle; this note supplies the handle and points to the existing kernel underneath. Per the gate stack: handle filed, predicate stated, fixture deferred to Wicket/AG, kernel work refused.
+
+**2026-05-21 additions.** Federalist-Papers riff (operator + ChatGPT + DeepSeek) re-derived the same rule under transition-system framing — *"a transition S → S′ is authorized only if the witness authorizing S → S′ is already valid in S, not created by S′"*. Kernel-overlap audit fired clean (per [[feedback-kernel-overlap-audit]] keeper *"the system can do X ≠ X is justified"*) — same rule, different domain, no new note minted. Two pieces folded in: (1) the formal-register keeper *"No transition may smuggle its warrant backward from the state it creates"* added alongside the original operator-register keepers; (2) the four-branch decision table (Allowed / Denied / Denied / Suspicious-deferred) added as a new section, with the fourth branch explicitly handing off to stale-binding / commitment-standing-decay rather than collapsing into Post-Hoc. The Federalist-Papers domain (Senate representation, founding compromise, constitutional renewal) has now generated two closely-related re-derivations of the temporal-authority kernel this week — useful as worked-example terrain, not as a source of new theorems.
