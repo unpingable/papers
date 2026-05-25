@@ -159,6 +159,40 @@ The comparison relation is consumer-supplied; the kernel keeps the underlying or
 
 ---
 
+### AuthorizedNotSafe — Phase 1 frontier specimen for Admissibility ≠ Safety Bridge (added 2026-05-24)
+
+**Lean status:** Formal model fragment. `LeanProofs/Admissibility/AuthorizedNotSafe.lean`. Root-wired via `LeanProofs.lean`. `lake build` green, no `sorry`. One theorem (`authorized_not_safe`): exhibits a `StepAllowed` witness and a `Nat`-valued defended-value function such that the defended value strictly decreases across the authorized step. `WHAT-THE-LEAN-STACK-PROVES.md` updated with the non-claim disclosure.
+
+**Scope clause:** Wound is at the `StepAllowed` layer only. The full `AuthorizedStep` structure (Execution.lean) requires both `stepAllowed` and a claim-side `stepAuthorityVerdict = authorized` witness, so its inhabitants form a *subset* of `StepAllowed`'s; a witness at the superset does not, on its own, exhibit one at the subset. Transfer to `AuthorizedStep` is explicitly *not settled* by this file.
+
+**Consistency caveat:** The two value axioms (`defendedValue_initial = 1`, `defendedValue_after = 0`) jointly imply `scenarioState ≠ applyStep scenarioState scenarioStep`; the 1.0 surface does not establish this distinction either way. The file is therefore an *axiomatically-inhabited counter-scenario*, not a concrete model. A witnessing model (e.g. `EvidenceStore := List Receipt`, `appendEvidence := cons`) is straightforward but unwitnessed here.
+
+**Companion working notes (papers repo):**
+
+- `working/kernel-to-body-map.md` — dependency-ordered slice inventory; Slice A houses Phase 1.
+- `working/calculus-2-exit-criteria.md` — six conditions under which "Calculus 2.0" is a thing that exists, under this map.
+- `working/frontier-proof-obligations.md` — five-step proof pattern and per-frontier ledger.
+
+These remain working orientation, not a 2.0 roadmap commitment.
+
+**Deferred questions:**
+
+1. Can the wound be made concrete rather than axiom-backed (e.g. `AuthorizedNotSafeConcrete.lean` with `EvidenceStore := List Receipt`)?
+2. Does the wound lift cleanly from `StepAllowed` to full `AuthorizedStep`?
+3. What minimal safety predicate, if any, does the specimen actually force — strict ≥ / bounded loss / recoverable loss / no irreversible loss / no loss without receipt / no loss to protected class?
+4. What extra hypotheses would a future safety bridge have to carry (analogue of `Corrective.RecoveryEnv`)?
+
+**Discipline note:** Phase 1 directive is intentionally one file. The map does *not* license `DefendedValue.lean`, `SafetyPreserving.lean`, `SafetyEnv` bundles, or any `SafetyBridge.lean` work from this landing alone. Root-wired means build-covered; it does not mean public-surface-promised. `CalculusOne.lean` and the 1.0 compatibility surface remain untouched.
+
+**Out of scope (intentional):**
+
+- `AuthorizedStep`-layer wound construction (would require axiomatizing `ExecutionEnv` + verdict witness; deferred).
+- Concrete witnessing model `AuthorizedNotSafeConcrete.lean` (would reduce axiom budget; deferred unless the wound is challenged).
+- Any Slice A bridge work (`DefendedValue`, `SafetyPreserving`, `SafetyEnv`, `SafetyBridge`); the Phase 1 stop sign holds until the wound's shape forces a next move.
+- Slice B/C/D modules; each requires its own forcing case.
+
+---
+
 ### Adversarial Witness Protocol — kernel-overlap audit (no module warranted)
 
 **Lean status:** No new Lean support. AWP working note at `working/adversarial-witness-protocol.md` is a protocol-level articulation of existing no-attribution and witness-discipline kernels; no new module added.
@@ -185,3 +219,4 @@ The comparison relation is consumer-supplied; the kernel keeps the underlying or
 - **2026-05-03** — File created. Initial seed entries for P15, P18, P22, P23, P24, P25, P26, P27, and the Admissibility kernel. Captures current deltas after P25 Lean spine completion. Subsequent entries land here as deltas accumulate; canon backfill (per-paper appendix updates, audit-doc reorganization) deferred until P25–P27 cluster stabilizes.
 - **2026-05-19** — AWP kernel-overlap audit entry added. Null result: no new module warranted. AWP backed by existing CollapsedSurface / PublicReceiptRefinement / SurfaceAuthorization theorems. Two candidate handles (advance tombstone, aggregation-as-authority-laundering) held as named-not-promoted.
 - **2026-05-20** — `AxisSkew.lean` added. Three theorems, lake build green. First positive Lean addition since the AWP-audit null result two days prior — same audit gate, opposite outcome. Companion primitive `memory-skew.md` filed as candidate (Kind: Axis); parallel-not-subsumed relationship with Stale Binding preserved.
+- **2026-05-24** — `AuthorizedNotSafe.lean` added. Phase 1 frontier specimen for `FRONTIERS.md` Frontier 1 (Admissibility ≠ Safety Bridge). Negative model at the `StepAllowed` layer; `AuthorizedStep`-layer transfer explicitly deferred; axiomatically-inhabited counter-scenario (concrete witnessing model deferred). Three orientation notes filed in papers `working/` (kernel-to-body map, calculus-2 exit criteria, frontier proof obligations). Stop sign in place; no Slice A bridge work licensed by this landing.
