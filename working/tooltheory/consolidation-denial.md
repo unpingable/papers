@@ -310,6 +310,8 @@ The normal chat-style interface already performs consolidation-denial as a side 
 
 This is the first ratified specimen. It is immediately observable.
 
+**Fluency theater** (DeepSeek 2026-05-25, naming the measurement-failure mode): an LLM is evaluated — or sold — on the coherence of its output without any measurement of consolidation. Demos, benchmarks, user-satisfaction scores all measure fluency. None measure settlement. The kernel `fluency_does_not_witness_settlement` says a system can be winning on every fluency metric while losing on every settlement pass. Dashboard-civilization, AI-flavored.
+
 ### Additional specimens
 - **Always-on agents** — every moment is interaction; no protected consolidation phase. `~/git/nightshift` is the structural response.
 - **Emergency-governance loops** — constant emergency cadence; no recess, review, cooling-off, or synthesis interval. Legislative digestion prevented.
@@ -401,7 +403,9 @@ A narrowed version landed as a refusal kernel in the Lean annex:
 - An independence claim. Only the load-bearing direction (*fluent → settled* is false) is proved. The opposite (*settled → fluent* witness) is not claimed.
 - A retention, compression, or reauthorization attack. Separate axes.
 
-**Vocabulary lift (retroactive recognition):** the Lean annex already uses "refusal kernel" in `RecoveryMargin.lean` and `ClosureEligibility.lean` docstrings. ChatGPT's framing ("a minimal formal object that blocks one inadmissible witness move") names what the annex pattern has been doing all along; the module's docstring header makes the membership explicit. Not new doctrine — recognition of an existing pattern.
+**Vocabulary lift (retroactive recognition):** the Lean annex already uses "refusal kernel" in `RecoveryMargin.lean` and `ClosureEligibility.lean` docstrings. ChatGPT's framing ("a minimal formal object that blocks one inadmissible witness move") names what the annex pattern has been doing all along; the module's docstring header makes the membership explicit. Not new doctrine — recognition of an existing pattern. **Two-sentence summary landed in the Admissibility README same day** (`~/git/lean/LeanProofs/Admissibility/README.md`): *CalculusOne defines the public admissibility path. The annex contains refusal kernels: small formal countermodels that block recurring inadmissible witness moves.*
+
+**Seam note (downstream of the headline lift):** Claude-web read "refusal kernel" as a runtime primitive — interpreted as "first formal refusal primitive / counter-witness lock." That's a layer-jump from the formal annex pattern to a candidate runtime object. See [`refusal-kernel-to-refusal-receipt-seam.md`](refusal-kernel-to-refusal-receipt-seam.md) for the bridge stub. Keeper: *Formal refusal blocks an inference. Runtime refusal blocks use of a basis.* No runtime "refusal receipt" built; the seam note exists to prevent category collapse when forcing case eventually appears.
 
 **Claim register decision:** entry NOT added to `CLAIM-REGISTER.md`. Following the precedent of `RecoveryMargin` and `ClosureEligibility` (neither has a register entry), refusal kernels live in the Admissibility README only. The register tracks broken corpus claims; "visible fluency witnesses audited settlement" was never an asserted corpus claim — it's a forbidden-inference named *by* this module, not a prior claim being broken.
 
