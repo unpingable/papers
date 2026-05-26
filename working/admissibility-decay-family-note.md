@@ -74,7 +74,9 @@ The five-axis family has neighbors worth naming without filing as primitives. Ea
 
 - **Register-as-admissibility-filter.** (See `register-capture-admissibility.md`.) Style operating as an admissibility prior on claim-emission. Currently a working-note analytical synthesis; primitive ratification awaits a second forcing case in a non-LLM domain (academic publishing, legal precedent, regulatory framework). Surfaced 2026-05-11.
 
-All three are watch-list items: forcing-case + cross-domain instance required for primitive promotion.
+- **Consolidation-denial / settlement debt / consolidation interrupt.** (See `tooltheory/consolidation-denial.md` + `tooltheory/consolidation-denial-formal-sketch.md`.) Sibling axis on *phase prevention*: the system never enters the offline phase in which new evidence would update the licensing relation. Distinct mechanism from any decay primitive — those describe what happens when X→U lapses; this describes what prevents the lapse from being noticed and acted on. Four-stock dynamics (B / K / X / R) separates audited demotion (receipt-bearing discard) from epistemic rot (decay-only loss). LLM-interactive interface is the live specimen. Two more independent specimens + the five-mode separation test required for primitive promotion. Surfaced 2026-05-25.
+
+All four are watch-list items: forcing-case + cross-domain instance required for primitive promotion.
 
 ## What this is NOT
 
