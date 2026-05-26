@@ -53,9 +53,11 @@ surface predicate  ⇏  substantive predicate
 | VisibleGreen | ⇏ | RecoveryMargin | `LeanProofs/Admissibility/RecoveryMargin.lean` |
 | Survival | ⇏ | ClosureEligibility | `LeanProofs/Admissibility/ClosureEligibility.lean` |
 
-**Candidate / predicted instances** (not yet filed; named here as recognition vocabulary, not as TODO):
+**Candidate / predicted instances** (not yet filed as kernels; named here as recognition vocabulary, not as TODO):
 
 - Valid ⇏ Licit (paper-side admissibility — claimed by Claude-web 2026-05-25, no kernel located yet)
+- ReportedUncertain ⇏ UncertaintyGoverned (filed as working note [`uncertainty-custody.md`](uncertainty-custody.md) 2026-05-26; three candidate phrasings of one diagnostic family — `ReportedUncertain⇏UncertaintyGoverned`, `LoggedCovariance⇏CautionAtActuator`, `ConfidenceStatement⇏OperationalUncertainty` — plus a paired *uncertainty custody ≠ risk custody* non-equivalence clamp; Lean recognition handles sketched-not-built, absence is the intended state)
+- Compressed ⇏ Authoritative (filed as working note [`projection-laundering.md`](projection-laundering.md) 2026-05-26; kernel-slot of the "compression-authority laundering" essay vocabulary in `working/compression-becomes-authority-vocabulary.md`; paired negative/positive theorem structure — `projection_launders_deferral` + `loss_aware_projection_blocks_deferral_laundering`; upstream composition partner to [[uncertainty-custody]]; Lean recognition handles sketched-not-built, absence is the intended state)
 - (additional surface→substance pairs will likely surface; the table is open-ended)
 
 **Same-day convergence note (2026-05-25):** the cluster produced two instances on the same day in two different layers (Lean kernel + spec note) within hours of each other, on top of the two pre-existing kernels. Claude-web flagged the convergence: *"that's not coincidence; that's the underlying object becoming visible because you finally have enough surface area to triangulate it."* ChatGPT applied the brake: *"refusal algebra is the negative-space structure underneath admissibility — not yet refusal calculus as a finished object."* Both correct. The operator family is real; the calculus claim is not yet earned.
@@ -82,6 +84,29 @@ Convergence-on-the-same-day made paper-Claude's smell change: P28 was previously
 The next evidence required is **composition**, not more examples. More examples are cheap; composition is the test of whether the algebra is a real algebra.
 
 > *Do not write the paper yet. Capture the operator family, collect specimens, and watch for the first composition theorem to surface. Specimens are the appetizer; the composition theorem is the dish.*
+
+## Versioning ladder on the shipped Admissibility Calculus
+
+The shipped artifact (`~/git/lean/LeanProofs/Admissibility/CalculusOne.lean`, 1.0 as of 2026-05-24, patch 1.0.1 same day) is the positive admissibility path. The algebra/calculus distinction above maps onto its version semantics:
+
+| Version | Shape | Earns its keep when |
+|---|---|---|
+| **1.0** *(shipped)* | Positive path: `basis → standing → authority → authorized transition → receipt / constraint`. Eight-module public surface; refusal-kernel annex compiled-not-promised. | (already shipped) |
+| **1.x** | Documentation / coordination releases. Annex stays compiled-not-promised; README lifts refusal-kernel category into the headline (already done 2026-05-25). New refusal kernels land in the annex; no public-theorem promise change. | A reader needs to find the refusal kernels without spelunking; new specimens accumulate. |
+| *(optional)* `RefusalKernels.lean` aggregator | Grouped annex import surface for refusal kernels, explicitly **non-CalculusOne**. Imports `RecoveryMargin` / `ClosureEligibility` / `ConsolidationDenial` / `SurfaceAuthorization` / `FiatAdmissibility` / etc. Annex semantics; non-public-promise. | Downstream code wants to cite "the refusal-kernel annex" without importing the constellation. |
+| **2.0** | Public refusal-*calculus* surface. Composition / propagation / narrowing theorems on the `surface ⇏ substance` relation. NOT just more specimens; requires at least one theorem of the shape *if A cannot witness B and B is required as basis for C, then A cannot witness C for binding use.* | The composition theorem earns its shoes — see "What 'algebra' requires before it becomes 'calculus'" above. |
+
+The discipline:
+
+> **More specimens → annex / 1.x. Composition rules → calculus / 2.0.**
+
+The cleaner one-liner (added to the keepers below):
+
+> **A refusal kernel blocks one laundering move. A refusal calculus explains how blocked moves compose.**
+
+Until at least one composition theorem lands, 2.0 is unauthorized; 1.x is welcome; the aggregator is optional and remains non-public-promise either way. Refusal kernels accumulate in the annex without needing a version bump.
+
+Filed 2026-05-26 (tonight's pass).
 
 ## The keeper
 
@@ -267,4 +292,6 @@ Prior-art citation stack (eight neighboring fields) + application zones (seven d
 
 > **Refusal calculus is how a system preserves weaker truth without letting it impersonate stronger authority.**
 
-The first three are layer-split keepers. The next two are structural keepers. The sixth is the operator-family handle. The seventh — added in the final pass — is the most generative; if only one survives long-term, it is probably that one. It subsumes the layer split, the operator family, and the application story in one sentence.
+> **A refusal kernel blocks one laundering move. A refusal calculus explains how blocked moves compose.**
+
+The first three are layer-split keepers. The next two are structural keepers. The sixth is the operator-family handle. The seventh subsumes the layer split, the operator family, and the application story in one sentence; if only one survives long-term, it is probably that one. The eighth (added 2026-05-26) is the version-ladder discipline keeper — the sentence that decides what does and does not earn the word *calculus* on the shipped artifact.
