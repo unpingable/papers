@@ -1,6 +1,11 @@
 # Calculus 2.0 — tier map (2026-05-28)
 
-**Status:** Candidate. Filed at journal density per `working/tooltheory/` convention. Not ratification; the live source of truth is the Lean stack at `~/git/lean/LeanProofs/Admissibility/`. Promote to ratification only after a tier-2 specimen lands and the map survives contact.
+**Status (split, per ChatGPT 2026-05-28 correction):**
+
+- **Calculus 2.0 *core* (wound + bridge + trajectory + forgetful map + no-lift):** ratifiable now, gated only on the kernel-overlap audit and an exit-criteria update in `working/calculus-2-exit-criteria.md`. The skeleton has earned itself; tier-2 specimens are not needed to prove the second axis exists.
+- **This tier map:** candidate until a tier-2 specimen (2A or 2B) lands and the orthogonality claim survives contact. The map's *topology* (4 tiers, 2A/2B orthogonal) is the part requiring future-evidence; the *core* it describes does not.
+
+Filed at journal density per `working/tooltheory/` convention. Not ratification; the live source of truth is the Lean stack at `~/git/lean/LeanProofs/Admissibility/`.
 
 **Provenance:** Multi-model conversation 2026-05-28 (Claude Code main thread, Claude opus 4.8 on web, ChatGPT-conservative). The tier framing emerged after the attestation-ledger second witness landed and the question "what's next?" forked into two genuinely different generalizations.
 
@@ -73,6 +78,10 @@ If these pins survive the actual tier-2B brick, the ρ-drop is confirmed across 
 - It does not promise tier 2A and 2B can be composed (a unified "Calculus 3.0" with both generalizations layered) — that's a question for after both land.
 - It does not claim the tier ordering is conceptual; tier numbers are taxonomic, not sequential. The actual build order will be set by which forcing case arrives.
 - It does not justify minting "Calculus 2.0" publicly — that still gates on the kernel-overlap audit and the `working/calculus-2-exit-criteria.md` update.
+
+## Known debt (track before public minting)
+
+- **Trajectory-design divergence between brick 2 and tier-1 ledger.** `LeanProofs/Admissibility/SafetyTrajectory.lean` carries `AuthorizedTraj (a : Actor)` / `BridgedTraj (a : Actor)` — trajectory-global actor parameter, the inferior shape. `LeanProofs/Admissibility/AttestationLedger.lean` carries `LedgerAuthTraj : Ledger → Ledger → Type` with actor as a *field* in `LedgerAuthStep` (per-hop), expressing multi-actor paths as single trajectories. The divergence is invisible in brick 2 because that model has `Actor := Unit`, so it is not a bug — but it is a legibility liability for a candidate/paper (reviewers will ask why there are two trajectory designs) and the reconciliation (backport per-hop actor into `AuthorizedStepC` / `SafeAuthorizedStepC` and drop the `a` parameter from `AuthorizedTraj` / `BridgedTraj`) touches brick 1's downstream so is not free. **One canonical trajectory design before any public minting.** Web-Claude 2026-05-28 flagged this as the explicit debt item that should not stay as a docstring aside.
 
 ## Companion record
 

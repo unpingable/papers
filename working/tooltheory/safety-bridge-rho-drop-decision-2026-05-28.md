@@ -10,7 +10,7 @@
 
 ## Why
 
-The deciding fact: `run : σ → α → σ` does not consume `ρ`. If the transition function cannot see the actor, then `ρ` in `bridge` cannot affect safety *semantics* — it can only filter *who is permitted to call a given transition safe*, which is authorization wearing a thrift-store mustache. The cleanest place for actor-relative permissions is `Allowed`; the cleanest shape for value-preservation evidence is over the transition effect.
+The deciding fact: `run : σ → α → σ` does not consume `ρ`. The sharp form of the claim (ChatGPT 2026-05-28 defang): **`ρ` in the base `bridge` is unnecessary for transition-effect preservation unless actor identity changes either the action payload, the state, or the transition semantics.** A weaker version — "ρ in bridge cannot affect safety semantics" — overreaches: one can write actor-sensitive bridges that are mathematically sound; what one *cannot* do is have them affect the transition effect via the base shape, since `run` doesn't see the actor. The cleanest place for actor-relative permissions is `Allowed`; the cleanest shape for value-preservation evidence is over the transition effect.
 
 The escape hatch is named: if a future model genuinely needs actor identity to change the transition effect, the right move is to lift the transition itself — `run : σ → ρ → α → σ` — not to smuggle actor-dependence through `bridge`. That's a different calculus slice, done under force.
 
