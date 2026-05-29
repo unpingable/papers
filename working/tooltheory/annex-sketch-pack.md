@@ -36,7 +36,15 @@ Concretely, the four admitted refinements share that exact shape:
 - *same authority surface, different propagation scope* → `FencedEpochAuthority`
 - *same payload surface, different operation identity* → `ReplaySafeActionIdentity`
 
-Future "identity" candidates must pass the same test: name the two surface-similar artifacts and the non-equivalence the refusal kernel enforces. Without that, "identity" decays into universal solvent and the discipline collapses.
+Future "identity" candidates must pass the same test: name the two surface-similar artifacts and the non-equivalence the refusal kernel enforces. Without that, "identity" decays into universal solvent and the discipline collapses. The corpus-internal name for the failure mode: *ontology ranch dressing* — pours over anything, distinguishes nothing.
+
+### Constructive contribution (structural note)
+
+This spike is the first one in the corpus to name a **positive family** of refusal-shaped abstractions rather than refusal-shaped *failure modes*. The corpus has been good at naming what goes wrong — teleological laundering, managed insufficiency, observability inversion, curdling pipeline, prosecutorial decomposition. Those are pathologies.
+
+The four-identity carve is structurally different: it names what *correctly-shaped distinctions look like* — patterns that have been doing the right work in production systems for decades, made legible as a family. The substrate already exists; the spike's contribution is **legibility**, not invention. Which means the failure mode "you made this up" doesn't apply — the patterns are CAS / If-Match / NSEC / OTC / idempotency keys, all of which predate the carve by years to decades.
+
+That makes constructive contribution easier to defend than critique: pointing at *solved problems that hadn't been recognized as a family* is harder to dismiss than pointing at problems.
 
 ---
 
@@ -175,11 +183,18 @@ NQ-side claim: *"There is no `cannot_testify` record for ingest-stale at host H.
 
 **Forbidden inference:**
 
-> **"I held authority once, therefore I still hold authority now."** (Lease side.)
+> **"I held authority once, therefore I still hold authority now."** (Epoch side.)
 >
 > **"Valid origin authorization implies valid propagation authorization."** (Scope side.)
 
-Combined kernel — the two are different surfaces of the same structural fact: **authority is not conserved across time or across boundaries.** Old leases must be fenced; export rights are not origin rights.
+The sketch initially treats the two as a *combined kernel* — the two surfaces share structural shape: **authority is not conserved across time or across boundaries.** Old leases must be fenced; export rights are not origin rights.
+
+**Caveat (per ChatGPT spike review):** propagation scope and epoch fencing **overlap but are not identical**. Two distinct axes that share a refusal shape:
+
+- **Propagation scope** — authority may not survive **boundary crossing**. (Example: BGP OTC; DNS delegation; cross-kernel receipt consumption.)
+- **Epoch fencing** — authority may not survive **generation change / lease turnover**. (Example: Raft term advance; ZooKeeper session expiry; Spanner leader-lease rotation.)
+
+Both block *"same-looking authority artifact still authorizes action"*, but the **axis** differs: one is a *spatial* boundary (crossing a kernel / namespace / network frontier), the other is a *temporal* one (the holding's generation has advanced). The combined-kernel framing earns its keep as long as both stay coupled in forcing cases; if a future forcing case requires the propagation axis without the epoch axis (or vice versa), the sketch **splits** into two separate kernels. Composition theorem first, axis-promotion lazy, separation-pressure honored when it appears.
 
 **Substrate witnesses (lease side):**
 
@@ -375,9 +390,15 @@ The reorder reflects: *operational misbehavior arrives before theoretical purity
 
 > **Identity refinements are admitted only when two artifacts with similar surface shape must be refused as non-equivalent.** (Anti-universal-solvent brake.)
 
-> **Operational misbehavior arrives before theoretical purity demands resolution.** (Build-order discipline.)
+> **Operational misbehavior arrives before theoretical purity demands resolution.** (Build-order discipline; formal version.)
+
+> **The incident clown car arrives before the theorem parade.** (Same discipline; field version. Use when audience is closer to ops than formal methods.)
+
+> **Without the brake, "identity" decays into *ontology ranch dressing* — pours over anything, distinguishes nothing.** (Failure mode named.)
 
 > **The cursed adult choice: four small refusal kernels and a matrix.** Not a new field; not deletion of interesting residue; the staging discipline between those two failure modes.
+
+> **The substrate already exists. The spike's contribution is legibility, not invention.** (Constructive vs critique distinction; defensible against "you made this up" because CAS / NSEC / OTC / idempotency keys predate the carve by decades.)
 
 ## Cross-references
 
