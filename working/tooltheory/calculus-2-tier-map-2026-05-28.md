@@ -1,9 +1,12 @@
 # Calculus 2.0 — tier map (2026-05-28)
 
-**Status (split, per ChatGPT 2026-05-28 correction):**
+**Status (split, per ChatGPT 2026-05-28 correction + web-Claude 2026-05-29 scoping correction):**
 
-- **Calculus 2.0 *core* (wound + bridge + trajectory + forgetful map + no-lift):** ratifiable now, gated only on the kernel-overlap audit and an exit-criteria update in `working/calculus-2-exit-criteria.md`. The skeleton has earned itself; tier-2 specimens are not needed to prove the second axis exists.
-- **This tier map:** candidate until a tier-2 specimen (2A or 2B) lands and the orthogonality claim survives contact. The map's *topology* (4 tiers, 2A/2B orthogonal) is the part requiring future-evidence; the *core* it describes does not.
+- **Safety-axis *core* (wound + bridge + trajectory + forgetful map + no-lift):** ratifiable now as the safety-axis publication path, gated on the kernel-overlap audit and the exit-criteria reconciliation in `working/calculus-2-exit-criteria.md`. The safety-axis skeleton has earned itself; tier-2 specimens are not needed to prove the second axis exists.
+- **Full "Calculus 2.0" (all axes):** *not* ratifiable on safety-axis evidence alone. The exit-criteria doc's six-condition gate has three axes — safety, composition (merge-necessity + ≥3 bad merge cases + annex composition), and self-amendment (Frontier 3). Only safety is met. The composition axis has sufficiency only (`LocalBoundary.MergeAdmissible`); necessity is not started. Frontier 3 is deferred. "Calculus 2.0" as the original framing meant it pends both.
+- **This tier map:** candidate until a tier-2 specimen (2A or 2B) lands and the orthogonality claim survives contact. The map's *topology* (4 tiers, 2A/2B orthogonal) is the part requiring future-evidence; the safety-axis core it describes does not.
+
+The earlier framing ("Calculus 2.0 core ratifiable") quietly minted the full label on safety-axis evidence alone — that was an overclaim, corrected here. The publication plan stays clean: the planned preprint is scoped as *"An Admissibility Calculus: Authorization, Safety Bridges, and Value Decay"* — the safety kernel, not "Calculus 2.0, the paper" — so the preprint inherits none of the overclaim. Only the *label* needed the scoping fix.
 
 Filed at journal density per `working/tooltheory/` convention. Not ratification; the live source of truth is the Lean stack at `~/git/lean/LeanProofs/Admissibility/`.
 

@@ -2,6 +2,8 @@
 
 > **Status:** internal exit-criteria record. Not a 2.0 commitment.
 > Companion to [[kernel-to-body-map]] and [[frontier-proof-obligations]].
+>
+> **Status update 2026-05-29 — spine page split.** The original framing in this document assumed "Calculus 2.0" was a single artifact whose body the six criteria below define. Per `working/calculus-paper-spine-2026-05-28.md`, the publication track is now split: the **safety-axis** lands as a standalone formal-methods preprint (working slug *"An Admissibility Calculus: Authorization, Safety Bridges, and Value Decay"*) outside the Δt Zenodo numbering; **paper 28** is the interpretation paper that cites the preprint; the **composition-axis** body and Frontier-3 self-amendment work remain on the original (now-renamed) "composition-axis 2.0" trajectory. The six criteria below remain valid as a *map of what 2.0 would need*; what changed is which publication artifact closes each one. The track-split annotation block after the criteria list reclassifies each criterion by publication track and marks current status.
 
 ## What "full body" means here
 
@@ -17,6 +19,50 @@ The 1.0 surface is named, versioned, and DOI'd. **Under this map**, Calculus 2.0
 Until all six land, "Calculus 2.0" is not a thing that exists. The map is allowed to point at an unbuilt body. *More modules, more theorems, more vibes* is not progress.
 
 The "Under this map" qualifier is load-bearing: future Frontier 5 (currently reserved) or a downstream forcing case may change the body shape. This document is allowed to be revised. It is not a constitution.
+
+## Track split (2026-05-29, web-Claude verification pass)
+
+The six criteria above are now distributed across three axes / publication tracks per the spine page decision (`working/calculus-paper-spine-2026-05-28.md`) and the per-condition verification web-Claude ran against the actual Lean source on 2026-05-29. Meeting the safety-axis criteria does NOT mint "Calculus 2.0" as this document originally framed it; it mints the **safety-axis publication path** (the planned preprint plus paper 28) as a sibling artifact. The other axes remain separate gates with the original-document bar.
+
+Per-axis status, verified against `~/git/lean/LeanProofs/Admissibility/`:
+
+### Safety axis — MET, over-delivered
+
+Preprint working slug: *"An Admissibility Calculus: Authorization, Safety Bridges, and Value Decay."* Target venue: arXiv cs.LO at minimum.
+
+- **(1) Authorized ≠ Safe mechanically exhibited — MET 2026-05-28.** Broader than the original criterion: `AuthorizedNotSafe(Witness)` exhibits the wound at the `StepAllowed` layer (axiomatic + concrete `List Receipt` discharge); `AuthorizedStepNotSafe(Witness)` transfers the wound to the full verdict-layer `Execution.AuthorizedStep` (axiomatic + concrete `AuthorizedStepC` discharge over real `Authority.authorityVerdict`).
+- **(2) Safety bridge with non-trivial obligation — MET 2026-05-28, AND the original bar was a floor.** The original wording asked for "a minimal safety bridge proves safety only under explicit extra hypotheses." What shipped is materially more: the safety-axis criterion *as actually met* is the full brick set, and the original wording undersells it by a wide margin. Effective content:
+  - `SafetyBridge.SafetyEnv` with actor-inert `bridge : σ → α → Prop` and `preserves` obligation; `SafeStep` gate; `bridge_implies_safe` projects through `preserves` without consuming `Allowed` (per ρ-drop decision at `working/tooltheory/safety-bridge-rho-drop-decision-2026-05-28.md`).
+  - Trajectory triple in `SafetyTrajectory.lean`: `bridgedTraj_preserves` (positive composition), `authorized_trajectory_loses_value` (negative composition), `no_bridgedTraj_to_poison_end` (no-lift).
+  - Forgetful map `BridgedTraj.toAuthorizedTraj` makes "an authorized trajectory that does not lift to a bridged one" a *definition*, not rhetoric — the Loop-Capture mapping turned into a typed function.
+  - Verdict-layer canonical gate `SafeAuthorizedStepC` + `.toSafeStep` adapter (brick 1b).
+  - Second concrete witness `AttestationLedger.lean` (tier-1 per `working/tooltheory/calculus-2-tier-map-2026-05-28.md`): textured `Nat`-valued model with ≥2 asymmetric actors; the wound is an actor-authorized revoke. Confirms the abstract layer is not receipt-specific. Per-hop actor in the trajectory type makes multi-actor paths expressible.
+
+  The trajectory triple is not "additional evidence beyond the criterion" — it is the criterion's substantive form. The original wording is preserved above as historical record of the minimum bar; the criterion *as met* is the full brick set described here. (Revision per web-Claude 2026-05-29: condition 2 marked upward to reflect what shipped.)
+
+**Safety-axis publication status:** *formalized YES; preprint scaffold pending.* Lean source is the source of truth; the preprint is exposition.
+
+### Composition axis — NOT MET (sufficiency only)
+
+Per the verification pass: `LocalBoundary.lean`'s own "Open obligations" block states that necessity is "not started." Only sufficiency (the aperture) is proven. The composition axis stays on the original (now-renamed "composition-axis 2.0") trajectory; the safety-axis preprint does not close any of these.
+
+- **(3) `LocalBoundary.MergeAdmissible` necessity — NOT MET.** `merge_admissible_necessary` theorem not started; sufficiency only.
+- **(4) At least three bad merge cases formalized — NOT MET.** Per LocalBoundary's own block: "paper-shaped, not Lean-shaped."
+- **(6) Annex axes either compose or stay outside the surface — PARTIAL.** "Stay outside" honored via current `[annex]` labeling in `LeanProofs/Admissibility/README.md`; composition theorems pending. (Note: this is the Roadmap's *composition-axis 2.0* criterion, distinct from the safety-axis content above.)
+
+### Self-amendment axis — NOT MET (Frontier 3, deferred)
+
+- **(5) Self-amendment blocked without weakening the 1.0 transition story — NOT MET.** Frontier 3 in `FRONTIERS.md`, deferred per dependency-order discipline (tractable but not load-bearing for the safety-axis claim; gate stays open for the full 2.0 label).
+
+### "2.0" label — scoped
+
+The naming question is decided as scoped, not as left-open:
+
+- **Safety axis is ratifiable now** as the safety-axis publication path (preprint + paper 28), gated on the kernel-overlap audit and this reconciliation pass. The safety-axis preprint is scoped narrowly as *"An Admissibility Calculus: Authorization, Safety Bridges, and Value Decay"* — it does not claim the "Calculus 2.0" label, so it inherits none of the unmet-condition overclaim. Fork B's sober title bought exactly this scoping.
+- **Full "Calculus 2.0" (all axes) is NOT ratifiable** on safety-axis evidence alone. The composition-axis necessity (3) and self-amendment block (5) are open in the source's own words. Minting the full label requires either (a) all six original conditions met across all three axes, or (b) an explicit doctrinal decision to redefine "Calculus 2.0" as scoped to the safety axis — which the spine page does *not* propose and which this document does *not* recommend (the anti-vibes discipline of the original framing applies).
+- **In published / README / public-surface language**, use "safety-axis Calculus 2.0 candidate" or just "safety-axis preprint" — not "Calculus 2.0 core" — until either (a) or (b) above.
+
+This document's six criteria stand as the map of what *the original framing of* 2.0 needs. The spine page is where the publication structure that achieves the safety-axis portion is decided. The composition-axis and Frontier-3 portions of 2.0 remain on their original trajectories, unaccelerated by the safety-axis work.
 
 ## Phase 1 — verification criteria
 
