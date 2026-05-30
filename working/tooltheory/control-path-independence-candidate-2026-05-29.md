@@ -6,6 +6,74 @@
 
 ---
 
+## Compile-probe scope statement (2026-05-30)
+
+Filed at the head of the candidate per the [annex-probe queue](annex-probe-queue-2026-05-29.md)'s gate: *CPI's compile probe is licensed only after this statement holds.* Three questions, three answers.
+
+### 1. What bounded question does the compile probe answer?
+
+> Does the typed shape `Arch + ReachableBy + ComponentInfluencedByOfficial + IndependentAt + InterlockBasis` hold together as a kernel-level basis-revocation candidate — recognizing **architectural** independence (reachability over named path kinds, against a transitive influence relation) as a structural reason `BasisDerivation` can refuse, while keeping the three-axis decomposition non-collapsed?
+
+Green confirms three things:
+
+- The reachability-over-path-kind shape (`ReachableBy sys k a b` inductively closed, separate from `flow`) type-checks as a load-bearing relation, not as decoration.
+- `IndependentAt sys k target` defined as *every component reachable to the target along path kind `k` is uninfluenced by the official principal* — the reachability quantifier survives type-checking.
+- `InterlockBasis` with one discharged field and two `Prop` obligations elaborates as a structure (the type system *permits* the three-axis split; it does not force the consumer to discharge standing/coupling to construct an `InterlockBasis`).
+
+Red surfaces a kernel-shape gap: if `IndependentAt` can't be stated without smuggling a decider into the kernel, or if `InterlockBasis` collapses the three obligations into one, the candidate's "non-collapsing decomposition" claim is paper, not kernel.
+
+### 2. What is deliberately undischarged, and what carries the obligation?
+
+Two `Prop` fields of `InterlockBasis` are undischarged **by construction**:
+
+| Field | Undischarged because | Carried by |
+|---|---|---|
+| `standing : Prop` | Historical / dynamic. No fact about `flow`, `influences`, `owner`, `powered`, or `controls` discharges it. Wiring diagrams don't contain track records. | Any downstream consumer (NQ finding, Wicket classification, Governor verdict, CLI). Either the consumer supplies its own witness or it emits the incompleteness certificate. |
+| `coupled : Prop` | External coupling to the actuator's authority surface. Not in `Arch`. A welded breaker is structurally indistinguishable from a working interlock at the wiring layer. | Same. Consumer-supplied witness, or the certificate. |
+
+The kernel module **never** provides default-`True` placeholders for either. That is a load-bearing design decision: a `True`-placeholder for `standing` would be a stuck-at-safe interlock dressed as a kernel guarantee — the exact failure mode under test. (Memory: [[feedback-lean-debt-discipline]] *classify before discharging*; vocabulary-deficient claims get `True`-placeholders, but vocabulary-out-of-scope claims get *no* placeholder, not even `True`.)
+
+Two additional categories that the probe does **not** discharge but are not "deliberately undischarged" in the same sense:
+
+- **Decidability of `IndependentAt` over concrete `Arch` instances.** The kernel states what independence means; deciding it for a specific architecture requires `Decidable` instances on `flow`, `influences`, etc. Those are downstream — see §3.
+- **Concrete `Arch` constructors / example architectures.** None should appear in the annex. See §3.
+
+### 3. Where does this annex stop being a slice probe and start being an architecture linter — and is that boundary intentional?
+
+The boundary is **intentional, sharp, and load-bearing**. Slice probe vs. architecture linter splits cleanly along three lines:
+
+| Slice probe (in scope) | Architecture linter (out of scope) |
+|---|---|
+| State what independence means (`IndependentAt` as a reachability predicate over `ReachableBy`) | Decide it for a concrete `Arch` (requires `Decidable` for `flow`, `influences`, `controls`, `owner`, `powered`) |
+| Prove the four independence-derivable failure theorems as `¬ IndependentAt → <named bad property>` | Run those theorems against an instantiated `Arch` and emit PASS/FAIL |
+| Carry `standing` and `coupled` as undischarged `Prop` obligations | Discharge them or default-`True` them |
+| Namespace under `Admissibility.ControlPathIndependence`; no `LeanProofs.lean` import | Public-surface preprint claim, doctrine mint, or CLI integration |
+| No example architectures | Concrete examples (the captured-audit-log, the welded breaker, etc.) |
+
+Crossing the line — building a decider, adding example architectures, providing default discharges for standing/coupling, or importing into `LeanProofs.lean` — turns the candidate into the very compliance-checkbox failure mode it is supposed to make visible. The annex must be **structurally incomplete in the same way the consumer's verdict must be structurally incomplete.** That's not laziness; that's the shape under test.
+
+If the build's natural slope pulls it toward decidability or examples, **stop and refile**. A linter is a different artifact from a basis-derivation candidate. The compile probe is licensed for the latter only.
+
+### Why scope-first (not optional)
+
+The [annex-probe queue](annex-probe-queue-2026-05-29.md) flagged this candidate as "different shape, larger than PL or CP." The risk: without the scope statement, the compile drifts. Drift looks like (a) "well, decidability is just one `decide`-tagged instance away" → linter, (b) "the example would make the theorems concrete" → public-surface bait, (c) "default-`True` for standing makes `InterlockBasis` constructible, just leave a comment" → stuck-at-safe.
+
+This statement holds the boundary the queue's five-criterion test cannot hold alone for a candidate of this size.
+
+### Recommended build session (if licensed)
+
+When the operator triggers the compile probe:
+
+1. Drop `Principal`, `Component`, `PathKind`, `Arch`, `ReachableBy`, `ComponentInfluencedByOfficial`, `IndependentAt`, `InterlockBasis` exactly as written in §"Proposed Lean shape" below.
+2. Add the four failure-theorem statements from §"Failure-mode-to-theorem table" — bodies may be `sorry` (since `DomesticatedProvisioning`, `CapturedObserver`, etc., are themselves candidate predicates whose meanings are vocabulary-deficient at kernel layer). If they are stated with `sorry`, that is a *vocabulary-deficient* sorry, classified per [[feedback-lean-debt-discipline]]. The annex should label them as such in a comment.
+3. Confirm no Mathlib, no `LeanProofs.lean` import, no example architecture, no `Decidable` instance.
+4. `lake build LeanProofs.Admissibility.ControlPathIndependence`. Green is contact; not promotion.
+5. Update this note's §"Lean annex — built status" (new section) with the compile date, build time, and any deltas from the sketch.
+
+The compile remains gated on this statement holding. If the answers to §1–§3 above no longer match the candidate's actual shape, **rewrite this section before building, not after.**
+
+---
+
 ## The kernel connection
 
 The deciding insight: **control-path independence is not pre-calculus preflight. It is one concrete piece of the binding-semantics basis the calculus has been carrying as an open gap.**

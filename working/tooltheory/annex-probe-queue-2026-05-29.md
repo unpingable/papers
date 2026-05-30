@@ -58,9 +58,13 @@ Evidence that cannot carry its own discriminating fields is a rumor with a schem
 
 ## Queue order
 
-### Next probe: ProjectionLaundering
+### First probe: ProjectionLaundering — BUILT 2026-05-30
 
-**Position:** Confirmed by all three readers (me, labelwatch, chatty). Cleanest match to the annex-probe test.
+**Status:** `LeanProofs/Admissibility/ProjectionLaundering.lean` green, ~270ms, not in `LeanProofs.lean`. Two paired theorems plus four predicates, namespaced under `Admissibility.ProjectionLaundering`. Scratch posture preserved: no public-surface promotion, no doctrine mint, no preprint citation. Companion note [projection-laundering.md](projection-laundering.md) updated with §"Lean annex — built status (2026-05-30)" and amended park state.
+
+The compile was contact, not publication. CBA still owns the public name; PL owns the kernel slot. PL/UC composition stays prose-only until a downstream consumer forces the citation.
+
+**Position (original audit, preserved):** Confirmed by all three readers (me, labelwatch, chatty). Cleanest match to the annex-probe test.
 
 - **Audit:** done in [projection-laundering.md](projection-laundering.md) §Overlap audit. CBA at vocabulary level, FiatAdmissibility at routing, sibling to SurfaceAuthorization / WitnessInvariance. PL/UC composition partner ([uncertainty-custody.md](uncertainty-custody.md)) named but not built.
 - **Shape:** paired negative + positive theorems over abstract variable bindings (`Belief / Artifact / Action / MustDefer / Consequential / ArtifactSignalsDefer`). One-line proofs each. Both sketches in the note ready to drop into Lean.
@@ -85,6 +89,40 @@ Evidence that cannot carry its own discriminating fields is a rumor with a schem
 - Where does this annex stop being a slice probe and start being an architecture linter (and is that boundary intentional)?
 
 Once the scope statement holds, the compile probe is licensed. Same five-criterion test, same posture (scratch, not public surface).
+
+### Third candidate (added 2026-05-30): Conductance hygiene fragment — BUILT 2026-05-30
+
+**Status:** `LeanProofs/Admissibility/Conductance.lean` green, ~262ms, not in `LeanProofs.lean`. One `class Protocol` with five fields (one — `coordinationSignal` — declared but unused as load-bearing absence), three definitions, two paired theorems. Companion note [desynchronized-horizons-candidate-2026-05-30.md](desynchronized-horizons-candidate-2026-05-30.md) updated with §"Lean annex — built status (2026-05-30, same day)" and §"Build-surfaced finding: `failureSignal` cannot infer `Subsystem`."
+
+**Build-surfaced finding (worth filing in the queue, not just the candidate note):** the relay's sketch called `Protocol.failureSignal sig` directly. Lean rejected — `failureSignal`'s signature only mentions `Signal`, so instance synthesis on `Protocol Subsystem Signal` can't determine `Subsystem` from arguments. Fix was local: explicit `@Protocol.failureSignal Subsystem Signal _ sig` at the two callsites. The honest structural fix is to **split the class** into a signal-side and a transport-side. Deferred per [[feedback-forcing-case]]; flagged so a future session does not re-derive.
+
+This finding is a worked example of the queue's cross-altitude rhyme: *the constructor has to carry the pair.* Class field projections that don't reference both class parameters silently fail to carry the second one, making instance synthesis ambiguous. Same shape, new altitude. Filed.
+
+**Position (original audit, preserved):** post-PL, post-CPI. Smaller than both. Audit partially done by relay. Bug pre-flagged.
+
+- **Parent candidate:** [desynchronized-horizons-candidate-2026-05-30.md](desynchronized-horizons-candidate-2026-05-30.md). The Conductance fragment is the one Lean-ready residue from a broader prose stack (Local Carryability primitive + Recovery Graph machinery + Conductance operator layer + 5 candidate theorems). Overlap audit run 2026-05-30 confirms Conductance is the bounded first cut; reachability-insufficiency is candidate-after (gated on a CPI-shaped scope statement for bounded `Recoverable` definition); lock/articulation is no-op (graph-theoretic tautology); governor non-sovereignty is downstream-consumer-gated (build when `agent_gov` forces it).
+- **Audit:** partial. Multi-model relay (DeepSeek + Claude-web + operator 2026-05-30) confirmed scope: this is the *contagion-hygiene lemma*, **not** the coordination/contagion separability theorem (`coordinationSignal` is declared but unused — load-bearing absence). Kernel-overlap audit against the existing safety-bridge / WitnessInvariance / SurfaceAuthorization family not yet run; relay's read suggests recovery-graph axis is distinct from projection-erases-distinction family.
+- **Shape:** one `class Protocol` with five fields, three definitions, two theorems. **Smaller than CP.** No Mathlib.
+- **Sketch is near-Lean:** literally a Lean file in the candidate note. **Bug pre-flagged:** `{src dst : Subsystem sig : Signal}` parses `Subsystem sig` as application; fix is `{src dst : Subsystem} {sig : Signal}`. Already applied in the candidate-note version.
+- **Real question the build answers:** does the relay's pull-gated/passive-contagion shape hold up under Lean type-checking? Green confirms the hygiene lemma is a real artifact; red surfaces the gap.
+- **Public-surface gating preserved:** unchanged. Doctrine promotion (separability, recovery-graph model, governor non-sovereignty) stays in prose.
+- **Filename when built:** `~/git/lean/LeanProofs/Admissibility/Conductance.lean`.
+
+**Why third, not second:** operator explicitly said PL/CPI is tomorrow's queue. Conductance joins behind. Smaller-than-CPI does not jump the line — explicit ordering wins.
+
+### Fourth candidate (scope-pass spin-out, 2026-05-30): Reachability insufficiency
+
+**Status:** Scope statement filed at [reachability-insufficiency-candidate-2026-05-30.md](reachability-insufficiency-candidate-2026-05-30.md). Compile probe **gated** on operator endorsement of the scope statement AND on resolution of four open shape questions surfaced during the pass (bridge axiom vs. hypothesis; per-source vs. per-pair quantification; per-clause negation split; conjunction vs. structure form). Per the audit, the candidate is the more *interesting* residue from desynchronized-horizons but the larger blast radius — same scope-first discipline as CPI, with more open shape decisions.
+
+The candidate was spun out from [desynchronized-horizons-candidate-2026-05-30.md](desynchronized-horizons-candidate-2026-05-30.md) §Q2(b) / §Q7 into its own note so the per-candidate audit gate is honored; the doctrine source remains the desynchronized note.
+
+Posture: same as CPI. The scope statement is the gate, not authorization to build.
+
+### Fifth candidate (deferred): Governor non-sovereignty
+
+**Status:** Per the desynchronized-horizons audit §Q3, the cleanest formal hook of the five candidate theorems, but **downstream-consumer-gated**. Build only when `agent_gov` ([[project-governor-doctrine]]) forces a citation. Graph theory does the structural work; admissibility-side content is the "admissible recovery paths" predicate which would be reused from the reachability-insufficiency annex once that one builds. No pre-emptive scope pass; the forcing case has to come from `agent_gov`.
+
+Filed in the queue so a future session does not re-derive the deferral logic. Memory pointer: [[project-governor-doctrine]] *cite, don't extract*.
 
 ### Everything else: per-candidate audit, no sweep
 
@@ -138,4 +176,12 @@ Otherwise the schema risks becoming "same post, different labels" — interestin
 
 > The audit was the gate. The compile was the receipt. The forcing case is still upstream.
 
-Soak holds. Park state respected. PL is the next bounded hit; CPI is gated on its own scope pass; everything else is per-candidate. The dangerous-amount-of-momentum kind, unfortunately. 🍻
+Soak holds. Park state respected.
+
+**2026-05-30 update:** PL annex built (green, scratch). CPI scope statement filed at head of candidate; compile probe gated on operator endorsement of the scope statement. Conductance annex built (green, scratch) with one build-surfaced shape finding (`failureSignal` cannot infer `Subsystem`; explicit `@` form used; class-split refactor deferred). Reachability-insufficiency scope pass pending (CPI-shaped, needs bounded `Recoverable` definition). Governor non-sovereignty deferred until `agent_gov` forces it. Everything else stays per-candidate.
+
+PL ✓ · CPI scope ✓ (compile gated) · Conductance ✓ · Reachability-insufficiency scope ✓ (spun out, compile gated) · governor non-sovereignty deferred.
+
+**Successor plan filed:** [recovery-topology-build-ladder-2026-05-30.md](recovery-topology-build-ladder-2026-05-30.md) — staged build ladder around `AdmissibleRecoveryPath`. Frames recovery topology as composition over existing admissibility under failure pressure, not a new sovereign primitive. Ladder gates each step on its own forcing case; reachability-insufficiency now sits as Artifact-1-prep-work inside that ladder. **Next session's right first move is the ladder's Step 7 Artifact 1 (the candidate note), not this queue's pending items.**
+
+Anti-sweep posture honored: three compiles + one scope statement + one deferred is the *queue*, not a sweep. Each one passed its own annex-probe test or scope gate. The remaining items have their own gates upstream. The dangerous-amount-of-momentum kind, unfortunately. 🍻

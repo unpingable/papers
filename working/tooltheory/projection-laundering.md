@@ -1,6 +1,6 @@
 # Projection laundering across the representation boundary
 
-**Status:** Candidate refusal-kernel residue. Not promoted doctrine. Filed 2026-05-26 after multi-model relay (DeepSeek + ChatGPT + operator). Sibling to [[uncertainty-custody]] — PL is *upstream* of UC's gate. Working note only; Lean recognition handles sketched-not-built. **Absence of Lean here is not an implementation gap — it is the intended state.**
+**Status:** Candidate refusal-kernel residue. Not promoted doctrine. Filed 2026-05-26 after multi-model relay (DeepSeek + ChatGPT + operator). Sibling to [[uncertainty-custody]] — PL is *upstream* of UC's gate. Scratch Lean annex built 2026-05-30 under the [annex-probe queue](annex-probe-queue-2026-05-29.md)'s five-criterion test; see §"Lean annex — built status" below. Not imported into `LeanProofs.lean`; no public-surface promotion; no doctrine mint.
 
 **Posture:** A refusal-kernel form of an existing vocabulary entry ([[compression-becomes-authority-vocabulary]]). The shape is already covered at *essay-vocabulary* level by "compression-authority laundering"; the residue worth filing is (a) the paired negative+positive theorem structure that gives the vocabulary a kernel-level form, and (b) the explicit composition with [[uncertainty-custody]] as a two-stage representation-pipeline custody.
 
@@ -70,9 +70,29 @@ This is a genuine new composition not present in either parent note.
 2. **The PL/UC composition** — two-stage representation-pipeline custody is new vocabulary not present in either parent.
 3. **The recognition handles** — `ProjectionLaundering` (failure), `loss-aware projection` (remedy), `ErasesDefer` / `PreservesDefer` (predicate pair).
 
+## Lean annex — built status (2026-05-30)
+
+`LeanProofs/Admissibility/ProjectionLaundering.lean` exists as a scratch annex. Built under the [annex-probe queue](annex-probe-queue-2026-05-29.md) five-criterion test, not under downstream-consumer force. Green; not in `LeanProofs.lean`; no public-surface promotion; no paper citation.
+
+Discipline preserved:
+
+- The compile is *contact*, not publication. Green says the paired neg+pos shape is coherent enough that future arguments don't have to be re-derived from chat vapor. It does **not** say PL is doctrine.
+- CBA still owns the public name. PL owns the kernel slot.
+- The PL/UC composition stays prose-only until a downstream consumer (NQ / Wicket / Governor) demands a citation.
+- The two-gate ladder still applies: `module ≠ public surface ≠ paper claim ≠ platform verdict`. Each `≠` is its own gate.
+- The audit was the gate. The compile is a second receipt; the doctrine receipt is still upstream.
+
+Build invocation:
+
+```bash
+cd ~/git/lean && lake build LeanProofs.Admissibility.ProjectionLaundering
+```
+
+The sketches below remain the recoverable artifact. The annex names them `projection_launders_deferral` and `loss_aware_projection_blocks_deferral_laundering` exactly; predicate names (`ErasesDefer`, `PreservesDefer`, `ArtifactOnlyIncautious`, `PolicyRespectsDeferSignal`) match. Annex-file structure differs from the sketches only in (a) namespacing under `Admissibility.ProjectionLaundering`, (b) explicit-argument style (no top-level `variable` block) for parity with the `ConsequencePartition` annex, and (c) the policy-incautious hypothesis is named (`ArtifactOnlyIncautious`) rather than left inline.
+
 ## Lean reserve — recognition handles, not implementation obligations
 
-Two tiny theorems would land as `LeanProofs/Admissibility/ProjectionLaundering.lean` (ChatGPT-proposed filename). Both proofs are one-line; the structure is the artifact, not the proof complexity.
+Original framing, preserved unchanged. The sketches below were written as recognition handles; the 2026-05-30 annex compile honored them as such (drop-in, no proof complexity) rather than as authorization to promote.
 
 > **These sketches are recognition handles, not implementation obligations. Absence of Lean here is the intended state unless a downstream consumer forces the proof. "Sketched-not-built" is not a synonym for "obviously next."**
 
@@ -152,7 +172,9 @@ theorem loss_aware_projection_blocks_deferral_laundering
   exact h_policy_respects (project b) (h_preserve b h_def)
 ```
 
-**Build triggers:** only if (a) NQ / Wicket / Governor needs a concrete projection-laundering refusal in code, (b) CBA essay drafting forces a citation to the Lean form, (c) a downstream paper requires the formal pair.
+**Build triggers (original):** only if (a) NQ / Wicket / Governor needs a concrete projection-laundering refusal in code, (b) CBA essay drafting forces a citation to the Lean form, (c) a downstream paper requires the formal pair.
+
+**What actually fired (2026-05-30):** the annex-probe queue's five-criterion test — audit done, shape bounded, sketches near-Lean, the bounded question ("is the paired neg+pos a kernel, or prose wearing a lab coat?") was real, and public-surface promotion stays gated. Green confirms the structure. The original build triggers above still govern promotion to public surface; this compile did not.
 
 ## Anti-goals
 
@@ -197,12 +219,16 @@ theorem loss_aware_projection_blocks_deferral_laundering
 
 ## Park state
 
+Updated 2026-05-30 to reflect the scratch-annex compile.
+
 Next session's input — if the topic recurs — should:
 
-1. Check whether NQ / Wicket / Governor / CBA essay has demanded a citation.
+1. Check whether NQ / Wicket / Governor / CBA essay has demanded a citation. (Still gates public-surface promotion.)
 2. Check whether the PL/UC composition has been used in a fixture, paper, or downstream design pass.
-3. Only then consider promoting Sketches 1+2 into `LeanProofs/Admissibility/ProjectionLaundering.lean`.
+3. Only then consider importing the scratch annex into `LeanProofs.lean` or citing it from a preprint. **The annex existing is not the citation trigger.**
 
-Until then: prose only. The audit was the deliverable.
+Until then: scratch only. The audit was the first receipt; the green compile is the second receipt; the doctrine receipt is still upstream.
 
-> **The audit was the gate. The residue is the receipt.**
+> **The audit was the gate. The compile is the receipt. The forcing case is still upstream.**
+
+(That keeper is shared with the annex-probe queue's park state; PL inherits it.)
