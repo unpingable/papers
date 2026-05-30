@@ -1,0 +1,62 @@
+title: "An Admissibility Calculus: Authorization, Safety Bridges, and Value Decay"
+author: "James Beck"
+affiliation: "Independent Researcher"
+date: 2026-05-29
+series: "admissibility-calculus"
+paper_number: null
+version: "scaffold"
+status: "scaffold"
+doi: null
+zenodo_url: null
+arxiv_url: null
+license: "CC-BY-4.0"
+venue_target: "arXiv cs.LO (minimum); formal-methods or AI-safety venue possible"
+in_delta_t_series: false
+note: |
+  Standalone formal-methods preprint, outside the Δt Zenodo numbering. Sibling
+  artifact to Δt paper 28 ("The Lie Is Cheaper Than the Proof"), per the
+  topology decision in `working/calculus-paper-spine-2026-05-28.md`. The Lean
+  stack at `~/git/lean/LeanProofs/Admissibility/` (safety-bridge family) is
+  the source of truth; this preprint is exposition of finished material.
+keywords:
+  - admissibility
+  - authorization
+  - safety bridge
+  - value preservation
+  - Lean 4
+  - formal methods
+  - kernel-legible verdict
+  - trajectory triple
+  - bridged trajectory
+  - no-lift theorem
+  - actor-inert bridge
+  - attestation ledger
+  - structural countermodel
+  - L_t/V_t divergence
+abstract: |
+  We present a small Lean 4 admissibility kernel that separates two kinds of
+  evidence a transition system can carry: authorization that a step may be
+  taken, and a bridge witness that the step preserves an externally-defined
+  defended value. The kernel exhibits, as a constructive countermodel, an
+  authorized step that strictly decreases defended value; supplies an
+  actor-inert bridge primitive whose preserves-obligation must be discharged
+  at construction; and lifts the single-step result to state-threaded
+  inductive trajectory families. The main contribution is the trajectory
+  triple — positive composition (a bridged trajectory preserves the
+  defended-value floor), negative composition (an authorized trajectory can
+  lose defended value), and a no-lift theorem (the value-losing endpoint
+  admits no bridged trajectory) — together with a forgetful map between the
+  two families that turns "an authorized trajectory that does not lift to a
+  bridged one" into a typed function rather than a slogan. The pattern is
+  instantiated over two distinct witnesses: a Boolean receipt-poison
+  miniature and a Nat-valued two-actor attestation ledger; the second
+  witness confirms that the abstract layer is not an artifact of the
+  Boolean miniature and that authorization is permitted to read the actor
+  while the bridge is required to ignore it. The kernel is type-checked
+  under Lean 4 with no `sorry` and no axiom additions beyond the
+  parameterizing structures. We state explicitly what the kernel does and
+  does not warrant: it does not certify any institution, system, or paper
+  as safe, and its "all-green" verdicts are kernel-legible under a
+  degenerate derivation environment rather than substantively-grounded
+  legitimacy. The doctrinal mapping to institutional legitimacy structures
+  is the subject of a separate interpretive paper that cites this one.

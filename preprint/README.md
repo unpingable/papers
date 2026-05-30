@@ -63,6 +63,12 @@ Numbering reflects the order in which a claim was named, not relative maturity o
 
 ---
 
+### Standalone formal-methods preprint (outside Δt numbering)
+
+- *An Admissibility Calculus: Authorization, Safety Bridges, and Value Decay* (2026) — **scaffold (2026-05-29)**. Sibling artifact to the forthcoming Δt paper 28 per `working/calculus-paper-spine-2026-05-28.md`. Sober formal-methods exposition of the Lean safety-bridge family at `~/git/lean/LeanProofs/Admissibility/`; target venue arXiv cs.LO at minimum. NOT a member of P01–P27.
+
+---
+
 ### Methodology
 - [Convergence audit](../convergence/README.md) — retroactive literature audit across all 22 papers
 - [Falsification guardrails](../docs/method/falsification.md) — rival explanations, kill conditions, and reclassification rules for the framework
