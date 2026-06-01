@@ -23,7 +23,7 @@ The compile is *contact*, not publication. Green says "the shape is coherent eno
 
 ## The two-gate doctrine ladder
 
-(Crystallized from chatty's read on the consequence-partition close.)
+(Crystallized from ChatGPT's read on the consequence-partition close.)
 
 ```text
 candidate note   ≠ module
@@ -41,7 +41,7 @@ Hold the ladder. Each rung needs its own gate.
 
 ## The cross-altitude rhyme (the real keeper)
 
-Labelwatch caught it; chatty generalized it:
+Labelwatch caught it; ChatGPT generalized it:
 
 > **Existence claim isn't evidence; the constructor has to carry the pair.**
 
@@ -64,7 +64,7 @@ Evidence that cannot carry its own discriminating fields is a rumor with a schem
 
 The compile was contact, not publication. CBA still owns the public name; PL owns the kernel slot. PL/UC composition stays prose-only until a downstream consumer forces the citation.
 
-**Position (original audit, preserved):** Confirmed by all three readers (me, labelwatch, chatty). Cleanest match to the annex-probe test.
+**Position (original audit, preserved):** Confirmed by all three readers (me, labelwatch, ChatGPT). Cleanest match to the annex-probe test.
 
 - **Audit:** done in [projection-laundering.md](projection-laundering.md) §Overlap audit. CBA at vocabulary level, FiatAdmissibility at routing, sibling to SurfaceAuthorization / WitnessInvariance. PL/UC composition partner ([uncertainty-custody.md](uncertainty-custody.md)) named but not built.
 - **Shape:** paired negative + positive theorems over abstract variable bindings (`Belief / Artifact / Action / MustDefer / Consequential / ArtifactSignalsDefer`). One-line proofs each. Both sketches in the note ready to drop into Lean.
@@ -128,7 +128,7 @@ Filed in the queue so a future session does not re-derive the deferral logic. Me
 
 The override fired for one specific shape (bounded probe, audit done, multi-pass refined, sketches near-Lean-ready). It does **not** license a sweep through tooltheory compiling everything sketched.
 
-**Meta-warning** (chatty's phrasing, worth preserving verbatim):
+**Meta-warning** (ChatGPT's phrasing, worth preserving verbatim):
 
 > Don't let "green annex worked once" become "quick, formalize every raccoon footprint in tooltheory/." That's how annex becomes shadow-public-surface and then everyone pretends they don't know why the basement has governance.
 
@@ -153,7 +153,7 @@ two edge observations →  left / right (S-valued, observed)
 family version        →  (audit/versioning metadata)
 ```
 
-**Chatty's tiny-but-load-bearing gap:** to become a *true* `ObservedNonRefinement`, the row has to bind:
+**ChatGPT's tiny-but-load-bearing gap:** to become a *true* `ObservedNonRefinement`, the row has to bind:
 - the exact projection `p` being tested (which platform projection, where it collapses)
 - the exact policy/control being tested (user intent or comparison frame, not "different labels")
 
@@ -169,7 +169,7 @@ Otherwise the schema risks becoming "same post, different labels" — interestin
 - **Three-reader convergence on queue ordering:**
   - Me (paper-Lean Claude this session): "PL clean match, CPI different-shape candidate, no sweep."
   - Labelwatch: "PL passes the same annex-probe test; CPI maybe passes but with more blast radius."
-  - Chatty: "PL next if you want another bounded hit; CPI only after scope statement; everything else stays per-candidate."
+  - ChatGPT: "PL next if you want another bounded hit; CPI only after scope statement; everything else stays per-candidate."
 - **Override origin:** [[feedback-forcing-case]] §"Layer-of-application refinement (2026-05-29, ChatGPT pass)" — codifies the public-doctrine-vs-scratch-annex split that licensed CP's compile and licenses this queue.
 
 ## Park state

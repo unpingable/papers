@@ -2,7 +2,7 @@
 
 **Status:** Result note (2026-06-01). Specimen landed; not promoted. Filed per the Axis 2 forcing-case discipline in `working/axis-2-composition-forcing-cases.md`.
 
-**Provenance:** Multi-model conversation 2026-06-01 (ChatGPT analysis → file drafted blind to substrate → user pushed to me → substrate-fix pass on the one typeclass annotation + the three strengthening edits chatty's review surfaced). Triggered by Slice 0 (`BudgetMerge`) leaving open the orthogonal failure mode — local bridges that cannot survive *time* rather than cannot see *joint usage*.
+**Provenance:** Multi-model conversation 2026-06-01 (ChatGPT analysis → file drafted blind to substrate → user pushed to me → substrate-fix pass on the one typeclass annotation + the three strengthening edits ChatGPT's review surfaced). Triggered by Slice 0 (`BudgetMerge`) leaving open the orthogonal failure mode — local bridges that cannot survive *time* rather than cannot see *joint usage*.
 
 ---
 
