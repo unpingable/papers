@@ -1,11 +1,16 @@
-title: "An Admissibility Calculus: Authorization, Safety Bridges, and Value Decay"
+title: "Safety-Bridge Kernel: Authorization and Value Preservation"
+subtitle: "Axis 1 of the Admissibility Suite"
 author: "James Beck"
 affiliation: "Independent Researcher"
-date: 2026-05-29
-series: "admissibility-calculus"
+created: 2026-05-29
+last_updated: 2026-05-31
+formal_source_verified: 2026-05-31
+publication_date: null
+series: "admissibility-suite"
+axis: 1
 paper_number: null
-version: "scaffold"
-status: "scaffold"
+version: "v0.2"
+status: "axis-1 draft"
 doi: null
 zenodo_url: null
 arxiv_url: null
@@ -13,11 +18,15 @@ license: "CC-BY-4.0"
 venue_target: "arXiv cs.LO (minimum); formal-methods or AI-safety venue possible"
 in_delta_t_series: false
 note: |
-  Standalone formal-methods preprint, outside the Δt Zenodo numbering. Sibling
-  artifact to Δt paper 28 ("The Lie Is Cheaper Than the Proof"), per the
-  topology decision in `working/calculus-paper-spine-2026-05-28.md`. The Lean
-  stack at `~/git/lean/LeanProofs/Admissibility/` (safety-bridge family) is
-  the source of truth; this preprint is exposition of finished material.
+  Axis 1 of the admissibility suite (see `working/calculus-suite-map.md`).
+  Outside the Δt Zenodo numbering. Sibling artifact to Δt paper 28 ("The Lie
+  Is Cheaper Than the Proof"), per the topology decision in
+  `working/calculus-paper-spine-2026-05-28.md`. The Lean stack at
+  `~/git/lean/LeanProofs/Admissibility/` (safety-bridge family + 2026-05-31
+  characterization layer) is the source of truth; this note is exposition of
+  finished material. Axis 2 (composition / merge admissibility) and Axis 3
+  (self-amendment / frontier mutation) are open and will be drafted as
+  separate kernel notes.
 keywords:
   - admissibility
   - authorization

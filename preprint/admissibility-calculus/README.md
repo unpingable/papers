@@ -1,10 +1,13 @@
-# An Admissibility Calculus: Authorization, Safety Bridges, and Value Decay
+# Safety-Bridge Kernel: Authorization and Value Preservation
+
+*Axis 1 of the Admissibility Suite.*
 
 **Author:** James Beck
 **Affiliation:** Independent Researcher
-**Status:** scaffold (2026-05-29). Pre-draft. Title decided; abstract, claim list, and theorem-target table drafted; sections outlined but body not yet written.
-**Target venue:** arXiv cs.LO at minimum; formal-methods or AI-safety venue possible if framing supports.
-**Series:** Standalone formal-methods preprint. **Outside the Δt Zenodo numbering.** Sibling artifact to Δt paper 28, not a member of P01–P27.
+**Status:** v0.2 axis-1 draft (2026-05-29 scaffold; 2026-05-30 canonicalization refresh; 2026-05-31 body prose for §1–§8 and appendices A/B; 2026-05-31 suite reframe + characterization layer in Lean). Title, abstract, claim list, theorem-target table stable. **Drafted:** §1 introduction, §2 formal apparatus, §3 trajectory separation result (sections 3.1–3.8), §4 two separating instances (4.1 receipt-poison, 4.2 Nat-valued attestation ledger), §5 scope and non-claims, §6 related work, §7 discussion, §8 conclusion, Appendix A module map, Appendix B build and reproducibility. **Deferred:** References section — bibliography locks at release. Body prose for §3/§4/§7/§8 still uses pre-characterization framing; the new characterization layer (`AuthPreserves`, `AuthorizationBridgeGap`, `MaximalBridge`, `BridgeComplete`, `HasForgetfulSection` + their theorems) lives in `SafetyBridge.lean` and is not yet exposed in the paper body — pending a §3 expansion or §3.9 subsection.
+**Suite context:** This artifact is **Axis 1** of the admissibility suite (see `working/calculus-suite-map.md`). Axis 2 (composition / merge admissibility) and Axis 3 (self-amendment / frontier mutation) are open and will be drafted as separate kernel notes. The unifying "Admissibility Calculus" paper synthesizes them only after the axes exist and cross-axis theorems force unification.
+**Target venue:** Zenodo / arXiv-quality formal note; cited by Δt paper 28 ("The Lie Is Cheaper Than the Proof") as the formal substrate. No conference submission planned.
+**Series:** Outside the Δt Zenodo numbering. Member of the admissibility suite; sibling artifact to Δt paper 28.
 
 ## Center of gravity
 
@@ -48,12 +51,12 @@ The eight safety-bridge family modules cited throughout:
 |---|---|
 | `LeanProofs/Admissibility/AuthorizedNotSafe.lean` | Single-step wound (StepAllowed layer, axiomatic) |
 | `LeanProofs/Admissibility/AuthorizedNotSafeWitness.lean` | Wound consistency discharge (concrete miniature) |
-| `LeanProofs/Admissibility/SafetyBridge.lean` | Abstract `SafetyEnv` primitive + `SafeStep` gate |
+| `LeanProofs/Admissibility/SafetyBridge.lean` | Abstract `SafetyEnv` primitive + per-hop-actor `AuthStep` / `SafeStep` gates + generic per-hop-actor `AuthorizedTraj E` / `BridgedTraj E` + generic `bridgedTraj_preserves` |
 | `LeanProofs/Admissibility/SafetyBridgeWitness.lean` | Non-contamination bridge specimen |
 | `LeanProofs/Admissibility/AuthorizedStepNotSafe.lean` | Verdict-layer wound transfer (brick 1a) |
-| `LeanProofs/Admissibility/AuthorizedStepNotSafeWitness.lean` | Verdict-layer wound discharge + canonical `SafeAuthorizedStepC` gate (brick 1b) |
-| `LeanProofs/Admissibility/SafetyTrajectory.lean` | Trajectory triple + forgetful map (brick 2) |
-| `LeanProofs/Admissibility/AttestationLedger.lean` | Second concrete witness (tier-1, two-actor, Nat-valued) |
+| `LeanProofs/Admissibility/AuthorizedStepNotSafeWitness.lean` | Verdict-layer wound discharge + canonical `SafeAuthorizedStepC` gate (brick 1b); actor as field |
+| `LeanProofs/Admissibility/SafetyTrajectory.lean` | Verdict-layer trajectory specialization: `AuthorizedTrajC` / `BridgedTrajC` + forgetful map + the brick-2 triple (`bridgedTrajC_preserves`, `authorized_trajectory_loses_value`, `no_bridgedTrajC_to_poison_end`) |
+| `LeanProofs/Admissibility/AttestationLedger.lean` | Second concrete witness (tier-1, two-actor, Nat-valued); consumes the generic substrate directly (no bespoke trajectory types) |
 
 ## Files
 

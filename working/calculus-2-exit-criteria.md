@@ -40,7 +40,7 @@ Preprint working slug: *"An Admissibility Calculus: Authorization, Safety Bridge
 
   The trajectory triple is not "additional evidence beyond the criterion" — it is the criterion's substantive form. The original wording is preserved above as historical record of the minimum bar; the criterion *as met* is the full brick set described here. (Revision per web-Claude 2026-05-29: condition 2 marked upward to reflect what shipped.)
 
-**Safety-axis publication status:** *formalized YES; preprint scaffold pending.* Lean source is the source of truth; the preprint is exposition.
+**Safety-axis publication status:** *formalized YES; trajectory-design divergence DISCHARGED 2026-05-30 via the substrate canonicalization (per-hop actor as field in `SafeStep` / `AuthorizedStepC` / `SafeAuthorizedStepC`, generic per-hop-actor trajectories at the `SafetyBridge.lean` substrate); preprint scaffold pending.* Lean source is the source of truth; the preprint is exposition. Canonicalization record: `working/tooltheory/trajectory-canonicalization-2026-05-30.md`.
 
 ### Composition axis — NOT MET (sufficiency only)
 

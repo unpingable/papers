@@ -1,20 +1,21 @@
 # NOTES — drafting plan
 
 **Filed:** 2026-05-29
-**Status:** scaffold-stage drafting plan. Not paper content. Bake out into `paper.md` as sections firm up.
+**Status:** v0.2 axis-1 drafting plan. Not paper content. Suite reframe 2026-05-31: this artifact is **Axis 1** of the admissibility suite per `working/calculus-suite-map.md`. Axes 2 (composition) and 3 (self-amendment) are separate kernel notes; the unifying calculus paper is post-suite synthesis. Lean characterization layer (`AuthPreserves`, `AuthorizationBridgeGap`, `MaximalBridge`, `BridgeComplete`, `HasForgetfulSection` + theorems) lives in `SafetyBridge.lean` as of 2026-05-31 and is candidate for inclusion in a §3 expansion (probably §3.9 collapse iff, §3.10 obstruction, §3.11 maximal-bridge corner).
 
 ## Sequencing
 
 1. ✅ Title + abstract + claim list + theorem-target table (this scaffold pass).
-2. ⏳ §2 (formal apparatus) full draft. The five definitions need to be readable in formal-methods register without leaking Lean syntax into the body. Block diagram or two-row table of the apparatus may be load-bearing for legibility.
-3. ⏳ §3 (irreducible theorem family) full draft. The longest section. Each theorem gets its honesty discussion in a paragraph; the no-lift theorem gets the most ink. The Loop-Capture mapping note is the only spot where institutional reading appears, fenced.
-4. ⏳ §4 (two witnesses) full draft. Attestation ledger gets ~2× the receipt model's space. The wound-is-authorized framing is the load-bearing observation.
-5. ⏳ §5 (scope and non-claims) — write at any time; the fence list is stable.
-6. ⏳ §1 (introduction) — write last. Hardest section to write before §3 is settled, because the introduction promises what §3 delivers.
-7. ⏳ §6 (related work) — write after §3 settles. Knowing what we did and didn't prove is the precondition for honest positioning.
-8. ⏳ §7 (discussion) + §8 (conclusion) — short; write after §6.
-9. ⏳ Appendix A (module map) — generate from theorem-target table.
-10. ⏳ Appendix B (build and reproducibility) — short.
+2. ✅ §2 (formal apparatus) full draft (2026-05-31). Core apparatus items in formal-methods register; both load-bearing decisions surfaced (actor-inertness, per-hop-actor in substrate); v0 simplifications stated.
+3. ✅ §3 (irreducible theorem family) full draft (2026-05-31). Sections 3.1–3.8: single-step wound; verdict-layer transfer; bridge dischargeability; positive composition; negative composition; no-lift; forgetful map; doctrinal mapping fence. Loop-Capture institutional reading kept to one fenced paragraph in §3.8.
+4. ✅ §4 (two witnesses) full draft (2026-05-31). §4.1 receipt-poison miniature (short); §4.2 Nat-valued attestation ledger (longer), with `protocolHappyPath` acid test surfaced as multi-actor confirmation. Ledger language tightened per ChatGPT pass to avoid blockchain-cosplay register.
+5. ✅ §5 (scope and non-claims) full draft (2026-05-31). Six bullets per the original plan.
+6. ✅ §1 (introduction) full draft (2026-05-31). Thesis paragraph tightened per ChatGPT pass — "authorized trajectory family may contain paths whose endpoints fall outside the bridged trajectory family" — avoids "permanently and irreversibly" overclaim.
+7. ✅ §6 (related work) full draft (2026-05-31). Four clusters per the lit-differential sketch below; Δt cross-references noted as background context only.
+8. ✅ §7 (discussion) + §8 (conclusion) full draft (2026-05-31). §7 three-observation shape (cost asymmetry, composability, doctrinal handoff); §8 one paragraph. §7 tightened per ChatGPT pass — "real systems instantiate the antecedent" rather than "exploit this cost asymmetry."
+9. ✅ Appendix A (module map) full draft (2026-05-31). 13 rows; clean per-row format (no merged-cell artifacts in row 7 — generic and verdict forgetful maps split to separate rows).
+10. ✅ Appendix B (build and reproducibility) full draft (2026-05-31). ChatGPT rewrite: no Google-redirect URL, clean fenced bash block, "audited before release candidates" rather than "continuously audited."
+11. ⏳ References — venue-dependent; defer formatting until target venue is locked.
 
 ## Lit-differential sketch
 
@@ -51,7 +52,7 @@ The fence is checked in §5 explicitly; the introduction signposts it; §3 carri
 
 If any of the following changes between now and first draft, redo this scaffold:
 
-- A new theorem lands in `SafetyTrajectory.lean` or `AttestationLedger.lean` (e.g. the trajectory-global → per-hop actor refactor at the generic layer). Probably triggers an §4 expansion.
+- A new theorem lands in `SafetyTrajectory.lean` or `AttestationLedger.lean`. (Note: the trajectory-global → per-hop actor refactor at the generic layer *already landed* 2026-05-30 — see `working/tooltheory/trajectory-canonicalization-2026-05-30.md`; theorem-target table and §2 / §4 scaffold-direction notes refreshed.) Probably triggers an §4 expansion.
 - A tier-2 model (budget-margin or quorum) lands. Triggers a "tier-2 preview" subsection in §3 or §7.
 - Paper 28 starts drafting. May reshape §1 framing — though Fork B explicitly says the preprint goes first, so this should not be a forcing event.
 
@@ -63,7 +64,7 @@ Target venue: arXiv cs.LO at minimum. AI-safety venue (e.g. AI Safety Workshop, 
 
 ## Identifier drift
 
-Theorem names in this scaffold are verified against `~/git/lean/LeanProofs/Admissibility/` as of 2026-05-29. The crosswalk automation (`tools/formalization_crosswalk.py`) should be run again before any draft revision touches the theorem-target table.
+Theorem names in this scaffold were verified against `~/git/lean/LeanProofs/Admissibility/` as of 2026-05-29 and refreshed against the post-canonicalization source on 2026-05-30 (manual + report-only drift check; see drift-check log in this directory if filed). The crosswalk automation (`tools/formalization_crosswalk.py`) should be run again before any draft revision touches the theorem-target table.
 
 ## Open question for v0.1 → v1.0 draft
 
