@@ -179,6 +179,18 @@ absorbs Axis 3 when forced; this paper does not preempt it.
    the body lands — introductions are easier to write against
    complete bodies than against sketches.
 
+## After-action (once the paper ships)
+
+- **Doc / README sweep.** Update Lean `Admissibility/README.md` (if it
+  indexes modules) to list `ParameterizedMerge` / `BoundaryWitness`
+  with their then-current status (scratch / not-root-wired, or
+  promoted if a consumer landed). Update `WHAT-THE-LEAN-STACK-PROVES`
+  if the paper draft surfaces a 1.0-surface claim worth advertising.
+  Update `PAPER-MAP` with the paper's Zenodo entry once published.
+  Top-level papers `README` only if the paper changes the corpus
+  positioning. *None of this is forced until the paper ships;
+  promoting any of it now is advertising work that isn't done.*
+
 ## For the pocket — Axis 3 boundary as seam, not wall
 
 Not for the paper. Carry it in case a reviewer presses on the scope fence.
