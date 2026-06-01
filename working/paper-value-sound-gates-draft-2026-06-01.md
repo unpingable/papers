@@ -45,10 +45,10 @@ operations. This operation-specificity is itself a finding: transition
 and merge cannot be collapsed into one abstract step without losing
 the joint conditions that make composition meaningful.
 
-The result is not the maximal admissibility calculus. It closes a
-bounded fragment over authorization and composition under a fixed
-evaluator. Self-amendment, where the evaluator itself mutates, is
-left outside scope.
+This is not the maximal admissibility calculus. It closes a bounded
+fragment over authorization and composition under a fixed evaluator.
+Self-amendment, where the evaluator itself mutates, is left outside
+scope.
 
 ## Contribution list — draft v1
 
@@ -66,8 +66,8 @@ This paper makes four contributions.
    reconciliation. Three specimens isolate distinct merge-boundary
    failures: shared-budget overrun, stale evidence at reconciliation
    time, and conflict-policy loss. Each specimen supplies both a
-   negative case (the bust) and a restoration condition (the witness
-   that blocks it).
+   negative case and a restoration condition — the witness that
+   blocks the failure.
 
 3. **A bounded value-sound gating pattern.**
    We identify the shared structure between the transition and
