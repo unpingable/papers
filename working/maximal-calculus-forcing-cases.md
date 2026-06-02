@@ -162,6 +162,13 @@ Each forcing case carries five fields:
   pre-commit either way.
 - **Geometry.** Self-reach (most pure form).
 - **Status.** Load-bearing. Resolution shapes every other case.
+  **Promoted to actively-worked 2026-06-01** via
+  [`maximal-calculus-amendment-cut.md`](maximal-calculus-amendment-cut.md).
+  Candidate no-go shape: well-foundedness via temporal priority
+  (`P_i → P_{i+1}` admissible iff the act of amending is admissible
+  *under `P_i`*, never under `P_{i+1}`). Distinguished failure
+  named: founding events, structurally describable but
+  non-blessable.
 
 ### Case #4 — Standing mutation
 
