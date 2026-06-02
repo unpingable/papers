@@ -25,3 +25,7 @@ specimens, not the completed calculus.
   - `retroactive-legitimation-charter.md`, `retroactive-legitimation-codex-review.md` (axis 3).
 - Forcing-case register (broader, upstream of the specimens):
   - `maximal-calculus-forcing-cases.md`, `maximal-calculus-decomposition-trigger.md`.
+
+## Synthesis (unratified)
+
+- `source-basis-discipline-synthesis.md` — synthesis candidate after a four-node review pass (Claude Code, Claude-web, ChatGPT, DeepSeek, Gemini). Not ratified calculus doctrine; carries a two-axis caveat (temporal/source vs multiplicity/resource) and a common-mode warning. Pickup point for the next session.
