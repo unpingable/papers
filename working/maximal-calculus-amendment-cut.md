@@ -6,12 +6,18 @@ candidate first axiom **(A1)**: a transition from `S` to `S′` is
 authorized only if its authorization witness is valid in `S`, not
 introduced by `S′` — the lift of the Fixed-Value Fragment's
 `AuthStep E s` type-level discipline into the regime where the
-authorization predicate is itself part of state. Substrate-level
-only; no Lean. Sibling to
+authorization predicate is itself part of state. Operational form of
+(A1) landed via multi-model exchange 2026-06-01: `Authorized_S(O)`
+vs. `Authorized_{S′}(O)` as the working test, with pre-authorized
+mutation named as superclass (#4 = standing-mutation subcase),
+receipt-gated decomposition for future-witness laundering, and the
+explicit non-pruning verdict that other pre-authorized mutations
+remain maximal candidates pending the reduction discriminator.
+Substrate-level only; no Lean. Sibling to
 [`maximal-calculus-forcing-cases.md`](maximal-calculus-forcing-cases.md)
 (register) and
-[`maximal-calculus-plan-prompt.md`](maximal-calculus-plan-prompt.md)
-(plan-prompt).
+[`maximal-calculus-decomposition-trigger.md`](maximal-calculus-decomposition-trigger.md)
+(forcing-gated decomposition protocol, dormant).
 
 **Provenance.** Claude-web analysis (2026-06-01), surfaced after the
 DeepSeek-class adversarial review of the bounded fragment closed
@@ -167,7 +173,7 @@ calculus's first content. *The witness must be valid in `S`, not
 introduced by `S′`.* The fragment's authorization gate,
 generalized.
 
-Candidate, not ratified. The plan-prompt's refused decisions still
+Candidate, not ratified. The register's refused decisions still
 hold — one calculus or several, `value`'s location, retroactivity
 semantics, case ordering, none pre-decided here. What the axiom
 does is name the structural constraint the calculus must satisfy
@@ -175,6 +181,237 @@ at minimum, lifted from the fragment's already-checked discipline.
 Whether (A1) is *the* first axiom or one of several, whether it
 ratifies as stated or sharpens under contact with case #4
 (standing mutation) or case #5 (crisis substitution), is open.
+
+## Operational form of (A1): the #3/#4 discriminator
+
+The abstract form of (A1) and the structural distinction between
+cases #3 and #4 were both stated above. A multi-model exchange
+(DeepSeek-style adversarial fresh context + ChatGPT-style
+refinement + author intervention, 2026-06-01) operationalized the
+discriminator into a falsifiable invariant, then caught two
+symmetric over-corrections: a tendency to let #4 absorb every
+pre-authorized mutation, and a tendency to prune the maximal
+register down to *"only #3 and #4 survive."*
+
+The keeper statement:
+
+> **The decisive question is not whether admissibility inspects the
+> post-state. The decisive question is whether the authority used to
+> admit the operation existed before the operation, or is produced
+> by the operation itself.**
+
+### The invariant
+
+Let `Authorized_S(O)` denote that operation `O` is admissible under
+the authority / evaluator valid in pre-state `S`. Let
+`S′ = apply(O, S)`. Then:
+
+- **Pre-authorized mutation.** `Authorized_S(O)` holds. `O` may
+  alter any future structure in `S′` — standing, procedure,
+  threshold, evaluator, value location, jurisdiction, what counts as
+  a receipt or witness. *Pre-authorized mutation is a superclass,
+  not itself a verdict that the operation is bounded-paper work.*
+  - **#4 Standing mutation** (subcase). `O` alters standing,
+    eligibility, or jurisdiction for later operations.
+- **#3 Self-certifying amendment.** `¬ Authorized_S(O)`, yet
+  `Authorized_{S′}(O)` would hold under the new authority that `O`
+  itself installs in `S′`. The operation's admissibility flows from
+  authority it brings into existence.
+- **Invalid laundering.** `¬ Authorized_S(O)`, and the claimed
+  witness is neither valid in `S` nor validly produced by a
+  receipt-gated later transition.
+
+Keeper line for the core seam:
+
+> **#4 changes who may act next. #3 tries to become the reason it
+> was allowed to act now.**
+
+This is (A1)'s working test. The axiom said: a transition's witness
+must be valid in `S`, not introduced by `S′`. The discriminator
+says: when the witness is missing in `S` but present in `S′` as a
+consequence of `O`, the operation is #3 — exactly the (A1)
+violation.
+
+### The first-pass invariant and why it failed
+
+The exchange's first candidate — *"admissibility depends essentially
+on `S′` in a self-referential way"* — caught too much. Post-state
+dependence is not the villain. The narrow villain is *post-state
+authority being used to authorize the transition into that
+post-state*. The refined invariant locates the discrimination at
+the evaluator, not at the predicate's reference. (A1) is consistent
+with predicates that examine `S′`; it is not consistent with
+authorities that only exist in `S′`.
+
+### Worked examples
+
+**Case A — threshold amendment.** Current rule: amendments need
+60%. Proposed: *"From now on, amendments need 50%. This amendment is
+valid if it receives 50%."*
+
+- ≥60%: `Authorized_S(O)` under the old 60% rule. **Pre-authorized
+  mutation of procedural authority** — the threshold is
+  procedural-rule structure, not standing. Not automatically #4;
+  only #4 if this system treats threshold as standing (it usually
+  doesn't).
+- 50–59%: `¬ Authorized_S(O)` (fails 60%); `Authorized_{S′}(O)`
+  under the new 50% rule `O` installs. → **#3**.
+- <50%: invalid under both.
+
+The case demonstrates the superclass/subtype distinction: a single
+operation can be pre-authorized at one vote level and
+self-certifying at another, but pre-authorized ≠ #4. #4 applies
+only when the mutation specifically targets standing.
+
+**Case B — delegation requiring future acceptance.** *"Delegate
+authority to `D` now, valid only if `D` confirms within 1 minute."*
+
+The single-step form ("delegate now, contingent on future receipt")
+is ill-formed under (A1). The honest decomposition is three
+sub-operations:
+
+- **B1. Create pending delegation.** `Authorized_S(O_1)` is true
+  under pre-state superuser authority. Not #3, not #4 (unless the
+  pending status itself mutates standing). Receipt-gated protocol
+  pattern.
+- **B2. Activate delegation after the acceptance receipt arrives.**
+  `Authorized_{S_t}(O_2)` holds in the later state `S_t` where the
+  receipt exists. Receipt-gated transition.
+- **B3. Activate the delegation now on the basis of an anticipated
+  future receipt.** `¬ Authorized_S(O)`. The future receipt has not
+  yet been issued; the authority does not exist. **Future-witness
+  laundering** — an invalid laundering attempt that mimics
+  admissibility by deferring its witness to a future state. Not a
+  new maximal category; just an (A1) violation by a different route.
+
+Keeper line:
+
+> **A future receipt can authorize a later transition. It cannot
+> authorize the transition that creates the need for the receipt.**
+
+"Receipt-gated" is not a new maximal entry. It is a protocol
+pattern `(O_1 → wait → O_2)` under which each phase is independently
+judged by the discriminator.
+
+**Case C — postcondition rule.** *"A rule change is admissible iff
+the changed rule's value > 0."*
+
+- If the postcondition predicate is *already in* `S`:
+  `Authorized_S(O)` evaluated by pre-state authority whose predicate
+  examines `S′`. The evaluator stays in `S`. → **postcondition-gated
+  mutation**.
+- If the postcondition predicate is *introduced by* `O`:
+  `¬ Authorized_S(O)`; `Authorized_{S′}(O)` under the new rule. →
+  **#3**.
+
+The postcondition-gated form is *only* maximal if it fails the
+reduction discriminator:
+
+> Can the postcondition be expressed as an ordinary transition
+> invariant under fixed value, including product-space encodings
+> such as `(mode, s)`?
+
+If yes (the password-length example: *"valid iff length ≥ 12"*), it
+belongs to bounded-paper territory. If no, it remains a maximal
+candidate distinct from #3 and #4.
+
+### The non-pruning verdict
+
+A symmetric failure mode threatened the consolidation. Just as the
+first-pass invariant caught too much by treating post-state
+dependence as the villain, the consolidation tried to land on
+*"only #3 and #4 survive as distinct maximal categories."* That
+over-prunes.
+
+Pre-authorized mutations of structures the bounded Fixed-Value
+Fragment does *not* hold environmentally — the evaluator, value
+location, retroactivity semantics, slice boundaries, the definition
+of receipt or witness — may still be maximal. They are not
+automatically maximal; each must pass the reduction discriminator
+independently. The invariant separates #3 from #4. It does not
+decide the whole register.
+
+> **#3 and #4 are now cleanly distinguished. Other candidates are
+> not automatically maximal; they must pass the reduction
+> discriminator independently.**
+
+### Decision procedure
+
+For any candidate operation:
+
+1. **Is `Authorized_S(O)` true?**
+   - *No.* Check: would `Authorized_{S′}(O)` be true only because
+     `O` installs or alters the authority/evaluator structure by
+     which `O` itself is judged?
+     - If yes → **#3 self-certifying amendment**.
+     - If no → **invalid laundering**, unless decomposable as a
+       receipt-gated protocol where the first phase is pre-authorized
+       (Case B's B1/B2 form).
+   - *Yes.* `O` is pre-authorized.
+     - Does `O` mutate standing / eligibility / jurisdiction? →
+       **#4 standing mutation candidate; it still owes the
+       maximal/bounded reduction argument.**
+     - Otherwise → apply the reduction discriminator. If `O` reduces
+       to ordinary transition or merge under fixed value (including
+       product-space `(mode, s)` representations), it is
+       bounded-paper work. If not, it is a candidate maximal case
+       distinct from #3 and #4 — name it by what it mutates
+       (evaluator, value location, retroactivity semantics, slice
+       boundaries, receipt definition, etc.).
+
+The "only because" wording is load-bearing. Self-certification is
+not that the new authority is the *exclusive* input to `O`'s
+admissibility; it is that the new authority is *necessary* — that
+without `O`'s own installation, `O` would not authorize. A mix of
+pre-existing substrate and newly installed authority still counts
+as #3 if the new authority is what carries the verdict over the
+line.
+
+The #4 caveat is the symmetric guard. Some standing mutations may
+still encode cleanly under fixed value or `(mode, s)` product-space;
+#4 owes the reduction argument like everything else. The number
+does not make the case sacred.
+
+> **The invariant distinguishes #3 from #4. The discriminator
+> distinguishes maximal from bounded. Do not conflate the two.**
+
+That sentence is the whole point.
+
+### What this clarifies
+
+(A1) in its abstract form: *witness valid in `S`, not introduced by
+`S′`*. The operational discriminator gives the working test:
+*locate the evaluator*. If the evaluator is in `S` (even when its
+predicates examine `S′`), the operation is on (A1)'s good side. If
+the evaluator only becomes valid as a consequence of `O` and judges
+from `S′`, the operation is on (A1)'s bad side — and that is the
+precise structural shape of #3.
+
+The decision procedure leaves space for pre-authorized mutations of
+the bounded fragment's environmental fences — the evaluator, value
+location, and so on — to remain maximal candidates pending the
+reduction test, rather than auto-demoting them. The fragment kept
+those structures still by environmental fencing; the maximal
+calculus must inherit a decision about each. The discriminator does
+not pre-decide which are bounded-reducible and which are not.
+
+### Falsifiability
+
+The invariant is falsifiable. It fails if:
+
+- An operation exists with `¬ Authorized_S(O) ∧ Authorized_{S′}(O)`
+  that does *not* count as self-certifying amendment under
+  intuitive reading.
+- #4 collapses into #3 under some constructive reduction (for
+  example, if mutating standing turns out to always implicitly
+  install the standing-evaluator).
+- A pre-authorized mutation of an environmental structure
+  (evaluator, value location, etc.) turns out to *always* reduce to
+  ordinary transition or merge under fixed value — collapsing the
+  "candidate maximal" space back to {#3, #4} and validating the
+  symmetric over-pruning the verdict above rejected.
+
+None has been exhibited. All remain open tests.
 
 ## The distinguished failure: founding events
 
@@ -249,7 +486,7 @@ under the old.
 
 This note constitutes forcing-case promotion of **case #3
 (self-certifying amendment, load-bearing)** from *registered* to
-*actively worked*, per the plan-prompt's promotion gate:
+*actively worked*, per the register's promotion gate:
 
 1. **Forcing case shows up.** ✓ — claude-web's analysis identifies
    the structural obstruction.
@@ -348,7 +585,9 @@ mean implementation has started.
 ## Related records
 
 - Register: [`maximal-calculus-forcing-cases.md`](maximal-calculus-forcing-cases.md)
-- Plan-prompt: [`maximal-calculus-plan-prompt.md`](maximal-calculus-plan-prompt.md)
+- Decomposition trigger:
+  [`maximal-calculus-decomposition-trigger.md`](maximal-calculus-decomposition-trigger.md)
+  (forcing-gated protocol; dormant artifact)
 - Fragment (closed against the seam this note crosses):
   [`paper-value-sound-gates-spine-2026-06-01.md`](paper-value-sound-gates-spine-2026-06-01.md),
   [`paper-value-sound-gates-draft-2026-06-01.md`](paper-value-sound-gates-draft-2026-06-01.md)

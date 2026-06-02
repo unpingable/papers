@@ -1,32 +1,29 @@
-# Maximal calculus plan-prompt
+# Maximal calculus — decomposition trigger
 
-**Status:** Plan-prompt sibling to `maximal-calculus-forcing-cases.md`,
-filed 2026-06-01. NOT a plan. NOT a roadmap. NOT to be executed until a
-forcing case satisfies the register's promotion gate.
+> This is an inactive trigger artifact. It is not evidence that the
+> maximal calculus is ripe. Loading this prompt before the promotion
+> gate is itself a category error.
 
-This file's job is to be the prompt that gets loaded — *only when
-forced* — to produce a structural decomposition of the maximal
-admissibility calculus. The decomposition's job, in turn, is to let us
-see whether what has been forced is one paper, several, or none. The
-plan-prompt exists now so that the prompt doesn't get rebuilt from
-scratch under review pressure, where small drift compounds.
+**Status:** Forcing-gated decomposition protocol, filed 2026-06-01.
+Not an executable plan. Not a roadmap. Not evidence that
+maximal-calculus work is ripe. Its purpose is to govern the first
+structural decomposition only after a registered forcing case
+satisfies the promotion gate in
+[`maximal-calculus-forcing-cases.md`](maximal-calculus-forcing-cases.md).
 
-**Provenance.** Drafted by user 2026-06-01. Claude (Opus 4.7,
-soft-moonbeam plan mode) applied five sharpenings before filing:
-anchor-verb (slice-indexed necessity is a finding, not a constraint to
-relax); keystone altitude (no Lean shape pre-commitment); seam vs.
-assumptions distinction; falsifier-class enumeration; bidirectional
-outside-aperture audit. The user reviewed the sharpenings and required
-two micro-patches: keep "theorem" out of the keystone shape list
-entirely (omission, not enumeration); include the bidirectional audit
-unconditionally rather than as a parked fifth candidate. A sixth
-post-filing patch swapped the per-case ledger handler list from
-`object/theorem/refused-decision` to `object/result/refused-decision`
-for Lean-shape-hygiene consistency with the keystone scrub.
+This file governs the first structural decomposition pass that
+follows any satisfied promotion gate, so the procedure does not get
+rebuilt under review pressure where small drift compounds. The
+decomposition's job, in turn, is to let us see whether what has been
+forced is one paper, several, or none.
+
+**Provenance:** drafted and revised 2026-06-01 through adversarial
+review. Revision notes preserved to identify guardrails against
+drift.
 
 ---
 
-## The prompt body (load this when forced)
+## The protocol body (load only after promotion-gate satisfaction)
 
 You are planning the maximal calculus that the bounded paper *Value-Sound
 Gates for Authorization and Composition* (Axes 1–2) explicitly closes
