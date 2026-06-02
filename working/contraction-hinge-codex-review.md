@@ -53,3 +53,32 @@ to keep the per-fragment review traces separated.
 - Axis map: [`maximal-calculus-map.md`](maximal-calculus-map.md) (axis 2 = ContractionHinge).
 - Sibling slice's review trace: [`maximal-calculus-codex-review-log.md`](maximal-calculus-codex-review-log.md) (axis 1 = AmendmentFragment).
 - Codex calling discipline: `~/.claude/skills/codex-exec/SKILL.md`.
+
+---
+
+## 2026-06-02 (charter re-alignment pass)
+
+After axes 1 and 3 shipped, the user filed the design-frozen **Calculus Charter — Slice 0: The Contraction Hinge** with a specific presentation discipline: per-rule semantic glosses, `infixr:70` for `⊗`, vocabulary `sum` not `weight`, T1 as a pure derivation term, an explicit Failure Log section, and explicit cut-deferral language. The slice's *content* already matched the charter; the file was refactored in place to bring presentation into precise correspondence (no semantic change).
+
+**Build status:**
+- `lake env lean LeanProofs/Admissibility/ContractionHinge.lean`: exit 0. (One mid-refactor `sorryAx` flagged when T1's term-mode unification failed; resolved by hinting `(Γ := [B]) (Δ := [A])` on the inner `tensorR`. Final compile clean.)
+- `lake build`: exit 0, 8305 jobs (baseline).
+- `#print axioms`:
+  - T1: **no axioms** (now an axiom-free term derivation, up from `propext` in the prior pass — the term-mode rewrite eliminated the `simp` dependency T1 had carried).
+  - T2 / T3: `propext`, `Quot.sound` (Lean core; unchanged).
+  - T3': no axioms (unchanged).
+
+**Codex review (review-layer scope per charter):**
+
+The charter's review layer must be non-Claude (codex is OpenAI, satisfies). Five items checked, all **Pass**:
+
+- (a) **Axioms clean.** T1 axiom-free; T2/T3 use only Lean core `propext`, `Quot.sound`; no user axioms.
+- (b) **No `sorry` / `admit`.**
+- (c) **Context type is `List Formula`.**
+- (d) **T3 does not route through contraction.** Routes through `T2 h` and `v_pos A`; never invokes `DerivableC`, `contr`, or any contraction lemma.
+- (e) **Each rule matches its gloss.** All five `Derivable` constructors carry the charter's glosses verbatim as docstrings; codex confirmed the signatures correspond.
+
+**Integration:** none. The slice ships as re-aligned.
+
+**Cross-reference (this pass):** charter source was supplied in conversation by the user; logged here as input. Sibling slice 1 (RetroactiveLegitimation) ships separately at [`retroactive-legitimation-codex-review.md`](retroactive-legitimation-codex-review.md).
+
