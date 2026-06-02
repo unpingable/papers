@@ -1,12 +1,22 @@
 # Maximal-calculus — codex adversarial review log
 
+**Scope:** This file is the codex review log for **axis 1**
+(AmendmentFragment) only — six per-milestone entries A.1–A.6 plus the
+final D.4 outside-aperture audit. It is **not** the full
+maximal-calculus review log. The sibling slices have their own logs:
+
+- Axis 2 (ContractionHinge): [`contraction-hinge-codex-review.md`](contraction-hinge-codex-review.md).
+- Axis 3 (RetroactiveLegitimation): [`retroactive-legitimation-codex-review.md`](retroactive-legitimation-codex-review.md).
+
 **Status:** Agent-maintained log, seeded 2026-06-02. Per
-[`/home/jbeck/.claude/plans/cheeky-plotting-reef.md`](../../.claude/plans/cheeky-plotting-reef.md):
-each Lean milestone of `LeanProofs/Admissibility/MaximalCalculus.lean`
-(scratch annex in `~/git/lean`) gets a `codex exec` adversarial review
-pass before the next milestone begins. Findings are tagged ACCEPT /
-REJECT / DEFER (operator) with a one-line reason and (where applicable)
-the integration that followed.
+[`/home/jbeck/.claude/plans/cheeky-plotting-reef.md`](../../../.claude/plans/cheeky-plotting-reef.md):
+each Lean milestone of `LeanProofs/Admissibility/AmendmentFragment.lean`
+(scratch annex in `~/git/lean`; original filename
+`MaximalCalculus.lean` before the 2026-06-02 closeout rename — see
+the closeout note in §"Conventions" below) gets a `codex exec`
+adversarial review pass before the next milestone begins. Findings
+are tagged ACCEPT / REJECT / DEFER (operator) with a one-line reason
+and (where applicable) the integration that followed.
 
 ## Conventions
 

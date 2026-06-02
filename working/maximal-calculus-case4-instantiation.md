@@ -3,7 +3,7 @@
 **Status:** Candidate, agent-drafted 2026-06-02, not ratified.
 
 Phase D of the autonomous run per
-[`/home/jbeck/.claude/plans/cheeky-plotting-reef.md`](../../.claude/plans/cheeky-plotting-reef.md):
+[`/home/jbeck/.claude/plans/cheeky-plotting-reef.md`](../../../.claude/plans/cheeky-plotting-reef.md):
 test whether the candidate well-foundedness condition from
 [`maximal-calculus-amendment-cut.md`](maximal-calculus-amendment-cut.md)
 applies cleanly to register case #4 (standing mutation,

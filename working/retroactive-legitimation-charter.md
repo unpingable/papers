@@ -9,9 +9,9 @@ chat transcript.
 Axis 3 of the [maximal-calculus axis map](maximal-calculus-map.md),
 working name **RetroactiveLegitimation**. Third in the
 immediate-research program — behind
-[AmendmentFragment](../../../lean/LeanProofs/Admissibility/AmendmentFragment.lean)
+[AmendmentFragment](../../lean/LeanProofs/Admissibility/AmendmentFragment.lean)
 (axis 1, shipped) and
-[ContractionHinge](../../../lean/LeanProofs/Admissibility/ContractionHinge.lean)
+[ContractionHinge](../../lean/LeanProofs/Admissibility/ContractionHinge.lean)
 (axis 2, shipped). The survival gate from the map: *"if those three
 survive, then it becomes fair to ask what the common calculus
 actually is."* This slice tests whether RetroactiveLegitimation
@@ -55,7 +55,7 @@ State
 Operation
 apply : State → Operation → State
 Witness
-ValidIn : State → Witness → Operation → Prop
+ValidIn : State → Operation → Witness → Prop
 AuthorizedIn : State → Operation → Prop
 ```
 
@@ -64,7 +64,7 @@ AuthorizedIn : State → Operation → Prop
 A pre-state valid witness licenses the operation:
 
 ```text
-∀ S O W, ValidIn S W O → AuthorizedIn S O
+∀ S O W, ValidIn S O W → AuthorizedIn S O
 ```
 
 (Or whichever shape AuthorizedIn ends up taking — the constraint
@@ -79,7 +79,7 @@ is that the witness's index is `S`, not `apply S O`.)
 
 ```text
 ∃ S O W,
-  ValidIn (apply S O) W O ∧ ¬ ValidIn S W O ∧
+  ValidIn (apply S O) O W ∧ ¬ ValidIn S O W ∧
   ¬ AuthorizedIn S O
 ```
 
