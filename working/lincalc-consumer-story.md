@@ -187,8 +187,27 @@ concrete consumer triggers fires:
 - **Independent forcing case:** any other concrete consumer with a
   named non-duplication invariant they want statically checked.
 
-Until then: parked. No `LinCalc.lean`. No paper. No DOI cycle. Just
-this note.
+### Trigger status (updated 2026-06-03)
+
+- **Governor — partially fired.** Agent Governor filed
+  `GOV_GAP_VALIDITY_SPENDABILITY_SPLIT_001` on 2026-06-03 (status:
+  proposed / audit-required). The gap names the four-plane
+  architecture (semantic governor / linear accountant / execution /
+  witness) as a *candidate enforcement pattern*, not ratified. It does
+  not yet constitute an "implementer asks for the specification
+  substrate" — it's gap-level recognition of the invariant, with
+  audit targets (override management, scope grants, quorum, Neff /
+  sybil accounting, dispatcher leases). LinCalc remains **parked**
+  pending AG audit findings; full open of this trigger still requires
+  a concrete specification-substrate ask, not just a gap spec citing
+  the pattern as candidate. See
+  [`validity-spendability-split.md`](validity-spendability-split.md)
+  for the architecture-altitude framing.
+- Wicket, NQ, Deployment safety, Independent forcing case — no
+  triggers fired.
+
+Until a full trigger fires: parked. No `LinCalc.lean`. No paper. No
+DOI cycle. Just this note + the architecture-altitude sibling.
 
 ## 8. Cross-references
 
