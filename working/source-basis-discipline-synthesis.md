@@ -1,6 +1,10 @@
 # Source-basis discipline — synthesis candidate
 
-> **Status:** synthesis candidate / post-three-specimen review / not ratified calculus doctrine.
+> **Status:** synthesis candidate / post-three-specimen review / non-Claude
+> adversarial pass complete (codex, 2026-06-03, partial inputs — bubblewrap
+> sandbox blocked filesystem read of this note; engaged the inlined Alloy
+> spike result only). **Verdict tilts umbrella, not unified layer.** Not
+> ratified calculus doctrine.
 >
 > **Scope:** records convergence and unresolved divergence after three formal specimens; opens no new axis.
 
@@ -96,17 +100,127 @@ working name for what the four roughly converge on.
 - "Conservation of authority" is the formal vocabulary.
 - The two-axis caveat is independently verified.
 
-## Pickup point
+## Non-Claude adversarial pass — codex, 2026-06-03
 
-The next live question is not "what axis do we build next?"
+**Inputs:** Alloy spike result (`working/alloy-spike-standing-upgrade-result.md`)
+inlined verbatim in the prompt; this note and `maximal-calculus-map.md`
+nominally available but the sandbox blocked filesystem reads
+(`bwrap: loopback: Failed RTM_NEWADDR`). Codex's verdict is therefore
+grounded in the Alloy result alone — partial relative to brief, but the
+Alloy result echoes most of this note's two-axis caveat, so the verdict
+still made contact.
 
-It is:
+**Verdict: tilts umbrella, not unified layer.**
 
-> Does source-basis discipline name a real common calculus layer,
-> or is it a useful umbrella over at least two structurally
-> distinct refusal families?
+**Codex's tighter compact form (worth preserving):**
 
-Current split:
+> **Refusal by disciplined premise production, not refusal by final
+> evaluator.**
+
+Same family as the Alloy spike's "Authority refusal is local; bootstrap
+prevention is architectural," but framed around premise production rather
+than gate/architecture split. Sharper for cross-axis use because "premise
+production" is a vocabulary that survives a change of axis (temporal
+production vs resource production vs occurrence production), whereas
+"gate/architecture" is tied to the temporal-axis substrate.
+
+**Codex's three named promotion blockers (status as of 2026-06-03):**
+
+1. **Primary (obvious): OPEN.** ContractionHinge has not been shown to
+   instantiate the same calculus layer. The Alloy spike covered the
+   temporal/source axis only; the multiplicity/resource axis is untested.
+2. **Secondary: OPEN (methodological).** Three of five Alloy UNSAT probes
+   were tautological (`x ∧ ¬x` around pre-state standing). Can be noted
+   but not "closed" — they were correct in the trivial sense, not deeply
+   informative. A future probe with non-tautological encoding would
+   replace them; that's downstream of B.
+3. **Third (the sharper one): CLOSED 2026-06-03.** The standing-grant
+   invariant has been promoted from implicit upstream constraint to
+   named architecture. `StandingDerivation` now carries
+   `standingRevoked` + `revoked_standing_never_standing` as required
+   fields; `revoked_standing_never_authorized` chains the obligation
+   through the bridge theorem. Symmetric to the existing basis-side
+   pattern. Lake build green on 8305 jobs. Architectural ghost strut
+   mounted. (See "Closure of blocker 3" below.)
+
+The third blocker was the load-bearing one. With it closed, the umbrella
+question can now be tested on clean substrate — both axes have their
+premise-production invariants named, so any structural distinctness
+between them is not just "one had its invariant named, the other didn't."
+
+## The sharper promotion-blocker formulation
+
+A keeper line from operator review of the codex verdict:
+
+> **You cannot promote a common calculus layer while one of its required
+> premise-production invariants exists only as discovered architecture.**
+
+This generalizes beyond the standing-grant case. The discipline:
+*premise-production invariants must be named architecture, not ghost
+struts.* Any common layer that depends on an unnamed upstream constraint
+to do its blocking is not actually mounted; the bridge holds only because
+the unnamed constraint happens to behave correctly in the cases reviewed.
+
+## Closure of blocker 3 (2026-06-03)
+
+The standing-grant invariant has been named in Lean. Edits:
+
+- `LeanProofs/Admissibility/Derivation.lean` — `StandingDerivation` now
+  carries `standingRevoked : GovState → Actor → AuthorityClaim → Prop`
+  and obligation `revoked_standing_never_standing` (symmetric to
+  `BasisDerivation.revoked_never_admissible`). Added theorem
+  `revoked_standing_never_authorized` chaining the obligation through the
+  bridge theorem to `≠ authorized`. Updated TODO block to mark the
+  symmetric obligation closed.
+- `LeanProofs/Admissibility/Derivation.lean` — `grantStandingDerivation`
+  and `withholdStandingDerivation` example values extended with vacuous
+  discharge (`standingRevoked := fun _ _ _ => False`).
+- `LeanProofs/Admissibility/AuthorizedStepNotSafe.lean` — `allGreenStanding`
+  extended with vacuous discharge.
+- `LeanProofs/Admissibility/Examples.lean` — two inline `standing := {...}`
+  constructors (SelfCertDenial.env and OpenFindingAccounted.env) extended
+  with vacuous discharge.
+
+Lake build: green on 8305 jobs. No CalculusOne 1.0 surface theorems were
+weakened or changed; the addition is purely strengthening (every concrete
+`StandingDerivation` now satisfies the symmetric obligation).
+
+`CorrectiveBoundary.StandingDerivation` (a parallel mirror namespace)
+remains structurally unchanged — its mirror status is a local design
+decision in that module and the synthesis question does not depend on
+it. If the symmetric obligation needs to propagate there, that's a
+downstream housekeeping pass, not a promotion blocker.
+
+**What this does NOT close:**
+
+- The umbrella vs unified question on the multiplicity/resource axis.
+  ContractionHinge is still untested.
+- The methodological observation that three of the Alloy probes were
+  tautological. That's an encoding-craft issue for the next spike.
+
+**What this DOES close:**
+
+- The architectural argument that the synthesis depends on unnamed upstream
+  constraints. Every load-bearing premise-production invariant in the
+  four-layer conjunction is now a named field or theorem in
+  `Derivation.lean`. The ghost strut is now structural steel.
+
+## Pickup point — updated 2026-06-03
+
+The next live question is still not "what axis do we build next?"
+
+It is — and the codex pass clarifies the ordering:
+
+> **(C) Name the standing-grant invariant before (B) probing
+> ContractionHinge.**
+
+Reason: running B before C compares a *mounted* temporal/source axis
+against an *unmounted* multiplicity/resource axis. The test substrate
+would be dirty — any apparent structural distinctness might just be
+"one axis has its premise-production invariant named, the other
+doesn't." Name C first, then re-run the discriminator test on B.
+
+Current split (unchanged):
 
 - **Temporal/source refusal:**
   - AmendmentFragment
@@ -114,15 +228,30 @@ Current split:
 - **Multiplicity/resource refusal:**
   - ContractionHinge
 
-Candidate synthesis:
+Candidate synthesis (now demoted from "candidate keeper" to "candidate
+that did not survive its first adversarial pass intact"):
 
 > A move is inadmissible when it can only justify itself by
 > spending a basis it has not yet earned, duplicating a basis it
 > was given once, or retroactively importing a basis created by
 > its own result.
 
-Do not ratify yet. Re-enter here with a non-Claude adversarial
-synthesis pass or a small paper-shape outline.
+Codex tilted against this as a single common layer; the umbrella reading
+is stronger. Retain the candidate but stop using it as load-bearing
+synthesis vocabulary until C is mounted and B runs.
+
+**Codex's named discriminator (for the eventual B):** does the
+ContractionHinge refusal reduce to the same four-layer pattern (kernel +
+execution wrapper + derivation discipline + premise-production
+invariant)? Same layer if yes. Distinct family if it requires a new
+invariant kind (resource consumption, non-contraction, multiplicity
+accounting, uniqueness of use, linear availability).
+
+Do not ratify yet. Operator-authorized ordering: **A done → C done →
+B now back on the table.** With blocker 3 closed, B (ContractionHinge
+Alloy probe) is the next discriminator move — its substrate is now
+clean (both axes have their premise-production invariants named). The
+decision to run B or defer to case work (D) sits with the operator.
 
 ## Cross-references
 
