@@ -124,11 +124,14 @@ production" is a vocabulary that survives a change of axis (temporal
 production vs resource production vs occurrence production), whereas
 "gate/architecture" is tied to the temporal-axis substrate.
 
-**Codex's three named promotion blockers (status as of 2026-06-03):**
+**Codex's three named promotion blockers (status as of 2026-06-03 end-of-day):**
 
-1. **Primary (obvious): OPEN.** ContractionHinge has not been shown to
-   instantiate the same calculus layer. The Alloy spike covered the
-   temporal/source axis only; the multiplicity/resource axis is untested.
+1. **Primary (obvious): CLOSED — verdict distinct family.** ContractionHinge
+   was probed in Alloy 2026-06-03. The verdict: it does **not** reduce to
+   the standing-upgrade four-layer pattern. The substrate primitives are
+   structurally distinct (boolean visibility vs quantitative use-count).
+   See `working/contraction-hinge-probe-result.md` and the "Closure of
+   blocker 1" section below.
 2. **Secondary: OPEN (methodological).** Three of five Alloy UNSAT probes
    were tautological (`x ∧ ¬x` around pre-state standing). Can be noted
    but not "closed" — they were correct in the trivial sense, not deeply
@@ -160,6 +163,71 @@ This generalizes beyond the standing-grant case. The discipline:
 struts.* Any common layer that depends on an unnamed upstream constraint
 to do its blocking is not actually mounted; the bridge holds only because
 the unnamed constraint happens to behave correctly in the cases reviewed.
+
+## Closure of blocker 1 (2026-06-03 — synthesis fork resolved)
+
+The ContractionHinge Alloy probe ran on clean substrate (blocker 3 already
+closed, both axes' premise-production invariants now named architecture).
+Results in `working/contraction-hinge-probe-result.md`. Summary:
+
+- **Probe 1** (boolean-set encoding mirroring standing-upgrade): SAT.
+  Witnessed that the standing-upgrade primitives literally cannot
+  distinguish T1 (`A` from `{A}`, allowed) from T3 (`A⊗A` from `{A}`,
+  refused) — sets collapse duplicates. The boolean-relational encoding
+  cannot represent the question.
+- **Probe 2** (multiplicity-aware encoding, with `Int` and `count`
+  fields): UNSAT. The T3-analog is correctly blocked, *but only because*
+  new apparatus (Int, count, `≤`) was introduced.
+- **Probe 3** (legitimate one-to-one supply): SAT. Legitimate case
+  constructible under the new encoding.
+- **Probe 4** (contraction-extended predicate): SAT. Mirrors
+  ContractionHinge.lean's T3' — the bad move becomes derivable in a
+  separately-named extension, consistent with the boundary-by-asymmetry
+  pattern.
+
+**Verdict: distinct family.** The standing-upgrade four-layer pattern is
+**boolean-relational**; ContractionHinge requires **quantitative-relational**
+substrate. Same metaphysical umbrella (disciplined premise production),
+distinct relational vocabulary.
+
+### The closed synthesis (taxonomy, not unification)
+
+```
+Disciplined premise production (umbrella)
+├── Source/temporal discipline
+│   - Substrate: boolean state predicates
+│   - Blocks: self-originating authority
+│   - Specimens: AmendmentFragment, RetroactiveLegitimation,
+│                standing-upgrade-block
+│   - Named architecture:
+│       BasisDerivation.revoked_never_admissible
+│       StandingDerivation.revoked_standing_never_standing  (closed 2026-06-03)
+│
+└── Multiplicity/resource discipline
+    - Substrate: quantitative use counts
+    - Blocks: duplicated resource use
+    - Specimens: ContractionHinge
+    - Named architecture:
+        T2 soundness (v C ≤ sum Γ), T3 corollary, T3' contrast
+```
+
+This is **synthesis-by-taxonomy**, not synthesis-by-unification. The
+keeper phrasing for the umbrella, drawn from the codex pass:
+
+> **Refusal by disciplined premise production, not refusal by final
+> evaluator.**
+
+That phrase survives because it is axis-agnostic: it describes the
+*character* of refusal common to both species without falsely claiming
+they share a substrate.
+
+### Final keeper line (from the ContractionHinge probe)
+
+> **Standing-upgrade blocks self-originating authority.
+> ContractionHinge blocks duplicated resource use.
+> Same umbrella; distinct substrate; distinct relational vocabulary.**
+
+Same suburb, different sewer line.
 
 ## Closure of blocker 3 (2026-06-03)
 
@@ -248,10 +316,24 @@ invariant kind (resource consumption, non-contraction, multiplicity
 accounting, uniqueness of use, linear availability).
 
 Do not ratify yet. Operator-authorized ordering: **A done → C done →
-B now back on the table.** With blocker 3 closed, B (ContractionHinge
-Alloy probe) is the next discriminator move — its substrate is now
-clean (both axes have their premise-production invariants named). The
-decision to run B or defer to case work (D) sits with the operator.
+B done.** Synthesis fork closed in favor of the umbrella reading.
+
+Final state:
+- Blocker 1 (ContractionHinge): CLOSED — verdict distinct family.
+- Blocker 2 (tautological UNSATs): OPEN (methodological, downstream of
+  any future relational re-encoding).
+- Blocker 3 (implicit invariant): CLOSED — named architecture in Lean.
+
+The "source-basis discipline" name was useful as a temporary keeper
+phrase but does not promote — it described the umbrella, not a unified
+layer. The promoted taxonomy is **disciplined premise production**, with
+two named species (source/temporal, multiplicity/resource). Both
+species' named architecture lives in `~/git/lean/`; the taxonomy itself
+is a paper-shaped claim, not a Lean module.
+
+Recommended next move post-fork-closure: revisit the maximal-calculus
+amendment cut (case work) with the umbrella now resolved, or surface
+the taxonomy in paper form. Operator's call.
 
 ## Cross-references
 
