@@ -1,9 +1,13 @@
-# Calculus 2.0 — exit criteria
+# Calculus 2.0 — exit criteria (historical / refused-frame record)
+
+> *Historical working note. "Calculus 2.0" here names the refused unification target — post-2026-06-03 synthesis closure, no unified-calculus rename is the goal. File left at this name because Lean docstrings and other working notes still cross-reference it; content preserved as the historical record of what such a unification would have demanded.*
 
 > **Status:** internal exit-criteria record. Not a 2.0 commitment.
 > Companion to [[kernel-to-body-map]] and [[frontier-proof-obligations]].
 >
-> **Status update 2026-05-29 — spine page split.** The original framing in this document assumed "Calculus 2.0" was a single artifact whose body the six criteria below define. Per `working/calculus-paper-spine-2026-05-28.md`, the publication track is now split: the **safety-axis** lands as a standalone formal-methods preprint (working slug *"An Admissibility Calculus: Authorization, Safety Bridges, and Value Decay"*) outside the Δt Zenodo numbering; **paper 28** is the interpretation paper that cites the preprint; the **composition-axis** body and Frontier-3 self-amendment work remain on the original (now-renamed) "composition-axis 2.0" trajectory. The six criteria below remain valid as a *map of what 2.0 would need*; what changed is which publication artifact closes each one. The track-split annotation block after the criteria list reclassifies each criterion by publication track and marks current status.
+> **Status update 2026-05-29 — spine page split.** The original framing in this document assumed "Calculus 2.0" was a single artifact whose body the six criteria below define. Per `working/admissibility-suite-spine-2026-05-28.md`, the publication track is now split: the **safety-axis** lands as a standalone formal-methods preprint (working slug *"An Admissibility Calculus: Authorization, Safety Bridges, and Value Decay"*) outside the Δt Zenodo numbering; **paper 28** is the interpretation paper that cites the preprint; the **composition-axis** body and Frontier-3 self-amendment work remain on the original (now-renamed) "composition-axis 2.0" trajectory. The six criteria below remain valid as a *map of what 2.0 would need*; what changed is which publication artifact closes each one. The track-split annotation block after the criteria list reclassifies each criterion by publication track and marks current status.
+
+> **Status update 2026-06-03 — synthesis closure.** Post-synthesis closure, no unified-calculus paper is the target across axes; the "Calculus 2.0" label is retired. Surviving structure is separate admissibility kernels under the "disciplined premise production" umbrella (see `working/source-basis-discipline-synthesis.md`). The criteria below remain useful as a per-axis ledger of what each *kernel* would need to ratify on its own terms — without a unification commitment binding them together.
 
 ## What "full body" means here
 
@@ -22,7 +26,7 @@ The "Under this map" qualifier is load-bearing: future Frontier 5 (currently res
 
 ## Track split (2026-05-29, web-Claude verification pass)
 
-The six criteria above are now distributed across three axes / publication tracks per the spine page decision (`working/calculus-paper-spine-2026-05-28.md`) and the per-condition verification web-Claude ran against the actual Lean source on 2026-05-29. Meeting the safety-axis criteria does NOT mint "Calculus 2.0" as this document originally framed it; it mints the **safety-axis publication path** (the planned preprint plus paper 28) as a sibling artifact. The other axes remain separate gates with the original-document bar.
+The six criteria above are now distributed across three axes / publication tracks per the spine page decision (`working/admissibility-suite-spine-2026-05-28.md`) and the per-condition verification web-Claude ran against the actual Lean source on 2026-05-29. Meeting the safety-axis criteria does NOT mint "Calculus 2.0" as this document originally framed it; it mints the **safety-axis publication path** (the planned preprint plus paper 28) as a sibling artifact. The other axes remain separate gates with the original-document bar.
 
 Per-axis status, verified against `~/git/lean/LeanProofs/Admissibility/`:
 

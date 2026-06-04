@@ -167,7 +167,7 @@ need; forcing-driven registers grow features they earned.
 - Sibling forcing-case register (source/temporal side):
   [`maximal-calculus-forcing-cases.md`](maximal-calculus-forcing-cases.md)
 - Arc index:
-  [`maximal-calculus-map.md`](maximal-calculus-map.md) §
+  [`maximal-calculus-refused-map.md`](maximal-calculus-refused-map.md) §
   "Arc closure 2026-06-03"
 - Case-work classifications (the source/temporal side under closed
   taxonomy):

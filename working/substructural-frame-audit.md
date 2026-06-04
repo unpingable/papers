@@ -308,5 +308,5 @@ and 4 taxonomy-only kernels at the edges.
 - Calculus-capable fragment register (the one structural specimen):
   [`lincalc-consumer-story.md`](lincalc-consumer-story.md)
 - Arc index:
-  [`maximal-calculus-map.md`](maximal-calculus-map.md) §
+  [`maximal-calculus-refused-map.md`](maximal-calculus-refused-map.md) §
   "Arc closure 2026-06-03"

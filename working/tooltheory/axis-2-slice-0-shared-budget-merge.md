@@ -85,6 +85,6 @@ The shared-budget specimen produces value loss from *honest additive reconciliat
 
 - Forcing-case spec: `working/axis-2-composition-forcing-cases.md`.
 - Demoted Slice 0 (now Case B): `working/tooltheory/axis-2-case-b-conflict-merge.md`.
-- Suite plan: `working/calculus-suite-map.md`.
+- Suite plan: `working/admissibility-suite-map.md`.
 - Axis 1 substrate (`SafetyEnv`, `BridgedTraj`, `bridgedTraj_preserves`): `~/git/lean/LeanProofs/Admissibility/SafetyBridge.lean`.
 - Original Calculus 2.0 exit-criteria composition-axis bullet (criterion 4: ≥3 bad-merge cases): `working/calculus-2-exit-criteria.md`. Slice 0 + Case B = two of three; Case C is the open slot.

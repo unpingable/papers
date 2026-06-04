@@ -1,4 +1,6 @@
-# Boundary Calculus / Admissibility Cybernetics — Program-Name Candidate
+# Boundary Kernels / Admissibility Cybernetics — Program-Name Candidate
+
+> *Historical working note. Originally filed under the dual name "Boundary Calculus / Admissibility Cybernetics"; renamed 2026-06-03 to `boundary-kernels-program-candidate.md` when "calculus" was retired as load-bearing vocabulary across the project. Surface candidate is now "boundary kernels" (the result), not "boundary calculus" (a unified object this stack refuses to be). Content preserved; the "Boundary Calculus" half of the dual name is retained below as the refused frame.*
 
 **Filed:** 2026-05-12
 **Status:** Pre-ratified program-name candidate. Not a paper title. Not a preprint directory. Not authorization to build P28.

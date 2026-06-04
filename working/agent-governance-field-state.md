@@ -392,7 +392,7 @@ discipline gates still apply.
 - Synthesis closure (provenance):
   [`source-basis-discipline-synthesis.md`](source-basis-discipline-synthesis.md)
 - Arc index:
-  [`maximal-calculus-map.md`](maximal-calculus-map.md) §
+  [`maximal-calculus-refused-map.md`](maximal-calculus-refused-map.md) §
   "Arc closure 2026-06-03"
 - Memory: [[feedback-validity-spendability-paper-discipline]]
   (three-gate publication discipline)

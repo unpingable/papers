@@ -105,5 +105,5 @@ Freshness is checked against a reconciliation time stamped into the merged state
 - Forcing-case spec: `working/axis-2-composition-forcing-cases.md`.
 - Slice 0 (joint-margin failure): `working/tooltheory/axis-2-slice-0-shared-budget-merge.md`.
 - Slice 2 (reconciliation-policy failure, demoted): `working/tooltheory/axis-2-slice-2-conflict-merge.md`.
-- Suite plan: `working/calculus-suite-map.md`.
+- Suite plan: `working/admissibility-suite-map.md`.
 - Axis 1 substrate (`SafetyEnv`, `BridgedTraj`, `SafeStep`, `MaximalBridge`): `~/git/lean/LeanProofs/Admissibility/SafetyBridge.lean`.

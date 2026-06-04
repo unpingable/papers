@@ -12,7 +12,7 @@ forbidden_use: new framework, new paper, replacement doctrine
 
 # Compression Becomes Authority — Vocabulary
 
-The four-term public vocabulary for the planned Neutral Ambassador essay. Captured here so on-disk pointer mentions (NRAF, boundary-calculus-program-candidate) reference a real artifact rather than a memory-only ghost. This is not the essay. It is the glossary that an essay would draw on.
+The four-term public vocabulary for the planned Neutral Ambassador essay. Captured here so on-disk pointer mentions (NRAF, boundary-kernels-program-candidate) reference a real artifact rather than a memory-only ghost. This is not the essay. It is the glossary that an essay would draw on.
 
 ## Four terms
 
@@ -42,6 +42,6 @@ The accompanying four-stage model (sense / authorize / act / persist, with named
 ## Referenced from
 
 - `working/non-reciprocal-admissibility-flow.md:46-47` — kernel-overlap distinction (NRAF ≠ CBA)
-- `working/boundary-calculus-program-candidate.md:104` — pointer mention
+- `working/boundary-kernels-program-candidate.md:104` — pointer mention
 - `working/map-actuates-audit-residue.md` — CBA flag, now resolved by this note
 - memory: `project-compression-becomes-authority.md`

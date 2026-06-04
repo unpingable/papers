@@ -65,6 +65,6 @@ Each row is a place where state asks to become authority and an admissibility pr
 
 ## Referenced from / references
 
-- `working/boundary-calculus-program-candidate.md` — program shell, pointer back
+- `working/boundary-kernels-program-candidate.md` — program shell, pointer back
 - `working/map-actuates-audit-residue.md` — sentence-bank residue, corrected here
 - `working/compression-becomes-authority-vocabulary.md` — `compression → authority` arrow row

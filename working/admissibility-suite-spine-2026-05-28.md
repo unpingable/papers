@@ -1,4 +1,6 @@
-# Calculus paper spine — Δt formal kernel + interpretation (2026-05-28)
+# Admissibility-suite spine — Δt formal kernel + interpretation (2026-05-28)
+
+> *Historical working note. Renamed from `admissibility-suite-spine-2026-05-28.md` to `admissibility-suite-spine-2026-05-28.md` on 2026-06-03; content preserved. Post-2026-06-03 synthesis closure, no unifying calculus is the target; the "calculus" framing below is preserved as the refused frame.*
 
 **Status:** Decision record. Resolves the topology fork *"is paper 28 the calculus paper, or does paper 28 cite it"* in favor of the latter (Fork B). Filed at decision-record density; the live source of truth for the formal kernel is `~/git/lean/LeanProofs/Admissibility/` (safety-bridge family).
 

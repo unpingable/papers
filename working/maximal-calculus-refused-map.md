@@ -1,4 +1,6 @@
-# Maximal calculus — current specimens
+# Maximal calculus (refused) — current specimens
+
+> *Historical working note. "Calculus" is preserved here as the refused / retired framing for what this stack does not produce. Post-2026-06-03 synthesis closure, no unified maximal calculus is the target; surviving structure is a set of separate admissibility kernels and the "disciplined premise production" umbrella. File renamed from `maximal-calculus-map.md` to `maximal-calculus-refused-map.md` 2026-06-03; content preserved.*
 
 **Status:** Filed 2026-06-02 after the three-specimen survival gate
 cleared. Each specimen ships as a scratch annex Lean file with

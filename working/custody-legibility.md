@@ -350,7 +350,7 @@ Until then: parked. Live seam; amend as needed.
 - Synthesis closure (provenance):
   [`source-basis-discipline-synthesis.md`](source-basis-discipline-synthesis.md)
 - Arc index:
-  [`maximal-calculus-map.md`](maximal-calculus-map.md) §
+  [`maximal-calculus-refused-map.md`](maximal-calculus-refused-map.md) §
   "Arc closure 2026-06-03"
 - Cross-system: Agent Governor
   `GOV_GAP_VALIDITY_SPENDABILITY_SPLIT_001`

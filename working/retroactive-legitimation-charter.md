@@ -6,7 +6,7 @@ shape so it can be fed verbatim to Claude-web (the cabinet's
 charter-shaping role) without the substrate being trapped in a
 chat transcript.
 
-Axis 3 of the [maximal-calculus axis map](maximal-calculus-map.md),
+Axis 3 of the [maximal-calculus axis map](maximal-calculus-refused-map.md),
 working name **RetroactiveLegitimation**. Third in the
 immediate-research program — behind
 [AmendmentFragment](../../lean/LeanProofs/Admissibility/AmendmentFragment.lean)
@@ -142,7 +142,7 @@ not assumed by drafting the wrong type signature.
 ## Sibling fragments — for cross-fragment seam awareness
 
 The axis-3 work is part of the three-fragment survival test in
-the [axis map](maximal-calculus-map.md):
+the [axis map](maximal-calculus-refused-map.md):
 
 - Axis 1: AmendmentFragment — pre-state authorization / standing
   mutation / self-certification refusal.
@@ -167,7 +167,7 @@ common calculus opens. Until then, no synthesis.
 
 ## Cross-references
 
-- [`maximal-calculus-map.md`](maximal-calculus-map.md) — axis map;
+- [`maximal-calculus-refused-map.md`](maximal-calculus-refused-map.md) — axis map;
   axis 3 entry links here.
 - [`maximal-calculus-amendment-cut.md`](maximal-calculus-amendment-cut.md) —
   upstream substrate (the §"Connection" reading is adjacent to

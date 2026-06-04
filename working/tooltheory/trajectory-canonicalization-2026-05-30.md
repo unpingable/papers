@@ -87,6 +87,6 @@ Phased roadmap (from ChatGPT 2026-05-30):
 
 - Original debt item: [calculus-2-tier-map-2026-05-28.md](calculus-2-tier-map-2026-05-28.md) §"Known debt" — now marked DISCHARGED.
 - Exit criteria: [calculus-2-exit-criteria.md](../calculus-2-exit-criteria.md) — safety-axis section updated.
-- Spine page: [calculus-paper-spine-2026-05-28.md](../calculus-paper-spine-2026-05-28.md) — preprint authorship can proceed against the canonicalized scaffold.
+- Spine page: [admissibility-suite-spine-2026-05-28.md](../admissibility-suite-spine-2026-05-28.md) — preprint authorship can proceed against the canonicalized scaffold.
 - ρ-drop decision: [safety-bridge-rho-drop-decision-2026-05-28.md](safety-bridge-rho-drop-decision-2026-05-28.md) — actor-inert bridge stays correct under the substrate fix; the bridge never read the actor, so moving actor field-wards on `SafeStep` is consistent with the ρ-drop rationale.
 - Lean source of truth: `~/git/lean/LeanProofs/Admissibility/{SafetyBridge,SafetyTrajectory,AttestationLedger,AuthorizedStepNotSafeWitness,SafetyBridgeWitness}.lean`.

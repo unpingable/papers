@@ -3,7 +3,7 @@
 **Status:** Agent-filed 2026-06-02. Single-pass codex review of
 `LeanProofs/Admissibility/ContractionHinge.lean` (at `~/git/lean/`),
 Slice 0 of the substructural-sequent program (axis 2 of the
-[maximal-calculus axis map](maximal-calculus-map.md)).
+[maximal-calculus axis map](maximal-calculus-refused-map.md)).
 
 Distinct from the amendment-fragment log
 ([`maximal-calculus-codex-review-log.md`](maximal-calculus-codex-review-log.md))
@@ -50,7 +50,7 @@ to keep the per-fragment review traces separated.
 ## Cross-references
 
 - Slice source: `~/git/lean/LeanProofs/Admissibility/ContractionHinge.lean`.
-- Axis map: [`maximal-calculus-map.md`](maximal-calculus-map.md) (axis 2 = ContractionHinge).
+- Axis map: [`maximal-calculus-refused-map.md`](maximal-calculus-refused-map.md) (axis 2 = ContractionHinge).
 - Sibling slice's review trace: [`maximal-calculus-codex-review-log.md`](maximal-calculus-codex-review-log.md) (axis 1 = AmendmentFragment).
 - Codex calling discipline: `~/.claude/skills/codex-exec/SKILL.md`.
 

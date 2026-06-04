@@ -1,4 +1,6 @@
-# Maximal calculus forcing-case register
+# Maximal calculus (refused) — forcing-case register
+
+> *Historical working note. "Maximal calculus" here names the unified object this stack refuses to be; the register catalogues cases that would have forced its construction. Post-2026-06-03 synthesis closure, no unified calculus is the target — the cases below remain valid as per-kernel forcing material, not as gates on a unification target.*
 
 **Status:** Forcing-case register, filed 2026-06-01. NOT a roadmap.
 NOT a plan. NOT an Axis-3 promotion. NOT to be worked.

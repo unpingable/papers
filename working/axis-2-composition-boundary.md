@@ -181,4 +181,4 @@ Axis 1's no-lift theorem reads, in retrospect, as the single-trajectory base cas
 - Slice 1 module: `~/git/lean/LeanProofs/Admissibility/StaleEvidenceMerge.lean`; result note: `working/tooltheory/axis-2-slice-1-stale-evidence-merge.md`.
 - Slice 2 module: `~/git/lean/LeanProofs/Admissibility/MergeConflict.lean`; result note: `working/tooltheory/axis-2-slice-2-conflict-merge.md`.
 - Axis 1 substrate (`SafetyEnv`, `BridgedTraj`, `SafeStep`, `MaximalBridge`, the characterization layer): `~/git/lean/LeanProofs/Admissibility/SafetyBridge.lean`.
-- Suite plan: `working/calculus-suite-map.md`.
+- Suite plan: `working/admissibility-suite-map.md`.

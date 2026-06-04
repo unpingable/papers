@@ -103,7 +103,7 @@ working name for what the four roughly converge on.
 ## Non-Claude adversarial pass — codex, 2026-06-03
 
 **Inputs:** Alloy spike result (`working/alloy-spike-standing-upgrade-result.md`)
-inlined verbatim in the prompt; this note and `maximal-calculus-map.md`
+inlined verbatim in the prompt; this note and `maximal-calculus-refused-map.md`
 nominally available but the sandbox blocked filesystem reads
 (`bwrap: loopback: Failed RTM_NEWADDR`). Codex's verdict is therefore
 grounded in the Alloy result alone — partial relative to brief, but the
@@ -341,7 +341,7 @@ the taxonomy in paper form. Operator's call.
   - `AmendmentFragment.lean`
   - `ContractionHinge.lean`
   - `RetroactiveLegitimation.lean`
-- Axis map: [`maximal-calculus-map.md`](maximal-calculus-map.md).
+- Axis map: [`maximal-calculus-refused-map.md`](maximal-calculus-refused-map.md).
 - Per-slice substrate and review logs:
   - [`maximal-calculus-codex-review-log.md`](maximal-calculus-codex-review-log.md)
     (axis 1).

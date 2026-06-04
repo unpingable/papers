@@ -3,7 +3,7 @@
 **Status:** Agent-filed 2026-06-02. Single-pass codex review of
 `LeanProofs/Admissibility/RetroactiveLegitimation.lean` (at
 `~/git/lean/`), Slice 1 of the substructural-sequent program
-(axis 3 of the [maximal-calculus axis map](maximal-calculus-map.md)).
+(axis 3 of the [maximal-calculus axis map](maximal-calculus-refused-map.md)).
 
 Sibling to
 [`contraction-hinge-codex-review.md`](contraction-hinge-codex-review.md)
@@ -58,6 +58,6 @@ All nine items: **AFFIRMS (no action).** Codex confirms the slice's design disci
 
 - Slice source: `~/git/lean/LeanProofs/Admissibility/RetroactiveLegitimation.lean`.
 - Charter: [`retroactive-legitimation-charter.md`](retroactive-legitimation-charter.md).
-- Axis map: [`maximal-calculus-map.md`](maximal-calculus-map.md) (axis 3 = RetroactiveLegitimation).
+- Axis map: [`maximal-calculus-refused-map.md`](maximal-calculus-refused-map.md) (axis 3 = RetroactiveLegitimation).
 - Sibling slice reviews: [`contraction-hinge-codex-review.md`](contraction-hinge-codex-review.md), [`maximal-calculus-codex-review-log.md`](maximal-calculus-codex-review-log.md).
 - Codex calling discipline: `~/.claude/skills/codex-exec/SKILL.md`.

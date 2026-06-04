@@ -89,7 +89,7 @@ sits in working notes.
 - `~/git/lean/LeanProofs/Admissibility/RetroactiveLegitimation.lean`
 - `~/git/lean/LeanProofs/Admissibility/AmendmentFragment.lean`
 - `~/git/lean/LeanProofs/Admissibility/ContractionHinge.lean`
-- `working/maximal-calculus-map.md` — axis map containing the three June
+- `working/maximal-calculus-refused-map.md` — axis map containing the three June
   2026 specimens
 - `working/maximal-calculus-amendment-cut.md` — case #3 promotion record
   carrying the (A1) candidate axiom that the AmendmentFragment specimen

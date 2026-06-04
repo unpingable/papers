@@ -195,12 +195,12 @@ otherwise lacks:
 | Safety-axis exit criteria (`working/calculus-2-exit-criteria.md` §Track split) | **CLOSED** 2026-05-29 (reconciliation pass) |
 | Kernel-overlap audit (this document) | **CLOSED** 2026-05-29 |
 | Safety-axis preprint path ratifiable | **YES** — scoped as standalone formal-methods preprint, *not* as "Calculus 2.0" |
-| Preprint scaffold | **PENDING** — title decided (`calculus-paper-spine-2026-05-28.md`); abstract / claim list / theorem-target table / repo pointer not yet drafted |
+| Preprint scaffold | **PENDING** — title decided (`admissibility-suite-spine-2026-05-28.md`); abstract / claim list / theorem-target table / repo pointer not yet drafted |
 | Full "Calculus 2.0" label | **NOT RATIFIABLE** — composition axis (necessity) and self-amendment axis (Frontier 3) remain open |
 
 ## Related records
 
-- `working/calculus-paper-spine-2026-05-28.md` — Fork B topology (preprint
+- `working/admissibility-suite-spine-2026-05-28.md` — Fork B topology (preprint
   sibling to paper 28, NOT in Δt Zenodo numbering)
 - `working/calculus-2-exit-criteria.md` — six-condition map + 2026-05-29
   track-split reconciliation

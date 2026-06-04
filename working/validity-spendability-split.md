@@ -296,7 +296,7 @@ Until one of those fires: parked.
 - Case-work under closed taxonomy:
   [`amendment-cut-case-classification.md`](amendment-cut-case-classification.md)
 - Arc index:
-  [`maximal-calculus-map.md`](maximal-calculus-map.md) §
+  [`maximal-calculus-refused-map.md`](maximal-calculus-refused-map.md) §
   "Arc closure 2026-06-03"
 - Kernel artifact:
   `~/git/lean/LeanProofs/Admissibility/ContractionHinge.lean`

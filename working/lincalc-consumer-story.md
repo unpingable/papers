@@ -221,7 +221,7 @@ DOI cycle. Just this note + the architecture-altitude sibling.
 - Closed taxonomy classifier pass:
   [`maximal-calculus-taxonomy-classification.md`](maximal-calculus-taxonomy-classification.md)
 - Arc index:
-  [`maximal-calculus-map.md`](maximal-calculus-map.md) §
+  [`maximal-calculus-refused-map.md`](maximal-calculus-refused-map.md) §
   "Arc closure 2026-06-03"
 - Kernel artifact (the existing bones):
   `~/git/lean/LeanProofs/Admissibility/ContractionHinge.lean`

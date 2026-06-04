@@ -33,7 +33,7 @@ Two-aperture audit dialectic produced these bricks:
 Demoted/reparented:
 
 - ~~`Delta/Containment.lean`~~ (proposed by DeepSeek; would have minted a new root namespace) → **`Admissibility/CrossBoundaryExposure.lean`** (sibling specimen inside existing family)
-- ~~"Δ-calculus" branding~~ → **cross-boundary artifact specimens** inside the pre-ratified `boundary-calculus / admissibility-cybernetics` candidate program (see [boundary-calculus-program-candidate.md](./boundary-calculus-program-candidate.md))
+- ~~"Δ-calculus" branding~~ → **cross-boundary artifact specimens** inside the pre-ratified `boundary-calculus / admissibility-cybernetics` candidate program (see [boundary-kernels-program-candidate.md](./boundary-kernels-program-candidate.md))
 - ~~hard-coded `Domain := dn | dobs | da | external`~~ → **abstract `Domain` parameter** with operator-supplied `BoundaryPartition`
 - ~~hard-coded `Failure` enum~~ → **abstract `Failure` parameter**
 
@@ -253,7 +253,7 @@ Do not put hyperscale conclusions into v0.
 - `feedback-kernel-vs-process-calculus` (memory) — two-tracks rule
 - `feedback-outside-aperture-audit` (memory) — methodology pattern
 - `feedback-kernel-overlap-audit` (memory) — the inside-aperture audit gate
-- [boundary-calculus-program-candidate.md](./boundary-calculus-program-candidate.md) — pre-ratified candidate program name; the trio lives under it as specimens, not as the program
+- [boundary-kernels-program-candidate.md](./boundary-kernels-program-candidate.md) — pre-ratified candidate program name; the trio lives under it as specimens, not as the program
 - [admissibility-decay-family-note.md](./admissibility-decay-family-note.md) — sibling artifact-family work on the temporal axis
 - `LeanProofs/Admissibility/README.md` — full module entries with theorem statements
 - `WHAT-THE-LEAN-STACK-PROVES.md` — formalization-index section "Infrastructure: Cross-Boundary Artifact Specimens"

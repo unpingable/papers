@@ -5,7 +5,7 @@
 **Author:** James Beck
 **Affiliation:** Independent Researcher
 **Status:** v0.2 axis-1 draft (2026-05-29 scaffold; 2026-05-30 canonicalization refresh; 2026-05-31 body prose for §1–§8 and appendices A/B; 2026-05-31 suite reframe + characterization layer in Lean). **Not yet published.** Title, abstract, claim list, theorem-target table stable; suite-context paragraph below reflects the 2026-06-03 cross-axis synthesis closure (see `working/source-basis-discipline-synthesis.md`). **Drafted:** §1 introduction, §2 formal apparatus, §3 trajectory separation result (sections 3.1–3.8), §4 two separating instances (4.1 receipt-poison, 4.2 Nat-valued attestation ledger), §5 scope and non-claims, §6 related work, §7 discussion, §8 conclusion, Appendix A module map, Appendix B build and reproducibility. **Deferred:** References section — bibliography locks at release. Body prose for §3/§4/§7/§8 still uses pre-characterization framing; the new characterization layer (`AuthPreserves`, `AuthorizationBridgeGap`, `MaximalBridge`, `BridgeComplete`, `HasForgetfulSection` + their theorems) lives in `SafetyBridge.lean` and is not yet exposed in the paper body — pending a §3 expansion or §3.9 subsection.
-**Suite context:** This artifact is **Axis 1** of the admissibility suite (see `working/calculus-suite-map.md`). Axis 2 (composition / merge admissibility) and Axis 3 (self-amendment / frontier mutation) remain open. A 2026-06-03 cross-axis synthesis pass closed *against* a single unifying "Admissibility Calculus" paper: what survives the synthesis is the **disciplined premise production** umbrella with two named species (source/temporal — this axis; multiplicity/resource — the ContractionHinge sibling) plus a per-species architecture-gap audit, not a unifying formal system (see `working/source-basis-discipline-synthesis.md`).
+**Suite context:** This artifact is **Axis 1** of the admissibility suite (see `working/admissibility-suite-map.md`). Axis 2 (composition / merge admissibility) and Axis 3 (self-amendment / frontier mutation) remain open. A 2026-06-03 cross-axis synthesis pass closed *against* a single unifying "Admissibility Calculus" paper: what survives the synthesis is the **disciplined premise production** umbrella with two named species (source/temporal — this axis; multiplicity/resource — the ContractionHinge sibling) plus a per-species architecture-gap audit, not a unifying formal system (see `working/source-basis-discipline-synthesis.md`).
 **Target venue:** Zenodo / arXiv-quality formal note; cited by Δt paper 28 ("The Lie Is Cheaper Than the Proof") as the formal substrate. No conference submission planned.
 **Series:** Outside the Δt Zenodo numbering. Member of the admissibility suite; sibling artifact to Δt paper 28.
 
@@ -21,11 +21,11 @@ The preprint's contribution is the type-level cost asymmetry. The institutional 
 
 ## Position relative to the Δt series
 
-This preprint is **not** numbered in the Δt series. Per the topology decision in `working/calculus-paper-spine-2026-05-28.md`:
+This preprint is **not** numbered in the Δt series. Per the topology decision in `working/admissibility-suite-spine-2026-05-28.md`:
 
 ```
-{ "An Admissibility Calculus" preprint }
-    formal-methods venue (arXiv cs.LO at minimum)
+{ Safety-Bridge Kernel preprint }
+    formal-methods venue (Zenodo / arXiv-quality formal note)
     contribution: kernel + theorem family
               |
               | cited as the formal kernel by
@@ -36,6 +36,8 @@ This preprint is **not** numbered in the Δt series. Per the topology decision i
     contribution: discharges the antecedent the kernel
     is structurally forbidden from asserting
 ```
+
+(Working-title drift note: the diagram and the citation block below used the earlier slug *"An Admissibility Calculus: Authorization, Safety Bridges, and Value Decay"*; that slug was demoted during drafting. The current title is *Safety-Bridge Kernel: Authorization and Value Preservation* — see the post-2026-06-03 synthesis closure for why "calculus" is no longer the framing.)
 
 The two papers are siblings, not sequential. The preprint proves a *conditional* (IF a system has this shape, THEN authorized trajectories diverge from defended value) with explicit institutional fences. Paper 28 argues the antecedent holds in real institutional substrates, with the Δt 2 / 3 / 25–27 corpus as case-law evidence. Merging the two would crash two contributions into one trench coat; numbering this preprint as a Δt paper would bury it among critical-theory essays.
 
@@ -69,7 +71,7 @@ The eight safety-bridge family modules cited throughout:
 
 ## Provenance
 
-- Spine decision: `working/calculus-paper-spine-2026-05-28.md` (Fork B; preprint sibling to paper 28).
+- Spine decision: `working/admissibility-suite-spine-2026-05-28.md` (Fork B; preprint sibling to paper 28).
 - Tier map: `working/tooltheory/calculus-2-tier-map-2026-05-28.md`.
 - ρ-drop decision: `working/tooltheory/safety-bridge-rho-drop-decision-2026-05-28.md`.
 - Exit-criteria reconciliation: `working/calculus-2-exit-criteria.md` §Track split (closed 2026-05-29).
@@ -84,9 +86,9 @@ The preprint inherits the kernel's institutional fence — *"kernel-legible all-
 ## Citation (post-publication, placeholder)
 
 ```bibtex
-@article{beck2026admissibility,
+@article{beck2026safetybridge,
   author = {Beck, James},
-  title = {An Admissibility Calculus: Authorization, Safety Bridges, and Value Decay},
+  title = {Safety-Bridge Kernel: Authorization and Value Preservation},
   year = {2026},
   doi = {[TBD]},
   url = {[TBD]}

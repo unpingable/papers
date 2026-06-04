@@ -282,7 +282,7 @@ pass it was filed pending.
   [`source-basis-discipline-synthesis.md`](source-basis-discipline-synthesis.md)
 - Sibling working notes: [`authorization-laundering-arc.md`](authorization-laundering-arc.md),
   [`boundary-by-asymmetry-pattern.md`](boundary-by-asymmetry-pattern.md)
-- Arc index: [`maximal-calculus-map.md`](maximal-calculus-map.md) §
+- Arc index: [`maximal-calculus-refused-map.md`](maximal-calculus-refused-map.md) §
   "Arc closure 2026-06-03"
 - Sibling Alloy probe: [`contraction-hinge-probe-result.md`](contraction-hinge-probe-result.md)
 - Downstream classification:

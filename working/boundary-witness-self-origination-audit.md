@@ -103,7 +103,7 @@ One sub-observation worth recording without acting on:
   [`amendment-cut-case-classification.md`](amendment-cut-case-classification.md)
 - Closed taxonomy (the substrate lint these gaps respect):
   [`source-basis-discipline-synthesis.md`](source-basis-discipline-synthesis.md)
-- Arc index: [`maximal-calculus-map.md`](maximal-calculus-map.md) §
+- Arc index: [`maximal-calculus-refused-map.md`](maximal-calculus-refused-map.md) §
   "Arc closure 2026-06-03"
 - Sibling classifier pass:
   [`maximal-calculus-taxonomy-classification.md`](maximal-calculus-taxonomy-classification.md)

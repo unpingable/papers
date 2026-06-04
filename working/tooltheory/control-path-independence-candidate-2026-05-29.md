@@ -235,7 +235,7 @@ Until one arrives, the candidate stays here. The Lean module name `Admissibility
 
 ## Related records
 
-- Spine page: `working/calculus-paper-spine-2026-05-28.md`
+- Spine page: `working/admissibility-suite-spine-2026-05-28.md`
 - Tier map: `working/tooltheory/calculus-2-tier-map-2026-05-28.md`
 - ρ-drop decision: `working/tooltheory/safety-bridge-rho-drop-decision-2026-05-28.md`
 - Exit criteria reconciliation: `working/calculus-2-exit-criteria.md`

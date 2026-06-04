@@ -1,4 +1,6 @@
-# Maximal calculus — decomposition trigger
+# Maximal calculus (refused) — decomposition trigger
+
+> *Historical working note. "Maximal calculus" here names the refused unification target, not a target object. Post-2026-06-03 synthesis closure, no such unification is the goal; this trigger artifact is preserved as the documented condition under which a hypothetical decomposition would even be considered.*
 
 > This is an inactive trigger artifact. It is not evidence that the
 > maximal calculus is ripe. Loading this prompt before the promotion

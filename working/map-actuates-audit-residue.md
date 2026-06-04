@@ -42,7 +42,7 @@ See `working/transition-predicate-frame.md`. The sentence-bank entry is preserve
 7. **CBA dangling canonical pointer.** Initial audit flagged this as duplication. On verification (2026-05-16) the actual issue is different:
 
    - `project-compression-becomes-authority.md` (memory) asserts a 2026-05-12 "When Compression Becomes Authority" essay with four-term vocabulary (admissibility problem / compression-authority laundering / counterfeit legibility / memory poisoning).
-   - `working/non-reciprocal-admissibility-flow.md:46-47` and `working/boundary-calculus-program-candidate.md:104` are legitimate pointer/distinction mentions, not doctrine homes.
+   - `working/non-reciprocal-admissibility-flow.md:46-47` and `working/boundary-kernels-program-candidate.md:104` are legitimate pointer/distinction mentions, not doctrine homes.
    - **No canonical essay file exists on disk.** Searched `papers/`, `neutral.zone/content/archive/` (2026-05-12 entry there is "The Vortex Had No Public Receipt," a different essay), and filename variants. The four-term-vocabulary essay lives only in chat history + memory.
 
    Not two homes. One memory pointer asserting an artifact corpus does not contain. The pointer mentions are doing kernel-distinction work correctly; they cite something that has no on-disk home.

@@ -18,10 +18,10 @@ license: "CC-BY-4.0"
 venue_target: "arXiv cs.LO (minimum); formal-methods or AI-safety venue possible"
 in_delta_t_series: false
 note: |
-  Axis 1 of the admissibility suite (see `working/calculus-suite-map.md`).
+  Axis 1 of the admissibility suite (see `working/admissibility-suite-map.md`).
   Outside the Δt Zenodo numbering. Sibling artifact to Δt paper 28 ("The Lie
   Is Cheaper Than the Proof"), per the topology decision in
-  `working/calculus-paper-spine-2026-05-28.md`. The Lean stack at
+  `working/admissibility-suite-spine-2026-05-28.md`. The Lean stack at
   `~/git/lean/LeanProofs/Admissibility/` (safety-bridge family + 2026-05-31
   characterization layer) is the source of truth; this note is exposition of
   finished material. Axis 2 (composition / merge admissibility) and Axis 3

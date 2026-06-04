@@ -4,7 +4,7 @@ Status: scratch / non-doctrinal / aperture diagnostic
 Logged: 2026-05-21
 Lives near: P28 candidate territory, downstream of [boundary-composition-investigation](../../../boundary-composition-investigation.md) → [boundary-composition-audit](../../../boundary-composition-audit.md). Direct continuation of the audit's "calculus question" thread.
 Repo witnesses: `~/git/lean/LeanProofs/Admissibility/Composition.lean` (Slice 0, diagnostic) and `~/git/lean/LeanProofs/Admissibility/LocalBoundary.lean` (Slice 1 aperture, experimental). Neither file is imported into `LeanProofs.lean`; both sit alongside the `CrossBoundary*` sibling family outside the no-sorry kernel chain.
-Program handle: candidate under `working/boundary-calculus-program-candidate.md`; this note is one specimen, not the program.
+Program handle: candidate under `working/boundary-kernels-program-candidate.md`; this note is one specimen, not the program.
 
 ## Keeper
 

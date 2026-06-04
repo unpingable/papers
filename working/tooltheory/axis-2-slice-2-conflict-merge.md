@@ -104,5 +104,5 @@ Three corpses, three coroner's reports. Generic extraction is no longer speculat
 
 - Forcing-case spec: `working/axis-2-composition-forcing-cases.md`.
 - Slice 0 (the honest base forcing case): `working/tooltheory/axis-2-slice-0-shared-budget-merge.md`.
-- Suite plan: `working/calculus-suite-map.md`.
+- Suite plan: `working/admissibility-suite-map.md`.
 - Axis 1 substrate: `~/git/lean/LeanProofs/Admissibility/SafetyBridge.lean`.

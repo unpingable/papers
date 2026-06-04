@@ -237,5 +237,5 @@ ship-able.
 
 - Keystone verdict: [axis-2-cross-axis-keystone.md](axis-2-cross-axis-keystone.md)
 - Axis 2 composition boundary work: [axis-2-composition-boundary.md](axis-2-composition-boundary.md)
-- Earlier suite plan (superseded by this spine): [calculus-suite-map.md](calculus-suite-map.md)
-- Earlier safety-axis preprint spine (also superseded — this paper subsumes the safety-axis kernel into the broader Axes 1–2 calculus): [calculus-paper-spine-2026-05-28.md](calculus-paper-spine-2026-05-28.md)
+- Earlier suite plan (superseded by this spine): [admissibility-suite-map.md](admissibility-suite-map.md)
+- Earlier safety-axis preprint spine (also superseded — this paper subsumes the safety-axis kernel into the broader Axes 1–2 calculus): [admissibility-suite-spine-2026-05-28.md](admissibility-suite-spine-2026-05-28.md)

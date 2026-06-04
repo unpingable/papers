@@ -1,6 +1,6 @@
 # Axis 2 — composition / merge admissibility forcing cases
 
-**Status:** Forcing-case note (2026-05-31; renumbered 2026-06-01 after the triad completed). Filed per `working/calculus-suite-map.md` Axis 2 plan. **All three specimens landed.** `MergeAdmissible` is now eligible for definition — the bad-case family is complete enough that the positive object can earn its existence without proving itself.
+**Status:** Forcing-case note (2026-05-31; renumbered 2026-06-01 after the triad completed). Filed per `working/admissibility-suite-map.md` Axis 2 plan. **All three specimens landed.** `MergeAdmissible` is now eligible for definition — the bad-case family is complete enough that the positive object can earn its existence without proving itself.
 
 **Renumbering note.**
 - 2026-05-31 a.m.: original filing listed Case A (shared global budget), Case B (conflicting reconciliation), Case C (stale evidence). Slice 0 was ConflictMerge.
@@ -135,7 +135,7 @@ Do not start with `MergeAdmissible` as a beautiful abstraction. That's how you g
 
 ## Cross-references
 
-- Suite plan: `calculus-suite-map.md`.
-- Axis 1 kernel note: `preprint/admissibility-calculus/` (currently titled "Safety-Bridge Kernel: Authorization and Value Preservation"; "Axis 1 of the Admissibility Suite").
+- Suite plan: `admissibility-suite-map.md`.
+- Axis 1 kernel note: `preprint/admissibility-kernels/` (titled "Safety-Bridge Kernel: Authorization and Value Preservation"; "Axis 1 of the Admissibility Suite").
 - Original Calculus 2.0 exit-criteria composition-axis bullets: `calculus-2-exit-criteria.md` (criteria 3 — `merge_admissible_necessary` — and 4 — ≥3 bad-merge cases formalized; both NOT MET).
 - LocalBoundary substrate (the sufficiency-only proof that already exists): `~/git/lean/LeanProofs/Admissibility/LocalBoundary.lean`.

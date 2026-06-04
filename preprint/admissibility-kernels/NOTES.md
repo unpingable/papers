@@ -1,7 +1,7 @@
 # NOTES — drafting plan
 
 **Filed:** 2026-05-29
-**Status:** v0.2 axis-1 drafting plan. Not paper content. Suite reframe 2026-05-31: this artifact is **Axis 1** of the admissibility suite per `working/calculus-suite-map.md`. Axes 2 (composition) and 3 (self-amendment) are separate kernel notes; the unifying calculus paper is post-suite synthesis. Lean characterization layer (`AuthPreserves`, `AuthorizationBridgeGap`, `MaximalBridge`, `BridgeComplete`, `HasForgetfulSection` + theorems) lives in `SafetyBridge.lean` as of 2026-05-31 and is candidate for inclusion in a §3 expansion (probably §3.9 collapse iff, §3.10 obstruction, §3.11 maximal-bridge corner).
+**Status:** v0.2 axis-1 drafting plan. Not paper content. Suite reframe 2026-05-31: this artifact is **Axis 1** of the admissibility suite per `working/admissibility-suite-map.md`. Axes 2 (composition) and 3 (self-amendment) are separate kernel notes. Post-2026-06-03 synthesis closure, no unifying calculus paper is the target — surviving structure is the "disciplined premise production" umbrella over separate species. Lean characterization layer (`AuthPreserves`, `AuthorizationBridgeGap`, `MaximalBridge`, `BridgeComplete`, `HasForgetfulSection` + theorems) lives in `SafetyBridge.lean` as of 2026-05-31 and is candidate for inclusion in a §3 expansion (probably §3.9 collapse iff, §3.10 obstruction, §3.11 maximal-bridge corner).
 
 ## Sequencing
 
@@ -35,7 +35,7 @@ Before any section ships, the scope fence must read:
 - [ ] Kernel-legible all-green ≠ substantively-grounded legitimacy. (paper 28 fence)
 - [ ] Conditional, not categorical. (`AND it does not certify safety in any specific system`)
 - [ ] Structural bridges are conservative; maximal bridge collapses into preserves-restated.
-- [ ] Not Calculus 2.0 (full label). Safety axis only; composition and self-amendment open.
+- [ ] Not a unified calculus. Safety axis only; composition and self-amendment open as separate kernels.
 - [ ] Not a process calculus; not refinement; not a complete safety policy; not certification.
 
 The fence is checked in §5 explicitly; the introduction signposts it; §3 carries it on the Loop-Capture mapping note.
@@ -44,7 +44,7 @@ The fence is checked in §5 explicitly; the introduction signposts it; §3 carri
 
 - Argue that real institutions exhibit the L/V divergence. That is paper 28.
 - Introduce new Lean modules. The Lean source is finished; the preprint is exposition.
-- Claim the "Calculus 2.0" label. The label is gated on composition + self-amendment axes, both open.
+- Claim a unified-calculus framing. The frame was retired post-2026-06-03 synthesis closure; axes ship as separate kernels.
 - Re-litigate the actor-inert vs actor-sensitive bridge decision. Ratify by stating it; defer the actor-sensitive extension as named-but-not-implemented.
 - Cite the Δt corpus as load-bearing evidence. Δt-series references are background motivation only.
 
@@ -58,7 +58,7 @@ If any of the following changes between now and first draft, redo this scaffold:
 
 ## Venue and sequencing
 
-Spine page (`working/calculus-paper-spine-2026-05-28.md`) says: write the preprint first, paper 28 second. The preprint does not need to be *published* before paper 28 drafts begin, but it does need a citable scaffold (this) before paper 28 can forward-point.
+Spine page (`working/admissibility-suite-spine-2026-05-28.md`) says: write the preprint first, paper 28 second. The preprint does not need to be *published* before paper 28 drafts begin, but it does need a citable scaffold (this) before paper 28 can forward-point.
 
 Target venue: arXiv cs.LO at minimum. AI-safety venue (e.g. AI Safety Workshop, ICML SafeML, NeurIPS Safety) possible if framing supports. Decide after first draft; do not pre-format for a specific venue at scaffold stage.
 

@@ -65,7 +65,7 @@ Numbering reflects the order in which a claim was named, not relative maturity o
 
 ### Standalone formal-methods preprint (outside Δt numbering)
 
-- *Safety-Bridge Kernel: Authorization and Value Preservation* (subtitle: *Axis 1 of the Admissibility Suite*) (2026) — **v0.2 draft; not yet published.** Suite-context framing reflects the 2026-06-03 cross-axis synthesis closure (synthesis closed *against* a single unifying calculus paper; surviving structure is the "disciplined premise production" umbrella with two named species — source/temporal and multiplicity/resource). Earlier working slug *"An Admissibility Calculus: Authorization, Safety Bridges, and Value Decay"* was demoted during drafting. Sibling artifact to the forthcoming Δt paper 28 per `working/calculus-paper-spine-2026-05-28.md`; sober formal-methods exposition of the Lean safety-bridge family at `~/git/lean/LeanProofs/Admissibility/`. NOT a member of P01–P27.
+- *Safety-Bridge Kernel: Authorization and Value Preservation* (subtitle: *Axis 1 of the Admissibility Suite*) (2026) — **v0.2 draft; not yet published.** Suite-context framing reflects the 2026-06-03 cross-axis synthesis closure (synthesis closed *against* a single unifying calculus paper; surviving structure is the "disciplined premise production" umbrella with two named species — source/temporal and multiplicity/resource). Earlier working slug *"An Admissibility Calculus: Authorization, Safety Bridges, and Value Decay"* was demoted during drafting. Sibling artifact to the forthcoming Δt paper 28 per `working/admissibility-suite-spine-2026-05-28.md`; sober formal-methods exposition of the Lean safety-bridge family at `~/git/lean/LeanProofs/Admissibility/`. NOT a member of P01–P27.
 
 ---
 
