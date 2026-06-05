@@ -50,9 +50,21 @@ The middle rungs mostly formalize *how authority may travel*: delegate, attenuat
 
 The map exists to prevent "ah, beans" review surprises — but the *actual* prevention is the week of reading, not the map. The map without a queue can eat the meal: filing a satisfying cross-referenced object that scratches the itch the reading was supposed to scratch. So:
 
-**Priority 1 (most dangerous unread):**
+**Priority 0 (active 2026 convergence — currently moving, most likely to surface in review):**
 
-1. **Aura** (Jia et al., ICFP 2008) — *AURA: A Programming Language for Authorization and Audit*. Dependent types + authorization logic + proof emission for audit. Closest methodological neighbor; if anyone built receipts-as-types already, it's here. **Read first.**
+These are 2026 items where the field is actively converging on the corpus's problem space. Different in kind from the historical-prior-art reads below: those ask *"has this already been done?"*; these ask *"is the field currently being claimed by adjacent work, and is the corpus visibly absent from a convergence it should be part of?"* The arXiv item is the most direct overlap; the NIST/NCCoE/WEF items establish that the agentic-systems authorization neighborhood is having its standards moment in real time.
+
+A. **arXiv: "Authorization Propagation in Multi-Agent AI Systems: Identity Governance as Infrastructure"** (May 2026). Names *transitive delegation*, *aggregation inference*, and *temporal validity* as the open problem triad. Direct overlap with the doctrine map's composition-axis row, spendability/multiplicity gap, and Freshness row respectively. **The most directly overlapping current literature.** Read this first.
+B. **NCCoE concept paper: "Accelerating the Adoption of Software and AI Agent Identity and Authorization"** (NIST, February 2026). Most likely to be in a reviewer's hands as NIST-stamped technical guidance.
+C. **NIST CAISI RFI on security considerations for AI agents** (Federal Register, January 2026). First formal U.S. government initiative scoped to controls for autonomous AI agent systems; establishes regulatory framing for the problem space.
+D. **WEF "AI Agents in Action" playbook** (May 2026). Industry-applied; introduces authorization-profile / enforceable-governance / auditability framing. Most likely to be cited by enterprise reviewers.
+E. **NIST AI Agent Standards Initiative** (announced February 17, 2026). Programmatic rather than paper-shaped; tracks the broader standards trajectory.
+
+If a 7th bucket eventually earns its place in the map proper — *Agentic-systems authorization (2026 convergence)* — these are the seeds. Not minted yet because the reading hasn't happened; the bucket-creation gate is the same as for any kernel: read, find the genuine distinction (or collision), then file.
+
+**Priority 1 (most dangerous historical unread):**
+
+1. **Aura** (Jia et al., ICFP 2008) — *AURA: A Programming Language for Authorization and Audit*. Dependent types + authorization logic + proof emission for audit. Closest methodological neighbor from the foundational period; if anyone built receipts-as-types already, it's here.
 2. **Proof-Carrying Authentication** (Appel & Felten, CCS 1999) — the original PCA paper, higher-order logic for distributed authentication. Then trace forward to:
 3. **Proof-carrying authorization** (Bauer et al., later CMU work) — the named-similarly successor that uses proof objects at the gate.
 
@@ -79,7 +91,7 @@ The map exists to prevent "ah, beans" review surprises — but the *actual* prev
 - If a reading reveals that a refusal kernel's negative-space territory is already covered by existing positive machinery, that kernel deserves either retirement, repositioning, or a sharpened version of the distinction.
 - Do NOT use the existence of this queue as evidence the reading is done. Mark each item explicitly: `[ ]` unread / `[~]` skimmed / `[x]` read with summary added.
 
-Current state: **`[ ]` all eleven items.** The map's conjectured column will turn into observed claims only as items get checked off.
+Current state: **`[ ]` all sixteen items** (5 in Priority 0, 11 in Priorities 1–4). The map's conjectured column will turn into observed claims only as items get checked off.
 
 ## The distinctive object (negative space)
 
