@@ -2,6 +2,44 @@
 
 **Filed:** 2026-06-04. **Status:** family map. Names what's covered, what's candidate, what's adjacent. Prevents candidate-explosion from looking like orphaned doctrine acne.
 
+## The master frame: missing conversion witness
+
+**Filed 2026-06-05** as the compression surface for what the family below actually *is*.
+
+> **The admissibility corpus can be read as a laundering detector: it rejects silent promotions between institutional object-kinds unless a conversion witness binds the source, target, surface, scope, and issuing authority.**
+
+The family table below enumerates *which* silent promotions are refused. The master frame names *why* they share a shape: each row is a forbidden conversion from one kind of institutional object (receipt, log, status, label, observation, policy allow, prior validity, partial coverage) into another (authority, truth, coverage, enforcement, standing, execution right, current validity, total coverage). A conversion may proceed *only* through a witness whose type binds the conversion itself — not merely the destination kind.
+
+**The conversion-witness binding rule.** A witness "supporting authority" generically is a skeleton key and re-introduces the laundering surface the kernel is supposed to refuse. A typed conversion witness must bind:
+
+- **source kind** (what is being converted from)
+- **target kind** (what is being converted to)
+- **surface / object** (which specific thing the conversion attaches to)
+- **scope / time** (when and where the conversion is valid)
+- **issuer / authority** (who minted the witness, under what standing)
+
+Destination-only witnesses are not witnesses; they are unmarked claims. This rule operationalizes [`tooltheory/admissibility-related-work-map.md`](tooltheory/admissibility-related-work-map.md) § Substrate guidance § Candidate carrier sketch guardrail #5 at the doctrine-map altitude.
+
+**Provenance.** Surfaced in a multi-model exchange 2026-06-04 (ChatGPT extending the Lean-underexposed-lane idea → DeepSeek sketching candidate kernels → ChatGPT correcting the destination-only-witness trap → kernel-overlap audit confirming non-novel-substance / novel-compression). The frame is keep-worthy; the parallel `LeanProofs/Admissibility/NoLift/` directory the exchange briefly proposed was refused as cathedral-by-rename — the kernels it would contain already exist as named modules in `LeanProofs.lean`'s import surface. See [[documentation-keepers]] for the *"Lean as laundering detector"* keeper phrase.
+
+### The layer map (added 2026-06-05)
+
+The master frame applies at three layers. Each layer names a refusal and a missing mediating object:
+
+| Layer tag | Refusal | Missing object |
+|---|---|---|
+| **`NoLift`** | No silent lift | Conversion witness (source kind → target kind) |
+| **`NoSilentJoin`** | No silent join | Join witness (bundle ⊨ requirements) |
+| **`NoChainMagic`** | No self-certifying chain | Composite witness (chain ⊨ promotion) |
+
+These are **layer-tags, not a module/directory hierarchy.** The 2026-06-04 audit refused a parallel `NoLift/` directory as cathedral-by-rename; the same refusal extends to `NoSilentJoin/` and `NoChainMagic/`. The atomic-layer instances are the family rows below (already mapped to existing modules). The workflow-layer kernel is held as candidate: [`tooltheory/aggregate-witness-requires-join-candidate-2026-06-05.md`](tooltheory/aggregate-witness-requires-join-candidate-2026-06-05.md). The sequence-layer claim is shaped but has no candidate file yet; no downstream consumer has earned the build.
+
+**Meta-discipline (the keeper):** *Indexed or it didn't happen.* A mediating object is admissible only when indexed to the exact objects it mediates — the conversion witness binds source AND target; the join witness binds bundle AND requirements; the composite witness binds the chain. Unindexed witnesses are **existential laundry** — a witness exists somewhere, therefore treated as applicable here. Same disease across all three layers; same fix across all three layers; same goblin in increasingly elaborate costumes.
+
+**Type-level lesson:** *the theorem is less important than the type you cannot construct.* Refusal lives at the API boundary as an uninhabited argument position, not as a failed match at runtime. The corpus's existing instances: BoundaryTransit's witness-must-be-OUTPUT discipline; the typed-revocation pattern in `CrossBoundary*` modules where `isRevocable Receipt = false` makes the `ValidRevocation` constructor uninhabited for receipts. The negative theorem is one line; the indexed type structure is the argument.
+
+**Provenance (workflow-layer extension).** 2026-06-05 multi-model continuation (ChatGPT extending the workflow-not-more-Pokémon idea → DeepSeek sketching workflow kernels → ChatGPT correcting the unindexed-join trap → DeepSeek refining with the two-field discipline → ChatGPT promoting the meta-rule to *"indexed or it didn't happen"* and naming *"existential laundry"* → Claude Code kernel-overlap audit confirming workflow-layer as genuine gap). Keepers in [[documentation-keepers]]; candidate kernel in tooltheory.
+
 ## The family
 
 Each row names one *bad inference* the corpus exists to refuse. The right-hand column points at the Lean modules or candidates that own the refusal at the formal layer; the left-hand column names the family so a new instance can be classified before being filed.
