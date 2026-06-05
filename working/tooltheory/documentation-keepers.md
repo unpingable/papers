@@ -39,6 +39,8 @@ Initial seed for the inventory. Add entries as they surface; trim as they land i
 | *"Staleness says the map is old. Skew says which way it lies."* | `working/primitives/memory-skew.md` (already there) | `AxisSkew.lean` + `memory-skew.md` |
 | *"A handle is not a predicate. A predicate is not a fixture. A fixture is not a kernel."* | Methodology docs / audit-procedure spec | Memory [[feedback-gate-stack]] |
 | *"Not earned is a custody state, not a truth value."* | `working/parked-leads.md` framing section (already there) | `working/parked-leads.md` |
+| *"People are naming the cliff; I'm formalizing the guardrail geometry."* | `admissibility-as-pre-authorization-layer.md` external-pitch section | `working/tooltheory/admissibility-related-work-map.md` § Overlap determination (Priority 0 synthesis) — the altitude-differentiation claim |
+| *"The external world is converging on the problem statement. The corpus survives as a lower-altitude formal/refusal substrate, not as the first naming of the concern."* | `admissibility-as-pre-authorization-layer.md` external-pitch section | Same — the spike's strategic-result framing after codex + ChatGPT both pulled back the "first to name" overclaim |
 
 ## Placement rule
 
