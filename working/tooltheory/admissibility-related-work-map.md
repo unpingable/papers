@@ -111,6 +111,47 @@ When the witness-substrate question comes up for any kernel earning promotion fr
 - **For consumption**: linear-credentials / PCFS prior art. Don't reinvent linearity; the consumption discipline already exists in usable form.
 - **For relationships**: Zanzibar / ReBAC + provenance-typed edges as a candidate intermediate artifact (DeepSeek named this; it's tractable).
 
+### Candidate carrier sketch (added 2026-06-04 after Priority 0 spike)
+
+**Non-claim sentence (load-bearing):**
+
+> *This sketch defines candidate production-witness carrier requirements; it does not establish correspondence between carrier validity and the Lean witness model.*
+
+**Why a sketch lives here at all.** Priority 0 readings surfaced two publicly-articulated instances of the same gap BoundaryTransit's header names — ACAP's "agent passport" (WEF/Capgemini May 2026) and Tallam R2 "explicit/bounded/auditable delegation" (arXiv 2605.05440, May 2026). The substrate gap is no longer purely internal observation; the WEF working group and Tallam have publicly asked for the carrier shape. This sketch is the name-early record of a candidate answer, lives in pre-ratified `tooltheory/`, and is NOT to be confused with a schema.
+
+**Candidate neighbors (carry-forward):** macaroons / Biscuit / SPKI per the bullet above. These define the *actual* schema; the menu below names the *fields* a non-launderable carrier would have to carry regardless of which neighbor supplies the cryptographic minting discipline.
+
+**Candidate carrier-field menu (NOT a schema):**
+
+- attempt id
+- surface
+- issuer
+- subject
+- issued-at
+- observed-at
+- valid window
+- evidence ref
+- caveats
+- standing basis
+- signature / chain / digest
+
+**Candidate refusal cases the carrier must support typed-refusal for:**
+
+- self-minted witness
+- replayed witness
+- wrong attempt
+- wrong surface
+- stale (issued-at outside valid window)
+- widened-after-issue (caveat-set growth post-issue)
+- post-hoc authorization laundering (issued-at after observed-at on the consuming side)
+
+**Hard guardrails on this sketch:**
+
+1. **Field list = menu, not schema.** Writing field names in markdown does not specify a wire format, a cryptographic discipline, or a validator. Anyone with a keyboard can write `{"basis": "external"}` (see § DeepSeek typed-provenance warning below); the carrier is whatever macaroons / Biscuit / SPKI already define, with these fields carried in the substrate's native attenuation chain — not a new format invented here.
+2. **No Lean ↔ runtime correspondence claim.** The non-claim sentence above is the entire bridge story until a downstream consumer earns a Cedar-style differential-randomized-testing harness (see § Adjacent methodological theft in `admissibility-as-pre-authorization-layer.md`). Until then, *Lean witness ≠ production witness* and the bridge is empty.
+3. **No promotion path implied.** This sketch does NOT live in `~/git/lean/LeanProofs/Scratch/BoundaryTransit.lean`. The Lean file is in the repo's `Scratch/` (NOT imported by `LeanProofs.lean`, not part of any DOI surface); putting candidate carrier-shape material inside it would contaminate the file by promotion-by-proximity. The sketch stays here, pre-ratified, until either (a) BoundaryTransit itself is promoted from `Scratch/` into the import surface, OR (b) a downstream consumer (NQ receipt substrate, an external pitch needing a concrete artifact, or any earned forcing case) needs the bridge. At promotion-or-need, the Lean file may point back to this sketch as deferred substrate guidance. Until then, the pointer stays in this file only.
+4. **The label is not the witness.** See § DeepSeek typed-provenance warning below. The carrier-field menu is governed by that warning, not exempt from it. If a reader interprets the menu as "just add these fields to JSON," the sketch failed.
+
 ## The DeepSeek typed-provenance warning
 
 DeepSeek's "attribute bags with provenance" suggestion is implementable but **unsafe if provenance is just typed data**. Anyone can write:
