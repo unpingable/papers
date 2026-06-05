@@ -1,6 +1,8 @@
 # Log-Only-Proves-Emission — candidate kernel
 
-**Filed:** 2026-06-05. **Status:** named, unbuilt, awaiting consumer. Side-quest yield #4 per the 2026-06-04 NoLift / laundering-detector exchange.
+**Filed:** 2026-06-05. **Status:** scratch-checked 2026-06-06 as a bounded tactic / custody probe (smaller-altitude than a type-design probe). **Lean source at `~/git/lean/LeanProofs/Scratch/LogOnlyProvesEmission.lean`** (~127 lines including category-2 prelude with the four bounded probe questions recorded). Not imported by `LeanProofs.lean`; not part of any 1.0 surface. Direct `lake env lean` check clean on first elaboration; only output is a non-fatal linter style suggestion (`simp at` vs `simpa using`). Side-quest yield #4 per the 2026-06-04 NoLift / laundering-detector exchange.
+
+**Lean custody:** `promoted-to: ~/git/lean/LeanProofs/Scratch/LogOnlyProvesEmission.lean` (scratch-checked, tactic-probe). Markdown Lean block below is the explanatory mirror of the authoritative scratch source. See [`lean-custody-ledger-2026-06-06.md`](lean-custody-ledger-2026-06-06.md) § Checked Scratch.
 
 ## Claim
 
@@ -45,6 +47,71 @@ The sketch above is candidate shape only. The actual build, if it happens, will 
 - [[documentation-keepers]] *"Lean as laundering detector"* keeper phrase
 - `~/git/lean/LeanProofs.lean` — current import surface; verify gap before any build
 
+## Lean sketch (candidate shape; hand-reviewed for compile-readiness 2026-06-05, NOT in any import surface)
+
+```lean
+namespace Admissibility
+
+/-!
+Candidate: LogOnlyProvesEmission
+
+Doctrine:
+A log entry proves emission, not truth, authorization, causality,
+completeness, or fairness.
+
+Atomic epistemology kernel. Layer tag: NoLift.
+-/
+
+structure LogEntry where
+  system : String
+  statement : String
+  timestamp : Nat
+deriving Repr
+
+inductive LogClaim where
+  | emitted (system : String) (statement : String) (timestamp : Nat)
+  | truthOf (statement : String)
+  | authorizationOf (actor : String) (action : String)
+  | causalityOf (cause : String) (effect : String)
+  | completenessOf (domain : String)
+  | fairnessOf (process : String)
+deriving DecidableEq, Repr
+
+def inferableFromLog (entry : LogEntry) : LogClaim → Prop
+  | .emitted sys stmt ts =>
+      entry.system = sys ∧ entry.statement = stmt ∧ entry.timestamp = ts
+  | .truthOf _ => False
+  | .authorizationOf _ _ => False
+  | .causalityOf _ _ => False
+  | .completenessOf _ => False
+  | .fairnessOf _ => False
+
+theorem log_does_not_discharge_truth
+  (entry : LogEntry) (stmt : String) :
+  ¬ inferableFromLog entry (.truthOf stmt) := by
+  simp [inferableFromLog]
+
+theorem log_does_not_discharge_authorization
+  (entry : LogEntry) (actor action : String) :
+  ¬ inferableFromLog entry (.authorizationOf actor action) := by
+  simp [inferableFromLog]
+
+def inferableFromManyLogs
+  (entries : List LogEntry) (claim : LogClaim) : Prop :=
+  ∃ entry, entry ∈ entries ∧ inferableFromLog entry claim
+
+theorem many_logs_still_do_not_discharge_truth
+  (entries : List LogEntry) (stmt : String) :
+  ¬ inferableFromManyLogs entries (.truthOf stmt) := by
+  intro h
+  rcases h with ⟨entry, _, hInfer⟩
+  simpa [inferableFromLog] using hInfer
+
+end Admissibility
+```
+
+**Phrasing note (load-bearing).** Theorem names use *"does not discharge"* (audit-unit form) rather than *"≠"* (equation-negation form). Per the doctrine map's audit-unit framing: *X ≠ Y* is a type joke; *X cannot discharge P without witness W* is a type accusation. The `LogClaim` inductive carries the predicates; `inferableFromLog` returns `False` for five of six constructors. The corpus does NOT prove that no truth witness exists anywhere — only that *this log entry does not discharge the truth predicate*. Produce the witness; the kernel will accept it under a different constructor.
+
 ## Provenance
 
-Surfaced in multi-model exchange 2026-06-04 (ChatGPT extending the Lean-underexposed-lane idea → DeepSeek sketching 12 candidate kernels with code → ChatGPT hand-reviewing for errors and naming the master abstraction (typed conversion witness) → DeepSeek refining → ChatGPT correcting the destination-only-witness trap → Claude Code kernel-overlap audit confirming 11 of 12 candidates already covered, one gap remaining). Side-quest yield #4 per the 2026-06-05 closing ledger: *named, unbuilt, awaiting consumer.*
+Surfaced in multi-model exchange 2026-06-04 (ChatGPT extending the Lean-underexposed-lane idea → DeepSeek sketching 12 candidate kernels with code → ChatGPT hand-reviewing for errors and naming the master abstraction (typed conversion witness) → DeepSeek refining → ChatGPT correcting the destination-only-witness trap → Claude Code kernel-overlap audit confirming 11 of 12 candidates already covered, one gap remaining). Lean sketch attached 2026-06-05 in the field-guide-and-Lean-handoff round. Side-quest yield #4 per the 2026-06-05 closing ledger: *named, unbuilt, awaiting consumer.*

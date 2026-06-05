@@ -39,6 +39,34 @@ That gives the corpus a stable location in security vocabulary without competing
 
 **Warning on naive implementations.** The obvious "attribute bags with provenance" implementation — `{ "basis": "external", "issuer": "...", "fresh_until": ... }` — is unsafe if provenance is *just typed data*. Anyone can write the label; the label is not the witness. Macaroons / Biscuit / SPKI exist precisely because the typed-data approach is laundering-prone. Minting discipline (verifier-checked attenuation chain, cryptographic binding) is the load-bearing part. See the related-work map's DeepSeek-warning section for full treatment.
 
+## Cedar-relative positioning (added 2026-06-06)
+
+Cedar (and Amazon Verified Permissions) answers: *"May principal P perform action A on resource R, given context C?"* — a policy decision engine over principals / actions / resources / entities / policies / context with allow/deny outputs (default deny, forbid overrides). Honest authorization logic, well-built. The corpus's distinctive object is **one altitude upstream**:
+
+> **Cedar guards the door. This asks whether the door is where everyone says it is, whether the badge still counts, whether the emergency exit became the main entrance, and whether the map was rewritten by the person trying to get in.**
+
+### The upstream questions Cedar mostly assumes away
+
+Each maps onto an obligation atom from the [bridge obligation lattice](bridge-obligation-lattice.md):
+
+| Upstream question | Bridge family / obligation atom |
+|---|---|
+| Is this context admissible? | general admissibility gate |
+| Is this entity graph fresh? | freshness |
+| Did this event lawfully change the policy surface? | Deformation / temporal-bounding |
+| Did this exception become precedent? | Exception / anti-precedent |
+| Did this delegation amplify authority? | Delegation / non-amplification |
+| Did this representation faithfully project the source? | Projection / type-fidelity + freshness |
+| Did this label become enforcement by witnessed conversion? | Conversion / type-fidelity |
+
+### The relationship in one line
+
+> **Cedar trusts the application to supply the witness facts. The hard problem moves outside Cedar.**
+
+A Cedar policy can externalize the witness check into context — `permit ... when { context.has_coupling_witness && context.horizon > now && context.scope_contains(resource) }`. But Cedar is then trusting the application to supply the witness facts honestly. The unanswered questions: *who witnessed the witness? Is the surface deformation well-typed? Did the transform match the label? Did the admissibility difference stay inside the envelope? Did the exception avoid precedent? Did composition launder the horizon?* Those live outside Cedar's frame.
+
+The corpus is **not** "better Cedar." It is the missing notarization / governance / control layer under systems that use Cedar-like authorization — the admissibility kernels that decide whether the witness facts Cedar trusts are themselves trustworthy. The 2026-06-04 Priority 0 spike already confirmed Tallam (arXiv 2605.05440) and the WEF ACAP playbook publicly ask these upstream questions without answering them; this positioning is the corpus-side answer shape.
+
 ## Adjacent methodological theft
 
 Cedar's Lean ↔ Rust differential randomized testing — generate many attempted transitions and witnesses (valid and malformed), classify through both the Lean model and the production substrate implementation, treat divergence as model / schema / implementation error — is the worked template for the BoundaryTransit witness-substrate gap (named in `~/git/lean/LeanProofs/Scratch/BoundaryTransit.lean`'s header). Production witnesses are signed JSON, receipt rows, ledger entries, NQ testimony packets, WLP claims, etc. The bridge from Lean witness to production witness is a *tested correspondence*, not a rhetorical equivalence. Citable methodology, not metaphor.

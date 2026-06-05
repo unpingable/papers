@@ -111,7 +111,9 @@ When the witness-substrate question comes up for any kernel earning promotion fr
 - **For consumption**: linear-credentials / PCFS prior art. Don't reinvent linearity; the consumption discipline already exists in usable form.
 - **For relationships**: Zanzibar / ReBAC + provenance-typed edges as a candidate intermediate artifact (DeepSeek named this; it's tractable).
 
-### Candidate carrier sketch (added 2026-06-04 after Priority 0 spike)
+### Candidate carrier sketch (added 2026-06-04 after Priority 0 spike; refreshed 2026-06-05 with name-TBD menu; relational model layer filed 2026-06-06 — see [`witness-carrier-model-candidate-2026-06-06.md`](witness-carrier-model-candidate-2026-06-06.md))
+
+**Candidate name (TBD, NOT minted):** `BoundaryTicket` / `AdmissionClaim` / `WitnessPacket` — name deferred to the substrate this eventually lands on. Macaroons-style instantiation would call it a ticket; Biscuit-style would call it a packet; ABLP / says-logic-style would call it a claim. Minting the name in markdown before a substrate is chosen is exactly the typed-provenance failure mode the sketch refuses (see § DeepSeek typed-provenance warning below and guardrail #1).
 
 **Non-claim sentence (load-bearing):**
 

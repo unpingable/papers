@@ -1,6 +1,10 @@
 # Aggregate-Witness-Requires-Join — candidate kernel
 
-**Filed:** 2026-06-05. **Status:** named, unbuilt, awaiting consumer. Workflow-layer sibling to [`log-only-proves-emission-candidate-2026-06-05.md`](log-only-proves-emission-candidate-2026-06-05.md). Layer tag: **`NoSilentJoin`** (per anti-laundering doctrine map's layer map).
+**Field-guide name:** *Frankenstein Witness.* **Lean / doctrine name:** `AggregateWitnessRequiresJoin`. **Same object, two surfaces — not two candidates.**
+
+**Filed:** 2026-06-05. **Status:** scratch-checked 2026-06-06 as a bounded compile probe. **Lean source at `~/git/lean/LeanProofs/Scratch/AggregateWitnessRequiresJoin.lean`** (133 lines including category-2 prelude with the four bounded probe questions recorded). Not imported by `LeanProofs.lean`; not part of any 1.0 surface. Direct `lake env lean` check clean on first elaboration — no parens-bug-shaped surprise, dependent indexing on `(b : WitnessBundle) (reqs : Requirement → Prop)` elaborates as intended, `Option (JoinWitness b reqs)` preserves index visibility through `match`. The type design holds. Workflow-layer sibling to [`log-only-proves-emission-candidate-2026-06-05.md`](log-only-proves-emission-candidate-2026-06-05.md). Layer tag: **`NoSilentJoin`** (per anti-laundering doctrine map's layer map).
+
+**Lean custody:** `promoted-to: ~/git/lean/LeanProofs/Scratch/AggregateWitnessRequiresJoin.lean` (scratch-checked). Markdown Lean block below is the explanatory mirror of the authoritative scratch source. See [`lean-custody-ledger-2026-06-06.md`](lean-custody-ledger-2026-06-06.md) § Checked Scratch.
 
 ## Claim
 
@@ -74,6 +78,74 @@ The sketch above is candidate shape only. The actual build, if it happens, will 
 - [`../no-unifier-without-laundering.md`](../no-unifier-without-laundering.md) — composition / federation doctrine at calculus altitude; this candidate is the workflow-layer formal instance under that doctrine.
 - `~/git/lean/LeanProofs/Admissibility/Composition.lean` — existing composition-layer module; review for overlap before any build.
 
+## Lean sketch (candidate shape; hand-reviewed for compile-readiness 2026-06-05, NOT in any import surface)
+
+```lean
+namespace Admissibility
+
+/-!
+Field-guide name: Frankenstein Witness
+Lean-facing candidate: AggregateWitnessRequiresJoin
+
+Doctrine:
+Distributed satisfaction is not unified admissibility.
+
+A bundle of partial witnesses is not admissible as a unified witness unless
+a join witness, indexed to that exact bundle and requirement set, proves
+coverage and preservation.
+-/
+
+inductive Requirement where
+  | freshness
+  | coverage
+  | integrity
+  | authorization
+deriving DecidableEq, Repr
+
+structure PartialWitness where
+  source : String
+  satisfies : Requirement → Prop
+
+structure WitnessBundle where
+  parts : List PartialWitness
+
+def bundleSatisfies (b : WitnessBundle) (r : Requirement) : Prop :=
+  ∃ p, p ∈ b.parts ∧ p.satisfies r
+
+structure UnifiedWitness where
+  source : String
+  satisfiesAll : Requirement → Prop
+
+/--
+The join is indexed to this exact bundle and this exact requirement set.
+No existential laundry: a join for some other bundle cannot be used here.
+-/
+structure JoinWitness
+  (b : WitnessBundle)
+  (reqs : Requirement → Prop) where
+  unified : UnifiedWitness
+  covers    : ∀ r, reqs r → bundleSatisfies b r
+  preserves : ∀ r, reqs r → unified.satisfiesAll r
+
+def admissibleAsUnified
+  (b : WitnessBundle)
+  (reqs : Requirement → Prop)
+  (join : Option (JoinWitness b reqs)) : Prop :=
+  match join with
+  | none => False
+  | some _ => True
+
+theorem unjoined_bundle_not_admissible_as_unified
+  (b : WitnessBundle)
+  (reqs : Requirement → Prop) :
+  ¬ admissibleAsUnified b reqs none := by
+  simp [admissibleAsUnified]
+
+end Admissibility
+```
+
+**Theorem-strength caveat:** `unjoined_bundle_not_admissible_as_unified` is intentionally toy-simple (`simp` closes it given the definition). The real refusal lives at the **type design**, not the theorem — you cannot construct `JoinWitness b reqs` without supplying `covers` and `preserves`, and the dependent indexing prevents using a `JoinWitness` for a different bundle. Audit the type, not the proof. Per [[documentation-keepers]] keeper: *"the theorem is less important than the type you cannot construct."*
+
 ## Provenance
 
-Surfaced in multi-model exchange 2026-06-05 (ChatGPT extending the workflow-layer-not-more-Pokémon idea → DeepSeek sketching workflow kernels with code → ChatGPT correcting the unindexed-join trap → DeepSeek refining with the two-field discipline → ChatGPT promoting the meta-rule to *"indexed or it didn't happen"* and naming *"existential laundry"* → Claude Code kernel-overlap audit confirming workflow-layer kernel as genuine gap, sibling to `LogOnlyProvesEmission`). Side-quest yield per the 2026-06-05 workflow-layer closing ledger: *named, unbuilt, high-value workflow-layer gap.*
+Surfaced in multi-model exchange 2026-06-05 (ChatGPT extending the workflow-layer-not-more-Pokémon idea → DeepSeek sketching workflow kernels with code → ChatGPT correcting the unindexed-join trap → DeepSeek refining with the two-field discipline → ChatGPT promoting the meta-rule to *"indexed or it didn't happen"* and naming *"existential laundry"* → Claude Code kernel-overlap audit confirming workflow-layer kernel as genuine gap, sibling to `LogOnlyProvesEmission`). Field-guide name *Frankenstein Witness* attached 2026-06-05 in the field-guide-vs-Lean naming-split round. Side-quest yield per the 2026-06-05 workflow-layer closing ledger: *named, unbuilt, high-value workflow-layer gap.*

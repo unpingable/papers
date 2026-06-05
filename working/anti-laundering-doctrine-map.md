@@ -40,6 +40,61 @@ These are **layer-tags, not a module/directory hierarchy.** The 2026-06-04 audit
 
 **Provenance (workflow-layer extension).** 2026-06-05 multi-model continuation (ChatGPT extending the workflow-not-more-Pokémon idea → DeepSeek sketching workflow kernels → ChatGPT correcting the unindexed-join trap → DeepSeek refining with the two-field discipline → ChatGPT promoting the meta-rule to *"indexed or it didn't happen"* and naming *"existential laundry"* → Claude Code kernel-overlap audit confirming workflow-layer as genuine gap). Keepers in [[documentation-keepers]]; candidate kernel in tooltheory.
 
+### The audit unit and operational discipline (added 2026-06-05)
+
+**Comprehensive framing (the whole cursed pocket knife):**
+
+> *This is formal claim-admissibility auditing for institutional speech acts: given a sentence doing institutional work, identify the predicate it tries to discharge, the evidence actually present, the witness actually required, and prove that the present evidence cannot discharge the predicate unless an indexed witness is produced.*
+
+**The audit unit:** *This evidence does not discharge that predicate.*
+
+The corrected formulation (load-bearing): the corpus does NOT prove "no witness exists." It proves *"the present evidence cannot discharge the required predicate without the indexed witness."* The organization may have the witness elsewhere — produce it. *X ≠ Y* is a type joke; *X cannot discharge P without witness W* is a type accusation.
+
+**The 7-step procedure** (operationalizes the audit-unit at every level — atomic, workflow, sequence):
+
+1. Find the sentence people routinely get away with saying.
+2. Find the predicate it is being used to discharge.
+3. Find the evidence actually present.
+4. Find the witness the predicate actually requires.
+5. Show that the present evidence type cannot construct / discharge the required witness type.
+6. Index the witness to the exact actor / object / scope / time.
+7. Name the theorem as the sentence people can no longer say without producing the missing object.
+
+**Human interface:** *Ask for the missing witness.*
+
+**Field-guide vs Lean naming.** Workplace-demon names and Lean/doctrine names are *the same object, two surfaces* — not two candidates. The naming split is curated in [[documentation-keepers]] and at the per-candidate header in `tooltheory/`. Filed examples:
+
+| Field-guide name | Lean / doctrine name |
+|---|---|
+| Frankenstein Witness | `AggregateWitnessRequiresJoin` |
+| (no candidate yet — atomic) | `LogOnlyProvesEmission` |
+
+Do not split a single object into a field-guide candidate AND a Lean candidate. They are two surfaces of one kernel.
+
+**Field-guide schema** (the human-facing format; held in [`tooltheory/admissibility-field-guide-2026-06-05.md`](tooltheory/admissibility-field-guide-2026-06-05.md)):
+
+- Demon — workplace-demon name
+- Common sentence — the institutional speech act
+- Predicate being discharged — what the sentence claims to settle
+- Evidence actually present — what was actually shown
+- Required witness — the indexed witness that would discharge the predicate
+- Refusal — the audit-unit statement
+- Meeting incantation — the human-interface ask
+
+### Cross-cutting type-design rules (added 2026-06-05)
+
+Three rules surfaced in the 2026-06-05 SurfaceDeformation review/repair cycle. Each applies across the corpus, not just to that kernel.
+
+**The conservation law (No curvature without source).** Any modification to an admissibility surface or predicate has compact witnessed support. Outside the witness envelope (after the event, inside scope, at or before horizon), admissibility is conserved. Operational form: *if the surface changed here, show the source term.* GR analogy: event = source term; coupling witness = field equation; surface difference = curvature; scope + horizon = support of perturbation; invariance guards = conservation constraints. Applies to: any kernel where a predicate evolves over time. Worked theorem shape (from the SurfaceDeformation candidate, v3): `deformation_difference_within_envelope` — if old and deformed surfaces differ on a claim, the claim must satisfy `event.timestamp < claim.timestamp ≤ w.horizon ∧ w.scope claim`. **The theorem is *derivable* — three contrapositives from the witness's `antiRetroactive` / `afterHorizonInvariant` / `outsideScopeInvariant` fields, not a new axiom.** The conservation law is always implied by a correctly-fielded witness; the worked theorem just states it as one object. Keepers: *"No curvature without source"* / *"Lawful backreaction has compact witnessed support"* / *"If the surface changed here, show the source term."*
+
+**The composition refinement (gross, not net).** When the conservation law extends to chained deformations, the budget must be charged **gross**, not net, because cancellation is not the same as never having spent. Salami-slicing's signature is small net endpoint difference + large gross per-step spend; a chain that flips a verdict at step 1 and flips it back at step 7 shows zero net endpoint while extending the effective horizon arbitrarily. Honest cost model: flip-count `spend(surface, delta) := | { c ∈ envelope : verdict flipped } |`, read off the transform's actual behavior — not asserted. The composition witness is the spend ledger proved closed; budget ledger and composite witness are not two paths but two compression levels of the same custody chain (custody receipt and claim receipt over it, respectively). Applies to: any kernel where chained predicate-deformations could re-introduce horizon-laundering. Keepers: *"Net is fakeable; gross isn't"* / *"A composite witness is a ledger you've proved closed"* / the *charged gross, not net* clause on the managed-insufficiency doctrine line.
+
+**Behavioral equivalence, not intensional equality.** When kernels compare admissibility predicates, surfaces, or witness types, the comparison must be behavioral (`∀ claim, left.admit claim ↔ right.admit claim`), not intensional propositional equality (`left = right`). Without `funext`/`propext`, two extensionally identical surfaces aren't structurally `=`, and the corpus refuses claims about *behavior*, not about *function objects*. The v2 SurfaceDeformation patch concretized this as `SurfaceEquiv`. Applies to: any kernel comparing predicates / surfaces / witness types / admissibility decisions. Without this rule, theorems prove something stronger than the corpus semantically needs and end up false or unprovable for behaviorally-identical-but-structurally-distinct inputs.
+
+**Enum labels are testimony unless enforced by a well-typedness predicate.** An enum constructor naming a transform (e.g., `deformationType : ContractAuthority`) is unwitnessed testimony about behavior until threaded through a predicate that constrains the transform to actually match the label. Same disease as a self-asserted JSON `{"basis": "external"}` field, one floor up — *the label is not the witness* applied to enum constructors. Worked example: the SurfaceDeformation v2 patch added `DeformationWellTyped` requiring (for `contractAuthority` labels) `SurfaceImplies deformed surface`; without the predicate, a `.contractAuthority` label could be attached to a transform that *expands* authority, and every theorem in the file would go through unbothered. Per [[documentation-keepers]] keeper: *"Enum labels are testimony unless enforced by a well-typedness predicate."* Applies to: any enum-bearing kernel where the label asserts something about the carrier's behavior.
+
+**Provenance.** These three rules surfaced in the 2026-06-05 claude-web review of `SurfaceDeformationRequiresCoupling` (v1) + claude-web's v2 repair pass + the Bianchi-identity conservation-law extension. Candidate file with full kernel description: [`tooltheory/surface-deformation-requires-coupling-candidate-2026-06-05.md`](tooltheory/surface-deformation-requires-coupling-candidate-2026-06-05.md).
+
 ## The family
 
 Each row names one *bad inference* the corpus exists to refuse. The right-hand column points at the Lean modules or candidates that own the refusal at the formal layer; the left-hand column names the family so a new instance can be classified before being filed.
