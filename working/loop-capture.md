@@ -369,6 +369,8 @@ Defense patterns:
 - disagreement-preserving telemetry
 - postmortems that audit the validity regime, not just component behavior
 
+**Custody-sense note.** The "independent witness" / "non-co-captured channel" / "fail differently" requirement is *custody-as-independent-channel* — sense 3 of five corpus senses of "custody." Distinct from *custody-as-file-role* (the `.lean` file's role in the institutional discharge of the corpus, lives in [`custody-classes.md`](custody-classes.md)) and from *custody-as-substrate-binding* (sense 4, lives in [`tooltheory/witness-carrier-model-candidate-2026-06-06.md`](tooltheory/witness-carrier-model-candidate-2026-06-06.md)). Full disambiguation in [`vocabulary/custody-five-senses.md`](vocabulary/custody-five-senses.md). The corpus deliberately keeps these senses separate; collapsing them into a single primitive (e.g., a relay-shape "BoundaryIntegrity") would be laundering under the no-unifier doctrine.
+
 ---
 
 ## Cross-corpus mapping
@@ -410,6 +412,10 @@ Admissibility capture (surface 4) is the adversarial extension of stale binding 
 ### Connection to WIF-composition
 
 The Witness Necessity Claim is the WIF-composition probe's *audited failure-surface orthogonality* under adversarial conditions. The probe requires that witnesses fail independently under atomic perturbations; loop capture requires that at least one witness fail differently from the captured channel. Same doctrine, different framing. The probe's two-route discipline (corroborative composition vs aggregate-invariance composition) extends directly to the adversarial setting: corroboration requires non-co-captured witnesses; aggregate-invariance requires the aggregator itself to be uncaptured and invariant under admitted perturbations.
+
+### Connection to witness carrier model (substrate-level instance)
+
+Related substrate discipline: see [`tooltheory/witness-carrier-model-candidate-2026-06-06.md`](tooltheory/witness-carrier-model-candidate-2026-06-06.md) § 6 row 6 ("post-hoc laundering") for the carrier-level `antiRetroactive` version of this loop-capture requirement. The paper-level witness-necessity claim and the substrate-level carrier rule address the same shape at different altitudes: *a transition cannot authorize itself using a witness generated downstream of the transition.* Loop capture names the adversarial mechanism; the carrier model names the binding obligation that refuses it; BoundaryTransit's `antiRetroactive` field is the Lean-side anchor.
 
 ### Connection to Attack-Surface Laundering (discourse-layer cousin)
 

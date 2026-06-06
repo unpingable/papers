@@ -86,3 +86,9 @@ Adjacent but distinct. Admissibility lives at one cut; this lives at the composi
 ## Keeper
 
 > Locally valid operations can compose into a globally false system.
+
+## Cross-references
+
+- **Related composition-altitude family candidate.** LGVG currently remains a candidate family designation, not a ratified primitive. See [`axis-2-composition-boundary.md`](axis-2-composition-boundary.md) for the substrate-level refusal of a single generic theorem: the positive object is slice-indexed characterization, not a layer-uniform necessity theorem.
+- **Analogy only.** LGVG may occupy a composition-altitude role similar to [`admissibility-decay-family-note.md`](admissibility-decay-family-note.md) at decay altitude: a descriptive cross-cutting family, not a new primitive axis. This note does not ratify that reframe.
+- **Vector-mining audit receipt.** [`vector-mining/2026-06-05-composition-substrate-vs-lgvg.md`](vector-mining/2026-06-05-composition-substrate-vs-lgvg.md) — 2026-06-05 single-target pilot in gap-detection mode. Verdict: gap confirmed but not forced; substrate generates positive evidence against single-primitive promotion via the schema-not-theorem finding. Outside-substrate sibling: [`vector-mining/2026-06-05-batch-six-attacks.md`](vector-mining/2026-06-05-batch-six-attacks.md) § Attack #6.

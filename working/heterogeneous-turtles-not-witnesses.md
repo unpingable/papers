@@ -116,6 +116,7 @@ This doctrine **constrains** every refusal kernel without **replacing** any:
 - [`tooltheory/witness-carrier-model-candidate-2026-06-06.md`](tooltheory/witness-carrier-model-candidate-2026-06-06.md) — the carrier model's `evidence_ref` field carries the "link to underlying evidence" obligation; this doctrine sharpens it: the underlying evidence must be of a *different type* than any artifact in the verifier stack producing the carrier.
 - [`tooltheory/documentation-keepers.md`](tooltheory/documentation-keepers.md) — keepers added today: covariance-matrix line; heterogeneity-receipt-type theorem; consensus-not-Witnessed; barbershop epistemology.
 - [[feedback-claude-common-mode-synthesis]] — the homogeneous version of this doctrine, scoped to Claude-reviewing-Claude. This file is the more general statement.
+- [`vocabulary/receipt-and-witness-senses.md`](vocabulary/receipt-and-witness-senses.md) — receipt/witness role-disambiguation glossary. This doctrine's *"type"* classification (production-mechanism: model vs compiler vs sensor vs ledger vs signed external vs human observation vs reproducible experiment vs policy engine) is the *transversal meta-axis* across the glossary's three role senses (submission record / verdict artifact / non-authorizing acknowledgment), NOT a fourth role sense. The orthogonality with the same-custody axis ([`admissibility-vs-arms-control.md`](admissibility-vs-arms-control.md)) is recorded there as well.
 
 ## Provenance
 

@@ -172,4 +172,5 @@ Not promoted. Filed.
 - [signal-authority-candidate.md](signal-authority-candidate.md) — sibling primitive (signal-shape axis)
 - [testimony-vs-self-theory.md](testimony-vs-self-theory.md) — sibling primitive (witness-standing axis)
 - `~/git/lean/LeanProofs/Admissibility/FiatAdmissibility.lean` — sibling kernel (artifact-kind axis, built)
+- `~/git/lean/LeanProofs/Admissibility/Freshness.lean` — evidence-side metric-time kernel. Distinct time axis from operational-standing decay (which tracks `C ∩ A(t)` over the action-selection axis): Freshness governs whether time-bearing evidence carriers can discharge standing-claims at metric time `now`. The two senses of "standing" do not collapse — commitment-standing decay can hold while evidence-freshness is fine, and vice versa. See [`vocabulary/standing-three-senses.md`](vocabulary/standing-three-senses.md) for the three-sense disambiguation.
 - `project-admissibility-doctrine-stubs.md` (memory) — declared-substitution stubs (the broader laundering family)

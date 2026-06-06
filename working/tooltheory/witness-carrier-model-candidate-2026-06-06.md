@@ -92,6 +92,8 @@ The table is the model. Every row pairs:
 
 A reader of this table can say *which laundering moves the candidate carrier is meant to make impossible, and which binding obligation catches each one*, without mistaking the sketch for a schema or a proof.
 
+**Related adversarial mechanism:** see [`../loop-capture.md`](../loop-capture.md) for the paper-level form of this substrate rule. Row 6 ("post-hoc laundering") is the carrier-level instance of the loop-capture Witness Necessity Claim: detection/authorization requires at least one channel not co-captured by the transformation being evaluated. Substrate refusal and paper-level adversarial mechanism address the same shape at different altitudes.
+
 ## 7. Guardrails (carry-forward)
 
 These restate the substrate-guidance section's existing guardrails as they apply to the model layer:
@@ -110,6 +112,8 @@ These restate the substrate-guidance section's existing guardrails as they apply
 - [`admissibility-related-work-map.md`](admissibility-related-work-map.md) § Priority 0 readings — ACAP "agent passport" (WEF May 2026) and Tallam R2 (arXiv 2605.05440) are the publicly-articulated forcing-case instances for this model.
 - [`../admissibility-as-pre-authorization-layer.md`](../admissibility-as-pre-authorization-layer.md) § Cedar-relative positioning — *"Cedar trusts the application to supply the witness facts. The hard problem moves outside Cedar."* This model is what supplying-witness-facts-honestly looks like.
 - [[documentation-keepers]] — keeper phrases applicable: *"the label is not the witness"*; *"indexed or it didn't happen"*; *"existential laundry"*; *"a fog machine is a bridge with the empty obligation set"*.
+- [`../custody-classes.md`](../custody-classes.md) — *custody-as-file-role* (sense 1 of five). The substrate-binding discipline of this model is *custody-as-substrate-binding* (sense 4). The two senses do not collapse; full disambiguation in [`../vocabulary/custody-five-senses.md`](../vocabulary/custody-five-senses.md).
+- [`../vocabulary/receipt-and-witness-senses.md`](../vocabulary/receipt-and-witness-senses.md) — the substrate-carrier sense of "witness" used here lives at altitude (b) of the receipt/witness disambiguation. *"Label is not witness"* (this file's § 7 guardrail) is one of the two corpus-anchored sentences carrying the genus boundary.
 
 ## Provenance
 

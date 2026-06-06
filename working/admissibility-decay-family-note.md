@@ -127,8 +127,12 @@ Not promoted. Filed as descriptive working framing.
 - [commitment-standing-decay-candidate.md](commitment-standing-decay-candidate.md) — commitment-scale axis
 - [signal-authority-candidate.md](signal-authority-candidate.md) — signal-shape axis
 - [testimony-vs-self-theory.md](testimony-vs-self-theory.md) — witness-standing axis
-- [local-global-validity-gap.md](local-global-validity-gap.md) — composition/scope axis
+- [local-global-validity-gap.md](local-global-validity-gap.md) — composition/scope axis. Remains candidate; 2026-06-05 substrate audit ([vector-mining/2026-06-05-composition-substrate-vs-lgvg.md](vector-mining/2026-06-05-composition-substrate-vs-lgvg.md)) found the Axis-2 specimen family explicitly *refuses single-grand-theorem collapse* — a descriptive-family reframe (analogous to this note's own descriptive-not-primitive posture) is filed UNRATIFIED.
 - `~/git/lean/LeanProofs/Admissibility/FiatAdmissibility.lean` — artifact-kind axis (built)
+
+**Adjacent Lean substrate (not a family axis):**
+
+- `~/git/lean/LeanProofs/Admissibility/Freshness.lean` — evidence-side metric-time substrate. When the family invariant runs over time-bearing evidence, `Fresh now issued expires skew maxDiv` is the licensing relation that may expire while the artifact persists. Header keeper: *"Expired evidence cannot prove current standing."* This is NOT a sixth axis — the kernel is upstream of any axis whose `X` is time-bearing evidence, and it does not by itself carry standing-as-state-fact (see `Derivation.lean`) or standing-as-operational (see [`commitment-standing-decay-candidate.md`](commitment-standing-decay-candidate.md)). For the three senses of "standing" the family touches, see [`vocabulary/standing-three-senses.md`](vocabulary/standing-three-senses.md).
 
 **Sibling-but-distinct (broader laundering family):**
 

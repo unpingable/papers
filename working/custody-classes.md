@@ -85,3 +85,14 @@ Where an existing file already has a `Custody:` paragraph (a dozen or so as of t
 The reason classes are necessary is the discipline named in [`wiring-is-not-folder-placement.md`](wiring-is-not-folder-placement.md) ([[project-wiring-vs-folder-placement]]): folder placement is not custody, and the three concepts (physical location / build coverage / public claim status) are independent. A class label is the per-file receipt for the third concept, decoupled from the first two.
 
 The companion rule, in [`promotion-claims-require-custody-witnesses.md`](promotion-claims-require-custody-witnesses.md), states the dual: a promotion claim made in memory, README, or doctrine without an artifact-level custody witness is itself an admissibility failure. Class labels are the artifact-level witness.
+
+## Custody senses across the corpus
+
+This file defines **sense 1 of five** — *custody-as-file-role*. The word "custody" carries at least four other distinct relations elsewhere in the corpus, with different topologies and disciplines:
+
+- **Sense 2 — ratification discipline:** `~/.claude/CLAUDE.md` § Register discipline + [[project-lean-custody-state]] § Option C. Whether a change is *custody-affecting* (canonical definitions, kernels, receipt formats, ratification rules) and requires explicit ratification language.
+- **Sense 3 — independent channel:** [`loop-capture.md`](loop-capture.md) § Witness/defense concepts. A channel not co-captured by the transformation being evaluated; the Witness Necessity Claim.
+- **Sense 4 — substrate binding:** [`tooltheory/witness-carrier-model-candidate-2026-06-06.md`](tooltheory/witness-carrier-model-candidate-2026-06-06.md) § 3. Joint signature/authority coverage over `(identity, time, authority, substrate)`.
+- **Sense 5 — refusal independence:** [[project-refusals-need-receipts]] dual-list. *"Same-custody appeal is not independent review."* The institutional-process analogue of sense 3.
+
+Full disambiguation in [`vocabulary/custody-five-senses.md`](vocabulary/custody-five-senses.md). The senses do not collapse into a single primitive; cross-sense theorems would owe the bridge tax from [`no-unifier-without-laundering.md`](no-unifier-without-laundering.md).
