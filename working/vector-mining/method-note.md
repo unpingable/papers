@@ -58,10 +58,10 @@ Six distinct relay-shape failure modes have surfaced in pilots #1–#13:
 
 1. **Vocabulary re-skin** (pilot #1) — same structure, new costume. Different abstract type, same lattice.
 2. **Multi-altitude bundle** (pilot #2) — one proposed primitive absorbs multiple existing atoms across altitudes.
-3. **Lexical fracture** (pilots #3, #6, #7, #11, #13, #15 — **standing**, 6 specimens; first external recurrence in #15 Claims B + C) — one word carries multiple distinct relations; relay collapses them.
+3. **Lexical fracture** (pilots #3, #6, #7, #11, #13, #15, #16 — **standing**, 7 specimens; external recurrences in #15 Claims B + C and #16 Claims B + E) — one word carries multiple distinct relations; relay collapses them.
 4. **Preventive gate** (pilots #8, #12) — corpus already contains the disambiguation that blocks the collapse; gate fires before the relay-shaped claim lands.
 5. **Gap-shape laundering** (pilot #9) — real gap exists; relay tries to fill it with the wrong frame.
-6. **Internal-refutation gap** (pilots #10, #12, #13, #15 — **standing**, 4 specimens; first external recurrence in #15 Claims B + E) — real gap exists; the corpus's *own* substrate work has done the federation-doctrine refusal of the tempting unifier internally; audit records that refusal. **Promoted 2026-06-06 from candidate pattern to standing verdict class** after Pilot #13 produced the third specimen. **External recurrence in Pilot #15** is stronger evidence the mode is substrate-portable, not cave-local.
+6. **Internal-refutation gap** (pilots #10, #12, #13, #15, #16 — **standing**, 5 specimens; external recurrences in #15 Claims B + E and #16 Claims B + C) — real gap exists; the corpus's *own* substrate work has done the federation-doctrine refusal of the tempting unifier internally; audit records that refusal. **Promoted 2026-06-06 from candidate pattern to standing verdict class** after Pilot #13 produced the third specimen. **External recurrence across two distinct external substrates (PEP / Rust) confirms substrate-portability beyond cave-local.**
 
 This list is open. New failure modes earn their entry when they recur or when a single pilot surfaces something the existing six cannot describe. **Standing** marker (modes #3 and #6 as of 2026-06-06) signals the instrument can reliably *predict* the mode rather than merely catch it; the corpus's federation-doctrine refusal habit and lexical-fracture surface area are stable enough to be method-catalogue entries, not one-off categories.
 
@@ -128,7 +128,24 @@ Hard discipline:
 
 Pilot #15 (PEP 634 family) is the first instance: **RETAINS DISCRIMINATION** with named caveats; existing labels sufficient; Mode #3 and Mode #6 fired externally; LAUNDERING-as-verdict surfaced where internally suppressed by federation doctrine; one verdict was revised on re-read.
 
-**Status:** candidate pattern, *not* promoted. Method is *not* proven portable on a single external corpus. Deep comparison with internal pilots is *deferred* until at least Pilot C2 (Rust RFC or Kubernetes KEP) provides serial replication. Earns its own method-note section and a stronger portability claim *only* if C2 also retains discrimination. If C2 collapses or degrades, the cave-vs-PEP convergence is partly coincidence and the method has a substrate dependency the instrument did not anticipate.
+**Status (updated 2026-06-07 after Pilot #16):** candidate pattern with two-corpus external evidence; *not* promoted. The method retained discrimination across two external soft corpora with different process textures (PEP 634 / governance swamp; Rust RFC 3137 let-else / engineering-process swamp). This is materially stronger than a single-corpus result but does *not* constitute proof of portability. Both runs honored the frozen-manifest-before-claims discipline.
+
+**Two-corpus observations (candidate, externally recurring; NOT new failure modes):**
+
+- Modes #3 (Lexical Fracture) and #6 (Internal-Refutation Gap) both fire externally on both corpora. Standing internally, also standing externally.
+- LAUNDERING-as-verdict fires externally on both C1 (PEP Claim D: changelog "switch framing" vs rationale's explicit rejection) and C2 (Rust Claim D: changelog "stabilized" vs stabilization-PR named-concerns + implementation-vs-RFC desugaring mismatch). Both times on a *user-facing-changelog vs internal-decision-record* axis.
+- ***Externally recurring observation, not a new mode***: internal corpora with explicit federation/refusal doctrine suppress laundering by refusing collapse early; external soft corpora surface laundering as cross-altitude tension between user-facing framing and decision-record evidence. Two specimens; observation-altitude only.
+- Existing verdict labels remained sufficient across both external corpora.
+
+**Caveats explicitly recorded for the two-corpus state:**
+
+- Operator prior contaminated one C2 claim's construction (Claim C on let-else × let-chains; the operator's training-data prior made the claim non-blind).
+- User-named substrate-specific watchlist (e.g., "accepted RFC ≠ stabilized behavior") steered C2 Claim D construction; presence-confirmation is weaker evidence than blind-discovery would have been.
+- Mechanical altitudes available externally (Python interpreter for C1, rustc playground for C2) were deliberately not invoked; would have sharpened multiple verdicts.
+- C2 benefited from C1's calibration — second pilot was more deliberate about cross-altitude reading because C1 had named verdict-stability as a concern. Path-dependence in calibration is real and recorded.
+- WebFetch summarized some prose; verbatim grammar / quoted strings preserved; gh-fetched discussion files are closer to verbatim than WebFetched pages.
+
+**Standing:** still candidate. Two-corpus external evidence supports candidate portability under caveats; *not* proof of portability. Earns its own method-note section and a stronger portability claim *only* after additional substrate-class replication or a deliberately-mechanical-aided run produces non-trivial divergence with the prose-only runs. Cross-receipt comparison work lives at [`2026-06-07-external-portability-c1-c2-comparison.md`](2026-06-07-external-portability-c1-c2-comparison.md).
 
 ## Anti-patterns
 
@@ -179,8 +196,9 @@ When a pilot produces a survivor (a navigability patch, glossary entry, or cross
 | 13 | NI × sacrifice-class (containment) | INTERNAL-REFUTATION GAP + ALIAS-RISK | NI ↔ AAG navigability cross-ref; sacrifice glossary HELD by deliberate refusal |
 | 14 | NoSilentException readiness audit (Track A) | NOT_READY (named lacuna persists; no specimen forces the discriminator) | none — readiness predicate recorded in receipt; lattice line 148 forward-pointer patch held by recommendation |
 | 15 | Track C portability pilot #1: PEP 634 family (external soft corpus) | RETAINS DISCRIMINATION on external substrate with named caveats | none — method-validation only; external corpus archived at `~/git/track-c-pep634/sources/`; comparison with internal pilots deferred to post-C2 |
+| 16 | Track C portability pilot #2: Rust RFC 3137 / let-else (external soft corpus, replication) | RETAINS DISCRIMINATION on second external substrate with named caveats | none — method-validation only; external corpus archived at `~/git/track-c-let-else/sources/`; C1↔C2 comparison receipt at [`2026-06-07-external-portability-c1-c2-comparison.md`](2026-06-07-external-portability-c1-c2-comparison.md) |
 
-Patch queue empty as of 2026-06-06. Held-by-deliberate-refusal: `sacrifice-three-senses.md` (relay-introduced sense (c) does not get a glossary cell); bridge-obligation-lattice line 148 forward-pointer (Pilot #14; lattice is currently clean, holding maintains).
+Patch queue empty as of 2026-06-07. Held-by-deliberate-refusal: `sacrifice-three-senses.md` (relay-introduced sense (c) does not get a glossary cell); bridge-obligation-lattice line 148 forward-pointer (Pilot #14; lattice is currently clean, holding maintains).
 
 ## Cross-references
 
