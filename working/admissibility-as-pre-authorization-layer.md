@@ -29,6 +29,8 @@ Closest existing neighbor: **AWS Cedar Analysis** (Lean + SMT, proves properties
 
 Worth naming the test in advance so the framing carries its own brake.
 
+[`tooltheory/witness-carrier-model-candidate-2026-06-06.md`](tooltheory/witness-carrier-model-candidate-2026-06-06.md) § 7 guardrail #5 is the substrate-altitude statement of the same fence. Pilot #12 ([`vector-mining/2026-06-06-witness-carrier-vs-cedar.md`](vector-mining/2026-06-06-witness-carrier-vs-cedar.md)) walked the reification gambit row-by-row across WCM § 6's refusal table and recorded the boundary holding.
+
 ## External pitch shape
 
 > **Prior art provides representations for authority transfer. This work formalizes forbidden conversions between representation, evidence, standing, time, surface, and effect.**

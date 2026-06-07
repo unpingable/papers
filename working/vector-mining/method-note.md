@@ -54,16 +54,16 @@ A claim that looks novel at altitude *n* may be old at altitude *m*. Vector mini
 
 ## Failure modes characterized (so far)
 
-Six distinct relay-shape failure modes have surfaced in pilots #1–#10:
+Six distinct relay-shape failure modes have surfaced in pilots #1–#13:
 
-1. **Vocabulary re-skin** (attack #5) — same structure, new costume. Different abstract type, same lattice.
-2. **Multi-altitude bundle** (attack #2) — one proposed primitive absorbs multiple existing atoms across altitudes.
-3. **Lexical fracture** (attacks #3, #4, #4-batch) — one word carries multiple distinct relations; relay collapses them.
-4. **Preventive gate** (attack #5-batch) — corpus already contains the disambiguation that blocks the collapse; gate fires before the relay-shaped claim lands.
-5. **Gap-shape laundering** (attack #6-batch) — real gap exists; relay tries to fill it with the wrong frame.
-6. **Internal-refutation gap** (attack on LGVG, pilot #10) — real gap exists; the corpus's *own* substrate work has done the federation-doctrine refusal of the tempting unifier internally; audit records that refusal.
+1. **Vocabulary re-skin** (pilot #1) — same structure, new costume. Different abstract type, same lattice.
+2. **Multi-altitude bundle** (pilot #2) — one proposed primitive absorbs multiple existing atoms across altitudes.
+3. **Lexical fracture** (pilots #3, #6, #7, #11, #13, #15 — **standing**, 6 specimens; first external recurrence in #15 Claims B + C) — one word carries multiple distinct relations; relay collapses them.
+4. **Preventive gate** (pilots #8, #12) — corpus already contains the disambiguation that blocks the collapse; gate fires before the relay-shaped claim lands.
+5. **Gap-shape laundering** (pilot #9) — real gap exists; relay tries to fill it with the wrong frame.
+6. **Internal-refutation gap** (pilots #10, #12, #13, #15 — **standing**, 4 specimens; first external recurrence in #15 Claims B + E) — real gap exists; the corpus's *own* substrate work has done the federation-doctrine refusal of the tempting unifier internally; audit records that refusal. **Promoted 2026-06-06 from candidate pattern to standing verdict class** after Pilot #13 produced the third specimen. **External recurrence in Pilot #15** is stronger evidence the mode is substrate-portable, not cave-local.
 
-This list is open. New failure modes earn their entry when they recur or when a single pilot surfaces something the existing five cannot describe.
+This list is open. New failure modes earn their entry when they recur or when a single pilot surfaces something the existing six cannot describe. **Standing** marker (modes #3 and #6 as of 2026-06-06) signals the instrument can reliably *predict* the mode rather than merely catch it; the corpus's federation-doctrine refusal habit and lexical-fracture surface area are stable enough to be method-catalogue entries, not one-off categories.
 
 ## Promotion rule
 
@@ -103,6 +103,33 @@ A vector-mining result may *eventually* become a forcing case for promotion when
 
 All five must hold. The vector-mining receipt is one piece of evidence among the five — never the ratifying step.
 
+## Readiness-audit pattern (Track A, complementary)
+
+A complementary pilot pattern surfaced 2026-06-06 in Pilot #14: instead of probing a relay-shape claim, the audit targets a *named-not-built artifact in the corpus* (e.g., a future Lean candidate, a named-but-deferred kernel, a candidate primitive that has been carried across multiple pilots without being built) and asks:
+
+> *Does the corpus now have a forcing case for this artifact, or is the current material still only prose-altitude positioning?*
+
+Verdicts use the standard palette, with **NOT_READY** and **FORCING_CASE_CANDIDATE** as the most-likely outcomes. Output is a receipt that includes a *forcing-case predicate* — the conjunction of conditions that would tip the verdict on future re-check — so subsequent audits do not have to re-derive the criteria.
+
+Pilot #14 (NoSilentException.lean) is the first instance: NOT_READY; five-part forcing-case predicate recorded in [`2026-06-06-nosilentexception-readiness-audit.md`](2026-06-06-nosilentexception-readiness-audit.md) § "What 'would tip' the verdict".
+
+**Status:** candidate pattern, not promoted. Earns its own method-note section if it recurs; recurrence threshold matches the standing-mode threshold for failure modes (three specimens).
+
+## External portability pilot pattern (Track C, complementary)
+
+A complementary pilot pattern surfaced 2026-06-06 in Pilot #15: instead of probing the papers/Lean corpus, the audit runs on a *real external soft corpus* (foreign institutional substrate, no formal proof layer) with five-or-so plausible novelty/unification claims constructed against a frozen manifest. The audit question is whether the method retains discrimination outside its native habitat.
+
+Hard discipline:
+
+- **Freeze the corpus manifest BEFORE generating claims.** This is the single most load-bearing piece of methodology. Without it, the audit unconsciously picks claims that make the method look good — *little prosecutor selecting its own crime scene.*
+- **Existing verdict labels only.** If they fail, record why; do not silently extend the method.
+- **No comparison with internal pilots until at least two external pilots exist** (per serial-pilot discipline). Avoids the escape hatch "method worked / failed because corpus selection was weird."
+- **Mark explicitly:** where operator judgment substitutes for mechanical refusal; where a mechanical altitude would have helped; where verdict stability under deeper reading was a real failure mode of the instrument.
+
+Pilot #15 (PEP 634 family) is the first instance: **RETAINS DISCRIMINATION** with named caveats; existing labels sufficient; Mode #3 and Mode #6 fired externally; LAUNDERING-as-verdict surfaced where internally suppressed by federation doctrine; one verdict was revised on re-read.
+
+**Status:** candidate pattern, *not* promoted. Method is *not* proven portable on a single external corpus. Deep comparison with internal pilots is *deferred* until at least Pilot C2 (Rust RFC or Kubernetes KEP) provides serial replication. Earns its own method-note section and a stronger portability claim *only* if C2 also retains discrimination. If C2 collapses or degrades, the cave-vs-PEP convergence is partly coincidence and the method has a substrate dependency the instrument did not anticipate.
+
 ## Anti-patterns
 
 What vector mining is **not**:
@@ -133,7 +160,7 @@ When a pilot produces a survivor (a navigability patch, glossary entry, or cross
 - Wording is reviewed for reframe-avoidance language ("filed as candidate, NOT ratified" / "this note does not ratify that reframe").
 - Patch-queue items expire if not landed within ~1 week of pilot — staleness is treated as deauthorization.
 
-## Cumulative pilots (as of 2026-06-05)
+## Cumulative pilots (as of 2026-06-06)
 
 | # | Pilot | Verdict | Survivors |
 |---|---|---|---|
@@ -141,14 +168,19 @@ When a pilot produces a survivor (a navigability patch, glossary entry, or cross
 | 2 | Attack #2 (solo): boundary × feedback | DUPLICATE×3 + LAUNDERING | cross-ref patch + future-Lean vocab |
 | 3 | Attack #4 (solo): freshness × standing | ALIAS-RISK dominant | standing-three-senses glossary + cross-ref patch |
 | 4 | Attack #1 (batch): Mandamus × refusal | DUPLICATE (literal) | none |
-| 5 | Attack #2 (batch): Exception × anti-precedent | DUPLICATE on doctrine + UNRATIFIED-CANDIDATE | vocab carry |
+| 5 | Attack #2 (batch): Exception × anti-precedent | DUPLICATE on doctrine + UNRATIFIED-CANDIDATE | vocab carry; separation-of-custody patch held |
 | 6 | Attack #3 (batch): witness × receipt | ALIAS-RISK | receipt-and-witness-senses glossary |
 | 7 | Attack #4 (batch): custody × provenance | ALIAS-RISK (5 senses) | custody-five-senses glossary + cross-ref patches |
 | 8 | Attack #5 (batch): authority × authorization | ALIAS-RISK + DUPLICATE on disambiguation | none |
 | 9 | Attack #6 (batch): sacrifice floor × Mist | GAP CONFIRMED + RELAY-FRAMING REFUSED | none |
 | 10 | Composition substrate × LGVG | INTERNAL-REFUTATION GAP | LGVG ↔ axis-2 / decay-family cross-refs |
+| 11 | Heterogeneous-turtles × independent-custody | DUPLICATE on structural claim + minor ALIAS-RISK on "type" | receipt-and-witness-senses transversal-meta-axis + cross-ref to heterogeneous-turtles |
+| 12 | WCM × Cedar Analysis differential | PREVENTIVE GATE + ALIAS-RISK + INTERNAL-REFUTATION GAP | differential-testing-two-senses glossary + WCM ↔ pre-auth-layer bidirectional cross-ref |
+| 13 | NI × sacrifice-class (containment) | INTERNAL-REFUTATION GAP + ALIAS-RISK | NI ↔ AAG navigability cross-ref; sacrifice glossary HELD by deliberate refusal |
+| 14 | NoSilentException readiness audit (Track A) | NOT_READY (named lacuna persists; no specimen forces the discriminator) | none — readiness predicate recorded in receipt; lattice line 148 forward-pointer patch held by recommendation |
+| 15 | Track C portability pilot #1: PEP 634 family (external soft corpus) | RETAINS DISCRIMINATION on external substrate with named caveats | none — method-validation only; external corpus archived at `~/git/track-c-pep634/sources/`; comparison with internal pilots deferred to post-C2 |
 
-Patch queue empty as of 2026-06-05.
+Patch queue empty as of 2026-06-06. Held-by-deliberate-refusal: `sacrifice-three-senses.md` (relay-introduced sense (c) does not get a glossary cell); bridge-obligation-lattice line 148 forward-pointer (Pilot #14; lattice is currently clean, holding maintains).
 
 ## Cross-references
 

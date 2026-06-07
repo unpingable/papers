@@ -102,7 +102,7 @@ These restate the substrate-guidance section's existing guardrails as they apply
 - **Label is not witness.** A field named `surface: prod` is testimony until the authenticity mechanism binds it. The binding obligation is the witness; the field name is the label.
 - **Minting discipline is the load-bearing part.** `MayMint`'s predicate shape is the spine. Without it, the carrier is RFC-cosplay with no minting discipline (DeepSeek's typed-provenance warning).
 - **Prior-art neighbors remain partly unread.** Aura (Jia et al., ICFP 2008) and proof-carrying authorization (Bauer et al.) remain in the Priority 1 read queue. The neighbor column above names the *closest known* substrate; a future reading may sharpen the neighbor or surface a closer one.
-- **Differential harness is future Level 4.** Cedar's Lean ↔ Rust differential randomized testing is the methodological template; the harness is not built. Do not promote.
+- **Differential harness is future Level 4.** Cedar's Lean ↔ Rust differential randomized testing is the methodological template; the harness is not built. Do not promote. *The federation-doctrine version of this guardrail lives in [`../admissibility-as-pre-authorization-layer.md`](../admissibility-as-pre-authorization-layer.md) § Falsifier as the reification-gambit fence.* "Differential testing" here means the **Cedar-internal correctness sense (a)** of [`../vocabulary/differential-testing-two-senses.md`](../vocabulary/differential-testing-two-senses.md), not the vector-mining coverage sense.
 
 ## Cross-references
 

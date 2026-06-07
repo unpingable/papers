@@ -251,6 +251,7 @@ AAG occurs when:
 - **Goodhart's law.** Distinct mechanism. Goodhart is iterated optimization pressure on a proxy. AAG is a one-shot or persistent certificate-scope misread; no optimization pressure required. AAG can produce Goodhart-shaped failures (stable convergence around a displaced metric) without the feedback loop that Goodhart names.
 - **"Stability is not authorization" doctrine.** AAG is the formal-certificate cousin of the admissibility-family slogan. The doctrine is the operating principle; AAG is the named gap that makes the slogan load-bearing — *the certificate is what the slogan is warning you not to misread.*
 - **Coherent wrongness (corpus motif).** Distant cousin. Coherent wrongness is internal-consistency-as-cover-for-error. AAG is local-validity-as-cover-for-global-misplacement. Both are surface-validity masking deeper failure; different mechanisms.
+- **Negative Inclusivity.** Adjacent but non-convertible cost register: see [`../negative-inclusivity.md`](../negative-inclusivity.md) for the pre-event external-imposition pattern. AAG sacrificial escape is post-event internal burn by the system attempting to leave an inadmissible basin. The cross-reference is navigational only: two registers of cost, two primitives, no bridge minted. See [`../vector-mining/2026-06-06-negative-inclusivity-vs-sacrifice-class.md`](../vector-mining/2026-06-06-negative-inclusivity-vs-sacrifice-class.md) for the Pilot #13 audit receipt.
 
 ## Do not confuse with
 

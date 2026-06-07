@@ -348,6 +348,7 @@ the working note; do not extract.
 
 ## Cross-references
 
+- Adjacent but non-convertible cost register: see [`primitives/attractor-admissibility-gap.md`](primitives/attractor-admissibility-gap.md) for the post-event "sacrificial escape" mechanism. Negative Inclusivity tracks external imposition before the event: a refinement-requester bears cost so a coarse map remains admissible. AAG sacrificial escape tracks internal burn after the event: a system pays cost to exit an inadmissible basin. These are two registers of cost, not a shared sacrifice primitive. See [`vector-mining/2026-06-06-negative-inclusivity-vs-sacrifice-class.md`](vector-mining/2026-06-06-negative-inclusivity-vs-sacrifice-class.md) for the Pilot #13 audit receipt.
 - `working/` siblings: `authorization-laundering-arc.md`,
   `boundary-by-asymmetry-pattern.md` — distinct family
   (kernel-construction patterns), but the watchlist sensibility transfers.
