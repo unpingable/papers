@@ -39,7 +39,9 @@ Load-bearing claim:
 ∃ d e t. PostValidatedAt d e t ∧ ¬ AuthorizedBy d e
 ```
 
-Later-arriving evidence does not authorize an earlier decision. The closing docstring names the explicit bridge predicate (`AllowsRetroactiveAuthorization`) that would be required to license retroactive discharge, and refuses to build it here.
+Later-arriving evidence does not authorize an earlier decision. The existential is paired with an explicit negated-universal wrapper (`not_all_post_validation_authorizes`) that refutes the blanket rule directly. The closing docstring names the explicit bridge predicate (`AllowsRetroactiveAuthorization`) that would be required to license retroactive discharge, and refuses to build it here.
+
+Unless explicitly stated as a universal theorem, the Lean result is a specimen/counterexample; broader doctrinal interpretation remains advisory.
 
 ## Non-goals honored
 

@@ -23,6 +23,8 @@ theorem citation_validity_does_not_imply_execution_admissibility :
 
 A consumer action can have a perfectly valid citation at its origin and still be inadmissible at its execution boundary. The validity check is at execution time, not citation time; any path from citation-validity to execution-admissibility must be explicitly visible in the proof structure, not implicit.
 
+The existential above is paired with an explicit negated-universal wrapper (`not_all_citation_validity_implies_admissibility`) that refutes the blanket rule directly. Unless explicitly stated as a universal theorem, the Lean result is a specimen/counterexample; broader doctrinal interpretation remains advisory.
+
 ## Witnessed (via `leanctx`)
 
 These facts have build-receipt-backed evidence at repo SHA `9e88c52d564a`:

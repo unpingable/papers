@@ -49,7 +49,9 @@ Adopts asymmetric_registry consumerA evidenceX ∧
   ¬ GloballyAdopted asymmetric_registry evidenceX
 ```
 
-Closing docstring names the two bridge shapes (`PropagatesAdoption` for trust-graph closure, `AllowsGlobalLift` for platform-default rules) that would be required to license cross-consumer or local-to-global inference, and **refuses to build them**.
+Two negated-universal wrappers (`not_all_cross_consumer_lifted`, `not_all_local_adoption_globalizes`) refute the corresponding blanket rules directly. Closing docstring names the two bridge shapes (`PropagatesAdoption` for trust-graph closure, `AllowsGlobalLift` for platform-default rules) that would be required to license cross-consumer or local-to-global inference, and **refuses to build them**.
+
+Unless explicitly stated as a universal theorem, the Lean result is a specimen/counterexample; broader doctrinal interpretation remains advisory.
 
 ## Non-goals honored
 
