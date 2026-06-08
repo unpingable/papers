@@ -33,13 +33,23 @@
     local_adoption_does_not_imply_global
 ```
 
-Load-bearing claim:
+Load-bearing claim (specimen-bound — the `r` is fixed to `asymmetric_registry`, not universally quantified):
 
 ```
-∃ A B e. Adopts r A e ∧ ¬ Adopts r B e
+∃ A B : Consumer, ∃ e : Evidence,
+  Adopts asymmetric_registry A e ∧ ¬ Adopts asymmetric_registry B e
 ```
 
-Adoption by Consumer A does not imply adoption by Consumer B. Closing docstring names the two bridge shapes (`PropagatesAdoption` for trust-graph closure, `AllowsGlobalLift` for platform-default rules) that would be required to license cross-consumer or local-to-global inference, and **refuses to build them**.
+This is a *specimen exists* claim, not a *for-all-registries* claim. The theorem exhibits one registry in which local adoption fails to imply cross-consumer adoption. A general "no registry can support cross-consumer inference without a bridge" statement would require quantifying over registries and is NOT what is proved here.
+
+Similarly the corollary `local_adoption_does_not_imply_global` is about the specific `asymmetric_registry`:
+
+```
+Adopts asymmetric_registry consumerA evidenceX ∧
+  ¬ GloballyAdopted asymmetric_registry evidenceX
+```
+
+Closing docstring names the two bridge shapes (`PropagatesAdoption` for trust-graph closure, `AllowsGlobalLift` for platform-default rules) that would be required to license cross-consumer or local-to-global inference, and **refuses to build them**.
 
 ## Non-goals honored
 
