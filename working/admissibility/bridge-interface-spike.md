@@ -252,28 +252,114 @@ Per claude-web's correction: *OWNERSHIP-GAP is not a verdict family.* It is a pr
 
 The bounded-interface design's *purpose* is to surface OWNERSHIP-GAPs — visible by *which column changed* and *which bridge didn't fire*. Once exposed, the gap is patched and disappears from the verdict landscape.
 
-## Force-coupling question (deferred, not resolved)
+## Effect grounding (added 2026-06-08)
 
-The flat ClaimKindBridge passes all current specimens, but the underlying question — *does ClaimKind own its column independently, or does it share a force ledger with Modality?* — is **deferred**, not resolved. The flat bridge's identity-only baseline refuses *every* claim-kind drift; the current specimen set does not distinguish:
+The earlier deferral named a `ForceGrade` diagnostic but flagged the risk: *forceOf : ClaimKind → ForceGrade* is just another unsigned authority surface, forged in the parking lot unless something witnesses it. The correction (operator + claude-web, 2026-06-08):
 
-- **force-bearing escalation** (e.g., `risk_score → visibility_constraint`: descriptive → interventional; the operator that turns a label into a constraint) — should be refused
-- **force-neutral refinement** (hypothetical: `risk_score_v1 → risk_score_v2`: descriptive → descriptive; same force grade) — might legitimately be accepted
+> **Force is not a property of the name. Force is a property of what acting on the claim does.**
 
-Under identity-only, both are refused. Under a force-aware policy, only the first would be refused. The current spike's bridge set is **provisionally correct only because no current specimen lives in the force-neutral-refinement category.**
+So the diagnostic chain stops at *effect*, not at force labels. Implemented:
 
-The diagnostic claude-web flagged is recorded for future forcing-specimen evaluation:
-
-```
-ForceGrade := descriptive | interventional | binding
-forceOf    : ClaimKind → ForceGrade
-modalityAllowsForce : Modality → ForceGrade → Bool
+```text
+ClaimKind
+  → EffectSignature   (asserted, per-claim-kind operational declaration)
+  → EffectSeverity    (derived, mechanical projection)
 ```
 
-If a future specimen wants a legitimate force-neutral claim-kind transition, the flat bridge would refuse it, surfacing the need for `forceOf`. At that point, the resolution would *not* be "ClaimKind is irreducible" or "ownership gap." It would be:
+### EffectSignature
 
-> **ClaimKind and Modality share a force ledger. ClaimKindBridge must consult forceOf and defer force-increases to the modality discipline. The conserved quantity is force across the claim-kind/modality boundary.**
+A 6-axis boolean record. Each axis is operational, not a severity grade:
 
-That would be the first observed **bounded coupling**: not irreducibility, not ownership gap, not ambiguity — a *dependent edge* where one bridge's policy can only be honestly evaluated by consulting another column. Documented as a candidate finding, not built.
+```lean
+structure EffectSignature where
+  changesVisibility  : Bool
+  changesAccess      : Bool
+  changesStanding    : Bool
+  changesObligation  : Bool
+  changesRecordOnly  : Bool
+  requiresActor      : Bool
+```
+
+### effectOfClaimKind (asserted)
+
+| ClaimKind | Effect signature | Derived severity |
+|---|---|---|
+| `risk_score` | `changesRecordOnly` | `.record_only` |
+| `observation` | `changesRecordOnly` | `.record_only` |
+| `visibility_constraint` | `changesVisibility` | `.constraining` |
+| `authorization` | `changesAccess, requiresActor` | `.constraining` |
+| `revocation` | `changesStanding, requiresActor` | `.binding` |
+| `obligation_claim` | `changesObligation, requiresActor` | `.binding` |
+| `enforcement_action` | `changesAccess, changesStanding, requiresActor` | `.force_bearing` |
+
+Each claim-kind's signature is asserted **once** per claim-kind: a deliberate per-claim-kind operational declaration of what the claim does. Adding a new claim-kind requires declaring its signature.
+
+### severityOfEffect (derived)
+
+```lean
+def severityOfEffect (e : EffectSignature) : EffectSeverity :=
+  if e.changesAccess && e.changesStanding && e.requiresActor then .force_bearing
+  else if e.changesStanding || e.changesObligation then .binding
+  else if e.changesVisibility || e.changesAccess then .constraining
+  else .record_only
+```
+
+The hierarchy is asserted once as the legitimate floor (defensible, finite, four levels):
+
+```
+record_only < constraining < binding < force_bearing
+```
+
+The claim-kind-to-severity mapping is *derived*, not hand-graded. Adding a new claim-kind requires declaring its effect signature (which is operational evidence), not its severity grade (which is mechanically projected). This stops the laundering route of "creative enum naming."
+
+### Asserted vs derived split (the discipline)
+
+| Asserted (defended once) | Derived (mechanical from asserted) |
+|---|---|
+| Effect axes (the 6 boolean fields) | `severityOfEffect : EffectSignature → EffectSeverity` |
+| Severity hierarchy (4 levels, ordered) | `claimKindSeverity : ClaimKind → EffectSeverity` |
+| `effectOfClaimKind` per-claim-kind table | Receipt's `severityDelta` extractor |
+| Cascade order (Resource→Index→Modality→ClaimKind→Protocol) | Bridge ownership of any given transition |
+
+### Receipts now carry effect evidence
+
+`RefusalReceipt` augmented (2026-06-08) with two fields:
+
+```lean
+sourceEffect : EffectSignature
+targetEffect : EffectSignature
+```
+
+Each bridge's refusal construction populates these via `Policies.effectOfClaimKind`. The bridge's *decision logic* is unchanged — it still consults only its declared narrow interface. The effect evidence is appended for receipt richness, not consulted for the refusal decision.
+
+Cascade extractor `severityDelta : CascadeOutcome → Option (EffectSeverity × EffectSeverity)` reads (sourceSeverity, targetSeverity) from any refusal receipt.
+
+### Effect-witness per specimen (Lean-verified)
+
+| Specimen | Owner | source effect | target effect | severity delta |
+|---|---|---|---|---|
+| S1 | ResourceBridge | record_only (observation) | record_only (observation) | `(.record_only, .record_only)` — flat in severity; refusal is resource-shape, not effect-shape |
+| S2 | ModalityBridge (demotion) | record_only | record_only | not applicable (demotion, not refusal) |
+| S3 | IndexBridge | binding (revocation) | binding (revocation) | `(.binding, .binding)` — surface-scope violation, severity flat |
+| S4 | ModalityBridge | constraining (authorization) | record_only (observation) | `(.constraining, .record_only)` — **severity DOWN, modality refusal anyway**; this is the useful negative observation: a refusal can be high-cascade-priority without target effect being force-bearing |
+| S5 | ModalityBridge | record_only (risk_score) | force_bearing (enforcement_action) | `(.record_only, .force_bearing)` — top-tier escalation; ModalityBridge owns the cross-modality refusal |
+| S6a | ClaimKindBridge | record_only (risk_score) | constraining (visibility_constraint) | `(.record_only, .constraining)` — force escalation that *previously laundered through advisory*; now caught by ClaimKindBridge with real severity evidence |
+| S6b | ModalityBridge | constraining (visibility_constraint) | force_bearing (enforcement_action) | `(.constraining, .force_bearing)` — cross-tier escalation; ModalityBridge owns |
+
+The S6a row is the **central result of the effect-grounding pass.** Pre-grounding, S6a's refusal was justified only by ruleName `claim_kind_transition_not_authorized` — a flat-table verdict. Post-grounding, the receipt carries operational evidence: the source effect is record-only; the target effect changes platform visibility; severity escalates from `.record_only` to `.constraining`. The refusal now cites *what doing this does*, not *what we named it*.
+
+### Force-coupling question — status
+
+**Reframed, not closed.** The original deferral framed the question as "does ClaimKind need a `forceOf` consult into Modality?" The effect-grounding pass replaces that question with:
+
+> *Force* is not a separate axis; it is a *severity* read from the effect signature. The question is no longer "is there a force ledger" but "is there ever a claim-kind transition that the flat policy refuses but the effect-severity discipline would license?"
+
+If a future specimen wants `risk_score → risk_score_v2` (hypothetical force-neutral refinement, both `.record_only` severity), the flat policy refuses it (claim-kinds differ) while the severity discipline would have no severity objection. That would be the forcing case for either:
+
+- a richer policy that allows licensed equi-severity transitions, or
+- a deeper question about whether equi-severity-but-different-claim-kind is meaningful at all.
+
+Recorded as the next forcing-case shape. Not built; the dumb bridge stays dumb until the specimen actually forces it.
 
 ## Strongest claim available after flat-β
 
