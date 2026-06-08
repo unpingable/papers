@@ -1,6 +1,6 @@
 # Bridge Interfaces — fenced scratch spike receipt
 
-**Filed:** 2026-06-07. **Status:** scratch spike + companion receipt. **NOT doctrine. NOT a paper. NOT a primitive. NOT promoted.** Lean file is in `~/git/lean/LeanProofs/Scratch/BridgeInterfaces.lean` — fenced scratch, not imported by `LeanProofs.lean`, no 1.0 surface, no paper anchor.
+**Filed:** 2026-06-07. **Last updated:** 2026-06-08 (β patch: ClaimKindBridge added in response to Specimen 6a OWNERSHIP-GAP). **Status:** scratch spike + companion receipt. **NOT doctrine. NOT a paper. NOT a primitive. NOT promoted.** Lean file is in `~/git/lean/LeanProofs/Scratch/BridgeInterfaces.lean` — fenced scratch, not imported by `LeanProofs.lean`, no 1.0 surface, no paper anchor.
 
 ## What this spike tests
 
@@ -38,6 +38,7 @@ The architectural constraint: each bridge owns one column and may consult only a
 | **ResourceBridge** | `ResourceClass` | `requiredResourceClass : Modality → ClaimKind → ResourceClass → Bool` | source: `modality, claimKind, resource`; target: `modality, claimKind, resource` |
 | **IndexBridge** | `Index` | `surfaceScopePolicy : Modality → ClaimKind → String → String → Bool` | source: `modality, claimKind, index.surface`; target: `modality, claimKind, index.surface` |
 | **ModalityBridge** | `Modality` | `allowedModalTransition : ClaimKind → ResourceClass → Modality → Modality → Bool`; `isDemotionPolicy : Modality → Modality → Bool` | source: `modality, claimKind, resource`; target: `modality` |
+| **ClaimKindBridge** *(added 2026-06-08, flat β patch)* | `ClaimKind` | `allowedClaimKindTransition : ClaimKind → ClaimKind → Bool` *(no Modality parameter — deliberately flat)* | source: `claimKind`; target: `claimKind`. **Does NOT read modality, resource, index, or any other column.** Fires on every claim-kind transition. Cascade order (ClaimKindBridge after ModalityBridge) handles overlap with cross-modality cases. |
 | **ProtocolBridge** | (cross-column protocol invariants) | `custodyRequirement : Modality → ClaimKind → Bool` (stub) | none (no specimen forces it) |
 
 **No bridge inspects:**
@@ -57,9 +58,11 @@ None of these are forced by the five specimens. They are named here for traceabi
 ## Cascade ordering and ownership assignment
 
 ```
-ResourceBridge → IndexBridge → ModalityBridge → ProtocolBridge
-                first refusal wins
+ResourceBridge → IndexBridge → ModalityBridge → ClaimKindBridge → ProtocolBridge
+                       first refusal wins
 ```
+
+(ClaimKindBridge inserted 2026-06-08 between Modality and Protocol. The bridge is **flat** — it consults only its own column (claim-kind transition pair). Cascade order does the disambiguation work for cross-modality cases: in S4, S5, S6b the flat ClaimKindBridge would also refuse in isolation, but ModalityBridge fires first in the cascade and ClaimKindBridge never runs. Ownership of those specimens is therefore *single-owner-after-cascade-order*, not *single-owner-as-the-only-bridge-that-could-have-fired*. Recorded honestly; verified in Lean via explicit isolation proofs (`(ClaimKindBridge.decide s4_source s4_target).isAccept = false := by rfl`, and similarly for S5, S6b).)
 
 The cascade is `def cascade (s t : State) : CascadeOutcome`. Outcomes:
 
@@ -126,18 +129,41 @@ A new ClaimKind `visibility_constraint` was added to model the "platform visibil
 
 #### Specimen 6a — intra-modality claim-kind drift
 
+**Original probe (2026-06-07):**
+
 - **Source:** `copyable_record, advisory, risk_score, S1`
 - **Target:** `copyable_record, advisory, visibility_constraint, S1`
-- **Expected under current bounded interfaces:** ACCEPT (probe: does anything catch claim-kind drift within a stable modality?).
-- **Result:** ACCEPT.
-  - **Verified by:** `cascade s6a_source s6a_target = .accept := by rfl`
-- **Bridge-by-bridge:**
-  - ResourceBridge: `advisory` is unconstrained on resource under `requiredResourceClass`; accept.
-  - IndexBridge: requires modality AND claimKind to be stable before firing on `surfaceScopePolicy`; claimKind changes, so the bridge declines ownership; accept.
-  - ModalityBridge: `allowedModalTransition` checks `m1 = m2` only — claimKind-blind. Identity modality → accept.
-  - ProtocolBridge: stub; accept.
-- **Verdict on irreducibility:** *Not applicable yet — this is a discovery, not a refusal.*
-- **DISCOVERY:** No current bridge owns claim-kind transitions when modality is stable. `ClaimKind` is currently a *parameter* to other bridges' interfaces, but no bridge *owns* its column. Intra-modality claim-kind drift is unowned.
+- **Expected under pre-β bounded interfaces:** ACCEPT (probe: does anything catch claim-kind drift within a stable modality?).
+- **Result (pre-β):** ACCEPT.
+- **DISCOVERY:** No bridge owned claim-kind transitions when modality was stable. `ClaimKind` was a *parameter* to other bridges' interfaces; no bridge *owned* its column. Intra-modality claim-kind drift was unowned. **OWNERSHIP-GAP** — distinct from irreducibility (a transition that no bounded owner can refuse) and from ambiguity (multiple bridges fire). The cascade silently accepts because no bridge claims jurisdiction.
+
+**Post-flat-β patch (2026-06-08):**
+
+- **Result:** REFUSED by ClaimKindBridge (flat).
+  - **Rule:** `claim_kind_transition_not_authorized`
+  - **Dependencies consulted:** `[allowedClaimKindTransition]`
+  - **Verified by:** `(cascade s6a_source s6a_target).refusedBy = some .claim_kind := by rfl`
+- **Bridge-by-bridge (post-flat-β):**
+  - ResourceBridge: accept (`advisory` unconstrained on resource).
+  - IndexBridge: accept (requires modality AND claimKind stability before firing on its surface rule; claimKind drift declines ownership).
+  - ModalityBridge: accept (identity modality).
+  - ClaimKindBridge: REFUSES — consults `allowedClaimKindTransition risk_score visibility_constraint` which returns `false` under the identity-only baseline policy. **The bridge reads ONLY the claim-kind transition pair.** No modality read; no resource read; no index read.
+  - ProtocolBridge: not reached.
+- **Verdict transition:** the original OWNERSHIP-GAP has been captured. The discovery has converted from *"gap found"* to *"gap captured."*
+- **Why flat:** the design choice was deliberate, per claude-web's diagnostic suggestion. If ClaimKind genuinely owns its column, a bridge consulting only that column should suffice. If ClaimKind needs to read modality or `forceOf` to distinguish licensed transitions from laundering, the flat bridge would have failed — and the failure would have surfaced a *bounded coupling* between ClaimKind and Modality. For the current specimen set, the flat bridge passes; the coupling question is *deferred*, not resolved (see § Force-coupling question).
+- **Regression check:** all five pre-existing specimens (S1, S2, S3, S4, S5) verified unchanged under the new cascade — proofs added inline in the Lean file. The flat-β patch is cascade-order-additive: it captures S6a without disturbing prior single-owner cascade outcomes.
+
+#### Honest-accounting diagnostic: would-fire overlap
+
+The flat ClaimKindBridge fires on **every** claim-kind transition, not only intra-modality ones. For S4, S5, S6b — cross-modality transitions where claimKind also drifts — the flat bridge would refuse in isolation. The cascade outcome is ModalityBridge only because ModalityBridge fires earlier in the cascade. Lean proofs verify this in isolation:
+
+```
+(ClaimKindBridge.decide s4_source s4_target).isAccept = false  -- would refuse
+(ClaimKindBridge.decide s5_source s5_target).isAccept = false  -- would refuse
+(ClaimKindBridge.decide s6b_source s6b_target).isAccept = false  -- would refuse
+```
+
+This is honest about the trade-off: the flat bridge has **bridge-firing overlap** with ModalityBridge on cross-modality+cross-claimKind cases, resolved only by cascade position. A stricter design (e.g., the original non-flat ClaimKindBridge with `s.modality = t.modality` guard) avoids the overlap but couples ClaimKindBridge to the modality column. The trade-off is: *bridge purity (flat) vs ownership purity (guarded).* The current spike chooses bridge purity; cascade-order is the disambiguator.
 
 #### Specimen 6b — cross-modality escalation with new origin
 
@@ -155,19 +181,21 @@ The chain `advisory/risk_score → advisory/visibility_constraint → enforcemen
 
 This is exactly the kind of finding the bounded-interface design exists to expose: **an under-owned column visible by the order in which refusals land along a multi-step chain.**
 
-#### Candidate missing-interface analyses (recorded, not authorized to build)
+#### Candidate missing-interface analyses (resolved 2026-06-08)
 
-Three candidate resolutions for the S6a gap. None is built; the spike records the discovery, not the fix.
+Three candidates were originally recorded:
 
-| Candidate | Shape | Cost | Caveat |
-|---|---|---|---|
-| **(α) Extend ModalityBridge** | Make `allowedModalTransition` claimKind-sensitive (e.g., `_, _, m1, m2, c1, c2 => decide (m1 = m2 ∧ c1 = c2)`); add policy-level allowance for specific claim-kind transitions. | Lowest — extends an existing interface. | Crowds ModalityBridge with two distinct responsibilities (modality ownership + claim-kind ownership). Ownership ambiguity may follow if a transition changes both. |
-| **(β) New ClaimKindBridge** | Add a fifth bridge owning the `ClaimKind` column with its own interface (e.g., `allowedClaimKindTransition : Modality → ClaimKind → ClaimKind → Bool`). | Medium — new bridge + new cascade slot. | Cleanest separation. Requires deciding cascade position: before or after ModalityBridge? |
-| **(γ) Extend ProtocolBridge** | Treat claim-kind transitions as cross-column protocol invariants and own them in ProtocolBridge (currently stubbed). | Medium — populates the stub with first real content. | Loads ProtocolBridge with protocol-shaped invariants it was reserved for; risks ProtocolBridge becoming a kitchen sink for "things no other bridge owns." |
+| Candidate | Shape | Outcome |
+|---|---|---|
+| **(α) Extend ModalityBridge** | Make `allowedModalTransition` claimKind-sensitive. | *Rejected.* Would crowd ModalityBridge with two responsibilities and risk reintroducing ownership ambiguity on cross-modality + cross-claimKind transitions. |
+| **(β) New ClaimKindBridge** | Add a fifth bridge owning `ClaimKind` with its own interface. | **Selected and built.** Cleanest separation; intra-modality-only firing rule preserves unique ownership. |
+| **(γ) Extend ProtocolBridge** | Treat claim-kind transitions as protocol invariants in ProtocolBridge. | *Held.* Plausible later for multi-step workflows where claim-kind transitions are protocol-trace-shaped. Risks ProtocolBridge becoming a junk drawer if used preemptively. |
 
-**Operator's reading (recorded, not adjudicated):** (β) is structurally cleanest; (γ) is most parsimonious; (α) is the slippery one (combines responsibilities and may produce the ownership ambiguity the user warned against).
-
-No selection authorized. Each candidate is named so the next specimen forcing this gap finds the menu rather than having to re-derive it.
+β implementation choices:
+- **Position in cascade:** between ModalityBridge and ProtocolBridge.
+- **Firing guard:** `s.modality = t.modality` — ClaimKindBridge only owns intra-modality claim-kind transitions. Cross-modality drift remains ModalityBridge's territory. This preserves the uniqueness-of-ownership invariant.
+- **Policy:** identity-only baseline (`allowedClaimKindTransition _ c1 c2 = decide (c1 = c2)`). No transitions licensed. A future forcing specimen can introduce licensed transitions explicitly (e.g., `risk_score → obligation_claim` if such a lawful escalation needs to be modeled).
+- **Interface name:** `allowedClaimKindTransition : Modality → ClaimKind → ClaimKind → Bool`.
 
 #### What this discovery does NOT claim
 
@@ -195,25 +223,72 @@ No selection authorized. Each candidate is named so the next specimen forcing th
 
 | Criterion | Status |
 |---|---|
-| Lean builds | ✓ `lake build LeanProofs.Scratch.BridgeInterfaces` — 853ms, success |
-| Each specimen → accepted with explicit receipt/demotion OR refused with exactly one primary owner | ✓ 6/7 (S6a's accept is unowned-by-design, see Discovery; counts as accept-without-demotion within the cascade contract) |
-| Every refusal receipt lists bounded dependencies consulted | ✓ 5/5 refusals (S1, S3, S4, S5, S6b) carry explicit dependency lists; S2's demotion records the owner; S6a has no refusal to record |
-| No bridge inspects entire State directly | ✓ Verified by inspection: docstrings on each bridge function declare the inspected fields; no bridge pattern-matches on the full State record |
+| Lean builds | ✓ `lake build LeanProofs.Scratch.BridgeInterfaces` — 1.1s, success |
+| Each specimen → accepted with explicit receipt/demotion OR refused with exactly one primary owner | ✓ 7/7 (post-β): S1, S3, S4, S5, S6a, S6b are single-owner refusals; S2 is a lawful demotion |
+| Every refusal receipt lists bounded dependencies consulted | ✓ 6/6 refusals carry explicit dependency lists; S2's demotion records the owner |
+| No bridge inspects entire State directly | ✓ Verified by inspection: docstrings on each bridge function declare the inspected fields; no bridge pattern-matches on the full State record. ClaimKindBridge inspects only `modality` and `claimKind` (source + target) per its declared interface. |
 | No "Resource OR Modality" ownership in final table | ✓ Each refusal has exactly one `owner` |
-| Prior dead specimens classified as dependent-factorized | ✓ Specimens 1, 3, 4, 5, 6b are all dependent-factorized — refused by bounded bridges with named interface dependencies |
-| Candidate irreducible cases enumerated with bounded owner attempts, why each fails, what dependency would be needed | N/A — no candidate irreducible specimen emerged. **Specimen 6a surfaced a candidate missing-owner gap (intra-modality claim-kind drift); three resolution candidates (α/β/γ) are recorded but none built.** |
+| Prior dead specimens classified as dependent-factorized | ✓ Specimens 1, 3, 4, 5, 6b are all dependent-factorized — refused by bounded bridges with named interface dependencies. Specimen 6a is now also dependent-factorized post-β. |
+| Candidate irreducible cases enumerated with bounded owner attempts, why each fails, what dependency would be needed | N/A — no candidate irreducible specimen emerged. **Specimen 6a's OWNERSHIP-GAP was resolved by the β patch (new ClaimKindBridge); the discovery converted from "gap found" to "gap captured."** |
 
-## No irreducible result yet — but the boundary moved
+## Verdict-family vocabulary (transition classifications)
 
-> *No specimen in this spike survived all four declared bridge owners as a refusal candidate.* Specimens 1–5 are dependent-factorized under bounded interfaces. **Specimen 6a is *unowned* — accepted under current bounded interfaces because no bridge owns intra-modality claim-kind drift.** This is a different shape than irreducibility: a candidate-irreducible specimen would survive all bridges *as a refusal*; S6a *passes* all bridges trivially because none claims ownership.
+Per claude-web's correction (2026-06-08): a *verdict family* classifies a transition given a *total bridge set.* The verdict families form a closed taxonomy of how a transition can land under a well-formed model:
 
-The strongest claim available after the gradient probe:
+| Verdict family | Definition | Status in this spike |
+|---|---|---|
+| **single-owner refusal** | Exactly one bridge fires `.refuse` for a specimen, given the cascade order. May coexist with would-fire overlap from a downstream bridge (see honest-accounting note). | Demonstrated by S1, S3, S4, S5, S6a (post-flat-β), S6b. |
+| **lawful demotion** | An accept-with-demotion outcome carries an explicit rule and owner; the transition is legal but signals a modality shift. | Demonstrated by S2. |
+| **ambiguous ownership (in-isolation)** | Two or more bridges would fire on the same specimen under bounded interfaces; cascade order is the only disambiguator. Distinct from a single-owner refusal because *multiple bridges register refusal in isolation*. | Demonstrated by S4, S5, S6b under the flat-β interfaces (ClaimKindBridge would also refuse; ModalityBridge fires first per cascade order). *Not* observed under a guarded-β variant. The presence of this family is a calibration signal, not a fault. |
+| **candidate irreducible** | A specimen survives all declared bridge owners *as a refusal candidate* — each bounded owner attempts and fails to refuse, recording why and what dependency would have been needed. | *Not observed* in this spike. |
 
-> Under the current bounded interfaces — `requiredResourceClass`, `surfaceScopePolicy`, `allowedModalTransition`, `isDemotionPolicy`, `custodyRequirement` (stub) — five of seven tested specimens factor cleanly into single-owner refusals or lawful demotions; one (Specimen 6a, intra-advisory claim-kind drift) passes unowned, revealing a missing-owner gap in the current bridge set.
+## Architectural well-formedness diagnostic (NOT a verdict family)
 
-The S6a gap is *not* irreducibility. It is *under-coverage*: a transition class for which no current bridge has claimed ownership. The fix is one of three named candidates (α extend ModalityBridge / β new ClaimKindBridge / γ extend ProtocolBridge), none authorized to build in this spike.
+Per claude-web's correction: *OWNERSHIP-GAP is not a verdict family.* It is a property of the bridge architecture, not of the transition. It manifests as `∃ column changing, ∀ bridge, ¬owns`. It is *temporary*: repair coverage and the gap converts a transition's verdict back into one of the four families above.
 
-Future specimens may force one of those candidates to be built; alternatively, a stricter policy on existing interfaces may also force ambiguity (per the S5 calibration note). Either route is consistent with the spike's purpose: *measure interface width and ownership coverage by what specimens force.*
+| Architectural diagnostic | Definition | Status in this spike |
+|---|---|---|
+| **OWNERSHIP-GAP** | Some column changes between source and target, and no bridge in the current set claims jurisdiction. The cascade accepts trivially. Resolves once the bridge set is total. **Not a Verdict constructor in Lean** — putting it in the `Verdict` sum type would reify a temporary architectural defect as domain ontology. | Surfaced by S6a under the pre-β bridge set (4 bridges); resolved by adding ClaimKindBridge. After repair, S6a's verdict is single-owner-refusal. |
+
+The bounded-interface design's *purpose* is to surface OWNERSHIP-GAPs — visible by *which column changed* and *which bridge didn't fire*. Once exposed, the gap is patched and disappears from the verdict landscape.
+
+## Force-coupling question (deferred, not resolved)
+
+The flat ClaimKindBridge passes all current specimens, but the underlying question — *does ClaimKind own its column independently, or does it share a force ledger with Modality?* — is **deferred**, not resolved. The flat bridge's identity-only baseline refuses *every* claim-kind drift; the current specimen set does not distinguish:
+
+- **force-bearing escalation** (e.g., `risk_score → visibility_constraint`: descriptive → interventional; the operator that turns a label into a constraint) — should be refused
+- **force-neutral refinement** (hypothetical: `risk_score_v1 → risk_score_v2`: descriptive → descriptive; same force grade) — might legitimately be accepted
+
+Under identity-only, both are refused. Under a force-aware policy, only the first would be refused. The current spike's bridge set is **provisionally correct only because no current specimen lives in the force-neutral-refinement category.**
+
+The diagnostic claude-web flagged is recorded for future forcing-specimen evaluation:
+
+```
+ForceGrade := descriptive | interventional | binding
+forceOf    : ClaimKind → ForceGrade
+modalityAllowsForce : Modality → ForceGrade → Bool
+```
+
+If a future specimen wants a legitimate force-neutral claim-kind transition, the flat bridge would refuse it, surfacing the need for `forceOf`. At that point, the resolution would *not* be "ClaimKind is irreducible" or "ownership gap." It would be:
+
+> **ClaimKind and Modality share a force ledger. ClaimKindBridge must consult forceOf and defer force-increases to the modality discipline. The conserved quantity is force across the claim-kind/modality boundary.**
+
+That would be the first observed **bounded coupling**: not irreducibility, not ownership gap, not ambiguity — a *dependent edge* where one bridge's policy can only be honestly evaluated by consulting another column. Documented as a candidate finding, not built.
+
+## Strongest claim available after flat-β
+
+> *No specimen in this spike survived all declared bridge owners as a refusal candidate.* After the flat β patch, seven specimens (S1–S5, S6a, S6b) all produce either single-owner cascade outcomes or lawful demotions. The original OWNERSHIP-GAP at S6a has been captured by the flat ClaimKindBridge. No candidate irreducible result is proposed.
+
+This is *not* a claim that admissibility is globally factorizable; it is a claim that *these seven specimens* factor under *these five bridges* with bounded interfaces. The flat policy is provisional pending a force-distinguishing specimen.
+
+Future specimens may force:
+
+- another OWNERSHIP-GAP (a column that changes but isn't yet owned)
+- an interface widening (an existing bridge needs a richer dependency function)
+- a bounded coupling (e.g., ClaimKindBridge must consult `forceOf` to distinguish legitimate from laundering transitions — claim-kind/modality force ledger)
+- a candidate irreducible (no bounded owner can refuse, even with extension)
+
+The first three are routine spike findings; the fourth would be a substantive result worth its own analysis.
 
 ## Candidate new columns / interfaces (named, not authorized)
 
