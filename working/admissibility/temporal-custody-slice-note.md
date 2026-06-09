@@ -21,7 +21,7 @@ theorem citation_validity_does_not_imply_execution_admissibility :
     ∃ a : ConsumerAction, CitedWhileValid a.citation ∧ ¬ AdmissibleAt a
 ```
 
-A consumer action can have a perfectly valid citation at its origin and still be inadmissible at its execution boundary. The validity check is at execution time, not citation time; any path from citation-validity to execution-admissibility must be explicitly visible in the proof structure, not implicit.
+Within this encoding (no retroactive-discharge bridge), a consumer action can have a perfectly valid citation at its origin and still be inadmissible at its execution boundary. The validity check is at execution time, not citation time; any path from citation-validity to execution-admissibility must be explicitly visible in the proof structure, not implicit. The Lean result is a default-refusal, not a universal impossibility — a system that wants to license retroactive discharge can do so by adding an explicit bridge.
 
 The existential above is paired with an explicit negated-universal wrapper (`not_all_citation_validity_implies_admissibility`) that refutes the blanket rule directly. Unless explicitly stated as a universal theorem, the Lean result is a specimen/counterexample; broader doctrinal interpretation remains advisory.
 

@@ -40,7 +40,7 @@ Load-bearing claim (specimen-bound — the `r` is fixed to `asymmetric_registry`
   Adopts asymmetric_registry A e ∧ ¬ Adopts asymmetric_registry B e
 ```
 
-This is a *specimen exists* claim, not a *for-all-registries* claim. The theorem exhibits one registry in which local adoption fails to imply cross-consumer adoption. A general "no registry can support cross-consumer inference without a bridge" statement would require quantifying over registries and is NOT what is proved here.
+This is a *specimen exists* claim, not a *for-all-registries* claim. The theorem exhibits one registry in which local adoption fails to imply cross-consumer adoption. A general "no registry can support cross-consumer inference without a bridge" statement would require quantifying over registries and is NOT what is proved here. The Lean result is a default-refusal (within this encoding, no propagation or global-lift bridge exists), not a universal impossibility — a system that wants to license cross-consumer or global lift can do so by adding an explicit bridge.
 
 Similarly the corollary `local_adoption_does_not_imply_global` is about the specific `asymmetric_registry`:
 

@@ -1,6 +1,6 @@
 # Heterogeneous turtles are not witnesses
 
-**Filed:** 2026-06-06 (Fri PM). **Status:** doctrine note + agentic-system specimen bridge. **NOT** a candidate Lean kernel. **Curdling guard:** same discipline as the parent doctrine in [`admissibility-vs-arms-control.md`](admissibility-vs-arms-control.md) — *do not formalize before 2026-06-07; cursed little theorem gremlins are a separate file from this one.*
+**Filed:** 2026-06-06 (Fri PM). **Status:** doctrine note + agentic-system specimen bridge; **2026-06-09 resolved as prose doctrine** — inherits parent ([`admissibility-vs-arms-control.md`](admissibility-vs-arms-control.md) § 2026-06-09 status). Lean formalization currently brake-blocked (carrier-level), not curdling-blocked. Original 2026-06-06 curdling timer closed 2026-06-07; present restriction is carrier-brake, not timing.
 
 **Custody:** doctrine note; pre-ratified per name-early. Companion to [`admissibility-vs-arms-control.md`](admissibility-vs-arms-control.md) § The core rule — *same-custody artifacts cannot witness each other* is one axis of witness-source quality; this note names the orthogonal axis: *multi-source same-type artifacts cannot witness each other either.* Memory pointer: `project-heterogeneous-turtles-not-witnesses`.
 
@@ -105,7 +105,7 @@ with `evidence_considered` enumerating the model verdicts as *assessments*, not 
 - **Not a refusal of heterogeneous verifier stacks generally.** They are useful for triage, disagreement surfacing, and common-mode reduction. The refusal is specific: they do not discharge witness-type predicates.
 - **Not a claim that humans automatically witness.** Human observation with accountable standing is one entry in the coupling list; humans-as-rubber-stamp is another turtle on the stack.
 - **Not a new bridge family.** This is a *transversal quality* on witness-source: the receipt-type axis, orthogonal to the same-custody axis from the parent doctrine.
-- **Not formalizable yet.** The "different type" predicate is too rich to encode this week. The carrier model's `evidence_ref` field gestures at it but does not formalize the type-distinction across artifact-vs-witness. Curdle.
+- **Not currently authorized as a Lean kernel.** Lean formalization is currently brake-blocked (see 2026-06-09 status section below). The existing carrier (`RefusalPropagation.lean`) supports only binary/topological refusal; the receipt-production-type "different type" predicate is not represented at the carrier level. Brake is present, not permanent — the carrier-model `evidence_ref` field gestures at the receipt-type distinction but does not formalize it.
 
 ## Relationship to existing corpus artifacts
 
@@ -133,3 +133,11 @@ Filed 2026-06-06 (Fri PM) from a multi-model exchange following the supply-side 
 > *A reader can refuse a heterogeneous-verifier discharge in their own institution without having to argue the math of decorrelation. The argument is type-level, not statistical.*
 
 Test: given a proposed agent-team verification scheme, can you state which receipt type its witnesses produce, and whether any verifier produces a *different* type than the worker's output? If no verifier in the loop produces a different type, the scheme is barbershop epistemology regardless of how decorrelated the model panels are.
+
+## 2026-06-09 status: resolved as prose doctrine
+
+Inherits parent ([`admissibility-vs-arms-control.md`](admissibility-vs-arms-control.md) § 2026-06-09 status). The 2026-06-07 curdling timer is closed on its own terms. Doctrine retained intact: heterogeneity-receipt-type theorem, three-way split, covariance-matrix gem, jury-that-observed-nothing image, barbershop-epistemology framing, coupling-to-world list, override discipline.
+
+**Lean formalization currently brake-blocked, not intrinsically unformalizable.** The existing formal carrier (`RefusalPropagation.lean`) supports only binary/topological refusal. This doctrine names the *receipt-production-type* axis (what production mechanism minted the witness — model vs compiler vs sensor vs ledger vs human observation vs reproducible experiment vs policy engine), which the current carrier does not represent. Same brake as parent: the documented `State := observable | refused` decision, confirmed load-bearing by the 2026-06-09 CascadeSound runtime audit. Brake is present, not permanent — brake-lift would require a forcing consumer that does not currently exist. No typed `Reason` payload is authorized; no Lean work item is minted.
+
+This note carries **axis 4** of the four-axis positioning recorded in the parent's § Four-axis positioning. Axes 3 (custodial) and 4 (receipt-type) are orthogonal: a witness must clear both. The four-axis framing is current corpus positioning, not final ontology.
