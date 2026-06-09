@@ -79,6 +79,38 @@ an interop watch item. The brochure swamp begins exactly here.
 
 > Lean is where `therefore` goes to get checked.
 
+## Claim-custody substrate (index phrase, not new direction)
+
+The constellation as a whole — NQ / Nightshift / Wicket / WLP /
+Continuity / Lean / tooltheory — is best understood as **a claim-
+custody substrate**: a small operational stack that prevents
+claim-surface laundering by requiring receipts, bridges, cuts, or
+refusals at every boundary.
+
+Role split (not a new architecture, a name for what already exists):
+
+- **NQ** — testimony production. Bounded observations under named
+  evaluator / route / SQL contract / freshness state / dependency
+  chain. Emits, does not decide.
+- **Nightshift** — claim-routing and closure consumer. First place
+  the apparatus becomes operational. Receives testimony; routes
+  toward Wicket Intent / WLP Authorization / Continuity handling /
+  refusal.
+- **Wicket / WLP / Continuity** — authority separations (gates), not
+  microservices. About write authority and conversion authority.
+- **Lean** — merge gate for vocabulary. Not in the runtime path
+  unless a tiny extracted checker eventually earns it. Adjudicates
+  conversions, not the world.
+- **tooltheory** — containment layer for receipt-integrity rule,
+  generated inventories, conversion-router candidate, genre
+  diagnosis, framing/method notes. Keeps the Lean tree from becoming
+  a junk drawer of philosophical weather systems.
+
+The substrate framing is index, not direction. It does not authorize
+new modules, does not propose a unifier, does not promote the
+federation into a system. It names what the rest of the working notes
+are already about.
+
 ## The diagnostic
 
 When did a new kernel last change a decision in one of the tools
