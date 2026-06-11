@@ -29,12 +29,15 @@ The register is the anti-slop engine. New rows must name a specific forbidden in
 | 13 | *Admit everything; retries are harmless* — "the system can absorb this" | TCP congestion control, HTTP 429 / Retry-After, circuit breakers, load shedding | refusal composition + time decomposition | Operational refusal for system preservation; failure-mode map material | **B** (failure-mode map entry) | Working note; possibly `Refusal.until t reason overload` schema |
 | 14 | *First-observed binding is globally authoritative* — "TOFU = trust" | SSH first-key, SSHFP via DNSSEC | witness + standing + contestability | Provisional local standing, explicitly weaker than certified authority | **D** (glossary handle; explicit weakness) | Permanent glossary entry; NOT a primitive |
 | 15 | *Convergence implies correctness* — "the replicas agreed, so they're right" | CRDTs, eventual consistency, Dynamo divergence + reconciliation | consolidation denial + refusal composition | Reconciliation under non-total order; project-specific unless concurrent-claim merging becomes a forcing case | **A** (covered) or **B** (annex extension) depending on consumer | Working note |
+| 16 | *Intervention authorizes causal credit* — "I applied mitigation I, therefore I caused / prevented / fixed / own / deserve credit (or blame) for outcome O" | Incident postmortems, SRE mitigation narratives, policy announcements, dashboard SLIs | `LogOnlyProvesEmission.causalityOf`; [[dashboard-quiet-is-not-recovery]]; [[../causality-control-plane]] | None — actor-self-attribution alias of `causalityOf`; sequence/intervention is not causation | **A** (covered) — alias/tripwire, no new kernel | Covered by `LogOnlyProvesEmission.causalityOf`; no new module |
+
+**Entry 16 is an alias, not a target** — and is *not* part of the internet-substrate spike below (different provenance, added later). Filed because *"I applied the mitigation, therefore I prevented the outage"* is common enough to deserve a named tripwire, but it points *backward* into the three existing kernels in its overlap column; it does not spawn a "Causal Claim Admissibility" package. Provenance: 2026-06-10 multi-model session (Daoist / Warring-States framing → *"receipt type gates claim grammar"* extraction). The kernel-overlap audit found the extraction was already `LogOnlyProvesEmission.causalityOf` + `dashboard-quiet-is-not-recovery` + `causality-control-plane` — fresh vocabulary made an existing kernel look like a new surface. Keeper from that detour, kept on the wall not in the register: *generative re-derivation is not discovery — if the new frame compiles to an existing forbidden inference, it is an index entry, not progress.* (The graded `BridgeStatus` evidence ladder from the same session is parked in `parked-leads.md` as linter-UX vocabulary only, not admissibility substrate.)
 
 ---
 
 ## Bucket distribution
 
-Of 15 register entries:
+Of the 15 spike entries (entry 16 is a later alias, excluded from this distribution):
 
 - **Bucket A (already covered):** 4 entries (8, 11, 15 partially, plus implicit "already covered" entries not enumerated)
 - **Bucket B (adjacent extension):** 4 entries (6, 7, 12, 13)

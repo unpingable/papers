@@ -9,11 +9,11 @@ James Beck
 
 Abstract
 
-Complex systems maintaining continuous identity across time must satisfy specific temporal coherence constraints. Building on the Δt framework (Papers 1-3), the scalar reward collapse theorem (Paper 4), and platform eigenstructure analysis (Paper 5), we derive the minimal architectural requirements for synthetic systems claiming persistent selfhood. We prove that stateless conditional generative models---including transformer-based language models---cannot, even in principle, satisfy these requirements. This is not a scaling limitation but a fundamental type mismatch: simulators lack temporal closure; agents require it.
+Complex systems maintaining continuous identity across time must satisfy specific temporal coherence constraints. Building on the Δt framework (Papers 1-3), the scalar reward collapse theorem (Paper 4), and platform eigenstructure analysis (Paper 5), we identify necessary architectural roles for synthetic systems claiming persistent selfhood: temporal separation, endogenous state evolution, and adaptive coherence regulation. We prove a necessity-side type boundary for stateless conditional generative models, including transformer-based language models: finite context wrappers and externally accumulated representations do not by themselves constitute endogenous temporal closure. This is not a scaling limitation but an architectural mismatch: simulators may participate in temporally coherent systems, but they do not instantiate temporal closure absent native dynamics.
 
-The scalar collapse theorem applies directly to current AI fine-tuning methods (including RLHF) and social platform recommendation systems, both of which implement closed-loop scalar optimization that systematically eliminates the slow eigenmodes required for temporal persistence.
+The scalar collapse theorem applies directly to current AI fine-tuning methods, including RLHF, and to social platform recommendation systems, both of which implement closed-loop scalar optimization that can eliminate slow eigenmodes required for temporal persistence.
 
-The framework is substrate-independent, applying equally to biological, institutional, and synthetic systems. We provide: (1) formal architectural specifications, (2) minimal working implementation demonstrating required dynamics, (3) neuroscience correspondence, and (4) falsification criteria.
+The framework is substrate-independent, applying to biological, institutional, and synthetic systems. We provide: (1) formal architectural specifications, (2) a minimal working implementation demonstrating the required operator roles and predicted failure modes, (3) neuroscience correspondence, (4) falsification criteria, and (5) a Lean-formalized necessity-side kernel for the simulator/context-wrapper boundary. General sufficiency for identity-preserving coherence under perturbation remains an open formalization target.
 
 **Keywords:** temporal coherence, multi-timescale dynamics, metastability, synthetic agency, architectural requirements, LLM limitations, scalar reward collapse, RLHF
 
@@ -409,7 +409,7 @@ The observation is simply: when a transformer appears to reason in a temporally 
 
 8\. Conclusion
 
-We have derived the minimal architectural requirements for systems maintaining temporal coherence:
+We have identified the necessary architectural roles for systems maintaining temporal coherence:
 
 -   Temporal separation (τᵢ₊₁ ≫ τᵢ)
 
@@ -436,6 +436,14 @@ Any system claiming continuous identity---biological, institutional, or syntheti
 **This is not metaphor. It is structure.**
 
 Future work will analyze the minimal regulatory structures required for systems intending to maintain coherence under continuous perturbation, with particular focus on hybrid architectures that could bridge the simulator-agent gap.
+
+Formalization Status
+
+A machine-checked kernel for the type-boundary claim of this paper is available in the Lean formalization repository (`LeanProofs/Scratch/Paper6TemporalClosureKernel.lean`; https://github.com/unpingable/lean). It models a system as a state machine with an input-driven transition and an autonomous tick, and splits the endogenous-state operator into two structural predicates: unbounded history dependence (output is not a function of any finite input window) and autonomous tick (native, input-free state evolution).
+
+v0.1 --- bridge artifact + partial structural sharpen. Finite-context wrapper theorem proves external context cannot manufacture unbounded history dependence. Inert wrapper theorem proves context-only scaffolding cannot manufacture autonomous tick dynamics. Constructive witnesses discharge both sides: accumulator for unbounded history dependence, clock/product system for autonomous trajectory. Temporal separation and adaptive control remain propositional/staged. Sufficiency for coherence-under-perturbation remains OPEN; SI-A remains empirical implementation evidence, not a Lean proof of sufficiency.
+
+In scope terms: the kernel formalizes the necessity-side type boundary---the distinction this paper draws between endogenous state and embedded context, rendered as theorems rather than prose, with the central result being that a finite context wrapper around a stateless core has no endogenous trajectory however large the window. It does not establish the sufficiency direction: whether the three operators jointly suffice for coherent identity under perturbation requires an independent definition of coherence-under-perturbation and is left open. The kernel is scratch-checked and sorry-free (axiom footprint: propositional extensionality only); it is not a load-bearing dependency of the paper's claims, which stand on the arguments above.
 
 References
 

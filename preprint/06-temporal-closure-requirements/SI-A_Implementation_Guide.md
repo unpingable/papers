@@ -67,7 +67,7 @@ After intervention, parameters restore homeostatic ally with time constant 1/η 
 
 Operator 1: Temporal Separation
 
-**Implementation:** Parameter ε = 0.05 enforces τ_slow/τ_fast ≈ 20, satisfying the O(10²) separation requirement.
+**Implementation:** Parameter ε = 0.05 gives τ_slow/τ_fast ≈ 20, demonstrating qualitative timescale separation in the reference implementation. This should not be read as satisfying the stronger 10²–10³ adjacent-layer separation used elsewhere as a typical biological/architectural scale.
 
 **Validation:** Observable in phase portraits---slow variable y changes little while fast variable x completes multiple oscillations.
 
@@ -125,7 +125,7 @@ The double-well potential creates two attractor basins at x ≈ ±√(a_x/α) �
 
 4.2 Timescale Separation Verification
 
-Fast layer completes multiple cycles while slow layer evolves incrementally. Ratio τ_slow/τ_fast = 1/ε ≈ 20, placing system in O(10²) regime required by framework.
+Fast layer completes multiple cycles while slow layer evolves incrementally. Ratio τ_slow/τ_fast = 1/ε ≈ 20 demonstrates qualitative timescale separation; it does not reach the stronger 10²–10³ adjacent-layer separation cited elsewhere as a typical biological/architectural scale.
 
 4.3 Spectral Stability Under Control
 
@@ -211,9 +211,9 @@ The minimal implementation can be extended to explore:
 
 The required dynamics are implementable using only differential equations and basic control theory. No neural networks, complex optimization, or mystical ingredients required. This is engineering, not philosophy.
 
-8.2 Sufficiency
+8.2 Constructive Feasibility
 
-A two-layer system with approximately 10 parameters is sufficient to demonstrate all three operators and their predicted failure modes. The framework\'s requirements are minimal.
+A two-layer system with approximately 10 parameters is sufficient to demonstrate the three operator roles and their predicted failure modes in a minimal testbed. This does not by itself prove general sufficiency for identity-preserving coherence under arbitrary perturbation.
 
 8.3 Falsifiability
 

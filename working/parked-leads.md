@@ -154,6 +154,13 @@ Real-looking, but too pretty or too meta. Reopening predicate set deliberately h
 
 Warning preserved from the brainstorm: do not formalize until both specimens exist. Otherwise it becomes a mirror staring into another mirror and charging rent.
 
+### BridgeStatus Evidence Ladder
+
+- **Handle:** BridgeStatus evidence ladder (graded causal-evidence enum: `absent → observed_sequence → model_assumed → experimentally_supported → mechanistically_witnessed → counterfactual`).
+- **Why it seemed real:** 2026-06-10 multi-model session proposed a graded ordinal for how strongly a causal claim is backed, as the gating vocabulary for a "causal overclaim" linter. The verb-class observation underneath it is genuine — *"prevented / reduced / avoided"* are mostly counterfactual claims wearing witnessed hats.
+- **Why it did not earn promotion:** The kernel side is deliberately **binary** — `LogOnlyProvesEmission.causalityOf` is audit-unit form (*does not discharge causality*, full stop), not a 6-point strength scale. A graded `inductive Foo | a | b | c | d` ordinal is exactly the autocomplete-shaped [[feedback-enum-regression-tell]] move; it belongs (if anywhere) at the **linter-UX / presentation** layer, not as admissibility substrate. Causal overclaim itself is already register alias entry 16 + `dashboard-quiet-is-not-recovery` + `causality-control-plane`.
+- **Reopen trigger:** A concrete linter (NQ / Nightshift postmortem checker) needs a *display-layer* vocabulary to label causal-claim strength on artifacts — and even then it stays UX vocabulary, not a kernel enum. **Rename caveat:** `mechanistically_witnessed` overclaims and should not survive into any shipped surface as written — a witnessed *intervention* is not a witnessed *mechanism*.
+
 ---
 
 ## Doctrine / methodology keepers

@@ -80,7 +80,7 @@ That subsumes the layer-split, the operator family, and the application story in
 
 ## Application zones (where the operator family already lives)
 
-The pattern *surface predicate ⇏ substantive predicate* is obnoxiously portable. Once recognized, it appears across at least seven domains. Listed as recognition vocabulary — NOT as project authorizations.
+The pattern *surface predicate ⇏ substantive predicate* is obnoxiously portable. Once recognized, it appears across at least nine domains (seven filed 2026-05-25; two added 2026-06-10 from relay residue). Listed as recognition vocabulary — NOT as project authorizations.
 
 ### LLM / agent safety
 - Fluent output ⇏ settled learning *(this is `ConsolidationDenial`)*
@@ -144,6 +144,23 @@ Runtime outcome: claim narrowed to tested scope, deny generalization, require co
 - silence ⇏ consent
 
 Runtime outcome: standing denied, conflict/ambiguity, cannot testify, requires independent witness.
+
+### Supply chain / artifact deployment *(added 2026-06-10)*
+- attestation present ⇏ artifact deployable
+- signed provenance ⇏ build trustworthy
+- SBOM complete ⇏ components vetted
+- scan passed ⇏ vulnerability absent
+- log inclusion ⇏ custody *(consume side of forbidden-inference register row 6)*
+
+Runtime outcome: deployment refused with named missing attestation/bridge; receipt identifies which gate refused and what witness would discharge it. Note the register treats in-toto/CT/Sigstore as **substrate specimens** (where the pattern was discovered); this zone is the **consume side** (where refusal receipts would land). Source: 2026-06-10 relay, via [`guarded-lift-admission-overlap-audit-2026-06-10.md`](guarded-lift-admission-overlap-audit-2026-06-10.md).
+
+### Regulated data flows *(added 2026-06-10)*
+- lawful in zone A ⇏ lawful in zone B
+- transfer agreement existed ⇏ agreement current *(SCC/DPA expiry — freshness axis)*
+- consent collected ⇏ consent covers this purpose
+- data classified ⇏ flow authorized
+
+Runtime outcome: cross-boundary flow refused; receipt names the missing legal bridge artifact and its expiry/scope. Distinctive feature: the bridge here is a **human/legal artifact**, which makes the testimony-vs-consequence split unusually visible — legal/organizational testimony does not silently become technical consequence. Source: same relay/audit as above.
 
 ---
 

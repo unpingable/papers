@@ -18,16 +18,16 @@ version: "1.0"
 license: "CC-BY-4.0"
 abstract: |
   This work describes a governed reasoning substrate that introduces persistent 
-state to language-model systems without granting agency, goals, or 
-self-modification. The contribution is architectural: separating linguistic 
-proposal from non-linguistic authority, and measuring the resulting system 
-using standard tools from queueing theory and supervisory control.
+  state to language-model systems without granting agency, goals, or 
+  self-modification. The contribution is architectural: separating linguistic 
+  proposal from non-linguistic authority, and measuring the resulting system 
+  using standard tools from queueing theory and supervisory control.
 
-Key results:
-- Interiority confirmed via hysteresis testing (16.7% divergence rate)
-- Two distinct phase boundaries identified (budget starvation, glass ossification)
-- Safety invariants maintained across all experimental conditions
-- No agency, consciousness, or alignment claims
+  Key results:
+  - Interiority confirmed via hysteresis testing (16.7% divergence rate)
+  - Two distinct phase boundaries identified (budget starvation, glass ossification)
+  - Safety invariants maintained across all experimental conditions
+  - No agency, consciousness, or alignment claims
 
-The system enforces epistemic constraints by construction and is evaluated 
-via falsifiable experiments. 76 test suites confirm architectural properties.
+  The system enforces epistemic constraints by construction and is evaluated 
+  via falsifiable experiments. 76 test suites confirm architectural properties.

@@ -35,6 +35,11 @@ import sys
 import urllib.request
 from pathlib import Path
 
+try:
+    import yaml  # strict-parse cross-check against the tolerant load_yaml_simple
+except ImportError:
+    yaml = None
+
 
 def load_yaml_simple(path: Path) -> dict:
     """Tiny YAML parser good enough for our metadata.yaml format.
@@ -162,6 +167,20 @@ def validate() -> tuple[list[dict], list[str]]:
         if not meta_path.exists():
             drifts.append(f"P{paper_num}: no metadata.yaml")
             continue
+        # Strict-parse cross-check: load_yaml_simple is deliberately tolerant and
+        # will silently truncate a malformed block scalar (e.g. an abstract whose
+        # wrapped lines lost their indentation) rather than fail. A standard
+        # parser would choke — and so would any downstream consumer (Zenodo
+        # ingestion, other tooling). Flag it loudly so the bug can't recur quietly.
+        if yaml is not None:
+            try:
+                with open(meta_path) as fh:
+                    yaml.safe_load(fh)
+            except yaml.YAMLError as e:
+                mark = getattr(e, "problem_mark", None)
+                where = f" (line {mark.line + 1})" if mark else ""
+                drifts.append(f"P{paper_num}: metadata.yaml is not valid YAML{where} — "
+                              f"tolerant parser may read truncated/partial values")
         src = load_yaml_simple(meta_path)
         if src.get("_duplicates"):
             for dup in src["_duplicates"]:
