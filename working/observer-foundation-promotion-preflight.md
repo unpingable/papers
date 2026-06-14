@@ -1,91 +1,211 @@
 # Observer Foundation — Promotion Preflight (NOT promoted)
 
-**Status:** CANDIDATE / non-binding. Filed 2026-06-14. This is a *handle for
-review*, not authorization to build. The observer scratch packet is complete
-enough to establish the local no-go shape; **consolidation is ratification-tier**
-and deliberately deferred. Name early, ratify lazily.
+**Status:** CANDIDATE / non-binding. Filed 2026-06-14, **updated 2026-06-14 after a
+seven-system excavation pass.** This is a *handle for review*, not authorization to
+build. Consolidation/promotion is ratification-tier and deferred.
 
-Do **not** consolidate in the same motion that produced the packet. Touching the
-public foundation immediately after finding the cave is how you get a changelog
-scar. Come back for this as its own deliberate act.
+**What changed in the update:** the original blocker ("no present consumer → withhold")
+is **discharged** — it was the wrong gate. The observer theorem did not need a *future
+forcing case*; it needed an *excavation pass* across already-shipping systems. Seven of
+them fell out of the closet wearing fake mustaches. They are the forcing cases. The
+nucleus codomain also moved: it is **not** `Prop` (my guess) and **not** `Strength`
+(the other guess) — it is an abstract `Verdict`.
 
-## What exists now (banked scratch, `~/git/lean/LeanProofs/Scratch/`)
+Do **not** rewrite the four existing Lean slices on the strength of this. They are
+correct *specimens* at a fixed codomain (Prop); they are fossils, not errors. The
+correction is **additive** (a new generic slice), recorded here as a receipt *before*
+any Lean move — so the correction is custody-tracked, not "Claude got excited and fixed
+the math."
 
-The ladder, four fenced slices, all `lake env lean` green, `sorry`-free:
+---
 
-```
-ConsumerRelativeFreshness     temporal → observer adapter (per-consumer clock)
-  → ConsumerRelativeForce       Force : Consumer → Artifact → Prop; frame split
-  → AbsoluteForceStampBridgePrice  the stamp-on-envelope priced to collapse
-  → NoUniversalRoot             global section ⇔ consumer agreement (the center)
-```
+## The excavation pass (2026-06-14) — the "no consumer" blocker is discharged
 
-Enough to say observer is no longer vaporware. Not enough to freeze a public
-vocabulary.
+Seven shipping systems were read read-only for their force/admissibility model. Every
+one assigns force/admissibility **relative to consumer-supplied inputs** — none has a
+bare `Force(artifact)`. The blocker is discharged by shipping evidence:
+**NQ, nightshift, wicket, continuity, standing, verifier, WLP.**
 
-## Candidate public theorem (the nucleus claim)
+| System | Force codomain | Freshness | Artifact | Root | Refusal |
+|---|---|---|---|---|---|
+| NQ (producer) | binary witness verdict | consumer-judged (emits age only) | flat; *rejects a witness that names its own claims* | none | typed |
+| nightshift | product: binary gate × 5-level `RelianceClass` × scope bitmask | consumer-judged (own 90s; ignores NQ `fresh`) | flat | none (declared ceiling) | typed |
+| wicket | product: 5-verdict × 3 dims (basis/precedence/standing), soft/hard | consumer-judged (`call_timestamp`; "time is evidence, not ambient reality") | flat | none ("bouncer, not legislature") | typed |
+| continuity | binary (`rely_ok: bool`) | consumer-judged (`evaluation_time` param; kernel never calls clock) | flat | none ("Governor carries consequence") | typed |
+| standing | binary (Allowed/Denied/Unknown) | consumer-judged (`VerifyOptions{skew, max_clock_divergence, now}`) | flat | **operator-fiat genesis** (the one root) | typed |
+| verifier | **validity-only, NOT force**; frame-*independent* | **producer-baked** (`claim_state`) — lone exception | flat | none ("`authorized` reserved upstream") | typed |
+| WLP | typed enum (9 verdicts) | consumer-judged (`reference_time`); explicit Expired + not-yet-valid | flat; *same artifact `Accepted` by one consumer, `Unsupported` by another* | none ("TLS secures the pipe, not the artifact") | typed |
 
-> A consumer-independent force predicate exists **iff** all consumers agree on
-> every artifact.
+## The five extracted invariants (unanimous; the actual nucleus)
 
-Lean: `has_global_section_iff_consumers_agree` (axiom-free).
+1. **Force/verdict is consumer-relative.** No bare `Force(artifact)` anywhere (7/7).
+   WLP is the cleanest exhibit: the *same* artifact is `Accepted` by one consumer and
+   `Unsupported` by another, on the consumer's own `supported_policy_schemes`.
+2. **The artifact is a flat fact.** No consumer/authority/root field on the evidence
+   object (7/7). Force lives on the consumer side, never stamped on the envelope. NQ
+   *rejects at the validator* any witness that names its own claims. (This is the
+   absolute-force-stamp refusal and "Stamp must be unrepresentable" — already true
+   architecturally.)
+3. **Freshness is consumer-judged in force-assigning systems** (6/7). Consumer supplies
+   the reference time/threshold and recomputes; no producer `fresh` flag is trusted
+   (nightshift explicitly ignores NQ's). `standing`'s `VerifyOptions{skew,
+   max_clock_divergence, now}` is literally `Freshness.DivergenceAcceptable` shipping.
+4. **Rootless, except one single-genesis.** 6/7 have no trust root (authority is a
+   declared ceiling); `standing` has operator-fiat genesis — the single-root case. This
+   is `NoUniversalRoot` (rootless ⇒ consumer-relative) **plus**
+   `universal_root_licenses_stamp` (the lone genesis licenses its own local stamp). Root
+   is the exception, not the nucleus.
+5. **Refusal/verdict is typed** — named variants / reason codes, never a bare bool or
+   raw error (7/7).
 
-## Candidate foundation nucleus (keep it TINY)
+## Verifier as the negative control
+
+`verifier` is the only system that is **validity-only, not force-assigning** — and it is
+*also* the only one that is **frame-independent** and uses **producer-baked freshness**
+(`claim_state`, not a consumer threshold). The system that does not assign force also
+does not judge freshness and is not consumer-relative. Force-assignment, consumer-
+relativity, and consumer-judged freshness travel together; lose one, lose all three.
+That is the confirming negative — it tells us the three invariants are one capability.
+
+## The corrected nucleus
 
 ```lean
-Consumer
-Artifact
-Force : Consumer → Artifact → Prop
-ConsumersAgree
-HasGlobalSection
-has_global_section_iff_consumers_agree
+Force : Consumer → Artifact → Verdict      -- Verdict parameterized
 ```
 
-Bias: the promoted nucleus should be exactly this and no more.
+- **NOT** `Force : Consumer → Artifact → Prop` (my earlier guess) — that is the
+  degenerate 2-variant case, shipped by only 2/7 (continuity, standing).
+- **NOT** `Force : Consumer → Artifact → Strength` (the other guess) — no system ships a
+  scalar/lattice strength. The graded ones (nightshift, wicket) ship *products of small
+  ordered enums + a binary gate*, not a scalar.
 
-## Explicitly EXCLUDED from the foundation (stay application/scratch)
+The codomain **varies by system** (binary / product / 9-variant enum). What is invariant
+is **consumer-relative verdict production**, not the verdict's shape. So the foundation
+must leave `Verdict` a type parameter; fixing it either way contradicts 5 of 7.
 
-- `UniversalRoot` as a primary no-go — it is a **positive exception** for
-  closed/single-root governance systems, not the foundation's no-go. (And it
-  carries the empty-root vacuity: a root forcing nothing is vacuously universal.)
-- `AbsoluteForceStamp` as a primitive — it is a bridge-price *application*.
-- temporal clock mechanics (`ConsumerRelativeFreshness`) — the adapter, not the
-  foundation.
-- receipt-specific / stamp-specific semantics.
+## Don't pave the fossils
 
-## Open taxonomy questions to settle BEFORE consolidating (the real work)
+The four existing slices (`ConsumerRelativeFreshness`, `ConsumerRelativeForce`,
+`AbsoluteForceStampBridgePrice`, `NoUniversalRoot`) are correct **at codomain `Prop`** —
+a real special case, useful specimens. Do **not** rewrite them. The correction is a new
+generic slice that *subsumes* them, with the Prop versions surviving as the
+`Verdict := Prop` instance.
 
-These are naming-the-taxonomy questions, not Lean-difficulty questions. Freezing
-the wrong abstraction here is the kernel-goblin-with-commit-access risk.
+## Subgate worksheet (vocabulary-foundation gate) — now answerable
 
-1. **What is `Consumer`?** operator, verifier, catcher, jurisdiction, runtime,
-   tenant, root, or policy domain? (Different downstreams want different ones.)
-2. **What is `Force`?** admission, enforcement, reliance, constraint, visibility,
-   or legal-ish consequence?
-3. **Is agreement-over-all-artifacts the intended public strength?** Too strong,
-   or exactly the clean no-go? (Currently: exactly clean, but confirm against the
-   intended consumer.)
-4. **Does `UniversalRoot` belong in the foundation at all**, or only as an
-   application lemma for single-root governance (e.g. agent_gov's
-   qualified-operator genesis root)?
-5. **What does "stamp" mean?** receipt predicate, label, signature, attestation,
-   policy claim, or envelope metadata?
+The `wiring-is-not-folder-placement.md` vocabulary-foundation subgate's eight questions,
+answered from the excavation:
 
-## Graduation steps (when the answers above exist)
+1. **Downstream consumer now?** Seven shipping ones (table above). Discharged.
+2. **Recurrence vs decoration?** The five invariants recur across 7 independent systems
+   in 3 languages. Recurrence, not decoration.
+3. **Excluded meanings?** `Consumer` = the verdict-producing frame that holds the
+   reference time/threshold (= clock-frame; *not* end-user, *not* verifier-validity).
+   `Force` = consumer-assigned verdict (*not* validity — verifier shows validity is the
+   frame-independent sibling; *not* a scalar strength). `Verdict` = system-supplied
+   closed type. `Root` = single-genesis exception, *not* a nucleus primitive.
+4. **Minimal nucleus?** The five invariants + `Force : Consumer → Artifact → Verdict`
+   with `Verdict` abstract. (Center theorem: `HasGlobalSection ↔ ConsumersAgree`,
+   restated over `Verdict` equality.)
+5. **Application lemmas that stay OUT?** All current observer theorems; the bridge-price
+   (`AbsoluteForceStampBridgePrice`); the universal-root exception; cross-axis
+   (observer × temporal) lemmas; the freshness adapter.
+6. **Claim-register linkage?** None yet. Promotion to `CLAIM-REGISTER.md` is a separate
+   later act.
+7. **Import target?** A generic module (candidate name `ConsumerRelativeVerdict`),
+   imported by the Prop specimens as the `Verdict := Prop` instance — *on promotion only*.
+8. **Deprecation path?** If the nucleus is later split (e.g. force vs validity as
+   verifier suggests), the `Verdict`-parameterized form already isolates the variation;
+   the Prop specimens remain valid instances.
 
-1. Write the answers to 1–5 as a one-page taxonomy decision (this doc, filled in).
-2. Consolidate the duplicated `Consumer`/`Force` vocab (currently re-stated per
-   scratch file) into ONE foundation module.
-3. Promote `has_global_section_iff_consumers_agree` toward `CLAIM-REGISTER.md`
-   (Lean repo) — that promotion is the ratification act; get explicit language.
-4. Leave the adapters/bridge-price/universal-root as applications citing the
-   nucleus.
+## Generic slice — BUILT (additive, 2026-06-14)
+
+**Cut as `~/git/lean/LeanProofs/Scratch/ConsumerRelativeVerdict.lean`** (operator-authorized,
+additive — the four Prop slices left intact as the `Verdict := Prop` instance).
+`lake env lean` green, `sorry`-free, headline theorems (`has_global_section_iff_consumers_agree`,
+`no_global_section_when_consumers_disagree`, the V3 specimen) depend on **no axioms**. Codex
+adversarial pre-check: **clean** — independently flagged the backward direction's reliance on
+`Consumer` inhabited and confirmed it is disclosed and discharged by `deriving Inhabited`; no
+overclaim, no vacuity, no axiom leak. NOT wired, NO shared module, NO claim-register promotion.
+
+The slice as built (matches the description below):
+
+```text
+Scratch/ConsumerRelativeVerdict.lean   (generic nucleus, Verdict parameterized)
+```
+
+```lean
+structure Consumer where
+  id : Nat
+structure Artifact where
+  id : Nat
+variable {Verdict : Type}
+
+def ConsumersAgree (force : Consumer → Artifact → Verdict) : Prop :=
+  ∀ c d a, force c a = force d a
+
+def HasGlobalSection (force : Consumer → Artifact → Verdict) : Prop :=
+  ∃ global : Artifact → Verdict, ∀ c a, global a = force c a
+
+theorem has_global_section_iff_consumers_agree
+    (force : Consumer → Artifact → Verdict) :
+    HasGlobalSection force ↔ ConsumersAgree force
+```
+
+This preserves the existing Prop theorem as the `Verdict := Prop` instance while
+dropping the pretense that `Prop` is the real codomain. (`ConsumersAgree`/`HasGlobalSection`
+use `Verdict` *equality*; no `DecidableEq` needed for the abstract theorem — it is
+pure-logic and should stay axiom-free like the Prop version.)
+
+## RATIFICATION QUESTION — RESOLVED 2026-06-14
+
+> ~~Add a new generic scratch slice `ConsumerRelativeVerdict.lean` (Verdict-parameterized,
+> additive, leaving the four Prop specimens intact)?~~ **YES — built additively 2026-06-14,
+> codex-clean, zero-axiom; Prop slices untouched.** This was a scratch additive act, NOT
+> promotion. What remains ratification-tier and still deferred: shared-vocabulary
+> consolidation, a foundation module, the public-noun decision, and `CLAIM-REGISTER.md`
+> promotion of the center theorem.
+
+## The compromise: more scratch/integration, NOT a foundation module (2026-06-14)
+
+ChatGPT pushed back on jumping to a shared foundation module, and the pushback holds.
+
+- **More scratch / integration / audit — DONE.** A scratch *aggregator*
+  `~/git/lean/LeanProofs/Scratch/ObserverPacket.lean` imports the five observer slices;
+  `lake build LeanProofs.Scratch.ObserverPacket` is green (integration check — the slices
+  build in the real lake graph, not just `lake env lean`); abstract center theorems
+  zero-axiom; **NOT imported by `LeanProofs.lean`** (build-coverage, not custody). Plus two
+  notes: [`excavation-vs-yagni.md`](excavation-vs-yagni.md) (doctrine) and
+  [`observer-consumer-independent-verdict-claim.md`](observer-consumer-independent-verdict-claim.md)
+  (paper-facing claim sketch, non-register).
+- **Shared foundation module — STILL HELD.** A public module turns *names into substrate*:
+  the moment other files `import` it, you have declared "these are the nouns future work
+  must speak." That freezes choices that are *probably* right but not
+  *make-downstream-depend-on-them-today* right.
+
+**The live gate is now the noun, not the theorem.** `has_global_section_iff_consumers_agree`
+is clean. The risk is `Force`: the excavation found *consumer-relative verdict production*,
+and `Force` is one loaded reading of the verdict (enforceability), not the neutral
+foundation word. The public noun (`Force` / `Adjudicates` / `Evaluates` / `AssignsVerdict`
+/ `Admits` / `Relies` / `Consequence`) determines what future lemmas accidentally claim,
+and is decided **at module-mint, not now**. The scratch `Force` label is a fossil, not a
+ratified noun.
+
+## Graduation steps (unchanged, gated on the question above)
+
+1. (done) Excavate the constellation; record invariants + corrected codomain here.
+2. (done) Generic-slice question resolved: yes, additive.
+3. (done) Added `ConsumerRelativeVerdict.lean` (green, codex-clean, zero-axiom); Prop
+   slices remain as the `Verdict := Prop` instance, not rewritten.
+4. (deferred, ratification-tier) Shared-vocabulary consolidation / foundation module /
+   **public-noun decision** (`Force` is a loaded reading; candidates Adjudicates /
+   Evaluates / AssignsVerdict / Admits / Relies / Consequence) / `CLAIM-REGISTER.md`
+   promotion of the center theorem — all still gated, still the operator's call.
 
 ## Pointers
 
-- Lean scratch: `~/git/lean/LeanProofs/Scratch/{ConsumerRelativeFreshness,
-  ConsumerRelativeForce,AbsoluteForceStampBridgePrice,NoUniversalRoot}.lean`
-- Index ledger: `docs/formalization-index.md` (2026-06-14 observer entry)
-- agent_gov tie: `OperatorBasisGateInput` warrant — qualified-operator = genesis
-  root; `universal_root_licenses_stamp` legitimizes its stamp single-rooted;
-  federation breaks the section.
+- Lean scratch (Prop specimens): `~/git/lean/LeanProofs/Scratch/{ConsumerRelativeFreshness,
+  ConsumerRelativeForce, AbsoluteForceStampBridgePrice, NoUniversalRoot}.lean`
+- Excavated systems: `~/git/{nq-root,nightshift,wicket,continuity,standing,verifier,wlp}`
+- Subgate: `working/wiring-is-not-folder-placement.md` (vocabulary-foundation subgate)
+- Index pin: `docs/formalization-index.md` (observer, warrant-tier, not promoted)

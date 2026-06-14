@@ -299,6 +299,15 @@ no public vocabulary frozen. Promotion is a separate ratification-tier act.
   the center theorem — all deferred. Graduation preflight (candidate nucleus,
   exclusions, open taxonomy questions) parked at
   `working/observer-foundation-promotion-preflight.md`.
+- **Codomain correction (2026-06-14, seven-system excavation).** The "no consumer"
+  blocker is **discharged**: NQ, nightshift, wicket, continuity, standing, verifier,
+  WLP all ship consumer-relative verdict production. The nucleus codomain is abstract
+  `Verdict` (`Force : Consumer → Artifact → Verdict`) — **not** `Prop` (degenerate,
+  2/7) and **not** `Strength` (0/7). The four slices above are the `Verdict := Prop`
+  special case (fossils, NOT rewritten); the generic nucleus is added additively as
+  `Scratch/ConsumerRelativeVerdict.lean`. Full excavation table + five invariants +
+  verifier-as-negative-control in `working/observer-foundation-promotion-preflight.md`.
+  Still warrant-tier: no wiring, no shared module, no claim-register promotion.
 
 ## Priority ordering if revisions proceed
 
