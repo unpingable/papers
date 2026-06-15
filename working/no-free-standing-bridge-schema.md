@@ -53,19 +53,21 @@ they each need their own excavation (below) before "schema-aligned" becomes "lit
 
 ## The five axes (each row = an independently-proved ⇏)
 
-| Axis | Forbidden lift (the ⇏) | Where it's proved | Math status |
-|---|---|---|---|
-| **Observer / frame** | artifact stamp ⇏ consumer-independent verdict | `Scratch/NoUniversalRoot.lean` / `Scratch/ConsumerRelativeVerdict.lean` — `has_global_section_iff_consumers_agree` | **LITERAL global-section theorem** (`HasGlobalSection ↔ ConsumersAgree`) |
-| **Temporal / trajectory** | hopwise admissible ⇏ trajectory admissible | `Scratch/TemporalTrajectory.lean` — `hopwise_fresh_not_trajectory_fresh` | formal no-lift specimen; schema-aligned, NOT reduced |
-| **Deadlock / progress** | locally valid deferrals ⇏ global progress | `Scratch/DeadlockTrajectory.lean` — `valid_deferrals_can_deadlock` | formal no-lift specimen (Lean); runtime detector = governor candidate; schema-aligned |
-| **Custody / multigov** | plural observations ⇏ plural custody | `Scratch/DeadlockEscalation.lean` — `atomic_lease_gives_unique_winner`; `Scratch/QuorumCustody.lean` — `no_conflicting_quorum_certificates` | formal custody-safety specimen (incl. Mathlib quorum); schema-aligned |
-| **Reflexive / amendment** | valid operation under the rules ⇏ authority over the rules | `Admissibility/AmendmentFragment.lean` [ANNEX] — `no_transition_without_pre_authorization`, `founding_does_not_bless` | formal amendment specimens; schema-aligned |
+**Two independent dimensions** (the honesty): *Formal artifact* = what Lean actually
+compiles (every row is strong here); *Translation* = whether it's reduced to
+global-section/descent language (only observer is). A compiled no-lift specimen is NOT a
+reduction to sheaf theory — that is the bridge not to smuggle.
 
-The **Math status** column is the honesty: only the observer row is a *literal* global-section
-encoding. The other four are formally-verified no-lift specimens that *resemble* the
-gluing-failure shape — schema-aligned, **not translated/reduced** to sheaf/global-section
-form. A clean table without this column would be another withhold-shaped consensus dressed
-as a result.
+| Axis | Forbidden lift (⇏) | Compiled Lean artifact | Translated to global-section? |
+|---|---|---|---|
+| **Observer / frame** | artifact stamp ⇏ consumer-independent verdict | `has_global_section_iff_consumers_agree` (`NoUniversalRoot` / `ConsumerRelativeVerdict`) | **YES — literal** |
+| **Temporal / trajectory** | hopwise admissible ⇏ trajectory admissible | `hopwise_fresh_not_trajectory_fresh` (`TemporalTrajectory`) | no |
+| **Deadlock / progress** | locally valid deferrals ⇏ global progress | `valid_deferrals_can_deadlock` (`DeadlockTrajectory`) — *runtime detector* is the governor candidate, not the specimen | no |
+| **Custody / multigov** | plural observations ⇏ plural custody | `no_conflicting_quorum_certificates` (`QuorumCustody`, Mathlib) + `atomic_lease_gives_unique_winner` (`DeadlockEscalation`) | no |
+| **Reflexive / amendment** | valid operation ⇏ authority over the rules | `founding_does_not_bless`, `no_transition_without_pre_authorization` (`AmendmentFragment` [ANNEX]) | no |
+
+The table is a **map, not a deed.** A non-observer row gets promoted from the right-column
+"no" to "yes" only by surviving the per-row excavation below — not by table polish.
 
 The reflexive row sharpened: *standing under the rules ⇏ standing over the rules* — the
 same engine with the boundary folded back onto the system itself. The Möbius goblin.
