@@ -86,6 +86,54 @@ Surfaces (1)–(3) are synchronic / token-local. (5) is synchronic with a jurisd
 dependency. (6)–(7) are diachronic and belong to the trajectory layer — they are the formal
 reason the two layers must stay separate.
 
+### The diachronic layer, fleshed out (2026-06-15 re-derivation)
+
+Surfaces (6)–(7) were **re-derived independently** from a customs-fraud framing (swamp
+cultivation), confirming the seam by convergence — two derivations (this note's Emission
+split; the cabinet's "epistemic ≠ authority") landing at one window. The gate is
+**synchronic**: at time `t` it checks the packet presented (custody / corroboration / scope)
+and emits `MayRely`. The serious adversary does not attack `MayRely`; they attack the
+*history that makes `MayRely` true* — **farm the swamp** so the inputs honestly clear customs.
+
+Two fraud classes:
+
+- **Bad promotion** (synchronic, at the gate): weak input → unauthorized reliance. "This does
+  not meet the rule, but I will use it anyway." (Surfaces 1–5.)
+- **Bad cultivation** (diachronic, in the swamp): engineered input *history* → *authorized*
+  reliance. "I will spend six months making this meet the rule." The gate can be **locally
+  honest and still wrong**. (Surfaces 6–7.)
+
+The gate gains a second conjunct:
+
+```text
+SynchronicAdmissible(packet, t) ∧ DiachronicUnfarmed(history, t₀..t)  →  MayRely
+```
+
+Theorem-surface name for (6)+(7): **`LocallyAdmissibleDoesNotDischargeTrajectory`** —
+*passes the gate at `t` ⊬ clean evidence history over Δt.* The forger who can't forge the
+stamp opens a paper mill that forges the history that earns the stamp.
+
+**Cultivation tells** — what `DiachronicUnfarmed` keys on (observable trajectory patterns):
+common ancestry masquerading as independent corroboration · post-hoc source selection ·
+independence faked by laundering through intermediaries · evidence generated after the target
+conclusion became known · corroboration concentrated in one authority basin · custody path
+shaped by interested actors · repeated failed forum attempts before success · unexplained
+gaps then too-perfect documentation · source graph lacking neutral/adversarial nodes.
+
+**Hard discipline — key on patterns, NOT intent.** `DiachronicUnfarmed` must not key on "we
+know nobody had intent" (intent is swamp vapor, unobservable). It keys only on the observable
+patterns above. Same shape as "hazard must not push the transition" in
+[[standing-as-readout-no-free-standing-readout]]: forecast/inference ⊬ effect. This is why
+forum-shopping is not an emission — it is a **pattern over acts**: the single act may be
+valid; the *trajectory* reveals the farm.
+
+Disposition: still UNRATIFIED, still **Δt-layer** — do NOT fold into the synchronic readout
+proof (`NoFreeStandingReadout.lean`); the readout theorem says latent state needs authorized
+collapse, this says an authorized collapse can still be attacked by shaping the latent state's
+*history*. A Lean specimen earns construction when a trajectory detector consumes it
+(candidate consumer: nightshift / AG governor detector — [[project-nightshift-forcing-consumer]]).
+Until then, name-early.
+
 ## Provenance
 
 Multi-model adversarial review, 2026-06-15. Corrected an over-claim (kernel-as-legitimacy-
