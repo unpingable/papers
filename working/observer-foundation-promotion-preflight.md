@@ -191,6 +191,34 @@ foundation word. The public noun (`Force` / `Adjudicates` / `Evaluates` / `Assig
 and is decided **at module-mint, not now**. The scratch `Force` label is a fossil, not a
 ratified noun.
 
+## OPERATOR DECISION — 2026-06-14 (deadlock break)
+
+To stop the loop re-litigating "noun undecided" as "observer work frozen," the operator
+ruled. **"Noun undecided" does not freeze fenced progress.**
+
+1. **Global doctrine — HOLD.** Do **not** promote `excavation-vs-yagni.md` to global
+   `CLAUDE.md`. Correct, but only one firing; candidate until a second independent
+   recurrence. Keep the local breadcrumb (the `Scope vs coverage` slot pointer).
+2. **Shared observer vocabulary — DO NOT MINT YET.** No public module, no claim-register
+   promotion.
+3. **Provisional Lean-facing neutral noun — RECORDED (not minted):**
+   `VerdictFor : Consumer → Artifact → Verdict`. Names the *output*, not the metaphysics;
+   codomain-aware (works for `Allowed`/`Denied`/`Unknown`); avoids the
+   `Force`/`Admits`/`Adjudicates` overloading.
+   - **`AssignsVerdict`** — acceptable fallback (precise, clunkier identifier).
+   - **`Relies`** — **rejected as nucleus language**, reserved for paper prose /
+     reliance-specific application lemmas only. Reason: the codomain includes negative /
+     unknown verdicts, so `Relies consumer artifact = Denied` / `= Unknown` reads as "the
+     consumer relies on a denial" — a semantic oil slick. `Relies` is good paper-language,
+     bad foundation-language.
+4. **Continue fenced progress only:** scratch aggregation, compile/audit, codex precheck,
+   non-register prose. No shared module, no `LeanProofs.lean` wiring, no `CLAIM-REGISTER`
+   promotion.
+
+This is a *recorded provisional*, not a mint: when a public module is eventually minted,
+`VerdictFor` is the default unless a better reason surfaces. The scratch `Force` label
+stays as-is (fossil); not renamed.
+
 ## Graduation steps (unchanged, gated on the question above)
 
 1. (done) Excavate the constellation; record invariants + corrected codomain here.
@@ -198,9 +226,9 @@ ratified noun.
 3. (done) Added `ConsumerRelativeVerdict.lean` (green, codex-clean, zero-axiom); Prop
    slices remain as the `Verdict := Prop` instance, not rewritten.
 4. (deferred, ratification-tier) Shared-vocabulary consolidation / foundation module /
-   **public-noun decision** (`Force` is a loaded reading; candidates Adjudicates /
-   Evaluates / AssignsVerdict / Admits / Relies / Consequence) / `CLAIM-REGISTER.md`
-   promotion of the center theorem — all still gated, still the operator's call.
+   public-noun **mint** (provisional preference recorded: `VerdictFor`, fallback
+   `AssignsVerdict`; see Operator Decision above) / `CLAIM-REGISTER.md` promotion of the
+   center theorem — all still gated, still the operator's call.
 
 ## Pointers
 

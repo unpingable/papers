@@ -81,7 +81,16 @@ downstream depend on it."
 
 ## Promotion
 
-Candidate for promotion to global guidance (`~/.claude/CLAUDE.md`), as a refinement that
-sits between **Scars as evidence** and **YAGNI scope**: the in-house-distributed-evidence
-case. Local until recurrence across projects is clear (per doctrine-promotion discipline).
-Provenance: observer-foundation excavation, 2026-06-14, operator + ChatGPT + Claude.
+Candidate for promotion to global guidance (`~/.claude/CLAUDE.md`). **Nearest sibling: the
+`Scope vs coverage` section** (added to global CLAUDE.md 2026-06-14) — that section splits
+*YAGNI-governs-scope* from *completeness-governs-coverage*; this note adds the third
+discriminator in the same family (*YAGNI does not gate excavated, already-shipping
+structure*), and its `earned ≠ public` fence is the same tier discipline. It would slot
+directly after `Scope vs coverage`.
+
+**Status: ONE firing (the observer excavation). Operator decision 2026-06-14: HOLD** — do
+not promote to global CLAUDE.md until a second independent recurrence (candidate until
+repeated; global CLAUDE.md is highest-blast-radius). Keep this local breadcrumb + the
+`Scope vs coverage` slot pointer so the lift is cheap and not rediscovered cold when it
+recurs. Provenance: observer-foundation excavation, 2026-06-14, operator + ChatGPT +
+Claude; AG-Claude independently noted the `Scope vs coverage` adjacency.

@@ -36,20 +36,24 @@ on the consumer's own policy set. Excavation, not invention (see
 [`excavation-vs-yagni.md`](excavation-vs-yagni.md) and the
 [promotion preflight](observer-foundation-promotion-preflight.md)).
 
-## OPEN — the public noun (decide at module-mint, not now)
+## The public noun — provisional preference recorded (mint deferred)
 
-The nucleus relation `Consumer → Artifact → Verdict` is currently called `Force` in
-scratch. **`Force` is a loaded reading**, not the neutral foundation word — the
-constellation says *consumer-relative verdict production*; "force" is one interpretation of
-the verdict (enforceability), and the chosen noun determines what future lemmas
-accidentally claim. Candidates if/when a public module is minted:
+The nucleus relation `Consumer → Artifact → Verdict` is called `Force` in scratch.
+`Force` is a loaded reading (enforcement), not the neutral foundation word — the
+constellation says *consumer-relative verdict production*.
 
-```
-Force · Adjudicates · Evaluates · AssignsVerdict · Admits · Relies · Consequence
-```
+**Operator decision 2026-06-14 (provisional, not minted):** the Lean-facing neutral noun
+is **`VerdictFor : Consumer → Artifact → Verdict`** — names the output, codomain-aware
+(works for `Allowed`/`Denied`/`Unknown`). Fallback: `AssignsVerdict`. **`Relies` is
+rejected for the nucleus** (reserved for paper prose / reliance-specific application
+lemmas) because the codomain includes negative/unknown verdicts — `Relies … = Denied`
+reads as "relies on a denial." Do **not** mint a public module yet; the scratch `Force`
+label stays a fossil. Full rationale in
+[`observer-foundation-promotion-preflight.md`](observer-foundation-promotion-preflight.md)
+§ Operator Decision.
 
-Do **not** freeze this by minting a public module yet. The scratch name `Force` is a
-fossil label, not a ratified noun.
+Note for *this* sketch's prose: `Relies` remains fine **here** (paper-facing reliance
+language) — the rejection is specifically about the *nucleus* identifier, not paper text.
 
 ## Status / boundaries
 
