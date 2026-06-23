@@ -56,6 +56,15 @@ Prior art that owns each piece:
 Different rungs of the trace / 2-safety / hyperproperty ladder; **same verdict**: occupied,
 cite don't coin. Do not flatten them together.
 
+**Third direction — the macro→micro neighbor (2026-06-22).** A separate thread proposed
+"Calibrated ≠ correct" (an *aggregate* property does not discharge an *instance*
+obligation) as a new kernel. It is the opposite direction from this tombstone (here:
+micro→macro; there: macro→micro) and genuinely not formalized in the corpus — but the
+*content* is the reference-class problem (Hájek 2007) + ecological fallacy (Robinson 1950)
++ transportability (Pearl–Bareinboim) + Dwork (already cited above). Codex-confirmed
+RE-SKIN. Cite don't coin; the keeper is a prediction-market *case study*, not a kernel.
+See `prediction-markets-case.md`.
+
 ## Route-by-kind (the salvage — a classifier, not a doctrine)
 
 ```

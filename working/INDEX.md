@@ -21,6 +21,7 @@
 
 ## current-load-bearing
 
+- **acknowledgements.md** — obligation custody (a debt, not doctrine): Chris & Erin are owed *special* thanks (dedicated paragraph, not a list line) in the book acknowledgements — contributions materially beyond proofreading (Chris's Amazon stack-rank example forced Paper 24's witness-filter extension). Form of credit is the collaborator's call: ask, don't assume. Update as Erin's examples land. Migrated from memory 2026-06-22 (`project-acknowledgements`).
 - **admissibility-as-pre-authorization-layer.md** — Cedar-relative positioning (refreshed 2026-06-06); the "Admissibility kernels" stack location in the security taxonomy. Memory: `project-admissibility-as-pre-authorization-layer`.
 - **admissibility-vs-arms-control.md** — 2026-06-06 doctrine note + specimen bridge; supply-side capability control ≠ demand-side authority refusal; *same-custody artifacts cannot witness each other*; NORAD 1979 + Petrov 1983 as specimens; explicit curdling timer (do NOT formalize before 2026-06-07). Memory: `project-admissibility-vs-arms-control`.
 - **heterogeneous-turtles-not-witnesses.md** — 2026-06-06 doctrine note + agentic-system specimen bridge; *heterogeneity reduces correlation, it does not change receipt type*; orthogonal axis to same-custody (multi-source same-type artifacts cannot witness each other either); covariance-matrix gem keeper; barbershop epistemology defense against agent-team diagrams; same curdling timer as parent. Memory: `project-heterogeneous-turtles-not-witnesses`.
