@@ -22,6 +22,38 @@ Destination-only witnesses are not witnesses; they are unmarked claims. This rul
 
 **Provenance.** Surfaced in a multi-model exchange 2026-06-04 (ChatGPT extending the Lean-underexposed-lane idea → DeepSeek sketching candidate kernels → ChatGPT correcting the destination-only-witness trap → kernel-overlap audit confirming non-novel-substance / novel-compression). The frame is keep-worthy; the parallel `LeanProofs/Admissibility/NoLift/` directory the exchange briefly proposed was refused as cathedral-by-rename — the kernels it would contain already exist as named modules in `LeanProofs.lean`'s import surface. See [[documentation-keepers]] for the *"Lean as laundering detector"* keeper phrase.
 
+### Two axes of the conversion failure: TOCTOU (temporal) vs laundering (type) — added 2026-06-22
+
+The master failure — *a check does not license a use* — fails along two orthogonal axes,
+which map onto two fields of the conversion-witness binding rule above:
+
+- **Temporal axis (scope/time binding fails) = TOCTOU.** The check *was* the right kind of
+  evidence and *was* valid; time passed; the bound state moved. Time-of-check-to-time-of-use.
+  This is the corpus's freshness / temporal-custody seam — formalized as
+  `TemporalCustody.lean`'s `citation_validity_does_not_imply_execution_admissibility`
+  (valid-at-check ⊬ admissible-at-use), surfaced as an attack surface in P14
+  (temporal-attack-surface) and P15 (cybernetic-fault-domains: FileSnapshot + stale-base
+  detection is the operational TOCTOU defense), and rowed in `laundering-move-watchlist.md`.
+- **Type / jurisdiction axis (source/target-kind binding fails) = the laundering kernels.**
+  *No time needs to pass.* The check was never the right *kind* of evidence for the use —
+  a venue-state read as a world-state, an aggregate read as an instance, a settlement read
+  as truth. `signed≠witnessed`, `resolved≠true`, `calibrated≠correct`, `priced≠witnessed`.
+  No race, zero-length window, same "check ⊬ licensed use" failure.
+
+TOCTOU is therefore **no-free-standing-bridge on the temporal axis**; the laundering family
+is **no-free-standing-bridge on the type axis**. TOCTOU is named prior art (McPhee 1974
+coined the term; Bishop & Dilger 1996 formalized the file-race version) — cite, don't coin;
+the corpus's move is (a) lifting it off the filesystem substrate into authority/admissibility
+vocabulary and (b) placing it as one axis of a two-axis failure whose other axis has no
+TOCTOU analog. One sharpening the systems literature lacks: the temporal-custody theorem
+refuses the lift by default *even with a zero-length race window and no state change* —
+validity is evaluated at execution time, not citation time, so citation-time validity never
+transfers without an explicit retroactive-discharge bridge made visible in the proof. That
+is stronger than "minimize the race window." Both fixes also share a shape: TOCTOU's
+*atomicity* fix = the handoff-atomicity / Governor-serializes-non-commutative-transitions
+note; TOCTOU's *capability* fix = the witness-carrier model (carry the witness through to
+use, don't re-resolve a stale name).
+
 ### The layer map (added 2026-06-05)
 
 The master frame applies at three layers. Each layer names a refusal and a missing mediating object:

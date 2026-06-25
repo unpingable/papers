@@ -79,6 +79,12 @@ These are not candidates; they are existing kernel pieces re-labeled as launderi
 
 That's fourteen existing kernel pieces, each enforcing a specific boundary-crossing refusal. Anti-laundering kernel already in place is denser than it looks from outside — eight Lean-side, six tool-spec / tool-architecture (added 2026-05-16 after audit-loop confirmed agent_gov and NQ have the refusals coded as live doctrine, not just as kernel claims).
 
+### Bundles that masquerade as primitives (bug-spray, not shrines)
+
+Shiny compound phrases that *feel* like a new kernel but decompose into pieces already above. Logged so they don't return in July wearing sunglasses and a fake mustache.
+
+- **double turnstile** (scope entry+exit as a matched transit unit) = `RetroactiveLegitimation` (exit/post-state witness ≠ entry/pre-state authority) + Linear Accountant (`~/git/linearaccountant/`: consumed/remains, no phantom budget) + no-free-lift. Entry/exit composition is a **no-unifier-without-laundering** instance, **not a new kernel**. Dense prior art for the composition shape: session types / typestate / region calculi / Hoare scoped pre-post / RAII-bracket. Good *handle*, not a new *object*. (Bonus naming coincidence: ⊢ vs ⊨ — derivable vs semantically-true — is just `signed≠witnessed`; the pun lands on the corpus's central seam but adds nothing.) Filed 2026-06-23.
+
 ---
 
 ## Section B — Moves named, not promoted
