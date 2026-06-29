@@ -5,8 +5,12 @@
 mint a kernel, or authorize a runtime. The runtime / NQ / AG instantiation is
 **AG-claude / NQ-claude's lane** — cite, don't extract.
 
-**Provenance:** 2026-06-27 multi-model pass (ChatGPT + Gemini + Claude) after the WDC
-**1.4.0** release. Sorted, not transcribed. The version-attractor showed up cross-vendor
+**Provenance:** 2026-06-27 multi-model pass after the WDC **1.4.0** release. Sorted, not
+transcribed. (The nameplate "ChatGPT + Gemini + Claude" is the one *unwitnessed* claim in
+a note about unwitnessed claims: this session repeatedly proved the relay can't reliably
+say which instrument said what — model-attribution-signed is not model-attribution-
+witnessed, the sibling of timestamp-signed-is-not-witnessed. Nothing here load-bears on the
+attribution; the structure stands witnessed-against-the-surface regardless of who signed.) The version-attractor showed up cross-vendor
 (Gemini wrote a 1.5/1.6/1.7 roadmap convinced it was a 2.0 roadmap), so everything below
 is sorted by *does it change the calculus or carry it to the world*, not by enthusiasm.
 
