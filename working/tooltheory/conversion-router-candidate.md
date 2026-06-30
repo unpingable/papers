@@ -78,6 +78,27 @@ Optional fifth (linter-grade, not theorem): every encoded edge's
 `receipt-URI` field resolves to an existing declaration. Useful CI;
 not a theorem; calling it one would be the manufactured-receipt move.
 
+> **Overlap audit (2026-06-29).** Verdict PARTIAL-OVERLAP. Two of the four
+> theorems above are ALREADY BUILT in `~/git/lean/LeanProofs/TaxonomyGraph.lean`
+> (not a Scratch file, and not previously cited here): `Reachable` (inductive
+> transitive closure, :232) = the `Reach` relation; the positive `*_reaches_*`
+> proofs (:275–326) = **path-certificate soundness**; `reachable_stays_in_closed`
+> (:713, consumed at :787) = **closed-set certificate SOUNDNESS**. Rebuilding
+> these in a fresh module = re-derive-under-new-vocabulary, forbidden. The
+> irreducible NEW delta is **2 theorems, not 4**: (1) non-reachability
+> *completeness* — `¬Reach a b → ∃ S, ForwardClosed S ∧ S a ∧ ¬ S b` via the
+> canonical set `fun x => Reach a x ∨ x = a` (TaxonomyGraph hand-builds a bespoke
+> lane per query, never the canonical separating set); (2) edge-set
+> *monotonicity* `Reach E ⊆ Reach (E∪{e})` + the no-route-without-bridge corollary
+> — requires generalizing `Reachable` to take the edge relation as a parameter
+> (TaxonomyGraph's `edge` is a fixed `def`, so this is unstatable there).
+> Mathlib-free both ways (predicate + parameter-threading + `decide`). When the
+> Nightshift forcing case fires, build a small `ConversionRouter.lean` that
+> **imports/cites TaxonomyGraph** and adds only these two. `ReachableDrift`,
+> `NoSilentProjection`, `NoFreeStandingBridge` checked — genuinely different
+> objects, no collision. (`TopologyRouterCandidate.lean`, named below as a
+> sibling, does NOT exist in the tree.)
+
 ## Build shape (5 steps)
 
 1. **Data file** — `surfaces`, `edges {src, dst, type, receipt-URI,

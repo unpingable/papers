@@ -19,6 +19,10 @@ The keeper line from the Lean repo:
 
 The preprint's contribution is the type-level cost asymmetry. The institutional reading of that cost asymmetry — that systems where unchecked assertion is cheaper than verified assertion tend toward authorization laundering — is the subject of the sibling paper, not this one.
 
+## Terminology: what "admissibility" names
+
+**Admissibility** names the question of whether a claim, witness, transition, or artifact may serve as a premise in the current decision context — distinct from truth, validity, permission, or execution authority. Each axis kernel instantiates that question in its own sense (Axis 1: value-preservation; transition admissibility: per-transition obligation accounting). Qualify the level when it matters: admission rule/threshold, admissible status, or the admissibility question. Never read "admissible" as "executable."
+
 ## Position relative to the Δt series
 
 This preprint is **not** numbered in the Δt series. Per the topology decision in `working/admissibility-suite-spine-2026-05-28.md`:
