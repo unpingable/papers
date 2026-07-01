@@ -33,6 +33,36 @@ in a work vest.
 
 ## STATUS — steps 1–3 LANDED (2026-06-30, codex; reviewed green)
 
+**UPDATE 2026-06-30 (later same day, post-review — SUPERSEDES the custody labels
+in the bullets just below):** the resource layer was **promoted SCRATCH → public
+ANNEX**, and the certificate metadata gap was **closed by removal**.
+- The scratch files `WitnessedResourceSequent.lean` / `WitnessedResourceChecker.lean`
+  are **deleted**; their content is now public
+  `~/git/lean/LeanProofs/Witnessed/ResourceSequent.lean` + `Witnessed/ResourceChecker.lean`
+  (imported by `LeanProofs.lean`, i.e. real ANNEX surface). **Uncommitted in the
+  lean repo — James commits.** The `Witnessed/Sequent.lean` bullet below is still
+  accurate (it was already ANNEX).
+- **`ResourceCertificate` was REMOVED from the public surface.** The masquerade
+  *"cert datatype exists + `Checks` valid ⇒ cert is witnessed"* is now impossible on
+  the public API: the witnessed object is the **`Checks` relation**, not a datatype.
+  The unchecked data shape survives only as
+  `~/git/lean/LeanProofs/Scratch/UncheckedResourceCertificate.lean` (SCRATCH; thin;
+  reuses the public `ResourceFormula`, not a stale calculus twin). Re-admit only as a
+  proof-carrying `ValidatedResourceCertificate` (a `Checks` proof rides along) or as
+  executable Bool-checker data with a soundness/adequacy theorem. **This resolves
+  POCKETED TODO #2 — by removal, not by wiring.**
+- **Cut correction (web-Claude/Chatty overcorrected, then ate it):** the reachability
+  `Sequent.lean` carries cut-*admissibility* only, but public `Witnessed/Formula.lean`
+  has a **genuine positive-fragment `cut_elimination`** that eliminates a real
+  `Deriv.cut` over an `∧/∨/⊤` grammar — ND-style, *mild* (no left rules, no
+  principal-cut Hauptsatz machinery, `∨` is intro-only / inert). **NOT full Gentzen.**
+  Resource-cut (step 8 below) is still untouched. Full accounting: reachability layer
+  = cut-admissibility; positive-formula layer = genuine-but-mild cut-elimination; the
+  AG-native scalp remains `reachable ≠ executable`, not the cut trophy.
+- Provenance of the catch: import-graph audit surfaced that the reviewed scratch
+  files had *public twins* nobody had opened; the metadata gap was real on the public
+  surface, caught pre-commit. All green, `propext`-only.
+
 **Custody fence on this capture:** *steps 1–3 landed* — NOT "the runtime layer is
 implemented." What exists:
 - `~/git/lean/LeanProofs/Witnessed/Sequent.lean` — **ANNEX / ordinary shadow /
@@ -59,19 +89,111 @@ implemented." What exists:
 All green, full root build exit 0, axiom-classified (`propext`/zero-axiom; no
 `sorryAx`/`choice`/`native_decide`).
 
-**The next gate (sharpened flag #2):** *the certificate is a declared shape; it MUST
-NOT be cited as evidence until a checker/soundness theorem connects validated
-certificates to `Derives` or to a proven denial theorem.* Next codex/Lean target =
-**`checker_v0` + `cert_soundness`**, a FINITE checker (not proof search):
-```lean
--- allow certificates:
-ValidatedCertificate cert → Derives K B Γ c Δ
--- refusal certificates:
-ValidatedBridgeSpendDenial cert →
-    (ordinary_reachable ∧ ¬ resource_executable_without_token)
-```
+**Step 4 (checker_v0) LANDED 2026-06-30 (green, sorry-free, axiom-classified
+`propext`):** now public `~/git/lean/LeanProofs/Witnessed/ResourceChecker.lean`
+(ANNEX; was `Scratch/WitnessedResourceChecker.lean`, since promoted). The witnessed
+object is the **`Checks` relation** — a **position-pinned** (deterministic)
+validation relation — NOT the cert datatype (that stays unchecked scratch; see the
+UPDATE block above). `Checks` is sound+complete against `Derives`:
+- `checks_sound : Checks K B Γ c Δ → Derives K B Γ c Δ` (validated cert IS a real
+  derivation),
+- `checks_complete : Derives → Checks` (rejects nothing derivable),
+- `checks_iff_derives` (accepts **exactly** the derivable),
+- `validated_denial_sound` (the checker correctly REFUSES the token-less crossing —
+  `ordinary_reachable ∧ ¬resource_executable` at the checker level).
+
+This also **resolves the `Split` non-determinism** (web-Claude's catch): consumption
+is pinned by index via `removeAt`, with `removeAt_sound` / `split_to_removeAt`
+proving position-pinning refines `Split`. The gate **checks** the named occurrence,
+it does not **search** for a split. Scope fence: this is a Prop-level checker spec +
+soundness/completeness; a **Bool-executable** checker (needs `DecidablePred K` /
+`DecidableRel B` / `DecidableEq`) is the deliberately-deferred next step.
+
 Cut-elim and resource-cut remain at step 8 (the ordinary `cut_admissible` is the
 safe one; resource cut, the spend/residue-preserving landmine, is untouched).
+
+## The jewel (web-Claude, 2026-06-30) — needs a NON-CLAUDE check before promotion
+
+web-Claude flags `ordinary_reachability_not_resource_executability_without_token` as
+the load-bearing result, **mis-shelved under "no-contraction specimen"**: it isn't
+about contraction, it's a **validity-vs-executability separation** — `B c c'` is
+valid (persistent relation) but *crossing* spends a distinct linear `bridge c c'`
+token, so bridge-validity ≠ permission-to-cross. That's signed-is-not-witnessed at
+the calculus level.
+
+**FENCE: this is a Claude-to-Claude synthesis claim — common-mode risk.** The
+factual half (it's grouped with no-contraction but is a different phenomenon) is
+verified. The *novelty* half ("non-standard linear logic / this is the
+contribution") I would NOT promote on.
+
+### Jewel UPDATE — the adversary got relocated (web-Claude self-correction, 2026-06-30)
+
+A partial non-Claude-style check (web-Claude turning the corpus's own tools on its
+own citation) **moved the gate to the right door**:
+
+- **Wrong citation: Garg–Pfenning `says` (GP06, non-interference).** `says` is a
+  strong monad / lax modality (constructive S4 necessitation in the single-principal
+  case) — *intuitionistic, structural, reusable, never consumed.* It buys
+  validity-vs-**attribution** (`A true` vs *who vouches for A*) and is **silent on
+  consumption.** Checking the bridge-token seam against GP06 is "a clean acquittal
+  that doesn't testify" — the linear axis was never in the dock. A denial cert that
+  looks witnessed and isn't (the corpus's own distinction, self-applied).
+- **Right citation [UNVERIFIED — confirm against the actual paper, do NOT rely on
+  Claude memory, mine or web-Claude's]:** Garg, Bauer, Bowers, Pfenning, Reiter,
+  *A Linear Logic of Affirmation and Knowledge* (ESORICS 2006, LNCS 4189) — a modal
+  enrichment of LINEAR logic built specifically for **consumable authorizations and
+  resources.** If real as described, that IS this axis, occupied in 2006.
+- **Therefore the novelty claim "consumable / one-use authority decoupled from
+  validity" is DEAD** (~20 years old), and web-Claude's original "non-standard linear
+  logic" framing was too broad and partly wrong.
+- **Codex's instinct was right; its reason was sharper than stated.** Not "two
+  Claudes agree, stop" but "the citation pointed at the wrong axis." The relocation
+  is the value.
+
+**The gate STAYS UP — but the question is now tighter** (and deliberately NOT closed
+into a fresh novelty claim, which would just relocate the overclaim again). Carry
+THIS into the codex/ChatGPT check, *with GBBPR actually in hand*:
+
+> Does anything survive past GBBPR in (a) the decoupling of the crossing relation
+> `B` from the spendable token, PLUS (b) the move where erasure to the non-linear
+> membership layer is what *exposes* the over-permission — i.e. the strictness
+> receipt read as **a separation between a calculus and its forgetful shadow**, not
+> as "no contraction"?
+
+Whether that's a contribution or "GBBPR wearing our vocabulary" is **not answerable
+from any model's memory.** Two non-negotiables before promotion: (1) get GBBPR in
+hand and read it; (2) run the surviving question past a genuinely non-Claude
+reasoner. Until both: gated.
+
+## Cheap captures DONE + pocketed TODOs (2026-06-30)
+
+Done (in `WitnessedResourceSequent.lean` scope-fence prose):
+- `Split` non-determinism flagged (existence judgment, not canonical consumption).
+- Prior art cited: dual-context split (DILL, Barber–Plotkin), input/output residual
+  (Hodas–Miller), persistent floor = `!`-zone / exponential (cite-not-rename —
+  `floor` is established corpus vocabulary).
+
+**POCKETED TODO (operator wants to chew on these — do NOT lose the thread, do NOT
+act without his trigger):**
+1. **Rename the jewel** to name it load-bearing (validity-vs-executability), out of
+   the no-contraction section — GATED on the non-Claude check above.
+2. **`WitnessedResourceSequent` SCRATCH→ANNEX promotion. — ✅ RESOLVED 2026-06-30**
+   (see UPDATE block at top of STATUS). The resource layer + checker are now public
+   ANNEX (`Witnessed/ResourceSequent.lean` + `ResourceChecker.lean`), and the
+   **blocker was cleared by *removing* the `ResourceCertificate` metadata types from
+   the public surface** (not by wiring them to `Checks`) — the datatype now lives as
+   unchecked scratch (`Scratch/UncheckedResourceCertificate.lean`). The calculus +
+   checker promoted alone, exactly the "cut the metadata types" branch. Original
+   framing retained below for provenance:
+   > It's closer than typical (the conservativity tie-back `erases_to_sequent`
+   > already exists). Lighter than the 7-gate public-ship ceremony, but still
+   > custody-affecting. Route if pursued: un-fence the `LeanProofs.lean` import,
+   > freeze names (`Split`/`Consumes`/`Derives`), confirm `#print axioms` stays ≤
+   > `[propext, Quot.sound]`. **Blocker:** the `ResourceCertificate` metadata types —
+   > ANNEX shouldn't carry types whose docstrings say "not the thing it resembles."
+   > Now that `Checks`/`checks_sound` exist, either re-base the certificate on
+   > `Checks` (finish it) or cut the metadata types and promote the calculus+checker
+   > alone.
 
 ## The product path — short-circuits the theory tree
 

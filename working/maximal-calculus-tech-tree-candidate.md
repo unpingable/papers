@@ -9,6 +9,51 @@ in-progress `Sequent.lean`.
 Provenance: ChatGPT framing ("RTS tech tree — don't tech-rush Wonder before you
 have farms"), operator-driven.
 
+**UPDATE 2026-06-30 (later same day — work now inspected + reviewed green):** the
+"not yet inspected" fence is lifted. Tree 1's footing **landed and was reviewed**
+(codex + this session, `propext`-only, full build green):
+- **Immediate-next-unlock (below) is DONE:** strictness (`ordinary reachability ≠
+  resource executability without a token`) + `residue_preserved` + `erases_to_sequent`
+  are public ANNEX in `~/git/lean/LeanProofs/Witnessed/{ResourceSequent,ResourceChecker}.lean`,
+  with a sound+complete position-pinned `Checks` relation. Trees 2 (process) and 3
+  (conservation) stay locked, as the ordering demands.
+- **Bonus that jumped the queue — three distinct states, kept apart** (do NOT let
+  "presentation" read as "cut-elimination"):
+  - **(a)** `Witnessed/Formula.lean` — genuine ND-style positive-fragment
+    `cut_elimination` (real `Deriv.cut` eliminated over `∧/∨/⊤`). Mild: intro/elim,
+    no left rules, so "cut" is hypothesis substitution, never a principal-cut
+    reduction; `∨` intro-only/inert.
+  - **(b)** `Witnessed/Gentzen.lean` (landed later same day) — a *real LJ-style
+    sequent presentation*: genuine left/right rules (`andL`/`orL`/`topL` decompose
+    formulas in the context — closes Formula's "no left rules" gap at the
+    presentation level), cut-free `Seq`, with-cut `Deriv`, soundness, and an
+    embedding `CutFree → Deriv`.
+  - **(c)** Gentzen cut-elimination / **Hauptsatz** (`Deriv → Seq`) — **obstruction
+    found, then repaired; Hauptsatz still unproven** (2026-06-30/07-01, machine-checked).
+    Attempting the positive proof surfaced a negative result first: for a **head-only**
+    presentation, cut-elimination is FALSE — witness `[atom 0, atom 1 ∧ atom 2] ⊢ atom 1`
+    is derivable with cut but not head-only cut-free (exhaustive over the rules), because
+    head-only `andL` can't reach a buried conjunction. **Slice B′ repaired the live
+    calculus** to **position-general left rules** (`pre ++ _ :: post`); soundness re-proved,
+    and `buried_conjunction_now_cutfree` (zero-axiom) proves the former witness is now
+    cut-free. The head-only failure is preserved as an archived record
+    (`Witnessed/HeadOnlyGentzenCutFailure.lean`), NOT a claim about the live calculus.
+    **B″** — the actual `Deriv → Seq` over the repaired `Seq` — remains a genuine
+    (non-free) cut-elimination proof, not yet attempted.
+  **NOT full Gentzen** — still `{∧,∨,⊤}`, no implication. The conservation theorem
+  (tree 3) remains the prize and is still unbuilt. Name-fence held: no "ontology
+  fondue" constructor family appeared. *Next slice (B″): attempt `Deriv → Seq` now that
+  `Seq` is structurally honest (position-general).* Provenance: the failure→repair loop
+  is a stronger, more honest arc than a lucky first-try Hauptsatz — the calculus told us
+  its own defect, we fixed the defect, and kept the receipt.
+
+  **Custody note (operator, 2026-07-01):** pushed git state is NOT a minted claim.
+  `Gentzen.lean` is a *candidate* presentation; B′ is a candidate repair, not
+  "public-code remediation." Rule promoted to global CLAUDE.md (Register discipline:
+  *visibility is not minting*) — don't gate candidate repairs on visibility.
+- Runtime-payoff detail + the certificate-metadata-removal cleanup are in the sibling
+  note `working/admissibility-runtime-certificate-candidate.md` (STATUS UPDATE block).
+
 ## The core move: three trees, do NOT unlock in parallel
 
 ### 1. Proof-theoretic admissibility logic — the *barracks*

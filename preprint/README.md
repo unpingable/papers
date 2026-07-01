@@ -6,6 +6,35 @@ This repository contains a coherent research program on temporal coherence,
 The papers are organized chronologically by publication date. Conceptual
 dependencies are summarized below.
 
+## Corpus orientation
+
+The papers are listed by date, but **the chronological listing is not the
+dependency order** — and it is not the thesis. This is one investigation organized
+around a single question: *admissibility* — when a system, model, observer,
+controller, or institution may lawfully treat a claim as **usable**.
+
+The temporal-coherence / Δt papers are one major thread feeding that question, not
+the root of the program:
+
+```
+Admissibility — may this claim be used to authorize this consequence?
+  ├─ temporal coherence / Δt (the control-theoretic foundation)
+  ├─ cybernetic and institutional failure
+  ├─ social-epistemic collapse
+  ├─ observer / witness integrity
+  └─ formal kernels and governed software (Lean / admissibility kernels)
+```
+
+Each thread turns "what happened?" into the harder question, "may what happened be
+*used*?":
+
+> **Monitoring asks what happened. Admissibility asks whether what happened may be
+> used.**
+
+So a higher paper number is newer, not stronger; the chronological sections below
+are entry points into one investigation — not a reading order, and not a claim that
+Δt is the sovereign thread.
+
 ## Status
 
 Entries below are tagged where they are not yet released:
