@@ -4,6 +4,14 @@
 kernel or import boundary changed. A handle for review and future implementation
 slices, not authorization to build.
 
+**Lean-lane status update (2026-07-01):** Phases 1–3c are DONE in the lean repo and
+staged as **v3.0.0 — Bounded Lifecycle Calculi** (nine ANNEX bounded calculi incl.
+ExecutionCustody / BootKernel / CheckpointSettlement, promoted by operator decision;
+inventory at `~/git/lean/docs/V3-RELEASE-LEDGER.md`). Custody-Indexed Sequents
+(S0–S3 scratch, SEQ4 next) are the v3.x campaign; the custody-indexed Gentzen system
+is the v4 ambition. Phases 4–5 (AG/NQ runtime, Bridge Foundry) remain future lanes,
+untouched by v3.
+
 **Captured:** 2026-07-01 (v2 folds in the genesis/graph/runtime + transformer thread).
 **Provenance:** ChatGPT roadmap spec + an extended ChatGPT/Gemini design dialogue
 (bootstrap, receipt DAG, compiled runtime, transformer application), operator-driven;
