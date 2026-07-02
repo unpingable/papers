@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Run all five pre-push validators in sequence. Exit non-zero if any fails.
+# Run all pre-push validators in sequence. Exit non-zero if any fails.
 # Intended as a sanity check before pushing new/updated papers to Zenodo.
 #
 # Usage: tools/check_all.sh
@@ -34,10 +34,11 @@ run pdf_freshness          tools/pdf_freshness.py
 run citation_graph         tools/citation_graph.py
 run doi_validate           tools/doi_validate.py
 run formalization_crosswalk tools/formalization_crosswalk.py
+run corpus_index           tools/build_corpus_index.py --check
 
 echo
 echo "=== summary ==="
-for name in zenodo_validate metadata_schema pdf_freshness citation_graph doi_validate formalization_crosswalk; do
+for name in zenodo_validate metadata_schema pdf_freshness citation_graph doi_validate formalization_crosswalk corpus_index; do
   status="${results[$name]:-skipped}"
   printf "  %-27s %s\n" "$name" "$status"
 done

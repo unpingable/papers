@@ -106,9 +106,20 @@ python3 tools/formalization_crosswalk.py
 
 Scope is narrow on purpose: scanning paper bodies broadly produces too many false positives from JSON schema field names in backticks. Only the canonical crosswalk file and P18's Appendix A are scanned.
 
+## `build_corpus_index.py`
+
+Generates `docs/corpus.md` — the public paper table — from every `preprint/*/metadata.yaml`. The corpus index is **generated, not hand-maintained**: edit the per-paper `metadata.yaml` (the source of truth the other validators already check) and re-run.
+
+```bash
+python3 tools/build_corpus_index.py          # regenerate docs/corpus.md
+python3 tools/build_corpus_index.py --check   # exit 1 if docs/corpus.md is stale
+```
+
+Reuses `zenodo_validate.load_yaml_simple` / `find_preprint_dir`. Deterministic (numbered papers by `paper_number`, falling back to the directory prefix; then unnumbered series entries; no timestamps), so `--check` is a clean staleness guard in `check_all.sh`. Generation also surfaces metadata drift the hand-maintained index used to hide (e.g. a `series` field with a stray inline comment).
+
 ## `check_all.sh`
 
-Runs all six validators in sequence and prints a unified summary with per-check ok/FAIL status. Exit code is 1 if any check fails, 0 if all pass.
+Runs all validators in sequence and prints a unified summary with per-check ok/FAIL status. Exit code is 1 if any check fails, 0 if all pass.
 
 ```bash
 tools/check_all.sh
