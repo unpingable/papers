@@ -54,6 +54,18 @@ per calculus, conditional on admitted reads.** The corpus mandated the second co
 before the conservation framing existed. That is the evidence the framing is latent, not
 imposed.
 
+**The least-pidgin form** (2026-07-03, chart-of-accounts lens — see
+`working/chart-of-accounts-lens-candidate.md`):
+
+> **No represented delta without a posting.
+> No posting without support.
+> No support without admission.**
+
+Rung one is the totality theorem, rung two is receipt adequacy (§5), rung three is the
+read boundary. *Posting* = the booked ledger item (the trace entry); *support* = the
+evidence that makes it admissible (the `Consumes` proof / receipt) — a distinction the
+Lean always implemented and this prose previously blurred under the one word "receipt."
+
 **Scope condition (do not soften):** "no silent disappearance" is a claim about the
 *ledger*, not the world. Reality can silently rot standing, keys, custodians, hardware.
 The calculus cannot *represent* that change as governed fact until an admission or sink
@@ -452,6 +464,11 @@ custody across it. Keeper:
 
 > **Transit is not decay. Transit is a demand for custody accounting.**
 
+Primitive-altitude form (chart-of-accounts lens, 2026-07-03): *transit is an unbooked
+custody delta unless witnessed* — a witnessed handoff posts custody-preserving flux; an
+unwitnessed hop cannot be posted as preserved custody. Not "authority leaked" but "the
+books have no entry, so the ledger cannot represent survival."
+
 Not a new lane: this classifies onto existing material — Freshness kernel (witness-rot
 is a Freshness instance), `ReplaySafeActionIdentity` / `VersionBoundAction` (already
 incubated as axiom-free scratch), derived-relations-need-witnesses (a hop's
@@ -480,6 +497,18 @@ The killer clause is (c): **global μ is not merely insufficient; it is a launde
 surface.** If built, the name is hostile by construction — `GlobalScalarTrap.lean`,
 never `AuthorityMonotone.lean` — so no one (including a future operator at 1:40 a.m.)
 mistakes the clean abstraction for the real one. That way lies AuthorityCoin.
+
+**Formal hazard name (ratified 2026-07-03): Single-Account Collapse** (alias:
+Degenerate Chart of Accounts). Hostile nickname: **Franklin** — quarantined to hazard
+sections and scratch, never titles, never Lean. Precise form (chart-of-accounts lens):
+
+> **Franklin is the model where `Account` has exactly one inhabitant.** Every posting is
+> denominated in the same fake unit, so everything becomes comparable, and illegal
+> translations become merely low-ranked instead of ill-typed.
+
+Same collapse, three disguises now on record: the global scalar (μ), the generic
+interface (codex finding #4), the degenerate chart — plus the ungoverned dashboard
+(§ lens note, readout clause) as Franklin's teller window.
 
 Status: **gated.** This is new Lean beyond the authorized pilot; the five-condition gate
 applies. Classify against the Composition/Unification family row before building — it
@@ -543,3 +572,89 @@ promotion; memory records candidate status and the refused promotion only.
 
 *The right ending: the shiny metaphor got demoted, the checkable object survived —
 exactly the kind of small humiliation a useful abstraction should endure.*
+
+---
+
+## 12. The conserved-quantity question, done honestly (2026-07-03,
+post-ratification)
+
+**Provenance:** operator, same day as ratification: *"what if I opened a top-down
+research program for an actual conservation law, then?"* — the crown's third approach,
+this time dressed as an institution. Disposition: **program refused, one live question
+extracted and answered, falsifiers kept.**
+
+### 12.1 The five candidate conserved quantities, deflated
+
+The proposed program's candidates, checked against the corpus:
+
+1. **Receipted delta mass** ("every represented change has exactly one typed entry") —
+   No Silent Delta restated. Ratified §11.
+2. **Custody charge conserved across witnessed transport** — hazard §9.1, already
+   filed (*transit is a demand for custody accounting*).
+3. **Obligation/residue balance** (demand = discharge + residue) —
+   `linearize_ok_conserves`, proven, shipped in v5. It is the pilot substrate.
+4. **Ledger closure / continuity equation** — the §5 schema plus its adequacy
+   conditions.
+5. **No cross-kind conversion without a bridge term** — `JurisdictionScreen`, proven
+   in v7.
+
+Four restatements and a schema. A program over these would be an org chart over
+completed work, named after its most flattering possible outcome.
+
+### 12.2 The one live question — ANSWERED (same day)
+
+The continuity-equation form implied one thing the corpus did not yet prove:
+**two-sided balance at the bridge itself** — v7 proved a crossing *requires* a paid
+receipt, but nothing said what a crossing *costs per traversal*, or whether the bridge
+amplifies or sheds in transit. Bounded, resident-op-set, classify-don't-sculpt
+compliant (`Core`/`linearize`/`linearizeT` shipped v5/v6; profile systems shipped v7;
+all predate the question). Built as `LeanProofs/Scratch/CrossingBalance.lean` — six
+theorems, sorry-free, axioms `[propext, Quot.sound]` (the resident footprint), scratch,
+unwired:
+
+- `crossing_receipts_conserved` — the ledger line at the receipt species (stated
+  specialization of the spine law, zero new proof): receipts in custody = receipts
+  consumed + receipts remaining. Nothing minted in transit, nothing shed silently.
+- `paid_crossing_pays_exactly` — kernel evaluation: one crossing consumes its custody
+  exactly; the trace is the payment record.
+- `round_trip_cartesian_statable_but_refused` — **the teeth:** the round trip (verdict
+  → admission → verdict, each leg citing the bridge receipt) types at the Cartesian
+  layer with ONE receipt — Prop-level membership is contraction-free, so the permissive
+  layer literally cannot see the double-spend — and linearization refuses it, **naming
+  the bridge receipt itself as the offender.**
+- `round_trip_demands_two_receipts` / `round_trip_pays_both_legs` /
+  `round_trip_trace_names_both_payments` — the price, exact: two legs, two receipts,
+  both consumed, and the positional trace names which occurrence paid which leg. The
+  trip ends at `probeVerdict` — where it started, two receipts poorer.
+
+Keeper: **a bridge prices each traversal; the return leg is not a refund.**
+
+Status effect: the family now has **two green instances** of the law-shape (v5
+normalization, v7 crossing) with no shared interface between them. The family claim
+strengthens; the name does not move (§11 stands — promotion still refused). The full v7
+`balance_classification` over JurisdictionScreen/coverage remains the optional
+replication target, untouched.
+
+### 12.3 Falsifiers (kept from the refused program — the good part)
+
+The family claim weakens or fails if:
+
+- balance terms turn out to be post-hoc labels (receipt presence without delta
+  discharge);
+- operation sets must be rewritten to satisfy the law;
+- receipt classes become fungible;
+- refusal/residue gets erased as "slack";
+- the law works only through a global scalar;
+- boundary-admission honesty gets smuggled into Lean assumptions.
+
+### 12.4 Tombstone: no Authority Conservation Research Program
+
+Do not open a program named for the hoped-for conclusion. A program title is a standing
+prompt-injection into future sessions — fresh contexts re-derive available vocabulary
+(kernel-overlap audits, repeatedly) — so "Authority Conservation Research Program" as a
+directory name would eventually manufacture its own crown. The hostile research program
+already exists and refuses the flattering name: this note's audit table (recon-grade
+rows still to verify), the v7 replication target with the classify-don't-sculpt rule,
+the gated hazards (§9), and the falsifier list above. **Fourth-mustache watch:** if "a
+conservation law for authority" returns under any new vocabulary, deflate it against
+§12.1 first.
