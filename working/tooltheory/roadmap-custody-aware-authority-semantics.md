@@ -12,6 +12,15 @@ inventory at `~/git/lean/docs/V3-RELEASE-LEDGER.md`). Custody-Indexed Sequents
 is the v4 ambition. Phases 4–5 (AG/NQ runtime, Bridge Foundry) remain future lanes,
 untouched by v3.
 
+**Posture update (2026-07-03):** four exposition/witness lanes named alongside the
+build lanes — ops autopsy register · NQ witness lane · book/Zenodo exposition · public
+receipts language — see `working/four-lanes-and-the-bridge.md` (candidate posture note,
+not build authorization). The next working session is a **skeleton pass** (five
+questions: exists / proves / refuses / public-handle→formal-object map / body placement
+of Lean-AG-NQ-LA-Porter-Maude; full context capsule in that note), NOT SEQ4 and NOT new
+primitives. SEQ4 / the v4 Gentzen system remain this lane's next steps *after* the
+skeleton; §15 is otherwise unchanged.
+
 **Captured:** 2026-07-01 (v2 folds in the genesis/graph/runtime + transformer thread).
 **Provenance:** ChatGPT roadmap spec + an extended ChatGPT/Gemini design dialogue
 (bootstrap, receipt DAG, compiled runtime, transformer application), operator-driven;
