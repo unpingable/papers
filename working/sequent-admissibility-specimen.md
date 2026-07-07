@@ -1,9 +1,13 @@
 # The Admissibility Specimen: a kernel-checked sequent calculus with cut
 
-*Status:* CANDIDATE / working note, filed 2026-07-06.
-*Lean custody:* `~/git/lean/LeanProofs/Scratch/SequentAdmissibility.lean`
-(Custody-Class: SCRATCH, unwired, sorry-free, zero axiom declarations;
-`lake env lean` EXIT=0; full `lake build` EXIT=0, 2026-07-06).
+*Status:* CANDIDATE / working note, filed 2026-07-06; **stage 2 same day**
+(see "Stage 2" below — promoted out of Scratch, textbook-G3ip equivalence
+proved, committed and pushed).
+*Lean custody:* `~/git/lean/LeanProofs/ProofTheory/MembershipG3/Specimen.lean`
+(Custody-Class: UNRATIFIED-CANDIDATE; moved verbatim from
+`LeanProofs/Scratch/SequentAdmissibility.lean`, header+namespace only edits;
+own `ProofTheory` lean_lib, Mathlib-free by build-graph enforcement;
+`lake build` EXIT=0, pushed at `445b175`, 2026-07-06).
 *Provenance:* operator-supplied 2026-07-06, downstream of an external ChatGPT
 design autopsy (the "adversarial clown show that accidentally became a design
 review"). The external session located the correct encoding but had no
@@ -103,3 +107,56 @@ doctrine. This is a sequent calculus that happens to be the pun's spine.
   (terminating proof search) as escalation rungs.
 - **Doctrine specimen**: candidate proof narrative → rejected;
   kernel-checked derivation transformer → admitted.
+
+---
+
+## Stage 2 (2026-07-06, same day): A + B + C all landed
+
+Operator authorized commit+push on the lean side and asked for all three
+escalation options. All three shipped, commits `88a4c7f` + `445b175` on main.
+
+**A — Hardening/promotion.** Moved verbatim out of Scratch to
+`LeanProofs/ProofTheory/MembershipG3/Specimen.lean`, Custody-Class
+UNRATIFIED-CANDIDATE, under the rule *wire as specimen/library, not as
+doctrine/kernel/unifier*. New `ProofTheory` lean_lib (default target,
+Mathlib-free by build-graph enforcement, mirroring Witnessed).
+`Audit.lean` puts `#print axioms` receipts INTO the build — footprint
+drift becomes CI-visible. House gates pass: `audit-axioms.sh` PASS,
+`check-custody-classes.sh` PASS.
+
+**C — Textbook calculus.** `TextbookG3ip.lean`: multiset-faithful G3ip as
+lists-quotiented-by-permutation — erasing left rules carry
+`Γ.Perm (principal :: Δ)` side-conditions, so multiplicity is real and
+contraction is NOT absorbed; `impLT` keeps its principal in the left
+premise (the textbook rule). No structural rules primitive; exchange
+admissible and size-preserving.
+
+**B — Equivalence, both directions.** `toDeriv` (textbook → specimen,
+cheap) and `toDerivT` (specimen → textbook — the direction that must pay:
+any such embedding implies contraction admissibility, so there is no
+dodge). The bill was paid in full: size-nonincreasing inversion package
+(`invAnd`/`invOr`/`invImp`, bounds carried in subtype returns) +
+`ctrInner`/`contractT` (contraction admissible, size-nonincreasing, strong
+induction on size, fueled exactly like the specimen's cut). Payoff:
+**cut, weakening, and general identity for textbook G3ip fall out as
+transport corollaries** (`cutT`, `weakenT`, `initGenT`), plus
+`consistencyT` and `disjunction_propertyT`.
+
+**Receipt delta.** Specimen `cannot_testify (a)` — "syntactic identity
+with textbook G3ip unproved" — is now DISCHARGED at derivability level.
+Still outside the receipt: a Mathlib `Multiset`-typed rendition (the
+island is deliberately Mathlib-free; List+Perm IS the multiset with its
+quotient explicit) and height-preserving cut.
+
+**Axiom receipts (Audit.lean, in-build):** zero user axiom declarations;
+everything ≤ {propext, Quot.sound}; **zero Classical.choice** — the whole
+two-calculus development is constructive. monotone / weaken / contract /
+exchange / initGen / consistency / disjunction_property: no axioms at all.
+
+**Two new portable Lean scars (both in the file header):**
+1. Core's `List.perm_cons_erase` is proved classically — it injects
+   `Classical.choice` into every downstream receipt. Local `permConsErase`
+   (induction on the membership proof) keeps [propext].
+2. `omega` on a CONJUNCTION GOAL emits a choice-dependent proof; on single
+   inequalities and with ∧-hypotheses it is clean. Split ∧-goals manually
+   (`exact ⟨by omega, by omega⟩`) when the footprint matters.
