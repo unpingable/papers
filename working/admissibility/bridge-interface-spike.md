@@ -39,13 +39,13 @@ The architectural constraint: each bridge owns one column and may consult only a
 | **IndexBridge** | `Index` | `surfaceScopePolicy : Modality → ClaimKind → String → String → Bool` | source: `modality, claimKind, index.surface`; target: `modality, claimKind, index.surface` |
 | **ModalityBridge** | `Modality` | `allowedModalTransition : ClaimKind → ResourceClass → Modality → Modality → Bool`; `isDemotionPolicy : Modality → Modality → Bool` | source: `modality, claimKind, resource`; target: `modality` |
 | **ClaimKindBridge** *(added 2026-06-08, flat β patch)* | `ClaimKind` | `allowedClaimKindTransition : ClaimKind → ClaimKind → Bool` *(no Modality parameter — deliberately flat)* | source: `claimKind`; target: `claimKind`. **Does NOT read modality, resource, index, or any other column.** Fires on every claim-kind transition. Cascade order (ClaimKindBridge after ModalityBridge) handles overlap with cross-modality cases. |
-| **ProtocolBridge** | (cross-column protocol invariants) | `custodyRequirement : Modality → ClaimKind → Bool` (stub) | none (no specimen forces it) |
+| **ProtocolBridge** | (cross-column protocol invariants) | `custodyRequirement : Modality → ClaimKind → Bool` (stub) | none in the current spike; a coherent protocol specification may precede a specimen |
 
 **No bridge inspects:**
 - `Index.actor`, `Index.time`, `Index.scope` — these columns are not exercised by any specimen. Candidate for future bridge interfaces.
 - The "whole State" — by construction, each bridge function pattern-matches on the named subset only. Verified by code inspection in the Lean file's docstrings.
 
-**Interface deliberately stubbed (not authorized to build):**
+**Interfaces deliberately stubbed in this spike's scope:**
 - `freshnessKey : Index → ClaimKind → FreshnessKey` (ResourceBridge candidate)
 - `budgetPolicy : Modality → ClaimKind → BudgetPolicy` (ResourceBridge candidate)
 - `temporalPolicy : Modality → ClaimKind → TemporalPolicy` (IndexBridge candidate)
@@ -53,7 +53,7 @@ The architectural constraint: each bridge owns one column and may consult only a
 - `authorizationEvidencePolicy : ClaimKind → Index → Bool` (ModalityBridge candidate)
 - `terminalStatePolicy : Modality → ClaimKind → TerminalPolicy` (ProtocolBridge candidate)
 
-None of these are forced by the five specimens. They are named here for traceability; the discipline is *interfaces grow with forcing specimens, not by anticipation.*
+None of these is exercised by the five specimens. They are named here for traceability. A coherent interface specification may be formalized in Scratch before a specimen exists and may lead later code; specimens remain useful for priority and stress testing, not permission. Public promotion and runtime conformance remain separate.
 
 ## Cascade ordering and ownership assignment
 
@@ -194,14 +194,14 @@ Three candidates were originally recorded:
 β implementation choices:
 - **Position in cascade:** between ModalityBridge and ProtocolBridge.
 - **Firing guard:** `s.modality = t.modality` — ClaimKindBridge only owns intra-modality claim-kind transitions. Cross-modality drift remains ModalityBridge's territory. This preserves the uniqueness-of-ownership invariant.
-- **Policy:** identity-only baseline (`allowedClaimKindTransition _ c1 c2 = decide (c1 = c2)`). No transitions licensed. A future forcing specimen can introduce licensed transitions explicitly (e.g., `risk_score → obligation_claim` if such a lawful escalation needs to be modeled).
+- **Policy:** identity-only baseline (`allowedClaimKindTransition _ c1 c2 = decide (c1 = c2)`). No transitions licensed. A future coherent policy or specimen can introduce licensed transitions explicitly (e.g., `risk_score → obligation_claim` if such a lawful escalation needs to be modeled).
 - **Interface name:** `allowedClaimKindTransition : Modality → ClaimKind → ClaimKind → Bool`.
 
 #### What this discovery does NOT claim
 
 - Not a candidate irreducible result. The S6a accept is *unowned*, not *unrefutable*. A future bridge addition (α / β / γ) could own it.
 - Not a method failure. The spike exists to surface such gaps; S6a is the spike doing its job.
-- Not authorization to add a new column. ClaimKind already exists as a column-typed field; the question is whether it needs its own *owner* (bridge), not whether the column is missing.
+- Not evidence that a new column is needed. ClaimKind already exists as a column-typed field; the question is whether it needs its own *owner* (bridge), not whether the column is missing.
 - Not a paper claim. The discovery is methodological; no public artifact updated.
 
 ### Specimen 5 — advisory risk_score → enforcement enforcement_action (ambiguity probe)
@@ -354,12 +354,12 @@ The S6a row is the **central result of the effect-grounding pass.** Pre-groundin
 
 > *Force* is not a separate axis; it is a *severity* read from the effect signature. The question is no longer "is there a force ledger" but "is there ever a claim-kind transition that the flat policy refuses but the effect-severity discipline would license?"
 
-If a future specimen wants `risk_score → risk_score_v2` (hypothetical force-neutral refinement, both `.record_only` severity), the flat policy refuses it (claim-kinds differ) while the severity discipline would have no severity objection. That would be the forcing case for either:
+If a future specimen wants `risk_score → risk_score_v2` (hypothetical force-neutral refinement, both `.record_only` severity), the flat policy refuses it (claim-kinds differ) while the severity discipline would have no severity objection. That specimen would provide a useful instantiation and stress test for either:
 
 - a richer policy that allows licensed equi-severity transitions, or
 - a deeper question about whether equi-severity-but-different-claim-kind is meaningful at all.
 
-Recorded as the next forcing-case shape. Not built; the dumb bridge stays dumb until the specimen actually forces it.
+Recorded as the next stress-test shape. The richer policy is currently parked by priority, not blocked on the specimen: a coherent specification or countermodel may be formalized in Scratch first and may lead later bridge code. Scratch cannot testify for production; adopting this contract would still require an explicit runtime mapping plus evidence or a refinement proof.
 
 ## Strongest claim available after flat-β
 
@@ -376,17 +376,17 @@ Future specimens may force:
 
 The first three are routine spike findings; the fourth would be a substantive result worth its own analysis.
 
-## Candidate new columns / interfaces (named, not authorized)
+## Candidate new columns / interfaces (named, outside this spike's scope)
 
-Each of the following would be motivated by a specimen that the current interfaces cannot cleanly own. None is built; all are recorded for traceability:
+Each of the following could be motivated by a coherent specification or by a specimen that the current interfaces cannot cleanly own. None is built in this spike; all are recorded for traceability:
 
-- **freshnessKey** (ResourceBridge): forced by any specimen where the *time-since-witness* matters for resource admissibility (e.g., stale witness becoming inadmissible). Not exercised.
-- **budgetPolicy** (ResourceBridge): forced by any specimen involving `affine_budgeted` or `counted_token` consumption. Not exercised.
-- **temporalPolicy** (IndexBridge): forced by any specimen where target's `Index.time` must be strictly later than source's. Not exercised.
-- **actorScopePolicy** (IndexBridge): forced by any specimen where actor identity is load-bearing for admissibility (cross-actor transitions). Not exercised.
-- **authorizationEvidencePolicy** (ModalityBridge): forced by any specimen where the `authorized` modality requires explicit evidence at the Index altitude. Not exercised in current spike — the modality-table is currently structural.
-- **terminalStatePolicy** (ProtocolBridge): forced by any specimen where terminal-state custody matters (e.g., enforcement-action records must be terminal-state-bound). Not exercised; ProtocolBridge is a stub.
-- **Candidate fifth column: Provenance / Evidence-Origin** — currently encoded implicitly in `ClaimKind`; a specimen where two transitions agree on (resource, modality, claimKind, index) but differ on *evidence origin* would force a fifth column. Not exercised.
+- **freshnessKey** (ResourceBridge): exercised by a case where the *time-since-witness* matters for resource admissibility (e.g., stale witness becoming inadmissible).
+- **budgetPolicy** (ResourceBridge): exercised by a case involving `affine_budgeted` or `counted_token` consumption.
+- **temporalPolicy** (IndexBridge): exercised by a case where target's `Index.time` must be strictly later than source's.
+- **actorScopePolicy** (IndexBridge): exercised by a case where actor identity is load-bearing for admissibility (cross-actor transitions).
+- **authorizationEvidencePolicy** (ModalityBridge): exercised by a case where the `authorized` modality requires explicit evidence at the Index altitude. The current modality table is structural.
+- **terminalStatePolicy** (ProtocolBridge): exercised by a case where terminal-state custody matters (e.g., enforcement-action records must be terminal-state-bound). ProtocolBridge is currently a stub.
+- **Candidate fifth column: Provenance / Evidence-Origin** — currently encoded implicitly in `ClaimKind`; a case where two transitions agree on (resource, modality, claimKind, index) but differ on *evidence origin* would expose the need for a fifth column.
 
 ## Implementation notes
 

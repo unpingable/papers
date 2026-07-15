@@ -201,7 +201,7 @@ The v3 file in claude-web's sandbox carries items 1–7 below. The kernel is **"
 
 ## Sketch shape (NOT a build spec — name-early only)
 
-See § The kernel shape, § The conservation law, and § v2 → v3 patch list above. The full v2 `.lean` source is in claude-web's sandbox; v3 (with the envelope theorem) would extend it. Both are category-2 scratch per the BoundaryTransit pattern — **not** to be imported into `LeanProofs.lean`, **not** to be promoted without a downstream consumer.
+See § The kernel shape, § The conservation law, and § v2 → v3 patch list above. The full v2 `.lean` source is in claude-web's sandbox; v3 (with the envelope theorem) would extend it. Both are category-2 scratch per the BoundaryTransit pattern — **not** imported into `LeanProofs.lean` and not public testimony. Public promotion requires a separate proof, overlap, custody, and compatibility review; a downstream consumer may supply evidence but is not mandatory permission.
 
 ## Phrasing note (load-bearing)
 
@@ -210,8 +210,8 @@ Per the master frame's audit-unit framing: the kernel does NOT prove "no other a
 ## Non-claims
 
 - **Not a build spec.** v2 + the envelope theorem describe candidate shapes; the actual module would be designed against existing kernel conventions and Cedar-style differential-randomized-testing if/when promoted.
-- **Not authorization to build.** Name-early per [[feedback-name-early]]. The forcing case for promotion would be a policy-evolution / amendment-discipline / waiver-renewal consumer needing typed-refusal at the surface-deformation altitude.
-- **Not a position** on whether `LeanProofs/Admissibility/SurfaceDeformationRequiresCoupling.lean` should ever join the import surface. If it lands at all, it lands in `Scratch/` first per the BoundaryTransit pattern; promotion requires a real consumer.
+- **Not an automatic build queue.** Name-early per [[feedback-name-early]]. A bounded Scratch probe may proceed when the kernel shape, conservation theorem, overlap, and controls are coherent. A policy-evolution / amendment-discipline / waiver-renewal consumer would supply priority and correspondence evidence, not permission.
+- **Not a position** on whether `LeanProofs/Admissibility/SurfaceDeformationRequiresCoupling.lean` should ever join the import surface. If it lands at all, it lands in `Scratch/` first per the BoundaryTransit pattern; public promotion requires a separate custody and compatibility review, not a mandatory consumer.
 - **Not part of any `NoLift/` / `NoSilentJoin/` / `NoChainMagic/` parallel directory.** Layer tags only.
 - **Not a model of all institutional policy evolution.** Scope fence — single-step deformation, scope/horizon/anti-retroactivity bounded, no coercive category change at this abstraction.
 

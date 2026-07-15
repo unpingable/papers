@@ -20,11 +20,11 @@ This note does not introduce a new primitive. It records which sense lives where
 
 ### 2. Standing-as-operational
 
-**Where it lives:** [`../commitment-standing-decay-candidate.md`](../commitment-standing-decay-candidate.md) (candidate primitive; Lean module name `CommitmentStanding.lean` reserved, not built).
+**Where it lives:** [`../commitment-standing-decay-candidate.md`](../commitment-standing-decay-candidate.md) (candidate doctrine) and the checked, fenced formal slice at `~/git/lean/LeanProofs/Scratch/CommitmentStanding.lean`.
 
 **What it names:** Set-membership of a declared commitment in the admissible-action set at time `t`: `standing(C, t) := C ∩ A(t) ≠ ∅`. Operational revocation = the intersection becomes empty while rhetoric still asserts `C`. Time axis is the viability / action-selection axis.
 
-**What destroys it:** the viability set `V_t` shifting such that no admissible action satisfies `C`. Not evidence-horizon expiry; not an explicit revocation event.
+**What destroys it:** a state in which no admissible action satisfies `C`. A viability-set shift may produce that state, but monotone shrinking alone does not guarantee it eventually occurs; the Scratch countermodel makes this explicit. Not evidence-horizon expiry; not an explicit revocation event.
 
 ### 3. Standing-as-provable-now
 

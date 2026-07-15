@@ -2,14 +2,18 @@
 
 > *Historical working note. "Maximal calculus" here names the unified object this stack refuses to be; the register catalogues cases that would have forced its construction. Post-2026-06-03 synthesis closure, no unified calculus is the target — the cases below remain valid as per-kernel forcing material, not as gates on a unification target.*
 
-**Status:** Forcing-case register, filed 2026-06-01. NOT a roadmap.
-NOT a plan. NOT an Axis-3 promotion. NOT to be worked.
+> **Policy supersession (2026-07-14).** “File now, work never until forced” and the active-work gate below are preserved as dated priority history, not as permission rules. A coherent per-kernel claim, model, countermodel, or specification may be formalized in Scratch before any runtime case or consumer exists and may lead later code. These cases remain valuable stress tests and promotion evidence. Scratch cannot testify for or pin production; conformance requires an explicit mapping plus runtime evidence or a refinement proof.
 
-The register's job is to be the container that catches forcing cases
-when they show up. Cases will surface during the value-sound-gates
+**Status:** Forcing-case register, filed 2026-06-01. NOT a roadmap.
+NOT a plan. NOT an Axis-3 promotion. Per-kernel Scratch work may
+proceed under the 2026-07-14 correction; the register itself does not
+promote or testify for that work.
+
+The register's job is to be the container that catches stress cases
+when they show up. Cases may surface during the value-sound-gates
 paper drafting (or from adversarial review, or in the wild); the
-register's existence prevents losing them. *File now, work never
-(until something forces it).*
+register's existence prevents losing them. They can prioritize and
+test formal work, but they do not grant permission to begin it.
 
 **Provenance:** Multi-model collaboration 2026-06-01. ChatGPT drafted
 the six candidate cases and the structural shape. Claude-web (Opus
@@ -37,8 +41,10 @@ break is named, not rebuilt from scratch.
   families.
 - Necessity is slice-indexed, not universal.
 
-The maximal calculus opens when one or more of these assumptions
-becomes untenable.
+A per-kernel frontier investigation becomes relevant when one or more
+of these assumptions is deliberately relaxed or shown untenable. A
+coherent formal statement may establish that frontier before a
+runtime instance exists.
 
 ## Maximal calculus claim candidate
 
@@ -194,10 +200,11 @@ Each forcing case carries five fields:
   legitimation (#2).
 - **Geometry.** Self-reach (the system reaches into its own
   authorization layer).
-- **Status.** First formally tractable case. Most likely the first to
-  get Lean work, when forced. Bridges between formal calculus and
-  institutional reading (enfranchisement, recognition, who counts as
-  a witness).
+- **Status.** First formally tractable case. It may receive Lean work
+  as soon as its scoped statement is coherent; a concrete case would
+  add priority and instantiation evidence. Bridges between formal
+  calculus and institutional reading (enfranchisement, recognition,
+  who counts as a witness).
 
 ### Case #5 — Crisis-mode value substitution
 
@@ -270,14 +277,14 @@ The register explicitly refuses to decide:
 - Whether reflective adoption belongs in the formal calculus or in a
   separate human-facing layer.
 - Which case is "first." Most-important (#3) and first-tractable
-  (#4) are different cases; the order opens when a forcing case
-  forces it.
+  (#4) are different cases; development order may follow a coherent
+  formal cut, while runtime cases provide priority and stress tests.
 - Any Lean shape. No modules, no predicates, no theorems.
 
-## Promotion gate
+## Historical active-work priority rubric
 
-A case promotes from "registered" to "actively worked" only when all
-three hold:
+The 2026-06 register moved a case from "registered" to "actively
+worked" only when all three held:
 
 1. A forcing case shows up in writing the value-sound-gates paper,
    in adversarial review, or in the wild.
@@ -287,8 +294,10 @@ three hold:
    is forcing — i.e., the forcing case itself names which assumption
    broke.
 
-Until all three: registered, not worked. The register stays a
-register.
+Under the 2026-07-14 correction, these criteria still identify a
+well-motivated and externally stressed case, but they are not a
+formal-development gate. A coherent Scratch formalization may lead;
+public promotion remains a separate custody decision.
 
 ## Related records
 

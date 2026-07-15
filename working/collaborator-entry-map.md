@@ -94,7 +94,7 @@ Norms first; concrete shapes in the next section.
 
 This corpus is **spec-led and boundary-sensitive**. That means three things in practice:
 
-1. **Stable vs experimental is labeled.** Published preprints are stable. Lean modules with `lake build` green are stable. Working notes are explicitly probes — many will not survive contact with the next round of explanation. Don't treat working/ as doctrine.
+1. **Stable vs experimental is labeled.** Published preprints are stable. A green Lean check establishes proof-check status only; custody headers distinguish public imported modules, annexes, checked Scratch, and other experimental surfaces. Working notes are explicitly probes — many will not survive contact with the next round of explanation. Don't treat working/ or checked Scratch as doctrine.
 2. **The kernel stays narrow on purpose.** The discipline of refusal is load-bearing. Proposals to expand Wicket into a policy DSL, generalize the admissibility verdict space, or add orchestration concerns will be declined regardless of how reasonable they sound in isolation.
 3. **Doctrine is named, not implicit.** When a piece of work is doctrine (the seven-part admissibility decomposition; the two-route composition discipline; the *adapters may sprawl, kernel must not* invariant), it is named as such. When it is not, it is candidate. Confusing the two is the most expensive mistake an outside contributor can make.
 

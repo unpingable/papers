@@ -1,6 +1,6 @@
 # Custodian-Binding Accountability — candidate refusal kernel
 
-**Filed:** 2026-06-04. **Status:** name-early candidate; **not authorized to build** as a Lean kernel until a downstream consumer requires the distinction mechanically.
+**Filed:** 2026-06-04. **Status:** name-early candidate; not yet extracted to Lean. Formalization may lead later code work and does **not** wait for a downstream consumer. The remaining admission questions are intrinsic: whether the proposition is non-duplicative, whether the binding-edge predicate can be stated without smuggling in a concrete substrate, and whether the positive and collapse controls pay for a distinct Scratch specimen. Public promotion remains a separate custody decision.
 
 **Family:** custodian binding (see [`anti-laundering-doctrine-map.md`](anti-laundering-doctrine-map.md)).
 
@@ -32,28 +32,28 @@ These are operational shapes — descriptive, not exhaustive — where the bad i
 
 Cases 1, 2, and 3 are the load-bearing failure modes for this candidate. 4 and 5 are co-failure modes that already live in adjacent rows of the doctrine map but tend to surface together with custodian-binding failures.
 
-## What a kernel would look like (if forced)
+## What a Scratch formalization could look like
 
 Sibling to `RecoveryMargin` / `ClosureEligibility` / `ConsolidationDenial` in the Lean repo's annex — same "visible X ⇏ substantive Y" pattern, same one-shot existential-countermodel shape. Likely a module name like `CustodianBinding.lean` or `InstrumentationNotAccountability.lean`, with:
 
 - A small relational model (observation edges, binding edges, a custodian predicate).
 - A theorem of the form: `∃ S, ObservationEdge S ∧ ¬ ∃ c, BindsCustodian c S` (an instrumented regime with no binding edge exists, by construction).
-- A scope fence naming what the kernel doesn't claim (it doesn't define what counts as a binding edge in any concrete substrate; that lives in the consumer).
+- A scope fence naming what the kernel doesn't claim (it doesn't define what counts as a binding edge in any concrete substrate; that belongs to a later correspondence mapping).
 
-The verdict surface would naturally include states like `instrumented-only`, `no-custodian-binding`, and `admissible-with-scope`, but the exact verdict types belong to the consumer that forces the kernel, not to this candidate. Specifying them now would prejudge the forcing case.
+The verdict surface could include states like `instrumented-only`, `no-custodian-binding`, and `admissible-with-scope`, but a portable theorem need not prejudge the verdict vocabulary of a later runtime mapping.
 
-## Forcing case
+## Runtime correspondence targets
 
-A consumer that needs to mechanically distinguish "this system is observed" from "this system is accountably covered." Candidate forcing consumers include any preflight / admissibility check that ingests instrumentation evidence and emits coverage claims. The first concrete one wins; the kernel earns construction the moment a downstream classifier needs to refuse the promotion.
+A preflight or admissibility checker that ingests instrumentation evidence and emits coverage claims is an obvious correspondence target. Such a target can validate the abstraction and later supply conformance evidence; it is not permission to begin the formalization.
 
 Per the doctrine of [`no-unifier-without-laundering.md`](no-unifier-without-laundering.md): the kernel, if built, would be a bridge-law specimen at exactly the kind of cross-surface seam the doctrine names. Observation surfaces and accountability surfaces are distinct refusal surfaces; bridges between them must name which one they pay.
 
 ## What this candidate is NOT
 
-- **Not authorization to build.** Name-early per the corpus's standing discipline; ratify-lazily, implement-only-when-forced.
-- **Not a paper.** Doctrine-shape at most. Operational shape until something forces the formalization.
+- **Not automatic promotion.** A Scratch proof may be built before ratification; importing it into a public surface remains a separate overlap, scope, proof, and custody decision.
+- **Not a paper.** Doctrine-shape at most. The candidate can remain a narrow formal refusal without becoming a public thesis.
 - **Not a new family.** Lives in the custodian-binding row of the [doctrine map](anti-laundering-doctrine-map.md). The row exists; this is its first named candidate.
-- **Not specific to any one consumer.** The candidate is portable; it names the refusal generically. Concrete verdict surfaces and binding-edge predicates belong to the consumer that forces it.
+- **Not specific to any one runtime.** The candidate is portable; it names the refusal generically. Concrete verdict surfaces and substrate-specific binding-edge mappings live in correspondence artifacts.
 
 ## Cross-references
 
@@ -61,4 +61,4 @@ Per the doctrine of [`no-unifier-without-laundering.md`](no-unifier-without-laun
 - Composition discipline: [`no-unifier-without-laundering.md`](no-unifier-without-laundering.md) (cross-surface promotion requires a paid bridge tax; this candidate, if built, would be such a bridge).
 - Sibling refusal kernels (annex, Lean): `~/git/lean/LeanProofs/Admissibility/RecoveryMargin.lean`, `ClosureEligibility.lean`, `ConsolidationDenial.lean` — same structural pattern, different refusal surfaces.
 - Adjacent doctrine map rows: witness-identity / provenance (sample lineage), declaration-completeness (coverage scope), freshness (sample staleness). Custodian-binding failures co-occur with these but are not identical to them.
-- **Related face, not discharged here:** `NoFreeStandingReadout` (`~/git/lean/LeanProofs/Scratch/NoFreeStandingReadout.lean`, scratch; doctrine note [`standing-as-readout-no-free-standing-readout.md`](standing-as-readout-no-free-standing-readout.md)) models `CanRead ⊬ MayReadout` only as a **structural absence** (no capability constructor) while building the *readout regress*. The capability/authority countermodel itself remains part of THIS candidate and is **not** re-proved there — so the overlap doesn't get rediscovered later as a new seam, and this candidate stays unbuilt/undischarged until its own forcing case arrives. (The regress — non-root readout cannot self-ground — is the genuinely new piece and is NOT contained in custodian-binding.)
+- **Related face, not discharged here:** `NoFreeStandingReadout` (`~/git/lean/LeanProofs/Scratch/NoFreeStandingReadout.lean`, scratch; doctrine note [`standing-as-readout-no-free-standing-readout.md`](standing-as-readout-no-free-standing-readout.md)) models `CanRead ⊬ MayReadout` only as a **structural absence** (no capability constructor) while building the *readout regress*. The capability/authority countermodel remains part of THIS candidate and is **not** re-proved there. That overlap must be audited before a new file is added; it is an intrinsic non-duplication gate, not a wait for a forcing case. (The regress — non-root readout cannot self-ground — is the genuinely new piece and is NOT contained in custodian-binding.)

@@ -292,7 +292,11 @@ The rest is machinery.
 
 ## 9. Repo skeleton
 
-**Suspiciously buildable. Do not implement without a forcing case.** Kept here as evidence the artifact has implementable shape, not as a build queue.
+**Suspiciously buildable, but not an automatic build queue.** A precise protocol
+contract, threat model, or countermodel may be formalized before a deployment exists
+and may lead the implementation. Runtime construction still needs a scoped owner,
+integration boundary, and custody review; it does not need an incident to grant
+permission.
 
 ```text
 adversarial-witness-protocol/

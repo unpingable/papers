@@ -1,7 +1,10 @@
 # Two generic RTC encodings — dedup debt (CANDIDATE)
 
-**Status:** CANDIDATE / non-binding. A handle for review, NOT authorization to
-build. No forcing case yet; resolve when reachability consumers stabilize.
+**Status:** CANDIDATE / non-binding. A handle for review, not a ratification
+receipt. The dedup decision does not wait for a forcing case: resolve it when
+the axiom/import audit identifies a safe single source of truth and the adapter
+proofs make the migration non-destructive. Consumers affect migration timing,
+not permission to perform the formal analysis.
 
 **Filed:** 2026-06-30 (operator-requested, post reachability-consolidation slice).
 
@@ -43,12 +46,12 @@ It is honest *only while flagged*. Left to fossilize, a future reader can't tell
 the duplication was deliberate axiom-hygiene vs. an orphan re-derivation, and the
 closed-lane theorem now has two maintenance sites that can drift.
 
-## Resolution trigger (forcing case, not now)
+## Resolution criterion
 
-Resolve when reachability consumers stabilize — concretely, when the Nightshift
-forcing case fires and `ConversionRouter.lean` gets built (the 2-theorem delta
-over `TaxonomyGraph`, see `conversion-router-candidate.md` and
-`[[project-tooltheory-lean-incubation]]`). At that point decide ONE of:
+Resolve once the post-demotion axiom/import audit and adapter proofs can choose a
+single source of truth without widening dependencies. `ConversionRouter.lean`
+and Nightshift remain useful correspondence and migration-pressure examples,
+but neither authorizes the refactor. Decide ONE of:
 
 1. Pick `TaxonomyGraph.ReachableBy` (edge-parameterized) as the single generic
    RTC and adapter-localize `ReachabilityClosure.Reach` onto it — IFF the
@@ -56,8 +59,9 @@ over `TaxonomyGraph`, see `conversion-router-candidate.md` and
 2. Keep both but make one provably an adapter of the other (one `iff` theorem),
    so there is a single source of truth even if two names survive.
 
-Do NOT mint a third encoding. Do NOT build either resolution speculatively —
-this note is the handle, the forcing case is the authorization.
+Do NOT mint a third encoding. Formalize the adapter/equivalence first; migrate
+call sites only after the axiom footprint and import direction stay clean. This
+note is a review handle, not a consumer-controlled authorization token.
 
 ## Receipts
 

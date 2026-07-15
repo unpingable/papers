@@ -6,9 +6,11 @@
 >
 > **Operative primitive.** *Local carryability.* See §The primitive below.
 >
-> **Filed as candidate primitive, not doctrine.** The prose stack is rich; the Lean residue is narrow; the temptation to backfill prose into fake formal certainty is the primary failure mode. *Worked examples gate promotion; the Lean splinter stays humble and local.*
+> **Filed as candidate primitive, not doctrine.** The prose stack is rich; the Lean residue is narrow; the temptation to backfill prose into fake formal certainty is the primary failure mode. *Worked examples inform doctrine promotion; they do not authorize formalization. The Lean splinter stays humble and local.*
 
-**Status:** Candidate primitive at tooltheory density. Two live products: (1) prose stack — desynchronized horizons / common-mode recovery failure / horizon carriers / locks / reservoirs / bridges; (2) Lean splinter — narrow conductance hygiene lemma only. Conductance Lean splinter **built 2026-05-30** as scratch annex at `~/git/lean/LeanProofs/Admissibility/Conductance.lean` under the annex-probe queue's five-criterion test (post-PL, scope statement filed for CPI but compile gated); see §"Lean annex — built status" below. Prose stack remains working-note only.
+**Status:** Candidate primitive at tooltheory density. Two live products: (1) prose stack — desynchronized horizons / common-mode recovery failure / horizon carriers / locks / reservoirs / bridges; (2) Lean splinter — narrow conductance hygiene lemma only. Conductance Lean splinter **built 2026-05-30** as scratch annex at `~/git/lean/LeanProofs/Admissibility/Conductance.lean` under the annex-probe queue's intrinsic five-criterion test; see §"Lean annex — built status" below. Prose stack remains working-note only.
+
+**Policy update (2026-07-14):** consumer-gated formalization language below is superseded. Formal work may lead `agent_gov` or other implementations. Runtime cases are correspondence tests; the actual gates are theorem coherence, truth, anti-vacuity, overlap, proof, and custody. The proposed reachability-insufficiency slice is held on quantifier/nontriviality defects found by the extraction audit, not on missing demand.
 
 **Posture:** Family is *recovery-graph / admissibility-dynamics*, **not** the projection-erases-distinction family that hosts CP / NI / PL / `SurfaceAuthorization` / `WitnessInvariance`. Different axis content; direct descendant of [[project-paper26-candidate]]'s empty-window theorem (`W = ∅` case). Filed at candidate density per [[feedback-name-early]]; kernel-overlap audit deferred but partially done by multi-model relay 2026-05-30 (DeepSeek + Claude-web + operator).
 
@@ -117,7 +119,7 @@ This is a *real* shape finding, not a cosmetic fix:
 
 - It says the Protocol class has a field whose semantic content is signal-only (failure-status), while the other four fields are signal-and-subsystem joint relations.
 - The honest decomposition would be **two classes**: one signal-side (e.g., `class SignalKind (Signal : Type) where failureSignal, coordinationSignal : Signal → Prop`), one transport-side (`class Protocol (Subsystem Signal : Type) where transmits, localAdmits, changesState : Subsystem → Subsystem → Signal → Prop` etc.).
-- This refactor is **deferred** to a downstream consumer / future probe. The hygiene fragment's theorems do not depend on the decomposition; the explicit `@` annotation is locally sufficient. Per [[feedback-forcing-case]], the refactor lacks a forcing case at this layer.
+- This refactor is **optional cleanup**, not blocked on a downstream consumer. The hygiene theorems do not depend on the decomposition and the explicit `@` annotation is locally sufficient. Split the classes only if it removes a real type-design ambiguity or supports a distinct signal-side theorem; avoid churn for its own sake.
 - Filed as a note here so a future session does not re-derive the surprise.
 
 ## The Conductance hygiene fragment (Lean — built 2026-05-30 as scratch annex)
@@ -260,12 +262,12 @@ Operator-supplied seven-question audit framework. Run against the candidate; not
 | Local Carryability (operative primitive) | **Prose doctrine in this note.** Not Lean-shaped at this density. |
 | Recovery Graph (machinery) | **Prose doctrine, no Lean.** Graph-theoretic formalization is premature; would launder reachability into the kernel as primitive. |
 | Conductance operator layer (five conductances) | **Prose doctrine; one Lean fragment (the hygiene splinter).** Separability stays prose. |
-| Conductance hygiene fragment | **Scratch Lean annex, queued post-PL, post-CPI.** Fragment filed in this note. Already bug-flagged. |
-| Reachability insufficiency theorem | **Scratch Lean annex candidate, gated on bounded `Recoverable` scope statement.** Like CPI — needs scope before probe. |
+| Conductance hygiene fragment | **Checked fenced annex.** Built 2026-05-30 as `Admissibility/Conductance.lean`; contagion hygiene only, not separability. |
+| Reachability insufficiency theorem | **Held on theorem shape.** The source statement is invalid/trivial under its displayed quantifiers; repair the recovery quantification and prove a non-definitional delta before extraction. |
 | Lock / articulation theorem | **NO-OP.** Tautology once formalized (articulation point + closure = unreachable; true by graph theory). The substantive claim is *design*, not theorem. |
 | Reservoir protection theorem | **Subsumed by Conductance hygiene.** Same content; don't double-mint. |
 | Sink depletion theorem | **Deferred.** Requires numeric machinery (capacity bound + monotone decrease); too much infrastructure for the marginal payoff. |
-| Governor non-sovereignty theorem | **Scratch Lean annex candidate, downstream consumer-gated.** Cleanest formal hook (graph translation: governor cannot be articulation point in recovery graph), but graph theory does the work; the admissibility-side content is "admissible recovery paths" predicate. Build when `agent_gov` forces it. |
+| Governor non-sovereignty theorem | **Scratch candidate if a nontrivial admissibility delta can be stated.** Graph theory supplies articulation; the formal residue must come from `AdmissibleRecoveryPath` and the governor's interpretive power. `agent_gov` is a correspondence target, not an admission gate. |
 
 ### Q4 — Overlap with existing primitive families
 
@@ -294,7 +296,7 @@ Operator-supplied seven-question audit framework. Run against the candidate; not
 
 **No.** The theorem statement is *true by graph theory*: an articulation point's removal disconnects the graph. Formalizing it in admissibility vocabulary launders graph theory into the kernel without adding admissibility content. The *substantive claim* is a **design discipline**: "real systems should not have mandatory bridges through any single authority surface." That's a constraint on the recovery graph, not a theorem about it.
 
-**The right form of this claim** is the **governor non-sovereignty** theorem (Q3), which states the constraint in admissibility vocabulary: a governor preserves desynchronization only if its removal does not eliminate all admissible recovery paths. The admissibility content is "admissible recovery paths"; graph theory does the rest. Defer until `agent_gov` forces it.
+**The right form of this claim** is the **governor non-sovereignty** theorem (Q3), which states the constraint in admissibility vocabulary: a governor preserves desynchronization only if its removal does not eliminate all admissible recovery paths. The admissibility content is "admissible recovery paths"; graph theory does the rest. Formalize only when that predicate and the governor-specific delta are coherent; `agent_gov` need not exist first.
 
 ### Q7 — Find the load-bearing predicate (do not promote because vocabulary is strong)
 
@@ -318,11 +320,11 @@ The **theorem about it** is reachability-insufficiency: `ReachableCarrier(src, c
 
 - **Yes,** there is real new compositional terrain (Recovery Graph topology + two new atoms: typed-capacity, capacity-sufficient bound).
 - **The first Lean slice is NOT desynchronized horizons itself.** Confirmed: too big, too graphy, would launder metaphor.
-- **The Conductance hygiene fragment is the right first Lean cut** — bounded, audit-partial, bug-flagged, ready for build when queue position fires.
-- **The reachability-insufficiency theorem is the second candidate** — gated on a bounded-`Recoverable` scope statement (CPI-shaped requirement).
+- **The Conductance hygiene fragment was the right first Lean cut** — bounded, audit-partial, and now checked in the fenced annex.
+- **The reachability-insufficiency theorem remains held** — the later audit found a quantifier/triviality defect, so a bounded `Recoverable` scope statement alone is insufficient.
 - **Lock/articulation is a no-op.** Graph theory does the work; admissibility vocabulary adds nothing.
-- **Governor non-sovereignty is the cleanest formal hook** — but downstream-consumer-gated (build when `agent_gov` needs it).
-- **The five candidate theorems compress into two viable build targets** (Conductance hygiene + reachability insufficiency) plus one consumer-gated (governor non-sovereignty); two are deferred (sink depletion needs numerics; reservoir protection is subsumed).
+- **Governor non-sovereignty is the cleanest remaining formal hook** — if it adds admissibility content beyond articulation; consumer demand is irrelevant to that test.
+- **The five candidate theorems currently compress to one checked slice** (Conductance hygiene), one theorem-shape hold (reachability insufficiency), one possible intrinsic-delta candidate (governor non-sovereignty), and two holds (sink depletion needs justified numerics; reservoir protection is subsumed).
 - **Prose stack stays as working note** until the three-case worked examples (ops / institutional / political) land.
 - **Watchword honored:** *not promoting merely because vocabulary is strong.* Found the load-bearing predicate (five-clause conjunction); confirmed the formalization payoff lives in the composition-discipline-as-theorem form, not in vocabulary expansion.
 
@@ -337,33 +339,33 @@ The **theorem about it** is reachability-insufficiency: `ReachableCarrier(src, c
 
 ## Anti-goals
 
-- **NO Lean tonight.** Conductance hygiene fragment is filed in this note. Build waits its turn behind PL and CPI in the annex-probe queue.
+- **Historical night-of constraint:** the 2026-05-30 session did not sweep the graph model. Conductance has since been checked; this sentence is not a current stop-work rule.
 - **NO governor implementation work.** `agent_gov` is a downstream consumer / partial harness, not a target for retrofit.
-- **NO graph-model Lean.** Synchronized horizon closure as Lean object is premature. Toy math (clocks, thresholds, recovery windows) would launder metaphor into names. Defer until a consumer forces it.
+- **NO graph-model Lean without a coherent model.** Toy clocks, thresholds, or recovery windows that merely rename the metaphor do not earn a theorem. A consumer is neither necessary nor sufficient.
 - **NO promotion of the five candidate theorems to built status without per-candidate audit.** Each one needs the annex-probe test pass on its own merits.
 - **NO sweep.** This stack is rich; the temptation is to harvest five theorems and three primitives in one weekend pass. *Don't.* Per [annex-probe-queue-2026-05-29.md](annex-probe-queue-2026-05-29.md) "shadow-public-surface basement governance" warning.
 - **NO renaming yet.** *Local Carryability* is the working primitive name. *Recovery Graph* is the machinery. *Conductance* is the operator layer. If the names earn ratification through use, fine. Don't pre-bless.
 
-## Forcing-case watchlist
+## Formal disposition and correspondence watchlist
 
-Promotion gates (note → Lean fragment → public surface → paper-shape) require:
+Each artifact has its own disposition; Lean admission and public promotion are separate:
 
-- **Conductance hygiene Lean fragment:** annex-probe-queue position is post-PL, post-CPI. Bug pre-flagged. Smaller than CP. Will pass the five-criterion test when its turn arrives.
-- **Reservoir protection / Lock / Governor non-sovereignty theorems:** per-candidate audit each. Most likely lift target: governor non-sovereignty (cleanest hook, direct `agent_gov` consumer).
-- **Graph model:** requires a worked case where the synchronized-horizon-closure vocabulary saves a real consumer from a real bad transition (`agent_gov` design, NQ multi-witness aggregation, labelwatch boundary_edges over time).
+- **Conductance hygiene Lean fragment:** checked fenced annex; no automatic public promotion.
+- **Reservoir protection / Lock / Governor non-sovereignty theorems:** per-candidate truth, nontriviality, and overlap audit. Most plausible formal delta: governor non-sovereignty, with `agent_gov` as later correspondence target.
+- **Graph model:** requires coherent state, path, admissibility, and falsifier definitions. Worked cases from `agent_gov`, NQ, or labelwatch may test the mapping but do not authorize the formal work.
 - **Paper-shape:** requires three worked cases showing the same vocabulary cleanly explains all three without gelatin (relay's recommendation): ops case (platform outage / common control plane / backups share auth), institutional case (whistleblower / regulator capture / press as late receiver), political case (emergency power / courts / legislatures / public legitimacy horizon lock).
 
-Until those land: candidate density, fence held.
+Until those reviews land: candidate doctrine and checked local fragment; fence held without treating runtime demand as permission.
 
 ## Provenance
 
 - **2026-05-30** multi-model relay. Started from "is this as good as it gets?" → operator + Claude-web → DeepSeek convergence → Claude-web theorem-by-testimony reading of the Lean fragment with binder-bug flagged → operator filing.
 - **Distinct chats:** the relay forked into a new chat to keep the main chain clean; both chains converged on the same primitive layer.
-- **agent_gov cross-reference:** relay surfaced the existing `agent_gov` implementation as a partial harness for the LC primitive (polling, scoped roles, recovery_horizon field). DeepSeek's repo read raised the five hard implementation questions (governor self-horizon, bridge gating, synchronization-detection mode, noise-injection vs passive monitoring, sink starvation). All five are LC anti-goals tonight; filed for downstream consumer audit when `agent_gov` next opens a relevant slot.
+- **agent_gov cross-reference:** relay surfaced the existing `agent_gov` implementation as a partial harness for the LC primitive (polling, scoped roles, recovery_horizon field). DeepSeek's repo read raised the five hard implementation questions (governor self-horizon, bridge gating, synchronization-detection mode, noise-injection vs passive monitoring, sink starvation). All five remain runtime mapping questions; formal statements should lead where coherent rather than wait for an implementation slot.
 - **Relay residue not folded in:** the *coordination-as-pull-only* protocol design (mutual TLS analog for social cohesion), the *witness-as-protected-pattern* discussion, the *desynchronization governor as continuous noise-injection* dynamics. These all remain prose-only; they earned no Lean residue this pass and would need their own audit before any compile probe.
 
 ## Park state
 
-> *The audit was partial. The compile is deferred. The forcing case is upstream — for everything except the hygiene fragment, which has a bug-flagged Lean target waiting in the annex-probe queue behind PL and CPI.*
+> *The audit was partial. Conductance is checked. Other slices are held on theorem shape, scope, or overlap — never merely because a forcing case is absent.*
 >
 > **A system survives not by preventing subsystem death, but by ensuring that death remains locally carryable.** The slab is set down. No Rust was summoned. The republic has staggered horizons, or it does not have horizons at all.

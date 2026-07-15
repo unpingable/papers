@@ -577,10 +577,11 @@ test of the condition's reach.
    is evidence the condition's reach is general; if not, the
    condition needs refinement.
 
-None of these is committed work. The register's *file-now-work-never*
-discipline still applies. The promotion of case #3 to *actively
-worked* means the structural condition is now named; it does not
-mean implementation has started.
+None of these is committed work or an automatic queue. A coherent per-kernel theorem
+or countermodel may be developed before a runtime case and may lead implementation;
+the unified maximal calculus remains refused. The promotion of case #3 to *actively
+worked* means the structural condition is now named; it does not itself establish
+runtime integration or public promotion.
 
 ## Related records
 

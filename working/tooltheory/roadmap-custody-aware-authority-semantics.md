@@ -1,8 +1,10 @@
 # Roadmap: Custody-Aware Authority Semantics
 
-**Status:** CANDIDATE roadmap / documentation-only. No code implemented; no promoted
-kernel or import boundary changed. A handle for review and future implementation
-slices, not authorization to build.
+**Status:** CANDIDATE roadmap / documentation-only. No code implemented by this note;
+no promoted kernel or import boundary changed. A handle for review and future
+implementation slices. A coherent formal slice may be developed in Scratch before a
+runtime consumer exists and may lead later code; release, promotion, and runtime
+conformance remain separate decisions.
 
 **Lean-lane status update (2026-07-01):** Phases 1–3c are DONE in the lean repo and
 staged as **v3.0.0 — Bounded Lifecycle Calculi** (nine ANNEX bounded calculi incl.
@@ -15,7 +17,7 @@ untouched by v3.
 **Posture update (2026-07-03):** four exposition/witness lanes named alongside the
 build lanes — ops autopsy register · NQ witness lane · book/Zenodo exposition · public
 receipts language — see `working/four-lanes-and-the-bridge.md` (candidate posture note,
-not build authorization). The next working session is a **skeleton pass** (five
+not a release or promotion grant). The next working session is a **skeleton pass** (five
 questions: exists / proves / refuses / public-handle→formal-object map / body placement
 of Lean-AG-NQ-LA-Porter-Maude; full context capsule in that note), NOT SEQ4 and NOT new
 primitives. SEQ4 / the v4 Gentzen system remain this lane's next steps *after* the
@@ -478,10 +480,11 @@ is a master `Admissible`, every local refusal becomes a thing to route around.
 
 ## 15. Near-term roadmap
 
-**Which wall first?** Runtime mechanics operationally (nothing bites without a checker);
-bootstrap is the first *theorem-shaped* wall (a sloppy root recreates the master
-turnstile); graph explosion is third (solved by scoped checkpoint settlements). Build order
-below reconciles the phased plan with that answer.
+**Which wall first?** The proof surface leads the development order below; runtime
+mechanics are the first operational bite (nothing bites without a checker). Bootstrap is
+the first *theorem-shaped* wall (a sloppy root recreates the master turnstile); graph
+explosion is third (solved by scoped checkpoint settlements). The phased plan keeps those
+roles distinct.
 
 **Phase 0 — Documentation only (this pass).** This roadmap; glossary of stages + non-collapse
 laws (§16); identify existing modules. *Partly done:* 6 of 7 calculi live in
@@ -525,8 +528,10 @@ execution; final actuator precondition checks at the commit boundary; receipt em
 post-state observation.
 
 Lane note: Phases 1–3c are lean scratch (proof surface); Phases 4–5 are AG/NQ runtime. Lean
-proves the discipline; runtime emits + checks. Nothing here authorizes building the runtime
-from the proof lane.
+proves the discipline; runtime emits + checks. The proof lane may lead runtime
+implementation, but a theorem or citation alone does not establish that implementation's
+conformance or authorize production effects. Conformance needs an explicit mapping plus
+runtime evidence or a refinement proof.
 
 ---
 
@@ -562,5 +567,7 @@ BridgeConsumer**, and the typed refusal artifact family (§7).
 
 - Not a unified calculus and not a step toward one.
 - Not code — no implementation attempted; no kernel or import boundary changed.
-- Not authorization to build any phase; each slice keeps its own forcing case / gate.
+- Not a release or promotion grant. Coherent slices may be built in Scratch before a
+  forcing case or consumer exists; each slice still keeps its intrinsic theorem-shape,
+  model, proof/axiom, and dependency checks.
 - Not a manifesto — a roadmap, meant to be sliced against.

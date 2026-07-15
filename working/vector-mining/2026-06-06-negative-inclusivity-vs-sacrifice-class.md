@@ -2,6 +2,12 @@
 
 **Filed:** 2026-06-06. **Status:** vector-mining receipt. **Containment mode.** **NOT doctrine. NOT a paper. NOT a primitive. NOT a Lean module.** Operating under [`method-note.md`](method-note.md) discipline. **Verdict palette restricted by user instruction** to: DUPLICATE / ALIAS-RISK / INTERNAL-REFUTATION GAP / MISSING-PRECONDITION / COMPOSITION-GAP / BRIDGE-CANDIDATE.
 
+**Policy clarification (2026-07-14):** the no-Lean instruction below records this
+pilot's task scope, not a consumer-gated formalization rule. A later coherent NI/AAG
+theorem, countermodel, or specification may be developed before a runtime forcing case
+exists. It must survive the substantive federation, overlap, model, and non-vacuity
+objections this receipt records; runtime use affects priority and correspondence only.
+
 ## Setup
 
 The audit question (user-supplied, verbatim shape):
@@ -95,8 +101,8 @@ Per containment mode, each negative finding is named explicitly so the receipt i
 
 - **No DUPLICATE.** NI does not subsume AAG's sacrificial-escape; AAG does not subsume NI. Different mechanisms (external-imposition vs. internal-burn), different timing (pre-event vs. post-event), different scope (regime stability vs. recovery audit).
 - **No MISSING-PRECONDITION.** NI does not silently assume AAG's recovery typology; AAG's diagnostic-test #6 does not silently assume NI's resolution-selective suppression. Both primitives are explicitly stand-alone in their working surfaces.
-- **No COMPOSITION-GAP requiring promotion.** A *sequential-temporal composition* exists in principle (NI-protected metric stays admissible → eventual forced observation → AAG-audited recovery), but **no forcing case currently exists in the corpus that requires this composition to be named or built**. Naming it now would be speculative expansion; per name-early discipline the candidate is *recorded in this receipt* and *not authorized to mint a new primitive*.
-- **No BRIDGE-CANDIDATE.** A cross-kernel theorem between NI and AAG would require formalization neither primitive currently has; per containment-mode constraint *do not touch Lean*, the question is moot for this pilot. If a future Lean staging earns a forcing case for either, the bridge can be reassessed then.
+- **No COMPOSITION-GAP requiring promotion.** A *sequential-temporal composition* exists in principle (NI-protected metric stays admissible → eventual forced observation → AAG-audited recovery), but this receipt supplies no coherent, non-redundant theorem showing that the composition preserves both kernels' refusal surfaces. The candidate is recorded without minting a new primitive; a formal countermodel may lead later evidence if it survives that intrinsic objection.
+- **No BRIDGE-CANDIDATE in this pilot.** A cross-kernel theorem between NI and AAG would require formalization neither primitive currently has; the pilot's containment instruction forbade that work here. A separate probe can be reassessed when its model, theorem shape, federation boundary, and controls are explicit. It does not wait for a runtime forcing case.
 
 ## What this pilot specifically refuses
 

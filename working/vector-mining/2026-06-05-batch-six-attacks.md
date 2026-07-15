@@ -47,7 +47,7 @@ Exception's obligation set: `{temporal-bounding, anti-precedent}`. The relay's "
 
 `NoSilentException` is listed in the lattice as a future Lean candidate (alongside `NoSilentDelegation`, `NoSilentProjection`) — *"named, not built."* Same status as attack-05's "separation-of-custody on exception discharge" survivor.
 
-**Verdict:** DUPLICATE on the obligation-set classification + UNRATIFIED-CANDIDATE on the Lean spike. The relay's `ExceptionDebt` structure could inform field names *if* and *when* `NoSilentException.lean` earns a forcing case. Not authorized to build. Carry as a vocabulary candidate, same as attack-05's Survivor 2.
+**Verdict:** DUPLICATE on the obligation-set classification + UNRATIFIED-CANDIDATE on the Lean spike. The relay's `ExceptionDebt` structure could inform field names if a precise, non-redundant `NoSilentException` theorem emerges. The 2026-06-05 "earn a forcing case / not authorized" rule is superseded: formalization may lead code, but this pilot still supplies no independent theorem residue by itself. Carry as a vocabulary candidate, same as attack-05's Survivor 2.
 
 **Survivor:** the separation-of-custody refinement of anti-precedent (already on the candidate queue from attack-05); no new action this pilot.
 
@@ -148,7 +148,7 @@ The pre-authorization-layer note (filed 2026-06-04) IS the disambiguation: the c
 - **Prosecutorial Decomposition** — the inverse direction; same axis. Candidate, not promoted.
 - **Axis-2 composition** material — the merge specimens (`BudgetMerge`, `StaleEvidenceMerge`, conflict slice) operationalize composition-axis refusals at the substrate level; `ParameterizedMerge`'s `MergeAdmissible` is the not-yet-defined positive object that the bad-case family forces.
 
-So the corpus has the gap, *named*, with substrate specimens demonstrating it, and is *deliberately not filling it* until the bad-case family is complete and a composition theorem forces the higher-order construct.
+So the corpus has the gap, *named*, with substrate specimens demonstrating it. Doctrine ratification still needs the bad-case evidence and a composition theorem, but formal work on a precise, non-vacuous composition claim may lead that evidence rather than wait for a runtime case.
 
 **Relay's framing — sacrifice-floor / empty-discharge region:** REFUSED as gap-filler.
 
@@ -158,7 +158,7 @@ So the corpus has the gap, *named*, with substrate specimens demonstrating it, a
 
 **Verdict:** GAP CONFIRMED + relay-framing REFUSED. The composition gap exists and is filed correctly (LGVG candidate, prosecutorial-decomposition candidate, axis-2 substrate specimens). The relay's framing offers no new content and would launder the gap-shape by collapsing it with sacrifice-class burden machinery that already lives elsewhere.
 
-**Recommended action:** leave LGVG, prosecutorial-decomposition, and axis-2 material undisturbed. Do NOT use the relay's sacrifice-floor framing to motivate building anything. The gap awaits its own second forcing case + composition theorem.
+**Recommended action:** leave LGVG, prosecutorial-decomposition, and axis-2 material undisturbed by *this relay*, whose sacrifice-floor framing supplies no valid theorem premise. A separate bounded composition theorem may be developed on its own model and overlap merits before a second runtime case; cross-domain recurrence remains evidence for primitive ratification.
 
 **No survivor.** Attack #6 was passed the gap-detection bar (it didn't try to repair doctrine); the gap is real, the relay's filling is wrong, the appropriate action is patience.
 

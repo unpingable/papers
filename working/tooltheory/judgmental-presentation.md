@@ -123,11 +123,17 @@ DeepSeek's exposition described "unwanted inferences are admissible" as the safe
 
 For authority-laundering or boundary-upgrade rules, the safety claim should be that they are **not derivable** (or that any derivation attempting them blocks / normalizes to a non-authorizing form). It should *not* be that they are admissible in the proof-theoretic sense. Confusing the two is exactly the false-friend trap the scope-fence is designed to prevent; any future sequent-calculus work must be explicit about which sense is meant on each page.
 
-## Forcing cases for promotion
+## Pressures for expansion or promotion
+
+Formal development does not require a downstream consumer: a precise normalization,
+soundness, non-derivability, or countermodel question may lead later tooling. The
+pressures below help choose between keeping the present judgmental notation, building a
+real sequent calculus, or moving to operational semantics; public promotion remains a
+separate decision.
 
 If one of the following appears, the judgmental presentation may need to be promoted toward (or replaced by) something stronger:
 
-- **Composition pressure** — a downstream consumer needs to compose admissibility judgments across NQ / Wicket / Governor / Standing with a shared formal grammar.
+- **Composition pressure** — a downstream consumer needs to compose admissibility judgments across NQ / Wicket / Governor / Standing with a shared formal grammar, or a formal composition theorem independently exposes that need.
 - **Normalization pressure** — a need to prove that laundering paths can be reduced away or exposed structurally.
 - **Protocol pressure** — concurrent/revoked/stale receipts across agents and services require operational semantics or transition-system reasoning.
 - **Equivalence pressure** — two governance protocols need to be shown observationally equivalent with respect to admissible mutation.

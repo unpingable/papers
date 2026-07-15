@@ -54,8 +54,9 @@ instance already exists: `experiments/no_free_lift_wiring/RATIFICATION-PENDING.m
 discharges accumulated caution by typed positive acts (Name/Custody signatures), and its
 `( ) Custody` box is exactly an operator WaiverReceipt.
 
-**How to apply:** candidate / non-binding handle. This is **governor/AG runtime doctrine**
-→ operator ratifies, AG-Claude builds; not paper/Lean's to mint. Forcing case to BUILD the
-receipt types = an actual caution that needs discharging and can't be. Until then it's
-three receipt families + three invariants, each already homed in an existing primitive.
-Composes with name-early discipline.
+**How to apply:** candidate / non-binding handle. This is **governor/AG runtime doctrine**;
+runtime adoption and custody belong to the operator and AG lane, not to a papers memo.
+A precise receipt contract or countermodel may nevertheless be formalized before an
+actual caution needs discharge, and may lead the AG implementation. Until then this is
+three receipt families + three invariants, each already homed in an existing primitive,
+not an automatic runtime build queue. Composes with name-early discipline.

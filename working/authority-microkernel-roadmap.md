@@ -1,9 +1,10 @@
-# Authority Microkernel — far-out roadmap + lineage (candidate, build nothing)
+# Authority Microkernel — far-out roadmap + lineage (candidate, not a build plan)
 
 *Status:* CANDIDATE / far-out roadmap, filed 2026-07-06. Captured from a live
 ChatGPT thread (same session as the sequent island + dynamic admissibility).
-**This is the maximal-calculus register: file-now, work-never until a forcing
-case.** It is captured for two reasons only: (1) the *reframing* is
+**This is the maximal-calculus register: file now; admit formal work only from
+a coherent, bounded negative law, model, or countermodel with explicit overlap,
+non-vacuity, and proof controls.** It is captured for two reasons only: (1) the *reframing* is
 doctrinally load-bearing and worth not losing; (2) the *lineage pass* is
 genuine anticipatory prior-art evidence (scars-as-evidence) that stops us
 rediscovering the field under fresh vocabulary. It is NOT a build plan.
@@ -105,7 +106,7 @@ invention of** capabilities, attenuation, PCA, `says`/`speaks for`,
 provenance, microkernels, reference monitors, policy-as-code, verified
 authz languages, or chain-of-custody. That is honking clown shoes.
 
-## The three artifacts a real version would need (gate, not plan)
+## The three artifacts a public, runtime-bound version would need (gate, not plan)
 
 1. Lean kernel: abstract profiles, bridges, caps, scopes, refusal laws + non-collapse theorems.
 2. Hostile specimen suite: laundering attempts that provably fail.
@@ -119,9 +120,11 @@ If any of these appears, someone is building the monolith.
 
 ## Fence (binding)
 
-Maximal-calculus register: [[project-maximal-calculus-registers]] governs —
-file now, work never, until a *specific local system presents a bounded
-question* (forcing-case discipline [[feedback-forcing-case]]:
-do NOT invoke for maximal-calculus work). The value already banked is (a) the
-refusal-first reframing and (b) the lineage table. Nothing here authorizes a
-`UniversalAuthorityProfile` typeclass; that is the refused unifier.
+Maximal-calculus register: [[project-maximal-calculus-registers]] governs. A
+specific local system may supply an instantiation, priority, or runtime-binding
+target, but it is not permission to formalize. A bounded refusal law may be
+developed first when its semantics, hostile controls, overlap, non-vacuity, and
+proof scope are explicit. The value already banked is (a) the refusal-first
+reframing and (b) the lineage table. Nothing here makes a
+`UniversalAuthorityProfile` typeclass coherent; that remains the refused
+unifier unless a distinct formal result survives those intrinsic checks.

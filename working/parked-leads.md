@@ -2,7 +2,7 @@
 
 **Filed:** 2026-05-20 from the eight-slice brainstorm + audit, after the build-list collapsed to MemorySkew (shipped) + Post-Hoc Authorization (filed as working primitive).
 
-**Purpose:** record candidate leads that did not earn new construction *now*, but should not be silently dropped. A backlog ticket quietly becomes obligation. A parked lead with a reopening predicate just says "this shape was seen; reopen only if the world coughs up another specimen."
+**Purpose:** record candidate leads that did not earn promotion or scheduling *now*, but should not be silently dropped. A backlog ticket quietly becomes obligation. A reopening predicate names new priority or evidence; it is not permission that mathematics must wait to receive.
 
 ## The framing
 
@@ -12,7 +12,7 @@ The dangerous collapse is *not buildable now → not important → discard*. The
 
 > **Preserved, non-binding, reopenable.**
 
-A parked lead lives at *handle* stage in the [[feedback-gate-stack]]. Reopening promotes it to *predicate* stage. Build authorization waits for *fixture* stage.
+A parked lead lives at *handle* stage in the [[feedback-gate-stack]]. Reopening may promote it to *predicate* stage. A bounded Scratch formalization may itself sharpen or refute the handle before any runtime fixture exists; testimony and public promotion remain later custody states.
 
 **Discarding** says: this was noise.
 **Deferring** says: this is not allowed to spend authority yet.
@@ -23,7 +23,9 @@ The name survives. The authority does not.
 
 > Deferred leads are not rejected.
 > They are preserved as advisory residue with reopening predicates.
-> They may not authorize build work until new evidence appears.
+> They may not spend authority or enter a public surface merely because they were named.
+> Formal work may begin when the handle yields a coherent model, non-vacuous theorem
+> or countermodel, overlap review, and proof controls—even before new runtime evidence.
 >
 > A parked lead may be reopened only when it gains one of:
 >
@@ -32,7 +34,9 @@ The name survives. The authority does not.
 > 3. a cross-tool recurrence,
 > 4. a contradiction not already covered by an existing kernel.
 >
-> Absent one of those, the lead remains advisory residue.
+> Absent one of those, the lead remains low-priority advisory residue unless formal
+> investigation itself supplies the discriminating evidence. A runtime consumer is
+> never a prerequisite for stating or proving the contract.
 
 Per-lead schema (four fields, no more):
 
@@ -51,7 +55,7 @@ That is the whole anti-goblin-door policy.
 
 ## Warm leads
 
-Likely real, plausible consumers, repo/audit pressure away from earning construction. Watched, not built.
+Likely real, plausible consumers, repo/audit pressure away from promotion or renewed priority. Watched, not automatically built.
 
 ### Coverage Cannot Mint Absence
 
@@ -82,8 +86,8 @@ Likely real, plausible consumers, repo/audit pressure away from earning construc
   - *serialization:* can this authority survive crossing a boundary? *(deferred — parked separately above)*
   - *spend:* can this authority be consumed to cause an effect? *(this entry)*
   These are not the same axis. Treating them as one blob is how capability systems go from *beautifully principled* to *why did this token just become a skeleton key.*
-- **Why it did not earn promotion:** No live consumer needing spend semantics inside the kernel; current kernel covers construction-discipline only by design. `Corrective.lean`'s attenuation is adjacent but not identical to spend (attenuation is about basis-permissiveness over time, not exercise-mode at the moment of use).
-- **Reopen trigger:** A WLP / Standing / AG fixture needs one-shot-vs-replayable authority semantics, attenuation-under-transfer rules, or single-use receipt enforcement *at the kernel level* — not at the consumer side.
+- **Why it did not earn promotion:** Current selected kernel scope covers construction-discipline only, and the spend model (linear resource, affine capability, counter, or ledger) is not chosen. `Corrective.lean`'s attenuation is adjacent but not identical to spend (attenuation is about basis-permissiveness over time, not exercise-mode at the moment of use). Absence of a live consumer affects priority, not formal admissibility.
+- **Reopen trigger:** A precise formal spend model or a WLP / Standing / AG fixture needs one-shot-vs-replayable authority semantics, attenuation-under-transfer rules, or single-use receipt enforcement. The formal contract may lead the fixture.
 
 ### Metric / Clock-Bound Admissibility
 
@@ -98,22 +102,22 @@ Aperture caveat: audited from ChatGPT summary of the Kerberos chat; original cha
 
 - **Handle:** CorrectiveMonotone / RevocationStore Wiring.
 - **Why it seemed real:** Prior audit called this the *"single-most-load-bearing future Lean obligation."* `Corrective.lean` + `CorrectiveBoundary.lean` exist with monotonicity claims; the held obligation is making those claims *bite operationally* rather than holding vacuously over an unread revocation store.
-- **Why it did not earn promotion:** Held pending a concrete derivation that needs to read revocation state rather than treating monotonicity as a vacuous wrapper. Without a downstream theorem that consumes revocation, the wiring is over-specification.
+- **Why it did not earn promotion:** Held pending a precise derivation theorem that reads revocation state rather than treating monotonicity as a vacuous wrapper. This is an intrinsic non-vacuity requirement; it does not require runtime code.
 - **Reopen trigger:** A concrete derivation in `Authority.lean` / `Execution.lean` or a sibling module requires reading revocation state rather than treating monotonicity vacuously — i.e., a fixture where the corrective monotonicity claim becomes load-bearing.
 
 ### Cross-Axis Composition Lemmas
 
 - **Handle:** Cross-axis composition lemmas (Fiat × Numerical × Surface × Freshness × AxisSkew composition).
 - **Why it seemed real:** Sibling kernel count is now 15. Each kernel proves one-axis admissibility. The deferred question — *how do refusal verdicts from different axes compose into a single fixture verdict?* — is operational pressure that grows with the kernel count.
-- **Why it did not earn promotion:** Deliberately deferred in each module's "Not included in v0" section; memory [[project-authority-kernel]] calls out the deferral pattern explicitly. Without a fixture that forces two-axis composition, the lemmas would be aesthetic, not operational.
-- **Reopen trigger:** One fixture requires two or more refusal axes to combine into a single verdict — e.g., a finding refused by both `FiatAdmissibility.classify` and `SurfaceAuthorization` that needs a single composed receipt verdict rather than two parallel verdicts.
+- **Why it did not earn promotion:** Deliberately deferred in each module's "Not included in v0" section; memory [[project-authority-kernel]] calls out the deferral pattern explicitly. A composition lemma needs a discriminating cross-axis claim or countermodel rather than aesthetic aggregation. That target may be formal and may precede a runtime fixture.
+- **Reopen trigger:** A precise theorem/countermodel or fixture requires two or more refusal axes to combine into a single verdict — e.g., a finding refused by both `FiatAdmissibility.classify` and `SurfaceAuthorization` that needs a composed receipt verdict rather than two parallel verdicts.
 
 ### WLP `acted` / Validation Coupling
 
 - **Handle:** WLP `acted` / validation coupling (HandlingReceipt v0.2 pressure).
 - **Why it seemed real:** Validation success and action attestation are currently too close in WLP's HandlingReceipt shape. Empty `policy_refs` is the cheap fixture; the deeper coupling is `acted` reading validation success as evidence of mutation. This is the post-hoc-authorization-laundering shape applied to WLP specifically.
-- **Why it did not earn promotion:** v0.2 pressure rather than v0.1; the coupling is a known design weakness but no fixture has forced separation yet. Composes naturally with `working/primitives/post-hoc-authorization.md` when a concrete fixture surfaces.
-- **Reopen trigger:** HandlingReceipt gets used as evidence that action happened or was authorized, in a way that bypasses the prior-standing check — concrete WLP consumer required.
+- **Why it did not earn promotion:** v0.2 pressure rather than v0.1; the coupling is a known design weakness and the selected runtime scope has not opened it. A formal separation contract may lead v0.2; a fixture would provide validation pressure.
+- **Reopen trigger:** A formal countermodel exposes the conflation, or HandlingReceipt gets used as evidence that action happened or was authorized in a way that bypasses the prior-standing check.
 
 Aperture caveat: audited from ChatGPT summary of the WLP-next-steps chat; original chat not directly accessed from this seat.
 
@@ -129,9 +133,9 @@ Aperture caveat: audited from ChatGPT summary; status of NQ DNS work not verifie
 ### P27 Deferred Predicates (`substrateAccusation`, `receiptOutlives`)
 
 - **Handle:** P27 deferred predicates — `substrateAccusation`, `receiptOutlives`.
-- **Why it seemed real:** Both predicates cleared a two-case forcing gate during P27 v1.0 prep but were not promoted because no downstream composing theorem needed them at the time. Classic *not false, not yet spendable* territory.
-- **Why it did not earn promotion:** Promotion would have been *constitution-by-typechecker without a downstream composing theorem.* `True` placeholders kept in `Admissibility.lean` skeleton with deferred-real-statement docstrings; rule preserved as *"kill the sorrys, don't let the sorrys design the constitution."*
-- **Reopen trigger:** A sibling theorem (P28 candidate, AG fixture, distributed-admissibility extension) needs substrate accusation or receipt-horizon as an actual predicate, not as `True` placeholder.
+- **Why it seemed real:** Both predicates cleared a two-case evidence check during P27 v1.0 prep but were not promoted in that draft. Classic *not false, not yet spendable* territory.
+- **Why it did not earn promotion:** Their model-theoretic roles and non-vacuous bridge theorems were not yet fixed. `True` placeholders kept the limitation visible; *"kill the sorrys, don't let the sorrys design the constitution"* remains a proof-control rule, not a consumer gate.
+- **Reopen trigger:** A precise, load-bearing theorem (P28 candidate, AG-shaped formal model, distributed-admissibility extension, or another formal target) needs substrate accusation or receipt horizon as an actual predicate. It may lead downstream code.
 
 Cross-reference: also recorded in `docs/formalization-backfill-notes.md` P27 entry. The register entry adds the explicit reopen trigger.
 
@@ -152,7 +156,7 @@ Real-looking, but too pretty or too meta. Reopening predicate set deliberately h
 - **Why it did not earn promotion:** Too clean. *ContextAperture → MaxClaimStanding* is suspiciously symmetric and resembles the four-axis-trap shape from an earlier session. All current specimens are chat-context conversations *about* audits; the rule cannot be tested by its own application without circularity. Memory [[feedback-kernel-overlap-audit]] is doing this work as audit-procedure rule already; minting a primitive from it would be naming the audit gate as a primitive — possible, but premature without independent specimens.
 - **Reopen trigger:** Two non-chat specimens where limited aperture produces over-strong doctrine or promotion claims in observed third-party work, not in our own audit chatter.
 
-Warning preserved from the brainstorm: do not formalize until both specimens exist. Otherwise it becomes a mirror staring into another mirror and charging rent.
+Warning preserved from the brainstorm: do not promote this as a ratified theorem until independent specimens break the self-referential evidence loop. A bounded Scratch model may expose that circularity or produce a counterexample before the specimens exist; it cannot testify for the doctrine merely by encoding it.
 
 ### BridgeStatus Evidence Ladder
 

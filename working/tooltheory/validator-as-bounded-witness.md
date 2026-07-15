@@ -108,7 +108,9 @@ Would Make This 2.0" gate): *if* solving it forces the derivation judgment to ca
 authority as a first-class term, that is a breaking change to the calculus forced by
 stronger math — a real 2.0. Filed in the Lean register next to confluence + cut.
 
-## Sorted roadmap (named-not-started; each earns its own forcing case)
+## Sorted roadmap (named-not-started; each needs a coherent bounded claim and intrinsic scope/proof review)
+
+Runtime forcing cases may prioritize an item, test its instantiation, or support public promotion. They are not admission tickets for formal development; a checked model or specification may lead the implementation.
 
 > Operationalization is how the calculus meets the world; 2.0 is what changes the calculus.
 

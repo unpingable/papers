@@ -75,16 +75,18 @@ The five shapes, all discharged:
 Headline package: `transition_cannot_mint_its_own_reversal_authority`.
 
 Case-5 resolution, stated once: **poisoning tracks blocking edges, not roster
-presence.** The general n-of-k threshold claim stays prose until a consumer
-asks.
+presence.** The general n-of-k threshold claim remains open until it has a
+precise, non-vacuous statement worth proving; it does not wait for a runtime
+consumer.
 
 ## Gates
 
 - **Scope:** no (O,C,T,L) formalization, no optionality calculus, no general
   quorum theory, no benefit/motive vocabulary.
-- **Promotion:** scratch until register adjudication + a forcing consumer
-  (AG governor verdict, NQ finding, or a transition-kernel obligation) needs to
-  refuse a self-entrenching transition. Composite doctrine ("constitutional
+- **Promotion:** scratch until register adjudication and a separate custody
+  case. An AG governor verdict, NQ finding, or transition-kernel obligation can
+  provide instantiation and correspondence evidence, but formalization may lead
+  those consumers. Composite doctrine ("constitutional
   optionality spend") stays a recognition handle unless an existing home
   provably can't stretch.
 

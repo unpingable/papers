@@ -1307,11 +1307,12 @@ undergo gated change across a temporal boundary the substrate does
 not reason about. Neither extension is silent.
 
 The title for that future synthesis is reserved. The current paper
-closes a bounded sub-calculus over Axes 1 and 2; the maximal
-admissibility calculus, when forced, is the artifact that would
-close the seam this paper fences off. Claiming it now would be
-premature, in the precise sense that the substrate does not
-currently exist to discharge the claim.
+closes a bounded sub-calculus over Axes 1 and 2; a coherent future
+formalization of the seam may be developed before a runtime consumer
+exists and may lead later implementation. Claiming the synthesis in
+this paper would still be premature, in the precise sense that the
+substrate needed to discharge that broader claim does not currently
+exist.
 
 ### 5.6 Summary
 
@@ -1324,10 +1325,13 @@ invites a rejoinder that the evaluator / evaluated distinction is
 rhetorical. The right way — "`value` is not in mutable state" — is
 precise enough to hold under press.
 
-The future synthesis is deferred to the regime in which `value` is
-no longer external. Its shape, scope, and title are reserved for
-when a forcing case actually arrives. Until then, the current paper
-closes what it claims to close, and no more.
+The future synthesis concerns the regime in which `value` is no
+longer external. Its shape and scope may be developed as soon as a
+coherent statement, model, or countermodel is available; a forcing
+case may prioritize or stress-test that work but is not permission to
+begin it. The title remains reserved until the broader claim is
+actually earned. The current paper closes what it claims to close,
+and no more.
 
 ## §6. Related work
 
@@ -1449,8 +1453,11 @@ The bounded paper's modules are deliberately not promoted to the
 public 1.0 surface (`CalculusOne.lean`) of the broader series. The
 modules referenced — `ParameterizedMerge.lean`,
 `BoundaryWitness.lean`, the slice modules — are scratch / candidate
-under the substrate's tooltheory discipline, not minted; promotion
-follows downstream consumption, not paper publication.
+under the substrate's tooltheory discipline, not minted. Promotion is
+a separate custody decision: paper publication or downstream citation
+identifies an intended contract but does not itself establish runtime
+conformance. Conformance requires an explicit mapping plus runtime
+evidence or a refinement proof.
 
 ## §7. Conclusion
 
@@ -1503,10 +1510,12 @@ The Lean substrate referenced throughout — `SafetyBridge.lean`,
 `ParameterizedMerge.lean`, the per-slice modules,
 `BoundaryWitness.lean` — together form a self-contained kernel for
 the two-axis fragment. Promotion to the broader series' public
-surface waits on downstream consumption, per §6.4. The paper's claim
-is the bounded fragment, formalized; the program's broader claim —
-and its eventual title — wait for the forcing case that would open
-the seam this paper closes against.
+surface remains a separate custody decision, per §6.4; Scratch may
+lead implementation but may not testify for or pin production. The
+paper's claim is the bounded fragment, formalized. A coherent broader
+claim may be formalized before a consumer exists, while its eventual
+title and public promotion remain contingent on actually earning the
+broader claim and its conformance evidence.
 
 ## Edits applied (audit trail)
 

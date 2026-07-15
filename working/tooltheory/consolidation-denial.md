@@ -1,7 +1,7 @@
 # Consolidation-denial and settlement debt
 
 **Status:** Specimen-driven tool-doctrine handle with promotion watch. Filed 2026-05-25; restructured same day after multi-model formalization pass; narrow refusal kernel landed in Lean repo same day.
-**Posture:** Tool doctrine, not paper doctrine. Models a scheduler/interface attack on the *preconditions* for admissible compression. Companion file [`consolidation-denial-formal-sketch.md`](consolidation-denial-formal-sketch.md) carries the full equations and the Schmitt-trigger Lean sketch — explicit scratch, not in `lake build`. Narrowed refusal kernel — *fluency does not witness settlement* — landed as `~/git/lean/LeanProofs/Admissibility/ConsolidationDenial.lean` (annex sibling, green, sorry-free, not in `CalculusOne.lean`).
+**Posture:** Tool doctrine, not paper doctrine. Models a scheduler/interface attack on the *preconditions* for admissible compression. Companion file [`consolidation-denial-formal-sketch.md`](consolidation-denial-formal-sketch.md) carries the equations and is now the source note for checked `~/git/lean/LeanProofs/Scratch/ConsolidationController.lean`. The controller slice is formalization-leading, fenced Scratch, and proves conditional boundedness rather than liveness or conformance. The narrower refusal kernel — *fluency does not witness settlement* — remains `~/git/lean/LeanProofs/Admissibility/ConsolidationDenial.lean` (annex sibling, green, sorry-free, not in `CalculusOne.lean`).
 **Axis:** Phase-prevention. Sibling to [`../laundering-move-watchlist.md`](../laundering-move-watchlist.md) (boundary-crossing axis) and to [`../admissibility-decay-family-note.md`](../admissibility-decay-family-note.md) (stale-license axis). Laundering-adjacent but not laundering-shaped — nothing crosses a boundary; instead a phase transition is *prevented from occurring*.
 
 > **Anti-overreach clause.** This note does NOT propose a new admissibility primitive or a Lean kernel module. It models a scheduler/interface attack on the learning preconditions of existing promotion and compression machinery. Gate stack, narrow-after-contact, Continuity, Nightshift, agent_gov, NQ, and compression-becomes-authority are the load-bearing kernel; this note names the condition under which their preconditions are denied.
@@ -76,7 +76,7 @@ X is *negative knowledge with receipts.* R is *damage.* A dashboard that only wa
 
 Under denied settlement (no interrupt fires), buffer reaches a finite steady state — but the steady state is bought entirely by forgetting. Every new input becomes rot. The dashboard stays green; the substrate corrodes.
 
-For the equations, three-clock formal model, mode-specific safety invariant, and illustrative Lean sketch, see [`consolidation-denial-formal-sketch.md`](consolidation-denial-formal-sketch.md).
+For the equations, three-clock formal model, mode-specific safety invariant, and checked-Scratch extraction status, see [`consolidation-denial-formal-sketch.md`](consolidation-denial-formal-sketch.md).
 
 ---
 
@@ -366,7 +366,7 @@ If the prediction holds across complex projects, consolidation-denial separates 
 ## Non-growth guard
 
 - Do not draft a paper yet. The handle is sharp; the specimen catalog is single-axis-deep.
-- **The formal sketch is scratch**, not a Lean kernel module. It illustrates a control-theoretic shape (Schmitt-trigger supervisor, mode-specific safety invariant, four-stock dynamics) for design rationale; it does not live in `~/git/lean/`, does not run in `lake build`, and does not propose a new admissibility kernel predicate. Existing kernel pieces (FiatAdmissibility, stale-binding, RecoveryMargin, SurfaceAuthorization, NumericalAdmissibility) cover the cases that *do* land formally — and they do so without needing this artifact.
+- **The controller formalization is fenced Scratch**, not a public Lean kernel module. `LeanProofs/Scratch/ConsolidationController.lean` checks the Schmitt-trigger state/transition and mode-specific B bound; it does not formalize the four-stock dynamics, prove liveness, enter the root import surface, or propose a new public admissibility predicate.
 - Do not let "consolidation-denial" become a magnet phrase that re-describes everything Nightshift / Continuity / gate-stack already handle in sleep-themed dramatic lighting.
 - The fact that the LLM-interactive specimen is brutally available makes over-collection tempting. Resist. Three good specimens beat thirty rhymes.
 - Do NOT pitch this as "new primitive: time-as-compression." That framing triggers the kernel-overlap immune response (correctly). Pitch the wedge: *admission control under denied settlement.*
@@ -397,21 +397,21 @@ A narrowed version landed as a refusal kernel in the Lean annex:
 - Theorem: `fluency_does_not_witness_settlement` — one-way non-implication only.
 - Posture: annex sibling to `RecoveryMargin` and `ClosureEligibility`. Same family resemblance — a visible surface signal is being asked to license a substantive claim it does not, by itself, support. Wired into `LeanProofs.lean`; not in `CalculusOne.lean` (the 1.0 public surface). Green and sorry-free.
 
-**What the Lean module does NOT contain** (all deferred to this note + the formal sketch):
-- The controller theorem (Schmitt-trigger safety invariant). Lives in the formal sketch as a sketch with known gaps.
-- The full three-clock dynamics (interaction / settlement / decay) and four-stock dynamics (B / K / X / R). Named in the module header as cybernetic provenance only — not modeled in Lean.
+**What the static ANNEX module does NOT contain:**
+- The controller theorem. That distinct claim now lives, checked and fenced, in `LeanProofs/Scratch/ConsolidationController.lean`.
+- The full three-clock dynamics (interaction / settlement / decay) and four-stock dynamics (B / K / X / R). Those remain prose/model scope; the Scratch controller models B only.
 - An independence claim. Only the load-bearing direction (*fluent → settled* is false) is proved. The opposite (*settled → fluent* witness) is not claimed.
 - A retention, compression, or reauthorization attack. Separate axes.
 
 **Vocabulary lift (retroactive recognition):** the Lean annex already uses "refusal kernel" in `RecoveryMargin.lean` and `ClosureEligibility.lean` docstrings. ChatGPT's framing ("a minimal formal object that blocks one inadmissible witness move") names what the annex pattern has been doing all along; the module's docstring header makes the membership explicit. Not new doctrine — recognition of an existing pattern. **Two-sentence summary landed in the Admissibility README same day** (`~/git/lean/LeanProofs/Admissibility/README.md`): *CalculusOne defines the public admissibility path. The annex contains refusal kernels: small formal countermodels that block recurring inadmissible witness moves.*
 
-**Seam note (downstream of the headline lift):** Claude-web read "refusal kernel" as a runtime primitive — interpreted as "first formal refusal primitive / counter-witness lock." That's a layer-jump from the formal annex pattern to a candidate runtime object. See [`refusal-kernel-to-refusal-receipt-seam.md`](refusal-kernel-to-refusal-receipt-seam.md) for the bridge stub. Keeper: *Formal refusal blocks an inference. Runtime refusal blocks use of a basis.* No runtime "refusal receipt" built; the seam note exists to prevent category collapse when forcing case eventually appears.
+**Seam note (downstream of the headline lift):** Claude-web read "refusal kernel" as a runtime primitive — interpreted as "first formal refusal primitive / counter-witness lock." That's a layer-jump from the formal annex pattern to a candidate runtime object. See [`refusal-kernel-to-refusal-receipt-seam.md`](refusal-kernel-to-refusal-receipt-seam.md) for the bridge stub. Keeper: *Formal refusal blocks an inference. Runtime refusal blocks use of a basis.* No runtime "refusal receipt" is implied; if one is later implemented, it must map to the formal object and supply its own conformance evidence.
 
 **Claim register decision:** entry NOT added to `CLAIM-REGISTER.md`. Following the precedent of `RecoveryMargin` and `ClosureEligibility` (neither has a register entry), refusal kernels live in the Admissibility README only. The register tracks broken corpus claims; "visible fluency witnesses audited settlement" was never an asserted corpus claim — it's a forbidden-inference named *by* this module, not a prior claim being broken.
 
 ## Cross-references
 
-- [`consolidation-denial-formal-sketch.md`](consolidation-denial-formal-sketch.md) — companion file with three-clock dynamics, four-stock equations, mode-specific safety invariant, and illustrative Lean sketch. Explicit scratch.
+- [`consolidation-denial-formal-sketch.md`](consolidation-denial-formal-sketch.md) — companion/source note with three-clock dynamics, corrected four-stock equations, and the custody pointer to checked `Scratch/ConsolidationController.lean`.
 - `~/git/lean/LeanProofs/Admissibility/ConsolidationDenial.lean` — the landed refusal kernel.
 - [`../laundering-move-watchlist.md`](../laundering-move-watchlist.md) — sibling attack-surface catalog on the boundary-crossing axis. Consolidation-denial does not fit Section B's generator (no artifact crosses a boundary); it lives on a sibling axis instead.
 - [`../admissibility-decay-family-note.md`](../admissibility-decay-family-note.md) — sibling organizing layer on the stale-license / decay axis.
@@ -421,7 +421,7 @@ A narrowed version landed as a refusal kernel in the Lean annex:
 - `[[feedback-anti-collapse-runbook]]` — *do not synthesize until the substitutions are visible* (wait-before-crystallize).
 - `[[project-register-capture-admissibility]]` — sibling drift mechanism; consolidation-denial names *why* the drift fails to correct.
 - `[[project-compression-becomes-authority]]` — what consolidation-denial prevents the system from doing *well*.
-- `[[project-tooltheory-directory]]` — the containment vessel this note now sits in; promotion ladder ends at *paper only if forced*.
+- `[[project-tooltheory-directory]]` — the containment vessel this note now sits in; paper promotion is an editorial/doctrine decision, not a forcing-case gate on formal work.
 - `~/git/nightshift/` — operational instantiation of the protected consolidation phase. The structural response.
 - `~/git/agent_gov/` — permission-set narrowing under suspect context; the authority gates that go quiet during interrupt.
 - `~/git/continuity/` — preservation / TTL / revalidation across phase boundaries.

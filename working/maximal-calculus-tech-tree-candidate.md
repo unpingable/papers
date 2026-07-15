@@ -1,7 +1,9 @@
 # Maximal-calculus tech tree — sequencing doctrine (CANDIDATE)
 
-**Status:** CANDIDATE / non-binding. A handle for review, NOT authorization to
-build. Captured 2026-06-30 while the operator was noodling on sequent calculus
+**Status:** CANDIDATE / non-binding. A handle for review, not a release or
+promotion grant. Coherent Scratch formalization may proceed before a runtime
+consumer exists and may lead later code; the intrinsic dependency order below
+still applies. Captured 2026-06-30 while the operator was noodling on sequent calculus
 with codex / ChatGPT / web-Claude — **work is incoming, not yet inspected.** This
 note records the *sequencing* idea only; it does not look at or bless any
 in-progress `Sequent.lean`.
@@ -137,7 +139,8 @@ sequent work starts growing one giant constructor family, the fence has failed.
 - Composes with the dormant maximal-calculus registers:
   `working/maximal-calculus-forcing-cases.md`,
   `working/maximal-calculus-decomposition-trigger.md`,
-  `working/maximal-calculus-amendment-cut.md` (all "file-now-work-never").
+  `working/maximal-calculus-amendment-cut.md` (historically labeled
+  "file-now-work-never"; that consumer-gated timing is superseded).
 
 ## Immediate next unlock (the first non-toy footing)
 
@@ -202,5 +205,6 @@ customs officer.*
 ## What this note is NOT
 
 - Not a look at the in-progress sequent work (operator said don't yet).
-- Not authorization to build `ResourceSequent` or any of it.
+- Not evidence that `ResourceSequent` or any other Scratch artifact is promoted,
+  production-conformant, or entitled to testify beyond its custody class.
 - Not a revival of the retired "Admissibility Calculus" as a unifying object.

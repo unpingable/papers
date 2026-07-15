@@ -101,7 +101,7 @@ Codex's bottom line: *"for distinct S.policy and t.postPolicy, a Transition E S 
 - **Finding 2: AFFIRMS (no action).** Codex confirms `applyOp` is not an evidence-forging path. Log.
 - **Finding 3: AFFIRMS (no action).** Codex confirms equality transport at `S.policy = postPolicy` is the vacuous/fixed-point case, not laundering. Log.
 - **Finding 4: AFFIRMS (no action).** Codex confirms no implicit-instance forge path. Log.
-- **Finding 5: REJECT (style consistency).** Universe polymorphism not a (A1) issue; `SafetyBridge.SafetyEnv` and all sibling modules in `LeanProofs/Admissibility/` use monomorphic `Type`. Changing here alone creates inconsistency. Per YAGNI: no universe machinery without forcing case. If a polymorphic instance ever shows up downstream, both this specimen and the fragment will lift together.
+- **Finding 5: REJECT for this patch (style consistency).** Universe polymorphism is not an (A1) issue; `SafetyBridge.SafetyEnv` and all sibling modules in `LeanProofs/Admissibility/` use monomorphic `Type`. Changing here alone creates inconsistency. A separate polymorphic generalization may lead downstream use when a precise theorem or instance makes the extra universes load-bearing; runtime demand is not its permission source.
 
 ### Integration
 
@@ -259,4 +259,3 @@ Surfaced for operator review at end-of-run:
 4. **Discharge essay promotion path.** `maximal-calculus-discharge-connection.md` cross-references the discharge essay candidate; whether the formal cousin should be folded in or kept sibling is operator-only.
 5. **Title and naming.** Per `project-paper-naming-stack`, the *An Admissibility Calculus* slot remains reserved; no naming was attempted.
 6. **The "valid wait" question** (filed open in C.1). What counts as the receipt-gated middle term `(O₁ → wait → O₂)`? Codex's outside-aperture finding 4 confirms this is genuinely outside the kernel; whether it earns a Lean shape, a paper shape, or a doctrine note is operator-only.
-

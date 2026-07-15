@@ -1,6 +1,6 @@
 # Admissibility vs arms control — nuclear command as specimen bridge
 
-**Filed:** 2026-06-06 (Fri PM). **Status:** doctrine note + specimen bridge; **2026-06-09 resolved as prose doctrine** — see status section below. Lean formalization currently brake-blocked (carrier-level), not curdling-blocked. (Original 2026-06-06 directive: *curdle for a day before it becomes another cursed little theorem gremlin*. Timer closed 2026-06-07; present restriction is carrier-brake, not timing.)
+**Filed:** 2026-06-06 (Fri PM). **Status:** doctrine note + specimen bridge; **2026-06-09 resolved as prose doctrine** — see status section below. **Policy correction, 2026-07-14:** the carrier mismatch is a formal design question, not a runtime-consumer brake. A focused model may represent custodial provenance before code consumes it; public promotion and mutation of the existing carrier remain separate. (Original 2026-06-06 directive: *curdle for a day before it becomes another cursed little theorem gremlin*. Timer closed 2026-06-07.)
 
 **Custody:** doctrine note; pre-ratified per name-early. Companion to [`bridge-obligation-lattice.md`](bridge-obligation-lattice.md) (the witness-obligation constraint this elaborates lives most naturally as a *cross-cutting refinement* of the obligation atoms — same-custody is not a new obligation, it's a *quality* the witness-source must have for any obligation to be honestly discharged). Memory pointer: `project-admissibility-vs-arms-control`.
 
@@ -120,7 +120,7 @@ This doctrine **constrains** every refusal kernel without **replacing** any:
 
 ## What this is NOT (curdling guard)
 
-- **Not currently authorized as a Lean kernel.** Lean formalization is currently brake-blocked (see 2026-06-09 status section below). The existing carrier (`RefusalPropagation.lean`) supports only binary/topological refusal; this doctrine is the custodial-provenance axis, which the carrier does not represent. Brake is present, not permanent — not a claim that custodial provenance cannot ever be encoded.
+- **Not represented by the current Lean carrier.** `RefusalPropagation.lean` supports only binary/topological refusal; this doctrine is the custodial-provenance axis. A bounded Scratch model may add or isolate that axis once the four-axis choice below is explicit and the theorem is non-vacuous. That does not automatically authorize a core-carrier change or public promotion.
 - **Not a new bridge family.** The bridge-obligation lattice already covers the families; same-custody is a *transversal quality* across them, not a new family.
 - **Not a claim about geopolitical arms control.** The reconciliation positions admissibility as the *demand-side counterpart* to supply-side arms control; it does not claim arms control is unnecessary or that admissibility scales globally. Local leverage, not universal coverage.
 - **Not a Petrov-veneration note.** The doctrine sentence is *encode what Petrov did, so survival does not require Petrov.* If anything, the institutional discipline is the corpus's hedge against having to find Petrovs.
@@ -148,7 +148,7 @@ Test: read the doctrine pair + the modern analogue + the override discipline. Ca
 
 The 2026-06-07 curdling timer is closed on its own terms. The doctrine sits as prose-level corpus material: same-custody rule, NORAD/Petrov specimens, override discipline, evasion landscape, modern analogues, and the *encode what Petrov did* keeper all retained as written.
 
-**Lean formalization currently brake-blocked, not intrinsically unformalizable.** The existing formal carrier (`RefusalPropagation.lean`) supports only binary/topological refusal — entity-of-refusal and dependency-graph position. This doctrine names the *custodial-provenance* axis (which failure cone produced the witness), which the current carrier does not represent. The brake is the documented `State := observable | refused` decision in `RefusalPropagation.lean`, confirmed load-bearing by the 2026-06-09 CascadeSound runtime audit against `nq-core`. Brake is present, not permanent — brake-lift would require a forcing consumer that does not currently exist, plus a choice among (or composition of) the four provenance axes below. No typed `Reason` payload is authorized by this status update; no Lean work item is minted.
+**Lean status:** the existing formal carrier (`RefusalPropagation.lean`) supports only binary/topological refusal — entity-of-refusal and dependency-graph position. This doctrine names the *custodial-provenance* axis (which failure cone produced the witness), which that carrier does not represent. The documented `State := observable | refused` choice is a real compatibility boundary, confirmed load-bearing by the 2026-06-09 CascadeSound runtime audit against `nq-core`; it does not require a runtime consumer before formal work can begin. A formal probe must choose among or compose the four provenance axes below and preserve non-vacuity and proof controls. Changing the public carrier is a later custody/compatibility decision.
 
 ## Four-axis positioning (current corpus framing, not final ontology)
 
@@ -163,4 +163,4 @@ As of 2026-06-09, the corpus has four named axes of refusal/witness provenance. 
 
 Axes 3 and 4 are orthogonal: same-custody and same-receipt-type can each fail independently of the other. A witness must clear both axes (independent custody **and** a receipt of a different type than the artifact being verified).
 
-This framing is current positioning, not final ontology. A future brake-lift on the categorial axis would have to choose among or compose axes 2/3/4; that choice is not authorized by this status update.
+This framing is current positioning, not final ontology. Any formal treatment of the categorical axis must choose among or compose axes 2/3/4 explicitly; this status update does not make that modeling choice on the theorem author's behalf.

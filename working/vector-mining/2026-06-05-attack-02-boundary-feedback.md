@@ -98,14 +98,14 @@ Both files address the same shape — independent witness / non-co-captured chan
 
 **Survivor 1: the cross-reference patch.** Add bidirectional link between `working/loop-capture.md` § Witness/defense concepts and `working/tooltheory/witness-carrier-model-candidate-2026-06-06.md` § 6 row 6. Concrete, mechanical, no doctrine change.
 
-**Survivor 2: a question for future loop-capture Lean staging.** When loop-capture earns a Lean spike, the Witness Necessity Theorem (lifted from P25 Theorem 1) is a candidate target. The relay's `IndependentCustody` framing could inform the *predicate name*, not the *theorem content*. Carry as a vocabulary candidate for that future spike — NOT authorized to build now.
+**Survivor 2: a question for future loop-capture Lean staging.** If loop-capture yields a precise, non-redundant Lean target, the Witness Necessity Theorem (lifted from P25 Theorem 1) is a candidate. The relay's `IndependentCustody` framing could inform the *predicate name*, not the *theorem content*. Carry it as vocabulary; formalization does not wait for a runtime forcing case, while this pilot's duplicate verdict supplies no new theorem by itself.
 
 ## Recommended next action
 
 - **Do not** mint `BoundaryIntegrity` as a new obligation atom. Use `antiRetroactive` + the three existing atoms.
 - **Do not** mint `NoSelfValidatingLoop.lean` as a SCRATCH file. The Lean substrate (StaleEvidenceMerge) already operationalizes the freshness-side; the paper-altitude synthesis (loop capture) is the doctrine home.
 - **Do** consider the bidirectional cross-reference patch between loop-capture.md and witness-carrier-model-candidate-2026-06-06.md — Survivor 1 above.
-- **Do** carry IndependentCustody as a vocabulary candidate for a future loop-capture Lean spike. **Not authorized to build until loop-capture earns Lean staging via its own forcing case.**
+- **Do** carry IndependentCustody as vocabulary for a possible future loop-capture Lean probe. The present bundle should not be built because the overlap audit found no independent theorem residue, not because it lacks a runtime forcing case. If a precise, non-redundant refusal claim emerges, formalization may test it before a consumer exists.
 
 ## Method validation (cumulative, 2-pilot)
 

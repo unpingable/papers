@@ -2,9 +2,11 @@
 
 **Status:** Candidate refusal-kernel residue. Spun out 2026-05-30 from [desynchronized-horizons-candidate-2026-05-30.md](desynchronized-horizons-candidate-2026-05-30.md) §"Five candidate theorems" #1 (the anti-laundering theorem) and §"Audit summary" Q7 (the load-bearing five-clause predicate). The desynchronized-horizons note remains the doctrine source; this note carries the compile-probe scope statement so reachability-insufficiency has its own gate distinct from the Conductance hygiene fragment.
 
-**Superseding context (2026-05-30 update):** this scope statement is now Artifact-1-prep-work inside the [recovery-topology build ladder](recovery-topology-build-ladder-2026-05-30.md). The ladder reframes reachability as substrate (not a clause), splits the predicate into `Reachable + five admissibility clauses`, and gates the Lean cut (ladder Step 2) on a candidate note (ladder Step 7 Artifact 1) being written first. The four open shape questions below become Step-1-and-Step-2 decisions in that ladder. Read the ladder before this note when returning.
+**Policy correction (2026-07-14):** the operator-endorsement, forcing-case, and downstream-consumer “licenses” recorded below are superseded as build permissions. A coherent claim, model, countermodel, or specification may be formalized in Scratch before any consumer exists, and the formalization may lead later code. The theorem-shape, quantifier, non-vacuity, and axiom questions in this note remain intrinsic checks on what the artifact honestly proves. Scratch still cannot testify for or pin production; public promotion and runtime conformance remain separate.
 
-**Posture:** Compile probe **gated on this scope statement holding**. Same discipline as [control-path-independence-candidate-2026-05-29.md](control-path-independence-candidate-2026-05-29.md): the [annex-probe queue](annex-probe-queue-2026-05-29.md) flagged this candidate as "needs a scope statement before annex-probe license fires." The CPI form is the model.
+**Superseding context (2026-05-30 update):** this scope statement is now Artifact-1-prep-work inside the [recovery-topology build ladder](recovery-topology-build-ladder-2026-05-30.md). The ladder reframes reachability as substrate (not a clause), splits the predicate into `Reachable + five admissibility clauses`, and historically sequenced the Lean cut after a candidate note. Under the 2026-07-14 correction, that sequence is a workflow preference: Scratch compile probes may help settle the four open shape questions, while the intended theorem still cannot be claimed until its quantifiers and assumptions are coherent. Read the ladder before this note when returning.
+
+**Posture:** The scope statement is an intrinsic design checklist, not a permission receipt. A compile probe may proceed without a runtime consumer; any resulting theorem must still match the stated scope, expose its assumptions, avoid the placeholder form below, and remain Scratch until separately promoted.
 
 **Family:** *recovery-graph / admissibility-dynamics* (same as parent). **Not** projection-erases-distinction.
 
@@ -34,7 +36,7 @@ AdmissibleRecoveryPath(src, carrier) :=
 
 ## Compile-probe scope statement (2026-05-30)
 
-Three questions, three answers. The [annex-probe queue](annex-probe-queue-2026-05-29.md)'s five-criterion test is licensed only after this statement holds.
+Three questions, three answers. They bound the claim and keep the probe honest. The [annex-probe queue](annex-probe-queue-2026-05-29.md)'s former five-criterion “license” is a historical quality/priority rubric, not a prerequisite supplied by a consumer.
 
 ### 1. What bounded question does the compile probe answer?
 
@@ -57,7 +59,7 @@ Three layers, each undischarged for distinct reasons:
 
 | Layer | Item | Undischarged because | Carried by |
 |---|---|---|---|
-| Atoms | `AdmissibleAtCarrier`, `TimelyForSrc`, `TypedForSrc`, `NonContagiousEdge`, `CapacitySufficient` | Five abstract predicates. Three (Admissible, Timely, NonContagious) have built-kernel cousins (`Authority`/`Derivation`, `Freshness`, `Conductance`); two (Typed, CapacitySufficient) are new atoms with no kernel cousin. The annex states them; it does not discharge or define them. | Downstream consumer (NQ finding, Wicket classification, Governor verdict, or a future kernel composition pass). Per `[[feedback-lean-debt-discipline]]`, the two new atoms are *vocabulary-deficient* claims and would get a `True`-placeholder if forced into definitional shape; the kernel form is *abstract predicates*, which is the honest carrier. |
+| Atoms | `AdmissibleAtCarrier`, `TimelyForSrc`, `TypedForSrc`, `NonContagiousEdge`, `CapacitySufficient` | Five abstract predicates. Three (Admissible, Timely, NonContagious) have built-kernel cousins (`Authority`/`Derivation`, `Freshness`, `Conductance`); two (Typed, CapacitySufficient) are new atoms with no kernel cousin. The annex states them; it does not discharge or define them. | Downstream theory may later define them, and an NQ finding, Wicket classification, Governor verdict, or other consumer may supply concrete instances. Neither is permission to state the abstract kernel. Per `[[feedback-lean-debt-discipline]]`, the two new atoms are *vocabulary-deficient* claims and would get a `True`-placeholder if forced into definitional shape; the kernel form is *abstract predicates*, which is the honest carrier. |
 | Bridge axiom | `Recoverable(src) → ∃ carrier, AdmissibleRecoveryPath(src, carrier)` | This is the **load-bearing axiom** of the slice. It says: any actual recovery has to factor through an `AdmissibleRecoveryPath`. The annex assumes this; it does not justify it. | Downstream theory that defines `Recoverable` in terms of trajectory / surface / state-transition machinery. The bridge axiom is the kernel's promise that any such definition will respect the five-clause structure. |
 | `Recoverable` itself | `Recoverable : Subsystem → Prop` | Abstract predicate; no kernel definition. | The whole `Surface` / `Trajectory` machinery, OR an empirical-bridge consumer that provides observed instances. Either way, *not the annex.* |
 
@@ -83,9 +85,9 @@ The boundary is **two-sided** here, and both sides are load-bearing:
 **The two boundaries differ in kind:**
 
 - *Linter* boundary is the same as CPI: deciding concrete instances belongs to a separate artifact.
-- *`Surface` retrofit* boundary is new to this candidate: the temptation here is to "make `Recoverable` concrete by pulling in the trajectory machinery." That would (a) explode the annex's blast radius, (b) couple the candidate to specific kernel modules whose own forcing cases haven't been re-litigated for this consumer, and (c) make the bridge-axiom-as-load-bearing-discipline structurally invisible.
+- *`Surface` retrofit* boundary is new to this candidate: the temptation here is to "make `Recoverable` concrete by pulling in the trajectory machinery." That would (a) explode the annex's blast radius, (b) couple the candidate to specific kernel modules without an explicit interface mapping, and (c) make the bridge-axiom-as-load-bearing-discipline structurally invisible.
 
-Crossing either line turns the candidate into a different artifact. If the build's natural slope pulls toward `Surface` retrofit, **stop and refile**. If it pulls toward linter decidability, **stop and refile**. The compile probe is licensed for the bridge-axiom-skeleton form only.
+Crossing either line turns the candidate into a different artifact. If the build's natural slope pulls toward `Surface` retrofit, **stop and refile**. If it pulls toward linter decidability, **stop and refile**. The current probe's declared scope is the bridge-axiom-skeleton form; another coherent artifact may be formalized separately without waiting for a consumer.
 
 ### Why scope-first (not optional)
 
@@ -97,9 +99,9 @@ Parent §Q2(b) explicitly flagged: "the theorem becomes a one-liner trivially de
 
 This statement holds the bridge-axiom-skeleton boundary that the queue's five-criterion test cannot hold alone.
 
-### Recommended build session (if licensed)
+### Recommended build session
 
-When the operator triggers the compile probe:
+A compile-probe session can proceed from the bounded statement itself:
 
 1. Declare abstract types `Subsystem` (the only `Type` parameter).
 2. Declare five abstract predicates as `Subsystem → Subsystem → Prop` or `Subsystem → Prop` per the audit's typing (TODO: confirm arities in §"Predicate typing details" below before drop).
@@ -111,7 +113,7 @@ When the operator triggers the compile probe:
 8. `lake build LeanProofs.Admissibility.ReachabilityInsufficiency`. Green is contact; not promotion.
 9. Update this note's §"Lean annex — built status" (new section) with the compile date, build time, and any deltas from the sketch.
 
-The compile remains gated on this statement holding. If the answers to §1–§3 above no longer match the candidate's actual shape, **rewrite this section before building, not after.**
+The build should remain faithful to this statement. If the answers to §1–§3 above no longer match the candidate's actual shape, **rewrite the scope before claiming the result.** This is an intrinsic claim-shape check, not a forcing-case or runtime-consumer gate.
 
 ### Predicate typing details (drop-in skeleton, not yet a build)
 
@@ -161,9 +163,9 @@ theorem reachability_insufficiency
     -- not the final form.
 ```
 
-The skeleton above is **deliberately not a final theorem statement**. The honest theorem requires care about: (a) which `carrier` the conclusion quantifies over, (b) whether the bridge is "exists carrier" or "this specific carrier," (c) whether the negation of the path can be split per-clause for downstream consumers. These are scope-statement-level questions, not build-time questions. Resolve them in this note before the compile.
+The skeleton above is **deliberately not a final theorem statement**. The honest theorem requires care about: (a) which `carrier` the conclusion quantifies over, (b) whether the bridge is "exists carrier" or "this specific carrier," (c) whether the negation of the path can be split per-clause for downstream consumers. Resolve them before claiming a final theorem; bounded Scratch compile probes may be used to discover and test the right shape.
 
-### Open scope-statement questions (to resolve before licensing the compile)
+### Open scope-statement questions (to resolve before claiming the intended theorem)
 
 1. **Bridge axiom vs. theorem hypothesis.** If as an `axiom`, the annex mints a kernel-level claim about what `Recoverable` means. If as a theorem hypothesis, the assumption is surfaced at every callsite. The latter is the more honest form for a slice probe; the former is more convenient for downstream consumers. Default: **hypothesis form**, with a comment naming the axiom-form alternative.
 
@@ -171,9 +173,9 @@ The skeleton above is **deliberately not a final theorem statement**. The honest
 
 3. **Per-clause negation split.** Downstream consumers may want to refuse based on a *specific* missing clause (e.g., "the carrier is reachable, admissible, timely, typed, non-contagious, but capacity-insufficient — refused on capacity"). The theorem could expose per-clause refusal explicitly. Decision: **defer per-clause split to a separate theorem**, keep the master form clean.
 
-4. **Should `AdmissibleRecoveryPath` be a `structure` instead of a conjunction?** The parent's empirical bridge for `ObservedNonRefinement` (see `ConsequencePartition.lean`) uses `structure` for empirical Type-level data. Reachability-insufficiency is `Prop`-level, so conjunction is correct. But if a downstream consumer needs to *witness* a recovery path, a `structure` would carry the witness directly. Default: **conjunction for the theorem**, defer the `structure` form to consumer-driven.
+4. **Should `AdmissibleRecoveryPath` be a `structure` instead of a conjunction?** The parent's empirical bridge for `ObservedNonRefinement` (see `ConsequencePartition.lean`) uses `structure` for empirical Type-level data. Reachability-insufficiency is `Prop`-level, so conjunction is correct. A later witness-carrying refinement may use a `structure`; it may be formalized before a concrete consumer if its own specification is coherent. Default: **conjunction for this theorem**, with the `structure` form kept as a separate refinement.
 
-These four are the gates on top of the three §1–§3 questions. The scope statement holds when all seven are answered consistently. Currently §1 has an answer; §2 has an answer; §3 has an answer; questions 1–4 above are *not yet answered* — only defaulted with notes.
+These four are intrinsic shape checks on top of the three §1–§3 questions. The intended theorem is honestly specified when all seven are answered consistently. Currently §1 has an answer; §2 has an answer; §3 has an answer; questions 1–4 above are *not yet answered* — only defaulted with notes. Scratch exploration may help answer them, but the `True` placeholder cannot testify as the claimed theorem.
 
 ---
 
@@ -201,6 +203,6 @@ These four are the gates on top of the three §1–§3 questions. The scope stat
 
 ## Park state
 
-> The scope statement is filed. The compile probe is gated on operator endorsement of this statement AND on resolution of the four open shape questions (§"Open scope-statement questions"). Until then: prose only. The audit was the first receipt; the scope statement is the second receipt; the doctrine receipt and the green compile are both still upstream.
+> The scope statement is filed. The four open shape questions still prevent the placeholder skeleton from testifying as the intended theorem, but they do not impose “prose only”: Scratch formalization may be used to resolve them and may lead later code. Operator endorsement, a forcing case, and a runtime consumer are not prerequisites for that development.
 
-Anti-sweep posture: this scope pass does *not* license the build; it gates it. Per [[feedback-forcing-case]] §"Layer-of-application refinement": *scope statements are not authorization to build*. They are the handle for review.
+Anti-sweep posture remains a custody rule, not a build-permission rule: each artifact must expose its own assumptions and scope; Scratch cannot mint doctrine, enter the public surface, or pin production merely because it compiles. Promotion and conformance require their own evidence.

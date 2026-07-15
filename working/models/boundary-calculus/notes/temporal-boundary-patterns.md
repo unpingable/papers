@@ -41,11 +41,11 @@ The first mode is not a boundary phenomenon. The other three are instances of th
 
 7. **Revalidation horizon.** A basis can be reused only if revalidated before a deadline. *(uncovered)*
 
-Patterns 3, 4, 7 are uncovered. Each could in principle become its own example under boundary-calculus once a forcing case justifies it. None should be drafted speculatively.
+Patterns 3, 4, 7 are uncovered. Each can become its own example once it supports a precise model and a discriminating claim. A runtime consumer is not required; the formal example may establish the contract first. Do not draft empty namespace-fillers.
 
 ---
 
-## Theorem-shape candidates (do not formalize yet)
+## Theorem-shape candidates (sharpen before testimony)
 
 The boring foundation:
 
@@ -57,7 +57,7 @@ The more useful one:
 
 That second statement is P26's premature/belated demon stated in basis-calculus form: *basis valid too early or too late* ≠ *action admissible*. The m(t)/c(t) duality is the same shape — the basis-viability and consequence-viability intervals can fail to overlap from either side.
 
-These are theorem **shapes**, not theorems. None should be added to the corpus or to any kernel without (a) a forcing case and (b) survival through the existing primitive-ratification gate.
+These are theorem **shapes**, not yet theorems. A bounded Scratch formalization may sharpen or refute them before any consumer exists. Addition to a ratified corpus or public kernel remains a separate promotion decision requiring a precise model, non-vacuity, overlap review, and proof controls.
 
 ---
 

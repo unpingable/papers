@@ -1,6 +1,6 @@
 # Signal Authority — Candidate Doctrine
 
-**Status:** Candidate / exploration phase. Not ratified. Forcing case present (platform-mediated silence vs. interpersonal silence vs. bureaucratic silence — all show the same protocol-shape failure); Lean module name reserved but not built. Filed per name-early discipline. Explicitly not promoted.
+**Status:** Candidate / exploration phase, not ratified, with a checked formalization-leading slice at `~/git/lean/LeanProofs/Scratch/SignalAuthority.lean`. Platform-mediated, interpersonal, and bureaucratic silence are worked cases, not authorization tokens. The Scratch module is unwired and not imported by `LeanProofs.lean`; it formalizes the bounded no-objection/solicitation seam rather than the entire doctrine below.
 
 ## The protocol-level reframe (keeper stack)
 
@@ -187,15 +187,27 @@ Other connections:
 - **Laundering-pattern family** (attack-surface, control-set, scope, evidentiary-exclusion) — null-laundering is the *signal-side* sibling.
 - **P17 Receipt the Compiler, P19 Shadow Governance** — bureaucratic-silence-as-verdict is what the second failure mode names formally.
 
-## Future Lean module (deferred, not tonight)
+## Lean extraction and broader formal reserve
 
-If/when this candidate earns ratification:
+The checked Scratch slice was extracted from the field-guide's
+`NoObjectionRequiresSolicitation` shape. It formalizes before any runtime
+checker exists and repairs the source sketch by requiring:
+
+- exact group, decision, and numeric response-window binding;
+- solicitation coverage for every group member;
+- a closed response window and complete objection ledger;
+- absence of in-scope recorded objections;
+- positive, paired-world, and collapsed-empty-list specimens.
+
+It claims no consent, agreement, decision correctness, or completeness for
+unmodeled channels. If custody review later promotes the broader candidate, the
+possible public home remains:
 
 ```
 ~/git/lean/LeanProofs/Admissibility/SignalAuthority.lean
 ```
 
-Module name discipline: *SignalAuthority*, not *SilenceAsRevocation*. The latter is essay-title shaped — too hot, too likely to wear eyeliner. *SignalAuthority* is neutral, technical, durable.
+Module name discipline: *SignalAuthority*, not *SilenceAsRevocation*. The latter is essay-title shaped — too hot, too likely to wear eyeliner. *SignalAuthority* is neutral, technical, durable. The current file is Scratch; the `Admissibility/` path is not reserved by consumer demand.
 
 Three-layer structure (sketch, not final):
 
@@ -205,7 +217,7 @@ Three-layer structure (sketch, not final):
 
 The Boolean form (`silenceMeansNothing | silenceMeansRejection`) is too coarse. Real channels have **time-indexed, channel-indexed, relationship-indexed** silence-semantics: email-silence-after-three-business-days reads differently than email-silence-after-three-minutes — same protocol, time-indexed interpretation. The Lean shape needs to handle that without exploding.
 
-Theorem family (candidates, all deferred):
+Broader theorem family (not claimed by the checked no-objection slice):
 
 - `missing_ack_is_not_nack`
 - `timeout_is_not_verdict_without_semantics`
@@ -218,13 +230,13 @@ Theorem family (candidates, all deferred):
 
 The last pair is the structurally important one: the verdict space probably needs to distinguish "this controller is hallucinating a clause" from "this controller is correctly applying a clause the protocol shouldn't have."
 
-## What's deferred (explicit)
+## What's still open (explicit)
 
-- **Lean module not built.** Per the discriminating-distinctions test: don't formalize until you know whether you're modeling Boolean verdicts, weighted evidence, protocol-defined lapse, or illegitimate authority clauses. Currently doing conceptual discrimination work in prose.
-- **Primitive not promoted.** Second forcing case (outside personal/social/bureaucratic) not surfaced. Candidates: distributed-systems liveness/silence semantics; financial-market silence-as-confirmation patterns; security-incident-silence-as-resolved patterns. *Note (2026-05-11, corrected):* an earlier draft treated the Bsky tombstone as a signal-shape extension to this candidate. That was rediscovery of Paper 25's observation-equivalence framework, not a Signal Authority extension. See "Relation to observation-equivalence" section. The Bsky case is a platform-domain instance of Paper 25, not a Signal Authority case.
+- **The broad doctrine is not fully formalized.** Boolean verdicts, weighted evidence, protocol-defined lapse, and illegitimate authority clauses remain discriminating prose questions. A further theorem needs a coherent non-duplicative statement; it does not need a consumer to ask.
+- **Primitive not promoted.** An independent worked case outside personal/social/bureaucratic settings would strengthen doctrine review. Candidates: distributed-systems liveness/silence semantics; financial-market silence-as-confirmation patterns; security-incident-silence-as-resolved patterns. *Note (2026-05-11, corrected):* an earlier draft treated the Bsky tombstone as a signal-shape extension to this candidate. That was rediscovery of Paper 25's observation-equivalence framework, not a Signal Authority extension. See "Relation to observation-equivalence" section. The Bsky case is a platform-domain instance of Paper 25, not a Signal Authority case.
 - **Composition with FiatAdmissibility not explored.** Whether SignalAuthority needs `outOfScope` for cases handled by FiatAdmissibility's artifact-kind axis is open. Likely yes, on the same custody-recursion logic that makes `mutateState → outOfScope` in FiatAdmissibility.
 
-## Posture rule (durable regardless of forcing context)
+## Posture rule (durable regardless of application context)
 
 The discipline that surfaced alongside the doctrine:
 
@@ -236,7 +248,7 @@ Protocols are tested against channels, not against an operator's state. Doctrine
 
 Conditions for promoting candidate → doctrine:
 
-- Second forcing case outside the originating cluster (distributed-systems, market, security, regulatory)
+- An independent worked case outside the originating cluster (distributed-systems, market, security, regulatory)
 - **Generator test:** does it cut sharply enough to disqualify a candidate or rule out a category of inferences?
 - **Kind test (per primitive ontology):** tentatively a *boundary* — between what signal-shapes can license standing-change authority and what cannot. Possibly an axis if it composes cleanly with FiatAdmissibility.
 - Decision on whether Boolean form is genuinely too coarse for v0 or sufficient

@@ -1,10 +1,10 @@
 # Uncertainty custody across the commitment/readout surface
 
-**Status:** Candidate refusal-kernel residue. Not promoted doctrine. Filed 2026-05-26 after multi-model relay (DeepSeek + ChatGPT + operator). Working note only; Lean sketches named-not-built. **Absence of Lean here is not an implementation gap — it is the intended state.**
+**Status:** Candidate refusal-kernel residue with a checked Scratch formalization. Not promoted doctrine. Filed 2026-05-26 after multi-model relay (DeepSeek + ChatGPT + operator); extracted to `~/git/lean/LeanProofs/Scratch/UncertaintyCustody.lean`. The Scratch file closes the two finite countermodels that were left as `sorry` below and is authoritative where it differs. It is not imported by `LeanProofs.lean`.
 
-**Posture:** A new instance of the `surface ⇏ substance` operator family ([[refusal-kernel-to-refusal-receipt-seam]]) plus a paired distinction between uncertainty custody and risk custody. The bridge between those two is a domain-authority claim, not free math. The whole artifact is ~200 lines of prose deliberately not promoted to a paper or a built Lean kernel.
+**Posture:** A new instance of the `surface ⇏ substance` operator family ([[refusal-kernel-to-refusal-receipt-seam]]) plus a paired distinction between uncertainty custody and risk custody. The bridge between those two is a domain-authority claim, not free math. Formalization leads later code work here; Scratch contact does not promote the note to a paper, imported kernel, or runtime-conformance claim.
 
-**The audit was the gate.** This note documents what survived the audit, not what wants to grow.
+**The audit identifies the formal residue.** Scope, truth, overlap, proof, and anti-vacuity remain gates; a downstream consumer does not.
 
 ---
 
@@ -77,7 +77,7 @@ Performed 2026-05-26 before any new artifact was filed:
 | [[witness-invariance-failure]] (`Admissibility/WitnessInvariance.lean`) | Symmetric cousin. WI: *witness moves under wrong perturbation* = unqualified. UC: *policy does not move under uncertainty perturbation* = decorative. Mirror direction. | Sibling, not subsumption. Both inhabit invariance-discipline space. |
 | [[prose-state-inversion]] | Same authority-laundering genus (limited-standing artifact crosses into stronger role), different substrate. PSI = prose-vs-structured-state. UC = emitted-commitment-vs-internal-uncertainty. | Sibling under a shared genus; distinct slot. |
 | `SurfaceAuthorization` | *Collapsed surface ⇏ cause attribution.* Same family (surface ⇏ substance) but about evidence quality for cause-attribution; UC is about uncertainty-affecting-policy. | Adjacent. Not a subsumption. |
-| `FiatAdmissibility` | Could host a (`uncertainty-report`, `authorize-irreversible`) cell with classification `denied` or `requiresMediation`. | Closest formal slot if Lean is forced. |
+| `FiatAdmissibility` | Could host a (`uncertainty-report`, `authorize-irreversible`) cell with classification `denied` or `requiresMediation`. | Closest promoted slot if custody review favors integration. |
 | [[stale-binding]] / [[trajectory-actuator-gap]] | Both adjacent to commitment under imperfect information, but on different axes (freshness, historical-vs-present authority). | Orthogonal. |
 | NQ verdict vocabulary (`CANNOT_TESTIFY` / `REQUIRES_REVALIDATION` / `ADVISORY_ONLY`) | Verdict shapes already exist. UC supplies a new *predicate* that feeds them. | Predicate addition, not verdict invention. |
 | [[project-laundering-move-watchlist]] | Generator: *limited-standing artifact crosses into stronger operational role without earning transition.* UC is exactly an instance. | UC fits the genus. Add as an entry in Section B (named-not-promoted) if the watchlist gets revised. |
@@ -90,11 +90,11 @@ Performed 2026-05-26 before any new artifact was filed:
 
 That is the entire residue. Everything else from the relay (active inference, neural sampling, gridworlds, calibration monitors, safety shims with proven fallbacks) was successfully clamped and does not belong in any artifact.
 
-## Lean reserve — recognition handles, not implementation obligations
+## Lean source sketches — extracted to checked Scratch
 
-Three tiny kernels would slot into the existing `Admissibility/` annex pattern (same scale as `ConsolidationDenial.lean` / `RecoveryMargin.lean`). Sketched here so the shape is decided in advance; **do not build** unless either (a) a downstream consumer forces the proof, or (b) the next pass naturally crystallizes one into less than 30 lines.
+These sketches supplied the initial shape for `LeanProofs/Scratch/UncertaintyCustody.lean`. The checked file keeps the coherent non-collapse result, closes both finite countermodels, and remains fenced from the public import surface.
 
-> **These sketches are recognition handles, not implementation obligations. Absence of Lean here is the intended state unless a downstream consumer forces the proof. "Sketched-not-built" is not a synonym for "obviously next."**
+> **The Markdown sketches are provenance, not the authoritative proof. Scratch formalization may lead later implementation; promotion and conformance remain separate.**
 
 ### The Lean did its job before existing
 
@@ -186,7 +186,7 @@ theorem rc_does_not_imply_uc : ∃ (B A : Type) (hU : B → Prop) (cons : A → 
 
 These would be small finite countermodels (~15-20 lines each filled in). Together they prove the predicates are genuinely independent.
 
-**Build trigger:** only if a paper draft, a Wicket fixture spec, or a Governor doctrine document forces a citation. Until then this sketch is enough to gate future fresh-context audits.
+**Current disposition:** the finite countermodels are built in checked Scratch. A paper draft, Wicket fixture, or Governor artifact may later provide correspondence evidence or a citation target, but none is an admission prerequisite.
 
 ## Anti-goals
 
@@ -196,7 +196,7 @@ These are explicit non-actions. The vocabulary is shiny enough that without an a
 - **Do NOT** build gridworlds, calibration monitors, safety shims, or runtime scaffolding. Those are downstream consumer concerns; this is a *predicate-level* refusal kernel.
 - **Do NOT** conflate uncertainty custody with personhood, moral status, sentience, or "AI rights" reasoning. Behavioral uncertainty is a control-relevance threshold, not a soul detector. See the Soong-pit guardrail in operator-side notes.
 - **Do NOT** promote to a paper unless the surface→substance pairs start recurring across **at least three** independent system contexts (NQ / Wicket / AG / LLM-agent / continuity / etc.) within the next several sessions.
-- **Do NOT** add a kernel to `LeanProofs/Admissibility/` until either a consumer forces it or the proof crystallizes into <30 lines naturally during another build pass.
+- **Do NOT** promote the Scratch module into `LeanProofs/Admissibility/` without an overlap, scope, proof, and custody review. Runtime adoption may contribute correspondence evidence but is not a prerequisite to formalize.
 - **Do NOT** add to the operator family's verified-instances row in the seam note. The candidate row is fine; the verified row requires a built kernel.
 
 ## Keepers (compact stack)
@@ -228,7 +228,7 @@ The first is the operator-family entry. The next three are diagnostic. The next 
 - [`../primitives/prose-state-inversion.md`](../primitives/prose-state-inversion.md) — sibling under shared authority-laundering genus, different substrate.
 - `~/git/lean/LeanProofs/Admissibility/SurfaceAuthorization.lean` — closest existing formal sibling for the surface→substance pattern.
 - `~/git/lean/LeanProofs/Admissibility/WitnessInvariance.lean` — symmetric kernel for the invariance-discipline axis.
-- `~/git/lean/LeanProofs/Admissibility/FiatAdmissibility.lean` — closest formal slot if a Lean kernel is forced (one (kind, use) cell).
+- `~/git/lean/LeanProofs/Admissibility/FiatAdmissibility.lean` — closest possible promoted integration slot (one (kind, use) cell).
 - Classical control reference: certainty-equivalence and separation principle (Kalman / LQG); dual control theory (Feldbaum, Bar-Shalom-Tse). These are *prior-art ballast*, not citations to import — UC is the admissibility-coded shadow of the same distinction.
 
 ## Provenance
@@ -242,9 +242,9 @@ The first is the operator-family entry. The next three are diagnostic. The next 
 The work survives shutdown here. Next session's input — if the topic recurs — should:
 
 1. Check whether any of the three surface→substance pairs has accumulated a second independent system instance.
-2. Check whether NQ / Wicket / AG / a paper draft demanded a citation in the meantime.
-3. Only then consider promoting Sketch 1 or Sketches 2+3 into `LeanProofs/Admissibility/`.
+2. Check whether NQ / Wicket / AG / a paper draft supplies a useful correspondence target.
+3. Review the checked Scratch module for overlap and custody before any `Admissibility/` promotion.
 
-Until any of those triggers fire, the note stays prose. The audit was the deliverable.
+Until promotion review succeeds, the note stays candidate doctrine and the formal artifact stays Scratch.
 
-> **The audit was the gate. The residue is the receipt.**
+> **The audit found the residue. Lean checked it. Neither receipt proves a runtime mapping.**

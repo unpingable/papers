@@ -7,6 +7,12 @@ diagnostic Cedar-comparison material. The live scoping artifact is
 [[conversion-router-candidate]], which explicitly drops Cedar framing
 except as disclaimer.
 
+**Policy correction, 2026-07-14:** the archive's runtime-consumer-first build
+tree is historical and not operative. A coherent formal contract may lead code;
+runtime rollout and public promotion are separate, and conformance requires an
+explicit mapping plus evidence or refinement. The live router note carries the
+corrected policy.
+
 **Status:** UNRATIFIED design seed, superseded. **NOT** authorized to
 build.
 **Originally gated on:** a real forcing consumer — originally

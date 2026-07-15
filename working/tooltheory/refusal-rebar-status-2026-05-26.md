@@ -34,7 +34,7 @@ Four moves landed in `RefusalPropagation.lean` during the day:
 
 ## What this does not prove
 
-1. **No runtime conformance.** The masking-cascade function is not modeled. NQ's runtime cascade satisfies `CascadeSound` by inspection of the gap docs + tests, not by Lean proof.
+1. **No runtime conformance.** The masking-cascade function is not modeled. Gap docs and tests suggest a candidate mapping to `CascadeSound`, but this note supplies neither a complete mapping nor a runtime evidence/refinement package.
 
 2. **No public 2.0.** `CalculusOne.lean` is untouched. The 1.0 compatibility claim is unchanged. Nothing in `RefusalPropagation.lean` has a `[1.0]` tag.
 
@@ -42,23 +42,23 @@ Four moves landed in `RefusalPropagation.lean` during the day:
 
 4. **No claim graph.** `DependsTrans` is a minimal path relation — base + step constructors, nothing more. No edge metadata, no scope, no time, no use-kind, no provenance.
 
-5. **No production-side conformance.** No NQ test, no labelwatch fixture, no consumer-side artifact cites any of these theorems. The instantiations are formal-side only; consumers haven't yet been wired through.
+5. **No production-side conformance.** The instantiations are formal-side only; consumers have not been mapped and wired through, and no runtime evidence or refinement argument establishes that their behavior satisfies these theorems. Citation, if added, would identify the intended contract but would not by itself close this gap.
 
 ---
 
-## Phase D status (updated wording)
+## Public Phase D promotion status (2026-05-26 wording)
 
-The previous "unmet" framing on Criterion 1 was too coarse. Updated:
+The previous "unmet" framing on Criterion 1 was too coarse. This table governs public Phase D promotion, not permission to continue theorem development. Current policy also requires an explicit mapping plus runtime evidence or refinement for any conformance claim; a production fixture's citation alone is insufficient.
 
 | Criterion | Status |
 |---|---|
 | 1. Composition between kernels | **Partially satisfied at the generic dependency-relation level** (`refusal_composes` / `_two_hop` / `_propagates_transitively` form a small calculus over a single `requiredFor` relation); **not yet satisfied at the cross-kernel / public-calculus level** (no composition between distinct refusal-kernel families). |
 | 2. New abstraction count | Within budget. `DependsTrans` is one new inductive (2 constructors); adapters per consumer are duplicated, not generalized. |
-| 3. Second forcing case | **Multiple candidate consumers with Lean instantiations** (NQ-on-NQ, Labelwatch); **no production fixture** yet citing any composition theorem. Criterion 3 framing strengthens from "candidate identified" to "candidates with Lean-side anchors, awaiting consumer-side fixture." |
+| 3. Promotion evidence | **Multiple candidate consumers with Lean instantiations** (NQ-on-NQ, Labelwatch); **no production fixture with an explicit mapping and behavioral evidence** yet. The dated framing moved from "candidate identified" to "candidates with Lean-side anchors, awaiting consumer-side evidence." |
 | 4. Slogan-blast-radius | Unchanged. Keepers stay honest. |
 | 5. PL/UC stays as working notes | Unchanged. Lean reserves still not built. |
 
-Phase D **remains closed**. Criterion 1's strict reading still requires composition between distinct kernels, and Criterion 3 still requires an active forcing case (production fixture).
+Public Phase D **remains closed** under this receipt's criteria. Criterion 1's strict reading still requires composition between distinct kernels, and criterion 3 still requires production-side promotion evidence. Neither condition blocks further formal work.
 
 ---
 
@@ -66,9 +66,9 @@ Phase D **remains closed**. Criterion 1's strict reading still requires composit
 
 Three pressure points the next audit should evaluate, in order of likely fire:
 
-1. **Shared adapter extraction audit.** Three chain-shaped adapters now duplicate the same seven-element machinery (`State` / `Refused` / `CascadeSound` / `BindingAdmissible` / `RequiredFor` / `WitnessesInSnapshot` / `cascade_implies_basis_inheriting`). "Rule of three = after three, inspect" is the standard reading. The duplication did evidentiary work; that work is now collected. **Not authorized to extract yet, but explicitly audit-worthy.** The audit question: *is the repeated chain adapter now a generic construction, or is the duplication still doing evidentiary work?*
+1. **Shared adapter extraction audit.** Three chain-shaped adapters now duplicate the same seven-element machinery (`State` / `Refused` / `CascadeSound` / `BindingAdmissible` / `RequiredFor` / `WitnessesInSnapshot` / `cascade_implies_basis_inheriting`). "Rule of three = after three, inspect" is the standard reading. The duplication did evidentiary work; that work is now collected. The extraction decision turns on whether the repeated adapter is genuinely generic and whether the refactor preserves the brakes—not on a runtime forcing case.
 
-2. **Production fixture citing composition theorem.** A real NQ test, a labelwatch consumer, or an external Lean importer citing `refusal_composes_two_hop` / `refusal_propagates_transitively` would convert Criterion 3 from "candidate with Lean anchor" to **active forcing case**. None exists yet. The next consumer-side step (likely NQ TESTIMONY_DEPENDENCY V2's design conversation) is the natural fire-point.
+2. **Production mapping and evidence.** A real NQ test or labelwatch integration that maps behavior to `refusal_composes_two_hop` / `refusal_propagates_transitively` and supplies behavioral evidence would strengthen the public-promotion case. An external Lean importer supplies formal reuse, not runtime conformance; citation alone closes neither mapping nor evidence. None exists yet. The next consumer-side step (likely NQ TESTIMONY_DEPENDENCY V2's design conversation) is a natural correspondence target.
 
 3. **Bounded cascade helper extraction from NQ.** Runtime conformance failed at the function level because `publish.rs:1294-1382` is monolithic. If NQ ever extracts a smaller helper — e.g., a pure `should_suppress : (Host, Kind, MaskingRules, ObservedParents) → Bool` separated from generation/upsert state — runtime conformance becomes re-evaluable. Currently the function is too entangled; this is an NQ-side refactor pressure, not a Lean-side gate.
 

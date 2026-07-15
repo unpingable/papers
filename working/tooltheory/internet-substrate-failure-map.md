@@ -118,7 +118,7 @@ Distributed events are not naturally totally ordered. Substrate mechanisms here 
 - **Vector clocks / happens-before** — partial order; detects incomparability.
 - **Linearizable vs serializable reads** — linearizable reflects current consensus; serializable local reads may be stale.
 
-**Existing-primitive routing:** `time-decomposition` (operator/metric/phase) already covers this. Vector clocks add causal partial-order to the framework as an annex theorem if a concurrency forcing case fires.
+**Existing-primitive routing:** `time-decomposition` (operator/metric/phase) already covers this. A vector-clock causal-partial-order annex theorem may be developed when its statement, relationship to the existing decomposition, and non-vacuity controls are precise; formalization may lead a later concurrency implementation or fixture.
 
 ### F. Custody / provenance
 

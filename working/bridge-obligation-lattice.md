@@ -13,7 +13,7 @@ The kernels split cleanly by what they refuse:
 | Lane | What it refuses | Examples (existing + candidate) |
 |---|---|---|
 | **Static refusal kernels** | predicate discharge — *this evidence does not discharge that predicate* | `NoLift` instances (LogOnlyProvesEmission, ReceiptIsNotAuthority); `NoSilentJoin` (AggregateWitnessRequiresJoin); Freshness / SurfaceAuthorization / WitnessInvariance / ClosureEligibility / RecoveryMargin / CrossBoundary* / ConsolidationDenial / standing / receipt kernels |
-| **Dynamic refusal kernels** | lawful mutation of the evaluation frame — *this transition cannot change what counts without preserving named obligations* | `SurfaceDeformationRequiresCoupling` (canonical Deform instance); future candidates `NoSilentDelegation`, `NoSilentException`, `NoSilentProjection`; Revocation as a special case of Deform |
+| **Dynamic refusal kernels** | lawful mutation of the evaluation frame — *this transition cannot change what counts without preserving named obligations* | `SurfaceDeformationRequiresCoupling` (canonical Deform instance); checked Scratch `NoSilentProjection` (including the Deform/Exception separation); future candidate `NoSilentDelegation`; Revocation as a special case of Deform |
 
 Static kernels are about *receipt ≠ authority, log ≠ truth, green ≠ covered, partial witnesses ≠ joined witness.* Dynamic kernels are about *event ≠ authority to change the surface, exception ≠ precedent, delegation ≠ amplification, projection ≠ source, deformation ≠ effective surface.*
 
@@ -121,7 +121,7 @@ Every family instantiates `inEnvelope` and the cross relation differently and sw
 
 The next artifact, if it happens, is one of:
 
-- **Doctrine-first (this file).** Already shipped. Stops here unless a forcing case earns the Lean spike.
+- **Doctrine-first (this file).** Already shipped. A generic Lean spike is warranted only if the Coupling re-derivation poses a coherent, non-duplicative question; no consumer permission is required.
 - **Lean spike:** `BridgeObligations.lean` as a category-2 scratch file with the generic `BridgeWitness` declared and `CouplingWitness` re-derived as its `Deform` instance. The existing v3 SurfaceDeformation theorems must still fall out. If they don't, the abstraction is goo and gets evicted.
 - **NOT a `LeanProofs/Admissibility/BridgeObligations/` parallel directory.** Layer-map discipline: no roof for emerging taxonomies. The generic, if it ever lands, lands as a single file in `Scratch/`, not a hierarchy.
 - **NOT one candidate-file-per-family.** Nine candidate files for the nine vocabulary families would be the periodic-table-brain failure mode. Families are points in obligation-space; document them in this lattice file as they're encountered, don't multiply files.
@@ -132,10 +132,10 @@ The obligation-set framing organizes the corpus's existing kernels by *what they
 
 **Static refusal kernels (predicate discharge):**
 
-- **`LogOnlyProvesEmission`** (candidate) — owes {type-fidelity}; canonical NoLift instance at the audit-log altitude.
+- **`LogOnlyProvesEmission`** (checked Scratch candidate) — owes {type-fidelity}; canonical NoLift instance at the audit-log altitude.
 - **`SurfaceAuthorization.lean`** (standing-upgrade-block) — owes {non-amplification} at the surface level.
 - **`Freshness.lean`** (metric-time decay) — owes {freshness} as a single-atom obligation; canonical instance.
-- **`AggregateWitnessRequiresJoin`** (candidate) — owes {coverage, preservation, no-double-count}.
+- **`AggregateWitnessRequiresJoin`** (checked Scratch candidate) — owes {coverage, preservation, no-double-count}.
 - **`ConsolidationDenial.lean`** (fluency ≠ settlement) — owes {type-fidelity, anti-precedent? — verify}.
 - **`ClosureEligibility.lean`** + **`RecoveryMargin.lean`** — owe {coverage, type-fidelity}.
 - **`CrossBoundary*`** family — owe {type-fidelity} at surface boundaries; revocation cases reduce to Deform (see below).
@@ -145,7 +145,7 @@ The obligation-set framing organizes the corpus's existing kernels by *what they
 
 - **`SurfaceDeformationRequiresCoupling v3`** (this round's kernel) — owes {temporal-bounding, type-fidelity}; **canonical Deform instance.**
 - Revocation (special case) — reduces to Deformation via `contractAuthority` / `demoteConstraintToTestimony`; owes {temporal-bounding, anti-retroactivity}.
-- Future candidates `NoSilentDelegation` ({non-amplification, type-fidelity}), `NoSilentException` ({temporal-bounding, anti-precedent}), `NoSilentProjection` ({non-amplification, type-fidelity, freshness}) — **named, not built.** No candidate files yet; the lattice file IS their doctrinal home until a forcing case earns the build.
+- `NoSilentProjection` now has a checked, fenced Scratch realization at `~/git/lean/LeanProofs/Scratch/NoSilentProjection.lean`. It reuses the resident obligation table, proves Lift cannot discharge Projection's freshness/non-amplification obligations, and proves both directions of the Deform/Exception separation (missing anti-precedent vs. missing type-fidelity). `NoSilentDelegation` remains prose-only. Further family files require distinct theorem content and overlap review, not a forcing case.
 
 Each kernel's obligation set is its actual signature. The vocabulary name (NoLift / NoSilentJoin / NoChainMagic / Deform / etc.) is a *handle* over the signature, not the signature itself.
 
@@ -167,7 +167,7 @@ The lattice and its kernel instances are one artifact-kind. They do NOT discharg
 
 **Danger rule** (load-bearing for this lattice in particular): *the more the Lean kernels line up with NQ gaps, the more dangerous they become to NQ's filing discipline.* Similarity creates temptation: *"this theorem proves the gap shape, therefore NQ can mark the gap handled."* Wrong. A kernel in this lattice with obligation set `{X, Y}` refuses a class of formal conversions; it does NOT close an NQ gap that requires receipt-form discharge. The obligation-set framing makes this *more* dangerous, not less, because subset reasoning over obligation sets gives the goblin a typechecker for the wrong job.
 
-When using this lattice to navigate NQ work or any other downstream consumer: route signs, not territory. Spend implementation calories only on consumer-triggered work; the lattice is a map of where the calories *could* go, not a record of which have been spent.
+When using this lattice to navigate NQ work or any other downstream consumer: route signs, not territory. Formalization may lead by fixing the obligation shape first. Runtime implementation still needs an explicit mapping, product priority, and evidence plan; the lattice is not a record that those calories have been spent.
 
 ## Cross-references
 

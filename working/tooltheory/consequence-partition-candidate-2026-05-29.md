@@ -84,11 +84,11 @@ Collapsed for the kernel. Reasoning:
 - The impossibility theorem does not need anything else.
 - The empirical layer (intent → desired control) is a downstream consumer responsibility, not kernel content.
 
-**Downstream gap, name-early:** Labelwatch's `Policy` in the wild is *declared user intent*, not a `Control`. The mapping `intent → desiredControl` is a custody act that belongs in the consumer. When a forcing case arrives, the slot is `PolicyIntent` with `desiredControl : PolicyIntent → Control` and `ImplementsIntent c i := Implements c (desiredControl i)`. Not built. Not named in the Lean. Reserved here for retrofit-cost control.
+**Downstream gap, name-early:** Labelwatch's `Policy` in the wild is *declared user intent*, not a `Control`. The mapping `intent → desiredControl` is a custody act that belongs in the consumer. If a precise formal claim needs that distinction, the slot is `PolicyIntent` with `desiredControl : PolicyIntent → Control` and `ImplementsIntent c i := Implements c (desiredControl i)`. Not built or named in Lean because no current theorem needs it—not because a runtime consumer is absent. Reserved here for retrofit-cost control.
 
 ## Empirical handoff for Labelwatch
 
-**Update 2026-05-29 (labelwatch read-back):** Labelwatch's `boundary_edges` table (schema v18) is **half-built as `ObservedNonRefinement`** — `target_uri` is the `collapsed` shared frame, divergent labeler verdict is the `split`, two edge observations are `left` / `right`. Load-bearing tiny gap (ChatGPT): to become a *true* witness, the row must bind the exact projection `p` and policy/control being tested; otherwise the schema risks "same post, different labels" rather than "platform collapsed a distinction the policy needed." Retrofit cost near-zero; mapping is probably one page when a consumer demands it. The three trip-distinctions below match Labelwatch's `BOUNDARY_PHASE2_SPEC.md` trio (domain taxonomy / polarity model / JSD orthogonality filter); same questions, different vocabulary; *do not over-extract before consumer asks*. See [annex-probe-queue-2026-05-29.md](annex-probe-queue-2026-05-29.md) §Labelwatch's emitter-finding for full context.
+**Update 2026-05-29 (labelwatch read-back):** Labelwatch's `boundary_edges` table (schema v18) is **half-built as `ObservedNonRefinement`** — `target_uri` is the `collapsed` shared frame, divergent labeler verdict is the `split`, two edge observations are `left` / `right`. Load-bearing tiny gap (ChatGPT): to become a *true* witness, the row must bind the exact projection `p` and policy/control being tested; otherwise the schema risks "same post, different labels" rather than "platform collapsed a distinction the policy needed." The formal contract may lead that retrofit. Claiming Labelwatch correspondence requires an explicit mapping and runtime evidence; the mapping is not deferred merely until a consumer asks. The three trip-distinctions below match Labelwatch's `BOUNDARY_PHASE2_SPEC.md` trio (domain taxonomy / polarity model / JSD orthogonality filter); same questions, different vocabulary. See [annex-probe-queue-2026-05-29.md](annex-probe-queue-2026-05-29.md) §Labelwatch's emitter-finding for full context.
 
 Labelwatch's deliverable is **not** UI screenshots of exposed toggles. It is an `ObservedNonRefinement` witness:
 
@@ -115,7 +115,7 @@ Three distinctions Labelwatch will trip on, named early:
 
 1. **State identity.** What exactly is a `State`? Post URI? account DID? label snapshot at timestamp T? feed position? viewer prefs at that moment? If those drift between `left` and `right`, the witness gets mushy. Labelwatch's tag-set on each observed state is the load-bearing piece — same set ⇒ comparable, different set ⇒ inadmissible witness.
 
-2. **Effective consequence.** `Visibility := visible | hidden` is the bounded kernel. Real Labelwatch consequence may need more: warning-gated, deprioritized, suppressed-from-search, suppressed-from-feed-but-visible-on-profile, etc. When that forcing case arrives, generalize `Visibility` to an arbitrary type `V` and parameterize `Control S := S → V`. The proof obligations carry over.
+2. **Effective consequence.** `Visibility := visible | hidden` is the bounded kernel. Real Labelwatch consequence may need more: warning-gated, deprioritized, suppressed-from-search, suppressed-from-feed-but-visible-on-profile, etc. Generalize `Visibility` to an arbitrary type `V` when a load-bearing formal claim needs that range; a runtime example may motivate or instantiate it but is not the gate. The proof obligations carry over.
 
 3. **Where the projection collapses.** The kernel does not care whether the quotient happens at label ingestion, appview aggregation, feed generation, client filtering, or final rendering. Labelwatch *does* care — the witness must locate the collapse point or it cannot survive a "that's just a client UI bug" rebuttal. The instrumentation question is downstream.
 
@@ -165,10 +165,10 @@ Until one arrives, the annex stays as scratch, the candidate note stays here, an
 
 ## Anti-goals
 
-- **Do NOT** extend the kernel to model the ATProto stack (or any platform stack). The kernel is platform-generic; specific platforms are downstream example modules, gated on a forcing case.
+- **Do NOT** extend the platform-generic kernel itself with ATProto-specific structure. A platform-specific example module may be formalized whenever it supplies a precise instantiation or countermodel, before runtime code consumes it; public promotion and conformance remain separate.
 - **Do NOT** generalize `Visibility` preemptively. The bounded kernel is the contract; generalization gates on a Labelwatch consequence model that needs more than `visible | hidden`.
 - **Do NOT** promote `ObservedNonRefinement` to multi-witness / compositional shapes preemptively. The slot is single-witness for the same reason `SurfaceAuthorization` is single-action: composition is downstream.
-- **Do NOT** mint a `PolicyIntent` type or `Surface.cost` field in the kernel until a consumer demands it. Both are name-early, build-on-forcing-case.
+- **Do NOT** mint a `PolicyIntent` type or `Surface.cost` field merely for anticipated symmetry. Add either when a load-bearing theorem or countermodel needs the distinction and its hypotheses survive non-vacuity and overlap review. A consumer may provide such pressure, but is not a prerequisite for formal development.
 - **Do NOT** rename the family ("Compositional Consequence Theory", "Refinement-Based Moderation Calculus", etc.). The annex sits inside the existing `Admissibility` namespace as a sibling kernel; no new program.
 
 ## Cross-references
@@ -196,11 +196,10 @@ Next session — if the topic recurs — should:
 1. Check whether Labelwatch has produced an `ObservedNonRefinement` witness in the wild.
 2. Check whether NQ / Wicket / Governor / a paper draft has cited `policy_repair_strictly_finer_off_budget`.
 3. Check whether sibling-kernel composition (PL + CP, SA + CP, WI + CP) is producing real consumer load.
-4. Only then consider:
+4. Use those answers for public import and paper-promotion decisions:
    - Importing into `LeanProofs.lean`.
-   - Generalizing `Visibility` beyond two values.
-   - Building a worked-example sibling specimen.
    - Promoting to paper-shape (likely an addendum / appendix to an existing preprint, not a new numbered paper).
+5. Generalizing `Visibility` or building a worked-example sibling specimen may happen earlier when a precise theorem or countermodel warrants it; neither formal step waits for consumer load.
 
 Until then: annex stays scratch, note stays here, slot stays reserved.
 

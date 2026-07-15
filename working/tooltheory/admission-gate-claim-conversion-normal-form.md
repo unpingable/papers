@@ -1,9 +1,11 @@
 # The admission gate (claim-conversion normal form) — name, boundary, fences
 
 **Filed:** 2026-06-15 in `tooltheory/`. **Status:** deliberate *theory freeze* (name + boundary
-+ fences), so the build doesn't start from vibes. **The build (P0 normal-form gate) is
-AG-Claude's, NOT authored here. No Lean** (see § No-Lean). Per the session's own stop sign:
-ten-minute freeze, then the compiler.
++ fences), so neither proof nor implementation starts from vibes. The original filing assigned
+the P0 normal-form gate to AG-Claude and put Lean behind the running gate. **That sequencing was
+superseded 2026-07-14:** formalization leads code. A coherent formal boundary may be stated and
+proved before any runtime consumer exists; the runtime gate then implements that boundary and
+supplies separate conformance evidence.
 
 ## NAME FENCE — "Admission Calculus" collides with the retired-vocab decision
 
@@ -124,21 +126,25 @@ Fences (all heuristic, vocabulary-not-artifact):
 - **No Gödel inflation** (the foundations bucket already carries the NON-CLAUDE flag); **no
   "foundation."**
 
-## No-Lean (deliberate)
+## Formalization posture (supersedes the original runtime-first stop sign)
 
 The no-lift specimen *does* fall out — **Formal ⊬ world-claim without a model-binding receipt**
 is `NoFreeStandingBridge` in the formal→empirical direction; family-consistent, name-early.
-**Not built here, for a concrete reason first:** the next bottleneck is *executable admission
-behavior in the governor* (the P0 gate), not another proof — the proof can wait and will be
-better-specified once the gate runs. The "receipt-shaped incense / loop constituting its object"
-framing is a useful *heuristic* for why to stop theorizing, but it is a feeling, not a theorem —
-don't dress it as discipline. Either way: build the gate; Lean stays unbuilt until the running
-gate is the witness.
+The theorem does **not** wait for executable admission behavior in the governor. It may be
+formalized as soon as its claim species, model-binding relation, and refusal conclusion are
+stated precisely enough to support a non-vacuous proof. The "receipt-shaped incense / loop
+constituting its object" framing remains a useful heuristic against speculative machinery, but
+it is not an admission gate for formal work. Runtime implementation is downstream: the P0 gate
+must identify the theorem or formal contract it implements, and runtime evidence must establish
+conformance. Neither a running gate nor a consumer is permission to begin the proof.
 
 ## Hand-off
 
-- **Paper/Lean (this note):** name + boundary + fences. **Done.**
-- **AG-Claude:** build **P0** — a minimal normal-form admission gate (a *conversion checker*:
+- **Paper/Lean:** name + boundary + fences, then state the minimal conversion/refusal contract
+  and its non-vacuous laws. Formalization may proceed before P0 exists; public promotion remains
+  a separate custody and review decision.
+- **AG-Claude:** build **P0** against that contract — a minimal normal-form admission gate (a
+  *conversion checker*:
   not a theorem prover, not a policy language; no plugins / reflection / self-amendment). Sits
   after receipt/witness capture, before `derive_in_bounds` / promotion eligibility — the
   membrane between *recorded* and *usable* material. Five specimens to refuse cleanly:
@@ -165,7 +171,8 @@ but **cannot promote**. The rule:
 This is the generalization of paper/Lean-Claude's own first mistake in this very arc — refusing a
 name at *discovery* on a string-match, when the correct move was quarantine-pending-operator.
 Recorded as a **recommendation** for AG (and validated by the exchange, not by an oracle), not an
-imposed implementation.
+imposed implementation. The formal contract leads this implementation; passing runtime examples
+does not by itself prove conformance.
 
 ## Provenance
 
@@ -174,4 +181,6 @@ constitutivity + `instrument_role` → Claude-web constitutivity/performativity 
 stop-sign → DeepSeek's epistemic-logic shelf pointer (the one good pointer; raid the vocabulary,
 not the claim). Keepers: *worldless until applied*; *arithmetic cheap, individuation expensive*;
 *the thermometer joined the weather*; *you don't get to call it measurement after the instrument
-starts issuing orders.* Frozen tight, deliberately NOT elaborated — the build is the next move.
+starts issuing orders.* The original filing froze elaboration and made the build the next move.
+The 2026-07-14 correction preserves that provenance while superseding its runtime-before-Lean
+sequence: formalization now leads code.

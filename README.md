@@ -6,9 +6,11 @@ This repository contains the prose side of the Δt framework: a research series 
 
 The papers develop the theory. The companion Lean repo audits selected claims by translating them into explicit definitions and theorem statements, then checking whether they actually follow. Some survive. Some need narrower conditions. Some break.
 
+Formalization may begin from a coherent claim, countermodel, or specification before any runtime consumer exists, and it may lead subsequent implementation. A consumer can supply an instantiation or evidence for promotion and correspondence; it does not grant permission to state or develop the theorem. Promotion into production custody is a separate decision. Citation or adoption identifies the intended formal contract, while runtime conformance requires an explicit mapping plus operational evidence or a refinement proof.
+
 The breakage is part of the record, not a defect — every formalized claim carries a status of BROKEN, STALE, SOUND, or OPEN in the Lean repo's `CLAIM-REGISTER.md`. That register is one of the more honest interfaces in the project: it makes legible which slogans were structural claims and which were only useful as discovery handles.
 
-This is not a claim that Lean proves the whole theory true. The formalization is a forcing function against theory-by-metaphor; it does not replace case studies, simulations, or operational evidence.
+This is not a claim that Lean proves the whole theory true. Formalization is an audit against theory-by-metaphor; it does not replace case studies, simulations, or operational evidence.
 
 ## Companion repos
 

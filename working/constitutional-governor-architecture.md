@@ -3,8 +3,9 @@
 **Status:** Candidate architecture, 2026-06-03 evening. **Live seam —
 expect amendments.** NOT ratified doctrine. NOT a paper. NOT a Lean
 build task. NOT an AI-safety impossibility claim.
-**Discipline:** file-now-work-never. Capability inventory ≠ work
-commitment.
+**Discipline:** file now; formalization may lead once a theorem or model clears
+intrinsic scope, overlap, and non-vacuity review. Capability inventory is not an
+automatic work commitment, and runtime integration remains separate.
 **Sibling notes:**
 [`validity-spendability-split.md`](validity-spendability-split.md)
 (first invariant),
@@ -232,7 +233,7 @@ correctness.
 
 ### File names
 
-If/when Lean work opens (not opened by this note):
+Candidate Lean files, once each has a precise theorem boundary and intrinsic controls:
 
 - `SpendTokenBoundary.lean` — abstract `SpendToken` + constructor
   discipline + `IsSpendToken` predicate.
@@ -760,10 +761,10 @@ implies.
 - NOT *finalized*. This is a live seam. Expect amendments. The
   filing is provisional naming, not lockdown.
 
-## Opening triggers
+## Runtime architecture and integration signals
 
-This architecture becomes actionable only on concrete consumer
-demand:
+The deployed architecture becomes actionable on concrete consumer demand. Formal
+specification may precede these signals and lead the implementation:
 
 - **Agent Governor:** audit of `GOV_GAP_VALIDITY_SPENDABILITY_SPLIT_001`
   surfaces a refactor candidate wanting the three-pillar
@@ -774,12 +775,13 @@ demand:
   vs accountant) to specify a claim shape.
 - **Deployment safety:** a real blast-radius / quota / maintenance-
   window incident wants the five-component stack as reference.
-- **Lean work:** if a consumer wants formal substrate, the
-  constitutional-formalization route is the artifact (not the
-  semantic-governor route). See "Constitutional formalization"
-  above for the theorem shapes.
+- **Lean work:** the constitutional-formalization route is the formal substrate
+  (not the semantic-governor route). It may be developed once the theorem shapes,
+  model boundaries, overlap, and non-vacuity controls are ready; a consumer is not
+  the permission source.
 
-Until then: parked. Amend as needed; live seam.
+Until then: runtime integration is parked. Formal work may lead; amend as needed;
+live seam.
 
 ## Convergence and next step
 

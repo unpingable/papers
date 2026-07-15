@@ -2,7 +2,7 @@
 
 **Status:** Third of three spike outputs (sibling to `forbidden-inference-register.md` + `internet-substrate-failure-map.md`). Filed 2026-05-26 under `prior-art-spike-plan.md` as the C-bucket residue from the first internet-substrate spike session.
 
-**Posture:** Sketches, not Lean modules. Each sketch carries: exact technical guarantee, precise forbidden inference, kill test against existing primitives, minimal Lean API, refusal-kernel statement, one forcing-case example, and brakes. **No Lean built today.** The sketches are pre-construction substrate — they exist so when forcing cases fire, the kernel shape is already decided in advance and the construction-discipline gate has substrate to evaluate against.
+**Posture:** Sketches, not Lean modules. Each sketch carries: exact technical guarantee, precise forbidden inference, kill test against existing primitives, minimal Lean API, refusal-kernel statement, one pressure example, and brakes. **No Lean was built in this dated pass.** A sketch may become a bounded formal probe before any runtime consumer exists once its model, discriminating theorem, overlap, and proof controls are clear; public promotion remains separate.
 
 **Doctrine header:**
 
@@ -110,7 +110,9 @@ An ops agent reads an incident finding as `unacknowledged` (version v₁), prepa
 
 - Do NOT fold `Version` into `Freshness` or `TimeDecomposition`. Two distinct axes.
 - Do NOT generalize to "any state-mismatch refusal." This kernel is about *commit-point exact-state precondition*, not state-similarity heuristics.
-- Do NOT extend to multi-party preconditions (CAS over multiple objects) without forcing case — that's the transactional-CAS family, separate.
+- Do NOT smuggle multi-party preconditions (CAS over multiple objects) into this
+  single-object kernel. A separate transactional-CAS model may be formalized when it
+  has a precise, non-redundant theorem and controls; it may lead its runtime case.
 
 ---
 
@@ -174,7 +176,10 @@ NQ-side claim: *"There is no `cannot_testify` record for ingest-stale at host H.
 **Brakes:**
 
 - Do NOT collapse "silence" into "denial." That's the whole point.
-- Do NOT generalize to social or institutional denials without forcing case. DNSSEC's authority model is *scoped namespace*; institutional denials have different structure.
+- Do NOT silently generalize DNSSEC's *scoped namespace* authority model to social or
+  institutional denials. A separate model may proceed when it states their different
+  authority structure and a discriminating theorem or countermodel; it need not wait
+  for a runtime forcing case.
 - Do NOT extend the validity window past authority freshness. RFC 9077's discipline (denial TTL ≤ signed window) is load-bearing.
 
 ---
@@ -194,7 +199,7 @@ The sketch initially treats the two as a *combined kernel* — the two surfaces 
 - **Propagation scope** — authority may not survive **boundary crossing**. (Example: BGP OTC; DNS delegation; cross-kernel receipt consumption.)
 - **Epoch fencing** — authority may not survive **generation change / lease turnover**. (Example: Raft term advance; ZooKeeper session expiry; Spanner leader-lease rotation.)
 
-Both block *"same-looking authority artifact still authorizes action"*, but the **axis** differs: one is a *spatial* boundary (crossing a kernel / namespace / network frontier), the other is a *temporal* one (the holding's generation has advanced). The combined-kernel framing earns its keep as long as both stay coupled in forcing cases; if a future forcing case requires the propagation axis without the epoch axis (or vice versa), the sketch **splits** into two separate kernels. Composition theorem first, axis-promotion lazy, separation-pressure honored when it appears.
+Both block *"same-looking authority artifact still authorizes action"*, but the **axis** differs: one is a *spatial* boundary (crossing a kernel / namespace / network frontier), the other is a *temporal* one (the holding's generation has advanced). The combined-kernel framing survives only while a precise composition theorem needs both axes. If a theorem, countermodel, or instantiation needs one without the other, the sketch **splits** into separate kernels. Composition theorem first, axis-promotion lazy, separation-pressure honored when it appears.
 
 **Substrate witnesses (lease side):**
 
@@ -369,20 +374,20 @@ Per ChatGPT's spike review (operational urgency axis):
 | 1 | `VersionBoundAction` | Highest promotion potential AND immediate ops-agent relevance. No reorder pressure. |
 | 2 | `ReplaySafeActionIdentity` | Bumped up from 4th. Reasoning: anything agentic that touches side effects hits retry ambiguity *before* it hits signed-denial witnesses. *Same payload means same operation* is wrong every Tuesday; nature's tax on optimism. Wicket / Nightshift / agent_gov consume this directly. |
 | 3 | `FencedEpochAuthority` | Composition theorem; composes with agent authorization work. Strongest forcing case: an actor with a token-shaped artifact whose epoch has advanced past the artifact's validity. |
-| 4 | `AuthenticatedDenial` | Formally attractive but substrate-dependent. Wait for a real NQ signed `cannot_testify` or DNSSEC-shaped fixture; until then risk of accidentally generalizing "proof-carrying absence" into institutional silence theory. |
+| 4 | `AuthenticatedDenial` | Formally attractive but substrate-dependent. A probe must model the signed-denial/silence distinction and cryptographic boundary explicitly; an NQ or DNSSEC fixture can later instantiate and stress it but is not permission to formalize. |
 
-The reorder reflects: *operational misbehavior arrives before theoretical purity demands resolution.* `ReplaySafeActionIdentity`'s "timeout means no effect" mistake is what duplicates pager incidents, doubles rollbacks, doubles "our bad" entries. `AuthenticatedDenial`'s sharpening of silence-vs-denial is excellent doctrine but waits for a tool path that needs it.
+The reorder reflects operational priority, not formal admission. `ReplaySafeActionIdentity`'s "timeout means no effect" mistake is what duplicates pager incidents, doubles rollbacks, doubles "our bad" entries. `AuthenticatedDenial`'s sharpening of silence-vs-denial needs a precise signed-denial model; formal work may establish that contract before a tool path exists.
 
 ## What this pack is NOT
 
-- **Not authorization to build Lean modules today.** Each sketch's Lean API is illustrative, not buildable. The construction-discipline gate (substrate-exists + bounded-cost + brakes-survive) applies separately when any specific sketch is authorized for build.
+- **Not a build order.** Each sketch's Lean API is illustrative, not automatically sound or testimony-bearing. A specific probe needs stable semantics, bounded cost, a distinct theorem residue, overlap review, and surviving brakes; no runtime forcing case is required.
 - **Not promotion of any kernel to Public Phase D.** Public Phase D Criterion 3 (production fixture) still gates promotion; sketches don't satisfy that gate.
 - **Not a commitment to all four candidates surviving.** The `ReplaySafeActionIdentity` optional-fourth may get demoted after further scrutiny; `FencedEpochAuthority`'s lease/scope combination may split into two kernels if forcing cases diverge.
 - **Not a closed list.** Future spike sessions in other prior-art slices (consensus literature, real-time systems, regulatory frameworks) may surface additional C-bucket candidates. The pack grows; the discipline doesn't.
 
 ## Doctrine keepers
 
-> **The sketches are the substrate. The Lean modules are the probes. The forcing cases are the gates.**
+> **The sketches are the substrate. The Lean modules are the probes. Precise models, discriminating theorems, overlap review, and proof controls gate the probes; forcing cases inform priority and public promotion.**
 
 > **Each sketch carries its own kill test. If the residue argument fails during construction, the sketch is retracted, not extended.**
 
@@ -422,16 +427,16 @@ The reorder reflects: *operational misbehavior arrives before theoretical purity
 
 ## Disposition
 
-Pack filed. No Lean built. Each sketch survives kill-test against existing primitives. Phase D Public promotion gated by:
+Pack filed. No Lean built in this pass. Each sketch survives a preliminary kill-test against existing primitives. Phase D Public promotion is separately gated by:
 
 - Construction-discipline trigger (substrate-exists + bounded-cost + brakes-survive) for any specific sketch.
 - Production fixture (Public Phase D Criterion 3) for actual public promotion.
 
-Forcing-case watchlist per sketch — when any of these fires, the corresponding sketch becomes a Phase C build candidate:
+Priority and correspondence watchlist per sketch — these targets can prioritize or instantiate a probe, but do not grant permission to formalize:
 
 - `VersionBoundAction`: NQ adds revision-bound preflight (likely near-term given existing `warning_state.last_basis_generation` substrate).
 - `AuthenticatedDenial`: NQ ships signed `cannot_testify` witnesses (requires cryptographic substrate, deferred per BFT plan).
 - `FencedEpochAuthority`: agent_gov / Wicket adds explicit epoch-bounded authority (likely near-term).
 - `ReplaySafeActionIdentity`: any consumer that retries side-effecting actions (Nightshift proposal execution, agent_gov action issuance).
 
-> **Sketches are pre-construction substrate. The discipline is in the kill-test. The kernels are not yet built. The forcing cases will tell us which are.**
+> **Sketches are pre-construction substrate. The discipline is in the kill-test. Precise formal questions decide what may be probed; runtime cases help decide priority, correspondence, and public promotion.**

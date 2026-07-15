@@ -118,14 +118,14 @@ Keeper: *local bridge receipts are ingredients, not a trajectory receipt; a path
 authority-bearing only through a constructed path verdict, never by the conjunction
 of authority-bearing edges.*
 
-The remaining three layers below stay **named, not built** (no forcing case yet).
+The remaining three layers below stay **named, not currently scheduled**. Their dependencies and theorem shapes—not the absence of a runtime forcing case—govern formal development.
 
-## Adjacent layers — NAMED, do not build yet
+## Adjacent layers — named, formalize in dependency order
 
 - **Declared edge-set / "no free edge"** — the governor's wiring is itself a claim
   (adding a seam needs authorization, dual to no-free-standing-bridge). Partly
   gestured at by `CounterfactualEdges` + `ControlPathIndependence` (*wiring ↛
-  standing*). Second-order; needs the path layer first.
+  standing*). Second-order; needs the path layer first, but not a runtime consumer.
 - **Readout over verdicts** — "the graph says this path is admissible" is itself a
   claim someone must have standing to rely on (`CanRead ⊬ MayReadout`). Closes the
   regress so the ledger isn't a free oracle. Open only if the path layer starts

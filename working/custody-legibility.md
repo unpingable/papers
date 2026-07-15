@@ -3,8 +3,9 @@
 **Status:** Candidate architecture invariant, 2026-06-03 evening.
 **Live seam — expect amendments.** NOT ratified doctrine. NOT a paper.
 NOT a Lean build task.
-**Discipline:** file-now-work-never. Capability inventory ≠ work
-commitment.
+**Discipline:** file now; formalization may lead once a theorem or model clears
+intrinsic scope, overlap, and non-vacuity review. Capability inventory is not an
+automatic work commitment, and runtime integration remains separate.
 **Companion notes:**
 [`constitutional-governor-architecture.md`](constitutional-governor-architecture.md)
 (architecture this lives inside),
@@ -316,9 +317,9 @@ Honest compressed form:
 - NOT a module rename. Existing kernel artifacts unchanged.
 - NOT *finalized*. Live seam. Expect amendments.
 
-## Opening triggers
+## Runtime triggers and formal posture
 
-Becomes actionable on concrete consumer demand:
+Concrete consumer demand makes the runtime side actionable:
 
 - **Agent Governor:** override management audit (per
   `GOV_GAP_VALIDITY_SPENDABILITY_SPLIT_001`) wants the
@@ -331,11 +332,14 @@ Becomes actionable on concrete consumer demand:
 - **Audit / incident response:** real incident where the question
   *"who held root when this happened"* doesn't have a clean answer
   surfaces; this note is the candidate framework.
-- **Lean work:** if a consumer wants formal substrate for the
-  override-receipt invariant, the constitutional-formalization
-  route applies (see companion note).
+- **Lean work:** does not wait for those consumers. Once the override-receipt
+  invariant has a coherent model, non-vacuous theorem target, and overlap/proof
+  controls, the constitutional-formalization route may establish the contract
+  first (see companion note).
 
-Until then: parked. Live seam; amend as needed.
+Runtime integration is parked until a concrete target fixes the schema. Formal
+investigation is currently unscheduled, not consumer-blocked. Live seam; amend as
+needed.
 
 ## Cross-references
 

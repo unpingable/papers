@@ -2,10 +2,11 @@
 
 **Status:** bounded register seed, 2026-06-03. NOT an open register. NOT
 active work. NOT a theorem. NOT a build plan.
-**Discipline:** file-now-work-never per
+**Discipline:** file now; formalization may lead per the corrected policy in
 [`maximal-calculus-forcing-cases.md`](maximal-calculus-forcing-cases.md).
-A specimen candidate is named here; the register is not opened until the
-promotion gate's second concrete example surfaces.
+A specimen candidate is named here; the operational register is not promoted until
+its evidence gate is met. A coherent, non-redundant formal specimen may precede that
+promotion and any runtime consumer.
 
 ## Keeper line
 
@@ -120,8 +121,10 @@ sequent calculus.
 
 ## 8. Non-goals
 
-- No Lean specimen yet. ContractionHinge.lean is the species's kernel
-  reference; a deployment-side Lean specimen waits for promotion.
+- No deployment-side Lean specimen yet. ContractionHinge.lean is the species's
+  kernel reference. A bounded reservation/capacity model may be formalized before
+  promotion or a deployment consumer exists; the theorem must carry its own scope,
+  overlap, and non-vacuity controls.
 - No NQ implementation yet. The seed names the pattern; it does not
   authorize building reservation/lease primitives in the operator's
   systems.
@@ -132,9 +135,9 @@ sequent calculus.
   source/temporal-specific (per the substrate lint). Do not import
   Int / counts / ≤ / budgets into amendment-cut work.
 
-## 9. Promotion gate
+## 9. Runtime-register promotion gate
 
-Open the register only when **all three** hit:
+Promote this into an operational register only when **all three** hit:
 
 1. A second concrete operational example surfaces — a real incident,
    failing test, or implementation consumer the operator can name (not
@@ -144,13 +147,14 @@ Open the register only when **all three** hit:
 3. The example refuses reduction to source/temporal discipline under
    the substrate lint.
 
-When all three hit: this note becomes the seed for the register, the
-chosen specimen name becomes specimen zero's first entry, and a
-ContractionHinge-style Lean specimen at the deployment altitude becomes
-candidate work.
+When all three hit: this note becomes the seed for the runtime register and the
+chosen specimen name becomes specimen zero's first entry. A
+ContractionHinge-style formal specimen may precede that event if it has a coherent,
+non-redundant model and proof target; the event supplies runtime correspondence and
+promotion evidence rather than permission to formalize.
 
-Until then: the seed sits. Pre-built registers grow features they don't
-need; forcing-driven registers grow features they earned.
+Until then: the runtime register sits. Formal work may lead, but it does not turn
+the seed into a deployment feature or public claim by itself.
 
 ## Cross-references
 

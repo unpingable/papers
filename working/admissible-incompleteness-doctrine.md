@@ -2,7 +2,7 @@
 
 *Status:* CANDIDATE / working note. Operator-supplied doctrine, filed 2026-07-06.
 Externally cross-checked (ChatGPT + DeepSeek) before integration.
-*Lean custody:* promoted-to: `~/git/lean/LeanProofs/Scratch/AdmissibleIncompleteness.lean`
+*Lean custody:* extracted-to: `~/git/lean/LeanProofs/Scratch/AdmissibleIncompleteness.lean` (scratch-checked; extraction is not public promotion)
 (Custody-Class: SCRATCH, unwired, sorry-free, **zero-axiom** — every invariant below
 that has a Lean shape is a proved theorem, not an `axiom`).
 *Not* a resurrection of "admissibility calculus": local enums, no typeclass, nothing

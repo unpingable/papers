@@ -1,8 +1,8 @@
 # NQ-on-NQ — Candidate forcing case for refusal composition
 
-**Status:** Candidate forcing-case note. Filed 2026-05-26 after the C.4/C.5 Lean work pulled `refusal_composes_two_hop` into existence and a parallel observation surfaced: NQ is not only a witness system; NQ is also witnessable substrate. Not a promoted forcing case yet — needs at least one concrete NQ-on-NQ fixture to convert from candidate to active.
+**Status:** Historical candidate-forcing-case note. Filed 2026-05-26 after the C.4/C.5 Lean work pulled `refusal_composes_two_hop` into existence and a parallel observation surfaced: NQ is not only a witness system; NQ is also witnessable substrate. **Policy/status correction, 2026-07-14:** the formal layer did not wait: the `RefusalPropagation.Annex.NQOnNQ` adapter and generic transitive composition now exist. A concrete NQ fixture remains useful runtime mapping/evidence, not permission to formalize.
 
-**Posture:** Forcing-case scoping memo. No Lean module written. No `CalculusOne.lean` change. No promotion to 2.0. No `NQFleetDependency` adapter yet — the note is the gate that decides whether the adapter is worth building.
+**Posture:** Dated scoping memo, not a current gate. No `CalculusOne.lean` change and no 2.0 promotion followed. The NQ-on-NQ formal adapter landed inside `RefusalPropagation.lean` rather than as a separate `NQFleetDependency.lean`; runtime conformance is still unproved.
 
 **Sibling forcing-case candidates:** `labelwatch-driftwatch-admissibility.md` (first candidate). NQ-on-NQ is the second. Two candidates is not a corpus; it is the minimum density at which a generic law starts to look load-bearing rather than decorative.
 
@@ -95,24 +95,24 @@ forbidden:  fleet.aggregate.health = observable    (self-certification breach)
 
 This is a single integration test or a single live scenario. If NQ ships this fixture and the cascade fires correctly, the forcing case is active. If NQ ships this fixture and the cascade does NOT fire (fleet aggregate reports `observable` despite the underlying refusal), there is a real soundness gap to fix.
 
-Either outcome is load-bearing information. The fixture is the gate.
+Either outcome is load-bearing runtime information. The fixture tests the mapping and can support promotion; it is not the gate on theorem development.
 
 ## Promotion posture
 
-**Current:** candidate forcing case. Phase D criterion 3 stays at **B** (potential consumer identified, forcing case pending) per `nq-forcing-case-audit.md`.
+**Current:** formal adapter exists; runtime fixture/mapping evidence is pending. Under the dated Phase D rubric, criterion 3 remains at **B** for public promotion, not for formal development.
 
-**Conditional upgrade trigger:** ONE concrete NQ-on-NQ fixture (the candidate above or an equivalent) lands in NQ as an integration test or a real scenario. At that point, criterion 3 may upgrade to **"candidate active forcing case"** — still not Phase D promotion authorization, but a real consumer-side anchor.
+**Conditional promotion-evidence trigger:** ONE concrete NQ-on-NQ fixture (the candidate above or an equivalent) lands in NQ as an integration test or a real scenario with an explicit mapping to the adapter. At that point the dated criterion 3 may record an active runtime anchor; conformance still depends on the mapping and behavioral evidence, not the label or citation alone.
 
 **Not in scope for this note:**
-- Writing `NQFleetDependency.lean` (a second concrete adapter mirroring `NQDependency`).
-- Generalizing `RefusalPropagation` to a transitive closure or `Path` type.
+- Writing a separate `NQFleetDependency.lean`; the later `NQOnNQ` namespace is the bounded adapter and a duplicate file would add no value.
+- Further generalizing `RefusalPropagation` beyond the transitive closure that later landed.
 - Three-hop or higher composition lemmas.
 - A fleet-aggregation kernel separate from the existing refusal-composition machinery.
 - Letting `refusal_composes_two_hop` accumulate a crown.
 
-**In scope for follow-up (deferred until fixture exists):**
-- If/when the candidate fixture lands, a second tiny adapter (`NQFleetDependency`, ≤30 lines, mirroring `NQDependency`'s pattern) becomes worth writing — to show that *two* concrete cases instantiate the same generic two-hop law.
-- That second adapter, *if it also goes clean through `refusal_composes_two_hop`*, is the point at which "composition support is real" stops being one bespoke instance and becomes a repeated-load pattern.
+**In scope for follow-up:**
+- Map the candidate fixture explicitly to the existing `NQOnNQ` adapter and gather runtime evidence.
+- Use that evidence for correspondence and promotion review without claiming that citation alone proves NQ conforms.
 
 ## What this changes about Phase C/D
 
@@ -130,14 +130,14 @@ The Phase D gate still has all five criteria. This note moves criterion 3 framin
 |---|---|
 | 1. Composition between kernels | Unchanged. The composition is within the refusal-kernel family, not yet between distinct kernels. |
 | 2. New abstraction count | Unchanged. `refusal_composes_two_hop` already exists; no new abstractions named. |
-| 3. Second forcing case exists | Upgraded framing: **two candidate cases (labelwatch + NQ-on-NQ)**, neither active yet. Still B until one ships a fixture. |
+| 3. Runtime promotion evidence | Two candidate correspondence targets (labelwatch + NQ-on-NQ); neither has a mapped production fixture yet. |
 | 4. Slogan-blast-radius | Unchanged. Keepers stay honest. |
 | 5. PL/UC stay as working notes | Unchanged. |
 
 ## Brakes (explicit)
 
-- **Do not** build `NQFleetDependency.lean` yet. No Lean writes in response to this note.
-- **Do not** generalize `refusal_composes_two_hop` to three-hop, four-hop, or transitive closure. The two-hop law was earned by one concrete instance; multi-hop or transitive forms need their own forcing case.
+- **Do not** build a duplicate `NQFleetDependency.lean`; use the existing `NQOnNQ` adapter unless a distinct theorem residue appears.
+- **Do not** generalize beyond the existing transitive closure merely for symmetry. Further structure needs a precise, non-vacuous theorem and overlap review, not a runtime forcing case.
 - **Do not** introduce a `Path` type, claim graph, scope algebra, time index, or use-kind table. The user's standing brake list applies.
 - **Do not** let local NQ-on-NQ become fleet-trust by sleight of hand. Local self-observation is observable; never authoritative for itself.
 - **Do not** treat this note as an unblocking authorization for Phase D. It is a candidate, not a verdict.

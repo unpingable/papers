@@ -1,13 +1,15 @@
 # Reflective adoption is not origin legitimation
 
-**Status:** PARKED doctrine candidate (2026-06-01). Out of current Lean scope.
+**Status:** PARKED doctrine candidate (2026-06-01). Out of the current Axes 1–2 Lean scope.
 Not part of BoundaryWitness / Axis 2 extraction. Not an Axis 3 promotion.
 Filed here to preserve the primitive without contaminating the in-flight
 Axes 1–2 closure.
 
 **Scope fence (load-bearing — read first):**
 
-- NO Lean changes for this primitive yet.
+- NO changes to the in-flight Axes 1–2 Lean surface for this primitive. A separate
+  Scratch probe may proceed once the model, generator, overlap, and non-vacuity
+  controls are precise; it does not wait for paper or runtime pressure.
 - NO modification of `BoundaryWitness.lean` or `ParameterizedMerge.lean` to
   accommodate it.
 - NO Axis 3 (self-amendment) promotion; this primitive is *neighboring* to
@@ -123,14 +125,14 @@ The formalism's job is *authority routing*, not encoding belovedness /
 vocation / love. The formalism can guard the door; it cannot furnish the
 room. That line is the scope boundary — keeping it is the point.
 
-## Why this is parked, not built
+## Why this is parked by current priority
 
 Three reasons:
 
-1. **Current closure is Axes 1–2.** Building this now would contaminate
+1. **Current closure is Axes 1–2.** Integrating or promoting this inside
    the in-flight `BoundaryWitness.lean` keystone work and the
-   `ParameterizedMerge.lean` calculus body. One beast at a time
-   ([[feedback-forcing-case]]).
+   `ParameterizedMerge.lean` calculus body would contaminate their scope.
+   A distinct Scratch model need not enter either file and may lead later work.
 2. **Adjacent but not constitutive.** This primitive sits next to the
    future human-facing / HITL / self-amendment layer, which is
    *explicitly out of scope* per the Axes 1–2 closure decision
@@ -138,9 +140,11 @@ Three reasons:
    Axis 3 in under a different name.
 3. **Generator-test discipline.** A primitive earns ratification by
    discriminating cases the existing vocabulary blurs
-   ([[feedback-primitive-ratification-gate]]). The case this primitive
-   discriminates (adoption vs. legitimation, with HITL receipts) is real
-   but hasn't been forced by current paper work. Park, don't mint.
+   ([[feedback-primitive-ratification-gate]]). The adoption-versus-legitimation
+   distinction still needs a precise model, generator result, and controls before
+   it can testify as a distinct primitive. Current paper pressure is irrelevant to
+   formal admission. Park public ratification; investigate formally when those
+   intrinsic questions are ready.
 
 ## Related records
 
@@ -157,7 +161,7 @@ Three reasons:
 - [[feedback-primitive-ratification-gate]] — generator + kind + seven
   supporting tests; gate for any future promotion.
 
-## Theorem-shaped slogan (for later, if forced)
+## Theorem-shaped slogan (for a future bounded model)
 
 > **Adoption is not legitimation.**
 

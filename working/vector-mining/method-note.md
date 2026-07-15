@@ -69,18 +69,18 @@ This list is open. New failure modes earn their entry when they recur or when a 
 
 > **Single-altitude novelty is inadmissible for promotion.** A claim that survives audit at only one altitude is at best a candidate; promotion requires multi-altitude survival, citations, and a forcing case the corpus actually carries.
 
-The rule applies regardless of how compelling the single-altitude finding looks. The instrument's whole purpose is to refuse fake novelty.
+The rule governs doctrine/public promotion from a vector-mining receipt. It does not govern whether an independently coherent theorem or countermodel may be developed: formal work may lead code before a consumer exists. The instrument's whole purpose is to refuse fake novelty, not to veto mathematics.
 
 Promotion-eligible findings (when they happen):
 
-- new theorem: only if **MISSING-PRECONDITION** or **COUNTEREXAMPLE-CANDIDATE** with exact file names AND explicit forcing case;
+- new theorem target from this instrument: **MISSING-PRECONDITION** or **COUNTEREXAMPLE-CANDIDATE** with exact file names, a precise non-redundant statement, and bridge-tax/anti-vacuity review. Consumer pressure is optional prioritization evidence;
 - new cross-reference: navigability patches authorized per-pilot, with wording that *does not perform doctrine motion*;
 - new disambiguation note: ALIAS-RISK or lexical-fracture survivors may earn a glossary entry under `working/vocabulary/`, *if* the user authorizes — never auto-promoted.
 
 Promotion paths that should be refused or routed elsewhere:
 
 - new paper section — vector-mining pilots do not authorize paper motion; that requires a separate authorization pass against PAPER-MAP / CLAIM-REGISTER / current paper spine;
-- new Lean module — vector-mining pilots do not authorize Lean motion unless the verdict is MISSING-PRECONDITION or COUNTEREXAMPLE-CANDIDATE AND the corpus carries a concrete forcing case;
+- new Lean module — vector-mining pilots never create one automatically. A MISSING-PRECONDITION or COUNTEREXAMPLE-CANDIDATE may proceed through the independent formal-admission test without a consumer; Scratch status does not confer testimony or promotion;
 - new primitive — vector-mining pilots never authorize primitive promotion. Promotion of a primitive is a doctrine decision with its own gate.
 
 ## Batch footer (mandatory)
@@ -91,23 +91,23 @@ Every pilot or batch report ends with:
 
 The footer is not optional. It is the reminder that vector mining is prospecting, not coronation.
 
-## When a result may become a forcing case
+## When a result may support promotion
 
-A vector-mining result may *eventually* become a forcing case for promotion when:
+A vector-mining result may *eventually* support doctrine/public promotion when:
 
 1. The verdict is MISSING-PRECONDITION, COUNTEREXAMPLE-CANDIDATE, or BRIDGE-CANDIDATE — i.e., not a duplicate or laundering refusal;
 2. AND the surviving claim is cross-validated by a second pilot from a *different altitude or angle*;
-3. AND a downstream consumer (paper section, Lean theorem, public claim) genuinely needs the move — speculative expansion is still YAGNI;
+3. AND the move has a concrete formal or public use; a downstream consumer is strong evidence but not a prerequisite for theorem development;
 4. AND the move passes the federation-doctrine bridge tax;
 5. AND the user explicitly authorizes via the normal ratification path.
 
-All five must hold. The vector-mining receipt is one piece of evidence among the five — never the ratifying step.
+All five apply to promotion through this instrument. The vector-mining receipt is one piece of evidence among them—never the ratifying step and never a ban on independent formal investigation.
 
 ## Readiness-audit pattern (Track A, complementary)
 
 A complementary pilot pattern surfaced 2026-06-06 in Pilot #14: instead of probing a relay-shape claim, the audit targets a *named-not-built artifact in the corpus* (e.g., a future Lean candidate, a named-but-deferred kernel, a candidate primitive that has been carried across multiple pilots without being built) and asks:
 
-> *Does the corpus now have a forcing case for this artifact, or is the current material still only prose-altitude positioning?*
+> *Does the corpus now have a coherent, non-redundant formal target, and what runtime or paper pressure—if any—would test correspondence or support promotion?*
 
 Verdicts use the standard palette, with **NOT_READY** and **FORCING_CASE_CANDIDATE** as the most-likely outcomes. Output is a receipt that includes a *forcing-case predicate* — the conjunction of conditions that would tip the verdict on future re-check — so subsequent audits do not have to re-derive the criteria.
 
@@ -154,7 +154,7 @@ What vector mining is **not**:
 - **Not a relay-judge.** It does not adjudicate external claims by accepting them; it tests against the corpus.
 - **Not a synthesis engine.** It refuses synthesis; the federation doctrine is the architecture.
 - **Not a paper draft.** Pilot reports are receipts, not paper drafts.
-- **Not a Lean spike authorizer.** Lean work is gated separately, by forcing cases and the bridge tax.
+- **Not an automatic Lean spike authorizer.** A vector-mining hit does not by itself supply a coherent model or non-vacuous theorem. Lean work may nevertheless begin before any runtime consumer exists once those intrinsic conditions and the bridge tax are satisfied; formalization may lead the later code.
 - **Not a doctrine generator.** Doctrine motion has its own ratification path.
 - **Not exhaustive.** A pilot covers one or a few attacks; it does not claim the corpus is fully audited.
 
@@ -163,7 +163,7 @@ What vector mining is **not**:
 - **Run small first.** Single-attack pilots earn the method; batch pilots scale once polarity is confirmed.
 - **Parallelize corpus reads.** Most pilots need 5–10 file reads; batch them at the start.
 - **Cite every cell.** Every verdict cell in a comparison table must point at a corpus location. "I sense convergence" is the warning sign that the instrument has failed.
-- **Refuse the synthesis goblin.** Even when a finding looks promotable, the right move is to file it as a candidate and wait for a forcing case from a *different* angle.
+- **Refuse the synthesis goblin.** Even when a finding looks promotable, file it as a candidate and seek pressure from a *different* angle before doctrine promotion. A bounded formal probe may lead that investigation; it does not need a runtime consumer's permission.
 - **Cross-altitude before publication.** A finding that looks novel at altitude *n* almost certainly has a sibling at altitude *m*; check before reporting.
 - **Common-mode immunity:** when the proposing voice is Claude-family, the corpus check must come from a non-Claude reference (the corpus itself, in this case). Pilot receipts are written against the corpus, never against the relay.
 

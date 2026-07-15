@@ -126,8 +126,10 @@ an explicit slot, not yet an encoded predicate.
   to a source predicate (e.g. priorOpByDistinctActor), with a
   discharge obligation analogous to revoked_standing_never_standing.
 
-  Forcing case: when a concrete StandingDerivation needs to refuse a
-  self-bootstrap chain that the Alloy probe sketched.
+  Formal admission: a precise, non-redundant theorem or countermodel
+  showing how `StandingDerivation` refuses the self-bootstrap chain the
+  Alloy probe sketched. A concrete implementation may instantiate and
+  test the result, but is not permission to develop it.
 ```
 
 This is well-scoped and bridges into the federation discipline: it is the first bridge-law specimen — a cross-surface obligation owned at the layer where its structure lives, not laundered through the verdict gate.

@@ -194,9 +194,9 @@ This tightens an earlier framing: ChatGPT's "minimal-typeclass route is the chea
 
 ---
 
-## 7. Next gates (do not execute)
+## 7. Next formal decisions
 
-Three gates of increasing scope. None is authorized. None should be opened without separate decision tied to a forcing case.
+Three decisions of increasing scope. This note does not schedule them, but none depends on a runtime forcing case. Open one when its formal question is precise, non-vacuous, load-bearing, and worth its stated cost; formalization may lead any later implementation.
 
 ### Gate A: Decide the recorded null
 
@@ -226,13 +226,13 @@ Prove the predicate from Gate B induces an algebraic structure over admissibilit
 
 These gates are conditional, not strictly sequential — Gate A could be pursued without Gate B; Gate B without Gate A would be groundless. Gate C requires Gate B. The honest structure is: Gate A first (if at all), then a separate decision about whether to open Gate B, then a separate decision about whether to pursue Gate C.
 
-**None of these should be opened without a forcing case** — a paper claim that depends on the gate's content, an external request that requires it, or a discovered result that makes the gate a small step rather than a leap. Investigative-mode discipline: state the target, accept null results, do not redefine terms mid-search.
+**None of these should be opened merely to fill out a namespace.** A paper claim, countermodel, or discovered result can supply the formal target; an external request can help prioritize it but is not a prerequisite. Investigative-mode discipline: state the target, accept null results, do not redefine terms mid-search.
 
 ---
 
 ## What this note is NOT
 
-- **NOT** authorization to add axioms, typeclasses, theorem statements, or kernel code.
+- **NOT** a build order or permission to add unjustified axioms or conclusion-shaped structures. It does identify theorem work that may be undertaken on its own formal merits.
 - **NOT** a P28 draft, outline, or scaffold.
 - **NOT** ratification of `StoreEffectful`, `VerdictSensitive`, `MixedClassWitness`, or any other named structure as a kernel addition. The names appear here to make the design legible; they are not minted vocabulary.
 - **NOT** a commitment to opening Gate A. Whether to investigate the missing commitments at all, and in what order, is the open question this note exists to make legible.

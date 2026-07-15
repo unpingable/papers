@@ -64,7 +64,7 @@ The master frame applies at three layers. Each layer names a refusal and a missi
 | **`NoSilentJoin`** | No silent join | Join witness (bundle ⊨ requirements) |
 | **`NoChainMagic`** | No self-certifying chain | Composite witness (chain ⊨ promotion) |
 
-These are **layer-tags, not a module/directory hierarchy.** The 2026-06-04 audit refused a parallel `NoLift/` directory as cathedral-by-rename; the same refusal extends to `NoSilentJoin/` and `NoChainMagic/`. The atomic-layer instances are the family rows below (already mapped to existing modules). The workflow-layer kernel is held as candidate: [`tooltheory/aggregate-witness-requires-join-candidate-2026-06-05.md`](tooltheory/aggregate-witness-requires-join-candidate-2026-06-05.md). The sequence-layer claim is shaped but has no candidate file yet; no downstream consumer has earned the build.
+These are **layer-tags, not a module/directory hierarchy.** The 2026-06-04 audit refused a parallel `NoLift/` directory as cathedral-by-rename; the same refusal extends to `NoSilentJoin/` and `NoChainMagic/`. The atomic-layer instances are the family rows below (already mapped to existing modules). The workflow-layer kernel is held as candidate: [`tooltheory/aggregate-witness-requires-join-candidate-2026-06-05.md`](tooltheory/aggregate-witness-requires-join-candidate-2026-06-05.md). The sequence-layer claim is shaped but has no candidate file yet; it remains held pending a precise, non-redundant theorem shape and composition audit. A downstream consumer may provide useful pressure, but is not required to earn formal development.
 
 **Meta-discipline (the keeper):** *Indexed or it didn't happen.* A mediating object is admissible only when indexed to the exact objects it mediates — the conversion witness binds source AND target; the join witness binds bundle AND requirements; the composite witness binds the chain. Unindexed witnesses are **existential laundry** — a witness exists somewhere, therefore treated as applicable here. Same disease across all three layers; same fix across all three layers; same goblin in increasingly elaborate costumes.
 
@@ -148,8 +148,8 @@ Each row names one *bad inference* the corpus exists to refuse. The right-hand c
 Before filing a new candidate working note that names a refusal:
 
 1. **Classify it against the family table.** If the bad inference matches an existing row, the candidate is either (a) a new specimen of an existing family (annex / specimen work), or (b) a sharper restatement of an existing refusal (rewrite the existing module's docstring, not a new file).
-2. **If the inference doesn't match any row**, the candidate is opening a new family. That is a heavier move — name it, but do not build Lean until a downstream consumer requires the distinction mechanically (per the doctrine file's bridge-tax discipline).
-3. **If the inference matches a row but the existing modules don't cover the specific operational failure mode the candidate names**, the candidate is a *forcing case* on an existing family. File it; the existing module may need to be extended, or a sibling kernel may need to be added.
+2. **If the inference doesn't match any row**, the candidate is opening a new family. That is a heavier move: name it, then require a coherent theorem shape, stable semantics, anti-vacuity controls, and an overlap/bridge-tax audit before promoting a kernel. No consumer prerequisite applies.
+3. **If the inference matches a row but the existing modules don't cover the specific operational failure mode the candidate names**, the candidate is a *pressure specimen* on an existing family. File it; the existing module may need to be extended, or a sibling kernel may need to be added. The specimen is evidence about scope, not permission to formalize.
 
 ## Meta-pattern: control-flow laundering
 
@@ -172,21 +172,23 @@ These translations are the bridge from "proof-shaped toy discovered something in
 
 **Why this isn't a sixth row.** It is not a domain refusal (it doesn't refuse a class of bad inferences across surfaces). It is a preservation rule for the implementation of any domain refusal. Filing it as a row would dilute the family taxonomy; filing it here keeps the row structure clean and surfaces the meta-rule where checkers will actually consult it.
 
-## Lean filing discipline (two admissible categories)
+## Lean filing discipline (formalization leads code)
 
-The earlier rule "no Lean without a downstream consumer" was too narrow. Two categories of Lean filings are admissible in the corpus, and conflating them is the failure mode to watch for:
+The earlier rule "no Lean without a downstream consumer" is superseded. It confused three separate questions: whether a theorem may be developed, whether an artifact is promoted, and whether runtime code conforms. Two categories of Lean filings remain useful, but neither waits for a consumer:
 
-1. **Public / promoted kernels** — wired into `LeanProofs.lean`, part of the 1.0 compatibility surface (or earned annex). Requires a downstream consumer that mechanically needs the distinction. Bridge-tax discipline per [`no-unifier-without-laundering.md`](no-unifier-without-laundering.md) applies.
-2. **Fenced scratch proof-of-encodability** — scratch annex labeled as such, NOT wired, NO promotion path, NOT used as discharge. Allowed when it demonstrates that a doctrine *can* be structurally encoded. Pays its rent by forcing the architecture to confess which implementation idioms are inadmissible (see meta-pattern above). The productive use of formal methods is not "prove the system correct" but "use the proof-shaped toy to discover which implementation idioms are inadmissible." Lean's role in category 2 is the compiler as adversarial reviewer, not as ratification authority.
+1. **Public / promoted kernels** — wired into `LeanProofs.lean`, part of the 1.0 compatibility surface (or earned annex). A kernel may precede and lead downstream implementation. Promotion requires a proved, stable, non-vacuous theorem or type boundary; an overlap and bridge-tax audit; and explicit custody, naming, and compatibility review.
+2. **Fenced scratch proof-of-encodability** — a scratch annex labeled as such, not wired and not usable as public discharge. It may demonstrate that a doctrine *can* be structurally encoded or investigate which implementation idioms are inadmissible. Scratch status promises no promotion; later promotion is a separate review, not an automatic path.
 
-The failure mode the original rule was guarding against — Lean masquerading as discharge — fires only when category-2 work is presented or used as category 1. Fenced scratch that stays fenced is genuinely productive. `~/git/lean/LeanProofs/Scratch/BoundaryTransit.lean` is a category-2 filing: it structurally encodes three of the family rows above (custodian binding's self-attestation half, freshness, declaration completeness's zero-evidence degenerate case), explicitly names the standing-kernel gap, and surfaced the control-flow laundering meta-pattern as a side effect of refusing to be elegant.
+Runtime correspondence is a third status. A consumer that cites a public theorem has identified the intended contract, but citation alone is not conformance. Conformance requires an explicit mapping from runtime behavior to the formal objects plus implementation evidence or a refinement proof.
+
+The failure mode the original rule was guarding against — Lean masquerading as discharge — fires when exploratory work is presented as ratified authority or when a theorem citation is presented as runtime evidence. `~/git/lean/LeanProofs/Scratch/BoundaryTransit.lean` is a fenced filing: it structurally encodes three of the family rows above (custodian binding's self-attestation half, freshness, declaration completeness's zero-evidence degenerate case), explicitly names the standing-kernel gap, and surfaced the control-flow laundering meta-pattern as a side effect of refusing to be elegant.
 
 ## What this map is NOT
 
 - Not a formal taxonomy. Rows are operational categories, not type-theoretic partitions.
 - Not exhaustive. New families can be added; old families can be retired if their refusal turns out to be a special case of another row.
 - Not a paper. This is internal navigation for the working-notes layer; if a paper ever needs to cite the family structure, it cites the individual kernel modules, not this map.
-- Not a license to build. Files referenced here are the substrate; building a new kernel in any row still requires the per-row forcing-case discipline.
+- Not automatic promotion. Files referenced here are the substrate; a new kernel still requires an intrinsic theorem-shape, overlap, bridge-tax, proof, and anti-vacuity review. Runtime adoption is correspondence evidence, not an admission gate.
 
 ## Composes with
 

@@ -43,13 +43,13 @@ Three options were on the table before the patch:
 
 - **Option A — documented-debt-only.** Backport per-hop actor into `AuthorizedStepC` / `SafeAuthorizedStepC`, drop the `(a : Actor)` parameter from `AuthorizedTraj` / `BridgedTraj`. Leaves `SafetyBridge.SafeStep` itself actor-typed. *Verdict:* insufficient. Per ChatGPT's read: "the global actor assumption is not merely in `AuthorizedTraj`. It is baked one level lower, into the primitive step type. So the ledger didn't 'diverge' casually. It had to fork because the base substrate did not permit per-hop actors." Patching only the trajectories leaves the substrate lie intact and future proofs inherit the fossil.
 - **Option B — substrate fix (chosen).** Move actor to a field in `SafeStep` (and `AuthStep`, new) at the substrate. Add generic per-hop-actor trajectories at the substrate. Refactor verdict-layer and ledger to consume them. Result: one substrate, one shape, no fork.
-- **Option C — full ChatGPT vision.** Option B plus rename to `AttestedTrajectory` / `SafetyPath`, add a coarser `SafetyPath` summary layer with forgetful map, add anti-laundering theorems (`forget_does_not_mint_authority`, etc.). *Deferred* — these are net-new architecture without a forcing case in the safety-axis preprint itself, and they change the shape of the public proof surface. Filed below as the staged future vision, candidate / non-binding.
+- **Option C — full ChatGPT vision.** Option B plus rename to `AttestedTrajectory` / `SafetyPath`, add a coarser `SafetyPath` summary layer with forgetful map, add anti-laundering theorems (`forget_does_not_mint_authority`, etc.). *Not chosen for the public surface in this patch* — these are net-new architecture whose wrapper and erasure semantics need independent theorem/overlap review, and the rename changes the public proof surface. Bounded Scratch work may lead a later consumer. Filed below as the staged future vision, candidate / non-binding.
 
-Option B is the boring substrate correction. It retires the contradiction without expanding the calculus frontier — exactly what was wanted before publication. Per memory: "completeness before novelty" — finish what was opened (the substrate fork was an open obligation from the moment AttestationLedger forked); don't open new doors (SafetyPath) without a forcing case.
+Option B is the boring substrate correction. It retires the contradiction without expanding the calculus frontier — exactly what was wanted before publication. Per memory: "completeness before novelty" — finish what was opened (the substrate fork was an open obligation from the moment AttestationLedger forked). A later `SafetyPath` probe should open from a precise wrapper/forgetful-map claim, not from namespace momentum; it need not wait for runtime code.
 
 ## Deferred — staged future vision (candidate / non-binding, per *name-early*)
 
-Filed as a single record so a future session does not re-derive these from chat vapor. The target architecture, if and when a forcing case arrives:
+Filed as a single record so a future session does not re-derive these from chat vapor. The target architecture, if and when its formal contracts are sharp enough:
 
 ```
 SafeStep
@@ -70,7 +70,7 @@ Core invariant:
 Phased roadmap (from ChatGPT 2026-05-30):
 
 - **Phase 1 — substrate correction.** DONE 2026-05-30 (this record).
-- **Phase 2 — `AttestedHop` wrapper layer.** A wrapper carrying witness, custody, basis, value decay, timestamp, contamination check — without bloating the primitive `SafeStep`. Forcing case: first concrete consumer that needs hop-local custody / witness identity.
+- **Phase 2 — `AttestedHop` wrapper layer.** A wrapper carrying witness, custody, basis, value decay, timestamp, contamination check — without bloating the primitive `SafeStep`. It may be formalized first when hop-local custody / witness identity supports a discriminating theorem; a concrete consumer is a later instantiation.
 - **Phase 3 — `AttestedTrajectory` canonical.** Ordered chain of attested hops with adjacency / time-ordering / scope-compatibility predicates; trajectory-level properties (`EachHopAdmissible`, `NoUnauthorizedLift`, `NoScopeExpansion`, `ValueDecayRespected`, `NonContaminating`).
 - **Phase 4 — `SafetyPath` summary + `forget`.** Paper-facing lossy projection. The forgetful map visibly erases hop-local actor, witness identity, attestation basis, custody, local freshness, scope justifications, contamination checks, intermediate values.
 - **Phase 5 — preservation lemmas.** `forget_preserves_start` / `forget_preserves_end` / `forget_preserves_final_value` / `forget_preserves_final_verdict`. The summary is legitimate as a summary.
@@ -81,7 +81,7 @@ Phased roadmap (from ChatGPT 2026-05-30):
 
 > A summarized safe-looking path is not an admissible safety bridge. For gate decisions, the Governor needs the authority-bearing object (`AttestedTrajectory` or equivalent evidence packet); `SafetyPath` may be inspected, displayed, or used for orientation, but cannot serve as admissible proof of safety or authority.
 
-**Forcing-case discipline.** Phase 2+ should not be implemented absent a downstream consumer whose safety claim cannot be stated under the current substrate but can under the wrapper. The substrate fix (Phase 1) was forced by the trajectory-divergence debt blocking the preprint. Phase 2+ is name-early, not authorization to build.
+**Formalization and promotion discipline.** Phase 2+ is not scheduled by this record, but a coherent wrapper, projection, or anti-laundering theorem may be developed in Scratch before a downstream consumer exists. Scratch cannot testify for a Governor or alter the public proof surface. Runtime adoption requires a concrete mapping and evidence; public rename/promotion requires separate custody and compatibility review.
 
 ## Cross-references
 

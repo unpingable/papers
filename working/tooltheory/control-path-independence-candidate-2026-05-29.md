@@ -1,6 +1,6 @@
 # Control-path independence — candidate primitive (2026-05-29)
 
-**Status:** Candidate primitive. Filed at candidate-density per `working/tooltheory/` convention. Names early, ratifies lazily; the Lean module `Admissibility.ControlPathIndependence` is **filed by name, not built**. Build is gated on a concrete forcing case (NQ / Wicket / Governor consumer that needs to refuse an independence claim against an inadmissible basis).
+**Status:** Candidate primitive with a checked Scratch core. `~/git/lean/LeanProofs/Scratch/ControlPathIndependence.lean` formalizes the reachability vocabulary, the wiring⇛standing/coupling non-collapse result, and the three-obligation `InterlockBasis`. It is not imported by `LeanProofs.lean` and does not ratify the doctrine. Formalization did not wait for NQ, Wicket, or Governor; promotion to an `Admissibility/` surface is a separate custody review with correspondence evidence and an overlap/scope audit.
 
 **Provenance:** Multi-model conversation 2026-05-29. DeepSeek seeded a control-theoretic abstraction of a parallel-loop / counter-power model, with Lean-flavored pseudocode. ChatGPT corrected the Lean target and proposed an "architecture linter" framing scoped to `working/`. Claude opus 4.8 on web corrected the linter framing in two directions — sharper kernel connection *up* (this is a basis predicate for binding semantics, not pre-calculus preflight) and sharper scope *down* (the linter is structurally blind to two of the three invariants it implicitly claims to cover). ChatGPT endorsed the correction. This file is the convergent reading.
 
@@ -8,7 +8,7 @@
 
 ## Compile-probe scope statement (2026-05-30)
 
-Filed at the head of the candidate per the [annex-probe queue](annex-probe-queue-2026-05-29.md)'s gate: *CPI's compile probe is licensed only after this statement holds.* Three questions, three answers.
+This was filed at the head of the candidate under the 2026-05-30 annex-probe queue. That queue's old consumer-as-authorization framing is superseded; the three questions remain useful as intrinsic scope controls and were used by the later Scratch extraction.
 
 ### 1. What bounded question does the compile probe answer?
 
@@ -60,17 +60,17 @@ The [annex-probe queue](annex-probe-queue-2026-05-29.md) flagged this candidate 
 
 This statement holds the boundary the queue's five-criterion test cannot hold alone for a candidate of this size.
 
-### Recommended build session (if licensed)
+### Historical proposed build session; current disposition
 
-When the operator triggers the compile probe:
+The 2026-05-30 plan proposed a future probe. The later extraction resolved it as follows:
 
-1. Drop `Principal`, `Component`, `PathKind`, `Arch`, `ReachableBy`, `ComponentInfluencedByOfficial`, `IndependentAt`, `InterlockBasis` exactly as written in §"Proposed Lean shape" below.
-2. Add the four failure-theorem statements from §"Failure-mode-to-theorem table" — bodies may be `sorry` (since `DomesticatedProvisioning`, `CapturedObserver`, etc., are themselves candidate predicates whose meanings are vocabulary-deficient at kernel layer). If they are stated with `sorry`, that is a *vocabulary-deficient* sorry, classified per [[feedback-lean-debt-discipline]]. The annex should label them as such in a comment.
+1. The later Scratch extraction carried over `Principal`, `Component`, `PathKind`, `Arch`, `ReachableBy`, `ComponentInfluencedByOfficial`, `IndependentAt`, and `InterlockBasis`, repairing the sketch where needed.
+2. The four failure-theorem statements were **not** added with `sorry`: `DomesticatedProvisioning`, `CapturedObserver`, and the other result predicates remain undefined prose vocabulary. Formalization leads code; it does not turn an unspecified proposition into a placeholder theorem.
 3. Confirm no Mathlib, no `LeanProofs.lean` import, no example architecture, no `Decidable` instance.
-4. `lake build LeanProofs.Admissibility.ControlPathIndependence`. Green is contact; not promotion.
-5. Update this note's §"Lean annex — built status" (new section) with the compile date, build time, and any deltas from the sketch.
+4. The checked target is `LeanProofs/Scratch/ControlPathIndependence.lean`; green is contact, not promotion.
+5. The four named failure-property theorems remain prose debt because their predicates are still undefined, not because a consumer has failed to ask for them.
 
-The compile remains gated on this statement holding. If the answers to §1–§3 above no longer match the candidate's actual shape, **rewrite this section before building, not after.**
+Further formal work remains gated by the same intrinsic rule: if the answers to §1–§3 no longer match the actual shape, repair the statement before extending the file. No runtime consumer is an admission precondition.
 
 ---
 
@@ -113,14 +113,14 @@ A tool that emits `Independent loop: PASS` is a stuck-at-safe interlock for the 
 
 Implementation: the kernel module surfaces three obligations (`independent`, `standing`, `coupled`); it provides constructors / proofs *only* for `independent`. Standing and coupling stay as `axiom`-shaped obligations the consumer must discharge separately — or explicitly leave undischarged with the certificate above. The kernel does not pretend they don't exist.
 
-## Proposed Lean shape (candidate, not built)
+## Source Lean shape (core extracted to Scratch)
 
 Both prior sketches modeled the wrong object in complementary ways:
 
 - **DeepSeek** erased signal types to `Unit`. Typed ports become decorative; the `dependencyGraph` function had ellipses doing the load-bearing work.
 - **ChatGPT** made `Principal = official | parallel | external` a closed inductive — which *bakes the classification into the type system*, exactly the thing the failure-detector is supposed to detect. Carrier capture is `parallel` being covertly `official`; if they are distinct constructors by definitional fiat, the failure mode is assumed away. Also `independentFromOfficial : Component → Prop` as a per-component predicate misses that independence is a *reachability* property — a component owned-by-parallel and powered-by-parallel can still take its input from a sensor traceable to the official principal.
 
-The minimal correct target — **filed as candidate, not implemented**:
+The source shape below fed the checked Scratch core. The Lean file is authoritative where it differs:
 
 ```lean
 -- Identity types: opaque, not enumerated
@@ -187,7 +187,7 @@ Key design pins:
 3. **Path-kind separation.** Independence is path-specific. A component can be signal-independent and power-dependent, or vice versa. Conflating them into one "independent" predicate hides the distinct failure modes the four independence-derivable theorems below are meant to express.
 4. **Three-field `InterlockBasis` with two explicit gaps.** `independent` is the only field the architecture module discharges; `standing` and `coupled` stay as obligations the consumer must supply (or leave undischarged with the incompleteness certificate). The kernel module *never* provides default-True placeholders for standing or coupling.
 
-## Failure-mode-to-theorem table (candidate, not built)
+## Failure-mode-to-theorem table (prose debt beyond the checked core)
 
 The four independence-derivable failure modes become theorems of the form `¬ IndependentAt → <named bad property>`:
 
@@ -209,23 +209,23 @@ This is the unification I (CC) overclaimed earlier in the conversation, now corr
 
 ## What this candidate does NOT claim
 
-- **Not building the Lean module.** This file names the primitive and pins its shape. Build gates on a forcing case (a concrete consumer that needs to refuse a captured-checker claim). Per "name-early, ratify-lazily," ratification follows recurrence, not speculation.
+- **Not a promoted Lean module.** The Scratch core exists, but is not imported or ratified. Further theorems require coherent definitions and non-vacuous controls; they do not require a concrete consumer.
 - **Not the whole binding-semantics gap.** Control-path independence is *one* basis predicate. The binding-semantics gap covers more (temporal revocation, evidence-class mismatch, conflicting precedence, etc.). Independence is a fragment, not a substitute.
 - **Not a counterpower proof.** Even with all four independence-derivable failure modes formalized, the kernel module would only certify *necessary architectural conditions* for an admissible check. Sufficient counterpower also requires standing and coupling, both unverifiable at this layer.
 - **Not deployable as a standalone "independence linter."** Per the incompleteness-certificate discipline, any consumer that emits `Independent loop: PASS` without naming the standing and coupling gaps is the failure mode under test, wearing a green-checkmark costume.
-- **Not paper-ready.** Filed as primitive-candidate. Whether this eventually becomes paper-shaped (addendum to the safety-bridge preprint, a separate NQ-findings paper, or just kernel infrastructure cited from elsewhere) is a downstream decision after a forcing case clarifies the audience.
+- **Not paper-ready.** Filed as primitive-candidate. Whether this eventually becomes paper-shaped (addendum to the safety-bridge preprint, a separate NQ-findings paper, or only formal infrastructure) is a distinct editorial and custody decision.
 - **Not a claim about real institutions.** Same fence as the safety-bridge family: this layer is *structural*. Whether a real audit log / monitor / deploy pipeline / oversight body is captured is an empirical question instantiated against the structural predicate, not derivable from it.
 
-## Forcing-case watchlist
+## Runtime correspondence watchlist
 
-Build is gated on at least one of:
+These are useful implementation and correspondence targets, not authorization gates for formal work:
 
 - **NQ finding** that needs to express "this audit log is not independent because its write permissions are controlled by the audited service." Witness-family integration is the consumer.
 - **Wicket classification** that refuses an admissibility claim because the architecture preflight failed.
 - **Governor verdict** that needs to cite "captured checker" as a basis-revocation reason distinct from temporal revocation.
 - **Concrete real-world specimen** (auth-provider audit logs writable via the provider's own admin path; deploy pipelines with their own deploy access; monitoring stacks running on the monitored substrate; backup credentials stored in the prod account; secondary regions sharing the primary's IAM root; "external" compliance dashboards populated by self-attested vendor fields) that the kernel needs to refuse.
 
-Until one arrives, the candidate stays here. The Lean module name `Admissibility.ControlPathIndependence` is reserved.
+Until promotion review succeeds, the checked core remains in Scratch. The name `Admissibility.ControlPathIndependence` denotes a possible promoted home, not a promise or a consumer-held lock.
 
 ## Adjacent existing work
 

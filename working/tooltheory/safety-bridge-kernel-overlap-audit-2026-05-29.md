@@ -92,12 +92,12 @@ Recorded so the audit trail shows what was *not* built:
   in `AttestationLedger.LedgerAuthStep`.** Refactor at the generic
   `SafetyTrajectory.lean` layer is deferred to a separate brick (touches
   brick 1's downstream). The ledger demonstrates the shape; the generic
-  generalization waits for a forcing case that needs it outside the ledger.
+  generalization waits for a precise reuse theorem and compatibility review outside the ledger; a runtime consumer is not required.
 - ~~Tier 2A budget-margin model (value-axis generalization)~~ → **deferred per
   `calculus-2-tier-map-2026-05-28.md`.** Theorem rewrite (`bridgedTraj_preserves`
   → "trajectory stays above floor") + `Preorder V` generalization. Held until
-  a concrete model legitimately decreases value (budget spend, retry-token
-  consumption) — i.e. forcing condition, not anticipatory build.
+  a concrete, discriminating value-decrease model is specified (budget spend,
+  retry-token consumption). That model may be formal and may lead runtime code.
 - ~~Tier 2B quorum model (authorization-axis generalization)~~ → **deferred.**
   Role → certificate; intersection-invariant inside `preserves`; bridge stops
   being constructor-inspection. Held until a concrete collective-authorization
@@ -180,11 +180,11 @@ otherwise lacks:
 - Does not promote the family from annex to `CalculusOne`. The 1.0 surface is
   unchanged; the safety-bridge family stays in the annex per
   `LeanProofs/Admissibility/README.md` §Annex.
-- Does not authorize tier-2 work. Tier 2A (budget-margin) and tier 2B (quorum)
-  remain deferred-until-forcing-case per the tier map.
+- Does not schedule tier-2 work. Tier 2A (budget-margin) and tier 2B (quorum)
+  retain their model/theorem-shape gates, but neither waits for a runtime forcing case.
 - Does not foreclose the trajectory-global → per-hop actor refactor at the
   generic layer. The ledger ships per-hop; the generic refactor is a separate
-  brick when downstream demands it.
+  brick when formal reuse and compatibility justify it.
 - Does not discharge substantive-grounding. The Loop-Capture institutional
   reading remains a doctrinal mapping for paper 28, not a Lean claim here.
 

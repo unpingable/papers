@@ -1,6 +1,6 @@
 # Affective Coupling / Sentiment Invariance
 
-**Status:** Candidate diagnostic pattern; not promoted to primitive; not Lean-staged.
+**Status:** Candidate diagnostic pattern; not promoted to primitive. A checked formalization-leading classification slice now lives at `~/git/lean/LeanProofs/Scratch/AffectiveCouplingClassification.lean`; it is unwired and not imported by `LeanProofs.lean`.
 **Filed:** 2026-05-20
 **Tool relevance:** labelwatch, driftwatch, social-telemetry layer; possible future Nightshift cross-pointer.
 **Promotion ladder position:** working fragment / tool doctrine note (per `tooltheory/README.md`).
@@ -43,7 +43,7 @@ Useful state labels: *calibrated* / *congruent distress* / *toxic basin* / *pile
 
 ## Two-layer split
 
-The clean separation between what the runtime monitors and what a (future) formal kernel would say:
+The clean separation between what a runtime monitor measures and what the checked formal classification slice says:
 
 ### Runtime monitor — Python / Rust / notebook / graph code
 
@@ -55,31 +55,23 @@ The clean separation between what the runtime monitors and what a (future) forma
 
 DeepSeek 2026-05-20 produced a reasonable operational sketch (`AffectiveCouplingMonitor` class with `numpy` + `scipy.stats.entropy`). Useful as starting shape; not preserved here verbatim because it's runtime infrastructure, not doctrine.
 
-### Lean kernel — NOT staged
+### Lean classification slice — checked Scratch
 
-If a Lean kernel eventually lands, it should:
+The original `Rat`/exact-zero sketch was useful as a warning but was not the
+artifact that survived formal contact. The checked Scratch module:
 
-- **Abstract over** the measures, not formalize entropy in `Rat` (logarithms don't live comfortably there; would force mathlib real-analysis tax forms).
-- **Prove structural facts about classification semantics**, not certify social pathology from thresholds.
-- **Stay small.** Shape sketch only, not authorized to build:
+- treats all numeric fields as externally supplied diagnostic summaries rather
+  than pretending Lean calculated entropy or causal influence;
+- parameterizes the declared input-coupling threshold instead of equating
+  invariance with exact zero;
+- names the conjunction `ToxicitySignatureAt`, not `Toxic`, and makes no causal
+  claim about a room, cohort, author, or response process;
+- proves that negative mean valence alone does not determine the signature,
+  with a positive inhabitant and paired equal-valence/opposite-verdict worlds.
 
-```lean
-structure CouplingSurface where
-  inputCoupling      : Rat  -- abstract; I(S;R)
-  roomMemoryCoupling : Rat  -- abstract; I(R_prev;R)
-  authorCoupling     : Rat  -- abstract; I(A;R)
-  meanResponseValence : Rat
-
-def responseInvariant (c : CouplingSurface) : Prop := c.inputCoupling = 0
-def negativeBasin    (c : CouplingSurface) : Prop := c.meanResponseValence < 0
-def toxicBasin       (c : CouplingSurface) : Prop := responseInvariant c ∧ negativeBasin c
-def affectiveCapture (c : CouplingSurface) : Prop := c.roomMemoryCoupling > c.inputCoupling
-def standingCollapse (c : CouplingSurface) : Prop := c.authorCoupling > c.inputCoupling
-```
-
-Theorems would be small structural unfoldings (e.g., `toxic_basin_invariant : toxicBasin c → responseInvariant c`). The computation lives outside; Lean would guard only the classification semantics.
-
-**Do not stage yet.** No live tool consumer; no recurrent specimen base; the abstraction would be premature scaffolding. Per the kernel-overlap-audit discipline, this is exactly the kind of "looks formal, isn't earning rent" candidate that the AWP-audit precedent rejected.
+The computation remains runtime-side. The formal classification semantics lead
+any later implementation, which must map its measurements and thresholds to the
+abstract fields and supply its own conformance evidence.
 
 ## Constellation lineage
 
@@ -91,23 +83,23 @@ Theorems would be small structural unfoldings (e.g., `toxic_basin_invariant : to
 | **labelwatch / driftwatch** | Live wires. The custodial labeling surfaces are exactly where coupling-vs-decoupling becomes operationally measurable in the social-telemetry register. |
 | **Signal authority** (candidate primitive) | Adjacent at the null-laundering axis. Signal authority: silence ≠ revocation. Affective coupling: invariant response ≠ legitimate response — the absence of conditional variation is its own signal, not neutrality. |
 
-## Promotion gates
+## Promotion and correspondence
 
-This stays as a tooltheory note until at least one of:
+The doctrine remains a tooltheory note. These events can affect doctrine or runtime disposition:
 
-- A live labelwatch / driftwatch consumer needs the diagnostic surface and forces a concrete schema (then: promote to spec).
-- A second non-social-media domain exhibits the same input-decoupled-response failure cleanly (then: candidate primitive with kind=Axis or Attractor).
-- A bridge theorem composes with `WitnessInvariance` (showing the inverse-direction symmetry formally) — would justify Lean kernel staging.
+- A live labelwatch / driftwatch integration supplies a concrete measurement mapping (then: runtime spec/correspondence review).
+- A second non-social-media domain exhibits the same input-decoupled-response failure cleanly (then: candidate-primitive review with kind=Axis or Attractor).
+- A nontrivial bridge theorem composes with `WitnessInvariance` (showing the inverse-direction symmetry formally) — then extend formal work after overlap review.
 
-Until then: tool doctrine, not implementation invariant.
+Until then: candidate doctrine plus checked Scratch classification semantics, not an implementation invariant or public theorem surface.
 
 ## Failure mode the note guards against
 
-The Lean kernel sketch above is **suspiciously formal-looking**. The temptation to immediately implement `AffectiveCoupling.lean` is the second-most-recent instance of the failure pattern memory `feedback-kernel-overlap-audit` names: *appearance of formality without earned residue*. Don't.
+The original Lean-shaped sketch was **suspiciously formal-looking**. Formal contact paid for itself by replacing its exact-zero and causal-looking labels with the narrower thresholded classification result. Do not expand that checked slice without a distinct theorem delta and overlap audit.
 
 The Python kernel is **suspiciously runnable**. The temptation to ship `AffectiveCouplingMonitor` as a labelwatch dependency before the diagnostic surface has been stress-tested against actual social data is the operational counterpart of the same trap.
 
-Both temptations resolve the same way: hold at note, wait for the consumer to surface a forcing case.
+The formal and runtime temptations resolve differently: formalize a coherent bounded proposition first; implement only against an explicit measurement mapping and evidence plan. Neither artifact promotes the other automatically.
 
 ## Provenance and meta-note
 

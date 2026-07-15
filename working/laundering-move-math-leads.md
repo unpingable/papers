@@ -6,7 +6,7 @@
 
 **Discipline:** *Math as trap detector, not math as coronation.* For each Section B move, identify the compact formal object that could act as a future tripwire — without pretending to settle the world, and without writing the Lean now. The math is a **lead**, not a **canonization**.
 
-**Promotion gate to actual Lean:** lifted directly from the parent watchlist's Lean-worthy criteria — type-level refusal needed AND classification sharp enough AND no existing kernel piece does the work. The NEAM measurement adapter (`non-reciprocal-admissibility-flow-sketch.lean`) is the working example of what a promoted lead looks like; until any lead below meets all three gates, it stays in this file as prose.
+**Lean admission test:** type-level refusal needed AND classification sharp enough AND no existing kernel piece does the work. These are intrinsic theorem-shape and overlap gates. A runtime specimen can sharpen or test the mapping, but it is not permission to formalize. The NEAM measurement adapter (`non-reciprocal-admissibility-flow-sketch.lean`) is the working example of a lead that survived this test.
 
 ---
 
@@ -27,7 +27,7 @@
 | **Publicness → harmlessness** | **Mutual information / recomposition risk** | **Added inferential power** | **Public fragment → harmless product** |
 | Receipt → consequence | Event log vs transition system | Recorded event | Record → enforcement |
 
-Five bolded moves get deep treatment: four deep entries (§ 2–§ 5) plus the specimen card at § 7 (Publicness → harmlessness, added 2026-05-16 as the first card where the math does conceptual work rather than confirming existing hygiene). The other seven stay as one-line placeholders in § 6 — promote when a specimen forces investigation.
+Five bolded moves get deep treatment: four deep entries (§ 2–§ 5) plus the specimen card at § 7 (Publicness → harmlessness, added 2026-05-16 as the first card where the math does conceptual work rather than confirming existing hygiene). The other seven stay as one-line placeholders in § 6 until a distinct, non-vacuous proposition sharpens; specimens may supply useful pressure but are not admission tokens.
 
 ---
 
@@ -43,7 +43,7 @@ What it can legitimately show:
 Forbidden inference:
 Candidate theorem / tripwire:
 Existing kernel neighbor:
-Promotion trigger:
+Formal delta / correspondence target:
 ```
 
 ---
@@ -75,9 +75,9 @@ This is the keeper shape. Type-level encoding (if it ever earns one) would split
 
 **Existing kernel neighbor:** `~/git/lean/LeanProofs/Admissibility/NumericalAdmissibility.lean` is the closest — it refuses numerical-kind → admissibility-kind laundering. The optimization shape is a *sub-case* where the numerical kind is "objective value" and the admissibility kind is the missing constraint. SurfaceAuthorization is adjacent but on a different axis (surface presence ≠ surface authorization).
 
-**Promotion trigger:** Code in `~/git/wicket`, `~/git/wicket-guard`, or `~/git/agent_gov` starts allowing an optimization-passed surface (CI green, benchmark improved, score above threshold) to short-circuit an admissibility check that would otherwise be required. At that point: either compose NumericalAdmissibility against the optimization shape, or — if NumericalAdmissibility can't carry it — stage a Lean tripwire here.
+**Formal delta / correspondence target:** First audit whether `NumericalAdmissibility` already carries the optimization refusal. A new Lean tripwire is warranted only for a distinct theorem shape with positive and collapse controls. Code in `~/git/wicket`, `~/git/wicket-guard`, or `~/git/agent_gov` that lets a numerical pass short-circuit admissibility would be a strong correspondence specimen, not a prerequisite.
 
-**Specimen collection status:** One confirmed (§ 2.1 below); five candidates remain in execution-pass § 3.1. Recurrence gate not yet met (3+ required).
+**Specimen collection status:** One confirmed (§ 2.1 below); five candidates remain in execution-pass § 3.1. Recurrence is still useful for doctrine priority and public claims, but does not gate formalization.
 
 ### 2.1 Specimen card — CI green → merge permissible
 
@@ -130,15 +130,15 @@ Then `argmax_X U = a` but `A(a) = false`, so `optimal(x) ⊬ admissible(x)`. The
 
 **Detection pattern (audit handle):** In any tool that gates a mutation on a numerical signal, ask: *over what feasible set is this gate evaluated?* If the feasible set is the unconstrained change-space (every PR, every model, every action) and the gate is a numerical threshold (CI status, benchmark delta, score), the constraint set is elided and the move is live. The fix is either (a) call Wicket (or equivalent admissibility preflight) before the numerical gate, or (b) make the admissibility predicate explicit in the gate's feasible set.
 
-**Lean-worthy?** Not yet. The boundary is already enforced *operationally* by Wicket's existence — when a code path uses Wicket, the constrained selection is in place. A Lean tripwire is warranted only if a code path emerges that allows a `numerical_pass: bool` to satisfy a function expecting `admissibility_verdict: Verdict`, *without* going through Wicket or an equivalent. Audit task (execution-pass § 6 followup #1) is the prerequisite: grep for sites where a numerical signal directly authorizes a mutation. If any such site is found, Lean tripwire becomes worth staging; otherwise the prose boundary plus Wicket's existence is sufficient.
+**Lean disposition:** No new module is currently warranted because `NumericalAdmissibility` appears to carry the refusal already. The deciding question is a formal delta: can the optimization-specific statement prove something the resident numerical-kind → admissibility-kind refusal does not? A code audit for `numerical_pass: bool` being used as an `admissibility_verdict: Verdict` is useful correspondence work, but not the admission test.
 
 **Does the math clarify, or just look handsome?** Clarifies. Three concrete payoffs over prose-only:
 
 1. **Audit pattern is structural, not vibes-based.** "Find every gate where the feasible set elides admissibility" is a grep target. "CI isn't authorization" is a slogan.
 2. **Wicket's role becomes formal, not folklore.** Wicket *is* the constrained operator; calling it *is* including admissibility in the feasible set. The math makes that relationship precise — Wicket is not "the polite thing to do," it's the admissibility constraint reified.
-3. **The Lean-worthy gate becomes concrete.** Without the math, "should we Lean this?" is vibes. With it, the gate is: does any code path treat a numerical pass as an admissibility verdict? That's a checkable question.
+3. **The formal-delta question becomes concrete.** Without the math, "should this get a distinct theorem?" is vibes. With it, the question is whether the resident numerical refusal already entails the optimization case, and what additional proposition would remain if it does.
 
-Specimen card filed. Recurrence gate now at 1/3. Two more independent specimens (e.g., benchmark_improved → deployable, score_above_threshold → permitted) before this graduates from staging.
+Specimen card filed. Recurrence now at 1/3 for doctrine/public-surface review. Two more independent specimens would improve that review; they are not required to state a coherent theorem.
 
 ---
 
@@ -162,9 +162,9 @@ The temporal qualifier is doing real work: under Δt drift, a path that existed 
 
 **Existing kernel neighbor:** Receipt-vs-authority Lean split mentioned in `admissibility-trajectory-audit.md`. `tooltheory/consequence-scoping.md` carries the prose version ("evidence may authorize inquiry/caution without authorizing closure"). `tooltheory/dashboard-quiet-is-not-recovery.md` is the specific dashboard-side specimen. `~/git/lean/LeanProofs/Admissibility/SurfaceAuthorization.lean` is adjacent (surface ≠ authorization, parallel to receipt ≠ consequence).
 
-**Promotion trigger:** Any tool in `~/git/{wicket,agent_gov,nightshift,nq}` or `~/git/atproto-nutrition/{labelwatch,driftwatch,nebgraph}` starts marking a record as `Accountable` / `Resolved` / `Handled` based on logging alone. Until then: prose guardrail in `tooltheory/consequence-scoping.md` plus surface-compliance audit (execution-pass § 3.2) is sufficient.
+**Formal delta / correspondence target:** First compare this path-existence claim with the checked `LogOnlyProvesEmission` Scratch module and the resident receipt/authority kernels. A tool that marks a record `Accountable` / `Resolved` / `Handled` from logging alone would be a useful runtime correspondence specimen, not permission to begin formal work.
 
-**Specimen collection status:** Specimens exist (dashboard-quiet-is-not-recovery; social-telemetry-claim-boundaries five-claim ladder). The reason this hasn't been promoted to Lean is that no code path currently *type-confuses* `Receipt` with `Authorization` — the discipline is prose-enforced. Audit will surface whether that's still true.
+**Specimen collection status:** Specimens exist (dashboard-quiet-is-not-recovery; social-telemetry-claim-boundaries five-claim ladder). The hold on a *new* Lean module is overlap/theorem-shape: the checked log-emission and receipt/authority work may already own the refusal. Audit that formal neighborhood before adding another file.
 
 ---
 
@@ -188,7 +188,7 @@ The second clause is the load-bearing one — it cuts the "you used the system t
 
 **Existing kernel neighbor:** `working/leased-coercion.md` ("ACAB but you need C") carries the consent-under-coercion architecture. `project-civic-migration-appliance` carries exit-cost-as-consent-corruption. Neither is a Lean primitive; both are prose-shaped.
 
-**Promotion trigger:** This is unlikely to earn Lean. The move is **essay-grade / public-facing** (Latent Capitalism / Substack / Neutral Ambassador register). Lean entry would require a code path that programmatically infers consent from participation — possible in some governance-tool surface, but not currently named. Promotion to a paper-level claim is more likely than promotion to a Lean tripwire.
+**Formal disposition:** This is likely **essay-grade / public-facing** (Latent Capitalism / Substack / Neutral Ambassador register). A Lean entry would need a coherent proposition with genuine formal residue beyond defining consent to exclude constrained participation. A programmatic participation→consent inference would be a useful correspondence target, not an admission prerequisite.
 
 **Specimen collection status:** Many specimens (social platforms, gig work, AI companions, workplace surveillance, ToS-as-consent). No specimen requires *new primitive vocabulary*; the work composes `[[project-compression-becomes-authority]]` + `[[project-leased-coercion]]` + a sharp boundary-rule statement. Essay-shaped, not theorem-shaped.
 
@@ -219,22 +219,22 @@ That's three refusals chained. The first two are textbook (Kalman). The third is
 
 **Existing kernel neighbor:** `project-controller-continuity` (sibling axis to admissibility); `project-paper25-candidate` (epistemic border control — where the borders are between observation, prediction, and steering); `project-governor-doctrine` (agent_gov authority-boundary doctrine). The Lean-side neighbor is `~/git/lean/LeanProofs/Admissibility/SurfaceAuthorization.lean` (capability ≠ authorization, parallel shape to controllability ≠ standing).
 
-**Promotion trigger:** Any code path in `~/git/agent_gov`, `~/git/wicket`, `~/git/nightshift`, or related agentic-control surfaces starts using prediction-quality (model confidence, forecast accuracy, observability score) as an authorization signal for actuation. The move is *especially* live near agentic systems where "the agent can predict X" is one keystroke from "the agent should steer X."
+**Formal delta / correspondence target:** Audit whether `SurfaceAuthorization` already owns capability⇛standing strongly enough to subsume this control-theoretic presentation. Code that uses prediction quality as an authorization signal would be a valuable correspondence specimen, but the formal overlap question leads.
 
-**Specimen collection status:** No confirmed specimens yet but the surface is large and growing. This is the move with the highest *future* tripwire-value across Governor / Wicket / agentic-control work. Watch closely; do not promote until a specific code path forces the type-level refusal.
+**Specimen collection status:** No confirmed specimens yet but the surface is large and growing. This is a high-value runtime watch target across Governor / Wicket / agentic-control work. A distinct theorem may still be formalized first if the `SurfaceAuthorization` overlap audit leaves real residue.
 
 ---
 
 ## 6. Other moves — one-line placeholders
 
-These are valid math handles but do not currently earn deep entries. Promote to deep entry when a specimen forces investigation.
+These are valid math handles but do not currently earn deep entries. Promote a handle when its proposition becomes sharp and non-duplicative; specimens can help reveal that delta.
 
 - **Diagnostic → verdict:** Typed evidence/use algebra. Already encoded in NEAM measurement adapter; promotion would be a generalization, not a fresh tripwire.
 - **Concentration → authority:** HHI / entropy / spectral concentration. NEAM uses HHI on stationary distribution; generalize only if a non-NEAM specimen needs it.
 - **Flux → culpability:** Schnakenberg entropy production. Already imported as a measurement in NEAM adapter; the math handle stays as Schnakenberg.
 - **Model fit → ontology:** Identifiability / equivalence classes. Route through Δt falsification guardrails and P22 model-vs-substrate distinction.
 - **Symmetry → fairness:** Invariance vs equity constraints. NRAF guardrail covers the prose; math handle is invariance group vs equity-constraint set.
-- **Equilibrium → legitimacy:** Stability analysis / attractors. Stable points are not justified points; stability can be capture, exhaustion, or coercion. Defer until second specimen.
+- **Equilibrium → legitimacy:** Stability analysis / attractors. Stable points are not justified points; stability can be capture, exhaustion, or coercion. Hold until the statement has nontrivial formal content beyond independent predicates; a second specimen would help doctrine review.
 - **Publicness → harmlessness:** Promoted to § 7 (specimen card with XOR construction). Removed from placeholder list because the math here does conceptual work the prose can't carry.
 - **Receipt → consequence:** Event log vs transition system. Provisionally folded into Visibility → accountability (§ 3); split out only if it bites independently.
 
@@ -283,7 +283,7 @@ Individual non-informativeness does not compose. The laundering move *"each inpu
 
 The optimization audit (execution-pass § 7) was a *negative control* — it confirmed existing hygiene, which is correct but not generative. *Useful but not delicious.* This card is a *hard counterexample*: the laundering move can exist in the limit of "everything is public and individually non-informative." That's the limit opponents of the boundary will reach for, and the XOR construction is the answer: composability is not closure under publicness.
 
-**Lean-worthy?** Not yet. The XOR construction is a *math lead* — it exists to be cited as a clean counterexample when a tool surfaces a code path that treats individual-fragment-public as aggregate-recomposition-safe. Promotion trigger: a specific code path in `~/git/atproto-nutrition/nebgraph` (or sibling tools) starts treating *"all inputs are public-record"* as sufficient safety clearance for the recomposed output. Until then, the prose boundary plus this card is sufficient; the math sits on file as the citable response to the public-source defense.
+**Lean disposition:** The XOR construction is a real mathematical counterexample, but a distinct Lean artifact still needs a bounded statement, representation choice, and overlap audit. A `nebgraph` or sibling code path treating *"all inputs are public-record"* as sufficient safety clearance would be a strong correspondence target, not a prerequisite to formalize the counterexample.
 
 **Specimens to watch for (recurrence-gate candidates):**
 
@@ -292,13 +292,13 @@ The optimization audit (execution-pass § 7) was a *negative control* — it con
 - doxing-via-public-records as a legal / ethical defense
 - atproto-side: any tool that combines per-actor public records and presents the aggregate as "just public data, restructured"
 
-**Recurrence-gate status:** This is the first specimen of Publicness → harmlessness. Counts as 1/3 toward primitive-promotion gate. Card stands as recognition vocabulary until a code-path specimen forces type-level refusal.
+**Recurrence status:** This is the first specimen of Publicness → harmlessness. It counts as 1/3 toward primitive/doctrine promotion. The formal counterexample may lead code; recurrence governs the broader public claim, not permission to encode it.
 
 ---
 
 ## 8. What this file does not do
 
-- **No Lean files staged.** Promotion to Lean requires the parent watchlist's three-gate test, not the existence of a math handle.
+- **No Lean files staged.** A distinct file requires the intrinsic three-part test above: type-level refusal, sharp classification, and no resident kernel already doing the work. Runtime demand is not a fourth gate.
 - **No theorem statements canonicalized.** "Candidate theorem / tripwire" entries are prose statements of the keeper shape, not formal claims.
 - **No claim that these are the right math families.** Each is a *first lead*; a specimen may force a different handle (e.g., the right tool for Participation → consent might turn out to be game theory rather than revealed preference).
 - **No competition with existing kernel.** Each deep entry names its existing-kernel neighbor explicitly; the math lead exists to be checked *against* the existing kernel before any new module is staged.
@@ -316,7 +316,7 @@ The optimization audit (execution-pass § 7) was a *negative control* — it con
 
 ## Cross-references
 
-- [`working/laundering-move-watchlist.md`](laundering-move-watchlist.md) — parent organizing layer; Lean-worthy gate is defined there
+- [`working/laundering-move-watchlist.md`](laundering-move-watchlist.md) — parent organizing layer; its older consumer-gated language is superseded by the intrinsic Lean admission test at the top of this file
 - [`working/laundering-move-execution-pass-2026-05-16.md`](laundering-move-execution-pass-2026-05-16.md) — sibling prose execution pass; § 3 audits feed specimen-collection state here
 - `~/git/lean/non-reciprocal-admissibility-flow-sketch.lean` § NEAM measurement adapter — the working example of a promoted lead (single move, single tripwire, scope-fenced, attributed)
 - `~/git/lean/LeanProofs/Admissibility/NumericalAdmissibility.lean` — closest existing kernel neighbor for several leads (Optimization → permission, Diagnostic → verdict, Concentration → authority)

@@ -1,7 +1,7 @@
 # Commitment Standing Decay
 ## Notes toward Cybernetic Realpolitik
 
-**Status:** Candidate / exploration phase. Not ratified. Forcing case: US–France alliance 1778–1800 (Treaty of Alliance → 1793 Neutrality Proclamation → Quasi-War → 1800 Convention of Mortefontaine). Sibling axis to FiatAdmissibility, Signal Authority, and testimony-vs-self-theory under the proposed superclass *Admissibility decay under representational persistence* (see [admissibility-decay-family-note.md](admissibility-decay-family-note.md)). Filed per name-early discipline; explicitly not promoted, Lean not built.
+**Status:** Candidate / exploration phase, not ratified, with a checked formalization-leading Scratch slice at `~/git/lean/LeanProofs/Scratch/CommitmentStanding.lean`. The US–France alliance (1778–1800) is the originating worked case, not permission to formalize. The Scratch file corrects the false eventual-revocation theorem from this note and is not imported by `LeanProofs.lean`.
 
 ## The primitive
 
@@ -61,7 +61,7 @@ If yes → branches 1, 2, or 3 (further audit needed to distinguish).
 If the language explicitly changed → branch 4.
 If neither the language nor the admissible action space changed → not the primitive; you have ordinary policy reversal, hypocrisy, or imperial garbage in a nicer hat.
 
-## Forcing case: US–France 1778–1800
+## Originating worked case: US–France 1778–1800
 
 The historical specimen that exercises every joint of the framework:
 
@@ -105,57 +105,44 @@ For Commitment Standing Decay specifically:
 - **Γ** = viability conditions making the commitment-set intersect the admissible-action set
 - **Persistence** = rhetoric module continues asserting the commitment
 
-The Lean module under consideration — `Admissibility/CommitmentStanding.lean`, *not* `CyberneticRealpolitik.lean` — would express this in the same admissibility vocabulary as the existing kernels. *Cybernetic Realpolitik* is the essay handle; *CommitmentStanding* is the honest module name (same precedent as FiatCalculus / FiatAdmissibility).
+The formal artifact is named `CommitmentStanding.lean`, *not* `CyberneticRealpolitik.lean`. *Cybernetic Realpolitik* is the essay handle; *CommitmentStanding* is the honest theorem-facing name. Its current home is fenced Scratch, not the promoted `Admissibility/` surface.
 
-## Lean module candidate (deferred)
+## Lean extraction and correction
 
-Module path reserved, not built:
+The source theorem proposed here was false. Mere subset monotonicity permits a
+constant admissible-action set, so initial standing can persist forever. Even
+strict shrinking would need an exhaustion hypothesis; one committed action may
+remain admissible indefinitely.
 
-```
-~/git/lean/LeanProofs/Admissibility/CommitmentStanding.lean
-```
+The checked Scratch module preserves the part that survives formal contact:
 
-Minimal sketch (not a serious draft):
+- `standing_of_admissible_subset`: standing in a narrower state implies
+  standing in the wider state;
+- `nonstanding_persists_under_shrink`: once no committed action is admissible,
+  further narrowing cannot restore standing;
+- `fixed_declaration_does_not_determine_standing`: the same declared commitment
+  can coexist with opposite operational-standing verdicts;
+- `shrinking_does_not_force_eventual_revocation`: an explicit constant sequence
+  refutes the source theorem's claimed inevitability.
 
-```lean
-structure CommitmentSystem where
-  State    : Type
-  Action   : Type
-  admissible : State → Set Action
-  commitment : Set Action
-
-def standing (s : CommitmentSystem) (x : s.State) : Prop :=
-  ∃ u : s.Action, u ∈ s.admissible x ∧ u ∈ s.commitment
-
--- Under shrinking admissibility with fixed commitment,
--- standing eventually vanishes without any change in declaration.
-theorem revocation_under_shrinking_viability
-    (sys : CommitmentSystem)
-    (x₀ : sys.State)
-    (step : sys.State → sys.State)
-    (shrink : ∀ n, sys.admissible (step^[n+1] x₀) ⊆ sys.admissible (step^[n] x₀))
-    (initial_standing : standing sys x₀)
-    -- C is fixed; rhetoric module emits unchanged declarations
-    : ∃ n, ¬ standing sys (step^[n] x₀) := sorry
-```
-
-The theorem says: under shrinking admissibility, a fixed commitment loses standing with no change in declaration. Same structural shape as `proxy_cannot_self_certify_magnitude` in FiatAdmissibility — the licensing relation is missing, not the artifact.
-
-**Don't build yet, per the same rule that applied to Signal Authority:** four-branch typology still doing prose work; structural vs temporal sub-distinction (see family note) not yet resolved; second forcing case beyond US–France not surfaced. The Boolean form of "commitment in admissible set vs. not" is probably too coarse for the four-branch typology, the same way `silenceMeansNothing | silenceMeansRejection` was too coarse for Signal Authority.
+This formalization is deliberately narrower than the four-branch political
+typology. It states no intent classifier, historical verdict, or universal
+eventual-loss law. That scope distinction, rather than the absence of a second
+runtime case, governs further formal work.
 
 ## What's deferred
 
-- Lean module not built. Same posture as Signal Authority: distinctions still doing prose work.
-- Primitive not promoted. Second forcing case needed (candidates: corporate governance after leadership change; church doctrine after schism; standards-body commitments after vendor capture; treaty obligations of successor states).
+- The checked module remains Scratch; promotion requires theorem-scope, overlap, proof, and custody review, not a consumer.
+- Primitive not promoted. Additional worked cases (corporate governance after leadership change; church doctrine after schism; standards-body commitments after vendor capture; treaty obligations of successor states) would test the four-branch doctrine, not license the already-valid formal slice.
 - The structural vs temporal sub-axis (see family note) not resolved for this primitive's place in the taxonomy.
 - Branch 2 (managed camouflage) vs. branch 1 (emergent decay) — diagnostic to distinguish them in practice not specified beyond "did internal memos acknowledge the obligation was dead?"
-- Successor continuity theater (branch 3) generalization beyond states not pursued. Real candidates exist (companies, open-source, churches, universities); not yet surfaced as their own forcing cases.
+- Successor continuity theater (branch 3) generalization beyond states not pursued. Real candidates exist (companies, open-source, churches, universities); they have not yet been worked as independent cases.
 
 ## Ratification gate
 
 Conditions for promoting candidate → doctrine:
 
-- Second forcing case beyond US–France that exercises all four branches
+- An additional independent worked case beyond US–France that exercises all four branches
 - Resolution of structural-vs-temporal sub-axis classification
 - Generator test: does the four-branch typology cut sharply enough to distinguish cases that are *not* the primitive?
 - Kind test: tentatively an *axis* (commitment-standing as the dimension) with the four branches as values along it. May resolve as a boundary.

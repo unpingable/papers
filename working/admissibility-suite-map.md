@@ -61,6 +61,11 @@ Each axis-note promotes from candidate → drafted → released when:
 
 For each axis, the consumer-forced-promotion rule applies: no consumer, no release.
 
+Here *release* means public paper/module promotion, not permission to develop the
+formal axis. Scratch theorem and countermodel work may precede and lead a paper or
+downstream artifact. Runtime conformance, if claimed, still requires an explicit
+mapping plus implementation evidence or refinement; citation alone is insufficient.
+
 ## Per-axis "what does this axis prove that the others do not?"
 
 - **Axis 1 (Safety):** Authorization does not imply value preservation; bridge evidence cannot be reconstructed from authorization in gap cases.

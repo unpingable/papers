@@ -51,4 +51,8 @@ See `working/transition-predicate-frame.md`. The sentence-bank entry is preserve
 
 ## Posture
 
-This is corpse-tagging, not resurrection. Do not extend. Do not stage. Do not back-promote into a "map actuates" doctrine family. If a forcing case surfaces for any item, file it as its own candidate at that point — not by reanimating this note.
+This is corpse-tagging, not resurrection. Do not extend or back-promote this note into a
+"map actuates" doctrine family. If an item yields a distinct, coherent theorem,
+countermodel, or research question, file it as its own candidate rather than
+reanimating this residue. That candidate may lead later code; no runtime forcing case
+is required.

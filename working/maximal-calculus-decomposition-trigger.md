@@ -2,22 +2,26 @@
 
 > *Historical working note. "Maximal calculus" here names the refused unification target, not a target object. Post-2026-06-03 synthesis closure, no such unification is the goal; this trigger artifact is preserved as the documented condition under which a hypothetical decomposition would even be considered.*
 
-> This is an inactive trigger artifact. It is not evidence that the
-> maximal calculus is ripe. Loading this prompt before the promotion
-> gate is itself a category error.
+> **Policy supersession (2026-07-14).** The forcing-case and promotion-gate timing below is preserved as historical priority policy, not as permission to do formal or structural work. A coherent scoped decomposition, claim, model, or countermodel may be developed before any runtime consumer exists and may lead later code. Scratch cannot testify for or pin production; public promotion is separate, and conformance requires an explicit mapping plus runtime evidence or a refinement proof.
 
-**Status:** Forcing-gated decomposition protocol, filed 2026-06-01.
-Not an executable plan. Not a roadmap. Not evidence that
-maximal-calculus work is ripe. Its purpose is to govern the first
-structural decomposition only after a registered forcing case
-satisfies the promotion gate in
-[`maximal-calculus-forcing-cases.md`](maximal-calculus-forcing-cases.md).
+> This is an inactive trigger artifact. It is not evidence that a
+> unified maximal calculus is ripe. Reusing its discriminator and
+> refusal checks for a coherent scoped investigation is allowed;
+> treating it as a roadmap to the refused unifier remains a category
+> error.
 
-This file governs the first structural decomposition pass that
-follows any satisfied promotion gate, so the procedure does not get
-rebuilt under review pressure where small drift compounds. The
-decomposition's job, in turn, is to let us see whether what has been
-forced is one paper, several, or none.
+**Status:** Historical forcing-gated decomposition protocol, filed
+2026-06-01 and superseded as a build-permission rule on 2026-07-14.
+Not an executable plan. Not a roadmap. Not evidence that a unified
+maximal calculus is the target. Its discriminator and refusal checks
+remain useful if a scoped decomposition is undertaken; the registered
+cases in [`maximal-calculus-forcing-cases.md`](maximal-calculus-forcing-cases.md)
+provide stress tests and priority evidence rather than authorization.
+
+This file records a structural decomposition pass so the procedure
+does not get rebuilt under review pressure where small drift
+compounds. The decomposition's job, in turn, is to let us see whether
+a coherent frontier claim is one paper, several, or none.
 
 **Provenance:** drafted and revised 2026-06-01 through adversarial
 review. Revision notes preserved to identify guardrails against
@@ -25,7 +29,7 @@ drift.
 
 ---
 
-## The protocol body (load only after promotion-gate satisfaction)
+## The protocol body (historical trigger; reusable as a scoped checklist)
 
 You are planning the maximal calculus that the bounded paper *Value-Sound
 Gates for Authorization and Composition* (Axes 1–2) explicitly closes

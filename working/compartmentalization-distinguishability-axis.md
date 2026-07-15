@@ -106,8 +106,9 @@ specimens, plus one candidate bridge obligation governing sufficient disclosure.
 
 ## Four gates, kept separate
 
-1. **Scope gate.** No universal compartment lattice; no ten-`May*`-relation build
-   (that list is a register — file-now-work-never); no "composition authority" as a
+1. **Scope gate.** No universal compartment lattice; no automatic
+   ten-`May*`-relation build (that list is a review register, while a bounded
+   relation may be formalized when a theorem makes it load-bearing); no "composition authority" as a
    sovereign kernel; no noninterference claims. The dashboard composition manifest
    is an ordinary governed transition whose *epistemic effect* must be evaluated
    set-level — pairwise checks are provably insufficient (three-bit XOR specimen).

@@ -13,7 +13,7 @@ A quarantine for theory that:
 
 ## What this is NOT
 
-- A claim of doctrine. Notes here are pre-ratified until promoted into a project spec, paper, or Lean module.
+- A claim of doctrine. Notes here are pre-ratified until promoted into a project spec, paper, or custody-reviewed public Lean module. A checked Scratch module is formal work, not doctrine promotion.
 - A new paper queue. The artifact ladder is sideways, not forward.
 - A drafting line. Drafts of numbered papers live in `~/git/papers/preprint/N-*/`.
 
@@ -22,11 +22,17 @@ A quarantine for theory that:
 ```
 working fragment
   → tool doctrine note (here)
-  → project gap/spec (downstream repo)
-  → implementation invariant
-  → Lean candidate
-  → paper only if forced
+  → bounded theorem-shaped candidate
+  → checked Scratch formalization
+  → project mapping / implementation invariant
+  → custody-reviewed Lean import or public claim, when warranted
 ```
+
+This is a direction of development, not an automatic promotion conveyor.
+Formalization may lead the code: it does not wait for a downstream consumer or
+shipping blocker. Scratch still carries no doctrine, runtime, or conformance
+authority. Promotion reviews theorem truth, scope, overlap, proof, custody, and
+the evidence needed for any claimed mapping to implementation.
 
 ## Initial seed — 2026-05-12
 
@@ -49,10 +55,10 @@ Plus:
 
 ## Subsequent additions
 
-- `affective-coupling.md` (2026-05-20) — runtime/social-loop diagnostic candidate. Toxic basin = response affect invariant to input affect; affective capture = prior response predicts current response better than input does. Two-layer split between runtime monitor (Python/etc) and (not-yet-staged) Lean classification semantics. labelwatch / driftwatch-adjacent. Held at note; Lean kernel **not** authorized — fourth on the promotion ladder, not first.
-- `documentation-keepers.md` (2026-05-20) — fossil-bed pass holding area for sharper compressions of existing doctrine awaiting a documentation-legibility pass. *Not* a deferred-build register (that lives at `working/parked-leads.md`); *not* new doctrine. Holds keeper sentences whose underlying claims are already in place but whose canonical homes haven't received a compression pass yet. Separated from `parked-leads.md` because the custody state is different — these wait for docs passes, not for build forcing-cases.
-- `consolidation-denial.md` + `consolidation-denial-formal-sketch.md` (2026-05-25) — scheduler/interface attack-surface model on the learning preconditions of existing promotion machinery. Controller triad (settlement debt / consolidation-denial / consolidation interrupt) + four-stock dynamics (B / K / X / R) separating audited demotion from rot + slack/focus refinement + admission-control distinction. Formal sketch carries three-clock equations, mode-specific safety invariant, and illustrative Lean sketch — explicit scratch, not in `lake build`. **Narrowed refusal kernel landed same day** as `~/git/lean/LeanProofs/Admissibility/ConsolidationDenial.lean` (annex sibling to RecoveryMargin / ClosureEligibility; one theorem `fluency_does_not_witness_settlement`; controller/dynamics stay in scratch). LLM-interactive interface is the live specimen. Keeper: *The interrupt does not stop events from arriving. It stops them from becoming context.*
-- `refusal-kernel-to-refusal-receipt-seam.md` + `refusal-algebra-prior-art-and-applications.md` (2026-05-25) — seam note + companion reference clarifying the layer split between the Lean annex *refusal kernel* pattern (formal countermodel blocking one inadmissible inference), the candidate runtime *refusal receipt* (scoped denial of standing — NOT yet built), and the broader *refusal algebra* observed across four same-day-or-pre-existing instances (Fluent⇏Settled, Signed⇏Witnessed, VisibleGreen⇏RecoveryMargin, Survival⇏ClosureEligibility). Companion reference carries the prior-art citation stack (Dung argumentation / AGM / database provenance / access-control / justification logic / TMS / I/O logic / Belnap), seven application zones (LLM safety / NQ / SRE / law / bureaucracy / AI eval / social-media), and the connection to laundering-move watchlist as anti-laundering grammar. Status: seam note only, not promoted, awaiting composition theorem; possible P28 forcing-case candidate. Keepers: *A refusal does not negate reality. It negates standing.* *Formal refusal blocks an inference. Runtime refusal blocks use of a basis.* *Refusal calculus is how a system preserves weaker truth without letting it impersonate stronger authority.*
+- `affective-coupling.md` (2026-05-20) — runtime/social-loop diagnostic candidate. Toxic basin = response affect invariant to input affect; affective capture = prior response predicts current response better than input does. Two-layer split between runtime measurement and checked Scratch classification semantics at `~/git/lean/LeanProofs/Scratch/AffectiveCouplingClassification.lean`. The formal slice is thresholded and non-causal; it may lead a later labelwatch / driftwatch mapping but does not certify one.
+- `documentation-keepers.md` (2026-05-20) — fossil-bed pass holding area for sharper compressions of existing doctrine awaiting a documentation-legibility pass. *Not* a deferred-build register (that lives at `working/parked-leads.md`); *not* new doctrine. Holds keeper sentences whose underlying claims are already in place but whose canonical homes haven't received a compression pass yet. Separated from `parked-leads.md` because the custody state is different — these wait for docs passes, not for consumer-held build permission.
+- `consolidation-denial.md` + `consolidation-denial-formal-sketch.md` (2026-05-25) — scheduler/interface attack-surface model on the learning preconditions of existing promotion machinery. Controller triad (settlement debt / consolidation-denial / consolidation interrupt) + corrected four-stock dynamics (B / K / X / R) separating audited demotion from rot + slack/focus refinement + admission-control distinction. The controller state/transition and mode-specific B invariant are now checked in `~/git/lean/LeanProofs/Scratch/ConsolidationController.lean`; no liveness or runtime claim is made. **Narrowed refusal kernel landed same day** as `~/git/lean/LeanProofs/Admissibility/ConsolidationDenial.lean` (annex sibling to RecoveryMargin / ClosureEligibility; one theorem `fluency_does_not_witness_settlement`). LLM-interactive interface is a correspondence specimen. Keeper: *The interrupt does not stop events from arriving. It stops them from becoming context.*
+- `refusal-kernel-to-refusal-receipt-seam.md` + `refusal-algebra-prior-art-and-applications.md` (2026-05-25) — seam note + companion reference clarifying the layer split between the Lean annex *refusal kernel* pattern (formal countermodel blocking one inadmissible inference), the candidate runtime *refusal receipt* (scoped denial of standing — NOT yet built), and the broader *refusal algebra* observed across four same-day-or-pre-existing instances (Fluent⇏Settled, Signed⇏Witnessed, VisibleGreen⇏RecoveryMargin, Survival⇏ClosureEligibility). Companion reference carries the prior-art citation stack (Dung argumentation / AGM / database provenance / access-control / justification logic / TMS / I/O logic / Belnap), seven application zones (LLM safety / NQ / SRE / law / bureaucracy / AI eval / social-media), and the connection to laundering-move watchlist as anti-laundering grammar. Status: seam note only, not promoted, awaiting a coherent composition theorem; a possible P28 application does not gate the formal work. Keepers: *A refusal does not negate reality. It negates standing.* *Formal refusal blocks an inference. Runtime refusal blocks use of a basis.* *Refusal calculus is how a system preserves weaker truth without letting it impersonate stronger authority.*
 
 ## Migrated from Claude memory — 2026-06-22
 

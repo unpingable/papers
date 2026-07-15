@@ -37,7 +37,7 @@ Demoted/reparented:
 - ~~hard-coded `Domain := dn | dobs | da | external`~~ → **abstract `Domain` parameter** with operator-supplied `BoundaryPartition`
 - ~~hard-coded `Failure` enum~~ → **abstract `Failure` parameter**
 
-Two-tracks rule filed as memory `feedback-kernel-vs-process-calculus`: kernel-specimen track builds now; process-calculus/composition track (parallel composition, monitors, refinement, bisimulation) defers until a forcing case demands them.
+Two-tracks rule filed as memory `feedback-kernel-vs-process-calculus`: kernel-specimen track builds now; process-calculus/composition work (parallel composition, monitors, refinement, bisimulation) opens only around precise, non-vacuous claims with explicit model boundaries. It may be formalized before a runtime consumer and may lead implementation.
 
 Outside-aperture methodology filed as memory `feedback-outside-aperture-audit`: rare cadence, must funnel through inside-aperture before any landing, *fresh aperture can surface missing shape, it cannot assign repo authority.*
 

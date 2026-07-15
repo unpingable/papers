@@ -115,8 +115,9 @@ as evidence for its own framework, ever.
   shape applied at a different boundary: there, refusing to convert
   somebody else's custody into personal capital; here, refusing to
   convert non-claim-making work into apparatus evidence.
-- [[lean-phase-change-expansion-to-gating]] — the 5-condition rule
-  for new kernels gates *production*; this rule gates *jurisdiction*.
+- [[lean-phase-change-expansion-to-gating]] — the 5-condition rubric
+  ranks formal work and informs public promotion; it does not gate theorem
+  production. This rule gates *jurisdiction*.
   Both are anti-vocabulary-mill defenses operating at different
   altitudes.
 - [[receipt-integrity-and-seam-graphs]] — claim-shaped utterances are

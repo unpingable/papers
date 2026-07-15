@@ -64,7 +64,7 @@ Tier 2B — authorization-axis generalization (NOT BUILT)
                        capture alone.
 ```
 
-**Orthogonality.** 2A and 2B are sibling stressors. Neither gates the other. Budget tests value texture on simple auth; quorum tests cert geometry on simple value (binary no-conflict). Pick by which generalization the next forcing case demands.
+**Orthogonality.** 2A and 2B are sibling stressors. Neither gates the other. Budget tests value texture on simple auth; quorum tests cert geometry on simple value (binary no-conflict). Formal order follows coherent theorem or countermodel shape and dependency structure; runtime cases may set implementation and promotion priority.
 
 ## Tier 2B design pins (pre-committed, to prevent re-litigation)
 
@@ -79,7 +79,7 @@ If these pins survive the actual tier-2B brick, the ρ-drop is confirmed across 
 ## What this map does NOT claim
 
 - It does not promise tier 2A and 2B can be composed (a unified "Calculus 3.0" with both generalizations layered) — that's a question for after both land.
-- It does not claim the tier ordering is conceptual; tier numbers are taxonomic, not sequential. The actual build order will be set by which forcing case arrives.
+- It does not claim the tier ordering is conceptual; tier numbers are taxonomic, not sequential. Formal work may lead from whichever bounded model has a precise, non-vacuous result; runtime cases may set integration priority but do not authorize the theorem.
 - It does not justify minting "Calculus 2.0" publicly — that still gates on the kernel-overlap audit and the `working/calculus-2-exit-criteria.md` update.
 
 ## Known debt (track before public minting)

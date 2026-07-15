@@ -10,6 +10,8 @@ This file exists to keep the *if/when* of reorg / public-wiring decisions answer
 
 A file under `Admissibility/` can still be fenced scratch (Option C policy already allows this; the 13 fenced-Admissibility annexes are the precedent). What matters is *what the import surface says it stands behind.*
 
+This discipline governs public wiring and shared-vocabulary promotion, not whether a theorem may be developed. Scratch formalization may precede any runtime consumer and may lead later code. A named consumer below is evidence that a public surface or foundational vocabulary has a custody reason to exist; it is not permission to state or prove the contract.
+
 ## The three concepts (currently visually tangled)
 
 ```text
@@ -76,7 +78,7 @@ This is **not a third epistemic status / not a third ladder.** It is an *additio
 
 Before minting shared cross-module vocabulary, the promotion record must answer:
 
-1. **What downstream consumer needs the vocabulary now?** (Same load-bearing rule as wiring #5, at noun altitude. No consumer, no nouns.)
+1. **What downstream formal or runtime consumer needs the vocabulary on the shared surface now?** (Same load-bearing rule as wiring #5, at noun altitude. No public consumer, no promoted nouns; local Scratch vocabulary remains allowed.)
 2. **What existing scratch/application files prove the abstraction is recurring**, not decorative? (Recurrence is evidence; a single elegant use is not.)
 3. **What are the excluded meanings of each term?** (E.g. is `Consumer` an operator / verifier / catcher / jurisdiction / runtime / tenant / root / policy domain? Name what it is *not*.)
 4. **What is the minimal nucleus being promoted?** (Smallest set of nouns + the one center theorem; everything else stays application.)

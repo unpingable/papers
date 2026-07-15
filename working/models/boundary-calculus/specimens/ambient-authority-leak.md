@@ -49,7 +49,7 @@ The aperture refuses the leak in both modes because authorization stays local, a
 
 - It is one fixture pinning the keeper to a concrete scenario.
 - It is NOT a proof of impossibility — only an existence-of-design argument: the current `ComponentStep` shape has no place where ambient authority could enter the step.
-- It is NOT a Lean theorem. Formalizing it as `example_ambient_authority_leak` would require constructing concrete `Domain`, `Failure`, `Boundary`, and `BoundaryPartition` values. That's a separate cost; defer until a forcing case appears.
+- It is NOT currently a Lean theorem. Formalizing it as `example_ambient_authority_leak` would require constructing concrete `Domain`, `Failure`, `Boundary`, and `BoundaryPartition` values. That is a separate cost and the resulting fixture must discriminate the two leak modes; it may be undertaken before any runtime forcing case.
 - It is NOT a taxonomy entry. The other four bad cases (boundary collision, authority widening, projection laundering, containment inversion) remain explicitly deferred.
 
 ## Keeper, locked

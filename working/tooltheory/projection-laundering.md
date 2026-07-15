@@ -4,7 +4,7 @@
 
 **Posture:** A refusal-kernel form of an existing vocabulary entry ([[compression-becomes-authority-vocabulary]]). The shape is already covered at *essay-vocabulary* level by "compression-authority laundering"; the residue worth filing is (a) the paired negative+positive theorem structure that gives the vocabulary a kernel-level form, and (b) the explicit composition with [[uncertainty-custody]] as a two-stage representation-pipeline custody.
 
-**The audit was the gate.** Multi-model relay sprawled across substrate-specific compression families before clamping to the substrate-agnostic refusal kernel. The earned residue is below.
+**The audit found the bounded residue.** Multi-model relay sprawled across substrate-specific compression families before clamping to the substrate-agnostic refusal kernel. Scope, truth, overlap, proof, and custody remain gates; downstream consumption is not permission to formalize.
 
 ---
 
@@ -78,9 +78,9 @@ Discipline preserved:
 
 - The compile is *contact*, not publication. Green says the paired neg+pos shape is coherent enough that future arguments don't have to be re-derived from chat vapor. It does **not** say PL is doctrine.
 - CBA still owns the public name. PL owns the kernel slot.
-- The PL/UC composition stays prose-only until a downstream consumer (NQ / Wicket / Governor) demands a citation.
+- The PL/UC composition stays prose-only because no nontrivial composition theorem has yet been stated; a downstream citation request is neither necessary nor sufficient.
 - The two-gate ladder still applies: `module ≠ public surface ≠ paper claim ≠ platform verdict`. Each `≠` is its own gate.
-- The audit was the gate. The compile is a second receipt; the doctrine receipt is still upstream.
+- The audit found the bounded residue. The compile is a second receipt; doctrine promotion remains a separate custody decision.
 
 Build invocation:
 
@@ -90,11 +90,11 @@ cd ~/git/lean && lake build LeanProofs.Admissibility.ProjectionLaundering
 
 The sketches below remain the recoverable artifact. The annex names them `projection_launders_deferral` and `loss_aware_projection_blocks_deferral_laundering` exactly; predicate names (`ErasesDefer`, `PreservesDefer`, `ArtifactOnlyIncautious`, `PolicyRespectsDeferSignal`) match. Annex-file structure differs from the sketches only in (a) namespacing under `Admissibility.ProjectionLaundering`, (b) explicit-argument style (no top-level `variable` block) for parity with the `ConsequencePartition` annex, and (c) the policy-incautious hypothesis is named (`ArtifactOnlyIncautious`) rather than left inline.
 
-## Lean reserve — recognition handles, not implementation obligations
+## Lean source sketches — extracted to the annex
 
-Original framing, preserved unchanged. The sketches below were written as recognition handles; the 2026-05-30 annex compile honored them as such (drop-in, no proof complexity) rather than as authorization to promote.
+The sketches below were written as recognition handles; the 2026-05-30 annex compile honored them as such (drop-in, no proof complexity). The historical consumer gate is superseded; the annex exists, while promotion remains a separate custody decision.
 
-> **These sketches are recognition handles, not implementation obligations. Absence of Lean here is the intended state unless a downstream consumer forces the proof. "Sketched-not-built" is not a synonym for "obviously next."**
+> **These sketches are provenance for a built annex. Formalization can lead implementation; annex existence still does not imply public promotion or runtime conformance.**
 
 ### The Lean did its job before existing
 
@@ -172,15 +172,15 @@ theorem loss_aware_projection_blocks_deferral_laundering
   exact h_policy_respects (project b) (h_preserve b h_def)
 ```
 
-**Build triggers (original):** only if (a) NQ / Wicket / Governor needs a concrete projection-laundering refusal in code, (b) CBA essay drafting forces a citation to the Lean form, (c) a downstream paper requires the formal pair.
+**Historical build triggers (superseded):** the 2026-05-26 note listed NQ / Wicket / Governor use, CBA drafting, or a downstream paper as permission to compile.
 
-**What actually fired (2026-05-30):** the annex-probe queue's five-criterion test — audit done, shape bounded, sketches near-Lean, the bounded question ("is the paired neg+pos a kernel, or prose wearing a lab coat?") was real, and public-surface promotion stays gated. Green confirms the structure. The original build triggers above still govern promotion to public surface; this compile did not.
+**What actually fired (2026-05-30):** the annex-probe queue's intrinsic test — audit done, shape bounded, sketches near-Lean, and the bounded question ("is the paired neg+pos a kernel, or prose wearing a lab coat?") was real. Green confirms the structure. Current policy makes that the correct order: formalization first; later correspondence and custody evidence may govern public claims, not permission to prove.
 
 ## Anti-goals
 
 - **Do NOT** sprawl into substrate-specific compression families. The kernel is substrate-agnostic; specific substrates are downstream consumers, not kernel content.
 - **Do NOT** mint a new framework called "Compression Custody" or "Representation Custody" — [[compression-becomes-authority-vocabulary]] already owns this name space at the public-essay level.
-- **Do NOT** build the Lean module pre-emptively. Both proofs are one-line; the readiness signal is fake-easy. Same discipline as [[uncertainty-custody]].
+- **Do NOT** duplicate or inflate the existing Lean module merely because both proofs are one-line. Any extension must state a nontrivial formal delta and survive overlap review.
 - **Do NOT** treat this as a new empire or new family. It is one row in the operator family, with a vocabulary parent and a downstream composition partner already on disk.
 
 ## Keepers (compact stack)
@@ -207,7 +207,7 @@ theorem loss_aware_projection_blocks_deferral_laundering
 - [[laundering-move-watchlist]] — sibling attack-surface inventory. PL is an instance of the watchlist generator.
 - [[prose-state-inversion]] — sibling under shared authority-laundering genus, different substrate.
 - [[witness-invariance-failure]] — cousin (information-loss under perturbation vs. under projection).
-- `~/git/lean/LeanProofs/Admissibility/FiatAdmissibility.lean` — closest formal slot if Lean is forced.
+- `~/git/lean/LeanProofs/Admissibility/FiatAdmissibility.lean` — closest alternative integration slot if a future overlap review favors composition.
 - `~/git/lean/LeanProofs/Admissibility/SurfaceAuthorization.lean` — adjacent surface-loss kernel.
 - `preprint/25-epistemic-border-control/` — P25 ancestor: substitution under observability asymmetry. PL is one specimen of the family P25 governs.
 
@@ -223,12 +223,12 @@ Updated 2026-05-30 to reflect the scratch-annex compile.
 
 Next session's input — if the topic recurs — should:
 
-1. Check whether NQ / Wicket / Governor / CBA essay has demanded a citation. (Still gates public-surface promotion.)
+1. Check whether NQ / Wicket / Governor / CBA essay supplies a useful correspondence or citation target. This does not gate formalization.
 2. Check whether the PL/UC composition has been used in a fixture, paper, or downstream design pass.
 3. Only then consider importing the scratch annex into `LeanProofs.lean` or citing it from a preprint. **The annex existing is not the citation trigger.**
 
 Until then: scratch only. The audit was the first receipt; the green compile is the second receipt; the doctrine receipt is still upstream.
 
-> **The audit was the gate. The compile is the receipt. The forcing case is still upstream.**
+> **The audit found the residue. The compile checked it. Runtime correspondence remains downstream.**
 
-(That keeper is shared with the annex-probe queue's park state; PL inherits it.)
+(This updates the annex-probe queue's older consumer-gated keeper.)

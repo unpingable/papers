@@ -78,13 +78,13 @@ Precision (post blind-review): temporal-bounding is paid **at admission**
 names a destination without proving acceptance/futurity/distinctness — the
 `RepaymentCommitment` receipt is the runtime bridge's obligation.
 
-## Instrument register (FILE-NOW-WORK-NEVER)
+## Instrument register (FILE NOW; FORMALIZATION MAY LEAD)
 
 Borrowing is the primitive stress test — it introduces **time without
 introducing a casino**, and asks the sharpest question: *can the system
 authorize expenditure it does not presently possess without pretending it
 possesses authority it was never granted?* The stranger instruments are
-named here so they stay named and unbuilt until a forcing sin occurs:
+named here so they stay named without becoming an automatic build queue:
 
 - **reserve** — pre-funded budget, no debt;
 - **insurance** — third party accepts bounded loss custody;
@@ -94,18 +94,23 @@ named here so they stay named and unbuilt until a forcing sin occurs:
 - **hedge** — accept one bounded exposure to reduce another.
 
 Each would be its own admissibility contract with its own laundering modes.
-None is authorized by this note. Derivatives emerge only after someone has
-committed an actual sin that requires them.
+Any one may be formalized before runtime adoption when it yields a coherent,
+non-redundant contract or countermodel with explicit scope, overlap, and
+non-vacuity controls. The note itself does not establish those conditions.
+Runtime instrument work remains parked until a concrete integration need;
+formalization may lead that work rather than wait for an incident.
 
 ## Gates
 
 - **Scope:** single draw, decision-time, possibilistic. No interest,
   amortization, probability, portfolios, or repayment enforcement (the
   receipt names the budget; collection is the consumer's ledger).
-- **Promotion:** scratch until Nightshift's borrow gate (or an NQ
-  intervention-candidate emitter) cites the named theorems — the
-  BorrowedIntervention runtime artifact is AG/NQ-lane work that should be
-  written against this contract, not before it. The Lean object has exposed
+- **Promotion:** Scratch remains non-testimony until a separate proof-scope,
+  custody, compatibility, and public-surface review. Nightshift's borrow gate
+  or an NQ intervention-candidate emitter may provide priority and runtime
+  correspondence evidence, but citation alone neither promotes the theorem nor
+  proves conformance. The BorrowedIntervention runtime artifact is AG/NQ-lane
+  work that should be written against this contract, not before it. The Lean object has exposed
   its required fields: standing basis, threat basis, profile judgment, cost,
   current capacity, **borrowed principal**, ceiling, maturity,
   **repayment commitment**, decision-time receipt.

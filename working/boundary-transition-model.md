@@ -1,7 +1,7 @@
 # Boundary Transition Model (working note)
 
 **Logged:** 2026-05-06
-**Status:** Design / investigation only. Not doctrine, not a P28 draft, not authorization to add code.
+**Status:** Design / investigation only. Not doctrine, not a P28 draft, and not a build order. Bounded formal investigation may proceed on the intrinsic merits described below and may lead later code.
 **Sibling:** `working/boundary-composition-investigation.md` (audit record + custody decisions).
 **Lives near:** P28 candidate territory; specifies the candidate object that would have to exist before "Boundary Calculus" could be earned.
 
@@ -11,7 +11,7 @@
 
 Boundary Calculus remains provisional. The current Lean kernel supports **Family-with-composition-lemmas** (verified by AG audit 2026-05-06; recorded in `boundary-composition-investigation.md`). The title "Boundary Calculus" is **not earned**. This note defines what would need to be true for the title to earn itself.
 
-Nothing in this note ratifies a primitive, names a kernel addition, or commits to a P28 draft. The candidate fields, moves, and theorem-shapes recorded below are *handles for review*, not authorization to build.
+Nothing in this note ratifies a primitive, promotes a kernel addition, or commits to a P28 draft. The candidate fields, moves, and theorem-shapes recorded below are *handles for review*; any formal probe still owes stable semantics, non-vacuity, overlap, and proof controls, but no runtime consumer.
 
 ### Reframe
 
@@ -92,7 +92,7 @@ A boundary transition, if eventually formalized, would need to declare or accomm
 - **Consequence horizon** — over what time / step-count window the transition's effects are durable.
 - **Mutation / effect witness** — proof that the transition actually does what its classification says it does (e.g., `recordRevocation` actually appends to RevocationStore, not just permits the call).
 
-Mark these as **candidate fields**, not ratified primitives. None should be promoted to a kernel structure without (a) a concrete forcing case where the field is load-bearing for a theorem, and (b) the primitive-ratification gate (generator / kind / seven-supporting tests) being run.
+Mark these as **candidate fields**, not ratified primitives. A field belongs in a formal probe only when it is load-bearing for a precise theorem or countermodel; public kernel promotion additionally requires the primitive-ratification gate (generator / kind / seven-supporting tests). A runtime forcing case is not a prerequisite.
 
 The current kernel realizes a *projection* of these fields: `Step` constructor + `StepAllowed` proof + `classify : Step → StepClassification`. That projection is enough for the Family verdict; it is not enough for a calculus over transitions.
 
@@ -154,7 +154,7 @@ Adjacent but distinct: `corrective_no_authority_laundering` (Corrective layer) p
 
 The *positive* form of clause 2's contrapositive ("if all five conditions are preserved, then survival") is **not proved** and would require behavioral laws on store ops + concrete `BasisDerivation` + temporal vocabulary + scope vocabulary + cohort vocabulary to even state, let alone prove. Each missing piece per §6.
 
-### Candidate theorem-shapes (do not formalize yet)
+### Candidate theorem-shapes (sharpen through formal investigation)
 
 1. **Authorization does not generally commute with boundary transition.**
    Stated as `corrective_then_forward_is_not_monotone` (Corrective.lean L280-284) — recorded investigative null. Stateable in current vocabulary; truth value undecided under current commitments.
@@ -239,7 +239,7 @@ This rule is the candidate-refinement form of the existing `corrective_no_author
 
 ### Candidate laws (non-formal)
 
-The following are **candidate** statements about transport and basis-indexed admissibility. Stated in prose, not formalized; should not be promoted to theorem statements without a forcing case.
+The following are **candidate** statements about transport and basis-indexed admissibility. They may be formalized, refuted, or narrowed once their semantics and model boundaries are explicit; public testimony waits for proof and controls, not for a runtime forcing case.
 
 1. **Identity.** The identity transition transports κ to κ. (`id ⊢ κ ↦ κ`.)
 2. **Composition.** If `B₁ ⊢ κ ↦ κ'` and `B₂ ⊢ κ' ↦ κ''`, then `(B₂ ∘ B₁) ⊢ κ ↦ κ''`, subject to validity of `κ'` at the intermediate state.
@@ -281,7 +281,7 @@ This example exercises role degradation (authorization → evidence), non-inheri
 ### Warnings
 
 - **Do not collapse κ into the current `BasisVerdict`.** `BasisVerdict` (`noBasis | advisoryBasis | admissibleBasis`) is verdict *output*; κ is the *reason / witness / basis* being evaluated. They are different objects. A future kernel addition might compute `BasisVerdict` from a κ-indexed input, but the input and the output should not be conflated.
-- **Do not introduce basis kinds as code or doctrine.** The role list (authorization / evidence / observation / recommendation / revocation / exception) is illustrative pressure, not minted vocabulary. Promoting it to kernel types or doctrinal categories without a forcing case is exactly the inflation the discipline notes warn against.
+- **Do not introduce basis kinds as code or doctrine merely from the illustrative list.** Promote them to shared kernel types or doctrinal categories only if a discriminating theorem/countermodel needs them and the vocabulary survives overlap and primitive review. A bounded alternative-model probe may lead; no consumer is required.
 - **Do not use a typeclass to hide transport, role degradation, verdict bridge, or basis validity obligations.** Per the smuggling-risk discipline (§7 below; also `nondegenerate-store-semantics.md` §5): any future structure carrying these obligations must keep them explicit at theorem sites. Ambient typeclass resolution would launder all of them at once.
 - **This refinement strengthens the transition model but does not earn Boundary Calculus.** Basis-indexed admissibility is a richer *indexing*, not a *calculus*. The Family-with-composition-lemmas verdict stands. The section sharpens what would have to be indexed correctly for any future calculus claim to be honest.
 
@@ -303,13 +303,13 @@ The kernel currently lacks:
 
 - **Bridge from transition effects to verdicts.** `BasisDerivation.deriveBasis : GovState → AuthorityClaim → BasisVerdict` is abstract; no concrete derivation reads `RevocationStore`. The bridge from store contents to verdict outputs is currently mediated by structure obligations, not concrete computations.
 
-Each missing commitment would, if added, narrow the kernel's worst-case consistency in specific ways. None should be added speculatively. Each requires its own forcing case.
+Each missing commitment would, if added, narrow the kernel's worst-case consistency in specific ways. Add one only when a named theorem or countermodel makes it load-bearing and supplies non-vacuity controls. That formal target may precede implementation.
 
 ---
 
 ## 7. Next decision gates
 
-The Family-vs-Calculus question becomes more decided only if one of the following becomes real. Three of the four gates point toward calculus; the fourth (obstruction theorem) points toward Family-final. None is currently in motion. None should be started without separate authorization.
+The Family-vs-Calculus question becomes more decided only if one of the following becomes real. Three of the four gates point toward calculus; the fourth (obstruction theorem) points toward Family-final. None is currently scheduled by this note; any may begin as bounded formal investigation when its stated intrinsic prerequisites are met.
 
 - **Concrete nondegenerate store model.** Specific commitment to behavioral laws on `applyUpdate` etc. — e.g., "applyUpdate is a function whose codomain strictly distinguishes its image from its argument on at least one input." Would make `corrective_then_forward_is_not_monotone` decidable (likely TRUE under reasonable laws). *Cost:* kernel strengthening. *Benefit:* the recorded null gets resolved.
 
@@ -343,14 +343,14 @@ The structure-obligation discipline named for `StoreEffectful` applies generally
 
 Typeclasses are appropriate where the obligations are conventionally trivial (decidable equality, ordering, etc.). They are inappropriate where the obligation *is* the load-bearing claim of a theorem — which is the case for every candidate primitive named above. Ambient resolution makes the load-bearing claim ambient; explicit-parameter discipline keeps it visible at every theorem site.
 
-This generalizes the warning in the second gate above. It is not a doctrine promotion; it is a discipline note that follows from the kernel-house pattern (`BasisDerivation`, `CorrectiveMonotone`) and from the smuggling-visibility argument. Future candidate primitives should default to this pattern and only escape it under specific argument tied to a forcing case.
+This generalizes the warning in the second gate above. It is not a doctrine promotion; it is a discipline note that follows from the kernel-house pattern (`BasisDerivation`, `CorrectiveMonotone`) and from the smuggling-visibility argument. Future candidate primitives should default to this pattern and escape it only under a specific proof-engineering argument that keeps load-bearing obligations visible.
 
 ---
 
 ## What this note is NOT
 
 - **NOT** a P28 draft, outline, or scaffold.
-- **NOT** authorization to add code, axioms, theorem statements, namespaces, or Phase 0 lemmas.
+- **NOT** a build order or permission to add unjustified axioms, decorative namespaces, or conclusion-shaped structures. Precise theorem/countermodel work remains admissible under the formal-development policy.
 - **NOT** a renaming of `boundary-composition-investigation.md`. Both notes are sibling working records; this one defines the candidate object; the other records the audit + custody.
 - **NOT** ratification of "boundary transition" as a primitive. The candidate fields, moves, and theorem-shapes are handles for review, not minted vocabulary.
 - **NOT** a synthesis-paper outline. Synthesis paper, if it ever happens, is "Admissibility Boundary Family with composition lemmas" (current verdict), not the calculus described here.

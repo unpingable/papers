@@ -114,7 +114,7 @@ Each demand is, *in isolation*, the kind of refinement a careful interlocutor mi
 | What gets lost | The hard violation | The governing frame |
 | Good-faith origin | Accuser is acting in good faith | Audience is (often) acting in good faith |
 
-Inverse argument-geometries. ASL is *bundle weakness on offense*; PD is *bridge stripping on the receiving end*. Whether they earn a paired-primitive framing depends on independent forcing cases.
+Inverse argument-geometries. ASL is *bundle weakness on offense*; PD is *bridge stripping on the receiving end*. Whether they earn a paired-primitive framing depends on independent applications across the bridge taxonomy.
 
 **vs. [[surface-authorization]] (likely formal-kernel home):**
 
@@ -155,7 +155,7 @@ This matters as a guard against misuse of the PD handle: *decomposition is not a
 
 - **Do not promote to primitive without specimens distributed across the bridge taxonomy.** A specimen catalog dominated by one missing-bridge type (e.g., only sufficiency failures) doesn't earn ratification; PD's claim is genus-level, which requires cross-bridge coverage.
 - **Do not formalize the decomposition algebra as PD-specific.** The Lean-shaped residue is the broader bridge-rule machinery (see Lean deferral). PD itself is applied vocabulary, not kernel.
-- **Do not pair-mint with ASL yet.** Paired-primitive status (the way ASL paired with Gate-to-Metric Substitution) requires multiple forcing cases.
+- **Do not pair-mint with ASL yet.** Paired-primitive status (the way ASL paired with Gate-to-Metric Substitution) requires independent applications across the proposed bridge taxonomy. That is a doctrine-ratification test, not a prerequisite for formalizing any coherent residue.
 - **Do not let "prosecutorial decomposition" become dismissal vocabulary for legitimate cross-examination, peer review, audit, or postmortem.** Each of these institutions has built-in bridge-rule machinery. Calling their licit use "PD" launders the handle into anti-scrutiny rhetoric — the opposite of what it names.
 - **Do not absorb every fragment-based criticism into PD.** Discriminator: *was the bridge stripped, or was it never claimed?* A speaker who never offered a governing frame is not subject to PD; they may be subject to other critiques (unfalsifiability, vagueness). PD requires that the speaker built a bridge and the audience stripped it.
 
@@ -189,12 +189,12 @@ theorem fragment_truth_does_not_convict_without_bridge … :
 
 The bridge-rule machinery probably belongs as a small extension to SurfaceAuthorization or FiatAdmissibility, *not* a new sibling kingdom. The five-bridge taxonomy (materiality / representativeness / causality / sufficiency / standing) suggests the machinery is real and reusable.
 
-**Gate before any Lean lands:**
+**Intrinsic gates before any Lean lands:**
 1. SurfaceAuthorization-reduction audit: does the bridge-rule machinery reduce to SurfaceAuthorization + a frame-stripping operator, or does it have irreducible additional structure?
-2. Downstream consumer identified: who in the kernel (or in tool code at agent_gov / Wicket / NQ) would pattern-match on `UseKind` or `BridgeRule`? If nothing downstream consumes it, the module is decorative.
+2. Theorem-shape delta identified: what proposition is not already resident in `SurfaceAuthorization`, and what positive/collapse controls make it non-vacuous?
 3. Tautology problem fixed: the theorem statement must be non-trivial — an existence result, not a definitional unfolding.
 
-Until all three gates clear, no Lean module. Working-note vocabulary only.
+Until all three intrinsic gates clear, no distinct Lean module is warranted. A downstream consumer may supply a useful correspondence specimen, but is neither necessary nor sufficient.
 
 **Sharpened prior (2026-05-21, per [[feedback-kernel-overlap-audit]] keeper):** The bridge-rule machinery probably reduces to `SurfaceAuthorization + frame-stripping operator + bridge-kind taxonomy`. The five-bridge taxonomy (materiality / representativeness / causality / sufficiency / standing) is the only candidate file-worthy residue, and it is *probably doctrine/tooling vocabulary rather than Lean.* Lean already knows *valid local surface ≠ authorized global lift* via SurfaceAuthorization; the bridge-kinds discriminate *which kind of renewal* a given lift would need, but they don't introduce a new obligation shape the kernel doesn't already carry. Promotion to Lean module only if the audit finds an obligation shape the existing kernel doesn't own. Default expectation: this stays prose/recognition vocabulary indefinitely; PD becomes applied name for *frame-stripping in front of SurfaceAuthorization*, not a Lean kingdom.
 
@@ -214,6 +214,6 @@ If none of these fire, the entry stays as recognition vocabulary in the watchlis
 - **2026-05-21 origin.** Operator drafted the mechanism, naming candidates, decomposition example (Dem-apparatus claim), and original caption ("the platform demands specificity as proof of seriousness, then metabolizes specificity into attack surface"). claude-code sibling-checked against existing kernel and filed as Section B handle on the laundering-move watchlist.
 - **2026-05-21 book-Claude pull.** Identified the discourse-layer-mirror connection to the post-SRE admissibility move (ops side: signal needs governing frame to bind; paper side: claim needs governing frame to prosecute — inverse directions, same generator). Flagged code-review context-stripping as the cleanest ops-substrate specimen.
 - **2026-05-21 ChatGPT research spike.** Surfaced the genus reframe (PD is an old evidentiary failure, social media industrializes the skip); proposed prosecutor's fallacy as the closest doctrinal anchor (operator noted: close cousin, not identical parent — PF is probability inversion, PD is broader fragment-to-whole warrant laundering); produced the five-bridge taxonomy (materiality / representativeness / causality / sufficiency / standing) as structural spine; produced the Lean sketch (audited above) and the reframe to `FragmentEvidence/BridgeRule/UnauthorizedLift` as the broader kernel candidate; produced seven non-platform specimens (criminal justice / performance review / medical diagnosis / historical-political / hostile peer review / regulatory audit / personal relationships); produced the keeper *"a true fact can still be inadmissible for the use being made of it."*
-- **claude-code audit (2026-05-21).** Pushed back on ChatGPT's specimen trim — recommended filing the book-Claude specimens plus all 7 ChatGPT specimens (deduplicated where overlapping), headlined cross-examination as the law-shaped limiting case, audited the Lean sketch (three findings above) and reframed it as deferred pending SurfaceAuthorization-reduction audit + downstream-consumer identification. Reframed the working note from platform-discourse habitat to evidentiary-discipline genus.
+- **claude-code audit (2026-05-21).** Pushed back on ChatGPT's specimen trim — recommended filing the book-Claude specimens plus all 7 ChatGPT specimens (deduplicated where overlapping), headlined cross-examination as the law-shaped limiting case, audited the Lean sketch (three findings above), and originally deferred it pending both a SurfaceAuthorization-reduction audit and downstream-consumer identification. **Policy update 2026-07-14:** the consumer condition is superseded; the overlap and non-tautology findings remain the actual formal gates. Reframed the working note from platform-discourse habitat to evidentiary-discipline genus.
 - **2026-05-21 book-Claude correction.** Caught initial mis-classification of SRE postmortem timeline-correlation-as-cause: that pattern is the *structural inverse sibling* (signal cannot bind action without governing frame — frame absent or never built), not PD (frame existed and was stripped by the audience). Moved to the *not-in-catalog* section of the specimens file. Same generator, opposite direction; conflating them launders the inverse sibling into PD vocabulary. Code-review context-stripping remains the ops-substrate-cleanest PD specimen, where the architectural frame demonstrably existed before being cropped.
 - Filed as candidate / probe. Not promoted. Not registry-listed. No Lean staged. Specimen catalog in `working/prosecutorial-decomposition-specimens.md`.

@@ -66,7 +66,7 @@ These findings are *features of the harness*, not bugs. Both are recorded so the
 - Not a formalization of `Freshness.lean`, `StaleEvidenceMerge.lean`, or `RetroactiveLegitimation.lean`. These are *adjacent prior art* (asserted) and not imported or extended.
 - Not a paper claim. Scratch only. Not anchored. Not promoted.
 - Not a generalized temporal authority calculus. One small theorem.
-- Not a bridge predicate for explicit retroactive discharge. The file's closing docstring names what such a bridge would look like; it does NOT build one. Building it would be a separate slice with its own forcing case.
+- Not a bridge predicate for explicit retroactive discharge. The file's closing docstring names what such a bridge would look like; it does NOT build one. Building it would be a separate slice with a precise bridge statement, explicit temporal semantics, non-vacuity controls, and an overlap review. That formal slice may lead any later runtime case.
 - Not a recommendation that the current `AdmissibleAt` definition is the right one for any specific domain. The definition is the minimum shape that produces a non-vacuous negative theorem.
 
 ## Honest accounting

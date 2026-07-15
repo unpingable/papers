@@ -69,7 +69,7 @@
 - **maximal-calculus-codex-review-log.md** — codex review log.
 - **maximal-calculus-decomposition-trigger.md** — dormant; existence ≠ invocation. Memory: notes it's dormant.
 - **maximal-calculus-discharge-connection.md** — calculus discharge work.
-- **maximal-calculus-forcing-cases.md** — file-now-work-never register. Memory references.
+- **maximal-calculus-forcing-cases.md** — historical forcing-case register; current policy lets coherent formal work lead while preserving intrinsic and promotion gates. Memory references.
 - **maximal-calculus-founding-events.md** — founding-events doctrine.
 - **maximal-calculus-taxonomy-classification.md** — recent classification work.
 - **multiplicity-resource-register-seed.md** — recent register seed.

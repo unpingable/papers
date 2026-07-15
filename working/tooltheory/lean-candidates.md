@@ -23,16 +23,16 @@ The cleanest abstractions, if they survive cooking:
 
 These look like the family of predicates a *Witness*-themed Admissibility module would carry, complementary to the existing Authority / StateTransition / Derivation / Execution / Corrective / WitnessInvariance / FiatAdmissibility / SurfaceAuthorization / RecoveryMargin / ClosureEligibility / NumericalAdmissibility / PublicReceiptRefinement / CorrectiveBoundary modules.
 
-## Promotion gate to Lean
+## Formal admission and public promotion
 
-Don't mint a kernel predicate from a tooltheory note alone. Per kernel discipline:
+Don't mint a public kernel predicate from a tooltheory note alone. A bounded Scratch probe may lead the investigation before any runtime consumer exists; for a candidate to testify or enter the public surface, require:
 
-1. Tool implementation has cited or relied on the doctrine in non-trivial code (downstream forcing case).
-2. The predicate has a generator (it makes a distinction the kernel currently can't express).
-3. The predicate has a real proof target (not a `True`-placeholder discharge).
-4. The predicate names the physics, not a particular instance (per primitive-ontology classification).
+1. The predicate has a generator (it makes a distinction the kernel currently cannot express).
+2. The predicate has a real, non-vacuous proof or countermodel target (not a `True`-placeholder discharge).
+3. The predicate survives overlap review and names the physics, not a particular instance (per primitive-ontology classification).
+4. Its proof controls, custody, naming, and compatibility posture match the surface it would join.
 
-Until those are met, the candidate stays here.
+A tool implementation may later instantiate the contract or supply promotion evidence, but it is not permission to state or develop the theorem. Until the testimony/promotion conditions are met, the candidate remains non-authoritative even if a Scratch formalization exists. Citation by runtime code identifies an intended contract; conformance still needs an explicit mapping and runtime evidence or refinement.
 
 ## Sim candidate (lane-1+4)
 

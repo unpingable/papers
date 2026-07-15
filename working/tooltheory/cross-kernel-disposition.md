@@ -88,14 +88,16 @@ If any of these surface during the Lean adapter work, the right move is to revis
 
 Path C is scoped to **live refusal propagation under static state**. The Lean adapter operates on a state assignment `Entity → State` evaluated at a single snapshot; there is no temporal dimension in the formal model.
 
-The following are **explicit non-claims** of Path C — pinned here to pre-empt scope creep and to surface the forcing-case candidates that would legitimately require something beyond Path C if they materialized:
+The following are **explicit non-claims** of Path C — pinned here to pre-empt scope creep and to identify separate theorem/model candidates beyond Path C:
 
 1. **No cross-kernel conflict resolution.** If NQ admits and Wicket refuses for independent reasons (not downstream of NQ's verdict), Path C does not adjudicate the composition. Nightshift consumes both receipts and applies *its own* composition policy; the formal kernel layer says nothing about the policy.
 2. **No system-level invariant proofs.** Properties like "no chain of authorizations can grant standing exceeding the weakest link" are system properties that cross all kernels. Path C structurally encodes one such property ("no jurisdiction merge") via cascade directionality; it does NOT provide a framework for proving arbitrary system-level invariants.
 3. **No receipt-chain validity reasoning under state change.** If state shifts between issuance and consumption, Path C cannot adjudicate whether a previously-valid receipt is still valid.
 4. **No cross-kernel version migration semantics.** Version skew between kernel implementations (NQ v2 vs Wicket v1 cascade semantics) is operational discipline, not Path C work.
-5. **No *temporal* cross-kernel composition.** Receipt expiry, basis invalidation, replay validity under shifted state — these are **receipt-format** and **consumer-policy** concerns, not formal kernel concerns. The Lean adapter's static `Entity → State` model is deliberately atemporal.
-6. **No adjudication between "expired but historically valid" and "expired and basis-invalidated."** Same expired receipt, different correct downstream responses; that semantic decision is a **consumer-side** policy choice, not a kernel theorem.
+5. **No *temporal* cross-kernel composition inside Path C.** Receipt expiry, basis invalidation, and replay validity under shifted state are carried operationally by receipt format and consumer policy. The Path C adapter's static `Entity → State` model is deliberately atemporal; a separate temporal model or theorem may be developed when its semantics are precise.
+6. **No adjudication inside Path C between "expired but historically valid" and "expired and basis-invalidated."** Same expired receipt, different correct downstream responses; the deployed choice is consumer policy. A formal specification may nevertheless lead and constrain that policy.
+
+These clamps bound Path C; they are not a ban on separate formal work. A coherent temporal or system-level statement may be modeled and proved before a runtime consumer requests it. Consumer cases supply instantiation, priority, and conformance evidence, while public composition or import remains a separate custody decision.
 
 ### Where the temporal load lives (and why Wicket is the seam)
 
@@ -108,7 +110,7 @@ This is what makes **Wicket the load-bearing seam** between NQ and Nightshift. N
 
 Wicket as the seam absorbs the temporal load the formal kernels can't carry. The format absorbs what the kernels can't; the consumer policy absorbs what the format can't; the formal layer stays small, static, and provable.
 
-### Forcing-case candidates (if any materialize, Path C is insufficient)
+### Scope-expansion signals (each is outside Path C)
 
 These are the cases that would legitimately require something beyond Path C. Naming them makes future scope decisions legible rather than ambient:
 
@@ -117,7 +119,7 @@ These are the cases that would legitimately require something beyond Path C. Nam
 - A use case requiring deadlock-freedom or circular-dependency-absence proofs at the kernel-system level → currently structural (directional `DependsOn`), but proving it across the system would be a meta-claim.
 - A use case requiring formal cross-kernel version migration semantics → currently operational.
 
-None of these forcing cases is currently active. The non-claims section exists so that if one materializes, the response is to revisit the disposition rather than relax the scope.
+None currently requires expansion of Path C. The non-claims section ensures that later work is filed as a distinct model or disposition rather than smuggled into the atemporal adapter. Such formal work may lead its runtime instantiation; it does not wait for one of these cases to materialize.
 
 ## What this disposition DOES claim
 

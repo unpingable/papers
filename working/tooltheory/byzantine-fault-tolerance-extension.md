@@ -82,7 +82,10 @@ Stretch goal: **non-equivocation in cross-kernel contexts** — when a single ph
 
 ## Migration path
 
-Plan in four phases. Each phase has its own gate; do not skip ahead.
+Plan in four numbered workstreams. The numbering is retained from the 2026-05-26 filing, but it
+is not a runtime-before-formalization sequence: formalization may lead receipt-format and policy
+code. Dependencies below apply only where they are intrinsic (for example, a verifier needs a
+defined receipt format); a missing consumer or incident does not block a coherent theorem.
 
 ### Phase 1 — Doctrine substrate (this note)
 
@@ -90,18 +93,23 @@ Document the Byzantine extension as forward-looking plan. Does not modify any ru
 
 **Status:** complete with the filing of this note.
 
-### Phase 2 — Receipt-format extensions (consumer-side, no Lean)
+### Phase 2 — Receipt-format extensions (runtime track)
 
-Add attestation fields to receipt formats in NQ / Wicket / NS — but only when a real consumer needs them. Per-axis attestation lives in receipt format, not in the formal kernel.
+Add attestation fields to receipt formats in NQ / Wicket / NS when the selected protocol and
+formal contract require them. Per-axis attestation lives in the receipt format; Lean may model
+the abstract attestation and adversary obligations without duplicating the wire encoding.
 
-Specific extensions, gated by forcing case:
+Candidate extensions, each requiring an explicit threat model and protocol design before runtime
+schema mutation:
 
 - **Operator-time:** add `signed_correlation_chain` field to receipts (the Merkle chain of prior operator commands).
 - **Metric-time:** add `attested_timestamp` field with threshold signature from clock source.
 - **Phase-time:** add `quorum_certificate` field with N-of-M signatures binding the phase identity.
 - **Per-extension regime:** add corresponding attestation field (legal, billing, version, sensor, retention).
 
-**Status:** not yet authorized. Forcing case: an active soundness incident where current receipt format leaks an adversarial attack surface.
+**Status:** no runtime schema change is currently scoped. An active soundness incident may supply
+priority and validation evidence, but it is neither permission nor a prerequisite for the formal
+work.
 
 ### Phase 3 — Consumer-policy extensions (consumer-side, no Lean)
 
@@ -109,7 +117,7 @@ Each consumer (NQ, Wicket, NS, agent_gov) extends its receipt-verification polic
 
 **Status:** depends on Phase 2.
 
-### Phase 4 — Optional Lean formalization (forcing-case-gated)
+### Phase 4 — Lean adversary model and soundness theorems
 
 If a specific soundness theorem requires reasoning about adversarial state production (not just static state assignment), the formal Lean layer extends to model Byzantine adversarial state. This would force the **Path C disposition revisit** per the pre-commitment in `cross-kernel-disposition.md`:
 
@@ -117,7 +125,10 @@ If a specific soundness theorem requires reasoning about adversarial state produ
 
 Byzantine adversarial state is exactly the case where the formal layer needs to reason about *who signed what* (cryptographic provenance), not just *what state holds* (refusal propagation). The current Path C disposition explicitly brackets this; opening it would be a substantive expansion of the Lean kernel's scope.
 
-**Status:** not authorized. Forcing case: a specific Byzantine-soundness theorem that the operational layer (Phases 2-3) cannot prove without formal substrate. Likely candidates:
+**Status:** not yet scoped. This track opens when a specific Byzantine-soundness statement can
+name its adversary model, quorum assumptions, cryptographic interface, and non-vacuous safety or
+liveness conclusion. It may begin before Phases 2–3 and lead their implementation; no operational
+failure or downstream consumer is required. Likely candidates:
 - A regulatory requirement for formal verification of receipt-attestation chains.
 - A specific cross-kernel theorem where adversarial equivocation across kernels can't be ruled out by receipt-format alone.
 - A safety property where the current `CascadeSound` obligation must extend to include adversarial state production.
@@ -127,11 +138,15 @@ Byzantine adversarial state is exactly the case where the formal layer needs to 
 The Byzantine extension must respect existing brakes plus new ones specific to BFT:
 
 - **Do not** collapse the three native time axes (or any extension regimes) into a single "Byzantine clock." Each axis retains its independence; Byzantine adds adversarial defense to each.
-- **Do not** introduce Byzantine adversarial models into the formal Lean layer without a Phase 4 forcing case.
+- **Do not** introduce Byzantine adversarial models into the formal Lean layer without an
+  explicit adversary model, quorum assumptions, cryptographic abstraction boundary, and
+  load-bearing theorem. This is a theorem/model gate, not a consumer gate.
 - **Do not** assume an honest majority beyond the protocol's explicit quorum size. BFT means quorums must include enough non-Byzantine nodes to outvote adversaries; the framework does not assume the population is mostly honest.
 - **Do not** collapse crash + Byzantine into one fault class. CFT and BFT are different disciplines with different quorum requirements (typically `f+1` for CFT, `2f+1` or `3f+1` for BFT depending on the model).
 - **Do not** treat cryptographic primitives as a substitute for the framework. Signatures and quorum certificates are *mechanisms*; the framework is *what to attest*. Confusing the two grows the "cryptographic cathedral" anti-pattern.
-- **Do not** promote the Byzantine extension to a public Lean surface until Phase 4 fires.
+- **Do not** promote the Byzantine extension to a public Lean surface without completed proofs,
+  scope and overlap review, and an explicit custody decision. Runtime adoption is correspondence
+  evidence, not a prerequisite for formalization.
 
 ## Failure modes to refuse during plan execution
 
@@ -155,7 +170,7 @@ The Byzantine extension must respect existing brakes plus new ones specific to B
 
 ## Relationship to existing Lean substrate
 
-The current Lean layer (`RefusalPropagation` + its three sub-layers Law / Examples / Annex) operates on *static state assignments* with no temporal or adversarial dimension. Byzantine extension does NOT change this *yet*. Specifically:
+The current Lean layer (`RefusalPropagation` + its three sub-layers Law / Examples / Annex) operates on *static state assignments* with no temporal or adversarial dimension. Byzantine extension does not change those theorems; a future adversary model would be a formal extension that may lead its runtime realization. Specifically:
 
 - `CascadeSound`'s directionality (refusal propagates, admission doesn't) is the structural brake against jurisdiction merge. It remains the kernel-level discipline regardless of whether the surrounding system is CFT or BFT.
 - `Composition.refusal_composes_two_hop` and `refusal_propagates_transitively` operate over a generic `requiredFor` relation that doesn't model who signed what. These remain valid under BFT — they reason about *if the dependency chain holds*, not *whether the chain can be forged*.
@@ -170,8 +185,8 @@ This is the *clean separation* the framework offers: the law is signature-agnost
 - [[three-time-decomposition]] — native three-time decomposition + N-regime generalization. This Byzantine note is its forward-looking adversarial-model sibling.
 - [[cross-kernel-disposition]] — Path C; brackets temporal cross-kernel composition out of the formal Lean layer. Phase 4 of this plan is the trigger that would force a Path C revisit.
 - `~/git/lean/LeanProofs/Admissibility/RefusalPropagation.lean` — current static-state formal kernel; signature-agnostic per the discussion above.
-- `~/git/lean/LeanProofs/Admissibility/Freshness.lean` — metric-time axis in the kernel; Byzantine extension would add timestamp-attestation defenses at the consumer layer, not in this module.
-- `~/git/lean/LeanProofs/Admissibility/ConsolidationDenial.lean` — phase-time axis in the kernel; Byzantine extension would add quorum-certificate defenses at the consumer layer.
+- `~/git/lean/LeanProofs/Admissibility/Freshness.lean` — metric-time axis in the kernel; Byzantine extension may specify timestamp-attestation obligations formally while their cryptographic verification remains at the consumer layer.
+- `~/git/lean/LeanProofs/Admissibility/ConsolidationDenial.lean` — phase-time axis in the kernel; Byzantine extension may specify quorum-certificate obligations formally while their verification remains at the consumer layer.
 - `~/git/nq/`, `~/git/agent_gov/`, `~/git/nightshift/` — consumer-side codebases where Phase 2/3 receipt-format and consumer-policy extensions would land.
 
 ## Provenance
@@ -181,13 +196,17 @@ This is the *clean separation* the framework offers: the law is signature-agnost
 
 ## Disposition
 
-Forward-looking plan. No immediate action authorized. Specifically:
+Forward-looking plan. The 2026-05-26 filing used forcing-case sequencing; the 2026-07-14 policy
+correction supersedes that sequencing while preserving the plan's threat-model, cryptographic,
+proof, and custody gates. Specifically:
 
 - Phase 1: complete (this note).
-- Phase 2: deferred. Forcing case = real soundness incident exposing adversarial attack surface in current receipt format.
+- Phase 2: no runtime schema change currently scoped; implement against the selected formal and
+  protocol contract when there is an operational target.
 - Phase 3: deferred (depends on Phase 2).
-- Phase 4: deferred. Forcing case = Byzantine-soundness theorem unprovable at consumer layer.
+- Phase 4: available when a precise Byzantine-soundness theorem and explicit model can be stated;
+  it does not wait for Phase 2, Phase 3, a consumer, or an incident.
 
-Closing the plan: when all four phases land, the framework would support **true fault tolerance** in receipt-gated cross-kernel coordination — receipt provenance is cryptographically attested per time regime, consumer policy verifies attestations, and the formal Lean layer optionally proves soundness against adversarial state production. Until then, the plan is the substrate.
+Closing the plan: when all four workstreams land, the framework would support **true fault tolerance** in receipt-gated cross-kernel coordination — the formal Lean layer states and proves the selected soundness contract, receipt provenance is cryptographically attested per time regime, and consumer policy verifies those attestations. Until then, the plan is the substrate.
 
 > **The plan is the substrate. The signature is the mechanism. The kernel is signature-agnostic. The discipline is the keeper.**

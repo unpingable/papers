@@ -198,7 +198,7 @@ Refusal algebra lets a system say:
 
 > *This basis is admissible for X, inadmissible for Y, stale for Z, and repairable by W.*
 
-That's the **third option** between paralysis and laundering. The third option is what makes the algebra worth building when forcing case appears.
+That's the **third option** between paralysis and laundering. The contract is worth formalizing when this distinction yields a precise, non-vacuous algebra or countermodel; that formalization may lead the runtime case that instantiates it.
 
 ---
 

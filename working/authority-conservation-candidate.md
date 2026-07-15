@@ -294,8 +294,11 @@ repo's default targets stays green (exit 0).
 **Stretch (only if the pilot lands cheap):** second instance on v7
 JurisdictionScreen/coverage, to show the law-shape repeats without a shared turnstile.
 
-**Stop rule:** if the proof pressure demands a new kernel-shaped object (new vocabulary,
-new judgment form), STOP — that triggers the five-condition Lean gate. This phase is
+**Refiling rule:** if the proof pressure demands a new kernel-shaped object (new vocabulary,
+new judgment form), stop this pilot and refile the object as a distinct candidate. Its
+formal admission turns on a coherent theorem or countermodel, overlap, semantics,
+non-vacuity, and proof controls. The historical five-condition rubric may rank priority
+or inform public promotion; it is not permission to develop the theorem. This phase is
 coverage inside an opened surface, not a new kernel.
 
 **What earns the name:** per the name-ladder precedent (`composition_classification`
@@ -510,16 +513,20 @@ Same collapse, three disguises now on record: the global scalar (μ), the generi
 interface (codex finding #4), the degenerate chart — plus the ungoverned dashboard
 (§ lens note, readout clause) as Franklin's teller window.
 
-Status: **gated.** This is new Lean beyond the authorized pilot; the five-condition gate
-applies. Classify against the Composition/Unification family row before building — it
-is plausibly a μ-specific corollary of no-unifier-without-laundering, i.e. a small
-delta, not a new result. §7.1's Gemini specimen already serves as the informal exhibit.
+Status: **separate candidate.** This is beyond the pilot's declared scope. Classify it
+against the Composition/Unification family row and audit overlap before adding a file —
+it is plausibly a μ-specific corollary of no-unifier-without-laundering, i.e. a small
+delta, not a new result. A distinct formal artifact may nevertheless lead its runtime
+case once it has a coherent, non-vacuous statement and proof controls. §7.1's Gemini
+specimen already serves as the informal exhibit.
 
 ---
 
 ## 10. Forbidden claims (inherited from authorization, binding)
 
-- No new Lean beyond the authorized pilot (§5) without the five-condition gate.
+- No unrelated Lean inside this pilot. Refile a distinct formal candidate and judge it
+  by theorem/countermodel shape, semantics, overlap, non-vacuity, and proof controls;
+  use the five-condition rubric only for priority and public-promotion evidence.
 - No doctrine promotion, no release claim, no version bump from this note.
 - No global authority scalar, in any file, at any altitude.
 - No "cryptographic witness" shortcut.

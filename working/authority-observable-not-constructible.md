@@ -2,7 +2,7 @@
 
 **Status:** working note / cross-substrate doctrine. 2026-05-07.
 **Scope:** doctrine and implementation note for the agent_gov / standing / receipt_kernel / Lean-Admissibility family. Not a manifesto, not an essay, not a paper.
-**Stance:** candidate. Lab structurally complete (seven-probe gnat series, 2026-05-06 → 2026-05-07). Future probes require a specific missing axis or forcing case.
+**Stance:** candidate. Lab structurally complete (seven-probe gnat series, 2026-05-06 → 2026-05-07). Future probes require a specific missing axis, discriminating question, or coherent non-redundant formal claim; a runtime forcing case is not required.
 
 ---
 
@@ -132,7 +132,7 @@ Seven probes in `~/git/gnat/<lang>`, in order:
 
 ## Stop condition
 
-> **Lab structurally complete as of 2026-05-07. Future probes require a specific missing axis or forcing case.**
+> **Lab structurally complete as of 2026-05-07. Future probes require a specific missing axis, discriminating question, or coherent non-redundant formal claim.**
 
 The matrix has six in-process substrate rows and three border-crossing techniques. That is enough resolution to write the doctrine and to evaluate concrete implementations against it. *"What about Haskell?"* without a specific question is not a forcing case; it is a polite scarf at the window. Capability-native languages (E, Pony) are answer-keys, not probes — they would mostly produce confirmation rather than surprises.
 

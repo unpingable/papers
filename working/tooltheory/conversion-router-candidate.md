@@ -1,15 +1,17 @@
 # Conversion-router candidate (Nightshift-scoped)
 
-**Status:** UNRATIFIED scoping pin. Forcing consumer named; surface
-inventory and build commit pending.
+**Status:** UNRATIFIED scoping pin. Runtime correspondence target named; surface
+inventory and runtime build commit pending. **Policy correction, 2026-07-14:**
+the two non-overlapping Lean theorem residues identified below may be formalized
+first and lead the checker. Nightshift does not grant permission to prove them.
 **Date filed:** 2026-06-09.
 **Custody:** working note in `working/tooltheory/`. Not a Lean module,
 not a Rust crate, not promoted.
 
 ## Decision recorded
 
-**Forcing consumer found.** Nightshift (`~/git/scheduler/crates/nightshiftd/`)
-is the named runtime consumer of conversion-routing answers. Today's
+**Runtime correspondence target found.** Nightshift (`~/git/scheduler/crates/nightshiftd/`)
+is the named prospective consumer of conversion-routing answers. Today's
 WLP3 refusal landed (`witness-2026-06-09-wlp3-refusal-implementation.md`)
 made the first dangerous conversion mechanically operational:
 *freshness unresolved ⇏ authorization*, emitting `ns.wlp_refusal.v1`.
@@ -92,9 +94,10 @@ not a theorem; calling it one would be the manufactured-receipt move.
 > *monotonicity* `Reach E ⊆ Reach (E∪{e})` + the no-route-without-bridge corollary
 > — requires generalizing `Reachable` to take the edge relation as a parameter
 > (TaxonomyGraph's `edge` is a fixed `def`, so this is unstatable there).
-> Mathlib-free both ways (predicate + parameter-threading + `decide`). When the
-> Nightshift forcing case fires, build a small `ConversionRouter.lean` that
-> **imports/cites TaxonomyGraph** and adds only these two. `ReachableDrift`,
+> Mathlib-free both ways (predicate + parameter-threading + `decide`). A small
+> `ConversionRouter.lean` may be built from these two precise residues before
+> Nightshift consumes it; it should
+> **import/cite TaxonomyGraph** and add only these two. `ReachableDrift`,
 > `NoSilentProjection`, `NoFreeStandingBridge` checked — genuinely different
 > objects, no collision. (`TopologyRouterCandidate.lean`, named below as a
 > sibling, does NOT exist in the tree.)
@@ -222,8 +225,9 @@ this note's TBDs into committed schema.
 - [[external-model-find-corrective-boundary]] — receipt-integrity
   rule (status moves on grep/build receipts against named tree)
   enforced via the `tree_or_build_id` field in the receipt artifact.
-- [[feedback-forcing-case]] — gates whether and when this design
-  moves from scoping pin to build commit.
+- [[feedback-forcing-case]] — historical prioritization input. It does not gate
+  formal construction; theorem shape, overlap, proof controls, and bounded cost
+  do. Runtime rollout and public promotion remain separate.
 - [[project-no-unifier-without-laundering]] — explains why the
   Nightshift-local scoping is structurally required; a general
   conversion router would be the kind of unifier the doctrine refuses.

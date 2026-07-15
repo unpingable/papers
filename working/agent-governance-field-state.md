@@ -5,8 +5,9 @@ NOT publication-prep.** Captures the prior-art survey from the
 2026-06-03 evening cabinet round (Claude-web grounding, ChatGPT
 calibration) before it evaporates. Filed so future sessions can
 locate the adjacent work without re-running the survey from scratch.
-**Discipline:** capability inventory ≠ work commitment;
-file-now-work-never; same three-gate paper-promotion rule applies as
+**Discipline:** capability inventory is not an automatic work commitment;
+formalization may lead when a coherent, non-redundant result clears intrinsic
+checks; the same three-gate **paper-promotion** rule applies as
 [[feedback-validity-spendability-paper-discipline]].
 **Sibling notes:**
 [`constitutional-governor-architecture.md`](constitutional-governor-architecture.md)

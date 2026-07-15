@@ -4,7 +4,9 @@
 ChatGPT thread downstream of the sequent-admissibility island landing
 (`working/sequent-admissibility-specimen.md`). **This is a wedge under a
 door, not a flag through it** — named early per the name-early discipline,
-NOT authorized to build. No Lean, no paper commitment.
+not scheduled or promoted. No Lean artifact or paper commitment currently exists.
+That is a scope/status fact, not a consumer gate: a bounded formal claim may lead
+later code once its model and theorem shape are coherent.
 
 ## The distinction
 
@@ -105,7 +107,8 @@ constraint for *local* systems that transform claims over time. The moment it
 tries to become a global admissible-predicate it is
 [[project-distributional-admissibility-tombstone]] in a fresh mustache and
 the no-unifier doctrine ([[project-no-unifier-without-laundering]]) governs.
-Forcing-case calibration ([[feedback-forcing-case]]): do NOT invoke a forcing
-case to start building a "dynamic admissibility calculus." File the wedge;
-build nothing until a specific local system (AG gate, a Night Shift
-reconciliation, a specific agent-tool transition) presents a bounded question.
+Do not use a runtime forcing case to authorize a universal "dynamic admissibility
+calculus." File the wedge and formalize only a bounded local question with an
+explicit state/transition model, non-vacuous theorem, and overlap/proof controls.
+That question may come from the doctrine itself and lead an AG gate, Night Shift
+reconciliation, or agent-tool transition; those implementations are not prerequisites.

@@ -4,6 +4,8 @@ A working journal of formalization deltas — what changed in the Lean stack, wh
 
 Working principle: *Write down what changed. Don't remodel the house while the concrete truck is still in the driveway.*
 
+**Policy correction (2026-07-14):** Entries below were written across an earlier workflow and sometimes use *forcing case*, *live consumer*, or *downstream theorem* as if consumers admitted formal work. That rule is superseded. Formalization may precede and lead implementation. Theorem shape, stable semantics, overlap, proof, and anti-vacuity govern formal development; promotion is a separate custody/compatibility decision; runtime conformance requires an explicit mapping plus evidence or refinement. Citation alone is not conformance. Historical wording is retained only where the history itself matters and is annotated accordingly.
+
 ## Status taxonomy
 
 Restrained vocabulary, used per-paper to avoid inflating everything into "formally proved":
@@ -52,7 +54,7 @@ Canon docs (`PAPER-MAP.md`, `CLAIM-REGISTER.md`, `docs/formalization-index.md`) 
 - Source `metadata.yaml` shows `version: "0.9"`; v1.1 push to Zenodo pending. Per `formalization-index.md`, requires bumping metadata and rebuilding PDF.
 - §6.4 paragraph still accurate against current stack (spot-checked 2026-05-03).
 
-**Potential next formal target:** Four-layer ratio admissibility / threshold violation. P22 §4 introduces ratios `T_o/T_p`, `T_u/T_p`, `(T_o+T_u)/T_p`, `T_s/T_p`, `T_contract/T_c` with critical thresholds. A Lean theorem of shape *"a system is temporally admissible only if all four layer ratios remain within bound; one layer violation suffices to deny global admissibility"* is reachable. Would change math flavor (arithmetic / ratio thresholds) from the current kernel/observability lane. **Held until P25–P27 settle** per the cluster-stability discipline.
+**Potential next formal target:** Four-layer ratio admissibility / threshold violation. P22 §4 introduces ratios `T_o/T_p`, `T_u/T_p`, `(T_o+T_u)/T_p`, `T_s/T_p`, `T_contract/T_c` with critical thresholds. A Lean theorem of shape *"a system is temporally admissible only if all four layer ratios remain within bound; one layer violation suffices to deny global admissibility"* is reachable. Would change math flavor (arithmetic / ratio thresholds) from the current kernel/observability lane. **Scheduling hold until P25–P27 settle** per the cluster-stability discipline; this is prioritization, not a consumer or paper-promotion prerequisite.
 
 **Out of scope (intentional, current):** Empirical calibration of threshold values; cross-domain ratio inventory beyond the worked examples.
 
@@ -78,7 +80,7 @@ Canon docs (`PAPER-MAP.md`, `CLAIM-REGISTER.md`, `docs/formalization-index.md`) 
 - Proposition 2 sign correction. Lean caught: formal pairwise difference is `(φᵢ − φⱼ)·V`; paper statement currently has the opposite sign. Metric claims unaffected. Candidate prose correction in any v1.1 push.
 - v1.0 already published 2026-04-28; Lean shard landed same day.
 
-**Potential next formal target:** Proposition 1 (no-scalar-free-lunch) — the single highest-value future Lean target. Promoting from probe-backed conjecture to theorem requires fixing the scalar-aggregator class precisely (continuous? Lipschitz? permutation-invariant?). **Held until P25–P27 settle.**
+**Potential next formal target:** Proposition 1 (no-scalar-free-lunch) — the single highest-value future Lean target. Moving from probe-backed conjecture to theorem requires fixing the scalar-aggregator class precisely (continuous? Lipschitz? permutation-invariant?). **Scheduling hold until P25–P27 settle; the unresolved aggregator class is the intrinsic theorem-shape gate.**
 
 **Out of scope (intentional):** Conjecture 1 / Proposition 1 (current); agile case study; closed-loop dynamics; witness-filter institutional prose; aggregator-in-the-abstract operator theory.
 
@@ -108,7 +110,7 @@ Canon docs (`PAPER-MAP.md`, `CLAIM-REGISTER.md`, `docs/formalization-index.md`) 
 
 **Paper updates pending:** Empty-window promotion gate material added to `NOTES.md` 2026-05-03 (four-type taxonomy: natural-latency / procedural / manufactured / ontological; four-condition promotion test). Status: candidate gate material, not promoted into draft. Gating decision still deferred.
 
-**Out of scope (intentional):** Lean formalization deferred until paper promotes from candidate. Kernel `m(t)/c(t)` curve formalism would be possible but premature.
+**Out of scope (intentional):** No Lean formalization is currently scheduled because the candidate's curve semantics and theorem boundary are not settled. Paper promotion is not a prerequisite: a coherent `m(t)/c(t)` formalism may precede and lead later prose or implementation once its statement and anti-vacuity controls are clear.
 
 ---
 
@@ -118,9 +120,9 @@ Canon docs (`PAPER-MAP.md`, `CLAIM-REGISTER.md`, `docs/formalization-index.md`) 
 
 **Paper updates pending:** None — v1.0 published 2026-05-18, DOI `10.5281/zenodo.20275071`. Future v1.1 candidates: TLA-disjointness one-liner in §2; abstract sentence adding non-subordination alongside the three-horizon framing; §5 table footnote distinguishing kernel-`openFinding` from deferred-eligible predicates.
 
-**Discipline note:** Do not vocabulary-design through Lean until worked cases force the predicates. The `True` placeholders are deliberate; "kill the sorrys, don't let the sorrys design the constitution" is the active rule. Two predicates (`substrateAccusation`, `receiptOutlives`) cleared the two-case forcing gate but are not promoted in v1.0 — would be constitution-by-typechecker without a downstream composing theorem.
+**Discipline note:** Do not mint vocabulary merely to make placeholders look substantive. The `True` placeholders are deliberate; "kill the sorrys, don't let the sorrys design the constitution" remains the active rule. Formalization may lead code, but each predicate still needs stable semantics and a non-vacuous theorem-shaped use. Worked cases can test that shape; they do not grant permission. The two predicates (`substrateAccusation`, `receiptOutlives`) had two pressure specimens but were not promoted in v1.0 because no stable composing statement had yet distinguished them from constitution-by-typechecker.
 
-**Out of scope (intentional):** Concrete substrate-accusation and causal-binding predicates (deferred until a downstream composing theorem forces them); wiring into `LeanProofs.lean` (deferred until predicates land).
+**Out of scope (intentional):** Concrete substrate-accusation and causal-binding predicates (deferred until their semantics and a non-vacuous composing theorem are precise); wiring into `LeanProofs.lean` (a separate promotion decision after the predicates land).
 
 ---
 
@@ -130,7 +132,7 @@ Canon docs (`PAPER-MAP.md`, `CLAIM-REGISTER.md`, `docs/formalization-index.md`) 
 
 **Paper updates pending:** No paper anchored yet. Slot decision (P27 fold-in vs standalone P28) deferred per `working/admissible-recovery-semantics.md` §8.
 
-**Out of scope (intentional):** Concrete `claimForStep` resolvers (deferred to Governor instantiation); `AuthorityClaim` schema commitments (kept abstract).
+**Out of scope (intentional):** Concrete `claimForStep` resolvers (the abstract kernel intentionally leaves policy open; a formal instance may precede Governor code once resolver semantics are selected); `AuthorityClaim` schema commitments (kept abstract). Governor remains a correspondence target, not a prerequisite.
 
 ---
 
@@ -146,16 +148,16 @@ The comparison relation is consumer-supplied; the kernel keeps the underlying or
 
 **Companion working primitive:** `working/primitives/memory-skew.md` (candidate, Kind: Axis). Operator-facing application; carries the five candidate axes (recency / completeness / authority / capability / integration) which are explicitly not kernel-pinned.
 
-**Forcing residue:** Stale Binding is the substrate-rich primitive for the *lagging direction* (caches, hat-x estimates, briefings, P23–P27). The *leading direction* — prior overclaims observed state — had no equivalent general primitive before this. Time-axis bidirectional was already in `Freshness.lean` (NotYetValid / Expired). The new module supplies the substrate-general bidirectional kernel.
+**Formal residue:** Stale Binding is the substrate-rich primitive for the *lagging direction* (caches, hat-x estimates, briefings, P23–P27). The *leading direction* — prior overclaims observed state — had no equivalent general primitive before this. Time-axis bidirectional was already in `Freshness.lean` (NotYetValid / Expired). The new module supplies the substrate-general bidirectional kernel.
 
 **Discipline note:** This module is the *positive* counterpart to the AWP audit's null result two days prior. Same gate (kernel-overlap audit before any new module), opposite outcome — the audit surfaced residue that did *not* collapse into existing substrate. Specifically the leading direction generally + the orientation theorem (reverse_lagging_is_leading) had no formal home. Strict scope discipline applied throughout: no `ClaimAxis` enum, no `Corrective` import, no operational authorization theorem, no calculus naming.
 
 **Out of scope (intentional):**
 - Five-axis `ClaimAxis` enum (operator-facing taxonomy, lives in `memory-skew.md` not kernel).
-- Operational bridge theorem *"lagging may support correction, not authorize mutation"* — would compose with `Corrective` / `Authority`; deferred until a live consumer needs it.
-- Symmetric leading-direction bridge *"leading may support refusal of binding, not authorize forward mutation"* — same deferral.
+- Operational bridge theorem *"lagging may support correction, not authorize mutation"* — would compose with `Corrective` / `Authority`; deferred until the bridge hypotheses and non-overlap claim are precise. A live consumer may test correspondence but is not required.
+- Symmetric leading-direction bridge *"leading may support refusal of binding, not authorize forward mutation"* — same theorem-shape deferral.
 - Subsumption of Stale Binding into AxisSkew (parallel relationship preserved; stale-binding's consequence-window machinery is substrate detail the kernel does not absorb).
-- Trichotomy theorem in cleaner LinearOrder form — held until a consumer needs it.
+- Trichotomy theorem in cleaner LinearOrder form — held because the current orientation theorems cover the selected formal scope; it may be added on intrinsic theorem value without waiting for a consumer.
 
 ---
 
@@ -182,14 +184,14 @@ These remain working orientation, not a 2.0 roadmap commitment.
 3. What minimal safety predicate, if any, does the specimen actually force — strict ≥ / bounded loss / recoverable loss / no irreversible loss / no loss without receipt / no loss to protected class?
 4. What extra hypotheses would a future safety bridge have to carry (analogue of `Corrective.RecoveryEnv`)?
 
-**Discipline note:** Phase 1 directive is intentionally one file. The map does *not* license `DefendedValue.lean`, `SafetyPreserving.lean`, `SafetyEnv` bundles, or any `SafetyBridge.lean` work from this landing alone. Root-wired means build-covered; it does not mean public-surface-promised. `CalculusOne.lean` and the 1.0 compatibility surface remain untouched.
+**Discipline note:** Phase 1 is intentionally one file. The map does not itself supply theorem statements or hypotheses for `DefendedValue.lean`, `SafetyPreserving.lean`, `SafetyEnv` bundles, or `SafetyBridge.lean`; each requires its own intrinsic review. Root-wired means build-covered; it does not mean public-surface-promised. `CalculusOne.lean` and the 1.0 compatibility surface remain untouched.
 
 **Out of scope (intentional):**
 
 - `AuthorizedStep`-layer wound construction (would require axiomatizing `ExecutionEnv` + verdict witness; deferred).
-- Concrete witnessing model `AuthorizedNotSafeConcrete.lean` (would reduce axiom budget; deferred unless the wound is challenged).
-- Any Slice A bridge work (`DefendedValue`, `SafetyPreserving`, `SafetyEnv`, `SafetyBridge`); the Phase 1 stop sign holds until the wound's shape forces a next move.
-- Slice B/C/D modules; each requires its own forcing case.
+- Concrete witnessing model `AuthorizedNotSafeConcrete.lean` (would reduce axiom budget; currently a low-priority scope choice, not blocked on a challenger or consumer).
+- Any Slice A bridge work (`DefendedValue`, `SafetyPreserving`, `SafetyEnv`, `SafetyBridge`); the Phase 1 stop sign holds until the bridge statement and its necessary hypotheses are selected.
+- Slice B/C/D modules; each requires its own theorem-shape, overlap, proof-scope, and anti-vacuity review. None requires a runtime forcing case.
 
 ---
 
@@ -205,12 +207,12 @@ These remain working orientation, not a 2.0 roadmap commitment.
 
 **Candidate handles surfaced — held as named-not-promoted:**
 
-- *Advance tombstone / pre-committed voluntary admissibility revocation* — sibling to admissibility-decay family. Needs non-AWP recurrence before earning Lean residue.
+- *Advance tombstone / pre-committed voluntary admissibility revocation* — sibling to admissibility-decay family. It remains held because no non-redundant theorem shape has yet survived the overlap audit; further recurrence may sharpen that shape but is not permission to formalize.
 - *Aggregation-as-authority-laundering* — `ContradictionLog ↛ HealthScore` is consumer-side prohibition (doctrinal-rule shape), not kernel claim. Lean can refuse to provide such a constructor but cannot prevent downstream consumers from writing one. Hold.
 
 **Discipline note:** This audit is the kernel-overlap-audit memory rule (`feedback-kernel-overlap-audit`) working as designed. The closure-standing precedent (2026-05-14, ~30k words collapsed into existing substrate) is the cautionary scar; the AWP case is the same shape at smaller scale. AWP's structural residue is zero modules; the doctrine residue lives in the working note. Tiny goblin version per the working note: *AWP is not a tool. It is a refusal pattern with YAML tendencies.*
 
-**Out of scope (intentional):** `ObservedDecoupling.lean` (would be true-but-redundant); `Tombstone.lean` (premature, single instance); aggregation-as-laundering theorem (not kernel-shape, deferred); docstring cross-references inside `SurfaceAuthorization.lean` or `CollapsedSurface.lean` (held — risk of staple-receipt-to-receipt without future-reader benefit).
+**Out of scope (intentional):** `ObservedDecoupling.lean` (would be true-but-redundant); `Tombstone.lean` (no non-redundant theorem shape has survived the overlap audit; the single instance is weak promotion evidence but not a permission gate); aggregation-as-laundering theorem (not kernel-shape, deferred); docstring cross-references inside `SurfaceAuthorization.lean` or `CollapsedSurface.lean` (held — risk of staple-receipt-to-receipt without future-reader benefit).
 
 ---
 
@@ -219,4 +221,5 @@ These remain working orientation, not a 2.0 roadmap commitment.
 - **2026-05-03** — File created. Initial seed entries for P15, P18, P22, P23, P24, P25, P26, P27, and the Admissibility kernel. Captures current deltas after P25 Lean spine completion. Subsequent entries land here as deltas accumulate; canon backfill (per-paper appendix updates, audit-doc reorganization) deferred until P25–P27 cluster stabilizes.
 - **2026-05-19** — AWP kernel-overlap audit entry added. Null result: no new module warranted. AWP backed by existing CollapsedSurface / PublicReceiptRefinement / SurfaceAuthorization theorems. Two candidate handles (advance tombstone, aggregation-as-authority-laundering) held as named-not-promoted.
 - **2026-05-20** — `AxisSkew.lean` added. Three theorems, lake build green. First positive Lean addition since the AWP-audit null result two days prior — same audit gate, opposite outcome. Companion primitive `memory-skew.md` filed as candidate (Kind: Axis); parallel-not-subsumed relationship with Stale Binding preserved.
-- **2026-05-24** — `AuthorizedNotSafe.lean` added. Phase 1 frontier specimen for `FRONTIERS.md` Frontier 1 (Admissibility ≠ Safety Bridge). Negative model at the `StepAllowed` layer; `AuthorizedStep`-layer transfer explicitly deferred; axiomatically-inhabited counter-scenario (concrete witnessing model deferred). Three orientation notes filed in papers `working/` (kernel-to-body map, calculus-2 exit criteria, frontier proof obligations). Stop sign in place; no Slice A bridge work licensed by this landing.
+- **2026-05-24** — `AuthorizedNotSafe.lean` added. Phase 1 frontier specimen for `FRONTIERS.md` Frontier 1 (Admissibility ≠ Safety Bridge). Negative model at the `StepAllowed` layer; `AuthorizedStep`-layer transfer explicitly deferred; axiomatically-inhabited counter-scenario (concrete witnessing model deferred). Three orientation notes filed in papers `working/` (kernel-to-body map, calculus-2 exit criteria, frontier proof obligations). The then-current staging note said no Slice A bridge work was licensed by this landing; under the corrected policy, the operative hold is the absence of selected bridge statements and hypotheses, not a missing consumer.
+- **2026-07-14** — Formalization-first policy correction applied. Earlier consumer/forcing-case gates are historical, not operative: formal development may lead code; promotion and runtime conformance remain separate; intrinsic theorem-shape, overlap, proof, and anti-vacuity controls remain in force.

@@ -59,7 +59,7 @@ where `OverlapCompatible` names the shared substrate where the two local boundar
 - This is a speculative analogy. Do not summon sheaves, schemes, or Grothendieck topologies on the strength of one closed theorem.
 - The actual mathematical home is probably algebraic structure over permissions / partitions / observations — not primes, not zeta, not Galois.
 - CRT and gcd/lcm are useful as **disciplined analogies** for local-to-global compatibility logic. They are not the calculus.
-- Do not file an `OverlapCompatible` Lean definition until a forcing case makes it earn its keep. The current two-field merge predicate is sufficient for the aperture; expansion requires a specimen the current shape cannot handle.
+- Do not file an `OverlapCompatible` Lean definition merely because the analogy suggests the name. File it when a precise, non-redundant theorem or countermodel makes the predicate load-bearing and the overlap semantics and non-vacuity controls are explicit. The current two-field merge predicate is sufficient for the aperture; a later formalization may lead the specimen or implementation that instantiates the stronger shape.
 
 ## Why the analogy is annoyingly good
 

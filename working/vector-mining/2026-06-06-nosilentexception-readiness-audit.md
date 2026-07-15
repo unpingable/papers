@@ -1,6 +1,8 @@
 # Pilot #14 — NoSilentException readiness audit (Track A)
 
-**Filed:** 2026-06-06. **Status:** vector-mining receipt; readiness mode, not build authorization. **NOT doctrine. NOT a paper. NOT a primitive. NOT a Lean module.** **NOT a proof sketch.** Operating under [`method-note.md`](method-note.md) discipline. **Verdict palette restricted by user instruction** to: NOT_READY / DUPLICATE / ALIAS-RISK / FORCING_CASE_CANDIDATE / MISSING_PRECONDITION / COUNTEREXAMPLE_CANDIDATE.
+**Filed:** 2026-06-06. **Status:** vector-mining receipt; a dated priority/readiness assessment, not a prohibition on formalization. **NOT doctrine. NOT a paper. NOT a primitive. NOT a Lean module.** **NOT a proof sketch.** Operating under [`method-note.md`](method-note.md) discipline. **Verdict palette restricted by user instruction** to: NOT_READY / DUPLICATE / ALIAS-RISK / FORCING_CASE_CANDIDATE / MISSING_PRECONDITION / COUNTEREXAMPLE_CANDIDATE.
+
+**Policy correction (2026-07-14):** the consumer, prose-insufficiency, and forcing-case criteria below are preserved as the rubric this 2026-06 audit used to assess priority and promotion pressure. They are not permission to state or build a theorem. A coherent NoSilentException claim, countermodel, or specification may be formalized in Scratch before a consumer exists and may lead later code. Scratch cannot testify for or pin production; public promotion remains separate, and runtime conformance requires an explicit mapping plus runtime evidence or a refinement proof.
 
 ## Setup
 
@@ -18,6 +20,8 @@ Hard constraints (user-supplied):
 - No promotion.
 - Patch queue only.
 
+These constraints governed this audit pass only. They are not continuing prerequisites for later Scratch formalization.
+
 Inputs read:
 
 - [`../bridge-obligation-lattice.md`](../bridge-obligation-lattice.md) — Exception obligation set `{temporal-bounding, anti-precedent}`; NoSilentException listed as future Lean candidate at line 16 and line 148 ("named, not built. No candidate files yet; the lattice file IS their doctrinal home")
@@ -33,7 +37,7 @@ Inputs read:
 
 ## Readiness criteria
 
-For NoSilentException.lean to earn a Lean spike under YAGNI + name-early-build-never discipline, **all five** of the following must hold (composing [`method-note.md`](method-note.md) § "When a result may become a forcing case" with the substrate-doctrine gates):
+For the 2026-06 audit to assign NoSilentException.lean active-work priority under its then-current YAGNI rubric, **all five** of the following had to hold (composing [`method-note.md`](method-note.md) § "When a result may become a forcing case" with the substrate-doctrine checks). This was a prioritization test, not a formal-development gate:
 
 1. **Concrete specimen present.** A worked instance in the corpus where an exception tries to become precedent or escalation, with the discharge custody question load-bearing in the failure.
 2. **Prose treatment insufficient.** The specimen requires composition, type discipline, or formal-impossibility-proof altitude that prose alone cannot supply.
@@ -70,21 +74,23 @@ This is non-trivial corpus pressure on the territory.
 
 Five criteria. Five fails (or, more honestly, five "not-yet"s).
 
+Those failures support the dated **low-priority** verdict. They do not block a bounded Scratch formalization led by a coherent statement; the unresolved discriminator and bridge tax must simply remain explicit rather than being laundered into a stronger claim.
+
 ## Verdict
 
 > **NOT_READY.**
 
 Secondary: **NAMED LACUNA persists** — the anti-precedent + separation-of-custody distinction surfaced by attack-05 solo Survivor 2 remains a candidate sharpening, not a separately-named atom. This is the same status as 2026-06-05; the lacuna is named-but-deferred, *not silently assumed*. Therefore not MISSING_PRECONDITION (the gap is explicit), not DUPLICATE (the gap is real), not ALIAS-RISK (the vocabulary is consistent across the references), not FORCING_CASE_CANDIDATE (no specimen forces the distinction), not COUNTEREXAMPLE_CANDIDATE (no contradiction surfaced).
 
-NOT_READY is the cleanest classification: the territory is named, the doctrinal home is the lattice, and prose-altitude treatment is sufficient for every consumer the corpus currently has.
+NOT_READY is the cleanest classification of 2026-06 priority: the territory is named, the doctrinal home is the lattice, and prose-altitude treatment was sufficient for every consumer the corpus then had. It is not a “no Lean until a consumer arrives” rule.
 
-## What "would tip" the verdict to FORCING_CASE_CANDIDATE
+## What would tip the historical priority verdict to FORCING_CASE_CANDIDATE
 
 Recording the predicate so a future audit can re-check cleanly:
 
 > *NoSilentException.lean earns its forcing case when a single specimen exhibits all of: (a) a temporally-bounded bypass of a stated rule; (b) the bypass attempting to become precedent OR escalating to a different surface/actor/scope; (c) self-discharge of the anti-precedent obligation by the bypassing actor (no independent custody); (d) the specimen is consequential enough that a downstream consumer — paper section, Lean theorem dependency, or public claim — needs the impossibility-proof altitude; (e) prose treatment by NI / Mandamus / arms-control override-discipline / Cedar emergency-exit keeper / AAG clause #4 collectively fails to address the specimen.*
 
-The conjunction of (a)–(e) is the readiness predicate. Today none of (a)–(e) holds in isolation, let alone in conjunction.
+The conjunction of (a)–(e) was the forcing-case/priority predicate used by this audit. At filing time none of (a)–(e) held in isolation, let alone in conjunction. It is useful for deciding urgency and later promotion pressure, not for granting permission to formalize.
 
 ## What this pilot did NOT find
 
@@ -100,14 +106,14 @@ Per containment mode, explicit negative findings:
 
 One candidate surfaced; small, mechanical, navigability-only. **None landed.**
 
-1. **(Optional) Bridge-obligation-lattice line 148 → forward pointers.** The line currently reads: *"Future candidates NoSilentDelegation, NoSilentException, NoSilentProjection — named, not built. No candidate files yet; the lattice file IS their doctrinal home until a forcing case earns the build."* Could be augmented with a single bullet pointing at the readiness-predicate paragraph above (or this receipt) so the next reader who comes looking for the status finds the trail without having to re-derive it. **Recommend: hold by default.** The lattice is currently clean; adding a pointer per future-candidate creates maintenance burden without paying down current pain. Revisit only if a Pilot #15+ re-audit needs the same trail-following work.
+1. **(Optional) Bridge-obligation-lattice line 148 → forward pointers.** The line then read: *"Future candidates NoSilentDelegation, NoSilentException, NoSilentProjection — named, not built. No candidate files yet; the lattice file IS their doctrinal home until a forcing case earns the build."* The “earns the build” clause is superseded by the 2026-07-14 policy correction above. A forward pointer could still help the next reader find the dated priority assessment without re-deriving it. **Recommend: hold by default.** The lattice is currently clean; adding a pointer per future-candidate creates maintenance burden without paying down current pain. Revisit only if a Pilot #15+ re-audit needs the same trail-following work.
 
 ## Method-side observations
 
 Track A's value is *negative confirmation*: the instrument can approach a named-not-built future Lean spike with a structured readiness check and come back with "still not ready, here's the predicate that would tip it." That is:
 
-- Less ceremonial than a build authorization.
-- More legible than "we still haven't built it because nothing forced it."
+- More legible than an unstructured priority decision.
+- More legible than "we still haven't built it because it remained low priority."
 - Reusable: the readiness predicate above can be re-checked by any future audit without re-deriving the criteria.
 
 If this becomes a standing audit pattern, the method-note could grow a *Readiness audit* sibling section to the existing pilot patterns. NOT authorized in this pilot — flagging for future user consideration.
@@ -166,4 +172,4 @@ Next high-risk targets (named, not authorized):
 - **Track C — portability stress test** against a soft external corpus with no Lean — methodology probe; tests whether Cross-Altitude Novelty Audit retains discrimination outside this cave.
 - **LGVG family-designation reframe** — user-held.
 - **Labelwatch testimony-vs-enforcement × consequence-partition overlap** — NI gates-remaining item; flagged in pilots #13 footer.
-- **Re-audit predicate refresh** — if no forcing case emerges within ~30 days, re-check whether prose-altitude treatment is *still* sufficient OR whether ambient pressure from cumulative pilots has finally tipped one of the readiness criteria.
+- **Re-audit predicate refresh** — re-check whether prose-altitude treatment is *still* sufficient for current priorities OR whether ambient pressure from cumulative pilots has tipped one of the historical readiness criteria. This affects urgency, not permission to formalize.

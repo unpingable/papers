@@ -2,7 +2,9 @@
 
 **Status: CANDIDATE / NON-BINDING.** A doctrine note (a handle for review), filed in
 tooltheory 2026-06-19. Names a law, not a build. No CLI, no Lean family, no kernel —
-record now, implement only when a forcing consumer points at a real log. Custody:
+record now; formalize when the law yields a precise, non-vacuous witness obligation,
+even if no runtime consumer exists yet. Runtime implementation and promotion are
+separate decisions. Custody:
 tooltheory (the doctrine kitchen). Operator placed it here, not AG (`this is
 tooltheory, not ag`).
 
@@ -56,10 +58,11 @@ Instances 1–2 were filed AG-side this week; this note is the tooltheory home f
   claimdocs because the grammar smells similar (`cannot_testify` / UNKNOWN-poisons-PASS)
   is substrate contamination — the same fence claimdocs itself enforces. Shared
   grammar, different substrate.
-- **Not NQ core, not a kernel, not a build mandate.** No live forcing consumer points
-  at a decision log as of 2026-06-19.
+- **Not NQ core, not a kernel, not a build mandate.** No live consumer pointed at a
+  decision log as of 2026-06-19; that dated fact does not block a formal contract from
+  leading later implementation.
 
-## If/when built (parked until a forcing consumer)
+## Candidate formal and implementation shape
 
 - **`RelationReceipt`** is the artifact: subject = a relation between decision records;
   admitted_basis = comparator / policy-version / ordering / randomness / quota; it

@@ -110,29 +110,29 @@ The discipline is the same as `feedback-kernel-overlap-audit` in memory, in repo
 2. **Run seven-part mapping** against the kernel: *claim / evidence / standing / scope / precedence / consequence / receipt.*
 3. **Classify strain** at each point: *prose-only / implementation-level / forcing-case-pending / resist-the-primitive.*
 4. **Recommend smallest warranted artifact**: A (narrow patch) / B (breadcrumb or watchlist-count increment) / C (no artifact). Default toward smallest.
-5. **Update recurrence counts** for any open gap the audit instantiates a second/third specimen of. Do not promote on count < 3 unless the domains are structurally distinct.
+5. **Update recurrence counts** for any open gap the audit instantiates a second/third specimen of. Do not promote to doctrine/public claim on count < 3 unless the domains are structurally distinct. This count does not control whether a coherent claim or countermodel may be formalized in Scratch.
 
 **Consumer-check discipline (added 2026-05-19):**
 
 Consumer-checks must enumerate the **repo constellation** explicitly. Before claiming *"no current consumer,"* the audit must list checked repos (`agent_governor`, `nq`, `continuity`, `wlp`, `resonance`, `standing`, `custody`, `verifier`, `cadence`, `dossier`, `nq-witness`, plus any others currently in the constellation) and mark uninspected repos as *out-of-aperture*. Conversational salience is not evidence of absence. The 2026-05-19 metric-time-admissibility audit nearly recommended B (working note only) because its consumer-check defaulted to the conversationally-salient set (agent_gov, NQ, Wicket, papers, Lean) and missed Standing — which is a complete production-quality reference implementation of the exact gap being audited. The graybeard correction surfaced Standing; the audit-procedure step was where the aperture-bounded claim should have been caught.
 
-**Speculative-recurrence-gating vs. consumer-backed build-gating (added 2026-05-19):**
+**Speculative-recurrence vs. consumer-backed priority evidence (added 2026-05-19; policy corrected 2026-07-14):**
 
-The count gate (step 5 above) applies to *speculative* primitives — a candidate gap with N domain specimens but no concrete consumer in the repo constellation. A live consumer that already implements the structure changes the regime: a small axis-kernel may be authorized even when the recurrence count is below the primitive-promotion threshold. The discipline is the same (smallest-warranted-artifact, default toward smallest, scope-fence the build); what changes is which gate applies. *Build because a consumer needs it, not because three speculative specimens have stacked up.*
+The count gate (step 5 above) applies to doctrine/public promotion of *speculative* primitives — a candidate gap with N domain specimens but no concrete consumer in the repo constellation. A live consumer that already implements the structure supplies strong priority, instantiation, and possible promotion evidence even when recurrence is below the doctrine threshold. It does not grant permission to state or develop a bounded Scratch kernel, and its adoption does not by itself establish conformance. A coherent formal contract may lead implementation; conformance requires an explicit mapping plus runtime evidence or a refinement proof.
 
 | Situation | Rule |
 |---|---|
-| No live consumer, repeated structural fanout only | speculative recurrence-gate / candidate note |
-| Live consumer already implements the shape | small axis-kernel may be authorized |
+| No live consumer, repeated structural fanout only | candidate/doctrine-priority evidence; Scratch formalization still allowed |
+| Live consumer already implements the shape | strong instantiation and promotion evidence; verify the mapping before claiming conformance |
 | Grand metaphysical module name appears | spray bottle |
 
 **Operator rule:**
 
-> *Audits surface confirmation, strain, and maintenance drift. They do not authorize new modules by themselves. Modules require independent forcing cases — either three structurally-distinct domain specimens, or one live consumer in the repo constellation.*
+> *Audits surface confirmation, strain, and maintenance drift. They do not promote modules or mint doctrine by themselves. A coherent bounded module may be developed in Scratch before recurrence or a live consumer; three structurally-distinct specimens or a live mapped consumer remain strong evidence for doctrine/public promotion.*
 
 The procedure has been performed cleanly three times (2026-05-18 LLM-relay audit → README staleness + two prose residues; 2026-05-19 CVD seven-part mapping → one application-map patch + temporal-scope specimen-count increment; 2026-05-19 metric-time-admissibility audit → consumer-backed `Admissibility/Freshness.lean` build, after the consumer-check aperture failure was corrected). It has earned a five-line checklist plus two procedural-discipline addenda; it has not earned doctrine register or a Lean encoding of its own.
 
-Acceptable residues from a clean audit: README updates, application-map entries, watchlist-count increments, sentence-shaped crosswalks, and — when a live repo-constellation consumer is named — a small axis-kernel sibling. Not acceptable from an audit alone: a new paper dir, a new primitive name, a new methodology essay, or a Lean module without either three structurally-distinct specimens or a confirmed consumer.
+Acceptable residues from a clean audit: README updates, application-map entries, watchlist-count increments, sentence-shaped crosswalks, and a bounded Scratch axis-kernel when the formal claim is coherent. A live repo-constellation consumer can add priority and instantiation evidence. Not acceptable from an audit alone: public promotion, a new paper dir, a new primitive name, a new methodology essay, or a conformance claim inferred merely from citation/adoption.
 
 ---
 

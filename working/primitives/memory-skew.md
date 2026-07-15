@@ -94,19 +94,19 @@ Axes where the bidirectional split changes diagnosis. The kernel does *not* pin 
 - **Pre-emptive naming** — meta-doctrine about *when* to name an architectural surface. Not a state-comparison primitive.
 - **Numerical admissibility** — about score/rank/confidence × imply_magnitude/value/truth admissibility. Different axis: that classifies what a numerical artifact can claim; Memory Skew classifies the direction of mismatch between prior and observed claims on any axis.
 
-## Operational theorems (deferred, not authorized)
+## Candidate operational theorems
 
-Candidate bridge theorem, *not yet formalized and not yet authorized*:
+Candidate bridge theorem, not yet formalized:
 
 > Lagging may support correction of a claim, but it does not itself authorize mutation.
 
-This would compose AxisSkew with `Corrective` / `Authority` / `CorrectiveBoundary`. The composition is natural — `Corrective` already proves corrective transitions are authority-non-increasing — but writing the bridge before a live consumer needs it would be cosplay architecture. Held.
+This would compose AxisSkew with `Corrective` / `Authority` / `CorrectiveBoundary`. The composition is natural — `Corrective` already proves corrective transitions are authority-non-increasing. It may be developed before a live consumer exists once the bridge hypotheses are precise, the statement is non-vacuous, and overlap is checked; formalization may lead the later Standing or Governor use.
 
 A symmetric candidate for the leading direction:
 
 > Leading may support refusal of a binding, but it does not itself authorize forward mutation.
 
-Same deferral. Same reason.
+Same intrinsic admission test; no consumer prerequisite.
 
 ## Used by
 
@@ -121,7 +121,7 @@ The candidate becomes *working* (per primitives README promotion criteria) when 
 
 - **Leading-direction substrate instances.** Stale-binding is the worked lagging primitive across five papers. Are there equally well-worked leading-direction instances already in the corpus that the field notebook hasn't recognized as one family? Candidate scans: AWP §3.F vocabulary convergence (lexical leading); AGI capability-overclaim cases (capability leading); preemptive-naming surfaces (architectural leading, but meta-doctrine kind).
 - **Composition with stale-binding.** When a single binding exhibits both lagging *and* leading skew across two different axes (cache lagging on truth, prior leading on capability), does Memory Skew say anything composite, or is the right answer "two findings, two axes"?
-- **Operational theorem timing.** What forcing case would justify writing the *"lagging may support correction, not mutation"* bridge theorem? Probably a live consumer in `~/git/standing` or governor-side code that needs to distinguish corrective-from-stale vs forward-from-fresh.
+- **Operational theorem shape.** Which explicit bridge hypotheses make *"lagging may support correction, not mutation"* load-bearing rather than a restatement of `Corrective`? A later `~/git/standing` or Governor instantiation can test correspondence, but does not grant permission to prove it.
 - **Per-axis decidability.** The kernel requires `DecidableRel lt`. Some operator-facing axes (capability, completeness) may not have decidable orderings on a given substrate. Whether that forces a fallback `Skew.unknown` constructor or is properly a consumer-side problem is open.
 
 ## Cross-references

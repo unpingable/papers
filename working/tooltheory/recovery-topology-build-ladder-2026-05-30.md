@@ -2,6 +2,8 @@
 
 **Status:** Build ladder, not doctrine. Not a candidate note. Not a Lean target. Not a paper. Filed as the staged plan for returning to recovery-topology / `AdmissibleRecoveryPath` work after the [annex-probe queue](annex-probe-queue-2026-05-29.md)'s PL → CPI scope → Conductance → reachability-insufficiency scope cycle landed 2026-05-30.
 
+**Policy update (2026-07-14):** this dated ladder originally treated downstream consumers as build authorization. That condition is superseded. Formalization may lead implementation. The surviving brakes are intrinsic: coherent theorem shape, correct quantifiers, non-vacuity, overlap, proof, and explicit custody. Runtime cases remain correspondence and scenario tests. The proposed reachability-insufficiency theorem was audited separately and is currently held because its displayed form is invalid/trivial, not because no consumer asked.
+
 **Frame:** ladder, not task list. The danger this ladder is built to refuse: accidentally birthing a grand unified resilience ontology and then spending six weeks feeding it graph nouns.
 
 **Doctrine sources:**
@@ -71,9 +73,15 @@ That avoids confusing graph existence with recovery validity.
 
 **Delta from [reachability-insufficiency-candidate-2026-05-30.md](reachability-insufficiency-candidate-2026-05-30.md):** the existing scope statement uses a five-clause form with `ReachableCarrier` as one of the five. This ladder splits reachability out as substrate, leaving five admissibility clauses. When Artifact 1 is written, the predicate signature should be revisited to honor this split; the reachability-insufficiency scope statement's "open scope-statement question #2" (per-source vs per-pair) becomes easier with the substrate-separated form.
 
-## Step 2 — First Lean cut: reachability-insufficiency
+## Step 2 — Proposed reachability-insufficiency cut (held on theorem shape)
 
-This is the clean theorem-shaped residue.
+This was proposed as the clean theorem-shaped residue. The 2026-07-14
+extraction audit found that the displayed candidate does not yet earn a Lean
+artifact: one version concludes `True` and leaves its path/bridge hypotheses
+unused; failure of one carrier does not refute per-source recovery through
+another carrier; strengthening the premise to say every carrier fails makes the
+headline an immediate restatement of the supplied recovery-factorization
+hypothesis. The hold is truth/quantifier/nontriviality, not consumer absence.
 
 **Not:**
 
@@ -117,11 +125,11 @@ reachable_not_enough :
 
 The point is not brilliance. The point is making **false reachability** impossible to launder.
 
-**Gate:** licensed only after Artifact 1 stabilizes AND after the four open shape questions in [reachability-insufficiency-candidate-2026-05-30.md](reachability-insufficiency-candidate-2026-05-30.md) §"Open scope-statement questions" are answered. Specifically: the bridge-axiom-vs-hypothesis question (default: hypothesis form) and the per-source-vs-per-pair quantification question.
+**Formal admission test:** Artifact 1 must stabilize, the bridge-axiom-vs-hypothesis and per-source-vs-per-pair questions must be answered, and the resulting statement must add a nontrivial proposition rather than unfold its own recovery predicate. If no such delta remains, the correct disposition is prose/definition only.
 
-## Step 3 — Do not formalize lock/articulation yet
+## Step 3 — Do not formalize a graph tautology
 
-Lock/articulation is likely graph tautology unless a consumer forces the interpretation layer.
+Lock/articulation is graph tautology unless the admissibility interpretation adds a genuinely new proposition. That theorem-shape delta, not consumer pressure, decides whether there is formal residue.
 
 Don't mint:
 
@@ -139,7 +147,7 @@ B can alter admissibility interpretation.
 Therefore B is a synchronization lock, not merely an articulation point.
 ```
 
-That is more interesting, but probably belongs later, when `agent_gov` forces the governor-non-sovereignty hook. (See [annex-probe-queue](annex-probe-queue-2026-05-29.md) §"Fifth candidate (deferred): Governor non-sovereignty".)
+That is more interesting and may be formalized once `AdmissibleRecoveryPath` and the governor's interpretive power are stated without merely renaming articulation. `agent_gov` is a correspondence target, not permission to prove it. (See [annex-probe-queue](annex-probe-queue-2026-05-29.md) §"Fifth candidate (deferred): Governor non-sovereignty".)
 
 ## Step 4 — Treat typed capacity as the real missing atom
 
@@ -246,7 +254,7 @@ Expected verdict:
 governor_is_lock_candidate
 ```
 
-Not formalized until `agent_gov` needs it.
+Formalize only after the claim gains admissibility content beyond graph articulation; `agent_gov` may later test the mapping.
 
 ## Step 6 — Consumer mapping
 
@@ -349,12 +357,13 @@ Sections:
 
 ### Artifact 2 — Lean scratch annex
 
-Only after Artifact 1 stabilizes.
+Only after Artifact 1 stabilizes and the Step-2 quantifier/nontriviality defect
+is repaired.
 
 Possibly:
 
 ```text
-LeanProofs/Admissibility/RecoveryReachability.lean
+LeanProofs/Scratch/RecoveryReachability.lean
 ```
 
 Only if the scope is tiny. No graph algorithms. No topology cathedral. Just:
@@ -363,9 +372,11 @@ Only if the scope is tiny. No graph algorithms. No topology cathedral. Just:
 ReachableCarrier ≠ Recoverable
 ```
 
-The Step-2 theorem family above is the candidate content. The Conductance annex is the precedent for shape and preamble.
+The Step-2 theorem family above is source material, not currently admitted
+content. A repaired theorem must add more than definitional unfolding. The
+Conductance annex is the precedent for bounded scope and explicit custody.
 
-### Artifact 3 — gaps only if forced
+### Artifact 3 — gaps only when precisely evidenced
 
 Possible later:
 
@@ -375,7 +386,10 @@ CAPACITY_SUFFICIENT_BOUND_GAP
 RECOVERY_TOPOLOGY_LOCK_GAP
 ```
 
-Don't file all three just because they sound good. That's Concept Pokémon.
+Don't file all three just because they sound good. A gap needs an exact missing
+formal or runtime obligation. Formal gaps may be stated before their runtime
+consumers; correspondence gaps require a concrete mapping. That's how this
+avoids Concept Pokémon without reinstating consumer permission.
 
 ## Step 8 — The main test question
 
@@ -408,11 +422,11 @@ When returning:
 1. **Write the candidate note** around `AdmissibleRecoveryPath`.
 2. **Keep reachability separate** from the five admissibility clauses.
 3. **Add scenario probes** before more formalization.
-4. **Lean only the negative theorem first:** reachability does not imply recoverability.
-5. **Defer lock/articulation** until `agent_gov` forces it.
+4. **Repair the negative theorem before Lean:** the current per-carrier source shape is invalid/trivial; state the actual quantifiers or record that no distinct theorem remains.
+5. **Defer lock/articulation** until it has admissibility content beyond graph tautology, not until a consumer asks.
 6. **Track typed capacity** as the only likely new atom.
 7. **Map consumer obligations** for NQ, Nightshift, Standing, AG, Wicket.
-8. **Promote nothing** until a real consumer needs the predicate.
+8. **Promote nothing automatically:** Scratch, public import, paper claim, and runtime conformance are separate custody decisions.
 
 The big frame:
 
@@ -432,7 +446,7 @@ That's the thing to preserve. Everything else is furniture.
 ## Anti-goals (preserved from parent notes)
 
 - No graph-model Lean (per parent §Anti-goals).
-- No promotion without consumer pressure.
+- No promotion without theorem-scope, overlap, proof, and custody review. Runtime correspondence evidence may contribute but is not an admission token.
 - No sweep (per [annex-probe-queue](annex-probe-queue-2026-05-29.md) "shadow-public-surface basement governance" warning).
 - No numerics goblin (Step 4).
 - No Concept Pokémon (Step 7 Artifact 3).
@@ -441,7 +455,7 @@ That's the thing to preserve. Everything else is furniture.
 ## Provenance
 
 - **2026-05-30** (same day as PL build, CPI scope, Conductance build, reachability-insufficiency scope). Build ladder synthesized after operator approval of the queue's day-of landings and ChatGPT's read-back. The ChatGPT read named the build-ladder-not-task-list framing and produced sections 0–9 in close to filed form.
-- **Promotion gates between steps:** each step has its own gate. Step 1's clause definitions gate on Artifact 1 stabilizing. Step 2's Lean cut gates on Step 1 holding under prose review. Step 4 gates on a forcing case for typed-capacity vocabulary. Step 6 consumer mapping gates on each consumer asking. No step pre-licenses the next.
+- **Historical step gates, corrected 2026-07-14:** Step 1's clause definitions still depend on Artifact 1 becoming coherent. Step 2 depends on repairing the theorem's quantifiers and nontriviality. Typed-capacity work depends on a precise capacity proposition, not a forcing case. Consumer mapping can follow the formal object and does not authorize it. No step automatically promotes the next.
 
 ## Park state
 

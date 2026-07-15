@@ -3,7 +3,9 @@
 **Filed:** 2026-06-15. **Status:** doctrine note — **FROZEN scope correction after adversarial
 review.** The scope statement and the FENCE are load-bearing. The formal notes are guidance
 for *future* kernels. The candidate theorem surfaces are **name-early, UNRATIFIED — not
-authorized to build** until a forcing case earns each one.
+automatically promoted**. They may be formalized as soon as a precise, non-vacuous statement
+survives overlap and proof-control review; runtime consumers are later instantiations or
+promotion evidence, not blockers on theorem development.
 
 ## The correction (freeze this)
 
@@ -59,12 +61,13 @@ Surfaced by adversarial review of a draft that garbage-bagged everything into on
   must be *named, contestable, or refusable* — never an oracle that silently confers
   standing. A contested jurisdiction must be able to refuse token-local discharge.
 
-## Candidate theorem surfaces (UNRATIFIED — name-early, do not build yet)
+## Candidate theorem surfaces (UNRATIFIED — name-early, formalize deliberately)
 
 Each is a refusal, in the corpus's denote-and-refute style (the bad state is representable;
-the claim is refused). Filed so they stop getting rediscovered; **each needs its own
-forcing case before any Lean.** Classify a new one against [[anti-laundering-doctrine-map]]'s
-family table before filing a sibling.
+the claim is refused). Filed so they stop getting rediscovered; **each needs a precise model,
+a load-bearing non-vacuous theorem, overlap review, and proof controls before it can testify.**
+No runtime consumer is required to begin that formal work. Classify a new one against
+[[anti-laundering-doctrine-map]]'s family table before filing a sibling.
 
 1. **self-classification does not discharge classification authority** — an emitter naming
    its own `ClaimKind` does not make the classification authoritative.
@@ -130,9 +133,11 @@ valid; the *trajectory* reveals the farm.
 Disposition: still UNRATIFIED, still **Δt-layer** — do NOT fold into the synchronic readout
 proof (`NoFreeStandingReadout.lean`); the readout theorem says latent state needs authorized
 collapse, this says an authorized collapse can still be attacked by shaping the latent state's
-*history*. A Lean specimen earns construction when a trajectory detector consumes it
-(candidate consumer: nightshift / AG governor detector — [[project-nightshift-forcing-consumer]]).
-Until then, name-early.
+*history*. A Lean specimen may establish this contract before a trajectory detector consumes
+it (candidate later instantiations: nightshift / AG governor detector —
+[[project-nightshift-forcing-consumer]]). Citation by one of those consumers would identify
+the intended contract; correspondence would still require an explicit mapping and runtime
+evidence or refinement.
 
 ## Provenance
 

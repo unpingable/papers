@@ -3,27 +3,27 @@
 > **Status:** internal proof-obligation ledger.
 > Companion to [[kernel-to-body-map]] (dependency-ordered slice inventory) and [[calculus-2-exit-criteria]] (the six conditions for "body exists").
 
-## Per-slice proof pattern
+## Per-slice closure evidence
 
-Every slice follows the same five-step shape. Slice work that skips a step does not count toward an exit criterion.
+Every publicly closed slice eventually supplies the same five classes of evidence. This is a closure checklist, not a development order: a coherent theorem may be formalized before a consumer specimen exists and may lead the example or later implementation.
 
 1. **Negative model** — exhibit what 1.0 does not imply.
 2. **Minimal vocabulary** — add only the terms required to *state* the wound.
 3. **Bridge theorem** — prove the positive property under **explicit extra hypotheses**.
-4. **Consumer specimen** — `ExamplesTwo.lean` entry that exercises the theorem.
+4. **Instantiation specimen** — `ExamplesTwo.lean` entry that exercises the theorem. It tests the formal mapping; citation or adoption alone would not establish runtime conformance.
 5. **Non-claim update** — `WHAT-THE-LEAN-STACK-PROVES.md` says what still is not proven.
 
 The discipline keeps each addition paying rent. Less *and then we add modules*; more *each addition closes a specific wound and updates the public account of what is not proven*.
 
 ## Proof-obligations ledger
 
-| Frontier | Wound                                          | Counterexample file                | Bridge hypothesis                  | Positive theorem (target)                    | Consumer    |
+| Frontier | Wound                                          | Counterexample file                | Bridge hypothesis                  | Positive theorem (target)                    | Instantiation |
 | -------- | ---------------------------------------------- | ---------------------------------- | ---------------------------------- | -------------------------------------------- | ----------- |
 | Safety   | Authorized need not preserve value             | `AuthorizedNotSafe.lean`           | `SafetyEnv`                        | `authorized_safety_preserving_under_env`     | Example 8   |
 | Locality | Merge may leak exposure                        | `BadMerge.lean`                    | `MergeAdmissible`                  | `merge_admissible_necessary` (+ corollaries) | Example 9   |
 | Self-mod | Actor amends own binding rule                  | `SelfAmendmentTrap.lean`           | `Binds actor policy`               | `no_self_amendment_authorized_step`          | Example 10  |
 | Belief   | Authorized update leaves dependents incoherent | `BeliefRevisionContradiction.lean` | `Dependency + Revise` obligation   | `coherent_revision_under_dependency`         | Example 11  |
-| Axes     | Composed axes license stronger claim           | `AxisCompositionFailure.lean`      | cross-axis env                     | (named only when a consumer demands)         | Example 12  |
+| Axes     | Composed axes license stronger claim           | `AxisCompositionFailure.lean`      | cross-axis env                     | (name from the coherent scoped theorem)      | Example 12  |
 
 This table is how the body avoids becoming a mist machine. Each row is harder to fake than a paragraph. A frontier with no row is not closed.
 

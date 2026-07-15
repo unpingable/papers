@@ -4,6 +4,8 @@
 
 **Posture:** Construction-discipline output. The Lean spike names the contract; NQ runtime is expected to conform but conformance is not proved here. Conformance audit is queued as a separate next file.
 
+**Policy clarification (2026-07-14):** the Phase D criteria below govern public promotion and custody, not permission to formalize. The formal contract may lead runtime code. A forcing case or shipping blocker can affect priority and promotion evidence, but it is not required before a coherent theorem, countermodel, or specification is developed.
+
 ---
 
 ## Core sentence
@@ -117,7 +119,7 @@ It **does not open Phase D by itself.** All five Phase D promotion criteria from
 
 - Criterion 1 (composes between kernels): not satisfied — the chain is single-kernel.
 - Criterion 2 (new abstraction count): still within budget.
-- Criterion 3 (forcing case): still B — *potential consumer identified, forcing case pending*. NQ has the relation on the wire; no current shipping blocker requires the proof.
+- Criterion 3 (forcing case): still B as **promotion evidence** — *potential consumer identified, forcing case pending*. NQ has the relation on the wire; no current shipping blocker raises promotion priority. This criterion does not gate theorem development.
 - Criterion 4 (slogan-blast-radius): the keeper *"the intended suppression-cascade shape has a sound formal analogue"* passes; *"NQ's cascade is provably sound"* does NOT.
 - Criterion 5 (PL/UC stays as working notes): unchanged.
 

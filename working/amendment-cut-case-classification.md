@@ -45,11 +45,11 @@ classification. No new axis triggered.
    `revoked_value_never_authorized`. Same C-style structural closure.
 5. **Reduces?** Pattern reduces to standing-grant shape. Architecture does
    not — the structure isn't there yet.
-6. **Do not promote:** classified source/temporal, brake fires. The
-   architecture gap is filed as a side observation below; do NOT auto-
-   build the `ValueDerivation` structure under this case work. Wait for
-   a forcing case at the value altitude (a real amendment specimen that
-   needs the obligation cited).
+6. **Do not auto-promote:** classified source/temporal, so this case pass does
+   not by itself schedule or ratify `ValueDerivation`. The structural gap may
+   nevertheless be formalized before a runtime amendment specimen once its
+   model, non-vacuity controls, and overlap with the standing-grant shape are
+   explicit. Public promotion remains separate.
 
 ### Case #2 — retroactive legitimation (backward-reach)
 
@@ -134,8 +134,9 @@ classification. No new axis triggered.
    the env-replacement altitude.
 5. **Reduces?** Pattern reduces to (A1); architecture is unmounted at
    meta-altitude.
-6. **Do not promote:** brake fires. Architecture gap filed as a side
-   observation; do NOT build the env-change rule under this case work.
+6. **Do not auto-promote:** the case pass files the architecture gap but does
+   not choose the `EnvChangeRule` model. A bounded formal probe may make that
+   choice and lead later code; it does not need a runtime forcing case.
 
 ### Value location mutation
 
@@ -224,12 +225,11 @@ species that mirror the standing-grant gap C closed:
    meta-altitude analog of `revoked_standing_never_standing` — would
    discharge all four instantiations in one move. Not opened.
 
-**These gaps are filed, not opened.** Per the operator's hard rule, the
-case-work pass does not auto-promote either gap into a build. Each
-becomes a candidate ghost-strut closure if and when a forcing case
-demands it — the same path standing-grant followed (Alloy probe →
-codex flag → operator authorization → Lean obligation). Until then:
-named candidates, not work items.
+**These gaps are filed, not scheduled by this case pass.** Case classification
+does not auto-promote either gap, but formalization may open a bounded
+`ValueDerivation` or env-change probe on its own theorem merits before a
+consumer exists. The standing-grant history (Alloy probe → codex flag → Lean
+obligation) is useful provenance, not a required authorization sequence.
 
 The gaps are **structural homologs**, not new species. They confirm the
 substrate lint: every gap above is closable with boolean state predicates

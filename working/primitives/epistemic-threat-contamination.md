@@ -170,7 +170,7 @@ Until any of those land, the keeper stays in primitives, not in main doctrine.
   - **ChatGPT:** control-theory framing (switched-controller model with supervisory threat classifier), source stack (Staw 1981, Edmondson 1999, Steele & Aronson 1995, Penney 2016, Rogers Commission, NASA mode-awareness work), distinction between censorship and contamination, dual-condition (threat-sharpened vs threat-corrupted), Lean-probe assessment.
   - **user:** original primitive recognition, CrowdStrike A/B reading, human/institutional analogue, name candidates ("Threat-Contaminated Competence" / "Epistemic Threat Contamination"), keeper-line set.
   - **claude-code-papers:** this primitive entry, slot-in-constellation (P25 / Guardrail Capture / Witness Invariance Failure / Coherent Wrongness adjacencies), angle check at phase boundary, formal-status assessment.
-- Filed candidate / default-density per `feedback-note-density-subtypes.md`. Not rich-staging; not promoted. No Lean formalization staged — ChatGPT's note: *the claim is short enough to live in prose; Lean optional unless a forcing case asks for it.*
+- Filed candidate / default-density per `feedback-note-density-subtypes.md`. Not rich-staging; not promoted. No Lean formalization is staged because no precise, non-redundant theorem or countermodel has been selected. If one is selected with explicit model, overlap, and non-vacuity controls, formalization may lead any later runtime case.
 
 ## Sources (working stack — to cite when paper-promoting)
 

@@ -3,8 +3,9 @@
 **Status:** Candidate architecture invariant, 2026-06-03.
 NOT ratified doctrine. NOT a paper. NOT a Lean build task.
 NOT an AI-safety impossibility claim.
-**Discipline:** file-now-work-never. Capability inventory ≠ work
-commitment.
+**Discipline:** file now; formalization may lead once a theorem or model clears
+intrinsic scope, overlap, and non-vacuity review. Capability inventory is not an
+automatic work commitment, and runtime integration remains separate.
 
 ## 1. Abstract / keepers
 
@@ -254,9 +255,12 @@ Explicitly NOT claimed by this note:
   multiplicity/resource. The source/temporal species exists, with its
   own named architecture and its own discipline.
 
-## 11. Opening triggers
+## 11. Runtime triggers and formal posture
 
-This note becomes actionable only if a concrete consumer asks for it:
+The invariant may be formalized before any concrete consumer asks once validity,
+spendability, and non-duplication have a coherent model and a non-vacuous theorem.
+Formalization may lead code. The following make runtime integration actionable and
+provide instantiation/promotion evidence:
 
 - **AG:** an audit (per `GOV_GAP_VALIDITY_SPENDABILITY_SPLIT_001`)
   finds mixed validity/spendability state and needs the invariant to
@@ -271,7 +275,7 @@ This note becomes actionable only if a concrete consumer asks for it:
 - **Other implementation consumer:** any real system with a named
   non-duplication invariant requesting a specification substrate.
 
-Until one of those fires: parked.
+Until one of those fires, **runtime integration** is parked. Formal development is not: it may proceed from the coherent invariant and lead the eventual implementation.
 
 ## Cross-references
 

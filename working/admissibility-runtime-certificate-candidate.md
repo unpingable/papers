@@ -7,6 +7,8 @@ mechanics themselves live in the tech-tree note + the incoming codex work (not
 inspected). Provenance: Gemini's "five doors" enthusiasm, **corrected** by operator
 + web-Claude.
 
+**Policy correction (2026-07-14):** the formal contract leads the code. A coherent `Formula`, theorem, countermodel, or checker specification may be developed before certificate fields or runtime consumers exist. Runtime fields and executable code instantiate that contract; they are not permission to state it. The genuine implementation dependency remains: an executable checker needs a concrete schema to check. Citation or adoption identifies an intended contract but does not establish conformance; conformance requires an explicit mapping plus runtime evidence or a refinement proof. Scratch cannot testify for or pin production, and public promotion remains separate.
+
 ## The reframe (the whole thing in one line)
 
 > The runtime product is NOT "a sequent calculus." It is **a denial/authorization
@@ -173,8 +175,7 @@ Done (in `WitnessedResourceSequent.lean` scope-fence prose):
   (Hodas–Miller), persistent floor = `!`-zone / exponential (cite-not-rename —
   `floor` is established corpus vocabulary).
 
-**POCKETED TODO (operator wants to chew on these — do NOT lose the thread, do NOT
-act without his trigger):**
+**POCKETED TODO (historical operator priority — do not lose the thread):**
 1. **Rename the jewel** to name it load-bearing (validity-vs-executability), out of
    the no-contraction section — GATED on the non-Claude check above.
 2. **`WitnessedResourceSequent` SCRATCH→ANNEX promotion. — ✅ RESOLVED 2026-06-30**
@@ -300,9 +301,10 @@ representation is the laundering one.*
   `working/governance-kernel-scope-correction.md` — anti-laundering engine, not a
   legitimacy engine.)
 - **Cut-elim must preserve custody**, never "simplify" away spend/residue/refusal.
-- **Lean proves; runtime emits+checks.** The runtime gate is the **AG / NQ lane**
-  ([[feedback-ag-claude-drives-constellation]]), not the paper/Lean lane. This note
-  records the shape; building the gate is AG-Claude's.
+- **Lean establishes the contract; runtime emits+checks its mapped implementation.**
+  The formal layer may lead the code. Deployment remains the **AG / NQ lane**
+  ([[feedback-ag-claude-drives-constellation]]), which must supply the schema mapping,
+  runtime evidence, and production custody; citing the Lean result is not conformance.
 - The certificate "cannot smuggle authority" is the **runtime form of the
   conservation / no-free-X theorem** (no_free_lift, the seam money theorem
   `global_not_implied_by_local`). Same invariant, now an emittable artifact.
@@ -353,7 +355,7 @@ Future automation will abuse a field literally named `weakening` (names are litt
 demons with IDE support; = [[feedback-enum-regression-tell]] energy). The name must
 carry the frame, or it lies.
 
-## Layer order from here (supersedes the earlier sketch)
+## Runtime implementation order from here (not formalization permission)
 
 ```
 1. strictness theorem    ordinary reachable ≠ resource executable
@@ -362,11 +364,14 @@ carry the frame, or it lies.
 4. checker               finite validation, NO proof search
 5. explainer             deterministic English
 6. fuzz corpus           malformed receipts / laundering attempts
-7. time / freshness      ONLY after token accounting is stable
-8. cut / process         ONLY after certificates exist
+7. runtime time/freshness integration after token accounting is stable
+8. cut / process         separate formal lane; currently lower priority than the certificate path
 ```
-Time is deferred to 7 (it's just another way to make the goblin radioactive before
-the box exists); cut/process to 8.
+Runtime freshness integration is deferred to 7 (it's just another way to make the
+goblin radioactive before the box exists). A coherent freshness `Formula` and its
+theorems may be developed earlier once the resource assumptions are explicit, and
+may lead the field/schema design. Cut/process is a priority choice, not something
+that waits for runtime certificates as permission.
 
 ## Certificate v0 fields (after strictness + frame land)
 
@@ -396,13 +401,16 @@ NOT `nq = fact factory / calculus = truth engine / AG = proof-believer` — *tha
 how the goblin gets a clipboard.* `nq` emitting receipts-not-facts is the same
 no-silent-conversion-of-moss-into-evidence / `cannot_testify` / *located ≠
 authorized* doctrine the corpus already owns ([[project-governor-doctrine]],
-[[feedback-outofscope-no-jurisdiction-over-moss]]). Build nothing on this wiring
-from the paper/Lean lane — the gate is **AG/NQ's**.
+[[feedback-outofscope-no-jurisdiction-over-moss]]). The paper/Lean lane may establish
+the contract first and lead the **AG/NQ** implementation. Deployment ownership,
+runtime evidence, and conformance remain in the AG/NQ lane.
 
-## Witness decay (step 7 design — NAMED, NOT built)
+## Witness decay (runtime step 7; formal contract may lead)
 
-Freshness is layer-order **step 7** (deferred until token accounting is stable —
-i.e. after checker/explainer/fuzz). Captured as design only.
+Freshness is runtime-integration **step 7**, deferred until token accounting is
+stable in the checker/explainer/fuzz path. That runtime priority does not block a
+bounded `Fresh` formula, countermodel, or theorem from being developed first and
+shaping the implementation.
 
 **Decay revokes SPENDABILITY, not truth.** A derived sequent must NOT "look
 different" because evidence is old. Old evidence stays historical evidence; it just
@@ -422,9 +430,10 @@ freshness token present-and-valid to spend (derive claim from observation only i
 `Fresh` present; cross bridge only if bridge token AND freshness token). Stale →
 the same `bridgeSpendDenied` shape: `reason: "freshness_token_expired"` with
 `observed_at` / `checked_at` / `max_age_ms`. **SCOPE-FENCE NOTE:** adding `Fresh` to
-the `Formula` inductive is a deliberate scope expansion (the file fences "no
-freshness" today) requiring its own forcing case — NOT an autocomplete constructor
-add ([[feedback-enum-regression-tell]]).
+the `Formula` inductive is a deliberate scope expansion, not an autocomplete
+constructor add ([[feedback-enum-regression-tell]]). It requires an explicit model,
+theorem shape, overlap check, and proof/axiom audit; it does not require a runtime
+forcing case.
 
 **Invariant — freshness must NOT be ambient.** Bad: *now is global, so all
 recent-ish observations are usable.* Good: *this derivation carries a bounded
@@ -448,11 +457,14 @@ action warrant cannot be spent.* He built the Geiger counter (accounting) before
 admitting radiation exists (the logic) — i.e. he built the part that **prevents time
 from becoming authority** first. That IS the corpus thesis applied to time.
 
-**Design ordering (lightest first):** do freshness as **certificate fields FIRST**
-(`observed_at / checked_at / max_age_ms / age_ms / freshness_token_present`) — NO
-calculus change, no `Formula` touch. Promote to `Formula.fresh observation_id
-max_age` / `Formula.expired …` only if a forcing case demands calculus-level
-enforcement (the scope-fence expansion). Named theorem target, same shape as
+**Contract-led ordering:** state the bounded freshness contract at the formal layer
+first when its model is coherent — for example `Formula.fresh observation_id
+max_age` plus the non-conversion theorem below — and let that contract determine
+the runtime fields (`observed_at / checked_at / max_age_ms / age_ms /
+freshness_token_present`). A fields-only spike may still explore serialization, but
+it cannot testify for or constrain the theorem merely because code exists. No
+forcing case is required to develop the formal contract; runtime adoption requires
+an explicit correspondence mapping. Named theorem target, same shape as
 strictness/bridge-validity:
 ```
 freshness_validity_does_not_grant_spend
@@ -540,10 +552,14 @@ happen to live. The same refusal certificate serves all four:
   "resource_executable": false, "missing_warrant": "...",
   "residue_preserved": true, "decision": "refused" }
 ```
-Portable kernel = one thesis + one object. NOT authorization to build any of the
-four; horizon record only.
+Portable kernel = one thesis + one object. The four domains remain horizon examples,
+not public-promotion or deployment claims. Coherent bounded formal contracts may be
+explored in Scratch; no citation or domain analogy establishes implementation
+conformance.
 
 ## What this note is NOT
 - Not the calculus itself (that's [[maximal-calculus-tech-tree-candidate]] + codex).
-- Not authorization to build the certificate, checker, or gate.
-- Not a runtime-lane claim — the gate is AG/NQ's to build when forced.
+- Not evidence that a certificate, checker, or gate is promoted or conformant merely
+  because its contract compiles.
+- Not a runtime deployment claim. The formal contract may lead the AG/NQ gate; AG/NQ
+  still owns implementation mapping, runtime evidence, and production effects.

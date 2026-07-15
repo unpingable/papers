@@ -137,15 +137,15 @@ So three-time is not a contradiction of Path C — it's a sharpening of Path C's
 The three-time decomposition does NOT force a Lean change. Specifically:
 
 - The formal kernel stays at phase-time (`ConsolidationDenial`) and metric-time (`Freshness`), each in its own module. The decomposition explains *why* these are separate axes rather than redundant time concerns.
-- Operator-time stays in consumer-side tooling (NS / NQ / Wicket). It does NOT migrate into the formal layer.
-- If the decomposition becomes load-bearing for a future Lean theorem (e.g., a cross-time cascade that needs to distinguish phase-from-metric for a soundness proof), that would force the Path C disposition revisit per the pre-commitment. Until then: useful framing, not formal substrate.
+- Operator-time stays in consumer-side tooling (NS / NQ / Wicket) for the current Path C design. A separate formal model may represent it if a precise theorem needs the distinction; that does not silently widen Path C.
+- If the decomposition becomes load-bearing for a future Lean theorem (e.g., a cross-time cascade that needs to distinguish phase-from-metric for a soundness proof), file a distinct model and revisit Path C only for integration or promotion. The theorem may lead the runtime implementation.
 
 ## Brakes
 
 - **Do not** collapse three-time into a single time dimension in any formal model. The separation is what gives the structure its safety properties.
-- **Do not** promote three-time to a Lean kernel axis without a forcing case. The three axes already exist implicitly in `Freshness` (metric) and `ConsolidationDenial` (phase); operator-time stays consumer-side.
+- **Do not** promote three-time to a public Lean kernel axis merely because the decomposition is rhetorically neat. A checked Scratch model may proceed when a precise, non-redundant theorem needs all three axes; public promotion remains a separate custody and overlap decision.
 - **Do not** treat three-time as a *unified theory of time* — it's a decomposition that explains why three distinct concerns recur, not a meta-framework that supersedes them.
-- **Do not** add metadata to refusal cascades for time-tagging. That would be the temporal cross-kernel composition Path C explicitly refuses.
+- **Do not** add time-tagging metadata to the existing Path C refusal cascade. A separate temporal model is the honest formal route if a theorem needs it.
 
 ## Keepers
 
@@ -176,6 +176,6 @@ The three-time decomposition does NOT force a Lean change. Specifically:
 
 ## Disposition
 
-Working note, not promoted to primitive. Promotion gate: at least one forcing case where a Lean theorem or NS/NQ runtime would be measurably wrong without the three-axis decomposition explicit. Until then: doctrine substrate for understanding why `Freshness` and `ConsolidationDenial` are distinct kernels rather than redundant time concerns, and why operator-time lives consumer-side rather than kernel-side.
+Working note, not promoted to primitive. A precise theorem may be developed before a runtime case; primitive or public-kernel promotion separately needs evidence that the explicit three-axis decomposition is load-bearing, plus overlap, proof-scope, and custody review. Until then: doctrine substrate for understanding why `Freshness` and `ConsolidationDenial` are distinct kernels rather than redundant time concerns, and why operator-time lives consumer-side in the current design.
 
 > **The decomposition explains the corpus's existing temporal structure. It does not propose new structure.**

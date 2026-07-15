@@ -4,8 +4,9 @@
 is NOT re-derived here; it is already held by [`vector-mining/2026-06-05-attack-04-freshness-vs-standing.md`](vector-mining/2026-06-05-attack-04-freshness-vs-standing.md)
 and [[project-admissibility-decay-family]]. This note records what that prior work does NOT
 contain. The candidate theorem (`NoFreeStandingReadout`) and the regress are **name-early,
-UNRATIFIED, NOT authorized to build** until the kernel-overlap audit below clears and a
-forcing case earns it.
+UNRATIFIED**. Formal work may proceed once the kernel-overlap audit below resolves its
+identity and the theorem has a precise, non-vacuous model with proof controls; no runtime
+forcing case is required. Public promotion remains a separate custody decision.
 
 ## What is already held (do not re-derive)
 

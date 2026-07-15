@@ -116,16 +116,16 @@ A witness saying *"I cannot testify to claim K over interval T"* does not assert
 
 This is the NQ-shaped form. The Lean refusal kernel is the structurally-similar but layer-distinct form: a concrete countermodel where X holds and Y fails, breaking the inference *X therefore Y*.
 
-## What flows through the seam (when forcing case appears)
+## What can flow through the seam
 
-Candidate bridge — not yet built, not authorized to build:
+Candidate bridge — not yet built or scheduled. The formal contract may be developed before a runtime target exists; the runtime receipt and enforcement pieces require their own concrete schemas and correspondence work:
 
 1. **Lean refusal kernel** (e.g. `ConsolidationDenial`) — formalizes that *fluency does not witness settlement*.
 2. **Witness refusal testimony** — a runtime witness emits `cannot_testify` for claim K over scope/time S because conditions invoked in the formal kernel obtain (system fluent but no settlement passes).
 3. **NQ / preflight** — derives DENY (or REQUIRES_REVALIDATION / AMBIGUOUS / CANNOT_BIND) for any downstream claim that cited the now-inadmissible basis.
 4. **Governor / Wicket** — refuses to mint authority or execute action requiring the denied basis. Receipt-bearing.
 
-None of this is built. The seam note exists to keep the layers distinct *before* anything is built, so that when forcing case arrives, the right object lands at the right layer.
+None of this composite bridge is built. The seam note exists to keep the layers distinct so the formal object, runtime receipt, and enforcement rule land at the right layers in whichever order the investigation establishes them.
 
 ### Logical correction — how the kernel plugs into runtime (DeepSeek's mis-rule, ChatGPT's repair)
 
@@ -166,7 +166,7 @@ A future fresh-context model will be very tempted to write the simpler "if fluen
 
 The Lean refusal kernel is the cleanest possible cut: *invalid witness move = blocked.* Pass / fail. That binary survives because the kernel is a formal countermodel — its only job is to break one inference.
 
-The runtime side cannot afford that simplicity. *"Pass / fail"* collapses too many distinct non-pass states. Parking the multi-axis observation here so that, if/when the runtime side earns a forcing case, the axes don't have to be re-derived.
+The runtime side cannot afford that simplicity. *"Pass / fail"* collapses too many distinct non-pass states. Parking the multi-axis observation here so that a later formal model or concrete runtime integration does not have to re-derive the axes.
 
 **The keeper that survives the multi-axis observation:**
 
@@ -210,7 +210,7 @@ DENY_FOR_BINDING_USE
 HARD_DENY
 ```
 
-The enum is illustrative. The real algebra is the *tuple*, not the verdict; the verdict is a projection of the tuple under policy. Do not commit to the enum until forcing case forces a verdict shape.
+The enum is illustrative. The real algebra is the *tuple*, not the verdict; the verdict is a projection of the tuple under policy. Do not commit a runtime API to the enum until a concrete policy projection determines its shape. A bounded formal model may explore the tuple first.
 
 **Cross-axis observations to preserve:**
 - Axes 1, 5, 6, 10 are operational; axes 2, 8, 9 are graph/lineage; axis 7 is governance. Mixing them in one verdict type collapses dimensions.
@@ -231,11 +231,11 @@ Two witnesses disagreeing usually produces:
 ## Non-promotion guard
 
 - Do NOT call the runtime object a "refusal kernel." That name belongs to the Lean annex pattern.
-- Do NOT build `RefusalReceipt` (or analogous) as a standalone type yet. No consumer has demanded one.
+- Do NOT ship `RefusalReceipt` (or analogous) as a standalone runtime type yet: no concrete policy projection or integration target fixes its semantics. That is an implementation/promotion constraint, not a ban on formalizing the contract first.
 - Do NOT add a Lean kernel for the runtime side. The Lean side blocks formal inferences; the runtime side blocks operational basis-use and properly lives across multiple tools.
 - Do NOT treat the witness emitting refusal as making a claim about *reality*. The witness makes a claim about *its own standing to testify*.
 
-## Promotion gate
+## Runtime filing and promotion gate
 
 A runtime "refusal receipt" / "admissibility lockout" / similar earns a name and a filing when:
 
@@ -243,7 +243,7 @@ A runtime "refusal receipt" / "admissibility lockout" / similar earns a name and
 2. The consumer cannot use existing primitives (Governor denial verdicts, NQ preflight outcomes, agent_gov authority gates, etc.) to express the shape — i.e. the shape is genuinely missing.
 3. The shape is sharp enough to encode at the type level (libwitness shape addition, NQ verdict refinement, Governor receipt-schema extension).
 
-Until then: this is a seam note, not a build target.
+Until then: this is a seam note, not a runtime build target. Formal theorem work remains independently admissible on its model, theorem-shape, overlap, and proof merits.
 
 ## Cross-references
 

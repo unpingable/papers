@@ -23,8 +23,8 @@ The diversity that matters is **orthogonality + latency**: orthogonal sensors ro
 - `homogeneous_replication_preserves_kernel` — already proven in `Paper25EpistemicBorderControl.lean` as `ker_replicateRows_eq_ker`; the predicate-name pattern is the keeper
 - `collective_observability_necessary_not_sufficient` — sufficiency part is open
 
-## Promotion gate
+## Simulation and promotion posture
 
-Heterogeneous-agent simulation is the natural promotion target if a forcing case shows up — e.g., a downstream tool finds itself wanting to aggregate testimony across heterogeneous witnesses and needs the formal condition. Sim spec lives in `lean-candidates.md`. Currently the P25 §8 paragraph is sufficient and this note is enough.
+Heterogeneous-agent simulation is a natural validation target once the comparison question and measurement model are sharp enough. A downstream aggregation tool can provide a useful instantiation, but the formal condition may be developed first and lead the simulation or runtime design. The sim spec lives in `lean-candidates.md`. Currently the P25 §8 paragraph and existing kernel theorem cover the selected scope; that is a prioritization judgment, not a consumer gate.
 
-If sim earns its keep, the bridge artifact between P24 (witness inclusion) and P25 (target substitution) becomes paper-shaped — but only on forcing case, not just on curiosity.
+If a simulation produces discriminating evidence, the bridge artifact between P24 (witness inclusion) and P25 (target substitution) may become paper-shaped. Paper promotion remains evidence-gated; Scratch formalization does not wait for that promotion case.

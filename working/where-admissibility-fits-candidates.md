@@ -23,9 +23,9 @@ Many are just named so they stop haunting the operator.
 ### Lean-checker shadow for Wicket
 - **Register:** Wicket / formal verification
 - **Why it matters:** kernel small enough (~1.4k LOC) to Lean-check; two implementations of one doctrine says more than "we wrote it down"
-- **Why not now:** no forcing case; Lean cluster (Authority/StateTransition/Derivation/Execution/Corrective) still settling
+- **Why not now:** prioritization plus overlap risk while the Lean cluster (Authority/StateTransition/Derivation/Execution/Corrective) is still settling; no forcing case is required for a coherent checker specification or theorem
 - **Natural owner:** AG floor + claude-code-papers (Lean side)
-- **Revisit when:** Lean cluster stabilizes, or a Wicket-side issue surfaces that the shadow would catch
+- **Revisit when:** the checker contract and overlap boundary are precise enough to investigate; a Wicket-side issue may raise priority or supply correspondence evidence
 
 ### WASM component for Wicket
 - **Register:** Wicket / deployment shape
@@ -65,9 +65,9 @@ Many are just named so they stop haunting the operator.
 ### Aggregate-WIF Lean staging
 - **Register:** Lean / formal staging
 - **Why it matters:** three target theorems already named in the WIF-composition probe — Lemma 1 foundational, Lemma 3/4 counterexamples
-- **Why not now:** no forcing case or paper home
+- **Why not now:** prioritization only; the candidate still needs a bounded model and overlap/non-vacuity review. Neither a forcing case nor a paper home is required—Lean may sharpen the claim and lead the paper or later code.
 - **Natural owner:** claude-code-papers (Lean side)
-- **Revisit when:** paper draft needs the formalization, or counterexample becomes strategically useful
+- **Revisit when:** the formal question is ready, a paper draft needs it, or the counterexample becomes strategically useful
 
 ---
 
@@ -76,7 +76,7 @@ Many are just named so they stop haunting the operator.
 ### Eval admissibility layer
 - **Register:** cross-sibling / new
 - **Why it matters:** "the eval passed" treated as authority; evals are witness systems with contamination basis, regime, aggregator $D_A$. Whole paper/product wound.
-- **Why not now:** owner ambiguous; probably wants paper before code home becomes legible
+- **Why not now:** owner and operational scope are ambiguous. A coherent formal contract may make the eventual code home legible before a paper or implementation exists.
 - **Natural owner:** TBD — NQ extension, Wicket adapter, or new project
 - **Revisit when:** the LLM self-consistency paper below lands
 
@@ -158,7 +158,7 @@ Doors named, then closed. If a forcing case ever appears, the closure is a posit
 
 Look at this list again when:
 
-- Lean-checker shadow earns a forcing case (would unlock conformance-suite framing)
+- Lean-checker shadow has a coherent contract and explicit mapping boundary (would make conformance-suite framing concrete; a runtime case may raise priority)
 - A specific outage or ML safety thread creates a forcing case for the distributed-systems or LLM self-consistency papers
 - NQ has bandwidth for the WIF-composition vocabulary lift
 - An external implementer asks "where do I start" — push the conformance-suite framing

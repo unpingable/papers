@@ -2,7 +2,10 @@
 
 > **Status:** internal roadmap / body map.
 > Not a 2.0 commitment. Not an implementation queue. Not a public-surface promise.
-> Each slice requires its own forcing case before code.
+> Each slice requires a coherent, non-vacuous formal question and its own intrinsic review.
+> A runtime consumer is not a prerequisite for formal work; formalization may establish the
+> contract first and lead later code. Public-surface promotion remains a separate custody
+> decision and may use consumer evidence.
 > The 2.0 body is allowed to remain partially unbuilt. This map names dependency order, not destiny.
 
 Companion documents:
@@ -33,13 +36,13 @@ graph TD
     K --> CX3["SelfAmendmentTrap<br/>(wrapper module specimen)"]
     CX3 --> F3["Frontier 3 — Non-self-modification<br/>wrapper-first, no StateTransition mutation"]
 
-    F1 --> CX4["BeliefRevisionContradiction<br/>(later, only if forced)"]
+    F1 --> CX4["BeliefRevisionContradiction<br/>(when the formal question is ready)"]
     CX4 --> F2["Frontier 2 — Belief coherence"]
     F2 --> F5["Frontier 5 — reserved"]
-    F1 --> F4["Frontier 4 — Drive/control<br/>(paper-frontier first, no Lean)"]
+    F1 --> F4["Frontier 4 — Drive/control<br/>(claim first; formalization may lead code)"]
     F3 --> F4
 
-    K --> CX5["AxisCompositionFailure<br/>(only if a consumer demands)"]
+    K --> CX5["AxisCompositionFailure<br/>(when a precise composition claim warrants it)"]
     CX5 --> ANNEX["Annex disposition<br/>(versioning) + cross-axis<br/>composition (theorem work, separate)"]
 
     F1 --> BODY["Calculus 2.0 — body<br/>(all six exit criteria met)"]
@@ -91,8 +94,8 @@ Reuse: `Corrective.RecoveryEnv` is the model — a bundled-obligation structure 
 1. **`BadMerge.lean`** — counterexample. Construct `lb₁`, `lb₂`, `lbₘ` and exhibit a `ComponentReach` from `⟨P|Q, initialConfig⟩` that violates `NoInternalExternalExposure lbₘ.partition` when `MergeAdmissible.left_sound` fails. Until this lands, `MergeAdmissible` could be vacuously satisfiable and the aperture means nothing.
 2. **Necessity theorem** — `merge_admissible_necessary`: necessity *for the named exposure-safety property under the current `LocalBoundary` model*. Not global necessity, not all process composition, not the laws of physics wearing Pi-calculus pajamas. Builds on the counterexample.
 3. **Three+ bad-case corollaries** — boundary collision, authority widening, projection laundering (the easiest three to instantiate first; containment inversion and ambient authority leak come later). Each is a specific violation of `MergeAdmissible`. Currently paper-shaped in `papers/working/models/boundary-calculus/notes/locality-and-merge.md`; the work is to Lean-shape them.
-4. **Restriction (ν)** — *only if a downstream consumer forces it.* Hiding changes the action surface and would force a separate `LocalBoundaryHiding.lean` brick. Default: deferred.
-5. **Determinism + confluence** for `ComponentStep` — *only when a downstream calculus theorem (refinement, trace equivalence) forces it.* Default: deferred.
+4. **Restriction (ν)** — open when a precise hiding claim needs it. Hiding changes the action surface and would require a separate `LocalBoundaryHiding.lean` brick. A runtime consumer may supply an instantiation, but is not the authorization to formalize. Default: deferred.
+5. **Determinism + confluence** for `ComponentStep` — open when a downstream formal theorem (refinement, trace equivalence) actually needs it. Default: deferred.
 
 Once items 1–3 land, `LocalBoundary.lean` is eligible to be wired into `LeanProofs.lean` and out of the experimental ghetto. That is the move that would earn a compositional / process-calculus claim, which 1.0 explicitly does not make.
 
@@ -108,7 +111,7 @@ Most theorem-shaped of the frontiers, deliberately deferred per dependency order
 - `SelfAmendmentTrap.lean` (counterexample first) — actor uses authorized machinery to mutate its own binding rule.
 - Bridge theorem: `no_self_amendment_authorized_step` under the wrapper.
 
-Only if a later consumer forces the shape back into the core kernel does `StateTransition.lean` get touched. Default: it does not.
+Touch `StateTransition.lean` only after the wrapper establishes that the shape belongs in the core and the promotion review accepts the compatibility cost. A later consumer may strengthen that case, but the wrapper formalization may lead it. Default: the core does not change.
 
 ### Slice D — Belief coherence (Frontier 2)
 
@@ -128,17 +131,17 @@ These are two different kinds of work and the plan keeps them separate:
 | ----------- | ---------- |
 | **Promote** | `RecoveryMargin`, `ClosureEligibility`, `PublicReceiptRefinement` — recovery is currently scope-fenced out of 1.0; a body that claims recovery should name it. |
 | **Keep annex / amputate** | `CrossBoundary*` family — either commit to the projection-discipline pattern as load-bearing or label as specimens. |
-| **Defer** | everything else, until forced. |
+| **Defer** | everything else, until an intrinsic formal question or separate promotion case warrants it. |
 
-**E.2 — Cross-axis composition (theorem work, but only on demand).** `FiatAdmissibility`, `NumericalAdmissibility`, and `WitnessInvariance` each explicitly defer composition lemmas. The work to bridge them is real, but:
+**E.2 — Cross-axis composition (theorem work from a precise claim).** `FiatAdmissibility`, `NumericalAdmissibility`, and `WitnessInvariance` each explicitly defer composition lemmas. The work to bridge them is real, but:
 
 - **Do not** create `Axes.lean` as an aesthetic aggregator. Premature symmetry is the square root of the thing.
-- **Do** create the first cross-axis lemma only when a specific consumer needs one. The forcing case will name itself.
+- **Do** create the first cross-axis lemma when a specific, non-vacuous composition claim names the missing bridge. A consumer can test an instantiation or support promotion; it is not the permission slip for theorem work.
 - Land `AxisCompositionFailure.lean` (counterexample) first if and when the work starts.
 
 ### Slice F — Drive/control (Frontier 4)
 
-Paper-frontier first per existing doctrine. Lean treatment is downstream of finding the right primitive in prose. No file work proposed here. Do not let Lean become a wood chipper for half-shaped primitives.
+Claim-frontier first: identify a coherent primitive rather than formalizing a slogan. Prose and Lean may then iterate, and Lean may expose the right statement before any runtime code exists. No file work is proposed by this roadmap yet because the primitive is still half-shaped, not because a consumer is absent.
 
 ## Files in scope across the whole body (cumulative, not Phase 1)
 
@@ -154,10 +157,10 @@ New (Slices A–D), in the order each becomes eligible:
 - `LeanProofs/Admissibility/SelfAmendmentTrap.lean`
 - `LeanProofs/Admissibility/BeliefRevisionContradiction.lean`
 - `LeanProofs/Admissibility/BeliefCoherence.lean`
-- `LeanProofs/Admissibility/AxisCompositionFailure.lean` *(only if forced)*
+- `LeanProofs/Admissibility/AxisCompositionFailure.lean` *(when a precise composition question opens)*
 - `LeanProofs/Admissibility/ExamplesTwo.lean` (grows with each landing)
 
-Modified (only when forced):
+Modified only after the corresponding slice and promotion review warrant it:
 
 - `LeanProofs/Admissibility/LocalBoundary.lean` — remove EXPERIMENTAL status when Slice B items 1–3 land; wire into `LeanProofs.lean` root.
 - `LeanProofs.lean` — wire new modules in as each lands.

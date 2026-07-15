@@ -20,7 +20,7 @@ The hypothesis: **prior art has answers we haven't asked**. Specifically, the ex
 
 - **Not boiling the ocean.** Bounded spike. Pick a slice, scan, triage, report.
 - **Not authorization to file everything.** The triage framework IS the brake.
-- **Not a replacement for forcing-case discipline.** When prior art points at a Lean-relevant theorem, the existing Phase C/D gates still apply.
+- **Not a replacement for formal discipline.** When prior art points at a Lean-relevant theorem, coherent statement, semantics, overlap, proof, and non-vacuity checks govern development; Phase D remains a separate public-promotion review.
 - **Not an open scope for "find all the things."** Each scan slice has explicit start and stop conditions.
 - **Not academic literature review.** Triage results are operational — bucket each find by what it does for the framework, not by citation completeness.
 
@@ -31,8 +31,8 @@ When the spike fires and surfaces a prior-art pattern, sort it into exactly one 
 | Bucket | Meaning | Action |
 |---|---|---|
 | **A. Already covered** | Existing kernel, working note, or memory entry handles this pattern. | One-line cross-ref noting the prior-art match. No new filing. |
-| **B. Adjacent to existing** | Incremental extension of existing substrate; bounded cost; brakes survive. | Annex working note or docstring update; possibly a small Lean fixture under construction-discipline gate. |
-| **C. Genuinely new structural axis** | Doesn't fit any existing slot; would need its own working note or memory entry. | New working note with explicit non-claims and forcing-case gates. Possibly a new primitive candidate. |
+| **B. Adjacent to existing** | Incremental extension of existing substrate; bounded cost; brakes survive. | Annex working note or docstring update; possibly a small Lean fixture after intrinsic theorem/scope review. |
+| **C. Genuinely new structural axis** | Doesn't fit any existing slot; would need its own working note or memory entry. | New working note with explicit non-claims and model/theorem, overlap, and non-vacuity gates. Possibly a new primitive candidate. |
 | **D. Out of scope / reject** | Doesn't fit the discipline; explicit non-claim; the framework should NOT absorb this. | Brief rejection note (one sentence) recording WHY this is rejected — so future audits don't re-derive it. |
 | **E. Forcing case for revisit** | Would force a Path C disposition revisit, a Public Phase D criterion change, or other doctrinal shift. | Open a separate audit; this is NOT just an annex-side filing. |
 
@@ -127,7 +127,7 @@ Length per session: 1-3 pages of triage report. Bounded.
 - **Do not** treat prior-art as authority. The discipline is *what does this teach us about the framework*, not *what does the literature mandate*.
 - **Do not** import vocabulary wholesale. The framework's vocabulary (refusal-propagation, three-time, Path C, etc.) has been earned by construction-discipline. Prior-art terms get translated, not adopted.
 - **Do not** let the spike become an academic literature review. Each finding has an operational consequence (one of five buckets); if a finding doesn't fit a bucket, it's noise and gets discarded.
-- **Do not** chase forcing cases. The spike is *discovery*; forcing cases come from real consumer needs, not from prior-art reading.
+- **Do not** manufacture runtime demand. The spike is *discovery*; formal work may lead from a coherent result, while genuine consumer cases remain correspondence and priority evidence.
 - **Do not** spawn new gates without naming them as gates. If a finding wants a new working-note category, name it explicitly as a category-creation move, not as a silent expansion.
 
 ## Forcing case for execution
@@ -197,6 +197,6 @@ This plan composes with the existing Phase C/D framework:
 
 ## Disposition
 
-Plan filed. No execution authorized today. Forcing case for first execution: operator authorization with a specific slice named. Triage framework ready. Brakes in place. The framework can absorb findings without overrunning the existing Phase C/D discipline.
+Plan filed. No scan execution was authorized at filing. First execution is an operator-scoped research action with a specific slice named; that action-authorization rule is separate from permission to formalize any coherent result the scan later exposes. Triage framework ready. Brakes in place. The framework can absorb findings without overrunning intrinsic formal checks or public Phase D review.
 
 > **Pinned. Not executed. The plan is the substrate.**

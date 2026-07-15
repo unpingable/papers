@@ -6,7 +6,7 @@ The methodology is named here so other surfaces can link to it instead of rebuil
 
 ## What this is
 
-The Δt framework is a growing preprint series (see [Zenodo](https://zenodo.org/communities/delta-t-framework)) plus working notes, on systemic failure, temporal mismatch, authority collapse, and recovery under degraded conditions. The papers develop the theory in prose; a [companion Lean repo](https://github.com/unpingable/lean) audits selected claims by translating them into definitions and theorem statements and checking what survives.
+The Δt framework is a growing preprint series (see [Zenodo](https://zenodo.org/communities/delta-t-framework)) plus working notes, on systemic failure, temporal mismatch, authority collapse, and recovery under degraded conditions. The papers develop much of the theory in prose; a [companion Lean repo](https://github.com/unpingable/lean) also develops, audits, and sharpens selected claims by translating them into definitions and theorem statements and checking what survives. Where an operational implementation exists or is planned, the formal contract may precede and lead that code.
 
 This is independent open-source work by James Beck, an independent researcher with an SRE / operator background, writing primarily for two audiences: people who care about systemic failure modes in technical and organizational systems, and people building AI agents who need a vocabulary for *governance* rather than *capability*. The tone is operational rather than disciplinary: the framework is written to be used, audited, and revised.
 
@@ -45,11 +45,21 @@ This shape only makes sense once the audit register is read as part of the metho
 The work uses **a deliberate split between conceptual architecture and formal verification**:
 
 - *Prose* is good at discovery — finding the right shape of a question, hearing recurrences across domains, recognizing primitives that haven't been named yet. Most of the framework's distinctive contributions arrive in prose first.
-- *Formal verification* is good at audit — distinguishing structural claims from slogans that were useful for discovery but too loose to carry formal weight. Lean is downstream of the conceptual work; it does not generate the ideas, it stress-tests them.
+- *Formal verification* is good at audit and investigation — distinguishing structural claims from slogans that were useful for discovery but too loose to carry formal weight, and sometimes exposing the usable architecture before an implementation exists. Lean does not replace conceptual discovery, but it is not required to wait downstream of runtime code. A formal contract may lead implementation.
 
 Both halves are load-bearing. Skipping the formal pass leaves prose theory free to drift; skipping the conceptual pass produces formalization without architectural purpose. The ratio matters: most papers in the series are prose-first with selected formalization; the Lean repo carries the audit substrate, not the theory itself.
 
 When the formal pass catches something the prose obscured — a hypothesis the prose was implicitly assuming, a boundary case where the doctrine breaks, two distinct concepts being collapsed under one name — that's evidence the methodology is working. Several primitives in `working/primitives/` and several preprint revisions trace directly to formal-pass findings.
+
+## Formalization, promotion, and conformance
+
+These are three separate decisions:
+
+1. **Formal development** may begin when there is a coherent, non-redundant theorem or type boundary to investigate. It does not require a shipping consumer, a forcing case, or prior runtime adoption. The formalization is allowed to lead the code.
+2. **Promotion** decides whether a proved artifact joins a public or compatibility-bearing surface. Proof scope, overlap, anti-vacuity controls, naming, custody, and release stability govern that decision. Runtime use may supply useful correspondence evidence, but it does not grant permission to develop the theorem.
+3. **Runtime conformance** is a claim about an implementation. It requires an explicit mapping from runtime behavior to the relevant definitions and theorems, plus implementation evidence or a refinement argument. Merely citing a theorem identifies an intended contract; citation alone is not evidence that the implementation conforms to it.
+
+This separation preserves the anti-cathedral controls without turning YAGNI into a veto over mathematics. A proposed formal artifact can still be refused because its statement is vacuous, duplicates existing substrate, smuggles an unjustified bridge, or lacks stable semantics. It cannot be refused merely because no consumer has arrived yet.
 
 ## Honest compounding
 

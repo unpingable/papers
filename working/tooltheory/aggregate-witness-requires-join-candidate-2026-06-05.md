@@ -4,7 +4,7 @@
 
 **Filed:** 2026-06-05. **Status:** scratch-checked 2026-06-06 as a bounded compile probe. **Lean source at `~/git/lean/LeanProofs/Scratch/AggregateWitnessRequiresJoin.lean`** (133 lines including category-2 prelude with the four bounded probe questions recorded). Not imported by `LeanProofs.lean`; not part of any 1.0 surface. Direct `lake env lean` check clean on first elaboration — no parens-bug-shaped surprise, dependent indexing on `(b : WitnessBundle) (reqs : Requirement → Prop)` elaborates as intended, `Option (JoinWitness b reqs)` preserves index visibility through `match`. The type design holds. Workflow-layer sibling to [`log-only-proves-emission-candidate-2026-06-05.md`](log-only-proves-emission-candidate-2026-06-05.md). Layer tag: **`NoSilentJoin`** (per anti-laundering doctrine map's layer map).
 
-**Lean custody:** `promoted-to: ~/git/lean/LeanProofs/Scratch/AggregateWitnessRequiresJoin.lean` (scratch-checked). Markdown Lean block below is the explanatory mirror of the authoritative scratch source. See [`lean-custody-ledger-2026-06-06.md`](lean-custody-ledger-2026-06-06.md) § Checked Scratch.
+**Lean custody:** `extracted-to: ~/git/lean/LeanProofs/Scratch/AggregateWitnessRequiresJoin.lean` (scratch-checked). Markdown Lean block below is the explanatory mirror of the authoritative scratch source. See [`lean-custody-ledger-2026-06-06.md`](lean-custody-ledger-2026-06-06.md) § Checked Scratch.
 
 ## Claim
 
@@ -27,7 +27,7 @@ Atomic epistemology refuses single illicit promotions. Workflow epistemology ref
 
 Atomic `NoLift` kernels refuse single promotions (`Receipt ↛ Authority`, `Log ↛ Truth`) — the corpus has these scattered across the `Admissibility/` family. The `NoSilentJoin` workflow kernel refuses a different shape: distributed satisfaction across multiple partial witnesses being treated as unified admissibility without a join. The hops can all be locally valid; the partial witnesses can each satisfy their slice; the join is the missing mediating object. The lie is not in any one sentence — it's in the unspoken assumption that someone else verified the composition.
 
-## Why candidate, not built
+## Why candidate, and what the Scratch build settled
 
 The 2026-06-05 workflow-layer extension audit found the existing corpus formalizes composition at the *calculus / federation* altitude (`no-unifier-without-laundering` doctrine; `Composition.lean`; the control-flow-laundering meta-pattern in the anti-laundering doctrine map) but does *not* formalize the specific organizational-process shape: a *bundle* of partial witnesses, each from a different source, each satisfying one slice of the requirement set, being passed off as a single admissible witness for the composite claim. This is the compliance-audit / promotion-packet / AI-eval-safety-bundle / incident-response-postmortem pattern. The kernel that formalizes it is missing.
 
@@ -35,9 +35,9 @@ The 2026-06-05 workflow-layer extension audit found the existing corpus formaliz
 
 Per [`../anti-laundering-doctrine-map.md`](../anti-laundering-doctrine-map.md): would sharpen the **composition / unification** row from "local refusal composes ⇒ unified judgment form" (current atomic-altitude doctrine) to "distributed partial witnesses ⇒ unified admissible witness" (workflow-altitude formal instance). Sits one altitude above the family rows; under the master frame's `NoSilentJoin` layer tag.
 
-## Forcing case (absent)
+## Runtime correspondence targets
 
-No downstream consumer currently needs this. Build trigger would be one of:
+The checked Scratch formalization already exists and did not wait for a downstream consumer. Useful correspondence and later implementation targets include:
 
 - A compliance-audit context asking the corpus to formalize what makes a multi-source evidence bundle inadmissible.
 - An AI-eval safety-bundle context where partial witnesses (benchmark scores, calibration metrics, rater agreement, red-team results) are passed off as a unified safety claim.
@@ -45,9 +45,9 @@ No downstream consumer currently needs this. Build trigger would be one of:
 - An incident-response / SRE consumer needing "dashboards-green + logs-normal + alerts-quiet + on-call-staffed ≠ system-healthy" formalized.
 - An external pitch needing one concrete artifact at the workflow / organizational-process layer.
 
-Until one of these fires, the kernel stays named-not-built per name-early discipline.
+Those targets may test the abstraction and supply conformance evidence. They are not permission to formalize. The file remains Scratch because public import and doctrine promotion are separate custody decisions.
 
-## Sketch shape (NOT a build spec — name-early only)
+## Source sketch shape (extracted; Scratch file is authoritative)
 
 `WitnessBundle` carries a list of `PartialWitness` (each with a per-source satisfaction predicate over `Requirement`). `JoinWitness b reqs` is **indexed** to the exact bundle and requirement set, carrying *two* fields:
 
@@ -56,7 +56,7 @@ Until one of these fires, the kernel stays named-not-built per name-early discip
 
 Both fields together close the gap that either alone leaves open. Core API-boundary refusal: `admissibleAsUnified b reqs (join : JoinWitness b reqs)` — the missing join is **not a bad value**, it is **an uninhabited argument position**. The corresponding negative theorem is one line; the indexed type structure is the argument.
 
-The sketch above is candidate shape only. The actual build, if it happens, will be designed against existing kernel conventions and reviewed for overlap with `Composition.lean` and the `CrossBoundary*` family.
+The Markdown block records the source shape. The checked Scratch file is authoritative. Any later promotion must still review overlap with `Composition.lean` and the `CrossBoundary*` family.
 
 ## The two-field discipline
 
@@ -64,9 +64,9 @@ The sketch above is candidate shape only. The actual build, if it happens, will 
 
 ## Non-claims
 
-- **Not a build spec.** The sketch is candidate shape; the actual module would be designed against existing kernel conventions.
-- **Not authorization to build.** Name-early per [[feedback-name-early]]; build only on forcing case.
-- **Not a position** on whether this should ever join the Lean tree.
+- **Not the authoritative Lean source.** The Markdown sketch is an explanatory mirror; the checked Scratch file owns the formal details.
+- **Not automatic promotion.** Scratch formalization is not an import, public-surface, doctrine, or conformance receipt.
+- **Not a position** on whether this should ever join the imported Lean surface.
 - **Not part of any `NoSilentJoin/` parallel directory.** The 2026-06-04 audit refused a parallel `NoLift/` module surface; the same refusal extends to `NoSilentJoin/` and `NoChainMagic/`. These are *layer tags* in the doctrine map, NOT a module/directory hierarchy. If this candidate is ever built, it joins `LeanProofs/Admissibility/` under its existing namespace, not under a new roof.
 - **Not a replacement for atomic-layer kernels.** Atomic `NoLift` kernels are a finite-ish enumeration of single illicit promotions; this workflow `NoSilentJoin` kernel sits one altitude above and applies to *bundles* of valid atomic witnesses.
 
@@ -148,4 +148,4 @@ end Admissibility
 
 ## Provenance
 
-Surfaced in multi-model exchange 2026-06-05 (ChatGPT extending the workflow-layer-not-more-Pokémon idea → DeepSeek sketching workflow kernels with code → ChatGPT correcting the unindexed-join trap → DeepSeek refining with the two-field discipline → ChatGPT promoting the meta-rule to *"indexed or it didn't happen"* and naming *"existential laundry"* → Claude Code kernel-overlap audit confirming workflow-layer kernel as genuine gap, sibling to `LogOnlyProvesEmission`). Field-guide name *Frankenstein Witness* attached 2026-06-05 in the field-guide-vs-Lean naming-split round. Side-quest yield per the 2026-06-05 workflow-layer closing ledger: *named, unbuilt, high-value workflow-layer gap.*
+Surfaced in multi-model exchange 2026-06-05 (ChatGPT extending the workflow-layer-not-more-Pokémon idea → DeepSeek sketching workflow kernels with code → ChatGPT correcting the unindexed-join trap → DeepSeek refining with the two-field discipline → ChatGPT promoting the meta-rule to *"indexed or it didn't happen"* and naming *"existential laundry"* → Claude Code kernel-overlap audit confirming workflow-layer kernel as genuine gap, sibling to `LogOnlyProvesEmission`). Field-guide name *Frankenstein Witness* attached 2026-06-05 in the field-guide-vs-Lean naming-split round; the fragment was extracted to checked Scratch on 2026-06-06. The old closing-ledger phrase *"named, unbuilt"* is historical and superseded.

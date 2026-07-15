@@ -2,7 +2,7 @@
 
 **Filed:** 2026-06-05. **Status:** human-facing surface for the master-frame discipline. Holds workplace-demon examples that are NOT candidate kernels in their own right — each one maps to an existing corpus kernel, an existing project memory entry, or a candidate kernel filed elsewhere. The field guide makes the discipline operational in conversation; the doctrine map carries the formal layer.
 
-**Lean custody:** field-guide example only; doctrine, not candidate kernel. Lean sketches below (`NoObjectionRequiresSolicitation`, `ReportedStatusRequiresConversionWitness`) are candidate shapes for *parent* kernels (signal-authority and master-frame binding rule respectively), NOT new candidates. See [`lean-custody-ledger-2026-06-06.md`](lean-custody-ledger-2026-06-06.md) § Field-guide examples.
+**Lean custody (updated 2026-07-14):** field-guide doctrine, not a new kernel family. The two Markdown sketches below are historical source shapes and have been superseded by checked, formalization-leading Scratch modules: `~/git/lean/LeanProofs/Scratch/SignalAuthority.lean` and `~/git/lean/LeanProofs/Scratch/StatusConversionBinding.lean`. Neither is imported by `LeanProofs.lean`; Scratch contact does not ratify the field guide or testify to a runtime system.
 
 ## Why this file exists
 
@@ -36,7 +36,7 @@ The schema operationalizes the master frame: every demon is *the same kernel-sha
 - **Refusal:** Silence cannot discharge no-objection without solicitation.
 - **Meeting incantation:** *"Did you ask?"*
 
-**Maps to:** [[project-signal-authority]] (null-laundering / missing ACK ≠ NACK; Lean deferred). The Lean sketch in the 2026-06-05 handoff is plausibly the shape `SignalAuthority.lean` would take if/when the forcing case earns it. **Not a new candidate** — `NoObjectionRequiresSolicitation` is a sub-name of Signal Authority's existing scope.
+**Maps to:** [[project-signal-authority]] (null-laundering / missing ACK ≠ NACK). A repaired version of the handoff shape now lives in checked Scratch as `SignalAuthority.lean`; it binds the exact group, decision, and numeric response window, requires solicitation and complete-ledger coverage, and includes positive and collapse specimens. **Not a new candidate** — `NoObjectionRequiresSolicitation` is a sub-name of Signal Authority's existing scope.
 
 ---
 
@@ -50,7 +50,7 @@ The schema operationalizes the master frame: every demon is *the same kernel-sha
 - **Refusal:** Inconsistent status cannot be reported externally without a conversion witness.
 - **Meeting incantation:** *"What color is it internally?"*
 
-**Maps to:** The master frame's conversion-witness binding rule (`anti-laundering-doctrine-map.md` § The master frame) plus existing `GreenIsNotCoverage` keeper + `ClosureEligibility.lean` (partial vs total) + `RecoveryMargin.lean`. The pattern is real but governed by the existing binding rule for conversion witnesses. **Not a new candidate** unless a forcing case earns it; promote to candidate file if a downstream consumer needs it formalized as a separate kernel.
+**Maps to:** The master frame's conversion-witness binding rule (`anti-laundering-doctrine-map.md` § The master frame) plus existing `GreenIsNotCoverage` keeper + `ClosureEligibility.lean` (partial vs total) + `RecoveryMargin.lean`. A repaired version now lives in checked Scratch as `StatusConversionBinding.lean`, with exact source/target/report/time indices and externally checked issuer standing, scope, and conversion permission. The pattern remains an instance of the existing binding rule, not a new doctrine family.
 
 ---
 
@@ -106,7 +106,7 @@ The schema operationalizes the master frame: every demon is *the same kernel-sha
 - **Refusal:** Legacy status cannot discharge waiver without an explicit waiver record.
 - **Meeting incantation:** *"Where's the waiver?"*
 
-**Maps to:** Related to ChatGPT's `TemporaryWaiversDoNotBecomePolicy` candidate from the workflow-layer round (named but not filed) and to [[project-commitment-standing-decay]] (rhetorical continuity vs operational revocation — the legacy framing is the same metabolism pattern). **Field-guide entry**; could be promoted to a sub-candidate of `AggregateWitnessRequiresJoin` if a forcing case earns it.
+**Maps to:** Related to ChatGPT's `TemporaryWaiversDoNotBecomePolicy` candidate from the workflow-layer round (named but not filed) and to [[project-commitment-standing-decay]] (rhetorical continuity vs operational revocation — the legacy framing is the same metabolism pattern). **Field-guide entry**; a separate formal artifact would require a distinct theorem shape and overlap audit, not a forcing case.
 
 ---
 
@@ -124,11 +124,11 @@ The schema operationalizes the master frame: every demon is *the same kernel-sha
 
 ---
 
-## Lean sketches (per the 2026-06-05 Lean handoff)
+## Historical Lean source sketches (superseded by checked Scratch)
 
-The Lean handoff included sketches for two of the field-guide entries above (NoObjection / ReportedStatus). They are preserved here as *candidate shapes* for the parent kernels they map to, NOT as new candidate files. Hand-reviewed for compile-readiness; NOT in any import surface.
+The Lean handoff included sketches for two of the field-guide entries above (NoObjection / ReportedStatus). They are preserved here for provenance, NOT as authoritative code or new candidate files. Formal contact exposed real defects in both: the no-objection sketch treated an empty objection list as enough without solicitation coverage, window closure, or ledger completeness; the status sketch accepted any `some witness` while leaving its fields inert. The checked Scratch modules named above repair those defects and are authoritative.
 
-### NoObjectionRequiresSolicitation (candidate shape for SignalAuthority.lean)
+### NoObjectionRequiresSolicitation (historical source shape)
 
 ```lean
 namespace Admissibility
@@ -137,8 +137,8 @@ namespace Admissibility
 Field-guide name: Silence-as-Consent
 Parent kernel: [[project-signal-authority]]
 
-This is a candidate SHAPE for SignalAuthority.lean if/when the existing
-Signal Authority project earns its Lean build. Not a separate kernel.
+Historical source shape for SignalAuthority.lean. Superseded by the checked
+Scratch module; not a separate kernel and not a runtime-conformance claim.
 
 Doctrine:
 Silence cannot discharge no-objection without solicitation.
@@ -187,7 +187,7 @@ theorem silence_cannot_discharge_no_objection
 end Admissibility
 ```
 
-### ReportedStatusRequiresConversionWitness (candidate shape under master-frame binding rule)
+### ReportedStatusRequiresConversionWitness (historical source shape)
 
 ```lean
 namespace Admissibility
@@ -197,9 +197,9 @@ Field-guide name: Internal/External Status Mismatch
 Parent kernel: master-frame conversion-witness binding rule
               (anti-laundering-doctrine-map.md § The master frame)
 
-This is a candidate SHAPE illustrating the binding-rule discipline applied
-to internal-vs-external status reporting. Not a separate kernel unless a
-forcing case earns it.
+Historical source shape illustrating the binding-rule discipline applied
+to internal-vs-external status reporting. Superseded by the checked Scratch
+module; not a separate kernel.
 
 Doctrine:
 An inconsistent (internal, external) status pair cannot be admissible
@@ -263,7 +263,7 @@ end Admissibility
 Per the 2026-06-04 / 2026-06-05 audits:
 
 - **Do not** build `LeanProofs/Admissibility/NoLift/`, `NoSilentJoin/`, or `NoChainMagic/` directories. These are doctrine-map *layer tags*, not module hierarchies.
-- **Do not** create a candidate Lean file for any field-guide entry above unless a downstream consumer mechanically needs the distinction.
+- **Do not** create one Lean file per field-guide demon. Formalize only a coherent, non-duplicative proposition under its parent kernel; a downstream consumer is neither necessary nor sufficient.
 - **Do not** rename a field-guide demon into a separate kernel from its parent. The Frankenstein Witness ↔ `AggregateWitnessRequiresJoin` split is *one object, two surfaces* — not two candidates.
 - **Do** use the schema as the in-meeting / in-postmortem operational format. The discipline lives in the seven-line shape, not in the Lean.
 

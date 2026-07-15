@@ -45,7 +45,7 @@ of substrate rush rungs 2–5 — each is a separate minting decision
 | Prior-art map (representation buckets; *prior art represents, refusal kernels forbid conversions*) | `working/tooltheory/admissibility-related-work-map.md` | working note |
 | Spec skeleton (thesis, scope, canonical JSON, core objects, artifacts, obstruction codes, trace model, conformance, OTel relationship; JSON schemas; 1 permit + 10 refusal corpus) | `~/git/rrp-notes/openadmissibility-skeleton.zip` | skeleton, unminted |
 | Reference gate prototype | `~/git/rrp` (local only) | prototype; validation green 2026-07-09 |
-| Formal specimen laws (ten UNRATIFIED-CANDIDATE specimens incl. `RRPProfileSpecimen`, `ScopedCertification`, `TemporalBasis`) | `~/git/lean/LeanProofs/Admissibility/`, crosswalks in `~/git/lean/docs/` | v9-prepped; specimens do not testify for runtime compliance until cited |
+| Formal specimen laws (ten UNRATIFIED-CANDIDATE specimens incl. `RRPProfileSpecimen`, `ScopedCertification`, `TemporalBasis`) | `~/git/lean/LeanProofs/Admissibility/`, crosswalks in `~/git/lean/docs/` | v9-prepped; specimens do not testify for runtime compliance. Citation names an intended contract; conformance requires an explicit mapping plus runtime evidence or refinement |
 
 ## Discipline
 

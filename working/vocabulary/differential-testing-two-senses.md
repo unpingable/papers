@@ -24,7 +24,7 @@ Both produce comparison tables; both consume randomized inputs. The semantic con
 
 **What "differential" refers to:** The *difference between Lean output and Rust output* on the same input.
 
-**Status in the corpus:** Named as the methodological template for the future BoundaryTransit witness-substrate bridge. Explicitly fenced: *"the harness is not built. Do not promote."* (WCM § 7 guardrail #5). Level 4 work, gated on downstream consumer + earned forcing case.
+**Status in the corpus:** Named as the methodological template for the future BoundaryTransit witness-substrate bridge. Explicitly fenced: *"the harness is not built. Do not promote."* (WCM § 7 guardrail #5). Level 4 conformance work needs a concrete runtime target, an explicit formal-to-runtime mapping, and generated behavioral evidence. That target-dependence does not gate development of the formal contract, and citation alone would not establish conformance.
 
 ## Sense (b) — Vector-mining coverage differential
 

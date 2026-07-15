@@ -166,13 +166,15 @@ quarantined contrast). Promoting to a standalone *LinCalc* would add:
 - Renaming the artifact out of the authority domain
   (`Admissibility/ContractionHinge` → `Resource/LinCalc` or similar)
 
-This work is **NOT opened by this note.** Capability inventory ≠ work
-commitment.
+This note does not automatically schedule that work. Capability inventory ≠ work
+commitment. A coherent LinCalc model, theorem, or countermodel may nevertheless be
+developed before a runtime consumer exists, and may lead the implementation.
 
-## 7. Opening triggers (concrete, per consumer)
+## 7. Runtime integration and priority signals
 
-The register opens to active work *only* when one of the following
-concrete consumer triggers fires:
+The following concrete consumers would make runtime integration actionable and
+would supply priority, instantiation, or promotion evidence. They are not permission
+to begin formal work:
 
 - **Governor:** an actual budget/sequence/idempotency policy needs
   static checking that LinCalc would provide. Implementer asks for
@@ -197,17 +199,17 @@ concrete consumer triggers fires:
   not yet constitute an "implementer asks for the specification
   substrate" — it's gap-level recognition of the invariant, with
   audit targets (override management, scope grants, quorum, Neff /
-  sybil accounting, dispatcher leases). LinCalc remains **parked**
-  pending AG audit findings; full open of this trigger still requires
-  a concrete specification-substrate ask, not just a gap spec citing
-  the pattern as candidate. See
+  sybil accounting, dispatcher leases). Runtime integration remains **parked**
+  pending AG audit findings; a formal LinCalc probe may proceed independently
+  when its fragment, soundness claim, and non-vacuity controls are precise. See
   [`validity-spendability-split.md`](validity-spendability-split.md)
   for the architecture-altitude framing.
 - Wicket, NQ, Deployment safety, Independent forcing case — no
   triggers fired.
 
-Until a full trigger fires: parked. No `LinCalc.lean`. No paper. No
-DOI cycle. Just this note + the architecture-altitude sibling.
+Until a full signal fires: runtime integration, paper promotion, and a DOI cycle
+remain parked. A checked Scratch `LinCalc.lean` is not public promotion and does not
+wait for one of these signals.
 
 ## 8. Cross-references
 

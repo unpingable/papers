@@ -27,15 +27,21 @@ The constitutional layer is bounded by:
 
 Per the calculus's own NoMovingGoalposts and ReachableCure discipline, *the deferral itself must be a typed receipt*, not fog. This file is that receipt.
 
-## Reopening conditions
+## Dependency and priority conditions
 
-This deferral reopens to active work when **any one** of these is met:
+Formal kernel work depends on condition 1: the operational primitives being amended
+must be stable enough to model. Conditions 2 and 3 can raise priority or sharpen the
+model, but are not permission to formalize:
 
 1. **Operational liveness layer stabilizes.** `refusals-need-receipts.md` primitives have a Lean implementation, the four corrections have settled, and the sprint manifest's first four theorems build green. *(Concrete trigger: `Mandamus.lean` § Lean-spike #1 + § Lean-spike #2 both elaborate.)*
 2. **Forcing case for amendment governance surfaces.** A real-world matter is identified where a rule change retroactively altered in-flight discharge conditions and the operational layer cannot refuse it without the constitutional layer's machinery.
 3. **External pressure from the legal-academic neighborhood.** Administrative-law scholarship surfaces a sharper formulation of governed amendment that maps cleanly onto the calculus's existing primitives. (Suggested watch: rulemaking-procedure literature, fair-notice jurisprudence, and the deemed-approval / constructive-grant statutory tradition.)
 
-Until any of these fires, this Frontier remains deferred. The calculus does not pretend the layer doesn't exist; it produces a typed deferral receipt naming what's deferred, why, and how it reopens.
+Until the operational dependency stabilizes, the constitutional kernel remains
+deferred on intrinsic model grounds. After that, a precise, non-vacuous amendment
+model may be formalized before any real-world incident or academic prompt and may
+lead the later implementation. The calculus does not pretend the layer doesn't
+exist; it records what is deferred and why.
 
 ## What this deferral does NOT cover
 
