@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.17727144  
 **Zenodo Record:** https://zenodo.org/records/17849241
 
+**Reader's guide:** [Plain-language summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 Hierarchical systems with mismatched timescales fail in predictable ways. Paper 1 established the spectral stability condition ρ(M) < 1; Paper 2 derived the kinetic phase boundaries that produce metastability when temporal mismatch Δt exceeds critical thresholds. This paper completes the trilogy by answering: What can we actually do about it?

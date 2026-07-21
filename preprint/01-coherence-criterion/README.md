@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.17726789  
 **Zenodo Record:** https://zenodo.org/records/17726790
 
+**Reader's guide:** [Plain-language summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 The Coherence Criterion proposes a unified mathematical framework for system stability in hierarchical systems operating across multiple temporal scales (Δt). System viability depends on maintaining bounded temporal divergence between coupled layers, formalized via spectral analysis of coupled Markov processes. The stability condition is ρ(M) < 1, where ρ is the spectral radius of the coupling matrix M. Violation of this criterion leads to Rigidity Runaway (λ → +1) and Acceleration Runaway (λ → −1), representing cross-domain failure modes. The formulation applies across autonomous systems, learning architectures, institutions, and financial markets, demonstrating structural correspondence with shared bifurcation geometry.

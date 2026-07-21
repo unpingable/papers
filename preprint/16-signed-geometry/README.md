@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.18717619
 **Zenodo Record:** https://zenodo.org/records/18717619
 
+**Plain-language companion:** [Read the reader-oriented summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 The first fifteen papers in the Δt framework treat temporal mismatch as monotonically harmful: larger Δt produces more shear, more fragility, more collapse. This paper identifies a missing sign. Δt separation is not a monotone hazard; it is a baseline whose effect is signed by correlator properties, yielding three regimes: shear, leverage, and capture. The same temporal separation that produces destructive shear under weak coupling produces constructive leverage under strong coupling — higher epistemic resolution through structured disagreement across timescales. The critical variables are the system baseline B (timescale separation) and correlator quality **K** = (throughput T, fidelity F, authority A, cost budget C), which together determine whether mismatch becomes stress, power, or false coherence. Capture can inflate apparent fidelity by narrowing the representational alphabet — the metric is compromised by the same mechanism it is meant to detect. The paper reinterprets prior results as shear containment and capture dynamics, identifies the Paper 12 governor architecture as a correlator (not merely a brake), and derives a design principle: maximize baseline subject to correlator integrity.

@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.18686130
 **Zenodo Record:** https://zenodo.org/records/18686130
 
+**Plain-language companion:** [Read the reader-oriented summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 We hypothesize that when irreversible commitments cross a boundary faster than verification can complete, unverified state transitions accumulate and systems exhibit recurring loss-of-control signatures. We formalize this condition as **cybernetic fault domains** — boundary-relative temporal regimes defined by a commitment boundary (C_k), commitment-verification lag (Δt), and boundary load (σ) — and provide a measurement protocol with nine domain instantiations spanning organizations, language models, censorship systems, security operations, safety tuning, platforms, representational transforms, optimization dynamics, and synthetic coherence. An architectural containment pattern — **governors** that separate proposal from commitment and gate crossings of C_k on evidence — is implemented and mechanically tested in one domain via an enforcement kernel with 37 verifiable claims and a dimensionless risk index (R_t = PD/E) that formalizes the gate as a single inequality. Four falsifiable claims, seven testable predictions, and the strongest adversarial target are specified: a system that sustains high Δt and σ without degradation would kill the framework.

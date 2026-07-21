@@ -1,5 +1,7 @@
 # Shared Vision as Coordinating Prior: Aggregation-Layer Masking and the Witness-Filter Pathology
 
+> [Read the plain-language summary](PLAIN-LANGUAGE-SUMMARY.md) — an explanatory companion to the canonical paper.
+
 **Author:** James Beck
 **Status:** Preprint v1.0 (2026-04-28). Published on Zenodo (record 19861996).
 **DOI:** `10.5281/zenodo.19861996` (version 1.0). Concept DOI: `10.5281/zenodo.19861995` (resolves to latest version).

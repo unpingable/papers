@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.18071264  
 **Zenodo Record:** https://zenodo.org/records/18071265
 
+**Plain-language companion:** [Read the reader-oriented summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 Temporal coherence—the ability of a system to maintain consistency across time evolution—is a necessary but insufficient condition for alignment in large language models. We introduce representational coherence (ΔR) as an orthogonal axis measuring commitment preservation under representational transformation. Through analysis of a technical specification transformed via compression, translation, and formalization, we demonstrate systematic commitment shear: the selective loss of enforcement constraints, edge cases, and observability hooks even when temporal coherence is preserved. Compression induces 55% shear; formalization induces 45% shear through ontology forcing; translation preserves commitments with near-zero shear. We formalize commitment transport as an invariant-preservation problem and argue that alignment without observer-level binding of equivalence classes across representations is fundamentally incomplete. Our cache policy artifact and shear metrics provide a foundation for instrumenting representational coherence in language model evaluation.

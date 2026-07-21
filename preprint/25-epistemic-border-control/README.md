@@ -1,5 +1,7 @@
 # Paper 25: Epistemic Border Control as Proxy Regulation Under Partial Observability
 
+> [Read the plain-language summary](PLAIN-LANGUAGE-SUMMARY.md) — an explanatory companion to the canonical paper.
+
 **Author:** James Beck
 **Status:** Preprint v1.0 (2026-05-12). Canonical: `epistemic_border_control.md`. Lit-differential complete; Lean spine landed (`Paper25EpistemicBorderControl.lean`, four theorems); crosswalk in `docs/formalization-index.md`. Published to Zenodo.
 **DOI:** [10.5281/zenodo.20145155](https://doi.org/10.5281/zenodo.20145155)

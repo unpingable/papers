@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.17791872  
 **Zenodo Record:** https://zenodo.org/records/17791873
 
+**Reader's guide:** [Plain-language summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 We establish a general dynamical result for systems governed by scalar reward optimization in closed loops. Given a finite state space X, a scalar reward function r: X → ℝ, and a multiplicative reweighting operator T that updates probability distributions according to reward, we prove three fundamental theorems: (1) Eigenstructure Evaporation (Lemma 2.1): all non-reward-maximal modes decay exponentially under repeated application of T; (2) Fixed-Point Convergence (Theorem 2.5): closed-loop dynamics p_{t+1} = T(p_t) converge to a fixed point concentrated on reward-maximal states with reduced entropy; (3) Irreversibility (Corollary 2.7): once collapse occurs, the same operator T cannot restore suppressed modes without exogenous forcing or structural modification. We provide a Δt interpretation showing that scalar optimization forces multi-timescale systems into single-mode temporal collapse. These results supply the mathematical foundation for observed phenomena including platform content homogenization, AI model mode collapse, market herding dynamics, and institutional monoculture formation.

@@ -1,5 +1,7 @@
 # Paper 19: The System Beside the System
 
+> [Read the plain-language summary](PLAIN-LANGUAGE-SUMMARY.md) — an explanatory companion to the canonical paper.
+
 **Shadow Governance and the Stabilization of Unauthorized Authority**
 
 James Beck, Independent Researcher

@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.18235696  
 **Zenodo Record:** https://zenodo.org/records/18235697
 
+**Plain-language companion:** [Read the reader-oriented summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 This paper presents a control-theoretic analysis of Deep Packet Inspection (DPI) circumvention mechanisms, formalizing bypass techniques as exploitation of temporal asymmetry between evidence accumulation and enforcement. Building on the Δt framework for hierarchical systems, the work derives the Universal Bypass Inequality (UBI) and demonstrates how timing, computational cost, and evidence denial enable systematic evasion of censorship and inspection systems.

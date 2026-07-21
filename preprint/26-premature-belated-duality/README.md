@@ -1,5 +1,7 @@
 # Paper 26: Premature Commitment, Belated Consequence, and the Empty Binding Window
 
+> [Read the plain-language summary](PLAIN-LANGUAGE-SUMMARY.md) — an explanatory companion to the canonical paper.
+
 **Author:** James Beck
 **Status:** Preprint v1.0 (2026-05-14). The sharpened empty-window discriminator is ratified; remaining uncertainty (override-burden standard-of-evidence, politically-reproduced sub-type, sub-type-by-phase, curve-shape vs operating-point boundary) is bounded in §8 as limitations rather than gating work. Published to Zenodo.
 **DOI:** [10.5281/zenodo.20189777](https://doi.org/10.5281/zenodo.20189777)

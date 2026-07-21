@@ -6,6 +6,8 @@ James Beck, Independent Researcher — March 2026
 
 **DOI:** [10.5281/zenodo.18940008](https://doi.org/10.5281/zenodo.18940008)
 
+**Plain-language companion:** [Read the reader-oriented summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 Adaptive systems that accept inputs at multiple timescales face a structural governance problem: transient signals can silently acquire durable governing force. The failure mode is not influence per se but *unauthorized durability* — the promotion of lower-tier state into higher-tier authority without legitimate write paths. This paper formalizes the problem as a multiscale control model with four state classes mapped to four authority tiers, derives six invariants and five write barriers, and introduces the *promotion ceremony* — a composable governance primitive for controlling when lower-tier state may acquire higher-tier legitimacy. The same protocol governs runtime-to-policy promotion and policy-to-constitutional updates, yielding no exempt layer where real authority hides unaudited.

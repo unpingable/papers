@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.18039926  
 **Zenodo Record:** https://zenodo.org/records/18039927
 
+**Plain-language companion:** [Read the reader-oriented summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 Current transformer-based AI systems exhibit systematic failures of temporal coherence—the ability to maintain stable meanings, beliefs, and references across inference steps. We argue these failures are best explained by structural constraints of architectures that lack invariant-preserving primitives. Drawing on the Δt framework for temporal dynamics in hierarchical systems, we identify four essential invariants that any coherent inference system must preserve: (1) Temporal Coherence - past claims constrain present outputs, (2) Semantic Conservation - meaning remains stable under transformation, (3) Epistemic Grounding - sources actually constrain claims, and (4) Irreversibility - errors leave learning residue.

@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.18841815
 **Zenodo Record:** https://zenodo.org/records/18841815
 
+**Plain-language companion:** [Read the reader-oriented summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 Propaganda is conventionally understood as the injection of false content into public discourse. This framing is insufficiently precise. The primary attack surface of effective propaganda is not the data layer but the policy layer: the rules governing how evidence is integrated into public memory. We formalize this using a receipted semantic factor graph in which event nodes, receipt nodes, frame nodes, policy nodes, and decision nodes are explicitly typed and separately maintained. Retrospective reinterpretation — semantic retrocausality — is shown to be a normal and necessary feature of any belief-revision system operating over time. We define an epistemic governor as a set of typed constraints requiring that all updates to the semantic graph produce auditable receipts. The counter-propaganda move is not better evidence; it is legible epistemic policy.

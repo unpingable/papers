@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.17857541  
 **Zenodo Record:** https://zenodo.org/records/17857542
 
+**Reader's guide:** [Plain-language summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 We present a general framework for temporal coherence in hierarchical inference systems. When upper layers generate outputs at rates exceeding what lower layers can support, systems exhibit characteristic pathologies: confidence inflation, metastable states that appear functional but are structurally fragile, and eventual collapse under perturbation. The core constraint—that confidence growth rate must not exceed evidence accumulation rate—yields a differential inequality dC/dt ≤ k·dE/dt governing system behavior. Violations accumulate as temporal debt D(t), a measure of structural fragility invisible in local observations. The framework reveals three distinct regimes: coherent inference, metastable inference, and collapse. We demonstrate that meta-plausibility constitutes one instantiation of this general principle and establish connections to existing theories of metastability in stochastic systems and multiscale dynamics. Domain-specific applications are developed in companion publications.

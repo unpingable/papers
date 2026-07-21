@@ -1,5 +1,7 @@
 # Ops Is Control with a Non-Self-Identical Controller
 
+> [Read the plain-language summary](PLAIN-LANGUAGE-SUMMARY.md) — an explanatory companion to the canonical paper.
+
 **Author:** James Beck
 **Status:** Preprint v1.0 (published on Zenodo 2026-04-24).
 **DOI:** [`10.5281/zenodo.19055415`](https://doi.org/10.5281/zenodo.19055415) (concept) — record: <https://zenodo.org/records/19715302>

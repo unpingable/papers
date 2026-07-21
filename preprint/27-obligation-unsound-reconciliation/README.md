@@ -1,5 +1,7 @@
 # Paper 27: Ephemerality Is a Transition Property — Obligation-Unsound Reconciliation in Kubernetes and Other Control Loops
 
+> [Read the plain-language summary](PLAIN-LANGUAGE-SUMMARY.md) — an explanatory companion to the canonical paper.
+
 **Author:** James Beck
 **Status:** v1.0 (2026-05-18). Pending Zenodo deposit.
 

@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.17859323  
 **Zenodo Record:** https://zenodo.org/records/17859324
 
+**Reader's guide:** [Plain-language summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 Large language models hallucinate on 15-50% of factual queries while reporting confidence exceeding 80%. Enterprise software projects report "Green" status weeks before deadline collapse. These failures share a common structure: confidence generation outpacing evidential support. This paper applies the Δt framework (Beck, 2025) to two domains where temporal debt accumulation is measurable and consequential. For LLMs, we operationalize the support function using semantic stability and demonstrate that RLHF training creates structural incentives for debt accumulation. For enterprise software delivery, we derive support functions from velocity variance and temporal proximity to deadline. Both applications yield working diagnostic implementations that classify systems into coherent, metastable, or collapse regimes. The implementations are immediately deployable: the LLM detector can gate model responses or trigger retrieval; the software diagnostic integrates with standard project management tooling. These applications demonstrate that abstract Δt theory translates to concrete, actionable instrumentation.

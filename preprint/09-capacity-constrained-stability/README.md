@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.18019050  
 **Zenodo Record:** https://zenodo.org/records/18019051
 
+**Reader's guide:** [Plain-language summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 This paper introduces a control-theoretic stability constraint governing institutional failure under exogenous shock. Formalizing the relationship between shock arrival rate, processing capacity, buffer reserves, and response latency, it demonstrates why institutional collapse often appears sudden despite being structurally predictable. The framework integrates queueing theory, resilience engineering, and multi-timescale control to identify measurable failure boundaries and metastable operating regimes across healthcare, finance, and infrastructure systems.

@@ -1,5 +1,7 @@
 # No Universal Plant Clock: Temporal Failure Geometry in Distributed Control Systems
 
+> [Read the plain-language summary](PLAIN-LANGUAGE-SUMMARY.md) — an explanatory companion to the canonical paper.
+
 **Author:** James Beck
 **Status:** Published (Zenodo v1.1, 2026-04-20). Initial release: 2026-03-19 (v1.0).
 **DOI (concept, resolves to latest):** [10.5281/zenodo.19119617](https://doi.org/10.5281/zenodo.19119617)

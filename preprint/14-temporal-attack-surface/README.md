@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.18236164  
 **Zenodo Record:** https://zenodo.org/records/18236165
 
+**Plain-language companion:** [Read the reader-oriented summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 This paper introduces the concept of the Temporal Attack Surface: a class of vulnerabilities arising from temporal decoupling between detection, decision, and response in asynchronous security systems. Extending prior work on Deep Packet Inspection (DPI) circumvention and the Δt framework for hierarchical temporal dynamics, the paper demonstrates that SIEM alerting, CI/CD security gates, authentication flows, rate limiting, and human-in-the-loop approvals share a common control-theoretic failure structure.

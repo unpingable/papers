@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.17726889  
 **Zenodo Record:** https://zenodo.org/records/17726890
 
+**Reader's guide:** [Plain-language summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 We show that temporal lag between control layers acts as effective noise, driving hierarchical systems from narrow high-fidelity basins toward broad degraded attractors via an entropic ratchet. When fast operational layers outpace slow strategic layers (large Δt), control errors accumulate as stochastic forcing with D_eff ∝ Δt². Because high-quality states occupy small phase-space volumes while degraded states occupy large volumes, random exploration preferentially transitions systems downward—not through moral failure, but through statistical mechanics.

@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.17849277  
 **Zenodo Record:** https://zenodo.org/records/17849278
 
+**Reader's guide:** [Plain-language summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 This paper synthesizes the Δt framework developed across Papers 1-5, providing a unified account of temporal coherence requirements for synthetic systems. We identify three architectural operators (timescale separation, endogenous state, adaptive control) as necessary architectural roles for maintaining coherent identity across perturbations, and prove a necessity-side type boundary distinguishing endogenous temporal closure from externally accumulated context. General sufficiency for identity-preserving coherence under perturbation remains an open formalization target. The framework explains the Simulator Gap: why large language models can simulate temporal reasoning without implementing temporal closure. We provide testable predictions for both biological and artificial systems, falsification protocols, and correspondence with neuroscience. Five supplementary documents provide: (1) reference Python implementation, (2) neuroscience correspondence and clinical predictions, (3) comparison with existing consciousness theories, (4) RFC-style architectural invariants, and (5) comprehensive falsification test suite.

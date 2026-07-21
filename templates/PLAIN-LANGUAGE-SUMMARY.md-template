@@ -1,0 +1,32 @@
+# Plain-language summary
+
+**Companion to:** *[Paper title]* ([version/status]).
+
+**Reading status:** This is an explanatory companion to the paper. It is not
+the canonical published artifact, does not silently amend the version of
+record, and introduces no new paper claims.
+
+[Write two to four natural, README-style paragraphs for an experienced software
+engineer or systems researcher. State the practical or conceptual question,
+why it matters, and the capability, distinction, or result the paper adds.
+Translate rather than compress: do not inventory sections, open with notation,
+or replace the argument with an analogy. Explain unavoidable terms once and
+preserve the paper's actual level of confidence—a hypothesis, model,
+architecture, theorem, specimen, simulation, and empirical result are not
+interchangeable. The reader should finish knowing whether this is a paper they
+need to read.]
+
+## Claim boundary
+
+[In one compact note, state the strongest material nonclaim, any current
+editorial qualification, and the boundary between formal, empirical,
+architectural, and runtime warrant. Do not let this note become the organizing
+structure of the overview. Do not use later formal work to retroactively
+certify the paper without an exact reviewed crosswalk.]
+
+## Read the paper
+
+- [Paper README](README.md)
+- [Current manuscript source](SOURCE.md)
+- [Rendered PDF](PAPER.pdf)
+- [Published record / DOI](https://doi.org/10.5281/zenodo.RECORD)

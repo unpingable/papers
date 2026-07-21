@@ -5,6 +5,8 @@
 **DOI:** 10.5281/zenodo.18145346  
 **Zenodo Record:** https://zenodo.org/records/18145347
 
+**Plain-language companion:** [Read the reader-oriented summary](PLAIN-LANGUAGE-SUMMARY.md)
+
 ## Abstract
 
 This work describes a governed reasoning substrate that introduces persistent 
