@@ -1,0 +1,38 @@
+title: "Agreement on Partial Domains: Canonical Abstraction and a Δ-System Criterion"
+author: "James Beck"
+affiliation: "Independent Researcher"
+date: 2026-08-25
+paper_number: 28
+doi: null
+zenodo_url: null
+keywords:
+  - partial functions
+  - compatibility relations
+  - tolerance relations
+  - partial observations
+  - canonical abstraction
+  - delta systems
+  - continuation semantics
+  - Lean 4
+  - formal methods
+status: "draft"
+series: "delta-t-framework"
+version: "0.1"
+license: "CC-BY-4.0"
+abstract: |
+  Systems with partial observations often compare two states by requiring equal
+  answers only to queries available in both. This common-domain relation is
+  reflexive and symmetric but can fail transitivity, preventing a canonical
+  quotient and permitting incomparable maximal coarsenings. We formalize two
+  repairs in Lean. Treating query availability as part of future behavior yields
+  an equivalence relation and a canonical quotient characterized by observation-
+  kernel refinement. If availability is intentionally ignored, we characterize
+  the domain families that restore transitivity uniformly over arbitrary
+  proposition-valued decision profiles: precisely the Δ-systems, whose distinct
+  domains share one common root and otherwise have private petals. A mediator-
+  hole labeling proves sharpness; explicit fixtures show that equal domains are
+  unnecessary, nested domains and nonempty overlap are insufficient, and fixed
+  labelings may be transitive accidentally outside the Δ-system regime. The
+  contribution is a machine-checked synthesis and design boundary built from
+  classical ingredients, not a claim that partial-function compatibility or
+  Δ-systems are new.
