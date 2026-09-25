@@ -1,6 +1,6 @@
 # Agent-governance field state — prior-art capture
 
-**Status:** capture note, 2026-06-03 evening. **NOT a paper draft.
+**Status:** capture note, 2026-06-03 evening; amended 2026-09-25 with the SpecHarness addendum at the end. **NOT a paper draft.
 NOT publication-prep.** Captures the prior-art survey from the
 2026-06-03 evening cabinet round (Claude-web grounding, ChatGPT
 calibration) before it evaporates. Filed so future sessions can
@@ -400,3 +400,163 @@ discipline gates still apply.
 - Memory: [[feedback-claude-common-mode-synthesis]] (if a future
   session enthusiastically agrees the field state means "we should
   publish now," that's the signal to stop)
+
+## Addendum 2026-09-25 — SpecHarness: specification/state authority in single-runtime harnesses
+
+**Reference.** Li, Ma, Wu, Zhong, Jiang, Dang, Hu, Ma, Guo & Huang,
+"Who Holds the Pen? Let Specifications, Not Agents, Sign Off",
+arXiv:2609.29921 (24 Sep 2026; AAAI-27 copyright notice).
+
+**Disposition.** Independent 2026 evidence for specification/state
+authority separation in single-runtime agent harnesses; contrasts with
+Constellation's distributed ownership, currentness, and effect-custody
+model. No kernel, protocol, ledger, currentness, or authority mechanism
+change is implied. Disposition class: vocabulary / external evidence /
+qualification-metric input.
+
+**What the paper does.** It names two gaps in LLM agent harnesses, the
+understanding–execution gap (the agent understands a requirement and
+still does not satisfy it) and the state–authority gap (a completion
+claim does not establish the required state), measures both on
+SkillsBench across seven models, and proposes SpecHarness: a frozen LLM
+compiles agent-visible specifications into source-linked obligations
+(hard / advisory / abstain / residual); a trusted runtime authorizes
+actions, observes effects, and commits a versioned obligation ledger
+only from admissible evidence produced by qualified providers;
+finalization requires every mandatory obligation to be satisfied and
+fresh. Headline figures: 79.6–86.4% of source-grounded directions
+satisfied by raw agents; macro pass 61.1% → 73.1% and state–authority
+gap 32.8% → 12.8% under SpecHarness; 248 dependency mutations, all
+invalidated with freshness and all left admissible without it; 44% of
+hard obligations on closure-audited mediated surfaces, 56% on
+validate-after channels.
+
+### 1. Independent convergence
+
+SpecHarness independently adopts disciplines Constellation already
+states, in the paper's own words:
+
+- agent actions, outputs, self-assessments, and tool-return strings
+  "cannot directly establish authoritative state" (the state-write
+  invariant);
+- "authorization permits an attempt but does not establish
+  satisfaction; the resulting effect must still be observed and
+  validated";
+- validators return `passed | failed | error`, and `error` "does not
+  establish satisfaction or failure, update authoritative state, or
+  permit finalization";
+- commitments are `fresh | stale | unknown`; a known version mismatch is
+  stale and incomplete version evidence is unknown, and neither may
+  support finalization;
+- a validator may block only after a qualification suite covering
+  satisfying cases, targeted violations, malformed or missing inputs,
+  unavailable providers, and execution failures;
+- ambiguous, subjective, conflicting, or unverifiable requirements
+  remain advisory and never block.
+
+Constellation counterparts: AG's one-use authorization and Docket's
+authenticated custody (proposal is not acceptance); "effect → fresh
+observation → fresh judgment → fresh authority"; NQ `CannotEvaluate`,
+AG `Unavailable`, and Docket `Indeterminate` (failure to evaluate is not
+negation); Nightshift's missing / stale / clock-incoherent basis
+reasons; profile qualification with deterministic negative controls;
+bounded compiled questions. Treat the paper as external evidence for
+the general discipline, not as validation of Constellation's particular
+architecture.
+
+### 2. Scope difference
+
+SpecHarness runs inside one trusted runtime over one declared
+observable workspace. That is what makes one obligation ledger, one
+dependency/version model, transitive invalidation, one authorization
+service, and one validator registry coherent. Its own guarantee stops
+at declared dependencies and excludes "untracked external state or
+undeclared dependencies", undeclared external channels, and effects
+outside the observable environment. Constellation deliberately spans
+separately owned facts, authorities, clocks, resolvers, effects, and
+evidence sources. No inference should be drawn that the centralized
+ledger or the dependency-propagation mechanism should be imported; the
+2026-09-25 reason-maintenance probe (recorded in the workspace campaign
+artifacts and in the `bad-ideas` deltabase entry) already found that
+shape incoherent across owners.
+
+### 3. Freshness caveat
+
+The mutation experiment supports "stored evidence of a past
+satisfaction is not necessarily valid evidence now." It does not
+establish "currentness loss should propagate through an invalidation
+graph." SpecHarness can use version equality and transitive
+invalidation because its runtime owns the declared dependency graph.
+Constellation currentness changes through mechanisms with no
+propagatable mutation event: expiry, resolver unavailability,
+supersession, independently owned observations, and deliberately
+non-retroactive snapshot semantics. Use the paper as evidence for the
+discipline, not the mechanism.
+
+### 4. Completion-claim caveat
+
+Do not cite the raw state–authority gap (28.7–37.9 points) as an
+independent calibrated measure of agent overconfidence. The raw harness
+accepts a completion claim on essentially every run (claim rates
+86–100%), so the paper itself notes that raw S–A equals 1 minus the
+official pass rate. The useful empirical statement is:
+
+> raw agents self-certify nearly every run even though a materially
+> smaller fraction satisfy the external verifier.
+
+Preserve that wording.
+
+### 5. Specification-compilation lesson
+
+The frozen obligation compiler (a language model selected on a
+development set) reaches 573/585 (97.95%) broad correspondence with the
+official tests but only 406/585 (69.40%) fine-grained correspondence;
+the other candidates range 57.61–66.50% fine-grained. Record this as
+quantitative support for Constellation's existing refusal to let an
+LLM-generated interpretation of prose directly become an
+authority-bearing governed profile. Models may assist profile
+authoring; they do not thereby own the semantic compilation boundary.
+SpecHarness tolerates the mismatch because unsupported requirements
+stay advisory and held-out evaluators measure afterward; a compiled
+question that sits on an operational authority boundary cannot.
+
+### 6. New metric worth borrowing: governed success preservation
+
+The ablation exposes a qualification blind spot. Removing blocking
+qualification lowers the state–authority gap (6.9% → 5.7%) but degrades
+paired raw-pass preservation (96.8% → 90.3%); the paper's words:
+"conservative rejection is not equivalent to reliable authority."
+Constellation emphasizes fail-closed behavior and negative controls but
+does not consistently report a paired preservation measure.
+
+Future qualification metric / tripwire, **governed success
+preservation**: for a corpus with an independently established
+successful or reference outcome, measure how many such cases remain
+successful under the governed path. Report it beside unsafe-acceptance
+/ false-authorization rate, `CannotEvaluate` and refusal behavior, and
+negative controls. Purpose: detect a system that appears safer merely
+because it rejects legitimate work. No universal threshold now; each
+qualified profile or workload defines its reference population.
+
+### 7. Closure audit
+
+SpecHarness's closure stress tests (1,628 cases over direct access,
+alternate path, path handling, subprocess, malformed proposal, token
+scope, stale token, and fallback path; 11 violations, all on surfaces
+then excluded from the preventive claim) are a useful test shape for
+application layers that may hold several effect paths. Constellation's
+governed effect path aims for closure by construction: the model does
+not hold an alternate raw effect capability, and enrolled dispatch owns
+the effect boundary. Retain the audit as a future boundary-test
+pattern where an application layer above Constellation possesses
+tools, not as a new Constellation mechanism.
+
+### 8. No architecture change
+
+Current disposition: vocabulary / external evidence /
+qualification-metric input. Nothing in the paper argues for a kernel,
+protocol, ledger, currentness, or authority change. The "state–authority
+gap" term is worth adopting in prose where the architecture map
+currently says that provider completion is neither acceptance nor
+authority. This note is the canonical record; the `bad-ideas` entry
+records only the reason-maintenance kernel costume and may link here.
